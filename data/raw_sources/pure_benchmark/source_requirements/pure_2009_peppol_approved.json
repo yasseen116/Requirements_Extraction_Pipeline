@@ -1,0 +1,2208 @@
+{
+  "sample_id": "pure_2009_peppol_approved",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2009_peppol_approved",
+    "title": "2009 - peppol approved",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2009 - peppol approved.xml",
+    "source_path": null
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "It should be noted that such a VCD concept currently does not exist.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be noted that such a vcd concept currently does not exist"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "WP2 has strongly interconnected D2.1 to the state of practice report published by DG market1: 'eCertificates' feasibility study (Preliminary study on the electronic provision of certificates and attestations usually required in public procurement procedures).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "wp2 has strongly interconnected d2 1 to the state of practice report published by dg market1 ecertificates feasibility study preliminary study on the electronic provision of certificates and attestations usually required in public procurement procedures"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "By 2010 at least 50% of public procurement above the EU public procurement threshold will be carried out electronically.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "by 2010 at least 50 of public procurement above the eu public procurement threshold will be carried out electronically"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "Among the building blocks the PEPPOL consortium develops, the Virtual Company Dossier (VCD) focuses on an interoperable solution which contains the documents required from economic operators to evidence their qualification as well as qualitative selection or exclusion according to the directive 2004/18/EC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "among the building blocks the peppol consortium develops the virtual company dossier vcd focuses on an interoperable solution which contains the documents required from economic operators to evidence their qualification as well as qualitative selection or exclusion according to the directive 2004 18 ec"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "Need for a Virtual Company Dossier A VCD will facilitate electronic Tendering by providing cross-border data and document solution that contains the necessary attestations and certificates typically required in eTendering.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "need for a virtual company dossier a vcd will facilitate electronic tendering by providing cross border data and document solution that contains the necessary attestations and certificates typically required in etendering"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "Yet up to now, the tendering documents such as attestations and certificates required in public procurement procedures differ between Member States.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "yet up to now the tendering documents such as attestations and certificates required in public procurement procedures differ between member states"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "When a contracting authority publishes a contract notice, it shall include the selection, qualification and nonexclusion criteria.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "when a contracting authority publishes a contract notice it shall include the selection qualification and nonexclusion criteria"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "The VCD will support any authorised entities (economic operator, intermediary, contracting authority or IT service such as an eTendering system) in creating an electronic information package consisting of the required documentation, evidences, proof, attestations, certificates, declarations and metadata.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd will support any authorised entities economic operator intermediary contracting authority or it service such as an etendering system in creating an electronic information package consisting of the required documentation evidences proof attestations certificates declarations and metadata"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "Furthermore, the VCD solution supports economic operators in producing a VCD and in enabling them to submit the required documentation (assembled as an information package) to any contracting authority in Europe.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "furthermore the vcd solution supports economic operators in producing a vcd and in enabling them to submit the required documentation assembled as an information package to any contracting authority in europe"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "Therefore the contracting authority must either specify the documentation that has to be submitted by economic operator or the criteria of qualitative selection and exclusion that have to be fulfilled by the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "therefore the contracting authority must either specify the documentation that has to be submitted by economic operator or the criteria of qualitative selection and exclusion that have to be fulfilled by the economic operator"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "A major challenge of PEPPOLs’ work package 2 is to integrate various stakeholders in the development process and to set up an IT system which supports a common set of evidences based on electronic business certificates and qualification documents that are most frequently required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a major challenge of peppols work package 2 is to integrate various stakeholders in the development process and to set up an it system which supports a common set of evidences based on electronic business certificates and qualification documents that are most frequently required"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "The criteria must be consistent with directive 2004/18/EC (EC 30.04.2004): Article 45 - Personal situation of the candidate or tenderer: e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the criteria must be consistent with directive 2004 18 ec ec 30 04 2004 article 45 personal situation of the candidate or tenderer e g"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "Thereby it must be taken into account that some countries do not issue such documents or certificates (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "thereby it must be taken into account that some countries do not issue such documents or certificates e g"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "So the link between individual evidences and the respective criteria they may approve for (as listed above) must be precisely indicated and mapped in order to support economic operators in their activity.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "so the link between individual evidences and the respective criteria they may approve for as listed above must be precisely indicated and mapped in order to support economic operators in their activity"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "It should be noted that for public tenders above a certain threshold, the publication in the Official Journal of the European Union (TED) is mandatory.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be noted that for public tenders above a certain threshold the publication in the official journal of the european union ted is mandatory"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "Hence, the Economic Operator must directly get the authentic contract notice and exact conditions from the Contracting Authority in order to avoid a failure on interpreting the requirements for participation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "hence the economic operator must directly get the authentic contract notice and exact conditions from the contracting authority in order to avoid a failure on interpreting the requirements for participation"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "In most cases an official translation of the documents submitted by the Economic Operator is required (6).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in most cases an official translation of the documents submitted by the economic operator is required 6"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "The following flows of documents have to be considered specifically: documents that cannot be generated in the target language by the originating authority;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the following flows of documents have to be considered specifically documents that cannot be generated in the target language by the originating authority"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "documents that must be accessed by the contracting authority from the official source.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "documents that must be accessed by the contracting authority from the official source"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "In the long-run the VCD should be able to adequately fulfil the contracting authorities’ need to prove suitability and non-exclusion of economic operators according to certain criteria while reducing the burden of proof for the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the long run the vcd should be able to adequately fulfil the contracting authorities need to prove suitability and non exclusion of economic operators according to certain criteria while reducing the burden of proof for the economic operator"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "In this respect the VCD should support current practices of exchanging evidence in the short run and lead towards smooth, reliable and sustainable exchange of electronic evidences among Member States in the long run.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in this respect the vcd should support current practices of exchanging evidence in the short run and lead towards smooth reliable and sustainable exchange of electronic evidences among member states in the long run"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "Every Member State should develop a solution that meets the demands of basic interoperability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "every member state should develop a solution that meets the demands of basic interoperability"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "The VCD specification must be generically and semantically extensible in order to reach a sustainable and fully-fledged solution in the final stage.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd specification must be generically and semantically extensible in order to reach a sustainable and fully fledged solution in the final stage"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "An eTendering system and a contracting authority must be able to interpret a VCD package assembled by a VCD application regardless of the implementation stage of the VCD application and the eTendering system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "an etendering system and a contracting authority must be able to interpret a vcd package assembled by a vcd application regardless of the implementation stage of the vcd application and the etendering system"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "Decision Support: Decision Support enhances the compilation support by processing content- and context-specific data: Evidences are provided in a structured and machine interpretable form, at least those that can be easily transformed in such representation;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "decision support decision support enhances the compilation support by processing content and context specific data evidences are provided in a structured and machine interpretable form at least those that can be easily transformed in such representation"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "The contracting authority may control whether or not the evidences prove the required criteria (as opposed to the level of compilation support, where one only could check if the VCD is complete and the attestations are valid).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the contracting authority may control whether or not the evidences prove the required criteria as opposed to the level of compilation support where one only could check if the vcd is complete and the attestations are valid"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "A Member State may reduce the level of completeness with regard to compilation and decision support with regard to their Pilot, but information support should be provided to all criteria at least on a high level.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a member state may reduce the level of completeness with regard to compilation and decision support with regard to their pilot but information support should be provided to all criteria at least on a high level"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "In cases below threshold or in the cases where the public notice is partial, the economic operator might send a direct request to the contracting authority in order to retrieve the required information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in cases below threshold or in the cases where the public notice is partial the economic operator might send a direct request to the contracting authority in order to retrieve the required information"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "These criteria should be derived directly from 09/11/2009 – version 1.1 (approved by EC) the Articles 45-50 of the Directive 2004/18/EC in order to ensure employment in Pan-European public procurement procedures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these criteria should be derived directly from 09 11 2009 version 1 1 approved by ec the articles 45 50 of the directive 2004 18 ec in order to ensure employment in pan european public procurement procedures"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "A standard representation of common criteria of qualitative selection and exclusion MUST be defined according to Articles 45-50 of Directive 2004/18/EC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a standard representation of common criteria of qualitative selection and exclusion must be defined according to articles 45 50 of directive 2004 18 ec"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "The right granularity and consistency of criteria MUST be found through testing and iterative redefinition in order to ensure legitimacy and to retrieve adequate mapping results.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the right granularity and consistency of criteria must be found through testing and iterative redefinition in order to ensure legitimacy and to retrieve adequate mapping results"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "National requirements for qualitative selection and exclusion MUST correspond to the EC criteria given in Article 45-50.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "national requirements for qualitative selection and exclusion must correspond to the ec criteria given in article 45 50"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "National criteria for qualitative selection and exclusion SHOULD have the right granularity and should be consistent among themselves.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "national criteria for qualitative selection and exclusion should have the right granularity and should be consistent among themselves"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "To ensure a degree of comparability and reliability among the results, the mapping should be based on a common template.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to ensure a degree of comparability and reliability among the results the mapping should be based on a common template"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "A template that ensures comparable and reliable mappings between criteria for qualitative selection and exclusion and national attestations MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a template that ensures comparable and reliable mappings between criteria for qualitative selection and exclusion and national attestations must be defined"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "The members of this work package MUST perform the mapping between national attestations and European criteria of qualitative selection and exclusion.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the members of this work package must perform the mapping between national attestations and european criteria of qualitative selection and exclusion"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "Legitimacy of standard representation of common criteria of qualitative selection and exclusion MUST be ensured.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "legitimacy of standard representation of common criteria of qualitative selection and exclusion must be ensured"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "Legitimacy of standard mapping template MUST be ensured.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "legitimacy of standard mapping template must be ensured"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "Legitimacy of mapping between national attestations and common criteria for qualitative selection and exclusion MUST be ensured.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "legitimacy of mapping between national attestations and common criteria for qualitative selection and exclusion must be ensured"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "A decision to deploy either a centralised or a decentralized infrastructure that provides the mapping service MUST be made.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a decision to deploy either a centralised or a decentralized infrastructure that provides the mapping service must be made"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "It MUST be defined by which technical means the mapping service will be provided.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must be defined by which technical means the mapping service will be provided"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "An entity that hosts the mapping facility MUST be defined in dependence of the type of infrastructure and the dedicated governing model.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "an entity that hosts the mapping facility must be defined in dependence of the type of infrastructure and the dedicated governing model"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "The dedicated governing model should have the necessary status and power to govern its assigned functions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the dedicated governing model should have the necessary status and power to govern its assigned functions"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "A governing model with the necessary status and power MUST be formally defined in order to ensure fulfilment of functions like liability, sustainability and maintainability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a governing model with the necessary status and power must be formally defined in order to ensure fulfilment of functions like liability sustainability and maintainability"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "The Liability of organisation that governs the infrastructure and mapping facility MUST be defined Sustainability: Sustainability is the capacity to maintain a certain process or state into the future.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the liability of organisation that governs the infrastructure and mapping facility must be defined sustainability sustainability is the capacity to maintain a certain process or state into the future"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "The governing model must ensure that the state of the mapping system will be kept over time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the governing model must ensure that the state of the mapping system will be kept over time"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "The mapping facility MUST ensure sustainability of the system over time based on commonly agreed mapping schemes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the mapping facility must ensure sustainability of the system over time based on commonly agreed mapping schemes"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "A formal procedure to make changes to the system MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a formal procedure to make changes to the system must be defined"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "Therefore each national service provider that provides a VCD (stage 2-4) and all relevant key other stakeholder such as economic operators, contracting authorities and certifiers must be able to retrieve the latest mapping information from the mapping facility.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "therefore each national service provider that provides a vcd stage 2 4 and all relevant key other stakeholder such as economic operators contracting authorities and certifiers must be able to retrieve the latest mapping information from the mapping facility"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "The mapping facility MUST be accessible to all relevant key stakeholders such as economic operators, contracting authorities, certifiers and national service providers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the mapping facility must be accessible to all relevant key stakeholders such as economic operators contracting authorities certifiers and national service providers"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "The interaction between mapping facility and Publication Body / Contracting Authority SHOULD be defined in order to simplify the procedure to retrieve the relevant criteria for a particular Call for Tender.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the interaction between mapping facility and publication body contracting authority should be defined in order to simplify the procedure to retrieve the relevant criteria for a particular call for tender"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "The Member States shall supply the information generated from the analysis of the national context they represent.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the member states shall supply the information generated from the analysis of the national context they represent"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "Hence, it must be established and funded with clearly defined responsibilities for maintenance and conformance assessment between national solutions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "hence it must be established and funded with clearly defined responsibilities for maintenance and conformance assessment between national solutions"
+    },
+    {
+      "req_id": "AUTO-0054",
+      "text": "The formal commitment must in turn specify what is taken as pure guidance or qualified template.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the formal commitment must in turn specify what is taken as pure guidance or qualified template"
+    },
+    {
+      "req_id": "AUTO-0055",
+      "text": "Nevertheless this function will not be available for all kinds of attestation since there may be too many issuing bodies that provide attestations of the same type (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless this function will not be available for all kinds of attestation since there may be too many issuing bodies that provide attestations of the same type e g"
+    },
+    {
+      "req_id": "AUTO-0056",
+      "text": "the functions that are not covered by this stage: The economic operator is not supported in retrieving and collecting the required attestations from the appropriate bodies;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the functions that are not covered by this stage the economic operator is not supported in retrieving and collecting the required attestations from the appropriate bodies"
+    },
+    {
+      "req_id": "AUTO-0057",
+      "text": "Nevertheless a VCD simple package provides a set of other types of data that are introduced in the list below: Structural VCD package data: Data that describes the VCD-Package as a whole, e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless a vcd simple package provides a set of other types of data that are introduced in the list below structural vcd package data data that describes the vcd package as a whole e g"
+    },
+    {
+      "req_id": "AUTO-0058",
+      "text": "The implementation of interfaces to tendering platforms, which typically should be capable to receive VCD packages, therefore should be encouraged.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the implementation of interfaces to tendering platforms which typically should be capable to receive vcd packages therefore should be encouraged"
+    },
+    {
+      "req_id": "AUTO-0059",
+      "text": "In contrast, if there are physically different systems a singlesign- on functionality should be used in order to increase the usability of the connected systems for the user.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in contrast if there are physically different systems a singlesign on functionality should be used in order to increase the usability of the connected systems for the user"
+    },
+    {
+      "req_id": "AUTO-0060",
+      "text": "In order to increase the overall usability for the actors, a single-sign-on should be implemented in order to connect authentication among different systems affected by identity and access management.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to increase the overall usability for the actors a single sign on should be implemented in order to connect authentication among different systems affected by identity and access management"
+    },
+    {
+      "req_id": "AUTO-0061",
+      "text": "for identity and access management) should utilize these infrastructures in order to lower the implementation efforts and to increase the acceptance among stakeholders affected by these systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "for identity and access management should utilize these infrastructures in order to lower the implementation efforts and to increase the acceptance among stakeholders affected by these systems"
+    },
+    {
+      "req_id": "AUTO-0062",
+      "text": "Identity and access management is required to be done externally in a manual process that will verify the requestor’s identity before providing user rights and access.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "identity and access management is required to be done externally in a manual process that will verify the requestor s identity before providing user rights and access"
+    },
+    {
+      "req_id": "AUTO-0063",
+      "text": "Sensitive economic operator data must initially be provided by an economic operator (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "sensitive economic operator data must initially be provided by an economic operator e g"
+    },
+    {
+      "req_id": "AUTO-0064",
+      "text": "The collection of evidence is finalized when all required evidences are submitted and this requires waiting for those evidences that have to be provided manually or semi-automatically.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the collection of evidence is finalized when all required evidences are submitted and this requires waiting for those evidences that have to be provided manually or semi automatically"
+    },
+    {
+      "req_id": "AUTO-0065",
+      "text": "In stage 2 the viewing system should provide the possibility to view the following types of data (see Figure 14): Structural VCD package data (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in stage 2 the viewing system should provide the possibility to view the following types of data see figure 14 structural vcd package data e g"
+    },
+    {
+      "req_id": "AUTO-0066",
+      "text": "Requirements: Application for VCD account Identity and access management MUST provide a functionality to register an economic operator in a formal procedure in order to create a VCD account.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements application for vcd account identity and access management must provide a functionality to register an economic operator in a formal procedure in order to create a vcd account"
+    },
+    {
+      "req_id": "AUTO-0067",
+      "text": "Identity and access management MUST provide an interface to submit sensitive economic operator data (for example by uploading attestations that verify sensitive economic operator data) in order to allow the economic operator to apply for the creation of a VCD account.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "identity and access management must provide an interface to submit sensitive economic operator data for example by uploading attestations that verify sensitive economic operator data in order to allow the economic operator to apply for the creation of a vcd account"
+    },
+    {
+      "req_id": "AUTO-0068",
+      "text": "Sensitive economic operator data MUST be verified through a formal procedure by an officer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "sensitive economic operator data must be verified through a formal procedure by an officer"
+    },
+    {
+      "req_id": "AUTO-0069",
+      "text": "Sensitive economic operator data MUST be placed to a VCD account by an officer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "sensitive economic operator data must be placed to a vcd account by an officer"
+    },
+    {
+      "req_id": "AUTO-0070",
+      "text": "Identity and access management MUST provide a functionality that enables the economic operator to receive his log-in data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "identity and access management must provide a functionality that enables the economic operator to receive his log in data"
+    },
+    {
+      "req_id": "AUTO-0071",
+      "text": "The authentication within identity and access management SHOULD provide a single-sign on functionality that can be used across other systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the authentication within identity and access management should provide a single sign on functionality that can be used across other systems"
+    },
+    {
+      "req_id": "AUTO-0072",
+      "text": "A change procedure MUST be defined in order to modify sensitive economic operator data that is connected to the VCD account.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a change procedure must be defined in order to modify sensitive economic operator data that is connected to the vcd account"
+    },
+    {
+      "req_id": "AUTO-0073",
+      "text": "The economic operator MUST be able to delete his account.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the economic operator must be able to delete his account"
+    },
+    {
+      "req_id": "AUTO-0074",
+      "text": "Quality attributes of Identity and access management MUST be clearly defined which economic operator data are sensitive and belong to identity and access management.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quality attributes of identity and access management must be clearly defined which economic operator data are sensitive and belong to identity and access management"
+    },
+    {
+      "req_id": "AUTO-0075",
+      "text": "A single-sign on SHOULD be implemented in order to allow identity and access management across different systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a single sign on should be implemented in order to allow identity and access management across different systems"
+    },
+    {
+      "req_id": "AUTO-0076",
+      "text": "The identity and access management procedures for creating a VCD account SHOULD be harmonized with the registration procedure of the overall infrastructure provided by WP8.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the identity and access management procedures for creating a vcd account should be harmonized with the registration procedure of the overall infrastructure provided by wp8"
+    },
+    {
+      "req_id": "AUTO-0077",
+      "text": "Requirements: Initialization of VCD Request The VCD System SHOULD make use of a single-sign-on interface and function in order to submit login data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements initialization of vcd request the vcd system should make use of a single sign on interface and function in order to submit login data"
+    },
+    {
+      "req_id": "AUTO-0078",
+      "text": "The VCD system MUST provide a functionality to check through identity and access management whether an economic operator has sufficient user rights to access his account.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide a functionality to check through identity and access management whether an economic operator has sufficient user rights to access his account"
+    },
+    {
+      "req_id": "AUTO-0079",
+      "text": "The VCD system MUST provide an interface where the economic operator can provide nonsensitive economic operator data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide an interface where the economic operator can provide nonsensitive economic operator data"
+    },
+    {
+      "req_id": "AUTO-0080",
+      "text": "The VCD system MUST provide an interface where tender-specific data can be either fetched from or be provided through (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide an interface where tender specific data can be either fetched from or be provided through e g"
+    },
+    {
+      "req_id": "AUTO-0081",
+      "text": "The VCD system MUST provide an interface where the economic operator can request the creation of a VCD package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide an interface where the economic operator can request the creation of a vcd package"
+    },
+    {
+      "req_id": "AUTO-0082",
+      "text": "Requirements: Arrangement of VCD instance The VCD system MUST have an interface to receive and process the information (mapping of evidence) provided by the pre-VCD mapping tool.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements arrangement of vcd instance the vcd system must have an interface to receive and process the information mapping of evidence provided by the pre vcd mapping tool"
+    },
+    {
+      "req_id": "AUTO-0083",
+      "text": "The VCD system MUST provide a functionality that suggests a possible compilation of the VCD to the economic operator according to the tender-specific criteria.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide a functionality that suggests a possible compilation of the vcd to the economic operator according to the tender specific criteria"
+    },
+    {
+      "req_id": "AUTO-0084",
+      "text": "The VCD system MUST provide a functionality where the economic operator can decide which particular attestation services should be invoked and collected.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide a functionality where the economic operator can decide which particular attestation services should be invoked and collected"
+    },
+    {
+      "req_id": "AUTO-0085",
+      "text": "The VCD system MUST provide a functionality that displays the attestation services that cannot be invoked automatically and that have to be manually added by the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide a functionality that displays the attestation services that cannot be invoked automatically and that have to be manually added by the economic operator"
+    },
+    {
+      "req_id": "AUTO-0086",
+      "text": "Requirements: Collection of Evidence The VCD system must provide a functionality to request attestations that can be collected automatically via an issuing body.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements collection of evidence the vcd system must provide a functionality to request attestations that can be collected automatically via an issuing body"
+    },
+    {
+      "req_id": "AUTO-0087",
+      "text": "The VCD system MUST have an interface/technical access to retrieve attestations that can be automatically retrieved from issuing bodies.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must have an interface technical access to retrieve attestations that can be automatically retrieved from issuing bodies"
+    },
+    {
+      "req_id": "AUTO-0088",
+      "text": "The VCD system MUST have a functionality to extract structural data of evidence from attestations that can be retrieved automatically.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must have a functionality to extract structural data of evidence from attestations that can be retrieved automatically"
+    },
+    {
+      "req_id": "AUTO-0089",
+      "text": "The VCD system MUST have an interface to submit/upload evidence that have to be provided manually by the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must have an interface to submit upload evidence that have to be provided manually by the economic operator"
+    },
+    {
+      "req_id": "AUTO-0090",
+      "text": "The evidence submitted to the VCD system MUST correspond to the mapping information suggested by the VCD system (or the pre-VCD mapping tool).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the evidence submitted to the vcd system must correspond to the mapping information suggested by the vcd system or the pre vcd mapping tool"
+    },
+    {
+      "req_id": "AUTO-0091",
+      "text": "The VCD system MUST provide an interface where an economic operator can add structural data of evidence that belong to specific evidence.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide an interface where an economic operator can add structural data of evidence that belong to specific evidence"
+    },
+    {
+      "req_id": "AUTO-0092",
+      "text": "The VCD system SHOULD provide an interface where a translator/economic operator can submit certified translations to specific evidence.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system should provide an interface where a translator economic operator can submit certified translations to specific evidence"
+    },
+    {
+      "req_id": "AUTO-0093",
+      "text": "The VCD system MUST provide and interface where the economic operator can initiate the compilation process.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide and interface where the economic operator can initiate the compilation process"
+    },
+    {
+      "req_id": "AUTO-0094",
+      "text": "Requirements: Compilation of VCD instance The VCD system MUST provide a functionality to compile various data formats from various sources (issuing bodies) into a single VCD package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements compilation of vcd instance the vcd system must provide a functionality to compile various data formats from various sources issuing bodies into a single vcd package"
+    },
+    {
+      "req_id": "AUTO-0095",
+      "text": "The VCD package MUST provide a functionality to add structural VCD package data to the VCD package and VCD system (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd package must provide a functionality to add structural vcd package data to the vcd package and vcd system e g"
+    },
+    {
+      "req_id": "AUTO-0096",
+      "text": "The VCD package MUST provide a functionality to add tender-specific data to the VCD package and VCD system (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd package must provide a functionality to add tender specific data to the vcd package and vcd system e g"
+    },
+    {
+      "req_id": "AUTO-0097",
+      "text": "The VCD package MUST provide a functionality to add economic operator data to the VCD package and VCD system (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd package must provide a functionality to add economic operator data to the vcd package and vcd system e g"
+    },
+    {
+      "req_id": "AUTO-0098",
+      "text": "The VCD package MUST provide a functionality to add structural data of evidence to the VCD package and VCD system (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd package must provide a functionality to add structural data of evidence to the vcd package and vcd system e g"
+    },
+    {
+      "req_id": "AUTO-0099",
+      "text": "log file) during the compilation process The VCD package MUST provide a functionality to add evidences to the VCD package and VCD system (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "log file during the compilation process the vcd package must provide a functionality to add evidences to the vcd package and vcd system e g"
+    },
+    {
+      "req_id": "AUTO-0100",
+      "text": "The VCD package MUST provide a functionality to add translations to the VCD package and VCD system (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd package must provide a functionality to add translations to the vcd package and vcd system e g"
+    },
+    {
+      "req_id": "AUTO-0101",
+      "text": "log file) during the compilation process The VCD system MUST provide a functionality to notify the economic operator when the compilation process is finished.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "log file during the compilation process the vcd system must provide a functionality to notify the economic operator when the compilation process is finished"
+    },
+    {
+      "req_id": "AUTO-0102",
+      "text": "The VCD system MUST provide interfaces to deliver the VCD to the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide interfaces to deliver the vcd to the economic operator"
+    },
+    {
+      "req_id": "AUTO-0103",
+      "text": "Quality attributes of VCD system VCD system MUST be operated by at least one national VCD service provider The VCD system MUST have the status of a trusted system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quality attributes of vcd system vcd system must be operated by at least one national vcd service provider the vcd system must have the status of a trusted system"
+    },
+    {
+      "req_id": "AUTO-0104",
+      "text": "The national VCD service provider that hosts the system must have the status of a trusted entity.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the national vcd service provider that hosts the system must have the status of a trusted entity"
+    },
+    {
+      "req_id": "AUTO-0105",
+      "text": "Direct access to attestations issued by (national) issuing bodies MUST be established through organisational agreements (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "direct access to attestations issued by national issuing bodies must be established through organisational agreements e g"
+    },
+    {
+      "req_id": "AUTO-0106",
+      "text": "Technical access to the relevant attestations issued by (national) issuing SHOULD be supported through national law.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "technical access to the relevant attestations issued by national issuing should be supported through national law"
+    },
+    {
+      "req_id": "AUTO-0107",
+      "text": "The compilation suggestion that is given to the economic operator by the VCD system MUST be reliable with regard to fulfilment of tender-specific requirements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the compilation suggestion that is given to the economic operator by the vcd system must be reliable with regard to fulfilment of tender specific requirements"
+    },
+    {
+      "req_id": "AUTO-0108",
+      "text": "User rights for the VCD system MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "user rights for the vcd system must be defined"
+    },
+    {
+      "req_id": "AUTO-0109",
+      "text": "Structural data of evidence MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "structural data of evidence must be defined"
+    },
+    {
+      "req_id": "AUTO-0110",
+      "text": "Semantic interoperability of structural data of evidence SHOULD be ensured through an agreement procedure among the WP partners.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "semantic interoperability of structural data of evidence should be ensured through an agreement procedure among the wp partners"
+    },
+    {
+      "req_id": "AUTO-0111",
+      "text": "The evidence submitted to the VCD system MUST be eligible for the requirements mentioned by §§45– 46 of European Directive 2004/18/EC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the evidence submitted to the vcd system must be eligible for the requirements mentioned by 45 46 of european directive 2004 18 ec"
+    },
+    {
+      "req_id": "AUTO-0112",
+      "text": "Requirements: Authentication to VCD transportation system The VCD transportation system MUST provide a functionality that enables both parties involved, contracting authorities and economic operators, to authenticate to the VCD transportation system before using it.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements authentication to vcd transportation system the vcd transportation system must provide a functionality that enables both parties involved contracting authorities and economic operators to authenticate to the vcd transportation system before using it"
+    },
+    {
+      "req_id": "AUTO-0113",
+      "text": "The authentication to the VCD transportation system SHOULD make use of single-sign-in interface and function in order to submit login data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the authentication to the vcd transportation system should make use of single sign in interface and function in order to submit login data"
+    },
+    {
+      "req_id": "AUTO-0114",
+      "text": "Requirements: Exchange of VCD packages The VCD transportation system MUST provide a functionality that enables the economic operator to find an electronic address of a contracting authority for receiving VCD packages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements exchange of vcd packages the vcd transportation system must provide a functionality that enables the economic operator to find an electronic address of a contracting authority for receiving vcd packages"
+    },
+    {
+      "req_id": "AUTO-0115",
+      "text": "The VCD transportation system MUST have an interface to connect to it in order to submit the VCD package to a contracting authority.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd transportation system must have an interface to connect to it in order to submit the vcd package to a contracting authority"
+    },
+    {
+      "req_id": "AUTO-0116",
+      "text": "The VCD transportation system MUST provide a functionality that supports the economic operator in submitting the VCD package to a contracting authority.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd transportation system must provide a functionality that supports the economic operator in submitting the vcd package to a contracting authority"
+    },
+    {
+      "req_id": "AUTO-0117",
+      "text": "The VCD transportation system SHOULD provide a functionality that supports the economic operator in submitting the VCD package to a contracting authorities’ procurement platform where the tender/bid has to be placed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd transportation system should provide a functionality that supports the economic operator in submitting the vcd package to a contracting authorities procurement platform where the tender bid has to be placed"
+    },
+    {
+      "req_id": "AUTO-0118",
+      "text": "The transportation system MUST provide an interface that enables contracting authorities to receive a VCD.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transportation system must provide an interface that enables contracting authorities to receive a vcd"
+    },
+    {
+      "req_id": "AUTO-0119",
+      "text": "Quality attributes of VCD transportation system Both parties involved, contracting authorities and economic operators, MUST have an electronic address for receiving/sending VCD packages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quality attributes of vcd transportation system both parties involved contracting authorities and economic operators must have an electronic address for receiving sending vcd packages"
+    },
+    {
+      "req_id": "AUTO-0120",
+      "text": "The transport of a VCD package MUST be initiated by the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transport of a vcd package must be initiated by the economic operator"
+    },
+    {
+      "req_id": "AUTO-0121",
+      "text": "The choice of how to submit the VCD package to the contracting authority MUST be the one that is preferred by the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the choice of how to submit the vcd package to the contracting authority must be the one that is preferred by the economic operator"
+    },
+    {
+      "req_id": "AUTO-0122",
+      "text": "Beside the transportation system (WP8) the economic operator SHOULD be able to use other electronic channels for submitting a VCD package to the contracting authority.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "beside the transportation system wp8 the economic operator should be able to use other electronic channels for submitting a vcd package to the contracting authority"
+    },
+    {
+      "req_id": "AUTO-0123",
+      "text": "It MUST be clarified which possibilities exist to utilize the infrastructure for submitting a VCD package directly to procurement platforms (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must be clarified which possibilities exist to utilize the infrastructure for submitting a vcd package directly to procurement platforms e g"
+    },
+    {
+      "req_id": "AUTO-0124",
+      "text": "The transportation system MUST ensure that the VCD package is being delivered to the contracting authority The transport of a VCD package MUST be confidential.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transportation system must ensure that the vcd package is being delivered to the contracting authority the transport of a vcd package must be confidential"
+    },
+    {
+      "req_id": "AUTO-0125",
+      "text": "The transport of a VCD package MUST be reliable.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transport of a vcd package must be reliable"
+    },
+    {
+      "req_id": "AUTO-0126",
+      "text": "The transport of a VCD package MUST be secure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transport of a vcd package must be secure"
+    },
+    {
+      "req_id": "AUTO-0127",
+      "text": "The transport of a VCD package MUST ensure that the package has not been altered or modified during transportation or validation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transport of a vcd package must ensure that the package has not been altered or modified during transportation or validation"
+    },
+    {
+      "req_id": "AUTO-0128",
+      "text": "Non-repudiation of origin of a VCD package MUST be supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "non repudiation of origin of a vcd package must be supported"
+    },
+    {
+      "req_id": "AUTO-0129",
+      "text": "Requirements: Authentication to VCD viewing system The VCD viewing system MUST provide a functionality to authenticate contracting authorities to view the data contained within a VCD package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements authentication to vcd viewing system the vcd viewing system must provide a functionality to authenticate contracting authorities to view the data contained within a vcd package"
+    },
+    {
+      "req_id": "AUTO-0130",
+      "text": "The authentication to the VCD viewing system SHOULD make use of single-sign-on interface and function in order to submit login data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the authentication to the vcd viewing system should make use of single sign on interface and function in order to submit login data"
+    },
+    {
+      "req_id": "AUTO-0131",
+      "text": "Requirements: View VCD The VCD viewing system MUST provide an interface that adequately displays various types of data formats contained within a single VCD package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements view vcd the vcd viewing system must provide an interface that adequately displays various types of data formats contained within a single vcd package"
+    },
+    {
+      "req_id": "AUTO-0132",
+      "text": "Any standard representation of the different types of data MUST be agreed upon the pilot partners.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any standard representation of the different types of data must be agreed upon the pilot partners"
+    },
+    {
+      "req_id": "AUTO-0133",
+      "text": "reverse engineering) to develop a standard representation of the different types of data SHOULD be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "reverse engineering to develop a standard representation of the different types of data should be defined"
+    },
+    {
+      "req_id": "AUTO-0134",
+      "text": "A method for the versioning of the development of this common standard schema SHOULD be found.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a method for the versioning of the development of this common standard schema should be found"
+    },
+    {
+      "req_id": "AUTO-0135",
+      "text": "Nevertheless it will be necessary to include other evidences that have to be provided semiautomatically or manually by the economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless it will be necessary to include other evidences that have to be provided semiautomatically or manually by the economic operator"
+    },
+    {
+      "req_id": "AUTO-0136",
+      "text": "When summarizing those points it can be generally stated that a VCD at stage 2 and beyond still relies on several manual processes that have to be generated by the economic operator and which cannot be automated in short or medium term.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "when summarizing those points it can be generally stated that a vcd at stage 2 and beyond still relies on several manual processes that have to be generated by the economic operator and which cannot be automated in short or medium term"
+    },
+    {
+      "req_id": "AUTO-0137",
+      "text": "Nevertheless a translation of the contents of evidentiary documents is not focussed at in this stage and has to be provided manually by the economic operator through adding translations into the VCD simple package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless a translation of the contents of evidentiary documents is not focussed at in this stage and has to be provided manually by the economic operator through adding translations into the vcd simple package"
+    },
+    {
+      "req_id": "AUTO-0138",
+      "text": "This functionality is useful for several reasons: Updating an existing VCD package whenever one or more evidences are outdated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this functionality is useful for several reasons updating an existing vcd package whenever one or more evidences are outdated"
+    },
+    {
+      "req_id": "AUTO-0139",
+      "text": "Embedding of context specific data Stage 2 delivers a VCD package containing required evidences as well as different kinds of data such as structural metadata, economic operator data or structural VCD package data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "embedding of context specific data stage 2 delivers a vcd package containing required evidences as well as different kinds of data such as structural metadata economic operator data or structural vcd package data"
+    },
+    {
+      "req_id": "AUTO-0140",
+      "text": "This should happen by exposing the most relevant key information of a given evidence at one glance.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this should happen by exposing the most relevant key information of a given evidence at one glance"
+    },
+    {
+      "req_id": "AUTO-0141",
+      "text": "When the context specific data cannot be provided by an issuing services in a machine interpretable form, there might be the necessity of contributions from the economic operator to complete context specific data or even the national VCD service providers who acts as intermediary (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "when the context specific data cannot be provided by an issuing services in a machine interpretable form there might be the necessity of contributions from the economic operator to complete context specific data or even the national vcd service providers who acts as intermediary e g"
+    },
+    {
+      "req_id": "AUTO-0142",
+      "text": "So it has to be carefully elaborated what kind of additional functionality or support should be implemented and what will be the scope of context specific data in terms of a VCD package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "so it has to be carefully elaborated what kind of additional functionality or support should be implemented and what will be the scope of context specific data in terms of a vcd package"
+    },
+    {
+      "req_id": "AUTO-0143",
+      "text": "It is important to understand that context specific data cannot be automatically extracted from unstructured data as scanned copies or text documents as this could lead to incorrect results due to the non-deterministic behaviours of such extraction mechanisms (OCR, etc).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is important to understand that context specific data cannot be automatically extracted from unstructured data as scanned copies or text documents as this could lead to incorrect results due to the non deterministic behaviours of such extraction mechanisms ocr etc"
+    },
+    {
+      "req_id": "AUTO-0144",
+      "text": "The enhanced and automated documents’ readability that comes from the context specific data must be compared to the local legal provisions and document checking practice adopted by contracting authorities.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the enhanced and automated documents readability that comes from the context specific data must be compared to the local legal provisions and document checking practice adopted by contracting authorities"
+    },
+    {
+      "req_id": "AUTO-0145",
+      "text": "Requirements: context specific data A VCD system MUST provide functionality to collect and process context specific data for evidence that has to be provided manually or semi-automatically by the issuing body, by the economic operator or any trusted third party.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements context specific data a vcd system must provide functionality to collect and process context specific data for evidence that has to be provided manually or semi automatically by the issuing body by the economic operator or any trusted third party"
+    },
+    {
+      "req_id": "AUTO-0146",
+      "text": "A VCD system MUST provide functionality to collect and process context specific data for evidence that has to be provided automatically by the issuing body.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a vcd system must provide functionality to collect and process context specific data for evidence that has to be provided automatically by the issuing body"
+    },
+    {
+      "req_id": "AUTO-0147",
+      "text": "A VCD system MUST provide IT-interfaces to issuing bodies which provide evidences in machine interpretable format.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a vcd system must provide it interfaces to issuing bodies which provide evidences in machine interpretable format"
+    },
+    {
+      "req_id": "AUTO-0148",
+      "text": "A VCD system MUST interact with the issuing bodies which provide evidences in machine interpretable format through IT-interfaces.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a vcd system must interact with the issuing bodies which provide evidences in machine interpretable format through it interfaces"
+    },
+    {
+      "req_id": "AUTO-0149",
+      "text": "A VCD system MUST provide a user interface to the issuing body to provide context specific data for an evidence in a structured form (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a vcd system must provide a user interface to the issuing body to provide context specific data for an evidence in a structured form e g"
+    },
+    {
+      "req_id": "AUTO-0150",
+      "text": "The VCD system MUST provide a functionality to validate the provided context specific data during the submission process of context specific data to ensure the data is consistent with the VCD advanced package schema.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide a functionality to validate the provided context specific data during the submission process of context specific data to ensure the data is consistent with the vcd advanced package schema"
+    },
+    {
+      "req_id": "AUTO-0151",
+      "text": "Interfaces MUST be defined to retrieve context specific data from issuing bodies either automatically or semi-automatically.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "interfaces must be defined to retrieve context specific data from issuing bodies either automatically or semi automatically"
+    },
+    {
+      "req_id": "AUTO-0152",
+      "text": "Interfaces SHOULD be defined that enable national VCD service providers to approve context specific data if they decide to take the role of a trusted third party.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "interfaces should be defined that enable national vcd service providers to approve context specific data if they decide to take the role of a trusted third party"
+    },
+    {
+      "req_id": "AUTO-0153",
+      "text": "The rule set derived from legal requirements concerning “evidence checking” MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the rule set derived from legal requirements concerning evidence checking must be defined"
+    },
+    {
+      "req_id": "AUTO-0154",
+      "text": "he rule set allowing for a Stage 3 mapping among concepts expressed by the “context specific data” MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "he rule set allowing for a stage 3 mapping among concepts expressed by the context specific data must be defined"
+    },
+    {
+      "req_id": "AUTO-0155",
+      "text": "The rule set derived from legal requirements concerning subcontracting and other consortium constellations MUST be defined A functionality to display context specific data SHOULD/MUST be included within any VCD.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the rule set derived from legal requirements concerning subcontracting and other consortium constellations must be defined a functionality to display context specific data should must be included within any vcd"
+    },
+    {
+      "req_id": "AUTO-0156",
+      "text": "Quality attributes: context specific data Any VCD advanced package MUST follow a common standard schema of context specific data that summarize and structure major information contained within context specific evidences.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quality attributes context specific data any vcd advanced package must follow a common standard schema of context specific data that summarize and structure major information contained within context specific evidences"
+    },
+    {
+      "req_id": "AUTO-0157",
+      "text": "Context specific data MUST be machine interpretable Evidences that have a simple structure and limited variety of contents MUST be included into the common standard schema first.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "context specific data must be machine interpretable evidences that have a simple structure and limited variety of contents must be included into the common standard schema first"
+    },
+    {
+      "req_id": "AUTO-0158",
+      "text": "WP2 SHOULD provide easy solutions for transforming the contents of context specific evidence into simple context specific representations (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "wp2 should provide easy solutions for transforming the contents of context specific evidence into simple context specific representations e g"
+    },
+    {
+      "req_id": "AUTO-0159",
+      "text": "A semantic definition of each element/class of the common standard schema of context specific data MUST be created and has to ensure a common understanding.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a semantic definition of each element class of the common standard schema of context specific data must be created and has to ensure a common understanding"
+    },
+    {
+      "req_id": "AUTO-0160",
+      "text": "A semantic definition of each element/class of the common standard schema of context specific data MUST ensure that these data is mutually recognized as replacement of the official translation of an evidences included.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a semantic definition of each element class of the common standard schema of context specific data must ensure that these data is mutually recognized as replacement of the official translation of an evidences included"
+    },
+    {
+      "req_id": "AUTO-0161",
+      "text": "A method and agreement procedure to develop a common standard schema of context specific data MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a method and agreement procedure to develop a common standard schema of context specific data must be defined"
+    },
+    {
+      "req_id": "AUTO-0162",
+      "text": "This procedure must cover the technical aspects of data analysis (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this procedure must cover the technical aspects of data analysis e g"
+    },
+    {
+      "req_id": "AUTO-0163",
+      "text": "which context specific data is required from contracting authorities or under which circumstances would they would replace certified translation of evidence by context specific data).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "which context specific data is required from contracting authorities or under which circumstances would they would replace certified translation of evidence by context specific data"
+    },
+    {
+      "req_id": "AUTO-0164",
+      "text": "Any common standard schema of context specific data classes MUST be agreed upon the pilot partners.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any common standard schema of context specific data classes must be agreed upon the pilot partners"
+    },
+    {
+      "req_id": "AUTO-0165",
+      "text": "Representation of context specific data SHOULD be available in multiple languages Every pilot partner MUST follow the common standard schema of context specific data by defining a national version of it.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "representation of context specific data should be available in multiple languages every pilot partner must follow the common standard schema of context specific data by defining a national version of it"
+    },
+    {
+      "req_id": "AUTO-0166",
+      "text": "A method for versioning the development of common standard schema of context specific data SHOULD be found.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a method for versioning the development of common standard schema of context specific data should be found"
+    },
+    {
+      "req_id": "AUTO-0167",
+      "text": "Requirements: Advanced VCD creation service A VCD system MUST provide a user-interface to the economic operator to initiate the creation of a VCD advanced package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements advanced vcd creation service a vcd system must provide a user interface to the economic operator to initiate the creation of a vcd advanced package"
+    },
+    {
+      "req_id": "AUTO-0168",
+      "text": "A VCD system MUST provide a user-interface to the economic operator to provide existing VCD packages of other economic operators when specific disclosure options have been activated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a vcd system must provide a user interface to the economic operator to provide existing vcd packages of other economic operators when specific disclosure options have been activated"
+    },
+    {
+      "req_id": "AUTO-0169",
+      "text": "Requirements: VCD re-compilation service A VCD system MUST provide a user-interface to the economic operator to initiate the recompilation of an existing VCD package into a VCD advanced package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirements vcd re compilation service a vcd system must provide a user interface to the economic operator to initiate the recompilation of an existing vcd package into a vcd advanced package"
+    },
+    {
+      "req_id": "AUTO-0170",
+      "text": "The contracting authority in turn can check the suitability of an Economic Operator by having a sufficient summary of the contents of a VCD in the required language.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the contracting authority in turn can check the suitability of an economic operator by having a sufficient summary of the contents of a vcd in the required language"
+    },
+    {
+      "req_id": "AUTO-0171",
+      "text": "One limitation which will be faced in the specification phase of the current project will be that it is unlikely, that a common and agreed upon standard schema of context specific data should be established across context specific networks (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "one limitation which will be faced in the specification phase of the current project will be that it is unlikely that a common and agreed upon standard schema of context specific data should be established across context specific networks e g"
+    },
+    {
+      "req_id": "AUTO-0172",
+      "text": "Thus the long term goal should be the development of this unified set of context specific data which is necessary to provide all the information a contracting authority wants to get out of evidences.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "thus the long term goal should be the development of this unified set of context specific data which is necessary to provide all the information a contracting authority wants to get out of evidences"
+    },
+    {
+      "req_id": "AUTO-0173",
+      "text": "Nevertheless, WP2 would like approve whether it is possible to use simplified representations of evidences expressed as context specific data to provide a unified representation of major contents.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless wp2 would like approve whether it is possible to use simplified representations of evidences expressed as context specific data to provide a unified representation of major contents"
+    },
+    {
+      "req_id": "AUTO-0174",
+      "text": "In any case the usage of context specific data cannot prevent and exclude specific needs from contracting authorities that may require concurrence of both, the original evidence including certified translation and context specific data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in any case the usage of context specific data cannot prevent and exclude specific needs from contracting authorities that may require concurrence of both the original evidence including certified translation and context specific data"
+    },
+    {
+      "req_id": "AUTO-0175",
+      "text": "The behaviour cannot be influenced since it is dependent on national requirements and legislation but the provision of context specific data within the VCD may lead to a change of current practices across borders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the behaviour cannot be influenced since it is dependent on national requirements and legislation but the provision of context specific data within the vcd may lead to a change of current practices across borders"
+    },
+    {
+      "req_id": "AUTO-0176",
+      "text": "Nevertheless such direct exchange is very difficult to implement technically because a lot of entities and attestation services have to be federated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless such direct exchange is very difficult to implement technically because a lot of entities and attestation services have to be federated"
+    },
+    {
+      "req_id": "AUTO-0177",
+      "text": "To avoid political and technical questions with regard to federated networks, the access to attestations services should be done indirectly through the national VCD service provider.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to avoid political and technical questions with regard to federated networks the access to attestations services should be done indirectly through the national vcd service provider"
+    },
+    {
+      "req_id": "AUTO-0178",
+      "text": "Nevertheless the use case description provides a short textual explanation and major requirements of this stage are mentioned.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless the use case description provides a short textual explanation and major requirements of this stage are mentioned"
+    },
+    {
+      "req_id": "AUTO-0179",
+      "text": "Afterwards the VCD system delivers the attestation to the contracting authority (retrieve attestation) or informs the economic about a request that cannot be handled adequately (conflict resolution).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "afterwards the vcd system delivers the attestation to the contracting authority retrieve attestation or informs the economic about a request that cannot be handled adequately conflict resolution"
+    },
+    {
+      "req_id": "AUTO-0180",
+      "text": "Feature: Mandate contracting authority The VCD system MUST provide functionality and an interface to the economic operator that enables him to mandate a certain contracting authority to request attestations on demand.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "feature mandate contracting authority the vcd system must provide functionality and an interface to the economic operator that enables him to mandate a certain contracting authority to request attestations on demand"
+    },
+    {
+      "req_id": "AUTO-0181",
+      "text": "Feature: Storing attestations and referencing to it The VCD system MUST detect which attestations can be used by this feature (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "feature storing attestations and referencing to it the vcd system must detect which attestations can be used by this feature e g"
+    },
+    {
+      "req_id": "AUTO-0182",
+      "text": "The VCD system MUST provide a functionality that enables National VCD Service Providers to store attestations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide a functionality that enables national vcd service providers to store attestations"
+    },
+    {
+      "req_id": "AUTO-0183",
+      "text": "A functionality for referencing to attestations MUST be implemented within the VCD system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a functionality for referencing to attestations must be implemented within the vcd system"
+    },
+    {
+      "req_id": "AUTO-0184",
+      "text": "The VCD system MUST ensure that a contracting authority is able to request attestations via the provided reference (including time-restrictions).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must ensure that a contracting authority is able to request attestations via the provided reference including time restrictions"
+    },
+    {
+      "req_id": "AUTO-0185",
+      "text": "The functionality for referencing to attestations within the VCD MUST be implemented, either VCD-specific or contracting authority-specific, in order to approve whether the contracting authority has sufficient rights for requesting the attestations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the functionality for referencing to attestations within the vcd must be implemented either vcd specific or contracting authority specific in order to approve whether the contracting authority has sufficient rights for requesting the attestations"
+    },
+    {
+      "req_id": "AUTO-0186",
+      "text": "VCD-specific or contracting authority-specific reference to attestations MUST be stored within the VCD system (processing instructions).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "vcd specific or contracting authority specific reference to attestations must be stored within the vcd system processing instructions"
+    },
+    {
+      "req_id": "AUTO-0187",
+      "text": "Feature: Retrieving attestations on demand The VCD system MUST provide a functionally to check whether a contracting authority has sufficient rights and has been mandated by the economic operator to retrieve attestations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "feature retrieving attestations on demand the vcd system must provide a functionally to check whether a contracting authority has sufficient rights and has been mandated by the economic operator to retrieve attestations"
+    },
+    {
+      "req_id": "AUTO-0188",
+      "text": "The VCD system MUST provide a functionality and an interface that enables contracting authorities to retrieve the attestation from the storage.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must provide a functionality and an interface that enables contracting authorities to retrieve the attestation from the storage"
+    },
+    {
+      "req_id": "AUTO-0189",
+      "text": "The VCD system MUST ensure that the attestation that is requested by the contracting authority is still valid at the time of awarding or when the Call for Tender is closed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd system must ensure that the attestation that is requested by the contracting authority is still valid at the time of awarding or when the call for tender is closed"
+    },
+    {
+      "req_id": "AUTO-0190",
+      "text": "Feature: Conflict resolution The VCD system MUST provide a functionality that initiates a conflict resolution process between economic operator and contracting authority if errors occur or when certain attestation or a translation cannot be delivered on demand.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "feature conflict resolution the vcd system must provide a functionality that initiates a conflict resolution process between economic operator and contracting authority if errors occur or when certain attestation or a translation cannot be delivered on demand"
+    },
+    {
+      "req_id": "AUTO-0191",
+      "text": "Quality attributes of VCD networked package There MUST be an access policy that is issued by the economic operator that mandates a contracting authority to request attestation from the national VCD service provider on demand.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quality attributes of vcd networked package there must be an access policy that is issued by the economic operator that mandates a contracting authority to request attestation from the national vcd service provider on demand"
+    },
+    {
+      "req_id": "AUTO-0192",
+      "text": "A general reference structure and syntax MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a general reference structure and syntax must be defined"
+    },
+    {
+      "req_id": "AUTO-0193",
+      "text": "National and local political commitments and service-level agreements MUST ensure that consensuses on roles and responsibilities are built with regard to this solution and in particular the National Service Providers who delivers attestations on demand.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "national and local political commitments and service level agreements must ensure that consensuses on roles and responsibilities are built with regard to this solution and in particular the national service providers who delivers attestations on demand"
+    },
+    {
+      "req_id": "AUTO-0194",
+      "text": "There MUST be a service-level agreement between the parties involved (Economic Operators, Contracting authorities, National Service Providers, and Trusted Attestation Service) about the response time of a delivery of attestations and data availability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there must be a service level agreement between the parties involved economic operators contracting authorities national service providers and trusted attestation service about the response time of a delivery of attestations and data availability"
+    },
+    {
+      "req_id": "AUTO-0195",
+      "text": "There MUST be a service-level agreement between the parties involved (Economic Operators, Contracting authorities, National Service Providers, and Trusted Attestation Service) about conflict resolution that describe what to do when errors occur or when attestation or translations cannot be delivered “on demand”.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there must be a service level agreement between the parties involved economic operators contracting authorities national service providers and trusted attestation service about conflict resolution that describe what to do when errors occur or when attestation or translations cannot be delivered on demand"
+    },
+    {
+      "req_id": "AUTO-0196",
+      "text": "The attestations where an agreement on context specific formats can be reached most easily SHOULD be included first into the network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the attestations where an agreement on context specific formats can be reached most easily should be included first into the network"
+    },
+    {
+      "req_id": "AUTO-0197",
+      "text": "WP2 SHOULD provide easy solutions for displaying context specific data and should enable their validation through validation values Legal systems MUST ensure that context specific data and validation values have an equivalent value to the provision of conventional / traditional attestations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "wp2 should provide easy solutions for displaying context specific data and should enable their validation through validation values legal systems must ensure that context specific data and validation values have an equivalent value to the provision of conventional traditional attestations"
+    },
+    {
+      "req_id": "AUTO-0198",
+      "text": "The National Service Providers SHOULD establish validation points in order to approve an economic operator in accordance with Article 52 (1) of Directive 2004/18/EC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the national service providers should establish validation points in order to approve an economic operator in accordance with article 52 1 of directive 2004 18 ec"
+    },
+    {
+      "req_id": "AUTO-0199",
+      "text": "The national procurement law MUST ensure that National Service Provider can act as national validation points in accordance with Article 52 (1) of Directive 2004/18/EC for economic operators.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the national procurement law must ensure that national service provider can act as national validation points in accordance with article 52 1 of directive 2004 18 ec for economic operators"
+    },
+    {
+      "req_id": "AUTO-0200",
+      "text": "Liability issues of the National Service Providers MUST be clarified when they act as national validation points in accordance with Article 52 (1) of Directive 2004/18/EC for economic operators.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "liability issues of the national service providers must be clarified when they act as national validation points in accordance with article 52 1 of directive 2004 18 ec for economic operators"
+    },
+    {
+      "req_id": "AUTO-0201",
+      "text": "National procedures with regard to Article 52 (1) of Directive 2004/18/EC MUST be mutually recognized and trusted in across borders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "national procedures with regard to article 52 1 of directive 2004 18 ec must be mutually recognized and trusted in across borders"
+    },
+    {
+      "req_id": "AUTO-0202",
+      "text": "Nevertheless some of them take a particular role for implementing stage 4: Stage1: Mapping of evidence through pre-VCD mapping tool.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless some of them take a particular role for implementing stage 4 stage1 mapping of evidence through pre vcd mapping tool"
+    },
+    {
+      "req_id": "AUTO-0203",
+      "text": "WP2 should also provide easy solutions for transforming complex information contained in attestations into simple representations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "wp2 should also provide easy solutions for transforming complex information contained in attestations into simple representations"
+    },
+    {
+      "req_id": "AUTO-0204",
+      "text": "To avoid this and several political as well data protection and privacy issues, the access to attestations should be done through a temporary storage hosted by the National Service Provider.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to avoid this and several political as well data protection and privacy issues the access to attestations should be done through a temporary storage hosted by the national service provider"
+    },
+    {
+      "req_id": "AUTO-0205",
+      "text": "We assume that the attestation must be valid when the call for tender is closed instead of pre-serving permanent validity of attestations at the temporary storage of the national VCD service provider.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "we assume that the attestation must be valid when the call for tender is closed instead of pre serving permanent validity of attestations at the temporary storage of the national vcd service provider"
+    },
+    {
+      "req_id": "AUTO-0206",
+      "text": "Nevertheless stage 4 provides guidance in how to connect both ideas in an easy way.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless stage 4 provides guidance in how to connect both ideas in an easy way"
+    },
+    {
+      "req_id": "AUTO-0207",
+      "text": "This includes rules with regard to tendering, submission and awarding including certificates and attestations that are typically required and their mapping to evidences and exclusion and selection criteria from a legal point of view.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this includes rules with regard to tendering submission and awarding including certificates and attestations that are typically required and their mapping to evidences and exclusion and selection criteria from a legal point of view"
+    },
+    {
+      "req_id": "AUTO-0208",
+      "text": "Any VCD solution should provide universal support for economic operators of any size.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any vcd solution should provide universal support for economic operators of any size"
+    },
+    {
+      "req_id": "AUTO-0209",
+      "text": "Testing of a VCD solution will be very important and should be done by reprocessing historical tenders in order to avoid problems of disqualification due to errors of applications.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "testing of a vcd solution will be very important and should be done by reprocessing historical tenders in order to avoid problems of disqualification due to errors of applications"
+    },
+    {
+      "req_id": "AUTO-0210",
+      "text": "However the choice which attestation is most appropriate should be left to the economic operator but this decision may be supported through displaying these different characteristics.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however the choice which attestation is most appropriate should be left to the economic operator but this decision may be supported through displaying these different characteristics"
+    },
+    {
+      "req_id": "AUTO-0211",
+      "text": "National solutions therefore may vary due to freedom of implementing national solutions but conformance to key issues should ensure their interoperability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "national solutions therefore may vary due to freedom of implementing national solutions but conformance to key issues should ensure their interoperability"
+    },
+    {
+      "req_id": "AUTO-0212",
+      "text": "A key issue for example is the pre-VCD mapping tool and it should be integrated into any national solutions either as a module or as interface to query results for the mapping of evidences among member states.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a key issue for example is the pre vcd mapping tool and it should be integrated into any national solutions either as a module or as interface to query results for the mapping of evidences among member states"
+    },
+    {
+      "req_id": "AUTO-0213",
+      "text": "In most cases we do not see great efforts for economic operators in two-phased since many countries only required the submission of self-declarations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in most cases we do not see great efforts for economic operators in two phased since many countries only required the submission of self declarations"
+    },
+    {
+      "req_id": "AUTO-0214",
+      "text": "Although such proof of conformance should rely on Articles 45 and 46 of directive 2004/18/EC first.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "although such proof of conformance should rely on articles 45 and 46 of directive 2004 18 ec first"
+    },
+    {
+      "req_id": "AUTO-0215",
+      "text": "Requirement A list of recognized public authorities that are able to issue certain attestations in a particular Member State MUST be established.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a list of recognized public authorities that are able to issue certain attestations in a particular member state must be established"
+    },
+    {
+      "req_id": "AUTO-0216",
+      "text": "Requirement A list of recognized private entities that are able to issue certain attestations in a particular Member State SHOULD be established.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a list of recognized private entities that are able to issue certain attestations in a particular member state should be established"
+    },
+    {
+      "req_id": "AUTO-0217",
+      "text": "Requirement Widely accepted national procedures and infrastructures SHOULD be utilized wherever possible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement widely accepted national procedures and infrastructures should be utilized wherever possible"
+    },
+    {
+      "req_id": "AUTO-0218",
+      "text": "national service provider) should ensure legitimacy in critical VCD processes of requesting, issuing, exchanging, collecting, assembling, proving and submitting evidence in order to increase the trust between the entities involved.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "national service provider should ensure legitimacy in critical vcd processes of requesting issuing exchanging collecting assembling proving and submitting evidence in order to increase the trust between the entities involved"
+    },
+    {
+      "req_id": "AUTO-0219",
+      "text": "Requirement A national authority MUST support critical processes in order to increase the trust between the entities involved.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a national authority must support critical processes in order to increase the trust between the entities involved"
+    },
+    {
+      "req_id": "AUTO-0220",
+      "text": "Any national pilot solution that will be developed using resources of PEPPOL must use the pre-VCD mapping tool in order to achieve the desired objectives.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any national pilot solution that will be developed using resources of peppol must use the pre vcd mapping tool in order to achieve the desired objectives"
+    },
+    {
+      "req_id": "AUTO-0221",
+      "text": "Nevertheless any stage may be implemented according to Article 52 if there is adequate legal basis within a country and if there is political commitment for doing so.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless any stage may be implemented according to article 52 if there is adequate legal basis within a country and if there is political commitment for doing so"
+    },
+    {
+      "req_id": "AUTO-0222",
+      "text": "Measurement National Service Provider does not have to approve the documents submitted by economic operators Requirement Any of the proposed stages SHOULD be applicable within a Member State who wishes to apply Article 52 and EFTA EEA Committee decision 68/2006.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement national service provider does not have to approve the documents submitted by economic operators requirement any of the proposed stages should be applicable within a member state who wishes to apply article 52 and efta eea committee decision 68 2006"
+    },
+    {
+      "req_id": "AUTO-0223",
+      "text": "Requirement A Member State MUST formally define an authority that is able to provide a proof of conformance to certain criteria if the Member State wishes to implement Article 52 or if Article 52 is already implemented.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a member state must formally define an authority that is able to provide a proof of conformance to certain criteria if the member state wishes to implement article 52 or if article 52 is already implemented"
+    },
+    {
+      "req_id": "AUTO-0224",
+      "text": "In cases below threshold the economic operator might send a direct request to the contracting authority in order to retrieve the required information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in cases below threshold the economic operator might send a direct request to the contracting authority in order to retrieve the required information"
+    },
+    {
+      "req_id": "AUTO-0225",
+      "text": "Requirement Any VCD system must have an interface to provide tender-specific data and (in particular the relevant criteria subset) in order to perform the mapping.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement any vcd system must have an interface to provide tender specific data and in particular the relevant criteria subset in order to perform the mapping"
+    },
+    {
+      "req_id": "AUTO-0226",
+      "text": "Scope of VCD application with regard to two-phased tendering Description The VCD is subject to the main submission of attestations and not to any pre-submission typically required in two-phased tendering.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "scope of vcd application with regard to two phased tendering description the vcd is subject to the main submission of attestations and not to any pre submission typically required in two phased tendering"
+    },
+    {
+      "req_id": "AUTO-0227",
+      "text": "Measurement Functionality and interface to select issuing services Economic Operators that act as Issuing Bodies Description Any VCD system relies on issuing services that cannot directly invoked electronically.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement functionality and interface to select issuing services economic operators that act as issuing bodies description any vcd system relies on issuing services that cannot directly invoked electronically"
+    },
+    {
+      "req_id": "AUTO-0228",
+      "text": "An Economic Operators must take care of collecting and preparing these evidences and to submit them to the VCD system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "an economic operators must take care of collecting and preparing these evidences and to submit them to the vcd system"
+    },
+    {
+      "req_id": "AUTO-0229",
+      "text": "Requirement An economic operator MUST be able to act as an issuing body for candidate statements or other evidence that cannot be directly or electronically retrieved by the VCD system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement an economic operator must be able to act as an issuing body for candidate statements or other evidence that cannot be directly or electronically retrieved by the vcd system"
+    },
+    {
+      "req_id": "AUTO-0230",
+      "text": "2009) Requirement The electronic procurement framework MUST support organizations of any size and industry.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement the electronic procurement framework must support organizations of any size and industry"
+    },
+    {
+      "req_id": "AUTO-0231",
+      "text": "To avoid those problems testing of VCD should be done by reprocessing historical tenders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to avoid those problems testing of vcd should be done by reprocessing historical tenders"
+    },
+    {
+      "req_id": "AUTO-0232",
+      "text": "Requirement The VCD solutions MUST be tested in specific cases by re-processing historical tenders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the vcd solutions must be tested in specific cases by re processing historical tenders"
+    },
+    {
+      "req_id": "AUTO-0233",
+      "text": "The testing SHOULD be repeated regularly and especially after up-dating of software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the testing should be repeated regularly and especially after up dating of software"
+    },
+    {
+      "req_id": "AUTO-0234",
+      "text": "Stakeholder MUST be found in order to re-process historical tenders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "stakeholder must be found in order to re process historical tenders"
+    },
+    {
+      "req_id": "AUTO-0235",
+      "text": "Such documents find also application in tendering procedures and shall be part of VCD.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "such documents find also application in tendering procedures and shall be part of vcd"
+    },
+    {
+      "req_id": "AUTO-0236",
+      "text": "This includes for example the level of completeness of a VCD and a pre-VCD mapping tool, principles for including attestations, the use of placeholders for evidences that cannot be further classified, the specification of semantics and the visualization of a VCD package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this includes for example the level of completeness of a vcd and a pre vcd mapping tool principles for including attestations the use of placeholders for evidences that cannot be further classified the specification of semantics and the visualization of a vcd package"
+    },
+    {
+      "req_id": "AUTO-0237",
+      "text": "Relevant standards, methodologies and initiatives for the VCD package The following subsections contain major standards and methodologies that shall be used for creating a VCD package.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "relevant standards methodologies and initiatives for the vcd package the following subsections contain major standards and methodologies that shall be used for creating a vcd package"
+    },
+    {
+      "req_id": "AUTO-0238",
+      "text": "Metadata standards Tagged records, information and data can be processed by independent systems and applications only if the constraining tags or metadata are recognized by the different processing parties.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "metadata standards tagged records information and data can be processed by independent systems and applications only if the constraining tags or metadata are recognized by the different processing parties"
+    },
+    {
+      "req_id": "AUTO-0239",
+      "text": "The purpose of ISO/IEC 11179 is to give concrete guidance on the formulation and maintenance of discrete data element descriptions and semantic content (metadata) that shall be used to formulate data elements in a consistent, standardized manner.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the purpose of iso iec 11179 is to give concrete guidance on the formulation and maintenance of discrete data element descriptions and semantic content metadata that shall be used to formulate data elements in a consistent standardized manner"
+    },
+    {
+      "req_id": "AUTO-0240",
+      "text": "“To run real electronic business transactions without human intervention, semantic interoperability must be achieved.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to run real electronic business transactions without human intervention semantic interoperability must be achieved"
+    },
+    {
+      "req_id": "AUTO-0241",
+      "text": "Semantic interoperability should apply to all documents related with electronic procurement.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "semantic interoperability should apply to all documents related with electronic procurement"
+    },
+    {
+      "req_id": "AUTO-0242",
+      "text": "It is required to work on the semantic interoperability for electronic attestations and certificates that requires not only semantic alignment but legal alignment in Europe.”(Bausa O.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is required to work on the semantic interoperability for electronic attestations and certificates that requires not only semantic alignment but legal alignment in europe bausa o"
+    },
+    {
+      "req_id": "AUTO-0243",
+      "text": "2009) Requirement Evidential documents exchanged between parties MUST be semantically harmonized in order to be processed electronically.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement evidential documents exchanged between parties must be semantically harmonized in order to be processed electronically"
+    },
+    {
+      "req_id": "AUTO-0244",
+      "text": "Correspondence between national and European criteria Description National criteria for qualitative selection and exclusion should be formulated in a way that they can be mapped to European criteria for qualitative selection and exclusion mentioned by the Articles 45-50.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "correspondence between national and european criteria description national criteria for qualitative selection and exclusion should be formulated in a way that they can be mapped to european criteria for qualitative selection and exclusion mentioned by the articles 45 50"
+    },
+    {
+      "req_id": "AUTO-0245",
+      "text": "Requirement National criteria for qualitative selection and exclusion MUST correspond to European criteria which are derived from Article 45-50 and which are partially described in the Eligibility of Tenders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement national criteria for qualitative selection and exclusion must correspond to european criteria which are derived from article 45 50 and which are partially described in the eligibility of tenders"
+    },
+    {
+      "req_id": "AUTO-0246",
+      "text": "Measurement Specialization Relationship Requirement National criteria SHOULD be consistent among themselves and with European criteria.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement specialization relationship requirement national criteria should be consistent among themselves and with european criteria"
+    },
+    {
+      "req_id": "AUTO-0247",
+      "text": "Requirement Any VCD instance MUST be specific with regards to a certain economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement any vcd instance must be specific with regards to a certain economic operator"
+    },
+    {
+      "req_id": "AUTO-0248",
+      "text": "Any VCD instance SHOULD be specific with regards to a certain tender.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any vcd instance should be specific with regards to a certain tender"
+    },
+    {
+      "req_id": "AUTO-0249",
+      "text": "Requirement When implementing any tool, system or service WP2 MUST focus on mandatory requirements and evidences mentioned in Articles 45 and 46 first since theses Articles are not tender-specific and therewith relevant for nearly all tenders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement when implementing any tool system or service wp2 must focus on mandatory requirements and evidences mentioned in articles 45 and 46 first since theses articles are not tender specific and therewith relevant for nearly all tenders"
+    },
+    {
+      "req_id": "AUTO-0250",
+      "text": "Measurement Any definition, specification, modelling or implementation will first focus on Article 45 to 46 Requirement The mapping between evidences via requirements MUST have set a primary focus on the mandatory requirements and evidences of a VCD.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement any definition specification modelling or implementation will first focus on article 45 to 46 requirement the mapping between evidences via requirements must have set a primary focus on the mandatory requirements and evidences of a vcd"
+    },
+    {
+      "req_id": "AUTO-0251",
+      "text": "Measurement Conceptual definition of placeholders with the VCD system and mapping Semantics of evidence Description The VCD system should provide a functionality that allows issuing bodies to submit evidence to it.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement conceptual definition of placeholders with the vcd system and mapping semantics of evidence description the vcd system should provide a functionality that allows issuing bodies to submit evidence to it"
+    },
+    {
+      "req_id": "AUTO-0252",
+      "text": "Those interfaces should also provide the possibility to describe structural data, context specific data and where applicable validation values of the evidence along with common semantics.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "those interfaces should also provide the possibility to describe structural data context specific data and where applicable validation values of the evidence along with common semantics"
+    },
+    {
+      "req_id": "AUTO-0253",
+      "text": "Requirement The pre-VCD mapping tool (Stage 1) MUST be filled with instances (defined) by every Member State since Stage 1 is a precondition for any other stage.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the pre vcd mapping tool stage 1 must be filled with instances defined by every member state since stage 1 is a precondition for any other stage"
+    },
+    {
+      "req_id": "AUTO-0254",
+      "text": "Measurement Key concepts such as structural data of evidence applied to VCD package Requirement Stage 3 (VCD advanced package) and stage 4 (VCD networked package) introduce a set of optional functions that SHOULD be considered by each Member State when implementing a VCD.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement key concepts such as structural data of evidence applied to vcd package requirement stage 3 vcd advanced package and stage 4 vcd networked package introduce a set of optional functions that should be considered by each member state when implementing a vcd"
+    },
+    {
+      "req_id": "AUTO-0255",
+      "text": "Requirement The stages are logically built upon each other but it MUST be possible to implement certain features of stage 4 if the necessary requirements for this are fulfilled in the lower stages even if maybe not all requirements are fulfilled in stage 3.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the stages are logically built upon each other but it must be possible to implement certain features of stage 4 if the necessary requirements for this are fulfilled in the lower stages even if maybe not all requirements are fulfilled in stage 3"
+    },
+    {
+      "req_id": "AUTO-0256",
+      "text": "certified “Yes/No” statements) should only be applied to networks where sufficient context specific data is available in order to approve this value.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "certified yes no statements should only be applied to networks where sufficient context specific data is available in order to approve this value"
+    },
+    {
+      "req_id": "AUTO-0257",
+      "text": "The validation value should be able to prove conformance to criteria of qualitative exclusion and selection unambiguously.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the validation value should be able to prove conformance to criteria of qualitative exclusion and selection unambiguously"
+    },
+    {
+      "req_id": "AUTO-0258",
+      "text": "This principle should be applied wherever possible for example: • The economic operator has to prove that he paid fiscal taxes according to national regulations – in this case a “Yes/No statement” will be sufficient.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this principle should be applied wherever possible for example the economic operator has to prove that he paid fiscal taxes according to national regulations in this case a yes no statement will be sufficient"
+    },
+    {
+      "req_id": "AUTO-0259",
+      "text": "Requirement If attestations are described sufficiently in multiple lingual versions they SHOULD be included first to stages 3 and 4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement if attestations are described sufficiently in multiple lingual versions they should be included first to stages 3 and 4"
+    },
+    {
+      "req_id": "AUTO-0260",
+      "text": "provide balance sheet or extracts from it in order to proof its economic or financial standing) then the validation value cannot be applied.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "provide balance sheet or extracts from it in order to proof its economic or financial standing then the validation value cannot be applied"
+    },
+    {
+      "req_id": "AUTO-0261",
+      "text": "As it is quite complex to establish a common and unique classification scheme cross-border and cross-sector, business document instances should be carry metadata about classification schemes they use.” (Bausa O.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "as it is quite complex to establish a common and unique classification scheme cross border and cross sector business document instances should be carry metadata about classification schemes they use bausa o"
+    },
+    {
+      "req_id": "AUTO-0262",
+      "text": "2009) Requirement Classification schemes for goods, services and code lists SHOULD be publicly available and identified in the document objects.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement classification schemes for goods services and code lists should be publicly available and identified in the document objects"
+    },
+    {
+      "req_id": "AUTO-0263",
+      "text": "The VCD package should ensure equal treatment of foreign economic operators by providing a tool to submit evidence from one member state to another.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd package should ensure equal treatment of foreign economic operators by providing a tool to submit evidence from one member state to another"
+    },
+    {
+      "req_id": "AUTO-0264",
+      "text": "The contracting authorities shall recognise equivalent certificates from bodies established in other Member States.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the contracting authorities shall recognise equivalent certificates from bodies established in other member states"
+    },
+    {
+      "req_id": "AUTO-0265",
+      "text": "They shall also accept other equivalent means of proof” [(EC 30.04.2004),p.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "they shall also accept other equivalent means of proof ec 30 04 2004 p"
+    },
+    {
+      "req_id": "AUTO-0266",
+      "text": "Requirement The VCD SHOULD support that economic operators from foreign member states may not be treated harder than own member state’s economic operators.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the vcd should support that economic operators from foreign member states may not be treated harder than own member state s economic operators"
+    },
+    {
+      "req_id": "AUTO-0267",
+      "text": "The Call for Tender should contain the definition of specific criteria on qualitative selection and exclusion that are relevant to this particular procurement.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the call for tender should contain the definition of specific criteria on qualitative selection and exclusion that are relevant to this particular procurement"
+    },
+    {
+      "req_id": "AUTO-0268",
+      "text": "In cases below threshold the economic operator might send a direct request to the procurer in order to retrieve the required information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in cases below threshold the economic operator might send a direct request to the procurer in order to retrieve the required information"
+    },
+    {
+      "req_id": "AUTO-0269",
+      "text": "and subsection 3.1.2.9: “Provision of criteria subset by the Economic Operator” Requirement The contracting authority SHOULD specify a subset of evidences from the superset evidences that are relevant to a specific Call for Tender.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "and subsection 3 1 2 9 provision of criteria subset by the economic operator requirement the contracting authority should specify a subset of evidences from the superset evidences that are relevant to a specific call for tender"
+    },
+    {
+      "req_id": "AUTO-0270",
+      "text": "Measurement Definition of the legal basis Scope of mutual recognition Description Description Article 52(5) states “that contracting authorities shall recognise equivalent certificates from bodies established in other Member States.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement definition of the legal basis scope of mutual recognition description description article 52 5 states that contracting authorities shall recognise equivalent certificates from bodies established in other member states"
+    },
+    {
+      "req_id": "AUTO-0271",
+      "text": "They shall also accept other equivalent means of proof” (EC 30.04.2004).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "they shall also accept other equivalent means of proof ec 30 04 2004"
+    },
+    {
+      "req_id": "AUTO-0272",
+      "text": "Which role trusted third parties (TTP) must take in this respect (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "which role trusted third parties ttp must take in this respect e g"
+    },
+    {
+      "req_id": "AUTO-0273",
+      "text": "Measurement Qualitative legal specification on the scope of mutual recognition Mutual recognition and candidate statements Description Which roles do candidate statements take in general and specifically as replacement for attestations that cannot be provided?",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement qualitative legal specification on the scope of mutual recognition mutual recognition and candidate statements description which roles do candidate statements take in general and specifically as replacement for attestations that cannot be provided"
+    },
+    {
+      "req_id": "AUTO-0274",
+      "text": "Thereby the evidences provided by economic operator should be considered of equal value as evidences provided by a traditional issuing body if equivalence is missing Requirement It has to be defined which method and concept should be applied if there are missing attestations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "thereby the evidences provided by economic operator should be considered of equal value as evidences provided by a traditional issuing body if equivalence is missing requirement it has to be defined which method and concept should be applied if there are missing attestations"
+    },
+    {
+      "req_id": "AUTO-0275",
+      "text": "certified “Yes/No” statements) instead of delivering an attestation physically (stage 4 specific) it MUST ensure that this provision is legally allowed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "certified yes no statements instead of delivering an attestation physically stage 4 specific it must ensure that this provision is legally allowed"
+    },
+    {
+      "req_id": "AUTO-0276",
+      "text": "Requirement The legal foundation for exchanging validation values SHOULD be given in the home Member States in order to support mutual recognition across Member States.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the legal foundation for exchanging validation values should be given in the home member states in order to support mutual recognition across member states"
+    },
+    {
+      "req_id": "AUTO-0277",
+      "text": "Several formal legal requirements have to be answered previously in order to define the scope of such European Service Provider Requirement The legal status and legitimacy of the European Service Provider MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "several formal legal requirements have to be answered previously in order to define the scope of such european service provider requirement the legal status and legitimacy of the european service provider must be defined"
+    },
+    {
+      "req_id": "AUTO-0278",
+      "text": "Measurement Formal establishment of the European Service Provider Requirements The responsibility of the European Service Provider MUST be defined (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement formal establishment of the european service provider requirements the responsibility of the european service provider must be defined e g"
+    },
+    {
+      "req_id": "AUTO-0279",
+      "text": "The liability of the European Service Provider MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the liability of the european service provider must be defined"
+    },
+    {
+      "req_id": "AUTO-0280",
+      "text": "Measurement Definition of the legal basis for the establishment of such a Service Provider Requirements The legal regulation applicable for the European Service Provider MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement definition of the legal basis for the establishment of such a service provider requirements the legal regulation applicable for the european service provider must be defined"
+    },
+    {
+      "req_id": "AUTO-0281",
+      "text": "Measurement Definition of the legal basis for the establishment of such Service Provider Requirements A suitable way to establish the relevant regulation for the European Service Provider MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement definition of the legal basis for the establishment of such service provider requirements a suitable way to establish the relevant regulation for the european service provider must be defined"
+    },
+    {
+      "req_id": "AUTO-0282",
+      "text": "Several formal legal requirements have to be answered previously in order to define the scope of such a National Service Provider Requirement The legal status and legitimacy of the National Service Provider MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "several formal legal requirements have to be answered previously in order to define the scope of such a national service provider requirement the legal status and legitimacy of the national service provider must be defined"
+    },
+    {
+      "req_id": "AUTO-0283",
+      "text": "Measurement Formal establishment of the National Service Provider Requirements The responsibility and the related processes of the National Service Provider MUST be defined (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement formal establishment of the national service provider requirements the responsibility and the related processes of the national service provider must be defined e g"
+    },
+    {
+      "req_id": "AUTO-0284",
+      "text": "The liability of the National Service Provider (depending on its legal status) MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the liability of the national service provider depending on its legal status must be defined"
+    },
+    {
+      "req_id": "AUTO-0285",
+      "text": "Measurement Definition of the legal basis for the establishment of such Service Provider Requirements The legal regulation applicable for the National Service Provider MUST be defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement definition of the legal basis for the establishment of such service provider requirements the legal regulation applicable for the national service provider must be defined"
+    },
+    {
+      "req_id": "AUTO-0286",
+      "text": "Measurement Definition of the legal basis for the establishment of such a Service Provider Requirement A suitable way to establish the relevant regulations for the National Service Provider MUST be defined (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measurement definition of the legal basis for the establishment of such a service provider requirement a suitable way to establish the relevant regulations for the national service provider must be defined e g"
+    },
+    {
+      "req_id": "AUTO-0287",
+      "text": "Requirement Regulations concerning monetary aspects of the VCD service provision MUST be defined, therefore related legal regulations (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement regulations concerning monetary aspects of the vcd service provision must be defined therefore related legal regulations e g"
+    },
+    {
+      "req_id": "AUTO-0288",
+      "text": "competition protection act) MUST be considered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "competition protection act must be considered"
+    },
+    {
+      "req_id": "AUTO-0289",
+      "text": "Requirement Special legal regulations for evidences MUST be considered (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement special legal regulations for evidences must be considered e g"
+    },
+    {
+      "req_id": "AUTO-0290",
+      "text": "Requirement Regulations for handling the non-existence of selected evidence requested in a MS MUST be defined and made operational.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement regulations for handling the non existence of selected evidence requested in a ms must be defined and made operational"
+    },
+    {
+      "req_id": "AUTO-0291",
+      "text": "Requirement Relevant regulations of national data protection acts MUST be analysed and considered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement relevant regulations of national data protection acts must be analysed and considered"
+    },
+    {
+      "req_id": "AUTO-0292",
+      "text": "Additional requirements for cross-border data exchange MUST be analysed and considered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "additional requirements for cross border data exchange must be analysed and considered"
+    },
+    {
+      "req_id": "AUTO-0293",
+      "text": "Requirement It MUST be clarified which prospects and limitations exists within a Member State to separate a VCD package from the tender itself.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement it must be clarified which prospects and limitations exists within a member state to separate a vcd package from the tender itself"
+    },
+    {
+      "req_id": "AUTO-0294",
+      "text": "Requirement A trust model and trust system MUST be defined from a legal point of view for every process which includes the roles and responsibilities of the entities involved.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a trust model and trust system must be defined from a legal point of view for every process which includes the roles and responsibilities of the entities involved"
+    },
+    {
+      "req_id": "AUTO-0295",
+      "text": "Directive 2004/18 states that the public procurement procedures and the rules applicable to service contests require a level of security and confidentiality higher than that required by Directives.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "directive 2004 18 states that the public procurement procedures and the rules applicable to service contests require a level of security and confidentiality higher than that required by directives"
+    },
+    {
+      "req_id": "AUTO-0296",
+      "text": "Accordingly, the devices for the electronic receipt of offers, requests to participate and plans and projects should comply with specific additional requirements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "accordingly the devices for the electronic receipt of offers requests to participate and plans and projects should comply with specific additional requirements"
+    },
+    {
+      "req_id": "AUTO-0297",
+      "text": "To this end, use of electronic signatures, in particular advanced electronic signatures, should, as far as possible, be encouraged.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to this end use of electronic signatures in particular advanced electronic signatures should as far as possible be encouraged"
+    },
+    {
+      "req_id": "AUTO-0298",
+      "text": "2009) Requirement Electronic signature, with the same legal meaning of handwritten signature, SHOULD be encouraged in cross-border scenario.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement electronic signature with the same legal meaning of handwritten signature should be encouraged in cross border scenario"
+    },
+    {
+      "req_id": "AUTO-0299",
+      "text": "mandatory usage of an e-signature) MUST be considered (especially regulations from national procurement act and directive 2004/18/EC).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "mandatory usage of an e signature must be considered especially regulations from national procurement act and directive 2004 18 ec"
+    },
+    {
+      "req_id": "AUTO-0300",
+      "text": "Requirement A process for document handling compliant with the relevant legal regulations MUST be defined (especially with respect to the data protection acts).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a process for document handling compliant with the relevant legal regulations must be defined especially with respect to the data protection acts"
+    },
+    {
+      "req_id": "AUTO-0301",
+      "text": "Technical Framework (Infrastructure specific) Overview of technical framework This chapter shall include technical requirements that are essential for submitting a VCD via the PEPPOL infrastructures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "technical framework infrastructure specific overview of technical framework this chapter shall include technical requirements that are essential for submitting a vcd via the peppol infrastructures"
+    },
+    {
+      "req_id": "AUTO-0302",
+      "text": "Therefore the governing models of WP8 and WP2 should be aligned.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "therefore the governing models of wp8 and wp2 should be aligned"
+    },
+    {
+      "req_id": "AUTO-0303",
+      "text": "Time-stamping shall ensure that the submission of a VCD is adequately documented for example to verify that it has been sent or received previously to the closure of a call for tender.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "time stamping shall ensure that the submission of a vcd is adequately documented for example to verify that it has been sent or received previously to the closure of a call for tender"
+    },
+    {
+      "req_id": "AUTO-0304",
+      "text": "In order to obtain trust, the VCD services should use certified time stamps.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to obtain trust the vcd services should use certified time stamps"
+    },
+    {
+      "req_id": "AUTO-0305",
+      "text": "This shall ensure that unauthorized usage of an individuals’ identity is avoided.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this shall ensure that unauthorized usage of an individuals identity is avoided"
+    },
+    {
+      "req_id": "AUTO-0306",
+      "text": "Overall we see a need for commonly monitored identity and access management in particular for all national VCD solutions and for the PEPPOL infrastructure thus both approaches should be aligned and should make use of the same mechanisms through for example single-sign-on functionality.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "overall we see a need for commonly monitored identity and access management in particular for all national vcd solutions and for the peppol infrastructure thus both approaches should be aligned and should make use of the same mechanisms through for example single sign on functionality"
+    },
+    {
+      "req_id": "AUTO-0307",
+      "text": "Apart from functionalities like addressability and discovery, the infrastructure should provide access points to support the actors or services to connect to the infrastructure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "apart from functionalities like addressability and discovery the infrastructure should provide access points to support the actors or services to connect to the infrastructure"
+    },
+    {
+      "req_id": "AUTO-0308",
+      "text": "Thus also the VCD should be able to be submitted through the PEPPOL infrastructure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "thus also the vcd should be able to be submitted through the peppol infrastructure"
+    },
+    {
+      "req_id": "AUTO-0309",
+      "text": "especially to maintain and sustain a pre-VCD mapping tool in long term and therewith to ensure (re-)liable functions) The dedicated governing model should have the necessary status and power to govern its assigned functions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "especially to maintain and sustain a pre vcd mapping tool in long term and therewith to ensure re liable functions the dedicated governing model should have the necessary status and power to govern its assigned functions"
+    },
+    {
+      "req_id": "AUTO-0310",
+      "text": "Requirement It MUST be clarified how the governance model of WP2 fits into the overall governance model of WP8.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement it must be clarified how the governance model of wp2 fits into the overall governance model of wp8"
+    },
+    {
+      "req_id": "AUTO-0311",
+      "text": "Requirement WP2 stakeholders MUST be authenticated to the VCD system and for the PEPPOL infrastructure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement wp2 stakeholders must be authenticated to the vcd system and for the peppol infrastructure"
+    },
+    {
+      "req_id": "AUTO-0312",
+      "text": "Requirement The identity and access management procedures for creating a VCD account SHOULD be harmonized with the registration procedure of the overall infrastructure provided by WP 8.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the identity and access management procedures for creating a vcd account should be harmonized with the registration procedure of the overall infrastructure provided by wp 8"
+    },
+    {
+      "req_id": "AUTO-0313",
+      "text": "Requirement A single-sign-on SHOULD be implemented in order to allow identity and access management across different systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a single sign on should be implemented in order to allow identity and access management across different systems"
+    },
+    {
+      "req_id": "AUTO-0314",
+      "text": "Requirement A method MUST be found how to allocate identifiers to the participants that use the infrastructure for transportation of VCDs and related services.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a method must be found how to allocate identifiers to the participants that use the infrastructure for transportation of vcds and related services"
+    },
+    {
+      "req_id": "AUTO-0315",
+      "text": "2009) Requirement Every party participating MUST be uniquely identifiable Addressability Description “As per the wide deployment of the Internet and the web, most electronic Government services have been focused on the provision of services through websites.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement every party participating must be uniquely identifiable addressability description as per the wide deployment of the internet and the web most electronic government services have been focused on the provision of services through websites"
+    },
+    {
+      "req_id": "AUTO-0316",
+      "text": "Those business processes, such as the public procurement processes, can be run between applications, so no human intervention should be enforced to those organizations with automated procurement systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "those business processes such as the public procurement processes can be run between applications so no human intervention should be enforced to those organizations with automated procurement systems"
+    },
+    {
+      "req_id": "AUTO-0317",
+      "text": "2009) Requirement Every party participating SHOULD have a secure and verifiable electronic address.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement every party participating should have a secure and verifiable electronic address"
+    },
+    {
+      "req_id": "AUTO-0318",
+      "text": "2009) Requirement In stage 4 it MUST be possible to discover the verified electronic address for an identified party.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement in stage 4 it must be possible to discover the verified electronic address for an identified party"
+    },
+    {
+      "req_id": "AUTO-0319",
+      "text": "Requirement It MUST be clarified whether the possibility exist to have access to web clients via the infrastructure in order to have access to specific web services which depend upon functionalities provided by the infrastructure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement it must be clarified whether the possibility exist to have access to web clients via the infrastructure in order to have access to specific web services which depend upon functionalities provided by the infrastructure"
+    },
+    {
+      "req_id": "AUTO-0320",
+      "text": "Requirement It MUST be clarified whether tendering platforms enable a separated submission of a VCD and the bid itself.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement it must be clarified whether tendering platforms enable a separated submission of a vcd and the bid itself"
+    },
+    {
+      "req_id": "AUTO-0321",
+      "text": "Requirement The PEPPOL infrastructure MUST have the capability to submit a VCD to a contracting authority or tendering platform.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the peppol infrastructure must have the capability to submit a vcd to a contracting authority or tendering platform"
+    },
+    {
+      "req_id": "AUTO-0322",
+      "text": "Requirement The PEPPOL infrastructure SHOULD have the capability to submit a bid which contains a VCD.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the peppol infrastructure should have the capability to submit a bid which contains a vcd"
+    },
+    {
+      "req_id": "AUTO-0323",
+      "text": "Specifically, contracting authorities must provide a way to receive electronic tenders and ensure those electronic tenders are not accessed until the prescribed time for opening them.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "specifically contracting authorities must provide a way to receive electronic tenders and ensure those electronic tenders are not accessed until the prescribed time for opening them"
+    },
+    {
+      "req_id": "AUTO-0324",
+      "text": "2009) Requirement It MUST be possible to guarantee confidentiality for specific documents.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement it must be possible to guarantee confidentiality for specific documents"
+    },
+    {
+      "req_id": "AUTO-0325",
+      "text": "The e-tendering platform must offer download functionality for forms and other material to be filled in, signed, and returned by an economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the e tendering platform must offer download functionality for forms and other material to be filled in signed and returned by an economic operator"
+    },
+    {
+      "req_id": "AUTO-0326",
+      "text": "Validation services may be chained in order to serve requests that cannot be handled by the “local” validation service.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "validation services may be chained in order to serve requests that cannot be handled by the local validation service"
+    },
+    {
+      "req_id": "AUTO-0327",
+      "text": "Requirement It MUST be possible to apply the validation service provided by WP1 to a VCD in order to enable economic operators to guarantee data integrity and confidentiality of a VCD.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement it must be possible to apply the validation service provided by wp1 to a vcd in order to enable economic operators to guarantee data integrity and confidentiality of a vcd"
+    },
+    {
+      "req_id": "AUTO-0328",
+      "text": "Requirement It MUST be clarified whether the VCD can use the validation service of WP1 if the transportation infrastructure is not used by an economic operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement it must be clarified whether the vcd can use the validation service of wp1 if the transportation infrastructure is not used by an economic operator"
+    },
+    {
+      "req_id": "AUTO-0329",
+      "text": "The transactions must be performed with high level of security and reliability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transactions must be performed with high level of security and reliability"
+    },
+    {
+      "req_id": "AUTO-0330",
+      "text": "it must be ensured that business documents are actually delivered to the recipient party.” (Bausa O.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must be ensured that business documents are actually delivered to the recipient party bausa o"
+    },
+    {
+      "req_id": "AUTO-0331",
+      "text": "2009) Requirement Transport mechanisms between party’s addresses MUST be reliable.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2009 requirement transport mechanisms between party s addresses must be reliable"
+    },
+    {
+      "req_id": "AUTO-0332",
+      "text": "The transactions must be performed with high level of security.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transactions must be performed with high level of security"
+    },
+    {
+      "req_id": "AUTO-0333",
+      "text": "it must be ensured that third parties cannot intercept and read or modify the business documents.” (Bausa O.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must be ensured that third parties cannot intercept and read or modify the business documents bausa o"
+    },
+    {
+      "req_id": "AUTO-0334",
+      "text": "Requirement Transport mechanisms between party’s addresses MUST be secure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement transport mechanisms between party s addresses must be secure"
+    },
+    {
+      "req_id": "AUTO-0335",
+      "text": "Despite legal issues about the integrity of certain documents such as the electronic invoices, it should be a general rule to assure the integrity of all documents exchanged between partners.” (Bausa O.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "despite legal issues about the integrity of certain documents such as the electronic invoices it should be a general rule to assure the integrity of all documents exchanged between partners bausa o"
+    },
+    {
+      "req_id": "AUTO-0336",
+      "text": "Requirement It MUST be assured that business document instances are consistent and correct during transportation, validation or transformation operations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement it must be assured that business document instances are consistent and correct during transportation validation or transformation operations"
+    },
+    {
+      "req_id": "AUTO-0337",
+      "text": "Non-repudiation of origin Description “In electronic procurement, some processes require to ensure that the sender of an electronic document cannot repudiate its validity“ (Bausa O.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "non repudiation of origin description in electronic procurement some processes require to ensure that the sender of an electronic document cannot repudiate its validity bausa o"
+    },
+    {
+      "req_id": "AUTO-0338",
+      "text": "Requirement Authentication of origin for business document instances MUST be supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement authentication of origin for business document instances must be supported"
+    },
+    {
+      "req_id": "AUTO-0339",
+      "text": "Requirement Time stamping SHOULD be applied in some processes to certify relevant date and time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement time stamping should be applied in some processes to certify relevant date and time"
+    },
+    {
+      "req_id": "AUTO-0340",
+      "text": "Requirement The electronic procurement process MUST have an audit trailing to ensure transparency for both parties.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement the electronic procurement process must have an audit trailing to ensure transparency for both parties"
+    },
+    {
+      "req_id": "AUTO-0341",
+      "text": "Every partner of this work package should therefore fill the pre-VCD mapping tool with national instances and define the mapping to European criteria.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "every partner of this work package should therefore fill the pre vcd mapping tool with national instances and define the mapping to european criteria"
+    },
+    {
+      "req_id": "AUTO-0342",
+      "text": "It is used to infer conclusions that are not explicitly stated but are consistent with and required by a known set of data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is used to infer conclusions that are not explicitly stated but are consistent with and required by a known set of data"
+    },
+    {
+      "req_id": "AUTO-0343",
+      "text": "This ontology is the logic basis in order to orchestrate the necessary services collecting the required evidences for a given tender.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this ontology is the logic basis in order to orchestrate the necessary services collecting the required evidences for a given tender"
+    },
+    {
+      "req_id": "AUTO-0344",
+      "text": "osSso Machine This component interprets the international rule set (ontology), generates a list of service to be called in order to furnish the required evidences for the given criteria and passes the resulting service chain to the SOA engine.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "ossso machine this component interprets the international rule set ontology generates a list of service to be called in order to furnish the required evidences for the given criteria and passes the resulting service chain to the soa engine"
+    },
+    {
+      "req_id": "AUTO-0345",
+      "text": "The osSso machine is the core component of the Austrian VCD implementation and ensures the required flexibility described above through direct interpretation of the ontology without the need of programming.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the ossso machine is the core component of the austrian vcd implementation and ensures the required flexibility described above through direct interpretation of the ontology without the need of programming"
+    },
+    {
+      "req_id": "AUTO-0346",
+      "text": "In a subsequent step, issuing services should be sequentially adapted to support automated data retrieval.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in a subsequent step issuing services should be sequentially adapted to support automated data retrieval"
+    },
+    {
+      "req_id": "AUTO-0347",
+      "text": "The VCD should encompass this change.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd should encompass this change"
+    },
+    {
+      "req_id": "AUTO-0348",
+      "text": "Tender specific requirements then have to be stated by contracting authorities according to the European criteria during notification phase in order to derive tender specific mapping results on evidences required to submit at tendering (Subset).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "tender specific requirements then have to be stated by contracting authorities according to the european criteria during notification phase in order to derive tender specific mapping results on evidences required to submit at tendering subset"
+    },
+    {
+      "req_id": "AUTO-0349",
+      "text": "Nevertheless the concept provides common grounds such as the pre-VCD mapping and structural data of evidences which ensures interoperability of evidences and their perception across borders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless the concept provides common grounds such as the pre vcd mapping and structural data of evidences which ensures interoperability of evidences and their perception across borders"
+    },
+    {
+      "req_id": "AUTO-0350",
+      "text": "If the contracting authority specifies the relevant evidences which are related to criteria, the data can be processed automatically in order to look-up the evidences required within another Member State.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the contracting authority specifies the relevant evidences which are related to criteria the data can be processed automatically in order to look up the evidences required within another member state"
+    },
+    {
+      "req_id": "AUTO-0351",
+      "text": "The VCD shall ensure that a significant part of the public procurement processes can be made through electronic cross-border transactions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd shall ensure that a significant part of the public procurement processes can be made through electronic cross border transactions"
+    },
+    {
+      "req_id": "AUTO-0352",
+      "text": "The development of context specific data shall ensure the automatic processing of electronic attestations without regard to linguistic barriers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the development of context specific data shall ensure the automatic processing of electronic attestations without regard to linguistic barriers"
+    },
+    {
+      "req_id": "AUTO-0353",
+      "text": "The VCD contains several different kinds of evidences and to develop common standards for each one cannot be a major task and focus of this work package and should be done by initiative such as CEN BII, BRITE, XBRL or ECRIS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vcd contains several different kinds of evidences and to develop common standards for each one cannot be a major task and focus of this work package and should be done by initiative such as cen bii brite xbrl or ecris"
+    },
+    {
+      "req_id": "AUTO-0354",
+      "text": "Nevertheless we will start to develop comm of contents and marginal variances in their contents.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless we will start to develop comm of contents and marginal variances in their contents"
+    },
+    {
+      "req_id": "AUTO-0355",
+      "text": "Nevertheless the acceptance of those selective translations instead of certified translations may be questionable for contracting authorities.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless the acceptance of those selective translations instead of certified translations may be questionable for contracting authorities"
+    },
+    {
+      "req_id": "AUTO-0356",
+      "text": "Thus the resolution of language barriers and linguistic issues cannot be completely managed by a VCD in short term and may require adding official translations beside selective translations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "thus the resolution of language barriers and linguistic issues cannot be completely managed by a vcd in short term and may require adding official translations beside selective translations"
+    },
+    {
+      "req_id": "AUTO-0357",
+      "text": "Nevertheless such direct exchange is very difficult to establish because a lot of entities and attestation services have to be federated, access policies have to be developed, legal uncertainties have to be resolved and political guidelines have to be considered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless such direct exchange is very difficult to establish because a lot of entities and attestation services have to be federated access policies have to be developed legal uncertainties have to be resolved and political guidelines have to be considered"
+    },
+    {
+      "req_id": "AUTO-0358",
+      "text": "Nevertheless existing attestations may be extended through additional annotations that describe these documents generically (structural data of evidences).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless existing attestations may be extended through additional annotations that describe these documents generically structural data of evidences"
+    },
+    {
+      "req_id": "AUTO-0359",
+      "text": "Neverton representations (context specific data) for evidences that have an, easy structure, low quantityheless we see a great opportunity to combine both ideas as shown in stage 4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "neverton representations context specific data for evidences that have an easy structure low quantityheless we see a great opportunity to combine both ideas as shown in stage 4"
+    },
+    {
+      "req_id": "AUTO-0360",
+      "text": "In the long-run the VCD should be able to adequately fulfil the contracting authorities’ need to proof conformance to certain criteria for qualitative selection and exclusion while reducing the burden of proof for the Economic Operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the long run the vcd should be able to adequately fulfil the contracting authorities need to proof conformance to certain criteria for qualitative selection and exclusion while reducing the burden of proof for the economic operator"
+    },
+    {
+      "req_id": "AUTO-0361",
+      "text": "At least the structural representation of attestation will provide benefit for the entities involved by providing transparency about the tendering requirements and the evidences that have to be submitted in cross border procedures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "at least the structural representation of attestation will provide benefit for the entities involved by providing transparency about the tendering requirements and the evidences that have to be submitted in cross border procedures"
+    },
+    {
+      "req_id": "AUTO-0362",
+      "text": "In this respect the VCD should support current practices in exchanging evidence in the short-run and lead towards smooth, reliable and sustainable exchange of electronic evidence among Member States in the long-run.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in this respect the vcd should support current practices in exchanging evidence in the short run and lead towards smooth reliable and sustainable exchange of electronic evidence among member states in the long run"
+    },
+    {
+      "req_id": "AUTO-0363",
+      "text": "Siemens_and_Time.lex (2007) \"Preliminary Study on the electronic provision of certificates and attestations usually required in public procurement procedures: First interim report - National Country Profiles.\" prepared on behalf of the European Commission, Directorate-General Internal Market and Services Volume, DOI: Siemens_and_Time.lex (2008).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "siemens and time lex 2007 preliminary study on the electronic provision of certificates and attestations usually required in public procurement procedures first interim report national country profiles prepared on behalf of the european commission directorate general internal market and services volume doi siemens and time lex 2008"
+    },
+    {
+      "req_id": "AUTO-0364",
+      "text": "Preliminary Study on the electronic provision of certificates and attestations usually required in public procurement procedures: Final report - Strategy and implementation roadmaps.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "preliminary study on the electronic provision of certificates and attestations usually required in public procurement procedures final report strategy and implementation roadmaps"
+    },
+    {
+      "req_id": "AUTO-0365",
+      "text": "Preliminary Study on the electronic provision of certificates and attestations usually required in public procurement procedures: Third interim report - Scenario building, assessment and benchmarking.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "preliminary study on the electronic provision of certificates and attestations usually required in public procurement procedures third interim report scenario building assessment and benchmarking"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 365,
+    "total_count": 365
+  }
+}

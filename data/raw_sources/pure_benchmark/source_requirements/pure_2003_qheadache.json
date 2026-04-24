@@ -1,0 +1,96 @@
+{
+  "sample_id": "pure_2003_qheadache",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2003_qheadache",
+    "title": "2003 - qheadache",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2003 - qheadache.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2003 - qheadache.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "It requires a graphical display of at least 800*600 resolution.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it requires a graphical display of at least 800 600 resolution"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "It must run with all the operating systems that Qt supports.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must run with all the operating systems that qt supports"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "The user must undo and redo its last thousand actions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user must undo and redo its last thousand actions"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "The product must count and display the time that the user uses to play.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the product must count and display the time that the user uses to play"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "The product must count and display the number of the user' asction.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the product must count and display the number of the user asction"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "The product must record the score (time and number of counts) of a play associated with the name of a user.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the product must record the score time and number of counts of a play associated with the name of a user"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "The product must display a window with all the player' scores.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the product must display a window with all the player scores"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "The hardware and operating system must provide an 800x600 screen resolution.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the hardware and operating system must provide an 800x600 screen resolution"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "Sound is not required to play the game.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "sound is not required to play the game"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "Main window The main window shall provide the following parts : A board, see chapter 3.2.1.1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "main window the main window shall provide the following parts a board see chapter 3 2 1 1"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "The selected block can' mt ove near other blocks at least 0.05x from the others blocks.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the selected block can mt ove near other blocks at least 0 05x from the others blocks"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "Processing If the game was never saved, the processing is identiqual to the action \"Save as...\".",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "processing if the game was never saved the processing is identiqual to the action save as"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "Software System Attributes The software must be portable to the Windows OS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "software system attributes the software must be portable to the windows os"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 13,
+    "total_count": 13
+  }
+}

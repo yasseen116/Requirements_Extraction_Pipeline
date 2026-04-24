@@ -1,0 +1,54 @@
+Extract canonical requirement frames from this controlled 6-question requirements dialogue.
+
+Return JSON only. Do not include markdown fences or explanations.
+
+Output rules:
+- Use the provided JSON schema exactly.
+- Normalize noisy user wording into concise canonical phrasing.
+- Do not invent unsupported details.
+- Every frame must have status = "confirmed".
+- Use one frame for system context from turn 2.
+- Use one frame per user role from turn 4.
+- Use one frame per functional capability from turn 6.
+- Use one frame per authentication method from turn 8.
+- If the dialogue contains both a required staff login and a no-login exception for another role, keep the required login in authentication frames and represent the no-login exception as a security frame.
+- If authentication is explicitly not required for the whole system, return one authentication frame with constraint = "not_required" and object = null.
+- Use one frame per performance constraint from turn 10.
+- Use one frame per security constraint from turn 12.
+- Split combined constraints into separate frames when the dialogue states distinct items, for example:
+  - "orders or payments must not be lost" -> one performance frame for orders and one for payments
+  - "master password and key file with a combined key option" -> separate authentication frames
+- Never output vague placeholders like "required", "optional", "prohibited", "must never get lost", "support at least 200", or "only one at a time" as final canonical constraints. Convert them into full requirement-style constraint text.
+
+Field conventions:
+- system_context:
+  - actor = null
+  - action = "system_type"
+  - object = canonical system type
+- user_role:
+  - actor = canonical role
+  - action = "user_role"
+- functional_capability:
+  - actor = canonical actor
+  - action = canonical capability phrasing
+- authentication:
+  - action = "authenticate"
+  - object = authentication method if present
+  - constraint = "required" or "not_required"
+- performance/security:
+  - constraint = canonical constraint text
+
+Canonical examples:
+- `process payments` -> `process cash and bankcard payments`
+- `create encrypted vault` or `unlock encrypted vault` -> `create and open encrypted password databases`
+- `find saved item` -> `search stored entries`
+- `tweak entry` -> `add and edit entries`
+- `all data encrypted` -> `store passwords in an encrypted database`
+- `no recovery backdoor` -> `provide no recovery password or backdoor for unlocking databases`
+- `customers should not have to log in on table screens` -> security frame with `not require customers to log in on surface computers`
+
+Sample id: {{SAMPLE_ID}}
+Domain hint: {{DOMAIN}}
+
+Dialogue:
+{{DIALOGUE}}

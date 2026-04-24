@@ -1,0 +1,174 @@
+{
+  "sample_id": "pure_2009_video_search",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2009_video_search",
+    "title": "2009 - video search",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2009 - video search.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2009 - video search.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "REQ-1",
+      "text": "Torrent search will share the same search bar with the streaming search.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "torrent search will share the same search bar with the streaming search"
+    },
+    {
+      "req_id": "REQ-2",
+      "text": "Database of torrent sites can be updated via the internet.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "database of torrent sites can be updated via the internet"
+    },
+    {
+      "req_id": "REQ-3",
+      "text": "There will be a tick box to allow the user to choose to include torrent searching in the search.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "there will be a tick box to allow the user to choose to include torrent searching in the search"
+    },
+    {
+      "req_id": "REQ-4",
+      "text": "Query will retrieve the no. of seed and peers, size of the file, date posted and a link to the webpage itself.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "query will retrieve the no of seed and peers size of the file date posted and a link to the webpage itself"
+    },
+    {
+      "req_id": "REQ-5",
+      "text": "If no results are found on a search it will display a message “No results were found for this search.”",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "if no results are found on a search it will display a message no results were found for this search"
+    },
+    {
+      "req_id": "REQ-6",
+      "text": "Results will be arranged in size/date/alphabetical order by clicking on the column headers.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "results will be arranged in size date alphabetical order by clicking on the column headers"
+    },
+    {
+      "req_id": "REQ-7",
+      "text": "There will be page button for the user to navigate the results. Video Stream Search Description and Priority Stimulus/Response Sequences User ticks streaming host tick box – system will now query the video hosting sites in its database when a search is started. Hosting sites will include the actual videos on their servers, e.g. YouTube. User ticks streaming links tick box – system will now query the video link sites in its database when a search is started. The link sites will include external video links to different video hosting sites, e.g. surfthechannel.com. User enters search term and starts search – system sends queries to the video websites in its database based on the search term. Results for this query will then be sent to the video stream tab in the program. The hosting half of the tab displays the website, full video name, length and date posted. The link half of the tab displays the website and video name (e.g. combination of the show’s name and the episode name). User sorts the search results by clicking once on the column header – system sorts all results by descending/ascending order. User filters websites they want to be shown in the results – system removes unselected websites from the results. User clicks on next page button – system displays the next set of results for the search. Functional Requirements",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "there will be page button for the user to navigate the results video stream search description and priority stimulus response sequences user ticks streaming host tick box system will now query the video hosting sites in its database when a search is started hosting sites will include the actual videos on their servers e g youtube user ticks streaming links tick box system will now query the video link sites in its database when a search is started the link sites will include external video links to different video hosting sites e g surfthechannel com user enters search term and starts search system sends queries to the video websites in its database based on the search term results for this query will then be sent to the video stream tab in the program the hosting half of the tab displays the website full video name length and date posted the link half of the tab displays the website and video name e g combination of the show s name and the episode name user sorts the search results by clicking once on the column header system sorts all results by descending ascending order user filters websites they want to be shown in the results system removes unselected websites from the results user clicks on next page button system displays the next set of results for the search functional requirements"
+    },
+    {
+      "req_id": "REQ-1",
+      "text": "Streaming search will share the same search bar with the torrent search.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "streaming search will share the same search bar with the torrent search"
+    },
+    {
+      "req_id": "REQ-2",
+      "text": "Database of video hosting and video linking sites can be updated via the internet.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "database of video hosting and video linking sites can be updated via the internet"
+    },
+    {
+      "req_id": "REQ-3",
+      "text": "There will be a tick box to allow the user to choose to include video host searching in the search.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "there will be a tick box to allow the user to choose to include video host searching in the search"
+    },
+    {
+      "req_id": "REQ-4",
+      "text": "There will be a tick box to allow the user to choose to include video link searching in the search.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "there will be a tick box to allow the user to choose to include video link searching in the search"
+    },
+    {
+      "req_id": "REQ-5",
+      "text": "Query to video hosting sites will retrieve full video name, length, date posted and a link to the video itself.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "query to video hosting sites will retrieve full video name length date posted and a link to the video itself"
+    },
+    {
+      "req_id": "REQ-6",
+      "text": "Query to video link sites will retrieve the show’s name, episode name and a link to the webpage itself.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "query to video link sites will retrieve the show s name episode name and a link to the webpage itself"
+    },
+    {
+      "req_id": "REQ-8",
+      "text": "Results will be arranged in length/date/alphabetical order by clicking on the column headers.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "results will be arranged in length date alphabetical order by clicking on the column headers"
+    },
+    {
+      "req_id": "REQ-9",
+      "text": "There will be page button for the user to navigate the results. External Interface Requirements User Interfaces The user Interface will consist of one main screen, allowing all the functionally to come from this one screen. This allows the user to use the software with ease by not flicking through a number of different screens. In addition to this the user can always see the videos they are looking for. The main screen will be laid out as in Appendix: B Diagram along with the description of the diagram. We decided on this type of interface because we felt that it would be very simple for the user to navigate. From our reports we found that the simpler the interface was, the more people liked it. With all these features complied into one screen it will give the software more flexibility and allows for easy and simple usage. This will appeal to both naïve computer users and experienced computer users with a higher selling market. Software Interfaces The software will use hyperlinks to allow the user to open websites in their default web browser. Communications Interfaces Communication standards that will be used through the software will be PHP or other such languages. These will be used to query the different servers that the websites use and will give us back Other Nonfunctional Requirements Performance Requirements",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "there will be page button for the user to navigate the results external interface requirements user interfaces the user interface will consist of one main screen allowing all the functionally to come from this one screen this allows the user to use the software with ease by not flicking through a number of different screens in addition to this the user can always see the videos they are looking for the main screen will be laid out as in appendix b diagram along with the description of the diagram we decided on this type of interface because we felt that it would be very simple for the user to navigate from our reports we found that the simpler the interface was the more people liked it with all these features complied into one screen it will give the software more flexibility and allows for easy and simple usage this will appeal to both na ve computer users and experienced computer users with a higher selling market software interfaces the software will use hyperlinks to allow the user to open websites in their default web browser communications interfaces communication standards that will be used through the software will be php or other such languages these will be used to query the different servers that the websites use and will give us back other nonfunctional requirements performance requirements"
+    },
+    {
+      "req_id": "REQ-1",
+      "text": "Query times will take no longer than 5 seconds to any website.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "query times will take no longer than 5 seconds to any website"
+    },
+    {
+      "req_id": "REQ-2",
+      "text": "Sending the hyperlink to the default browser will take less than 1 second.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "sending the hyperlink to the default browser will take less than 1 second"
+    },
+    {
+      "req_id": "REQ-3",
+      "text": "Loading the program will take less than 10 seconds.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "loading the program will take less than 10 seconds"
+    },
+    {
+      "req_id": "REQ-4",
+      "text": "Any torrent result with 0 seeds will not be displayed.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "any torrent result with 0 seeds will not be displayed"
+    },
+    {
+      "req_id": "REQ-5",
+      "text": "Sorting results should take less than 0.1 seconds.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "sorting results should take less than 0 1 seconds"
+    },
+    {
+      "req_id": "REQ-6",
+      "text": "A results page will display 100 results.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "a results page will display 100 results"
+    },
+    {
+      "req_id": "REQ-7",
+      "text": "Any torrent result with a rating of less than 1 will not be displayed. Safety Requirements Our development team must thoroughly investigate each website within our database each month, to ensure that no illegal or harmful content is exposed to our users. Security Requirements We don’t maintain any user data or host any content. Legal Requirements While all safety measures resulting from the site may not be fully identified, a recommendation of a full legal review of the software should be undertaken before the site is available to the public. In doing so, the site will be subject to full indemnification of liability. The system we produce will stay within all the legal requirements on our behalf, as our software is only listing links for video streams and video download, and this is not illegal. Our system will not host any videos. Issues List In the next version we will consider adding a system to also search UseNet Binaries.",
+      "source_type": "explicit_req_tag",
+      "normalized_text": "any torrent result with a rating of less than 1 will not be displayed safety requirements our development team must thoroughly investigate each website within our database each month to ensure that no illegal or harmful content is exposed to our users security requirements we don t maintain any user data or host any content legal requirements while all safety measures resulting from the site may not be fully identified a recommendation of a full legal review of the software should be undertaken before the site is available to the public in doing so the site will be subject to full indemnification of liability the system we produce will stay within all the legal requirements on our behalf as our software is only listing links for video streams and video download and this is not illegal our system will not host any videos issues list in the next version we will consider adding a system to also search usenet binaries"
+    },
+    {
+      "req_id": "AUTO-0001",
+      "text": "References Separate studies conducted by Damien C Holmes, William J Josephy, Alan Woosnam, Mustapha A Sherrif, and Irshad A Qabool on video distribution within the home.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "references separate studies conducted by damien c holmes william j josephy alan woosnam mustapha a sherrif and irshad a qabool on video distribution within the home"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "REQ-5: Sorting results should take less than 0.1 seconds.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "req 5 sorting results should take less than 0 1 seconds"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "Safety Requirements Our development team must thoroughly investigate each website within our database each month, to ensure that no illegal or harmful content is exposed to our users.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "safety requirements our development team must thoroughly investigate each website within our database each month to ensure that no illegal or harmful content is exposed to our users"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "Legal Requirements While all safety measures resulting from the site may not be fully identified, a recommendation of a full legal review of the software should be undertaken before the site is available to the public.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "legal requirements while all safety measures resulting from the site may not be fully identified a recommendation of a full legal review of the software should be undertaken before the site is available to the public"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 22,
+    "inferred_count": 4,
+    "total_count": 26
+  }
+}

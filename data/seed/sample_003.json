@@ -1,0 +1,37 @@
+{
+  "id": "sample_003",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "an appointment booking system for a clinic"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "patients, doctors, and reception staff"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "book appointments, cancel them, and see schedules"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "patients and staff should sign in"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "booking should happen fast, maybe under 3 seconds"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "medical-related data should be private"}
+  ],
+  "slots": {
+    "project_type": "clinic appointment booking system",
+    "users": ["patient", "doctor", "receptionist"],
+    "core_features": ["book appointments", "cancel appointments", "view schedules"],
+    "authentication": ["patient login", "staff login"],
+    "performance_constraints": ["booking operations within 3 seconds"],
+    "security_constraints": ["protect patient data privacy"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow patients and staff to sign in.",
+      "The system shall allow patients to book appointments.",
+      "The system shall allow patients to cancel appointments.",
+      "The system shall allow staff and doctors to view appointment schedules."
+    ],
+    "non_functional": [
+      "The system shall complete booking operations within 3 seconds.",
+      "The system shall protect the privacy of patient data."
+    ]
+  }
+}

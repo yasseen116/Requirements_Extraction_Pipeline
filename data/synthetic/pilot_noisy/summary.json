@@ -1,0 +1,17 @@
+[
+  {
+    "sample_id": "manual_001_amazing_lunch_indicator_noisy",
+    "parent_id": "manual_001_amazing_lunch_indicator",
+    "path": "synthetic/pilot_noisy/manual_001_amazing_lunch_indicator_noisy.json"
+  },
+  {
+    "sample_id": "manual_002_restaurant_menu_ordering_system_noisy",
+    "parent_id": "manual_002_restaurant_menu_ordering_system",
+    "path": "synthetic/pilot_noisy/manual_002_restaurant_menu_ordering_system_noisy.json"
+  },
+  {
+    "sample_id": "manual_003_keepass_password_safe_noisy",
+    "parent_id": "manual_003_keepass_password_safe",
+    "path": "synthetic/pilot_noisy/manual_003_keepass_password_safe_noisy.json"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "id": "sample_001",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "an online shopping website"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "customers and an admin"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "browse products, add to cart, and buy them"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "yes, email and password"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "it should be fast, like under 2 seconds"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "passwords should be encrypted"}
+  ],
+  "slots": {
+    "project_type": "e-commerce website",
+    "users": ["customer", "admin"],
+    "core_features": ["browse products", "add to cart", "purchase products"],
+    "authentication": ["email/password"],
+    "performance_constraints": ["response time under 2 seconds"],
+    "security_constraints": ["encrypt passwords"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow customers to browse products.",
+      "The system shall allow customers to add products to a cart.",
+      "The system shall allow customers to purchase products.",
+      "The system shall provide an admin role."
+    ],
+    "non_functional": [
+      "The system shall respond within 2 seconds.",
+      "The system shall encrypt stored user passwords."
+    ]
+  }
+}

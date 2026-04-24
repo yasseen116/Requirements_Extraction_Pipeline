@@ -1,0 +1,16 @@
+You are rewriting ONE user turn from a requirements elicitation transcript.
+
+Task:
+- Rewrite the user turn to sound more like a real human transcript.
+- Preserve the meaning and ALL technical details (numbers, units, names, limits).
+- Do not add any new requirement or remove any existing requirement.
+- Keep it as a single user utterance (one turn).
+- You may add minor disfluencies (e.g. "uh", "you know") and informal phrasing, but do not change facts.
+
+Output rules:
+- Return JSON only.
+- Use the provided schema exactly.
+
+Original user turn:
+{{TURN_TEXT}}
+

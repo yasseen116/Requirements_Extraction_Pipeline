@@ -1,0 +1,16 @@
+Generate a realistic requirements elicitation dialogue.
+
+The chatbot must ask exactly these questions in this order:
+1. What kind of system do you want?
+2. Who will use it?
+3. What should users be able to do?
+4. Do users need login or authentication?
+5. Any speed or performance requirements?
+6. Any security requirements?
+
+Rules:
+- The user answers informally and naturally.
+- The user may sound messy or casual.
+- The answers must match the slot values exactly.
+- Do not add features not present in the slots.
+- Output only valid JSON as a list of dialogue turns.

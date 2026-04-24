@@ -1,0 +1,37 @@
+{
+  "id": "sample_007",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "an online exam system"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "students, instructors, and admins"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "take exams, submit answers, and see results"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "yes with their school accounts"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "it should stay stable even if many students join at once"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "exam questions and answers must be protected"}
+  ],
+  "slots": {
+    "project_type": "online exam system",
+    "users": ["student", "instructor", "admin"],
+    "core_features": ["take exams", "submit answers", "view results"],
+    "authentication": ["school account login"],
+    "performance_constraints": ["stable under high concurrent usage"],
+    "security_constraints": ["protect exam questions", "protect answers"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow users to sign in using school accounts.",
+      "The system shall allow students to take exams online.",
+      "The system shall allow students to submit answers.",
+      "The system shall allow students to view exam results."
+    ],
+    "non_functional": [
+      "The system shall remain stable under high concurrent usage.",
+      "The system shall protect exam questions and submitted answers."
+    ]
+  }
+}

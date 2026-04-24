@@ -1,0 +1,168 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "The principles of the voucher, the contents of the health care services, their required quality, the standards to be met by the providers and their infrastructure, as well as the measures for monitoring the quality have been defined in the PDS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the principles of the voucher the contents of the health care services their required quality the standards to be met by the providers and their infrastructure as well as the measures for monitoring the quality have been defined in the pds"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each voucher should have two portions with three tear off voucher slips each for client and partner"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each voucher should have the following properties which will have sub elements to get the batch numbers voucher numbers and the project codes"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this validity date can be amended or altered at the system level only by the authorized user voucher will also have mrp maximum retail price voucher should have three tear off portioned slips with a sub section tear off for the partner"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each voucher slip should contain the bar code of the voucher with two identifications one for the client and the other for the partner"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "During every distribution transaction the user should select the name of the sales man listed from Team Master.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "during every distribution transaction the user should select the name of the sales man listed from team master"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "The Salesman master should capture following information’s.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the salesman master should capture following information s"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "name of the distributor name of the sales man date of distribution no of vouchers sold according to the number of vouchers required by the distributor the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "invoice amount no of vouchers x wholesale price mode of payment is cash the mandatory information required during a distribution transaction is mentioned below"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "while entering the no of vouchers required the system should automatically pick the batch no s with voucher no s from the available voucher stock and list the details of each voucher with below information s as a grid format"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "The values of Health Sub – District, Locality, Level Of Facility, Type of facility, Registration Body would be list from their own master and should select the details based on the VSP.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the values of health sub district locality level of facility type of facility registration body would be list from their own master and should select the details based on the vsp"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the vsp master information screen should have a provision to enter the payment terms agreed between msiu and vsp"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "vsp name staff code staff name staff type qualification the system will generate message while creating a new staff with existing name but the system will allow the user to save that new staff if its required"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "claim treatment form submission depends on the payment terms bi monthly monthly mentioned in the vsp master the vsp should submit the claim treatment form to the misu field office"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "These information is vital and shall be used for compared with the processed claims.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these information is vital and shall be used for compared with the processed claims"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "In the transaction part no of forms should match with No of Available Forms The system should print a receipt document based on the information entered during claim submission.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the transaction part no of forms should match with no of available forms the system should print a receipt document based on the information entered during claim submission"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "The document should have the following information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the document should have the following information"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "Before the claim entry the user should check the form manually to understand whether any mandatory information is missed in the Claim or not.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "before the claim entry the user should check the form manually to understand whether any mandatory information is missed in the claim or not"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "If yes, then the user should mark that Claim (Treatment Form) status as Rejected and send back to VSP.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if yes then the user should mark that claim treatment form status as rejected and send back to vsp"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "During the claim entry the system should capture the following information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "during the claim entry the system should capture the following information"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "Patient Status - (Select from list of status options populating from Patient Status Master) suppose the status is Referral then the system will have the provision to capture Referred To and Reason for Referral, the reason for Referral should be populated from Referral master.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "patient status select from list of status options populating from patient status master suppose the status is referral then the system will have the provision to capture referred to and reason for referral the reason for referral should be populated from referral master"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "The system should have a provision to capture the reason suppose if the claim status is “Rejection or Quarantine” Claim Amount – The calculation of claim amount is explained below.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should have a provision to capture the reason suppose if the claim status is rejection or quarantine claim amount the calculation of claim amount is explained below"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "If the claim from same VSP having more than two times of Thump Impression mismatching, then the system should automatically produce a warning message and the same time the system should In-Activate the VSP.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the claim from same vsp having more than two times of thump impression mismatching then the system should automatically produce a warning message and the same time the system should in activate the vsp"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "The authorized user can alter / amend the Claim if required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the authorized user can alter amend the claim if required"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system admin only can able to create user groups the system should have the provision to create any number of individual user under any user group"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 25,
+    "total_count": 25
+  }
+}

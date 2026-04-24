@@ -1,0 +1,510 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260424T162722Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260424T162722Z_pure_full/direct_generated_requirements",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 6,
+    "total_unmatched_source": 323,
+    "total_unmatched_generated": 483,
+    "counts": {
+      "omission_full": 71,
+      "omission_partial": 238,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 15,
+      "hallucination_unsupported": 0,
+      "near_match_paraphrase": 468
+    },
+    "rates": {
+      "omission_full_rate": 0.21981424148606812,
+      "omission_partial_rate": 0.7368421052631579,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.031055900621118012,
+      "hallucination_unsupported_rate": 0.0,
+      "near_match_paraphrase_rate": 0.968944099378882
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 201,
+      "unmatched_source_count": 0,
+      "unmatched_generated_count": 101,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 0,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 9,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 92
+      },
+      "examples": {
+        "omitted": [],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system. The user initiating and or carrying out the action."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The word “unalterable” is to mean that the audit trail data cannot be modified in any way or deleted by any user."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The audit trail may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System)."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The System must be able to capture and store violations (i.e. security violations)."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Such configurations must be saved in the user profile."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Defaults should include user-definable values."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 80,
+      "unmatched_source_count": 4,
+      "unmatched_generated_count": 27,
+      "counts": {
+        "omission_full": 1,
+        "omission_partial": 3,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 4,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 23
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "Functional requirements: A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Nonfunctional requirements: A description of a property or characteristic that the system should exhibit."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Pre condition: A condition that must be satisfied or a state the system must be in before a use case may begin."
+          },
+          {
+            "category": "omission_full",
+            "text": "Requirement: A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system shall use SQL based database to store inventory information."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system shall encrypt all customer data in database."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "For returning customers, the system shall validate 'existing' credit card in system after each log in."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system shall automatically compress image files that are too large in size."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system shall validate email address existence."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Operating Environment Web Store shall operate with Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "The interface must remain consistent among various web browsers and be intuitive to the customer."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_1995_gemini",
+      "document_id": "1995_gemini",
+      "source_requirement_count": 286,
+      "generated_requirement_count": 404,
+      "unmatched_source_count": 92,
+      "unmatched_generated_count": 210,
+      "counts": {
+        "omission_full": 28,
+        "omission_partial": 64,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 2,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 208
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "(There will always be support staff on-site during observations, however.) The requirements for supporting remote operations are: All software should be developed to permit remote operations."
+          },
+          {
+            "category": "omission_partial",
+            "text": "It will require the use of service and/or remote observing, as users cannot stay around indeﬁnitely waiting for the conditions required by their program."
+          },
+          {
+            "category": "omission_partial",
+            "text": "This notiﬁcation must be speciﬁc as to origin and problem."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Fault tollerance Should a subsystem fail (e.g."
+          },
+          {
+            "category": "omission_partial",
+            "text": "one detector, one instrument) predeﬁned procedures must exist to redeﬁne the environment in such a way that operation can restart with the remaining equipment."
+          },
+          {
+            "category": "omission_partial",
+            "text": "This document does not try to be speciﬁc about the requirements for Quick-look other than that it should be synchronous."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The plan will consider: Maintenance requirements including an estimate of required resources."
+          },
+          {
+            "category": "omission_full",
+            "text": "Areas where upgrades are anticipated should be identiﬁed with an estimate of the required effort and resources."
+          },
+          {
+            "category": "omission_full",
+            "text": "Simple mechanisms should exist for replacing a subsystem with its simulation."
+          },
+          {
+            "category": "omission_full",
+            "text": "The following self-check levels are to be supplied with sub-system software: Monitor level Each subsystem should have a background task running whenever that subsystem is operational, performing such tasks as checking power supply levels, temperatures, performance, correct responses to commands."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Each subsystem should provide a module for fully exercising all subsystem components, both hardware and software."
+          },
+          {
+            "category": "omission_full",
+            "text": "Levels of Maintenance The levels at which maintenance may be performed are: Organizational level These should be done in situ during an observing session."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "Operations staff shall have access to operation tables in update mode, while observing astronomers will have access to them only in read mode."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Software must be provided to assist in object selection within an observing program and across observing programs, to optimize observing efficiency, considering target positions, weather conditions, and instrument configurations."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "All software should be developed to permit remote operations."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "It should be possible to do full operations remotely."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Security of operation shall be considered, potentially implying different operation levels and privileges at different sites."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Remote operations software must be considered from the beginning in the Gemini 8m Telescopes software design."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Subsystems must notify the user when faults occur."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Fault notification must be specific as to origin and problem."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "If a subsystem fails, predefined procedures must exist to redefine the environment so that operation can restart with the remaining equipment."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The operational software should know which subsystems are installed and operational at any given time."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Quick-look should be synchronous."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Monitoring shall not affect the performance of an ongoing observation."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_1998_themas",
+      "document_id": "1998_themas",
+      "source_requirement_count": 96,
+      "generated_requirement_count": 101,
+      "unmatched_source_count": 0,
+      "unmatched_generated_count": 5,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 0,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 5
+      },
+      "examples": {
+        "omitted": [],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "This request shall include the designation of the heating or cooling unit and a flag to indicate whether that unit is to be turned on or off."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The THEMAS system shall be designed to run on the Microsoft ® Windows NT™ operating system."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "All the internal process communications shall be designed to operate on this operating system."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "These interfaces shall run on this operating system as well."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "This information shall be recorded in a Microsoft® Access® database that shall reside on the supervisor’s computer."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 21,
+      "unmatched_source_count": 4,
+      "unmatched_generated_count": 3,
+      "counts": {
+        "omission_full": 3,
+        "omission_partial": 1,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 3
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "DOCUMENT OVERVIEW This document outlines the software capabilities required for the XS components for the DII COE."
+          },
+          {
+            "category": "omission_full",
+            "text": "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable."
+          },
+          {
+            "category": "omission_full",
+            "text": "Training requirements shall be determined by the developers of the system in which the XS module is embedded."
+          },
+          {
+            "category": "omission_full",
+            "text": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "Constraints are conditions about the data that must always be true."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The XS function shall provide standard APIs as specified in Appendix C."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_1999_tcs",
+      "document_id": "1999_tcs",
+      "source_requirement_count": 426,
+      "generated_requirement_count": 340,
+      "unmatched_source_count": 223,
+      "unmatched_generated_count": 137,
+      "counts": {
+        "omission_full": 39,
+        "omission_partial": 170,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 137
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "TCS to Army Mission Planning System The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with AMPS.[SSS563] The interface requirements and specifications will be defined in the TCS to AMPS IDD, TCS 235."
+          },
+          {
+            "category": "omission_partial",
+            "text": "TCS to Air Force Mission Support System The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with AFMSS.[SSS564] The interface requirements and specifications will be defined in the TCS to AFMSS IDD, TCS 220."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The TCS shall provide interfaces with the respective UAV program-provided data links for command and control and UAV data.."
+          },
+          {
+            "category": "omission_partial",
+            "text": "[SSS312] The TCS shall have provisions for simultaneously supporting both of the following external interfaces: LOS data link, SATCOM data link."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The TCS shall provide an interface between the TCS and an external hard copy printer."
+          },
+          {
+            "category": "omission_partial",
+            "text": "[SSS314] The TCS shall as a minimum, allow Operator(s) to print freeze-frame video, C4I Messages, Mission Plans, FD/L information, and current map display."
+          },
+          {
+            "category": "omission_partial",
+            "text": "[SSS315] The TCS shall have the functionality to output digital message data and imagery to a hard copy printer."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The TCS shall provide an interface between the TCS and external data storage systems."
+          },
+          {
+            "category": "omission_partial",
+            "text": "[SSS317] The TCS shall have the functionality to transfer digital data as well as digital imagery to and from external data storage systems."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The TCS shall have an interface between the TCS and DoD standard power supply equipment."
+          },
+          {
+            "category": "omission_partial",
+            "text": "[SSS319] The TCS shall have the functionality to connect to the power supply equipment provided in the TCS operating environment."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The TCS shall have an interface to a source of current navigation information."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS shall provide the system functionality necessary to initialize the system to place it in the Operations State within 60 seconds from the time power is supplied and the TCS application is launched."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS in the Recovery Startup Mode shall provide the system functionality to resume the Operations State within 45 seconds."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "TCS shall provide the capability to monitor AV adherence to the uplinked mission plan, detecting any deviations greater than 10% from projected flight path, and notifying the operator if deviations are detected."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Fault Detection/Location (FD/L) to the Line Replaceable Unit (LRU) level shall be provided to indicate the readiness status of TCS, if inherent to the COTS hardware and software utilized."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS shall be capable of automatically recording system state data, interface communications and other information necessary to support event reconstruction."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "A Mission Plan shall include a Flight Route Plan for a selected AV, a Payload Plan for the selected payload, and a Communications Plan."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later retrieval."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS shall allow the operator to enter as well as review mission plan parameters, including AV flight parameters, payload control parameters, data link control parameters, AV VCR control parameters (if applicable to the selected AV), and AV loiter patterns."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS shall provide the capability to enter system configuration characteristics in the mission plan, to include selected AV type, AV identification number, selected payload type, ground control authorization information, and required communications pre-set for data links, tactical communications, and C4I data dissemination."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS shall automatically check the validity of the intended mission plan prior to being uploaded including altitude constraints, payload constraints, data link range constraints, airspace restrictions, fuel limitations, threat constraints, data link terrain masking effects, and Loss of Link (LOL) Plan."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The Flight Route Plan, as a minimum, shall include AV flight path information, Loss of Link plan, AV VCR control tasking (if applicable to the selected AV), and data link control information."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The TCS shall allow the operator to define the desired AV route in waypoint format, and shall provide the capability to include up to 500 waypoints in each flight route plan."
+          }
+        ]
+      }
+    }
+  ]
+}

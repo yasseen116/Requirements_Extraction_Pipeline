@@ -1,0 +1,2058 @@
+{
+  "sample_id": "pure_2006_eirene_sys_15",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2006_eirene_sys_15",
+    "title": "2006 - eirene sys 15",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2006 - eirene sys 15.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2006 - eirene sys 15.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "(I) Appliccability The EIRENE System Requirements Specification defines the set of requirements which a railway radio system shall comply with in order to ensure interoperability between national railways.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i appliccability the eirene system requirements specification defines the set of requirements which a railway radio system shall comply with in order to ensure interoperability between national railways"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "It is mandatory that each railway meets these specifications where interoperability on lines, or equipment interoperability, is required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is mandatory that each railway meets these specifications where interoperability on lines or equipment interoperability is required"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "Railway specif services and facilities To meet the specific railway requirements, a number of additional features are required some of which have been incorporated in the GSM Standard.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "railway specif services and facilities to meet the specific railway requirements a number of additional features are required some of which have been incorporated in the gsm standard"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "Such a mode is required for use where: (I) no GSM infrastructure is provided;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "such a mode is required for use where i no gsm infrastructure is provided"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "Section 9 is concerned with a numbering plan for the variety of functional numbers which are required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "section 9 is concerned with a numbering plan for the variety of functional numbers which are required"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "Section 10 details the handling of other information, such as priority, closed user groups and encryption algorithms, which must be applied consistently in all networks.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "section 10 details the handling of other information such as priority closed user groups and encryption algorithms which must be applied consistently in all networks"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "Section 12 refers to the possible use of pre-defined text messages (not required for interoperability).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "section 12 refers to the possible use of pre defined text messages not required for interoperability"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "It is the responsibility of national railways to design their EIRENE networks to provide the required level of service to EIRENE compliant mobiles.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is the responsibility of national railways to design their eirene networks to provide the required level of service to eirene compliant mobiles"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "(The target coverage power level is dependent on the statistical fluctuations caused by the actual propagation conditions.) (I) The following minimum values shall apply: (M) coverage probability of 95% based on a coverage level of 38.5 dBmV/m (-98 dBm) for voice and non-safety critical data;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the target coverage power level is dependent on the statistical fluctuations caused by the actual propagation conditions i the following minimum values shall apply m coverage probability of 95 based on a coverage level of 38 5 dbmv m 98 dbm for voice and non safety critical data"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "The EIRENE mobile installation shall be designed to operate in a network meeting the criteria in 3.2.2 and 3.2.3.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the eirene mobile installation shall be designed to operate in a network meeting the criteria in 3 2 2 and 3 2 3"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "(M) Note 1: The specified coverage probability means that with a probability value of at least 95% in each location interval (length: 100m) the measured coverage level shall be greater than or equal to the figures stated above.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m note 1 the specified coverage probability means that with a probability value of at least 95 in each location interval length 100m the measured coverage level shall be greater than or equal to the figures stated above"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "(I) Handover and cell selection The handover success rate should be at least 99.5% over train routes under design load conditions (as given in [EN 301 515, Index [30]]).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i handover and cell selection the handover success rate should be at least 99 5 over train routes under design load conditions as given in en 301 515 index 30"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "The required priority level for each call type is given in section 10.2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the required priority level for each call type is given in section 10 2"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "(I) Call setup times as defined in the EIRENE FRS shall be achieved with authentication and ciphering procedures enabled.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i call setup times as defined in the eirene frs shall be achieved with authentication and ciphering procedures enabled"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "(M) Note: Authentication may be delayed if necessary to achieve the required call setup times.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m note authentication may be delayed if necessary to achieve the required call setup times"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "In order to achieve these times the passage of the call through any networks external to GSM (eg from the GSM MSC to a controller linked by an ISDN connection) must take less than 250ms.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to achieve these times the passage of the call through any networks external to gsm eg from the gsm msc to a controller linked by an isdn connection must take less than 250ms"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "(I) Frequency band and channel arrangements The network shall operate in a sub-band, or combination of sub-bands, of the R-GSM band as defined in [EN 301 515, Index [35]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i frequency band and channel arrangements the network shall operate in a sub band or combination of sub bands of the r gsm band as defined in en 301 515 index 35"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "(I) The network shall terminate the ongoing VGCS/VBS call if it receives the 3-digit sequence “***” transmitted via DTMF signals.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the network shall terminate the ongoing vgcs vbs call if it receives the 3 digit sequence transmitted via dtmf signals"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "(M) In order to minimise the discomfort caused by the DTMF tone added in the voice channel, the duration of the tone generated by the fixed line dispatcher shall be 70ms ± 5ms, and there shall be a minimum gap of 65ms between each tone.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in order to minimise the discomfort caused by the dtmf tone added in the voice channel the duration of the tone generated by the fixed line dispatcher shall be 70ms 5ms and there shall be a minimum gap of 65ms between each tone"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "(M) Muting and unmuting for VGCS calls The muting and unmuting for VGCS shall be in line with [EN 301 515, Index [4]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m muting and unmuting for vgcs calls the muting and unmuting for vgcs shall be in line with en 301 515 index 4"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "However, receiving the 3-digit sequence “###” or the group call SETUP message related to an additional controller while any other controller is talking shall not result in sending another SET-PARAMETER message with the attribute “DATT = T”.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however receiving the 3 digit sequence or the group call setup message related to an additional controller while any other controller is talking shall not result in sending another set parameter message with the attribute datt t"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "(O) The network shall send the SET-PARAMETER message with the attribute “D-ATT = F”3 [EN 301 515, Index [6]] to the mobile of the talking subscriber only if it has received the 3-digit sequence “#**” transmitted via DTMF from all the talking controllers4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o the network shall send the set parameter message with the attribute d att f 3 en 301 515 index 6 to the mobile of the talking subscriber only if it has received the 3 digit sequence transmitted via dtmf from all the talking controllers4"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "(M) The duration of each tone (see 3.8.2 and 3.8.4) added in the voice channel, shall be 70ms ± 5ms, and there shall be a minimum gap of 65ms between each tone.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the duration of each tone see 3 8 2 and 3 8 4 added in the voice channel shall be 70ms 5ms and there shall be a minimum gap of 65ms between each tone"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "All SIM cards used in EIRENE mobiles shall comply with the requirements of the MORANE FFFIS for GSM-R SIM Cards [MORANE SIM].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all sim cards used in eirene mobiles shall comply with the requirements of the morane fffis for gsm r sim cards morane sim"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "(M) Radio interface aspects All mobiles shall be capable of operation in the following frequency bands: (M) Band Railway GSM (R-GSM) Frequencies (MHz) 876-915/921-960 Note: the R-GSM band includes the Public GSM (P-GSM) and Extended GSM (E-GSM) bands.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m radio interface aspects all mobiles shall be capable of operation in the following frequency bands m band railway gsm r gsm frequencies mhz 876 915 921 960 note the r gsm band includes the public gsm p gsm and extended gsm e gsm bands"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "The mobile radio antenna installation on vehicles shall be designed so as to ensure that mobiles operate correctly in networks which conform to the design criteria defined in section 3.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the mobile radio antenna installation on vehicles shall be designed so as to ensure that mobiles operate correctly in networks which conform to the design criteria defined in section 3"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "(M) Core MMI requirements A service availability indication shall be provided to radio users, as defined in [EN 301 515, Index [26]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m core mmi requirements a service availability indication shall be provided to radio users as defined in en 301 515 index 26"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "(M) The user shall be prevented from entering direct mode if the GSM service is available.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the user shall be prevented from entering direct mode if the gsm service is available"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "(M) If the attempt to establish a Railway emergency call is not successful after 2 seconds, an indication shall be provided to the user of the status of the establishment request procedure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if the attempt to establish a railway emergency call is not successful after 2 seconds an indication shall be provided to the user of the status of the establishment request procedure"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "(I) All EIRENE mobile equipment shall comply with all environmental, EMC and physical specifications defined in the GSM standard, especially with reference to [GSM 05.90 and EN 301 515, Index [2] & [35]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i all eirene mobile equipment shall comply with all environmental emc and physical specifications defined in the gsm standard especially with reference to gsm 05 90 and en 301 515 index 2 35"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "(M) All EIRENE mobile equipment shall conform to [EN 60950] (Safety of Information Technology Equipment), including Electrical Business Equipment, 1993, plus amendments A1 and A2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all eirene mobile equipment shall conform to en 60950 safety of information technology equipment including electrical business equipment 1993 plus amendments a1 and a2"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "tests required to validate compliance with EIRENE specification.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "tests required to validate compliance with eirene specification"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "Stricter national standards shall not prevent the use of other EIRENE mobiles in that country.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "stricter national standards shall not prevent the use of other eirene mobiles in that country"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "(M) Many of the railway specific standards referenced are Pre-standards (eg [prEN 50155, ENV 50121, prEN 50125]) and should be re-examined for their applicability to the EIRENE system if any modifications are made to these standards in the future.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m many of the railway specific standards referenced are pre standards eg pren 50155 env 50121 pren 50125 and should be re examined for their applicability to the eirene system if any modifications are made to these standards in the future"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "(I) All design, manufacturing, testing and installation of EIRENE mobile radio equipment shall comply with the quality procedures defined in [ISO 9001].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i all design manufacturing testing and installation of eirene mobile radio equipment shall comply with the quality procedures defined in iso 9001"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "(M) EIRENE mobile equipment shall be capable of operating over a standard range of temperatures from -20°C to +55°C.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m eirene mobile equipment shall be capable of operating over a standard range of temperatures from 20 c to 55 c"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "(M) EIRENE mobile equipment shall be capable of being stored (ie without being operational) at temperatures down to -40°C without any permanent damage.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m eirene mobile equipment shall be capable of being stored ie without being operational at temperatures down to 40 c without any permanent damage"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "(M) The equipment shall be capable of coping with temperature variations of up to +/- 1°C/minute.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the equipment shall be capable of coping with temperature variations of up to 1 c minute"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "(M) EIRENE mobile equipment shall be capable of operating between altitudes of -100m and 1800m, referenced to sea level.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m eirene mobile equipment shall be capable of operating between altitudes of 100m and 1800m referenced to sea level"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "(M) The equipment shall be able to cope with relative humidities of 100% for short periods, although the yearly average is expected to be 75%.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the equipment shall be able to cope with relative humidities of 100 for short periods although the yearly average is expected to be 75"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "The equipment shall also cope with 95% humidity for 30 days in the year.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the equipment shall also cope with 95 humidity for 30 days in the year"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "(M) Operationally caused infrequent and slight moisture condensation shall not lead to any malfunction or failure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m operationally caused infrequent and slight moisture condensation shall not lead to any malfunction or failure"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "(M) All equipment shall not degrade photochemically when exposed to solar radiation of up to 1200 W/m2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all equipment shall not degrade photochemically when exposed to solar radiation of up to 1200 w m2"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "(M) In normal operation of a mobile radio unit, it shall be expected that a combination of the above environmental conditions will be experienced.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in normal operation of a mobile radio unit it shall be expected that a combination of the above environmental conditions will be experienced"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "(M) All EIRENE mobile equipment shall be protected against shock and vibration in compliance with standards defined in [prEN 50125] using tests defined in [prEN 50155].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all eirene mobile equipment shall be protected against shock and vibration in compliance with standards defined in pren 50125 using tests defined in pren 50155"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "(M) All handheld mobile equipment shall be capable of withstanding the following shocks: (M) non-repetitive shocks of up to 3g for up to 100ms under normal conditions;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all handheld mobile equipment shall be capable of withstanding the following shocks m non repetitive shocks of up to 3g for up to 100ms under normal conditions"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "EIRENE mobile equipment shall be capable of being subjected to both sinusoidal and random vibration.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "eirene mobile equipment shall be capable of being subjected to both sinusoidal and random vibration"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "(M) Handheld mobile equipment shall be capable of withstanding the following levels of continuous sinusoidal vibration: (M) frequency range: 5-200 Hz;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m handheld mobile equipment shall be capable of withstanding the following levels of continuous sinusoidal vibration m frequency range 5 200 hz"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "The random vibrations to be withstood by mobile equipment shall be 0.25g in all three axes of freedom.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the random vibrations to be withstood by mobile equipment shall be 0 25g in all three axes of freedom"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "(M) For determining battery requirements, the transmit/receive duty cycles used shall be as shown in table 4-7 for each call type.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m for determining battery requirements the transmit receive duty cycles used shall be as shown in table 4 7 for each call type"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "(M) Battery requirements shall be provided without the use of discontinuous reception or transmission (DTX/DRX).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m battery requirements shall be provided without the use of discontinuous reception or transmission dtx drx"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "(M) Battery requirements shall be met based on full power during transmission and assuming hourly periodic location updating.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m battery requirements shall be met based on full power during transmission and assuming hourly periodic location updating"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "(I) All EIRENE mobile equipment shall be immune to external EMC as defined in [ENV 50121 part 4].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i all eirene mobile equipment shall be immune to external emc as defined in env 50121 part 4"
+    },
+    {
+      "req_id": "AUTO-0054",
+      "text": "(M) NOTE: EIRENE mobile equipment cannot comply with the emission requirements defined in this standard except outside the GSM transmission band.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m note eirene mobile equipment cannot comply with the emission requirements defined in this standard except outside the gsm transmission band"
+    },
+    {
+      "req_id": "AUTO-0055",
+      "text": "The transmission of EM radiation from all EIRENE mobile equipment shall comply with the radio frequency transmission masks defined in [EN 301 515, Index [35]] for the range of GSM frequencies defined in section 1 of this document.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the transmission of em radiation from all eirene mobile equipment shall comply with the radio frequency transmission masks defined in en 301 515 index 35 for the range of gsm frequencies defined in section 1 of this document"
+    },
+    {
+      "req_id": "AUTO-0056",
+      "text": "(M) Where the emission levels defined by [EN 301 515, Index [35]] exceed those stated in [ENV 50121 part 4], the GSM specification shall take precedence.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m where the emission levels defined by en 301 515 index 35 exceed those stated in env 50121 part 4 the gsm specification shall take precedence"
+    },
+    {
+      "req_id": "AUTO-0057",
+      "text": "(M) Mobile equipment shall comply with the generic standard for EMC in the industrial environment as defined in [ENV 50081 part 2], except for emissions at GSM frequencies as noted above.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m mobile equipment shall comply with the generic standard for emc in the industrial environment as defined in env 50081 part 2 except for emissions at gsm frequencies as noted above"
+    },
+    {
+      "req_id": "AUTO-0058",
+      "text": "(M) The emission and immunity standards for the general railway environment and ancillary services as defined in [ENV 50121 parts 1, 2, 3-1, 3-2 and 5] shall be considered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the emission and immunity standards for the general railway environment and ancillary services as defined in env 50121 parts 1 2 3 1 3 2 and 5 shall be considered"
+    },
+    {
+      "req_id": "AUTO-0059",
+      "text": "The environmental and physical tolerance of the EIRENE mobile radio units shall be tested at a facility in accordance with [EN 45001].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the environmental and physical tolerance of the eirene mobile radio units shall be tested at a facility in accordance with en 45001"
+    },
+    {
+      "req_id": "AUTO-0060",
+      "text": "(M) All EMC emission and immunity tests shall be performed in accordance with guidelines defined in the [EN 61000-4] series and in [EN 50140].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all emc emission and immunity tests shall be performed in accordance with guidelines defined in the en 61000 4 series and in en 50140"
+    },
+    {
+      "req_id": "AUTO-0061",
+      "text": "(M) Environmental testing procedures shall follow guidelines defined in [IEC 68 part 1].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m environmental testing procedures shall follow guidelines defined in iec 68 part 1"
+    },
+    {
+      "req_id": "AUTO-0062",
+      "text": "(M) Specific environmental test procedures to be followed for EIRENE mobile equipment shall include the following tests as defined in the [IEC 68] series: (M) A Cold;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m specific environmental test procedures to be followed for eirene mobile equipment shall include the following tests as defined in the iec 68 series m a cold"
+    },
+    {
+      "req_id": "AUTO-0063",
+      "text": "(O) [Note: this interface is not required where a Cab radio is implemented as an integrated unit.] 4) DM-MT - EIRENE Applications interface: specified to allow the option for separate procurement of DM-MT and EIRENE Application equipment for Cab radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o note this interface is not required where a cab radio is implemented as an integrated unit 4 dm mt eirene applications interface specified to allow the option for separate procurement of dm mt and eirene application equipment for cab radio"
+    },
+    {
+      "req_id": "AUTO-0064",
+      "text": "(I) Driver call-related functions Upon an appropriate MMI action, the radio shall initiate a call to the appropriate controller with ‘Railway operation’ priority (see section 10.2).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i driver call related functions upon an appropriate mmi action the radio shall initiate a call to the appropriate controller with railway operation priority see section 10 2"
+    },
+    {
+      "req_id": "AUTO-0065",
+      "text": "(M) The calling driver’s functional number shall be passed to the network using UUS1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the calling driver s functional number shall be passed to the network using uus1"
+    },
+    {
+      "req_id": "AUTO-0066",
+      "text": "(M) On receipt of a ‘Call other drivers in area’ request, the radio shall initiate a group call using the ‘all trains’ group identification (see section 9) with eMLPP priority level 2 (see section 10.2).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m on receipt of a call other drivers in area request the radio shall initiate a group call using the all trains group identification see section 9 with emlpp priority level 2 see section 10 2"
+    },
+    {
+      "req_id": "AUTO-0067",
+      "text": "(M) Activation of the ‘Railway emergency call’ function shall cause the radio to initiate a Railway emergency call as defined in section 13.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m activation of the railway emergency call function shall cause the radio to initiate a railway emergency call as defined in section 13"
+    },
+    {
+      "req_id": "AUTO-0068",
+      "text": "Where these vehicles are not connected by on-train wiring, it shall be possible for a permanent radio connection to be established between each of the active cabs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "where these vehicles are not connected by on train wiring it shall be possible for a permanent radio connection to be established between each of the active cabs"
+    },
+    {
+      "req_id": "AUTO-0069",
+      "text": "(I) Where there is more than one active cab, the radio connection shall be provided using the GSM Multi-Party service.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i where there is more than one active cab the radio connection shall be provided using the gsm multi party service"
+    },
+    {
+      "req_id": "AUTO-0070",
+      "text": "The multi-party call shall have ‘Railway operation’ priority (see section 10.2) and whilst on-going a ‘multi-drivers’ indication shall be displayed permanently at all Cab radios.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the multi party call shall have railway operation priority see section 10 2 and whilst on going a multi drivers indication shall be displayed permanently at all cab radios"
+    },
+    {
+      "req_id": "AUTO-0071",
+      "text": "(M) Upon activation of the function ‘Call train staff’, the radio shall determine the appropriate functional number based on the staff member selected and the train number (see section 9).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m upon activation of the function call train staff the radio shall determine the appropriate functional number based on the staff member selected and the train number see section 9"
+    },
+    {
+      "req_id": "AUTO-0072",
+      "text": "A GSM point-to-point voice call at ‘Railway operation’ priority (see section 10.2) shall then be initiated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a gsm point to point voice call at railway operation priority see section 10 2 shall then be initiated"
+    },
+    {
+      "req_id": "AUTO-0073",
+      "text": "(M) The Cab radio shall be capable of being used as a standard GSM telephone, such that the driver is able to call any valid number subject to closed user group, call barring or other restrictions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio shall be capable of being used as a standard gsm telephone such that the driver is able to call any valid number subject to closed user group call barring or other restrictions"
+    },
+    {
+      "req_id": "AUTO-0074",
+      "text": "(M) The Cab radio shall be able to receive, display and store incoming short (SMS) text messages (see section 12).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio shall be able to receive display and store incoming short sms text messages see section 12"
+    },
+    {
+      "req_id": "AUTO-0075",
+      "text": "(M) The Cab radio shall support shunting mode communications as defined in section 14.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio shall support shunting mode communications as defined in section 14"
+    },
+    {
+      "req_id": "AUTO-0076",
+      "text": "(M) The Cab radio should support direct mode communications as defined in section 15.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio should support direct mode communications as defined in section 15"
+    },
+    {
+      "req_id": "AUTO-0077",
+      "text": "(O) MMI functions When switched on, the radio shall initiate automatic self-testing using the GSM IMSI attach procedure (including the automatic selection of the default loudspeaker volume – see table 5-1).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o mmi functions when switched on the radio shall initiate automatic self testing using the gsm imsi attach procedure including the automatic selection of the default loudspeaker volume see table 5 1"
+    },
+    {
+      "req_id": "AUTO-0078",
+      "text": "(M) Upon switch on, the Cab radio shall be registered with a mobile network (see section 10.5).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m upon switch on the cab radio shall be registered with a mobile network see section 10 5"
+    },
+    {
+      "req_id": "AUTO-0079",
+      "text": "(M) If registration is not successful an audible and visual indication shall be provided.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if registration is not successful an audible and visual indication shall be provided"
+    },
+    {
+      "req_id": "AUTO-0080",
+      "text": "(M) Upon registration, the mobile shall be accessible by calling the MSISDN or the Engine or Coach number with which it is associated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m upon registration the mobile shall be accessible by calling the msisdn or the engine or coach number with which it is associated"
+    },
+    {
+      "req_id": "AUTO-0081",
+      "text": "This shall require the home network database to maintain this correlation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this shall require the home network database to maintain this correlation"
+    },
+    {
+      "req_id": "AUTO-0082",
+      "text": "(I) Upon activation of the registration function, a USSD message (see section 11) shall be sent by the Cab radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i upon activation of the registration function a ussd message see section 11 shall be sent by the cab radio"
+    },
+    {
+      "req_id": "AUTO-0083",
+      "text": "(M) Upon activation of the deregistration function, a USSD message (see section 11) shall be sent by the Cab radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m upon activation of the deregistration function a ussd message see section 11 shall be sent by the cab radio"
+    },
+    {
+      "req_id": "AUTO-0084",
+      "text": "(M) This procedure shall take place at the installation of the Cab radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m this procedure shall take place at the installation of the cab radio"
+    },
+    {
+      "req_id": "AUTO-0085",
+      "text": "It shall be initiated by an external device or by a member of a maintenance team.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it shall be initiated by an external device or by a member of a maintenance team"
+    },
+    {
+      "req_id": "AUTO-0086",
+      "text": "(M) On-train functions for equipment physically connected to the Cab radio shall be registered or deregistered automatically based on a USSD message (see section 11) sent by the Cab radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m on train functions for equipment physically connected to the cab radio shall be registered or deregistered automatically based on a ussd message see section 11 sent by the cab radio"
+    },
+    {
+      "req_id": "AUTO-0087",
+      "text": "(M) Handling of calls The sequence of actions required for a mobile originated call to another user shall be as follows: (M) Initiating a call: System is provided with the necessary information to set up call (eg number, bearer type, priority);",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m handling of calls the sequence of actions required for a mobile originated call to another user shall be as follows m initiating a call system is provided with the necessary information to set up call eg number bearer type priority"
+    },
+    {
+      "req_id": "AUTO-0088",
+      "text": "The sequence of actions for a mobile terminated call to a driver shall be as follows: (M) Call arbitration: Management of call requests on the basis of call priority;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the sequence of actions for a mobile terminated call to a driver shall be as follows m call arbitration management of call requests on the basis of call priority"
+    },
+    {
+      "req_id": "AUTO-0089",
+      "text": "Answering the call: Acceptance of incoming call by user (not required for auto answer);",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "answering the call acceptance of incoming call by user not required for auto answer"
+    },
+    {
+      "req_id": "AUTO-0090",
+      "text": "The Cab radio system shall provide a means for the driver to terminate established calls which he is authorised to terminate.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the cab radio system shall provide a means for the driver to terminate established calls which he is authorised to terminate"
+    },
+    {
+      "req_id": "AUTO-0091",
+      "text": "(I) The driver shall be able to initiate a call by selecting a name/number from stored number information in the radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the driver shall be able to initiate a call by selecting a name number from stored number information in the radio"
+    },
+    {
+      "req_id": "AUTO-0092",
+      "text": "(M) Facilities shall be provided to support a list of stored names/numbers of up to a minimum of 100 entries.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m facilities shall be provided to support a list of stored names numbers of up to a minimum of 100 entries"
+    },
+    {
+      "req_id": "AUTO-0093",
+      "text": "(M) Stored number access shall be provided to initiate the following calls: (M) Unless otherwise indicated at time of entry, calls from the stored numbers list shall be initiated as voice calls.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m stored number access shall be provided to initiate the following calls m unless otherwise indicated at time of entry calls from the stored numbers list shall be initiated as voice calls"
+    },
+    {
+      "req_id": "AUTO-0094",
+      "text": "It shall be possible to store a priority in association with a stored number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it shall be possible to store a priority in association with a stored number"
+    },
+    {
+      "req_id": "AUTO-0095",
+      "text": "(M) The driver shall be able to initiate a call by dialling any valid telephone number or functional number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver shall be able to initiate a call by dialling any valid telephone number or functional number"
+    },
+    {
+      "req_id": "AUTO-0096",
+      "text": "(M) Dial access shall be provided to initiate the following calls: (M) Abbreviated dialling facilities shall be supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m dial access shall be provided to initiate the following calls m abbreviated dialling facilities shall be supported"
+    },
+    {
+      "req_id": "AUTO-0097",
+      "text": "(M) Dialled calls from the MMI shall be point-to-point voice calls unless otherwise entered from the MMI at the time of initiation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m dialled calls from the mmi shall be point to point voice calls unless otherwise entered from the mmi at the time of initiation"
+    },
+    {
+      "req_id": "AUTO-0098",
+      "text": "(M) By default, dialled calls shall have a priority of railway information calls (eMLPP priority designation 4).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m by default dialled calls shall have a priority of railway information calls emlpp priority designation 4"
+    },
+    {
+      "req_id": "AUTO-0099",
+      "text": "The Cab radio shall arbitrate between calls when: an incoming call is received whilst the Cab radio is in an on-going call;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the cab radio shall arbitrate between calls when an incoming call is received whilst the cab radio is in an on going call"
+    },
+    {
+      "req_id": "AUTO-0100",
+      "text": "(M) The Cab radio shall apply the arbitration rules outlined in Table 5A-1 in Appendix 5A.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio shall apply the arbitration rules outlined in table 5a 1 in appendix 5a"
+    },
+    {
+      "req_id": "AUTO-0101",
+      "text": "(M) Once a call has been established the connected parties shall be able to communicate.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m once a call has been established the connected parties shall be able to communicate"
+    },
+    {
+      "req_id": "AUTO-0102",
+      "text": "(M) Replacing the handset shall result in the outcomes listed in Tables 5A-2 and 5A-3.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m replacing the handset shall result in the outcomes listed in tables 5a 2 and 5a 3"
+    },
+    {
+      "req_id": "AUTO-0103",
+      "text": "(M) Calls shall be able to be terminated by either party subject to the requirements shown in tables 5A-2 and 5A-3.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m calls shall be able to be terminated by either party subject to the requirements shown in tables 5a 2 and 5a 3"
+    },
+    {
+      "req_id": "AUTO-0104",
+      "text": "(M) Other Cab radio functions Incoming calls to the Cab radio shall be routed to the correct on-train user or device using information contained in the sub-addressing field.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m other cab radio functions incoming calls to the cab radio shall be routed to the correct on train user or device using information contained in the sub addressing field"
+    },
+    {
+      "req_id": "AUTO-0105",
+      "text": "(M) Using the GSM “Manual” network selection procedure, the Cab radio application shall allow the driver to access a prioritised list of authorised networks (to be displayed as stated in section 10.5) and shall allow the driver to select a desired network from this list.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m using the gsm manual network selection procedure the cab radio application shall allow the driver to access a prioritised list of authorised networks to be displayed as stated in section 10 5 and shall allow the driver to select a desired network from this list"
+    },
+    {
+      "req_id": "AUTO-0106",
+      "text": "This function shall not be available if there is an ongoing voice call involving the Cab radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this function shall not be available if there is an ongoing voice call involving the cab radio"
+    },
+    {
+      "req_id": "AUTO-0107",
+      "text": "(I) A means of directed network selection should be provided to ensure that the MS registers with the required network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i a means of directed network selection should be provided to ensure that the ms registers with the required network"
+    },
+    {
+      "req_id": "AUTO-0108",
+      "text": "(O) If directed network selection is implemented, the directed network selection procedure shall be initiated by an external trigger mechanism, which instructs the Cab radio application to select the required network unless a voice call is ongoing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o if directed network selection is implemented the directed network selection procedure shall be initiated by an external trigger mechanism which instructs the cab radio application to select the required network unless a voice call is ongoing"
+    },
+    {
+      "req_id": "AUTO-0109",
+      "text": "(M) If directed network selection is implemented, the Cab radio application shall use the GSM “Manual” network selection procedure (through the AT interface [EN 301 515, Index [19]]) to instruct the MT to register with the required network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if directed network selection is implemented the cab radio application shall use the gsm manual network selection procedure through the at interface en 301 515 index 19 to instruct the mt to register with the required network"
+    },
+    {
+      "req_id": "AUTO-0110",
+      "text": "(M) The Cab radio should be capable of selecting the most appropriate mobile radio network automatically using the selection criteria stated in section 10.5.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio should be capable of selecting the most appropriate mobile radio network automatically using the selection criteria stated in section 10 5"
+    },
+    {
+      "req_id": "AUTO-0111",
+      "text": "(O) If automatic network selection is implemented, the driver shall be capable of deactivating and/or re-activating this function using simple MMI actions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o if automatic network selection is implemented the driver shall be capable of deactivating and or re activating this function using simple mmi actions"
+    },
+    {
+      "req_id": "AUTO-0112",
+      "text": "(M) Whilst automatic network selection is enabled, the MMI shall display an indication.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m whilst automatic network selection is enabled the mmi shall display an indication"
+    },
+    {
+      "req_id": "AUTO-0113",
+      "text": "(M) In idle mode, if the GSM Service Indicator (see [EN 301 515, Index [26]]) is lost, the mobile shall give an audible and visual indication.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in idle mode if the gsm service indicator see en 301 515 index 26 is lost the mobile shall give an audible and visual indication"
+    },
+    {
+      "req_id": "AUTO-0114",
+      "text": "(M) Environmental and physical Train-mounted equipment including the Cab radio terminal equipment, MMI and antenna shall comply with all specifications in section 4 and all of those defined in this section, with those defined in this section taking priority.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m environmental and physical train mounted equipment including the cab radio terminal equipment mmi and antenna shall comply with all specifications in section 4 and all of those defined in this section with those defined in this section taking priority"
+    },
+    {
+      "req_id": "AUTO-0115",
+      "text": "([UIC 651] is a useful reference concerning the layout of cab equipment.) (I) The Cab radio shall be capable of operating within a temperature range of -20°C to +70°C.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "uic 651 is a useful reference concerning the layout of cab equipment i the cab radio shall be capable of operating within a temperature range of 20 c to 70 c"
+    },
+    {
+      "req_id": "AUTO-0116",
+      "text": "(M) The aerial and any other equipment mounted external to the train shall be capable of withstanding extremes of temperature from -40C to +70C.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the aerial and any other equipment mounted external to the train shall be capable of withstanding extremes of temperature from 40c to 70c"
+    },
+    {
+      "req_id": "AUTO-0117",
+      "text": "(M) The aerial and any other equipment mounted external to the train shall function correctly during rapid temperature fluctuations of up to 3°C/second.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the aerial and any other equipment mounted external to the train shall function correctly during rapid temperature fluctuations of up to 3 c second"
+    },
+    {
+      "req_id": "AUTO-0118",
+      "text": "(M) Any equipment mounted external to the train cab shall withstand the following additional physical conditions: (M) in-tunnel pressure pulses of 6 kPa (peak to peak) for up to 3 seconds;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m any equipment mounted external to the train cab shall withstand the following additional physical conditions m in tunnel pressure pulses of 6 kpa peak to peak for up to 3 seconds"
+    },
+    {
+      "req_id": "AUTO-0119",
+      "text": "Measures should be taken to reduce the risk of theft of radio equipment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "measures should be taken to reduce the risk of theft of radio equipment"
+    },
+    {
+      "req_id": "AUTO-0120",
+      "text": "(O) Ease of maintenance should be taken into account in the design and installation of radio equipment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o ease of maintenance should be taken into account in the design and installation of radio equipment"
+    },
+    {
+      "req_id": "AUTO-0121",
+      "text": "For example, maintenance access to antennas on vehicles should be provided.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "for example maintenance access to antennas on vehicles should be provided"
+    },
+    {
+      "req_id": "AUTO-0122",
+      "text": "(O) The “Subscriber Identity Module” (SIM card) shall be physically integrated with the radio set and shall not be able to be removed except by maintenance staff.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o the subscriber identity module sim card shall be physically integrated with the radio set and shall not be able to be removed except by maintenance staff"
+    },
+    {
+      "req_id": "AUTO-0123",
+      "text": "(M) The Cab radio should be mounted in the train cab in compliance with [prEN 50261].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio should be mounted in the train cab in compliance with pren 50261"
+    },
+    {
+      "req_id": "AUTO-0124",
+      "text": "(O) Any equipment mounted inside the train cab shall be capable of withstanding the following maximum levels of sinusoidal vibration: (M) frequency range: 5-200 Hz;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o any equipment mounted inside the train cab shall be capable of withstanding the following maximum levels of sinusoidal vibration m frequency range 5 200 hz"
+    },
+    {
+      "req_id": "AUTO-0125",
+      "text": "Any equipment mounted external to the train cab shall withstand the following maximum levels of sinusoidal vibration: (M) frequency range: 5-1000 Hz;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any equipment mounted external to the train cab shall withstand the following maximum levels of sinusoidal vibration m frequency range 5 1000 hz"
+    },
+    {
+      "req_id": "AUTO-0126",
+      "text": "The Cab radio shall comply with draft European standard [prEN 50124 part 1] concerning insulation co-ordination with reference to clearances and creepages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the cab radio shall comply with draft european standard pren 50124 part 1 concerning insulation co ordination with reference to clearances and creepages"
+    },
+    {
+      "req_id": "AUTO-0127",
+      "text": "The Cab radio equipment shall be capable of withstanding the following changes to the main and backup power supplies without interrupting normal operation: (M) voltage fluctuations up to ±15% of nominal supply voltage;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the cab radio equipment shall be capable of withstanding the following changes to the main and backup power supplies without interrupting normal operation m voltage fluctuations up to 15 of nominal supply voltage"
+    },
+    {
+      "req_id": "AUTO-0128",
+      "text": "The Cab radio shall withstand the effects of power supply transients as defined in [prEN 50155].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the cab radio shall withstand the effects of power supply transients as defined in pren 50155"
+    },
+    {
+      "req_id": "AUTO-0129",
+      "text": "(M) The driver and other in-cab equipment shall be protected against all electrical hazards arising from EIRENE mobile equipment as defined in [EN 50153].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver and other in cab equipment shall be protected against all electrical hazards arising from eirene mobile equipment as defined in en 50153"
+    },
+    {
+      "req_id": "AUTO-0130",
+      "text": "(I) EMC emission from the Cab radio shall comply with [ENV 50121 parts 1, 2, 3-2 and 4].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i emc emission from the cab radio shall comply with env 50121 parts 1 2 3 2 and 4"
+    },
+    {
+      "req_id": "AUTO-0131",
+      "text": "(M) Emissions from the train mounted antenna associated with the Cab radio shall be limited to those specified by [EN 301 515, Index [35]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m emissions from the train mounted antenna associated with the cab radio shall be limited to those specified by en 301 515 index 35"
+    },
+    {
+      "req_id": "AUTO-0132",
+      "text": "(M) Any emissions radiating into the driver’s cab and other on-board equipment from the exterior aerial shall meet the requirements defined in [ENV 50121 parts 1, 2, 3-1, 3-2 and 4] to the highest possible degree.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m any emissions radiating into the driver s cab and other on board equipment from the exterior aerial shall meet the requirements defined in env 50121 parts 1 2 3 1 3 2 and 4 to the highest possible degree"
+    },
+    {
+      "req_id": "AUTO-0133",
+      "text": "(M) The Cab radio shall pass electrical tests as defined in [IEC 571 parts 1, 2 and 3].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio shall pass electrical tests as defined in iec 571 parts 1 2 and 3"
+    },
+    {
+      "req_id": "AUTO-0134",
+      "text": "(I) ERTMS/ETCS interface Some Cab radios will be required to provide communications for ERTMS/ETCS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i ertms etcs interface some cab radios will be required to provide communications for ertms etcs"
+    },
+    {
+      "req_id": "AUTO-0135",
+      "text": "(I) If ERTMS/ETCS communications are required, an interface as defined in the FFFIS for EURORADIO [MORANE EURO FFFIS] shall be implemented.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i if ertms etcs communications are required an interface as defined in the fffis for euroradio morane euro fffis shall be implemented"
+    },
+    {
+      "req_id": "AUTO-0136",
+      "text": "(M) Public Address interface If implemented, the Public Address interface should comply with the specifications of the UIC Fiche [UIC 568].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m public address interface if implemented the public address interface should comply with the specifications of the uic fiche uic 568"
+    },
+    {
+      "req_id": "AUTO-0137",
+      "text": "(O) UIC Intercom If implemented, the UIC interface should comply with the specifications of the UIC Fiches [UIC 558, 568].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o uic intercom if implemented the uic interface should comply with the specifications of the uic fiches uic 558 568"
+    },
+    {
+      "req_id": "AUTO-0138",
+      "text": "(I) Where other data interfaces are implemented, they should be of the RS422 standard.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i where other data interfaces are implemented they should be of the rs422 standard"
+    },
+    {
+      "req_id": "AUTO-0139",
+      "text": "(I) A standard data interface shall be provided to allow a computer to be connected to the radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i a standard data interface shall be provided to allow a computer to be connected to the radio"
+    },
+    {
+      "req_id": "AUTO-0140",
+      "text": "(M) The General purpose radio shall operate as a standard GSM terminal, supplying mobile services as defined in section 4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the general purpose radio shall operate as a standard gsm terminal supplying mobile services as defined in section 4"
+    },
+    {
+      "req_id": "AUTO-0141",
+      "text": "(M) General purpose radio functions Automatic self-testing of the radio shall use the GSM IMSI attach procedure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m general purpose radio functions automatic self testing of the radio shall use the gsm imsi attach procedure"
+    },
+    {
+      "req_id": "AUTO-0142",
+      "text": "(M) Upon switch on, once the radio is connected to a mobile network, it shall be able to receive all calls made using the MSISDN or appropriate group call number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m upon switch on once the radio is connected to a mobile network it shall be able to receive all calls made using the msisdn or appropriate group call number"
+    },
+    {
+      "req_id": "AUTO-0143",
+      "text": "(M) It shall be possible to register and deregister a functional number by the user entering his functional number, which is transmitted to the ground along with the subscriber’s IMSI, using USSD (see section 11).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to register and deregister a functional number by the user entering his functional number which is transmitted to the ground along with the subscriber s imsi using ussd see section 11"
+    },
+    {
+      "req_id": "AUTO-0144",
+      "text": "(M) Environmental and physical The full environmental and physical specification of the General purpose shall be as close as possible to that of a Commercial-Off-The-Shelf (COTS) GSM mobile whilst adhering to the specifications provided in section 4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m environmental and physical the full environmental and physical specification of the general purpose shall be as close as possible to that of a commercial off the shelf cots gsm mobile whilst adhering to the specifications provided in section 4"
+    },
+    {
+      "req_id": "AUTO-0145",
+      "text": "(M) The General purpose radio shall comply with the core climatic conditions defined in section 4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the general purpose radio shall comply with the core climatic conditions defined in section 4"
+    },
+    {
+      "req_id": "AUTO-0146",
+      "text": "(M) SIM cards should be fixed into the radio to protect against accidental loss.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m sim cards should be fixed into the radio to protect against accidental loss"
+    },
+    {
+      "req_id": "AUTO-0147",
+      "text": "(I) General purpose radios shall be equipped with rechargeable batteries capable of providing a minimum of eight hours operation over the temperature range +18°C to +25°C from a single charge, based on the following cycle (see section 4.5.21): (M) point-to-point calls 20%;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i general purpose radios shall be equipped with rechargeable batteries capable of providing a minimum of eight hours operation over the temperature range 18 c to 25 c from a single charge based on the following cycle see section 4 5 21 m point to point calls 20"
+    },
+    {
+      "req_id": "AUTO-0148",
+      "text": "Changing the battery shall not result in the loss of data stored in the radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "changing the battery shall not result in the loss of data stored in the radio"
+    },
+    {
+      "req_id": "AUTO-0149",
+      "text": "(M) The General purpose radio shall be suitable for use with a car adapter kit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the general purpose radio shall be suitable for use with a car adapter kit"
+    },
+    {
+      "req_id": "AUTO-0150",
+      "text": "(M) The General purpose radio should comply with [EN 50081] (generic EMC for residential, commercial and light industry).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the general purpose radio should comply with en 50081 generic emc for residential commercial and light industry"
+    },
+    {
+      "req_id": "AUTO-0151",
+      "text": "(M) The Operational radio shall operate as a standard GSM terminal, supplying mobile services as defined in section 4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio shall operate as a standard gsm terminal supplying mobile services as defined in section 4"
+    },
+    {
+      "req_id": "AUTO-0152",
+      "text": "(M) Operational radio functions Automatic self-testing of the radio shall use the GSM IMSI attach procedure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m operational radio functions automatic self testing of the radio shall use the gsm imsi attach procedure"
+    },
+    {
+      "req_id": "AUTO-0153",
+      "text": "(M) Upon receipt of the call establishment request, the radio shall retrieve the stored number for the appropriate controller from the SIM or other storage location.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m upon receipt of the call establishment request the radio shall retrieve the stored number for the appropriate controller from the sim or other storage location"
+    },
+    {
+      "req_id": "AUTO-0154",
+      "text": "(M) Once an appropriate number has been obtained, the radio shall initiate a call to this number with ‘Railway operation’ priority (see section 10.2).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m once an appropriate number has been obtained the radio shall initiate a call to this number with railway operation priority see section 10 2"
+    },
+    {
+      "req_id": "AUTO-0155",
+      "text": "Any functional number associated with the user shall be passed to the network using UUS1 (see section 11.5).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any functional number associated with the user shall be passed to the network using uus1 see section 11 5"
+    },
+    {
+      "req_id": "AUTO-0156",
+      "text": "(M) The calling user’s functional number, if there is one, shall be passed to the network using UUS1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the calling user s functional number if there is one shall be passed to the network using uus1"
+    },
+    {
+      "req_id": "AUTO-0157",
+      "text": "(M) The Operational radio should support direct mode communications as defined in section 15.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio should support direct mode communications as defined in section 15"
+    },
+    {
+      "req_id": "AUTO-0158",
+      "text": "(O) The Operational radio should support shunting mode communications as defined in section 14.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o the operational radio should support shunting mode communications as defined in section 14"
+    },
+    {
+      "req_id": "AUTO-0159",
+      "text": "(I) Environmental and physical The Operational radio shall comply with the basic standards defined for all EIRENE mobile equipment in section 4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i environmental and physical the operational radio shall comply with the basic standards defined for all eirene mobile equipment in section 4"
+    },
+    {
+      "req_id": "AUTO-0160",
+      "text": "(M) The Operational radio shall cope with rapid temperature fluctuations of up to 3°C/second.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio shall cope with rapid temperature fluctuations of up to 3 c second"
+    },
+    {
+      "req_id": "AUTO-0161",
+      "text": "(M) The Operational radio shall be capable of withstanding exposure to extreme environmental conditions [IEC 721 part 1].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio shall be capable of withstanding exposure to extreme environmental conditions iec 721 part 1"
+    },
+    {
+      "req_id": "AUTO-0162",
+      "text": "(M) The Operational radio shall conform to IP 54 [IEC 529/EN 60529] as a minimum.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio shall conform to ip 54 iec 529 en 60529 as a minimum"
+    },
+    {
+      "req_id": "AUTO-0163",
+      "text": "(M) SIM cards shall be fixed into the radio such that they can only be removed by the use of a tool.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m sim cards shall be fixed into the radio such that they can only be removed by the use of a tool"
+    },
+    {
+      "req_id": "AUTO-0164",
+      "text": "(M) The Operational radio shall be capable of withstanding the following shocks: (M) semi-sinusoidal shocks of up to 5g for up to 100ms under normal conditions;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio shall be capable of withstanding the following shocks m semi sinusoidal shocks of up to 5g for up to 100ms under normal conditions"
+    },
+    {
+      "req_id": "AUTO-0165",
+      "text": "The Operational radio user shall be protected against all electrical hazards arising from the mobile equipment as defined in [EN 50153].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the operational radio user shall be protected against all electrical hazards arising from the mobile equipment as defined in en 50153"
+    },
+    {
+      "req_id": "AUTO-0166",
+      "text": "(M) Operational radios shall be equipped with rechargeable batteries capable of providing a minimum of eight hours operation over the temperature range -10°C to +55°C from a single charge, based on the following cycle (see section 4.5.21): (M) point-to-point calls 20%;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m operational radios shall be equipped with rechargeable batteries capable of providing a minimum of eight hours operation over the temperature range 10 c to 55 c from a single charge based on the following cycle see section 4 5 21 m point to point calls 20"
+    },
+    {
+      "req_id": "AUTO-0167",
+      "text": "standby 20% Changing the battery shall not result in the loss of data stored in the radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "standby 20 changing the battery shall not result in the loss of data stored in the radio"
+    },
+    {
+      "req_id": "AUTO-0168",
+      "text": "(M) The Operational radio shall be suitable for use with a car adapter kit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio shall be suitable for use with a car adapter kit"
+    },
+    {
+      "req_id": "AUTO-0169",
+      "text": "(M) The Operational radio should comply with [EN 50081 part 2] (generic EMC for the industrial environment).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the operational radio should comply with en 50081 part 2 generic emc for the industrial environment"
+    },
+    {
+      "req_id": "AUTO-0170",
+      "text": "(I) To terminate a VGCS/VBS call by DTMF signalling, the 3-digit sequence “***” shall be used.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i to terminate a vgcs vbs call by dtmf signalling the 3 digit sequence shall be used"
+    },
+    {
+      "req_id": "AUTO-0171",
+      "text": "(M) Muting and unmuting for VGCS calls Muting and unmuting shall be in line with [EN 301 515, Index [4]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m muting and unmuting for vgcs calls muting and unmuting shall be in line with en 301 515 index 4"
+    },
+    {
+      "req_id": "AUTO-0172",
+      "text": "(M) The terminal of the controller should receive a single DTMF grant tone “#” of duration 100ms ± 5ms sent by the network if it has detected the 3-digit DTMF sequence “###” and if the controller was not previously talking.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the terminal of the controller should receive a single dtmf grant tone of duration 100ms 5ms sent by the network if it has detected the 3 digit dtmf sequence and if the controller was not previously talking"
+    },
+    {
+      "req_id": "AUTO-0173",
+      "text": "(O) Any group call controller who wishes to stop talking shall indicate his wish, for example by releasing the PTT button, whereupon the 3-digit DTMF sequence “#**” shall be transferred.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o any group call controller who wishes to stop talking shall indicate his wish for example by releasing the ptt button whereupon the 3 digit dtmf sequence shall be transferred"
+    },
+    {
+      "req_id": "AUTO-0174",
+      "text": "(M) The duration of each tone (see 8.3.2 and 8.3.4) added in the voice channel, shall be 70ms ± 5ms, and there shall be a minimum gap of 65ms between each tone.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the duration of each tone see 8 3 2 and 8 3 4 added in the voice channel shall be 70ms 5ms and there shall be a minimum gap of 65ms between each tone"
+    },
+    {
+      "req_id": "AUTO-0175",
+      "text": "(M) Numbering plan General International standardisation of the numbering plan is required to ensure interworking between networks.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m numbering plan general international standardisation of the numbering plan is required to ensure interworking between networks"
+    },
+    {
+      "req_id": "AUTO-0176",
+      "text": "Equipment design must therefore be such as to give maximum flexibility in numbering arrangements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "equipment design must therefore be such as to give maximum flexibility in numbering arrangements"
+    },
+    {
+      "req_id": "AUTO-0177",
+      "text": "(I) Each railway should have appropriate call-barring facilities to prevent unintended access to the GSM-R network by non-authorised users.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i each railway should have appropriate call barring facilities to prevent unintended access to the gsm r network by non authorised users"
+    },
+    {
+      "req_id": "AUTO-0178",
+      "text": "(O) Numbering plan requirements Within each GSM-R network, each Train Number shall be unique for the period of the journey.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o numbering plan requirements within each gsm r network each train number shall be unique for the period of the journey"
+    },
+    {
+      "req_id": "AUTO-0179",
+      "text": "(M) Every On-Train Function shall be identified by a standard code and shall conform to the list of functions given in Appendix 9A of this section.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m every on train function shall be identified by a standard code and shall conform to the list of functions given in appendix 9a of this section"
+    },
+    {
+      "req_id": "AUTO-0180",
+      "text": "(M) All Train Function Numbers and their associated MSISDN numbers shall be stored in the same routing database, which is the database of the GSM-R network in which the train is currently operating.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all train function numbers and their associated msisdn numbers shall be stored in the same routing database which is the database of the gsm r network in which the train is currently operating"
+    },
+    {
+      "req_id": "AUTO-0181",
+      "text": "(M) Every On-Engine Function shall be identified by a standard code and shall conform to the list of functions given in Appendix 9A of this section.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m every on engine function shall be identified by a standard code and shall conform to the list of functions given in appendix 9a of this section"
+    },
+    {
+      "req_id": "AUTO-0182",
+      "text": "(M) The Engine Function Number(s) and associated MSISDN numbers shall at any time be stored as an entry in the routing database of the home GSM-R network6 of the engine.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the engine function number s and associated msisdn numbers shall at any time be stored as an entry in the routing database of the home gsm r network6 of the engine"
+    },
+    {
+      "req_id": "AUTO-0183",
+      "text": "(M) The Coach Function Number(s) and associated MSISDN number(s) shall at any time be stored as an entry in the routing database of the home GSM-R network of the coach.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the coach function number s and associated msisdn number s shall at any time be stored as an entry in the routing database of the home gsm r network of the coach"
+    },
+    {
+      "req_id": "AUTO-0184",
+      "text": "(M) Every Function shall be identified by a standard code and shall conform to the list of functions given in Appendix 9A of this section.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m every function shall be identified by a standard code and shall conform to the list of functions given in appendix 9a of this section"
+    },
+    {
+      "req_id": "AUTO-0185",
+      "text": "(M) The functional numbers of the Shunting Team Members, Maintenance Team Members and Train Controller (and any associated MSISDN numbers) shall be stored as entries in the routing database of the home GSM-R network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the functional numbers of the shunting team members maintenance team members and train controller and any associated msisdn numbers shall be stored as entries in the routing database of the home gsm r network"
+    },
+    {
+      "req_id": "AUTO-0186",
+      "text": "(M) Implementation of the EIRENE numbering plan shall not prohibit any authorised caller from using the MSISDN number where known, thus enabling mobiles to be assigned to particular personnel where this is appropriate.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m implementation of the eirene numbering plan shall not prohibit any authorised caller from using the msisdn number where known thus enabling mobiles to be assigned to particular personnel where this is appropriate"
+    },
+    {
+      "req_id": "AUTO-0187",
+      "text": "(M) Service areas shall be defined within each railway network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m service areas shall be defined within each railway network"
+    },
+    {
+      "req_id": "AUTO-0188",
+      "text": "(M) The numbering of Service Areas for group calls and broadcast calls shall be made in accordance with GSM Technical Specifications [EN 301 515, Index [21] & [4]] and [EN 301 515, Index [22] & [5]] respectively.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the numbering of service areas for group calls and broadcast calls shall be made in accordance with gsm technical specifications en 301 515 index 21 4 and en 301 515 index 22 5 respectively"
+    },
+    {
+      "req_id": "AUTO-0189",
+      "text": "(O) The EIRENE numbering plan shall be standardised to allow interoperability and shall be implemented as a private numbering plan within the GSM-R network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o the eirene numbering plan shall be standardised to allow interoperability and shall be implemented as a private numbering plan within the gsm r network"
+    },
+    {
+      "req_id": "AUTO-0190",
+      "text": "(I) If alphanumerical numbering is required within a railway network, then these numbers may either be translated at the user terminal into a subscriber number or conveyed between the calling party and a routing database using a nationally determined approach.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i if alphanumerical numbering is required within a railway network then these numbers may either be translated at the user terminal into a subscriber number or conveyed between the calling party and a routing database using a nationally determined approach"
+    },
+    {
+      "req_id": "AUTO-0191",
+      "text": "In addition, Breakout Codes (BCs) shall be used to allow users within the GSM-R network to access external numbers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in addition breakout codes bcs shall be used to allow users within the gsm r network to access external numbers"
+    },
+    {
+      "req_id": "AUTO-0192",
+      "text": "(M) Access from the GSM-R network to external networks shall be as detailed in section 9.10.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m access from the gsm r network to external networks shall be as detailed in section 9 10"
+    },
+    {
+      "req_id": "AUTO-0193",
+      "text": "(I) Every railway network shall consider a number as a National EIRENE Number (NEN) unless the number is preceded by an International Code, identifying another GSM-R network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i every railway network shall consider a number as a national eirene number nen unless the number is preceded by an international code identifying another gsm r network"
+    },
+    {
+      "req_id": "AUTO-0194",
+      "text": "(M) The National EIRENE Number shall consist of three distinct parts, as shown in figure 9-1: (M) 1) Call Type: The Call Type (CT) prefix is used to distinguish between the different types of User Numbers that are allowed within the national EIRENE numbering plan.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the national eirene number shall consist of three distinct parts as shown in figure 9 1 m 1 call type the call type ct prefix is used to distinguish between the different types of user numbers that are allowed within the national eirene numbering plan"
+    },
+    {
+      "req_id": "AUTO-0195",
+      "text": "(I) 2) User Identifier Number: The User Identifier Number (UIN) shall be one of the following numbers (as identified by the CT): (M) Train Number (TN): a number given to a train by operational staff for a particular journey.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i 2 user identifier number the user identifier number uin shall be one of the following numbers as identified by the ct m train number tn a number given to a train by operational staff for a particular journey"
+    },
+    {
+      "req_id": "AUTO-0196",
+      "text": "This number shall be unique for the duration of the journey.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this number shall be unique for the duration of the journey"
+    },
+    {
+      "req_id": "AUTO-0197",
+      "text": "In order to call a particular locomotive, it shall be possible to call a number associated with the tractive unit's stock number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to call a particular locomotive it shall be possible to call a number associated with the tractive unit s stock number"
+    },
+    {
+      "req_id": "AUTO-0198",
+      "text": "The actual number of the unit, which shall be used as the EN, is based on the complete identification number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the actual number of the unit which shall be used as the en is based on the complete identification number"
+    },
+    {
+      "req_id": "AUTO-0199",
+      "text": "In order to call a particular coach it shall be possible to call a number associated with the vehicle marking.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to call a particular coach it shall be possible to call a number associated with the vehicle marking"
+    },
+    {
+      "req_id": "AUTO-0200",
+      "text": "The actual number of the coach is denoted by seven digits (positions 5 to 11 of the complete vehicle marking), which shall be used as the CN7.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the actual number of the coach is denoted by seven digits positions 5 to 11 of the complete vehicle marking which shall be used as the cn7"
+    },
+    {
+      "req_id": "AUTO-0201",
+      "text": "It shall consist of one or two digits as defined in table 9-1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it shall consist of one or two digits as defined in table 9 1"
+    },
+    {
+      "req_id": "AUTO-0202",
+      "text": "The following formats are defined: Train Function Numbers (TFN) shall take one of the forms as defined in table 9-2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the following formats are defined train function numbers tfn shall take one of the forms as defined in table 9 2"
+    },
+    {
+      "req_id": "AUTO-0203",
+      "text": "Leading zeros shall be used in those situations where the train number is less than five digits.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "leading zeros shall be used in those situations where the train number is less than five digits"
+    },
+    {
+      "req_id": "AUTO-0204",
+      "text": "Engine Function Numbers (EFN) shall take the format as defined in table 9-3.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "engine function numbers efn shall take the format as defined in table 9 3"
+    },
+    {
+      "req_id": "AUTO-0205",
+      "text": "Coach Function Numbers (CFN) shall take the format as defined in table 9-4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "coach function numbers cfn shall take the format as defined in table 9 4"
+    },
+    {
+      "req_id": "AUTO-0206",
+      "text": "The UIN field format for calls to shunting teams and maintenance teams shall consist of a Location Number (LN), which identifies the location where the called party is registered, followed by a Function Code (FC).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the uin field format for calls to shunting teams and maintenance teams shall consist of a location number ln which identifies the location where the called party is registered followed by a function code fc"
+    },
+    {
+      "req_id": "AUTO-0207",
+      "text": "The Location Number shall consist of 5 digits and shall be assigned on a national basis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the location number shall consist of 5 digits and shall be assigned on a national basis"
+    },
+    {
+      "req_id": "AUTO-0208",
+      "text": "The Function Code shall consist of 4 digits.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the function code shall consist of 4 digits"
+    },
+    {
+      "req_id": "AUTO-0209",
+      "text": "The composition of the Function Code field for calls to shunting teams and maintenance teams shall be as defined in table 9-6.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the composition of the function code field for calls to shunting teams and maintenance teams shall be as defined in table 9 6"
+    },
+    {
+      "req_id": "AUTO-0210",
+      "text": "The UIN field for calls to train controllers shall be a Location Number (LN) which identifies the location where the called party is registered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the uin field for calls to train controllers shall be a location number ln which identifies the location where the called party is registered"
+    },
+    {
+      "req_id": "AUTO-0211",
+      "text": "The FC field for calls to train controllers shall consist of two digits and be as defined in table 9-7.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the fc field for calls to train controllers shall consist of two digits and be as defined in table 9 7"
+    },
+    {
+      "req_id": "AUTO-0212",
+      "text": "The UN of the MSN shall consist of the Subscriber Number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the un of the msn shall consist of the subscriber number"
+    },
+    {
+      "req_id": "AUTO-0213",
+      "text": "The UIN field format for group calls shall be a Service Area (SA) indicator, which identifies the area in which the group call is to be active.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the uin field format for group calls shall be a service area sa indicator which identifies the area in which the group call is to be active"
+    },
+    {
+      "req_id": "AUTO-0214",
+      "text": "Each Service Area shall be allocated on a national basis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each service area shall be allocated on a national basis"
+    },
+    {
+      "req_id": "AUTO-0215",
+      "text": "In network boundary areas, the Service Area shall be allocated on a bilateral basis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in network boundary areas the service area shall be allocated on a bilateral basis"
+    },
+    {
+      "req_id": "AUTO-0216",
+      "text": "(See also subsection 9.9.) The FC field format for group calls shall consist of three digits and be as defined in table 9-8.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "see also subsection 9 9 the fc field format for group calls shall consist of three digits and be as defined in table 9 8"
+    },
+    {
+      "req_id": "AUTO-0217",
+      "text": "(I) GSM-R networks shall recognise International EIRENE Numbers starting with the IC of the GSM-R network in which the calling party is currently operating as National EIRENE Numbers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i gsm r networks shall recognise international eirene numbers starting with the ic of the gsm r network in which the calling party is currently operating as national eirene numbers"
+    },
+    {
+      "req_id": "AUTO-0218",
+      "text": "(M) The International EIRENE Number shall consist of three distinct parts, as shown in figure 9-2: (M) International Code (IC), which shall be used to route calls to the appropriate GSM-R network;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the international eirene number shall consist of three distinct parts as shown in figure 9 2 m international code ic which shall be used to route calls to the appropriate gsm r network"
+    },
+    {
+      "req_id": "AUTO-0219",
+      "text": "2) National EIRENE Number (NEN) The format of the National EIRENE Number field shall be as defined in subsection 9.5.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2 national eirene number nen the format of the national eirene number field shall be as defined in subsection 9 5"
+    },
+    {
+      "req_id": "AUTO-0220",
+      "text": "Use of MSISDN numbers At least one MSISDN number shall be allocated to each mobile station.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "use of msisdn numbers at least one msisdn number shall be allocated to each mobile station"
+    },
+    {
+      "req_id": "AUTO-0221",
+      "text": "(M) The structure of the MSISDN numbers shall comply with GSM Technical Specification [GSM 03.03].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the structure of the msisdn numbers shall comply with gsm technical specification gsm 03 03"
+    },
+    {
+      "req_id": "AUTO-0222",
+      "text": "(M) Within each GSM-R network, the following relationships between the MSISDN Subscriber Number and the National EIRENE Number can be identified: the MSISDN Subscriber Number shall be equal to the National EIRENE Number for Call Type = 8;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m within each gsm r network the following relationships between the msisdn subscriber number and the national eirene number can be identified the msisdn subscriber number shall be equal to the national eirene number for call type 8"
+    },
+    {
+      "req_id": "AUTO-0223",
+      "text": "(O) It shall be possible for authorised subscribers of fixed and mobile networks to call mobiles using the appropriate MSISDN number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o it shall be possible for authorised subscribers of fixed and mobile networks to call mobiles using the appropriate msisdn number"
+    },
+    {
+      "req_id": "AUTO-0224",
+      "text": "(M) Use of Short Dialling Codes For certain functions, standardised short codes shall be implemented for mobile originated calls.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m use of short dialling codes for certain functions standardised short codes shall be implemented for mobile originated calls"
+    },
+    {
+      "req_id": "AUTO-0225",
+      "text": "(M) Each short dialling code shall consist of four digits.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m each short dialling code shall consist of four digits"
+    },
+    {
+      "req_id": "AUTO-0226",
+      "text": "(M) Short dialling codes shall start with the first digit equal to 1 (ie CT=1).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m short dialling codes shall start with the first digit equal to 1 ie ct 1"
+    },
+    {
+      "req_id": "AUTO-0227",
+      "text": "These codes shall be as given in table 9-10.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these codes shall be as given in table 9 10"
+    },
+    {
+      "req_id": "AUTO-0228",
+      "text": "(M) In addition, the network shall support the special short codes as defined in table 9-11.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in addition the network shall support the special short codes as defined in table 9 11"
+    },
+    {
+      "req_id": "AUTO-0229",
+      "text": "(M) Use of group addresses Standardisation of UIC group addresses is required to provide interoperability between the fixed railway networks within the GSM-R network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m use of group addresses standardisation of uic group addresses is required to provide interoperability between the fixed railway networks within the gsm r network"
+    },
+    {
+      "req_id": "AUTO-0230",
+      "text": "(M) The Service Area shall be defined on a national basis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the service area shall be defined on a national basis"
+    },
+    {
+      "req_id": "AUTO-0231",
+      "text": "(M) In network boundary areas, the Service Area shall be allocated on a bilateral basis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in network boundary areas the service area shall be allocated on a bilateral basis"
+    },
+    {
+      "req_id": "AUTO-0232",
+      "text": "(M) Function Codes shall be defined within the framework given in table 9-8 on an international basis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m function codes shall be defined within the framework given in table 9 8 on an international basis"
+    },
+    {
+      "req_id": "AUTO-0233",
+      "text": "(M) Access to external networks Access to other GSM-R networks shall be possible by using a Breakout Code (BC) as part of the dialled number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m access to external networks access to other gsm r networks shall be possible by using a breakout code bc as part of the dialled number"
+    },
+    {
+      "req_id": "AUTO-0234",
+      "text": "(I) Access to private networks shall be performed by using a BC, defined in table 9-12c.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i access to private networks shall be performed by using a bc defined in table 9 12c"
+    },
+    {
+      "req_id": "AUTO-0235",
+      "text": "The GSM-R network shall allow users direct access to public networks, subject to call barring restrictions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the gsm r network shall allow users direct access to public networks subject to call barring restrictions"
+    },
+    {
+      "req_id": "AUTO-0236",
+      "text": "(M) Where access to public networks is allowed, this shall be performed by using an Access Code (AC), defined in table 9-13, followed by the international or national number of the called subscriber as defined in [ITU-T 164].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m where access to public networks is allowed this shall be performed by using an access code ac defined in table 9 13 followed by the international or national number of the called subscriber as defined in itu t 164"
+    },
+    {
+      "req_id": "AUTO-0237",
+      "text": "Calls from external networks to the GSM-R network Access to the GSM-R network should be performed by dialling an EIRENE Network Access Number (ENAN)8, followed by the relevant National or International Functional Number as defined in subsections 9.5 and 9.6 respectively.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "calls from external networks to the gsm r network access to the gsm r network should be performed by dialling an eirene network access number enan 8 followed by the relevant national or international functional number as defined in subsections 9 5 and 9 6 respectively"
+    },
+    {
+      "req_id": "AUTO-0238",
+      "text": "(O) Provision should be made to prevent unauthorised calls to mobiles from outside the GSM-R network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o provision should be made to prevent unauthorised calls to mobiles from outside the gsm r network"
+    },
+    {
+      "req_id": "AUTO-0239",
+      "text": "(I) The Function Codes used in association with the Train Function Number (CT=2), Engine Function Number (CT=3) and Coach Function Number (CT=4) shall conform to table 9A-1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the function codes used in association with the train function number ct 2 engine function number ct 3 and coach function number ct 4 shall conform to table 9a 1"
+    },
+    {
+      "req_id": "AUTO-0240",
+      "text": "(M) The Function Codes used in association with Maintenance Services Team Numbers (CT=6) shall conform to table 9A-2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the function codes used in association with maintenance services team numbers ct 6 shall conform to table 9a 2"
+    },
+    {
+      "req_id": "AUTO-0241",
+      "text": "Access classes should not be used under normal network operating conditions, where the GSM eMLPP may be used to provide a better grade of service to certain users.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "access classes should not be used under normal network operating conditions where the gsm emlpp may be used to provide a better grade of service to certain users"
+    },
+    {
+      "req_id": "AUTO-0242",
+      "text": "(O) For consistent working on public networks and in international roaming, the use of access classes in a railway network shall comply with the GSM specification.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o for consistent working on public networks and in international roaming the use of access classes in a railway network shall comply with the gsm specification"
+    },
+    {
+      "req_id": "AUTO-0243",
+      "text": "(I) Any implementation of CUGs must take account of requirements for interoperability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i any implementation of cugs must take account of requirements for interoperability"
+    },
+    {
+      "req_id": "AUTO-0244",
+      "text": "(M) Network selection SIM cards shall contain a list of authorised networks so that networks shall be displayed (or automatically selected if automatic network selection has been enabled) in the following order of priority (see [MORANE SIM] for more details): (M) home EIRENE network;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m network selection sim cards shall contain a list of authorised networks so that networks shall be displayed or automatically selected if automatic network selection has been enabled in the following order of priority see morane sim for more details m home eirene network"
+    },
+    {
+      "req_id": "AUTO-0245",
+      "text": "In order to shorten the duration of the network selection procedure, Mobile Stations designed for use in EIRENE networks shall give preference to the GSM frequency band allocated for railway use (see 3.5.2).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to shorten the duration of the network selection procedure mobile stations designed for use in eirene networks shall give preference to the gsm frequency band allocated for railway use see 3 5 2"
+    },
+    {
+      "req_id": "AUTO-0246",
+      "text": "(I) Cell broadcast message identifiers Railway mobiles shall be provided with cell broadcast message identifiers in order to accept SMS-CB messages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i cell broadcast message identifiers railway mobiles shall be provided with cell broadcast message identifiers in order to accept sms cb messages"
+    },
+    {
+      "req_id": "AUTO-0247",
+      "text": "(I) In case of encryption, standardised ciphering algorithms shall be used.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i in case of encryption standardised ciphering algorithms shall be used"
+    },
+    {
+      "req_id": "AUTO-0248",
+      "text": "Mobiles shall be capable of operation using algorithms for all countries in which they need to roam.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "mobiles shall be capable of operation using algorithms for all countries in which they need to roam"
+    },
+    {
+      "req_id": "AUTO-0249",
+      "text": "(I) The numbering plan to be used with functional addressing shall be in accordance with the numbering plan given in section 9.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the numbering plan to be used with functional addressing shall be in accordance with the numbering plan given in section 9"
+    },
+    {
+      "req_id": "AUTO-0250",
+      "text": "(I) Mobile access to the functional numbering scheme for registration, deregistration and re-registration shall apply the USSD messages and protocols over the air interface as specified in the GSM Follow-me service.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i mobile access to the functional numbering scheme for registration deregistration and re registration shall apply the ussd messages and protocols over the air interface as specified in the gsm follow me service"
+    },
+    {
+      "req_id": "AUTO-0251",
+      "text": "(I) For communication over the (Um) air interface, the USSD messages and protocols as specified in the GSM Follow-me service shall be used to manage the following types of functional numbers: (M) Train number;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i for communication over the um air interface the ussd messages and protocols as specified in the gsm follow me service shall be used to manage the following types of functional numbers m train number"
+    },
+    {
+      "req_id": "AUTO-0252",
+      "text": "It shall be possible to limit user access to functional number registration and deregistration facilities based on each of the types of functional number identified in 11.3.5.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it shall be possible to limit user access to functional number registration and deregistration facilities based on each of the types of functional number identified in 11 3 5"
+    },
+    {
+      "req_id": "AUTO-0253",
+      "text": "(M) Mobile stations shall use the following sequences for the control of the functional number management: (M) Where SI Supplementary Information represents the International Functional Number (also called the International EIRENE Number), as defined in section 9.6.3.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m mobile stations shall use the following sequences for the control of the functional number management m where si supplementary information represents the international functional number also called the international eirene number as defined in section 9 6 3"
+    },
+    {
+      "req_id": "AUTO-0254",
+      "text": "The network operator shall implement the required functionality to validate the information exchanged between the mobile and network on registration and deregistration.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the network operator shall implement the required functionality to validate the information exchanged between the mobile and network on registration and deregistration"
+    },
+    {
+      "req_id": "AUTO-0255",
+      "text": "(I) The system shall require manual confirmation prior to the removal of the relationship between Engine Number and MSISDN Number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the system shall require manual confirmation prior to the removal of the relationship between engine number and msisdn number"
+    },
+    {
+      "req_id": "AUTO-0256",
+      "text": "(M) The result of the registration procedure shall be sent back to the mobile.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the result of the registration procedure shall be sent back to the mobile"
+    },
+    {
+      "req_id": "AUTO-0257",
+      "text": "In the event of a failure, an indication of the cause shall be provided.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the event of a failure an indication of the cause shall be provided"
+    },
+    {
+      "req_id": "AUTO-0258",
+      "text": "Information on the outcome shall be provided to the mobile according to [EN 301 515, Index [17]] and [EN 301 515, Index [34]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "information on the outcome shall be provided to the mobile according to en 301 515 index 17 and en 301 515 index 34"
+    },
+    {
+      "req_id": "AUTO-0259",
+      "text": "This shall result in the following sequence of actions being performed by the user’s Cab radio (see 11.3.7 for details of message structure): (M) 1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this shall result in the following sequence of actions being performed by the user s cab radio see 11 3 7 for details of message structure m 1"
+    },
+    {
+      "req_id": "AUTO-0260",
+      "text": "The functionality described in 11.3.9i should also be available for other types of mobiles.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the functionality described in 11 3 9i should also be available for other types of mobiles"
+    },
+    {
+      "req_id": "AUTO-0261",
+      "text": "(O) In the cases described in 11.3.9i and 11.3.9ii, national rules may dictate that, prior to or instead of performing the sequence described in 11.3.9i steps 1-7, the user shall perform a specified action (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o in the cases described in 11 3 9i and 11 3 9ii national rules may dictate that prior to or instead of performing the sequence described in 11 3 9i steps 1 7 the user shall perform a specified action e g"
+    },
+    {
+      "req_id": "AUTO-0262",
+      "text": "(I) Deregistration shall only be performed by the subscription identified by the MSISDN number which is associated with the functional number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i deregistration shall only be performed by the subscription identified by the msisdn number which is associated with the functional number"
+    },
+    {
+      "req_id": "AUTO-0263",
+      "text": "The result of the deregistration procedure shall be sent back to the mobile.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the result of the deregistration procedure shall be sent back to the mobile"
+    },
+    {
+      "req_id": "AUTO-0264",
+      "text": "(I) Re-registration of on-train functional numbers based on the train number shall be performed every time a train leaves one EIRENE network and enters into another EIRENE network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i re registration of on train functional numbers based on the train number shall be performed every time a train leaves one eirene network and enters into another eirene network"
+    },
+    {
+      "req_id": "AUTO-0265",
+      "text": "(M) Deregistration of a functional number shall not be carried out until registration of the functional number has been carried out and confirmed as being successful.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m deregistration of a functional number shall not be carried out until registration of the functional number has been carried out and confirmed as being successful"
+    },
+    {
+      "req_id": "AUTO-0266",
+      "text": "(M) Each railway should define a suitable time-out interval to be applied as part of the deregistration procedure for on-train functional numbers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m each railway should define a suitable time out interval to be applied as part of the deregistration procedure for on train functional numbers"
+    },
+    {
+      "req_id": "AUTO-0267",
+      "text": "(O) The exchange of information between EIRENE networks is handled by the GMSCs and shall use the standardised protocol as detailed in section 11.6.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o the exchange of information between eirene networks is handled by the gmscs and shall use the standardised protocol as detailed in section 11 6"
+    },
+    {
+      "req_id": "AUTO-0268",
+      "text": "(M) Re-establishment of functional number correlation In the event of losing correlation between functional numbers and MSISDNs, provision for recovery from such a situation shall be made.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m re establishment of functional number correlation in the event of losing correlation between functional numbers and msisdns provision for recovery from such a situation shall be made"
+    },
+    {
+      "req_id": "AUTO-0269",
+      "text": "Presentation of functional identities The called party functional identity shall be presented to the user initiating a call and the calling party functional identity shall be presented to the user receiving a call.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "presentation of functional identities the called party functional identity shall be presented to the user initiating a call and the calling party functional identity shall be presented to the user receiving a call"
+    },
+    {
+      "req_id": "AUTO-0270",
+      "text": "(M) The calling party functional number shall be passed to the receiving mobile using the User to User Signalling supplementary service (UUS1) during call setup.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the calling party functional number shall be passed to the receiving mobile using the user to user signalling supplementary service uus1 during call setup"
+    },
+    {
+      "req_id": "AUTO-0271",
+      "text": "(M) If the calling party functional number is not available or if the calling party is not registered then the CLI of the calling party shall be displayed on the receiving mobile's display.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if the calling party functional number is not available or if the calling party is not registered then the cli of the calling party shall be displayed on the receiving mobile s display"
+    },
+    {
+      "req_id": "AUTO-0272",
+      "text": "(M) The user-to-user information element in the SETUP, ALERT or CONNECT messages, as defined in [EN 301 515, Index [16]], shall be used to transfer the functional number of the calling party to the called party.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the user to user information element in the setup alert or connect messages as defined in en 301 515 index 16 shall be used to transfer the functional number of the calling party to the called party"
+    },
+    {
+      "req_id": "AUTO-0273",
+      "text": "(M) The user-to-user information element shall use the following format: (M) If no valid functional number is available, a fixed length User-to-User Information Element shall be used with the following format: (M) Further information may be obtained from [MORANE PFN FFFS, MORANE PFN FIS].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the user to user information element shall use the following format m if no valid functional number is available a fixed length user to user information element shall be used with the following format m further information may be obtained from morane pfn fffs morane pfn fis"
+    },
+    {
+      "req_id": "AUTO-0274",
+      "text": "(I) Inter EIRENE network interfacing Interconnection of EIRENE networks is required to allow international call routing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i inter eirene network interfacing interconnection of eirene networks is required to allow international call routing"
+    },
+    {
+      "req_id": "AUTO-0275",
+      "text": "(I) The interconnection of EIRENE networks should take place by interconnecting GMSCs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the interconnection of eirene networks should take place by interconnecting gmscs"
+    },
+    {
+      "req_id": "AUTO-0276",
+      "text": "(O) The protocol used for routing of calls shall be Signalling System No 7 (SS7) as defined by the ITU-T.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o the protocol used for routing of calls shall be signalling system no 7 ss7 as defined by the itu t"
+    },
+    {
+      "req_id": "AUTO-0277",
+      "text": "The signalling system suite shall include the Mobile Application Part (MAP).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the signalling system suite shall include the mobile application part map"
+    },
+    {
+      "req_id": "AUTO-0278",
+      "text": "Call setup between EIRENE networks using international functional numbers shall be based on the combination of the Breakout-Code (BC) and International Code (IC) as specified in section 9.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "call setup between eirene networks using international functional numbers shall be based on the combination of the breakout code bc and international code ic as specified in section 9"
+    },
+    {
+      "req_id": "AUTO-0279",
+      "text": "The Country Code (CC) followed by the National Significant Number NSN (as specified in ITU-T E.164, Chapter 6.2) shall be used as the Global Title, which forms part of the Signalling Connection Control Part (SCCP) protocol messages and is used for inter-network routing of messages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the country code cc followed by the national significant number nsn as specified in itu t e 164 chapter 6 2 shall be used as the global title which forms part of the signalling connection control part sccp protocol messages and is used for inter network routing of messages"
+    },
+    {
+      "req_id": "AUTO-0280",
+      "text": "(O) As a minimum, call routing using location dependent addressing shall be based on the use of short codes in conjunction with cell dependent routing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o as a minimum call routing using location dependent addressing shall be based on the use of short codes in conjunction with cell dependent routing"
+    },
+    {
+      "req_id": "AUTO-0281",
+      "text": "(I) If a more accurate way of location determination is used, then position information shall be provided to the radio system which shall be used to associate the short code with the correct called party subscriber number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i if a more accurate way of location determination is used then position information shall be provided to the radio system which shall be used to associate the short code with the correct called party subscriber number"
+    },
+    {
+      "req_id": "AUTO-0282",
+      "text": "(M) If implemented, the use of location information from train-based systems external to the radio system shall comply with the requirements stated in the enhanced Location Dependent Addressing FRS and IRS [eLDA FRS and eLDA IRS].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if implemented the use of location information from train based systems external to the radio system shall comply with the requirements stated in the enhanced location dependent addressing frs and irs elda frs and elda irs"
+    },
+    {
+      "req_id": "AUTO-0283",
+      "text": "(M) Calls from external networks to the EIRENE network Facilities shall be provided to prevent unauthorised calls to mobiles either by functional number or MSISDN number from outside the EIRENE network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m calls from external networks to the eirene network facilities shall be provided to prevent unauthorised calls to mobiles either by functional number or msisdn number from outside the eirene network"
+    },
+    {
+      "req_id": "AUTO-0284",
+      "text": "(I) System requirements Where text messaging is implemented in the network, the Short Message Service (SMS) shall be used.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i system requirements where text messaging is implemented in the network the short message service sms shall be used"
+    },
+    {
+      "req_id": "AUTO-0285",
+      "text": "(I) All Railway emergency calls shall be implemented using GSM VGCS (Specifications [EN 301 515, Index [21] & [4]]).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i all railway emergency calls shall be implemented using gsm vgcs specifications en 301 515 index 21 4"
+    },
+    {
+      "req_id": "AUTO-0286",
+      "text": "(M) It shall be possible to configure Railway emergency group call areas to contain combinations of cells controlled by one or more MSC(s) within one or more network(s).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to configure railway emergency group call areas to contain combinations of cells controlled by one or more msc s within one or more network s"
+    },
+    {
+      "req_id": "AUTO-0287",
+      "text": "(I) Initiation of Railway emergency calls A Railway emergency call shall be initiated by using the appropriate function code for the required type of Railway emergency call (see Table 9-8).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i initiation of railway emergency calls a railway emergency call shall be initiated by using the appropriate function code for the required type of railway emergency call see table 9 8"
+    },
+    {
+      "req_id": "AUTO-0288",
+      "text": "(I) The Railway emergency group IDs required for interoperability are defined in section 9.5.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the railway emergency group ids required for interoperability are defined in section 9 5"
+    },
+    {
+      "req_id": "AUTO-0289",
+      "text": "The composition of each group is a matter for national implementation, although all areas shall have a group defined for all mandated Group IDs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the composition of each group is a matter for national implementation although all areas shall have a group defined for all mandated group ids"
+    },
+    {
+      "req_id": "AUTO-0290",
+      "text": "(M) Receipt of Railway emergency calls Each mobile shall store a list of emergency Group IDs in the SIM appropriate to its function (the Cab radio will store Group ID 299 and 599 - see table 9-8).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m receipt of railway emergency calls each mobile shall store a list of emergency group ids in the sim appropriate to its function the cab radio will store group id 299 and 599 see table 9 8"
+    },
+    {
+      "req_id": "AUTO-0291",
+      "text": "(M) All Railway emergency group IDs required for interoperability and appropriate to the operation of the mobile shall maintain active status whilst the mobile is powered up.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all railway emergency group ids required for interoperability and appropriate to the operation of the mobile shall maintain active status whilst the mobile is powered up"
+    },
+    {
+      "req_id": "AUTO-0292",
+      "text": "(I) On receipt of a Railway emergency call, the controller’s display should indicate the location of the train.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i on receipt of a railway emergency call the controller s display should indicate the location of the train"
+    },
+    {
+      "req_id": "AUTO-0293",
+      "text": "(O) If the requirement in 13.4.4 is implemented, as a minimum the location information shall be provided by the GSM network (eg current cell or base station serving the mobile).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o if the requirement in 13 4 4 is implemented as a minimum the location information shall be provided by the gsm network eg current cell or base station serving the mobile"
+    },
+    {
+      "req_id": "AUTO-0294",
+      "text": "(I) If the GSM Release 99 capability and the Immediate Setup 2 feature defined in [EN 301 515, Index [6], Release 4] are supported by the network, the network shall set the MSC Release bit in the “Control Channel Description” information element to “1”.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i if the gsm release 99 capability and the immediate setup 2 feature defined in en 301 515 index 6 release 4 are supported by the network the network shall set the msc release bit in the control channel description information element to 1"
+    },
+    {
+      "req_id": "AUTO-0295",
+      "text": "Otherwise, the MSC Release bit in the “Control Channel Description” information element shall be set to “0” (zero) [EN 301 515, Index [41]].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "otherwise the msc release bit in the control channel description information element shall be set to 0 zero en 301 515 index 41"
+    },
+    {
+      "req_id": "AUTO-0296",
+      "text": "The application must be able to deduce that a confirmation is necessary from the call priority, as all calls of ‘Railway emergency’ priority must be confirmed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the application must be able to deduce that a confirmation is necessary from the call priority as all calls of railway emergency priority must be confirmed"
+    },
+    {
+      "req_id": "AUTO-0297",
+      "text": "(M) Confirmation of Railway emergency calls shall be implemented using the User to User Signalling supplementary service (UUS1).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m confirmation of railway emergency calls shall be implemented using the user to user signalling supplementary service uus1"
+    },
+    {
+      "req_id": "AUTO-0298",
+      "text": "(M) After clear down of the Railway Emergency call, the mobile application shall start the confirmation process by automatically originating a call.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m after clear down of the railway emergency call the mobile application shall start the confirmation process by automatically originating a call"
+    },
+    {
+      "req_id": "AUTO-0299",
+      "text": "In order to avoid network congestion the call set up shall be delayed by a random offset.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to avoid network congestion the call set up shall be delayed by a random offset"
+    },
+    {
+      "req_id": "AUTO-0300",
+      "text": "(M) Railway Emergency call confirmation messages shall be of eMLPP priority 4 - “Railway information and all other calls” (see section 10.2).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m railway emergency call confirmation messages shall be of emlpp priority 4 railway information and all other calls see section 10 2"
+    },
+    {
+      "req_id": "AUTO-0301",
+      "text": "(M) The user information contained in the confirmation message shall be: (M) Cab radio: the engine number or train number (if registered);",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the user information contained in the confirmation message shall be m cab radio the engine number or train number if registered"
+    },
+    {
+      "req_id": "AUTO-0302",
+      "text": "Confirmation messages shall be sent to a confirmation centre using a defined short code (see table 9-10), which shall be associated with the GSM network.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "confirmation messages shall be sent to a confirmation centre using a defined short code see table 9 10 which shall be associated with the gsm network"
+    },
+    {
+      "req_id": "AUTO-0303",
+      "text": "(M) In the case of Cab radio, details of the confirmation shall be passed to the train borne recorder if a train borne recorder is connected to the Cab radio.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in the case of cab radio details of the confirmation shall be passed to the train borne recorder if a train borne recorder is connected to the cab radio"
+    },
+    {
+      "req_id": "AUTO-0304",
+      "text": "(M) The user-to-user information elements in the following messages, as defined in [EN 301 515, Index [16]], shall be used for the confirmation of high priority calls: (M) SETUP: transfer of confirmation message to confirmation centre;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the user to user information elements in the following messages as defined in en 301 515 index 16 shall be used for the confirmation of high priority calls m setup transfer of confirmation message to confirmation centre"
+    },
+    {
+      "req_id": "AUTO-0305",
+      "text": "The SETUP and RELEASE COMPLETE user-to-user information element shall be as specified in the [MORANE UUIE].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the setup and release complete user to user information element shall be as specified in the morane uuie"
+    },
+    {
+      "req_id": "AUTO-0306",
+      "text": "(M) Confirmation centres shall be capable of decoding messages in either format A or B.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m confirmation centres shall be capable of decoding messages in either format a or b"
+    },
+    {
+      "req_id": "AUTO-0307",
+      "text": "(I) System requirements: Operational Radio On entering shunting mode, the operational radio shall determine if any shunting group ID is already activated on the SIM.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i system requirements operational radio on entering shunting mode the operational radio shall determine if any shunting group id is already activated on the sim"
+    },
+    {
+      "req_id": "AUTO-0308",
+      "text": "(M) If a shunting group ID is activated, the operational radio shall proceed to re-establish the group call.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if a shunting group id is activated the operational radio shall proceed to re establish the group call"
+    },
+    {
+      "req_id": "AUTO-0309",
+      "text": "(M) If no shunting group ID is activated, the operational radio shall initiate a “regular shunting mode ON” procedure as detailed in table 14-1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if no shunting group id is activated the operational radio shall initiate a regular shunting mode on procedure as detailed in table 14 1"
+    },
+    {
+      "req_id": "AUTO-0310",
+      "text": "(M) After the “regular shunting mode ON” procedure has been completed, the procedures shown in table 14-2 and 14-3 shall be used to register the shunting leader and shunting members to a dedicated group call.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m after the regular shunting mode on procedure has been completed the procedures shown in table 14 2 and 14 3 shall be used to register the shunting leader and shunting members to a dedicated group call"
+    },
+    {
+      "req_id": "AUTO-0311",
+      "text": "(M) Two possibilities shall be available to the shunting leader when leaving shunting mode: (M) Release group call: the shunting leader and all other shunting members leave the dedicated group call and all members of the group are deregistered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m two possibilities shall be available to the shunting leader when leaving shunting mode m release group call the shunting leader and all other shunting members leave the dedicated group call and all members of the group are deregistered"
+    },
+    {
+      "req_id": "AUTO-0312",
+      "text": "The procedure that shall be used to release the group call is shown in table 14-4.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the procedure that shall be used to release the group call is shown in table 14 4"
+    },
+    {
+      "req_id": "AUTO-0313",
+      "text": "The operational radio procedure that shall be used to maintain the group call is shown in table 14-5.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the operational radio procedure that shall be used to maintain the group call is shown in table 14 5"
+    },
+    {
+      "req_id": "AUTO-0314",
+      "text": "On leaving shunting mode, the Operational radios of shunting members shall follow the procedure shown in table 14-6.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "on leaving shunting mode the operational radios of shunting members shall follow the procedure shown in table 14 6"
+    },
+    {
+      "req_id": "AUTO-0315",
+      "text": "(M) System requirements: Cab radio On entering shunting mode, the Cab radio shall determine if any shunting group ID is already activated on the SIM.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m system requirements cab radio on entering shunting mode the cab radio shall determine if any shunting group id is already activated on the sim"
+    },
+    {
+      "req_id": "AUTO-0316",
+      "text": "(M) If a shunting group ID is activated, the Cab radio shall proceed to re-establish the group call.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if a shunting group id is activated the cab radio shall proceed to re establish the group call"
+    },
+    {
+      "req_id": "AUTO-0317",
+      "text": "(M) If no shunting group ID is activated, the Cab radio shall initiate a “regular shunting mode ON” procedure as shown in table 14-7.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if no shunting group id is activated the cab radio shall initiate a regular shunting mode on procedure as shown in table 14 7"
+    },
+    {
+      "req_id": "AUTO-0318",
+      "text": "(M) The Cab radio shall exit shunting mode by means of the “Leave shunting mode” procedure as defined in table 14-8.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the cab radio shall exit shunting mode by means of the leave shunting mode procedure as defined in table 14 8"
+    },
+    {
+      "req_id": "AUTO-0319",
+      "text": "(M) System requirements: Operational radio and Cab radio On entering shunting mode, the terminal shall initially select the common shunting group.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m system requirements operational radio and cab radio on entering shunting mode the terminal shall initially select the common shunting group"
+    },
+    {
+      "req_id": "AUTO-0320",
+      "text": "(I) The terminal application shall prevent members of a dedicated shunting team from initiating a new call (unless they are registered as shunting team leader and have left shunting mode using the “maintain group call” function described in 14.2.4).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the terminal application shall prevent members of a dedicated shunting team from initiating a new call unless they are registered as shunting team leader and have left shunting mode using the maintain group call function described in 14 2 4"
+    },
+    {
+      "req_id": "AUTO-0321",
+      "text": "(I) Valid group IDs shall be as defined in table 14-9.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i valid group ids shall be as defined in table 14 9"
+    },
+    {
+      "req_id": "AUTO-0322",
+      "text": "(M) Control of shunting group membership Users shall be prevented from joining a dedicated shunting group by the EIRENE terminal application unless a valid functional number for the group has been successfully registered to the GSM-R network by their terminal.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m control of shunting group membership users shall be prevented from joining a dedicated shunting group by the eirene terminal application unless a valid functional number for the group has been successfully registered to the gsm r network by their terminal"
+    },
+    {
+      "req_id": "AUTO-0323",
+      "text": "Link assurance signal Deleted The link assurance tone shall be of the form specified in subsection 14.4.2 of the [EIRENE FRS].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "link assurance signal deleted the link assurance tone shall be of the form specified in subsection 14 4 2 of the eirene frs"
+    },
+    {
+      "req_id": "AUTO-0324",
+      "text": "(M) The mechanism for the generation of the link assurance signal shall be as specified in [MORANE SM FFFIS].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the mechanism for the generation of the link assurance signal shall be as specified in morane sm fffis"
+    },
+    {
+      "req_id": "AUTO-0325",
+      "text": "The mechanism for the deactivation of the link assurance signal shall be as specified in [MORANE SM FFFIS].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the mechanism for the deactivation of the link assurance signal shall be as specified in morane sm fffis"
+    },
+    {
+      "req_id": "AUTO-0326",
+      "text": "However, where implemented, the following requirements shall be mandatory.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however where implemented the following requirements shall be mandatory"
+    },
+    {
+      "req_id": "AUTO-0327",
+      "text": "(I) Frequency modulated equipment conforming to [ETS 300 086] shall be used for direct mode.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i frequency modulated equipment conforming to ets 300 086 shall be used for direct mode"
+    },
+    {
+      "req_id": "AUTO-0328",
+      "text": "(M) Direct mode equipment shall have a maximum transmit power of 1 Watt.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m direct mode equipment shall have a maximum transmit power of 1 watt"
+    },
+    {
+      "req_id": "AUTO-0329",
+      "text": "(M) Direct mode equipment sensitivity shall be at least –107dBm.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m direct mode equipment sensitivity shall be at least 107dbm"
+    },
+    {
+      "req_id": "AUTO-0330",
+      "text": "(M) Direct mode equipment shall be capable of operation in the channels defined in table 15-1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m direct mode equipment shall be capable of operation in the channels defined in table 15 1"
+    },
+    {
+      "req_id": "AUTO-0331",
+      "text": "(M) Direct mode shall operate in simplex mode, a radio link that uses a single frequency for alternate transmission and reception.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m direct mode shall operate in simplex mode a radio link that uses a single frequency for alternate transmission and reception"
+    },
+    {
+      "req_id": "AUTO-0332",
+      "text": "(M) Voice transmission from direct mode equipment shall be possible only when the Push- To-Talk (PTT) button is pressed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m voice transmission from direct mode equipment shall be possible only when the push to talk ptt button is pressed"
+    },
+    {
+      "req_id": "AUTO-0333",
+      "text": "(M) Continuous Tone Coded Squelch Systems (CTCSS) shall be implemented on all direct mode equipment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m continuous tone coded squelch systems ctcss shall be implemented on all direct mode equipment"
+    },
+    {
+      "req_id": "AUTO-0334",
+      "text": "(M) The CTCSS tone shall be at a frequency of 203.5 Hz.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the ctcss tone shall be at a frequency of 203 5 hz"
+    },
+    {
+      "req_id": "AUTO-0335",
+      "text": "(M) The CTCSS modulation shall be within the limits defined in table 15-2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the ctcss modulation shall be within the limits defined in table 15 2"
+    },
+    {
+      "req_id": "AUTO-0336",
+      "text": "(I) Direct mode channel 1 (876.0125 MHz) shall serve as the common access channel.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i direct mode channel 1 876 0125 mhz shall serve as the common access channel"
+    },
+    {
+      "req_id": "AUTO-0337",
+      "text": "(M) Equipment should default to operation on the common access channel (direct mode channel 1) on entry into direct mode.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m equipment should default to operation on the common access channel direct mode channel 1 on entry into direct mode"
+    },
+    {
+      "req_id": "AUTO-0338",
+      "text": "(I) The presence of the GSM-R network shall be indicated to direct mode users.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i the presence of the gsm r network shall be indicated to direct mode users"
+    },
+    {
+      "req_id": "AUTO-0339",
+      "text": "(M) All terminals shall ensure that when GSM-R services are available, the user is prevented from entering direct mode.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m all terminals shall ensure that when gsm r services are available the user is prevented from entering direct mode"
+    },
+    {
+      "req_id": "AUTO-0340",
+      "text": "(I) All direct mode equipment shall provide the facility to broadcast an in-band audio shunting link assurance signal as defined in subsection 14.4.2 of the [EIRENE FRS].",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "i all direct mode equipment shall provide the facility to broadcast an in band audio shunting link assurance signal as defined in subsection 14 4 2 of the eirene frs"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 340,
+    "total_count": 340
+  }
+}

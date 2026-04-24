@@ -1,0 +1,37 @@
+{
+  "id": "sample_002",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "a library management system"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "students, librarians, and admins"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "search books, borrow them, and return them"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "yeah, students and staff should log in"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "search should be quick, like 2 seconds"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "accounts and borrowing history should be protected"}
+  ],
+  "slots": {
+    "project_type": "library management system",
+    "users": ["student", "librarian", "admin"],
+    "core_features": ["search books", "borrow books", "return books"],
+    "authentication": ["student/staff login"],
+    "performance_constraints": ["search results within 2 seconds"],
+    "security_constraints": ["protect accounts", "protect borrowing history"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow students and staff to log in.",
+      "The system shall allow users to search for books.",
+      "The system shall allow students to borrow books.",
+      "The system shall allow students to return books."
+    ],
+    "non_functional": [
+      "The system shall return search results within 2 seconds.",
+      "The system shall protect user accounts and borrowing history."
+    ]
+  }
+}

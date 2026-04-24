@@ -1,0 +1,118 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_summary", "requirements"],
+  "properties": {
+    "project_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "functional",
+        "non_functional",
+        "data",
+        "business_rules",
+        "interfaces",
+        "constraints"
+      ],
+      "properties": {
+        "functional": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/base_req" }
+        },
+        "non_functional": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nfr_req" }
+        },
+        "data": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/base_req" }
+        },
+        "business_rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/base_req" }
+        },
+        "interfaces": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/base_req" }
+        },
+        "constraints": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/base_req" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "base_req": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text", "priority", "evidence_turns"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "evidence_turns": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "nfr_req": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "text", "priority", "evidence_turns"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "performance",
+            "security",
+            "reliability",
+            "availability",
+            "usability",
+            "maintainability",
+            "portability",
+            "compliance"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "evidence_turns": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 1
+        }
+      }
+    }
+  }
+}

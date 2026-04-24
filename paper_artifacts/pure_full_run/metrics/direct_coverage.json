@@ -1,0 +1,690 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260424T162722Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260424T162722Z_pure_full/direct_generated_requirements",
+  "match_threshold": 0.55,
+  "aggregate": {
+    "sample_count": 6,
+    "macro_precision": 0.6741511979650241,
+    "macro_coverage_recall": 0.8171423132505415,
+    "macro_f1": 0.7237246661476199,
+    "macro_hallucination_rate": 0.32584880203497585,
+    "macro_average_match_score": 0.9200281441894695,
+    "macro_average_best_source_score": 0.8023031653267289,
+    "micro_precision": 0.5789014821272885,
+    "micro_coverage_recall": 0.6727456940222898,
+    "micro_f1": 0.6223055295220243,
+    "total_source_requirements": 987,
+    "total_generated_requirements": 1147,
+    "total_matched_requirements": 664
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 201,
+      "matched_count": 100,
+      "precision": 0.4975124378109453,
+      "coverage_recall": 1.0,
+      "f1": 0.6644518272425249,
+      "hallucination_rate": 0.5024875621890548,
+      "average_match_score": 0.9468609441587706,
+      "average_best_source_score": 0.9468609441587706,
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [
+        "Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward.",
+        "Space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+        "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system. The user initiating and or carrying out the action.",
+        "The word “unalterable” is to mean that the audit trail data cannot be modified in any way or deleted by any user.",
+        "The audit trail may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+        "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+        "The System must be able to capture and store violations (i.e. security violations).",
+        "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",
+        "Such configurations must be saved in the user profile.",
+        "Defaults should include user-definable values.",
+        "If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident.",
+        "If user-specified profiles are used, users should be able to see, modify and delete that profile on demand.",
+        "The system should be designed in a manner that operational data is not lost in case of any failure of equipment or communication network."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0,
+          "source_requirement": "Registration Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward.",
+          "generated_requirement": "Registration Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "generated_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+          "generated_requirement": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The solution should enable the user to track the submitted defect or enhancement request."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "generated_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age-wise."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+          "generated_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system. The user initiating and or carrying out the action."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "generated_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+          "generated_requirement": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System)."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+          "generated_requirement": "The System must at a minimum be able to provide reports for actions on cases organised by case."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+          "generated_requirement": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The System must allow the user to limit access to cases to specified users or user groups.",
+          "generated_requirement": "The System must allow the user to limit access to cases to specified users or user groups."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system should provide for role-based control for the functionality within the system The System must allow a user to be a member of more than one group.",
+          "generated_requirement": "The system should provide for role-based control for the functionality within the system. The System must allow a user to be a member of more than one group."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 80,
+      "matched_count": 53,
+      "precision": 0.6625,
+      "coverage_recall": 0.9298245614035088,
+      "f1": 0.7737226277372262,
+      "hallucination_rate": 0.3375,
+      "average_match_score": 0.9086453988729238,
+      "average_best_source_score": 0.8584879266865579,
+      "unmatched_source_examples": [
+        "Functional requirements: A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions.",
+        "Nonfunctional requirements: A description of a property or characteristic that the system should exhibit.",
+        "Pre condition: A condition that must be satisfied or a state the system must be in before a use case may begin.",
+        "Requirement: A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective."
+      ],
+      "unmatched_generated_examples": [
+        "The system shall use SQL based database to store inventory information.",
+        "The system shall encrypt all customer data in database.",
+        "The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+        "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+        "The system shall automatically compress image files that are too large in size.",
+        "The system shall validate email address existence.",
+        "Operating Environment Web Store shall operate with Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",
+        "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+        "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+        "The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+        "The system shall encrypt all sensitive information via https.",
+        "The system shall be protected by open source firewall called Firestarter.",
+        "The system shall utilize consistent symbols and colors for clear notifications."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0,
+          "source_requirement": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+          "generated_requirement": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall use SQL based database to store inventory information.",
+          "generated_requirement": "The system shall use SQL based database to store inventory information."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+          "generated_requirement": "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+          "generated_requirement": "The interface must remain consistent among various web browsers and be intuitive to the customer."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+          "generated_requirement": "The system shall be able to handle 1000 customers logged in concurrently at the same time."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to retrieve 200 products per second.",
+          "generated_requirement": "The system shall be able to retrieve 200 products per second."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to add product to shopping cart in less than 2ms.",
+          "generated_requirement": "The system shall be able to add product to shopping cart in less than 2ms."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to search for a specified product in less than 1 second.",
+          "generated_requirement": "The system shall be able to search for a specified product in less than 1 second."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to email customer and vendor in less than 1 second.",
+          "generated_requirement": "The system shall be able to email customer and vendor in less than 1 second."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to validate credit card in less than 2 seconds.",
+          "generated_requirement": "The system shall be able to validate credit card in less than 2 seconds."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+          "generated_requirement": "The system shall be able to acquire shipping charges in less than 2 seconds."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall be able to restore 1000 records per second.",
+          "generated_requirement": "The system shall be able to restore 1000 records per second."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall encrypt all sensitive information via https.",
+          "generated_requirement": "The system shall encrypt all sensitive information via https."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall encrypt all customer data in database.",
+          "generated_requirement": "The system shall encrypt all customer data in database."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system shall auto detect IP DOS attacks and block IP automatically.",
+          "generated_requirement": "The system shall auto detect IP DOS attacks and block IP automatically."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1995_gemini",
+      "document_id": "1995_gemini",
+      "source_requirement_count": 286,
+      "generated_requirement_count": 404,
+      "matched_count": 194,
+      "precision": 0.4801980198019802,
+      "coverage_recall": 0.6783216783216783,
+      "f1": 0.5623188405797102,
+      "hallucination_rate": 0.5198019801980198,
+      "average_match_score": 0.8700519776155035,
+      "average_best_source_score": 0.667486876953022,
+      "unmatched_source_examples": [
+        "(There will always be support staff on-site during observations, however.) The requirements for supporting remote operations are: All software should be developed to permit remote operations.",
+        "It will require the use of service and/or remote observing, as users cannot stay around indeﬁnitely waiting for the conditions required by their program.",
+        "This notiﬁcation must be speciﬁc as to origin and problem.",
+        "Fault tollerance Should a subsystem fail (e.g.",
+        "one detector, one instrument) predeﬁned procedures must exist to redeﬁne the environment in such a way that operation can restart with the remaining equipment.",
+        "This document does not try to be speciﬁc about the requirements for Quick-look other than that it should be synchronous.",
+        "The plan will consider: Maintenance requirements including an estimate of required resources.",
+        "Areas where upgrades are anticipated should be identiﬁed with an estimate of the required effort and resources.",
+        "Simple mechanisms should exist for replacing a subsystem with its simulation.",
+        "The following self-check levels are to be supplied with sub-system software: Monitor level Each subsystem should have a background task running whenever that subsystem is operational, performing such tasks as checking power supply levels, temperatures, performance, correct responses to commands.",
+        "Each subsystem should provide a module for fully exercising all subsystem components, both hardware and software.",
+        "Levels of Maintenance The levels at which maintenance may be performed are: Organizational level These should be done in situ during an observing session.",
+        "The requirements must be achievable and stated in such a way that veriﬁcation is permitted.",
+        "Security and Safety Requirements The Gemini system must be self-monitoring to invoke safety monitoring to prevent risk to people or damage to equipment.",
+        "The software should be able to quickly bring the Gemini system to a safe state upon notiﬁcation of such danger."
+      ],
+      "unmatched_generated_examples": [
+        "Operations staff shall have access to operation tables in update mode, while observing astronomers will have access to them only in read mode.",
+        "Software must be provided to assist in object selection within an observing program and across observing programs, to optimize observing efficiency, considering target positions, weather conditions, and instrument configurations.",
+        "All software should be developed to permit remote operations.",
+        "It should be possible to do full operations remotely.",
+        "Security of operation shall be considered, potentially implying different operation levels and privileges at different sites.",
+        "Remote operations software must be considered from the beginning in the Gemini 8m Telescopes software design.",
+        "Subsystems must notify the user when faults occur.",
+        "Fault notification must be specific as to origin and problem.",
+        "If a subsystem fails, predefined procedures must exist to redefine the environment so that operation can restart with the remaining equipment.",
+        "The operational software should know which subsystems are installed and operational at any given time.",
+        "Quick-look should be synchronous.",
+        "Monitoring shall not affect the performance of an ongoing observation.",
+        "Testing shall not affect the performance of an ongoing observation.",
+        "Administrative access shall not affect the performance of an ongoing observation.",
+        "Monitoring shall not affect the performance of ongoing observations."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0,
+          "source_requirement": "It should also be noted that what the system has to guarantee in terms of operations must fulfill all possible requirements, but it does not mean that all features will be made available to all users at all locations at all times.",
+          "generated_requirement": "It should also be noted that what the system has to guarantee in terms of operations must fulfill all possible requirements, but it does not mean that all features will be made available to all users at all locations at all times."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The existence of the scheduling queue shall be transparent to the on-site observer during the initial phases of telescope operation.",
+          "generated_requirement": "The existence of the scheduling queue shall be transparent to the on-site observer during the initial phases of telescope operation."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Privileges Operations staff shall have privileges to access all commands and maintenance procedures in case of problems.",
+          "generated_requirement": "Operations staff shall have privileges to access all commands and maintenance procedures in case of problems."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Operation mode Operations staff shall have access to operation tables in update mode, while observing astronomers will have access to them only in read mode (for example the list of filters mounted on an instrument).",
+          "generated_requirement": "Operations staff shall have access to operation tables in update mode, while observing astronomers will have access to them only in read mode (for example the list of filters mounted on an instrument)."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Monitoring shall exist both in the form of automatic displays of status information at different locations, and in the form of explicit access to the required status information from any point.",
+          "generated_requirement": "Monitoring shall exist both in the form of automatic displays of status information at different locations, and in the form of explicit access to the required status information from any point."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Monitoring shall not affect the performance of ongoing observations.",
+          "generated_requirement": "Monitoring shall not affect the performance of ongoing observations."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The observing program must be fully automated, requiring very little human interaction during the observation.",
+          "generated_requirement": "The observing program must be fully automated, requiring very little human interaction during the observation."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "This simulator should function within the virtual telescope environment of the Gemini system.",
+          "generated_requirement": "The simulator should function within the virtual telescope environment of the Gemini system."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "To maximize the use of the available observing time it must be possible to queue all of the observing that is possible with the currently available instruments.",
+          "generated_requirement": "It must be possible to queue all possible observing with the currently available instruments to maximize the use of available observing time."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "It should be possible to resort the queue so that the next observation to take place comes to the front of the queue.",
+          "generated_requirement": "It should be possible to resort the queue so that the next observation to take place comes to the front of the queue."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "There should be no conceptual difference between software working on-site and remotely.",
+          "generated_requirement": "There should be no conceptual difference between software working on-site and remotely."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "All observing facilities should work both on-site and off-site.",
+          "generated_requirement": "All observing facilities should work both on-site and off-site."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Security of operation shall be considered and might imply different operation levels and privileges at different sites.",
+          "generated_requirement": "Security of operation shall be considered and might imply different operation levels and privileges at different sites."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The programming environment should allow for the communication of special notes, instructions, and comments from the astronomer to the observer, possibly involving multimedia techniques.",
+          "generated_requirement": "The programming environment should allow communication of special notes, instructions, and comments from the astronomer to the observer, possibly involving multimedia techniques."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The support structure for communicating commands must be reliable, with a uniform ACK/NAK protocol adopted across all systems.",
+          "generated_requirement": "The support structure for communicating commands must be reliable, with a uniform ACK/NAK protocol adopted across all systems."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1998_themas",
+      "document_id": "1998_themas",
+      "source_requirement_count": 96,
+      "generated_requirement_count": 101,
+      "matched_count": 96,
+      "precision": 0.9504950495049505,
+      "coverage_recall": 1.0,
+      "f1": 0.9746192893401014,
+      "hallucination_rate": 0.04950495049504951,
+      "average_match_score": 0.920767438801462,
+      "average_best_source_score": 0.920767438801462,
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [
+        "This request shall include the designation of the heating or cooling unit and a flag to indicate whether that unit is to be turned on or off.",
+        "The THEMAS system shall be designed to run on the Microsoft ® Windows NT™ operating system.",
+        "All the internal process communications shall be designed to operate on this operating system.",
+        "These interfaces shall run on this operating system as well.",
+        "This information shall be recorded in a Microsoft® Access® database that shall reside on the supervisor’s computer."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0,
+          "source_requirement": "The SRS shall give a prototype of a simulated thermostat for verification and validation of THEMAS reliability.",
+          "generated_requirement": "The SRS shall give a prototype of a simulated thermostat for verification and validation of THEMAS reliability."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "In the event of conflict between the documents referenced and the contents of this SRS, the contents of this document shall overrule all others, with the exception of the Statement of Work.",
+          "generated_requirement": "In the event of conflict between the documents referenced and the contents of this SRS, the contents of this document shall overrule all others, with the exception of the Statement of Work."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system should not need intervention from outside users other than the supervisor to maintain operation of THEMAS.",
+          "generated_requirement": "The system should not need intervention from outside users other than the supervisor to maintain operation of THEMAS."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system should provide warnings to the supervisor about faulty temperatures.",
+          "generated_requirement": "The system should provide warnings to the supervisor about faulty temperatures."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The displaying of the current status of the system to the supervisor should not contain excessive information which could confuse the supervisor.",
+          "generated_requirement": "The displaying of the current status of the system to the supervisor should not contain excessive information which could confuse the supervisor."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The system should provide information in the form of reports to the supervisor so that the system can be run efficiently.",
+          "generated_requirement": "The system should provide information in the form of reports to the supervisor so that the system can be run efficiently."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The thermostats shall only provide temperature values and temperature settings.",
+          "generated_requirement": "The thermostats shall only provide temperature values and temperature settings."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "When a signal is sent to a heating or cooling unit, no signal shall be available to allow the THEMAS system to determine if the signal sent to the unit was realized by the unit.",
+          "generated_requirement": "When a signal is sent to a heating or cooling unit, no signal shall be available to allow the THEMAS system to determine if the signal sent to the unit was realized by the unit."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "All the internal process communications shall be designed to operate on this operating system.",
+          "generated_requirement": "All the internal process communications shall be designed to operate on this operating system."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Any communication with the thermostats and heating and cooling units shall be done through the interface to these units.",
+          "generated_requirement": "Any communication with the thermostats and heating and cooling units shall be done through the interface to these units."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "These interfaces shall run on this operating system as well.",
+          "generated_requirement": "These interfaces shall run on this operating system as well."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The heating/cooling unit shall have the capability of being turned off and on by the supervisor of the THEMAS system.",
+          "generated_requirement": "The heating/cooling unit shall have the capability of being turned off and on by the supervisor of the THEMAS system."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The initialization file shall contain a unique identifier for each thermostat that the system is to monitor.",
+          "generated_requirement": "The initialization file shall contain a unique identifier for each thermostat that the system is to monitor."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "These identifiers shall be read from the initialization file and loaded into the THEMAS system during the initialization process.",
+          "generated_requirement": "These identifiers shall be read from the initialization file and loaded into the THEMAS system during the initialization process."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The maximum number of concurrently running units shall be read from the initialization file and stored in the THEMAS system.",
+          "generated_requirement": "The maximum number of concurrently running units shall be read from the initialization file and stored in the THEMAS system."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 21,
+      "matched_count": 18,
+      "precision": 0.8571428571428571,
+      "coverage_recall": 0.8181818181818182,
+      "f1": 0.8372093023255814,
+      "hallucination_rate": 0.14285714285714285,
+      "average_match_score": 0.9398007141781901,
+      "average_best_source_score": 0.8100078815108663,
+      "unmatched_source_examples": [
+        "DOCUMENT OVERVIEW This document outlines the software capabilities required for the XS components for the DII COE.",
+        "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable.",
+        "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+        "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a."
+      ],
+      "unmatched_generated_examples": [
+        "Constraints are conditions about the data that must always be true.",
+        "The XS function shall provide standard APIs as specified in Appendix C.",
+        "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0,
+          "source_requirement": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+          "generated_requirement": "COE sponsors shall adhere to compliance level requirements described in the I&RTS."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+          "generated_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+          "generated_requirement": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+          "generated_requirement": "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+          "generated_requirement": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+          "generated_requirement": "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify.",
+          "generated_requirement": "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+          "generated_requirement": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+          "generated_requirement": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+          "generated_requirement": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I)."
+        },
+        {
+          "score": 0.9696969696969697,
+          "source_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+          "generated_requirement": "Maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions."
+        },
+        {
+          "score": 0.967741935483871,
+          "source_requirement": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements.",
+          "generated_requirement": "If they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+        },
+        {
+          "score": 0.9090909090909091,
+          "source_requirement": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+          "generated_requirement": "Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers."
+        },
+        {
+          "score": 0.8421052631578948,
+          "source_requirement": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+          "generated_requirement": "The Registry software shall be portable and required to execute on COE-compliant platforms."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1999_tcs",
+      "document_id": "1999_tcs",
+      "source_requirement_count": 426,
+      "generated_requirement_count": 340,
+      "matched_count": 203,
+      "precision": 0.5970588235294118,
+      "coverage_recall": 0.4765258215962441,
+      "f1": 0.5300261096605744,
+      "hallucination_rate": 0.40294117647058825,
+      "average_match_score": 0.9340423915099674,
+      "average_best_source_score": 0.6102079238496942,
+      "unmatched_source_examples": [
+        "TCS to AFATDS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with AFATDS.",
+        "TCS to CARS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with CARS.",
+        "TCS to CCTV The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with CCTV.",
+        "TCS to Army Mission Planning System The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with AMPS.[SSS563] The interface requirements and specifications will be defined in the TCS to AMPS IDD, TCS 235.",
+        "TCS to Air Force Mission Support System The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with AFMSS.[SSS564] The interface requirements and specifications will be defined in the TCS to AFMSS IDD, TCS 220.",
+        "TCS to JDISS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with JDISS.",
+        "TCS to TES The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with TES.",
+        "TCS to IAS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with IAS.",
+        "TCS to ATHS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with ATHS.",
+        "TCS to ATWCS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with ATWCS.",
+        "[SSS305] The interface requirements and specifications will be defined in TCS ATWCS IDD, TCS203 TCS to TROJAN SPIRIT II The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with Trojan Spirit II.",
+        "TCS to TBMCS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with TBMCS.",
+        "TCS to MIES The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with MIES.",
+        "TCS to ETRAC The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with ETRAC.",
+        "TCS to COMPASS The TCS shall provide the necessary hardware and software functionality to allow the TCS to integrate with COMPASS."
+      ],
+      "unmatched_generated_examples": [
+        "The TCS shall provide the system functionality necessary to initialize the system to place it in the Operations State within 60 seconds from the time power is supplied and the TCS application is launched.",
+        "The TCS in the Recovery Startup Mode shall provide the system functionality to resume the Operations State within 45 seconds.",
+        "TCS shall provide the capability to monitor AV adherence to the uplinked mission plan, detecting any deviations greater than 10% from projected flight path, and notifying the operator if deviations are detected.",
+        "Fault Detection/Location (FD/L) to the Line Replaceable Unit (LRU) level shall be provided to indicate the readiness status of TCS, if inherent to the COTS hardware and software utilized.",
+        "The TCS shall be capable of automatically recording system state data, interface communications and other information necessary to support event reconstruction.",
+        "A Mission Plan shall include a Flight Route Plan for a selected AV, a Payload Plan for the selected payload, and a Communications Plan.",
+        "The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later retrieval.",
+        "The TCS shall allow the operator to enter as well as review mission plan parameters, including AV flight parameters, payload control parameters, data link control parameters, AV VCR control parameters (if applicable to the selected AV), and AV loiter patterns.",
+        "The TCS shall provide the capability to enter system configuration characteristics in the mission plan, to include selected AV type, AV identification number, selected payload type, ground control authorization information, and required communications pre-set for data links, tactical communications, and C4I data dissemination.",
+        "The TCS shall automatically check the validity of the intended mission plan prior to being uploaded including altitude constraints, payload constraints, data link range constraints, airspace restrictions, fuel limitations, threat constraints, data link terrain masking effects, and Loss of Link (LOL) Plan.",
+        "The Flight Route Plan, as a minimum, shall include AV flight path information, Loss of Link plan, AV VCR control tasking (if applicable to the selected AV), and data link control information.",
+        "The TCS shall allow the operator to define the desired AV route in waypoint format, and shall provide the capability to include up to 500 waypoints in each flight route plan.",
+        "The TCS shall present to the operator the estimated time of arrival and fuel status at each programmed waypoint of the proposed mission plan.",
+        "At every waypoint and every 5 minutes, the TCS shall compute the AV's flight range based on remaining fuel.",
+        "AV telemetry data shall be available to support other TCS functions as required."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0,
+          "source_requirement": "TCS hardware must be scaleable or modular to meet varying Service needs.",
+          "generated_requirement": "TCS hardware must be scaleable or modular to meet varying Service needs."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The TCS shall consist of the TCS workstation Hardware Configuration Items (HWCIs), TCS Computer Software Configuration Items (CSCIs), and additional TCS Support HWCIs and CSCIs.",
+          "generated_requirement": "The TCS shall consist of the TCS workstation Hardware Configuration Items (HWCIs), TCS Computer Software Configuration Items (CSCIs), and additional TCS Support HWCIs and CSCIs."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The TCS shall meet the applicable capability and characteristic criteria established by the Operational Requirements Document (ORD) CAF 003-90-I-A for the RQ-1A Predator Medium Altitude Endurance Unmanned Aerial Vehicle/System (MAE UAV) and the Close Range – Tactical Unmanned Aerial Vehicle (CR-TUAV).",
+          "generated_requirement": "The TCS shall meet the applicable capability and characteristic criteria established by the Operational Requirements Document (ORD) CAF 003-90-I-A for the RQ-1A Predator Medium Altitude Endurance Unmanned Aerial Vehicle/System (MAE UAV) and the Close Range – Tactical Unmanned Aerial Vehicle (CR-TUAV)."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Startup State Upon application of power the TCS shall enter the Startup State.",
+          "generated_requirement": "Upon application of power the TCS shall enter the Startup State."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "When the TCS Software is terminated normally the TCS shall enter the Normal Startup Mode of operation upon application of power.",
+          "generated_requirement": "When the TCS Software is terminated normally the TCS shall enter the Normal Startup Mode of operation upon application of power."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The Operations State modes shall not exist concurrently.",
+          "generated_requirement": "The Operations State modes shall not exist concurrently."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "There shall be no modes of operation in the shutdown state.",
+          "generated_requirement": "There shall be no modes of operation in the shutdown state."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later retrieval.",
+          "generated_requirement": "The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later retrieval."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The TCS shall automatically check the validity of the intended mission plan prior to being uploaded including altitude constraints, payload constraints, data link range constraints, airspace restrictions, fuel limitations, threat constraints, data link terrain masking effects, and Loss of Link (LOL) Plan.",
+          "generated_requirement": "The TCS shall automatically check the validity of the intended mission plan prior to being uploaded including altitude constraints, payload constraints, data link range constraints, airspace restrictions, fuel limitations, threat constraints, data link terrain masking effects, and Loss of Link (LOL) Plan."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The TCS shall provide the capability to print waypoint data in alphanumeric format.",
+          "generated_requirement": "The TCS shall provide the capability to print waypoint data in alphanumeric format."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "A de-clutter capability shall be provided that allows the operator to display only a selected number of the most significant threats.",
+          "generated_requirement": "A de-clutter capability shall be provided that allows the operator to display only a selected number of the most significant threats."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "While flying two MAE AVs Beyond Line Of Sight (BLOS), the TCS shall provide full control functionality of each AV.",
+          "generated_requirement": "While flying two MAE AVs Beyond Line Of Sight (BLOS), the TCS shall provide full control functionality of each AV."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The TCS shall provide the capability to control the AV flight commands as well as to release the AV to an autonomous flight control mode.",
+          "generated_requirement": "The TCS shall provide the capability to control the AV flight commands as well as to release the AV to an autonomous flight control mode."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "ADT Antenna control The TCS shall provide the functionality to control the ADT antenna.",
+          "generated_requirement": "The TCS shall provide the functionality to control the ADT antenna."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The TCS shall compute the estimated position of the AV during Loss of Link (LOL) based upon the last known AV position and anticipated flight path based on current flight mode (e.g.",
+          "generated_requirement": "The TCS shall compute the estimated position of the AV during Loss of Link (LOL) based upon the last known AV position and anticipated flight path based on current flight mode."
+        }
+      ]
+    }
+  ]
+}

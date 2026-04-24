@@ -1,0 +1,37 @@
+{
+  "id": "sample_010",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "a pharmacy inventory system"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "pharmacists, cashiers, and admins"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "add medicine stock, sell items, and get low stock alerts"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "yes staff accounts"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "sales operations should be quick at checkout"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "inventory and sales records should be protected"}
+  ],
+  "slots": {
+    "project_type": "pharmacy inventory system",
+    "users": ["pharmacist", "cashier", "admin"],
+    "core_features": ["add medicine stock", "sell items", "low stock alerts"],
+    "authentication": ["staff account login"],
+    "performance_constraints": ["quick checkout operations"],
+    "security_constraints": ["protect inventory records", "protect sales records"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow staff to sign in with staff accounts.",
+      "The system shall allow staff to add medicine stock records.",
+      "The system shall allow staff to process item sales.",
+      "The system shall notify staff when stock levels are low."
+    ],
+    "non_functional": [
+      "The system shall support quick checkout operations.",
+      "The system shall protect inventory and sales records."
+    ]
+  }
+}

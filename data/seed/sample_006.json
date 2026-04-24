@@ -1,0 +1,37 @@
+{
+  "id": "sample_006",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "a gym membership system"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "members, trainers, and front desk staff"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "sign up, book classes, and renew subscriptions"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "yeah members should have accounts"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "booking a class should be instant basically"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "payment and member data should be safe"}
+  ],
+  "slots": {
+    "project_type": "gym membership system",
+    "users": ["member", "trainer", "front desk staff"],
+    "core_features": ["member signup", "book classes", "renew subscriptions"],
+    "authentication": ["member account login"],
+    "performance_constraints": ["class booking should be near-instant"],
+    "security_constraints": ["protect payment data", "protect member data"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow members to create and access accounts.",
+      "The system shall allow members to sign up for gym memberships.",
+      "The system shall allow members to book classes.",
+      "The system shall allow members to renew subscriptions."
+    ],
+    "non_functional": [
+      "The system shall complete class booking operations quickly.",
+      "The system shall protect payment information and member data."
+    ]
+  }
+}

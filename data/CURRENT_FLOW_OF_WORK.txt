@@ -1,0 +1,397 @@
+CURRENT FLOW OF WORK
+Date: 2026-04-24
+
+1. PROJECT GOAL
+This project is building a measurable requirements-elicitation pipeline for research.
+
+Target chain:
+PURE/public source requirements
+-> generated elicitation dialogue
+-> generated structured/full requirements
+-> coverage evaluation against the original trusted source requirements
+
+The key research question is not "can an AI write nice text?"
+The key question is:
+"Can a controlled conversational pipeline recover the original requirements from a trusted source document, and how much does it miss or hallucinate?"
+
+
+2. CURRENT BENCHMARK FLOW
+
+Stage A: Build source-grounded benchmark
+Script:
+- scripts/build_pure_requirements_benchmark.py
+
+Input:
+- raw PURE/public requirement assets
+
+Output:
+- outputs/pure_full_runs/<run_id>/source_requirements/*.json
+
+What this does:
+- extracts requirement statements from trusted public/PURE documents
+- stores them as the gold reference set
+- this is the validation target for coverage
+
+Important:
+- this is the trusted source of truth
+- the system should be evaluated against these source requirements
+
+
+Stage B: Oracle upper bound
+Script:
+- scripts/generate_pure_oracle_requirements.py
+
+Input:
+- source_requirements/*.json
+
+Output:
+- oracle_requirements/*.json
+
+What this does:
+- copies the gold requirements into prediction format
+- this is NOT AI
+- this is only a sanity-check upper bound
+
+Why it exists:
+- to verify the evaluator
+- if oracle does not score 1.0, the evaluator is broken
+
+Important:
+- oracle is expected to be identical to the source
+- oracle perfect score is not model performance
+- oracle is not evidence of success
+
+
+Stage C: Generate elicitation dialogue with Gemini
+Script:
+- scripts/generate_pure_expanded_dialogues.py
+
+Prompt:
+- prompts/pure_requirements_to_dialogue.txt
+
+Input:
+- source_requirements/*.json
+
+Output:
+- expanded_dialogues/*.json
+
+What this does:
+- asks Gemini to convert the source requirement list into a realistic multi-turn chatbot conversation
+- this dialogue is supposed to act like the elicitation transcript
+
+Why this stage matters:
+- the final requirements generator only sees the dialogue
+- if the dialogue drops source requirements, later stages cannot recover them
+
+
+Stage D: Generate full requirements from the dialogue
+Script:
+- scripts/generate_pure_full_requirements.py
+
+Prompt:
+- prompts/dialogue_to_full_requirements_gemini.txt
+
+Input:
+- expanded_dialogues/*.json
+
+Output:
+- generated_requirements/*.json
+
+What this does:
+- gives the dialogue to Gemini
+- asks Gemini to produce a structured full requirements file
+- groups requirements into:
+  functional
+  non_functional
+  data
+  business_rules
+  interfaces
+  constraints
+
+
+Stage E: Evaluate coverage against trusted source requirements
+Script:
+- scripts/evaluate_pure_requirements_coverage.py
+
+Input:
+- gold: source_requirements/*.json
+- predictions: generated_requirements/*.json
+
+Output:
+- metrics/gemini_coverage.json
+
+What this measures:
+- precision: how many generated requirements match a source requirement
+- coverage_recall: how many source requirements were recovered
+- f1: balance of precision and coverage
+- hallucination_rate: generated requirements that are unsupported by source
+
+Matching method:
+- token-F1 overlap with a threshold
+- current threshold: 0.55
+
+
+Stage F: Diagnostic dialogue coverage check
+Script:
+- scripts/evaluate_pure_dialogue_coverage.py
+
+Input:
+- gold source requirements
+- generated dialogue
+
+Output:
+- metrics/dialogue_coverage_user_only.json
+
+What this measures:
+- how many gold requirements are actually present in the user turns of the dialogue
+
+Why this matters:
+- this is the practical upper bound for dialogue -> requirements recovery
+- if the dialogue only mentions 20 percent of the source requirements, the final generator cannot recover 100 percent
+
+
+Stage G: Output cleanup / postprocess
+Script:
+- scripts/postprocess_pure_generated_requirements.py
+
+Input:
+- generated_requirements/*.json
+
+Output:
+- generated_requirements_postprocessed_v2/*.json
+- metrics/gemini_coverage_postprocessed_v2.json
+
+What this does:
+- removes meta/disclaimer lines
+- fixes malformed requirement text normalization
+- deduplicates obvious repeats
+
+Important:
+- this does not add missing requirements
+- it only cleans the model output
+
+
+3. CURRENT RUNS
+
+Gemini run being analyzed:
+- outputs/pure_full_runs/20260424T153433Z_pure_full/
+
+Older oracle-only run:
+- outputs/pure_full_runs/20260424T152256Z_pure_full/
+
+Important caution:
+- the oracle run currently covers 6 documents
+- the latest Gemini run currently covers 2 documents
+- do not compare those aggregates directly as if they were the same experiment
+
+
+4. CURRENT METRICS
+
+4.1 Gemini full pipeline coverage
+File:
+- outputs/pure_full_runs/20260424T153433Z_pure_full/metrics/gemini_coverage.json
+
+Aggregate:
+- sample_count: 2
+- micro_precision: 0.3672
+- micro_coverage_recall: 0.4140
+- micro_f1: 0.3892
+- hallucination_rate: 0.5870
+- total_source_requirements: 157
+- total_generated_requirements: 177
+- total_matched_requirements: 65
+
+Meaning:
+- the current Gemini pipeline is generating many requirements that do not match the trusted source
+- it is also missing many source requirements
+
+
+4.2 Postprocessed Gemini output
+File:
+- outputs/pure_full_runs/20260424T153433Z_pure_full/metrics/gemini_coverage_postprocessed_v2.json
+
+Aggregate:
+- sample_count: 2
+- micro_precision: 0.3793
+- micro_coverage_recall: 0.4204
+- micro_f1: 0.3988
+- hallucination_rate: 0.5793
+- total_matched_requirements: 66
+
+Meaning:
+- cleanup helped slightly
+- the core problem is still upstream
+
+
+4.3 Dialogue coverage upper bound
+File:
+- outputs/pure_full_runs/20260424T153433Z_pure_full/metrics/dialogue_coverage_user_only.json
+
+Aggregate:
+- sample_count: 2
+- micro_coverage_recall: 0.2166
+- total_source_requirements: 157
+- total_covered_requirements: 34
+
+Meaning:
+- only about 21.66% of the trusted source requirements are actually recoverable from the user turns in the generated dialogue
+- this is the most important current finding
+- the pipeline is currently failing first at dialogue generation
+
+
+5. WHAT IS CURRENTLY WRONG
+
+Problem 1: dialogue generation is dropping source content
+- many original requirements never appear in the generated elicitation dialogue
+- this makes later recovery impossible
+
+Problem 2: dialogue generation is inventing generic domain behavior
+- example: web-store dialogue introduces generic browse/cart/checkout/login flows even when the source document is more specific or different
+
+Problem 3: requirements generation is sometimes too generic
+- it rewrites specific requirements into broader or simpler statements
+- that reduces exact coverage against the source
+
+Problem 4: requirements generation was emitting meta statements
+- examples like "the source requirements do not mention..."
+- these are not real requirements and were increasing hallucination
+
+Problem 5: normalization was damaging some requirement text
+- some outputs became malformed, such as duplicated "The system shall ..."
+
+
+6. FIXES ALREADY IMPLEMENTED IN CODE
+
+Prompt and logic improvements already added:
+- prompts/pure_requirements_to_dialogue.txt
+  now explicitly forbids invention and meta references
+  now requires coverage of all listed requirements
+  now tells the model to preserve numbers, units, names, and exact technical details
+
+- prompts/dialogue_to_full_requirements_gemini.txt
+  now forbids meta requirements
+  now tells the model to preserve original subject wording when possible
+  now discourages unnecessary splitting and generic paraphrasing
+
+- scripts/generate_pure_full_requirements.py
+  normalization logic improved
+  meta/disclaimer filtering added
+  duplicate cleanup added
+
+- scripts/generate_pure_expanded_dialogues.py
+  higher default max-source-requirements
+  prompt now receives requirement count explicitly
+
+- scripts/evaluate_pure_requirements_coverage.py
+  path handling fixed for reruns and derived directories
+
+- scripts/evaluate_pure_dialogue_coverage.py
+  added as a new diagnostic metric
+
+- scripts/postprocess_pure_generated_requirements.py
+  added as cleanup pass for existing runs
+
+Local LLM infrastructure now added:
+- scripts/local_ollama_client.py
+  supports local Ollama HTTP inference
+  now records local usage metadata and supports quality-focused options:
+  timeout, num_ctx, num_predict, seed
+
+- scripts/llm_router.py
+  now routes between Gemini and Ollama through the same JSON-generation interface
+
+- scripts/generate_pure_direct_requirements.py
+  now supports chunked source-requirement generation for large documents
+  this is important for local 7B models, which should not be evaluated with oversized single-shot prompts
+
+- scripts/generate_pure_full_requirements.py
+  now supports chunked dialogue-to-requirements generation
+  it uses dialogue-generation trace information to split long transcripts into manageable segments and then merges the partial structured outputs deterministically
+
+- scripts/run_pure_full_benchmark.py
+  now automatically enables the chunked long-document path when the provider is Ollama
+  default self-consistency temperature is now deterministic (`0.0`)
+
+- README.md
+  now documents the recommended local setup:
+  provider = ollama
+  model = qwen2.5:7b-instruct
+  timeout = 900
+  num_ctx = 8192
+  num_predict = 4096
+  seed = 42
+
+
+7. WHAT STILL NEEDS TO HAPPEN
+
+Immediate next step:
+- finish downloading the local Ollama model (`qwen2.5:7b-instruct`)
+- run the local pilot sanity check
+- rerun the PURE benchmark with the local provider and the updated chunk-aware scripts
+
+Expected impact:
+- dialogue should cover more of the source requirements
+- hallucination should go down
+- final coverage should improve
+- local runs should be more stable on large PURE documents because the model will no longer be forced into large monolithic prompts
+
+Most important metric to watch next:
+- dialogue_coverage_user_only.json
+
+Reason:
+- if dialogue coverage stays low, the rest of the pipeline will stay weak no matter how much we tweak the final requirements generator
+
+
+8. CURRENT PRACTICAL INTERPRETATION
+
+Right now the benchmark is useful, but the current Gemini results are NOT strong enough to present as final paper results.
+
+The good news:
+- the benchmark structure is correct
+- the evaluation is working
+- we now know exactly where the pipeline is failing
+
+The current focus should be:
+- improve source-to-dialogue fidelity first
+- then rerun full dialogue-to-requirements generation
+- then compare against the trusted source requirements again
+
+
+9. MAIN FILES TO READ
+
+Workflow / benchmark scripts:
+- scripts/run_pure_full_benchmark.py
+- scripts/build_pure_requirements_benchmark.py
+- scripts/generate_pure_expanded_dialogues.py
+- scripts/generate_pure_full_requirements.py
+- scripts/evaluate_pure_requirements_coverage.py
+- scripts/evaluate_pure_dialogue_coverage.py
+- scripts/postprocess_pure_generated_requirements.py
+
+Prompts:
+- prompts/pure_requirements_to_dialogue.txt
+- prompts/dialogue_to_full_requirements_gemini.txt
+
+Latest metrics:
+- outputs/pure_full_runs/20260424T153433Z_pure_full/metrics/gemini_coverage.json
+- outputs/pure_full_runs/20260424T153433Z_pure_full/metrics/gemini_coverage_postprocessed_v2.json
+- outputs/pure_full_runs/20260424T153433Z_pure_full/metrics/dialogue_coverage_user_only.json
+
+
+10. BOTTOM LINE
+
+Current status:
+- trusted source benchmark: working
+- evaluator: working
+- oracle sanity check: working
+- Gemini full pipeline: benchmark exists, but free-tier access is unstable
+- local Ollama provider path: implemented and ready once the 7B model download completes
+
+Primary bottleneck:
+- historically, the generated elicitation dialogue was not faithfully carrying enough of the original source requirements
+- for local runs, the major engineering risk is now prompt size and long-output stability, which is why chunked generation was added
+
+Next engineering objective:
+- complete the Ollama model install
+- run the local benchmark with the chunk-aware path
+- reevaluate coverage and compare local results against the existing Gemini benchmark

@@ -1,0 +1,768 @@
+{
+  "sample_id": "pure_2005_phin",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_phin",
+    "title": "2005 - phin",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - phin.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - phin.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "OM should aid in the collection and analysis of data to support identifying and containing the health event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "om should aid in the collection and analysis of data to support identifying and containing the health event"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "OM systems should be configurable to meet the needs of different types of health events, and capture data related to cases, contacts, investigations, exposures, relationships, clinical and environmental specimens/samples, laboratory results, vaccinations and treatments, travel history, and conveyance information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "om systems should be configurable to meet the needs of different types of health events and capture data related to cases contacts investigations exposures relationships clinical and environmental specimens samples laboratory results vaccinations and treatments travel history and conveyance information"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "The application should also allow for new objects to be defined and created during the course of an investigation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the application should also allow for new objects to be defined and created during the course of an investigation"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "Systems supporting OM should also be integrated with the systems supporting early event detection, countermeasure administration, laboratory, and surveillance to achieve the primary goal of managing the response to and mitigating the effects of an event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should also be integrated with the systems supporting early event detection countermeasure administration laboratory and surveillance to achieve the primary goal of managing the response to and mitigating the effects of an event"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "This document provides minimum operational requirements necessary to support an outbreak management system and should in no way preclude a system from incorporating additional functionality beyond what has been covered in this document.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this document provides minimum operational requirements necessary to support an outbreak management system and should in no way preclude a system from incorporating additional functionality beyond what has been covered in this document"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "OUTBREAK MANAGEMENT FUNCTIONAL REQUIREMENTS The following requirements describe baseline functionality for any system(s) implemented to support Outbreak Management: 2.1 System Architecture: Broad system-level needs, such as flexible configuration, should be addressed by systems supporting OM.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outbreak management functional requirements the following requirements describe baseline functionality for any system s implemented to support outbreak management 2 1 system architecture broad system level needs such as flexible configuration should be addressed by systems supporting om"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "2.3 System Functions and Behaviors: Systems supporting OM should support case investigation, maintain detailed and comprehensive linkages, trace contacts, and quarantine and isolation monitoring activities.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2 3 system functions and behaviors systems supporting om should support case investigation maintain detailed and comprehensive linkages trace contacts and quarantine and isolation monitoring activities"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "2.4 Analysis, Visualization, and Report Generation: Systems supporting OM should enable investigators to produce both aggregated and individual reports about affected entities and events.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2 4 analysis visualization and report generation systems supporting om should enable investigators to produce both aggregated and individual reports about affected entities and events"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "2.5 System Integration and Data Exchange: OM information must be exchangeable, based on established standards, between systems involved in the investigation, identification, confirmation, and reporting of a health event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2 5 system integration and data exchange om information must be exchangeable based on established standards between systems involved in the investigation identification confirmation and reporting of a health event"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "Where they exist, systems supporting OM should use them.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "where they exist systems supporting om should use them"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "As additional standards are defined, they should be accepted and implemented 2.7 Operations: Personnel, roles, activities, and responsibilities necessary to support all aspects of OM should be clearly defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "as additional standards are defined they should be accepted and implemented 2 7 operations personnel roles activities and responsibilities necessary to support all aspects of om should be clearly defined"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "A plan must be established for continuing activities when systems supporting OM are unavailable.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a plan must be established for continuing activities when systems supporting om are unavailable"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "2.9 Privacy: Patients, organizations, and personnel must be protected from fraudulent and unauthorized use of their information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "2 9 privacy patients organizations and personnel must be protected from fraudulent and unauthorized use of their information"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "SYSTEM ARCHITECTURE Systems designed to support OM must offer configuration flexibility so that new data fields, entities, entity types and relationship types may be added to capture information unique to each particular health event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "system architecture systems designed to support om must offer configuration flexibility so that new data fields entities entity types and relationship types may be added to capture information unique to each particular health event"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "Systems supporting OM must support structured data entry for common forms and fields to ensure data integrity, validity, and standardization.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must support structured data entry for common forms and fields to ensure data integrity validity and standardization"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "Systems supporting OM should support multiple deployment options (e.g., client server, disconnected, and potentially web based).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should support multiple deployment options e g client server disconnected and potentially web based"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "Systems supporting OM should provide the ability for computers in disconnected mode to reconnect to a server to share OM data among other computers that operate in disconnected mode.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should provide the ability for computers in disconnected mode to reconnect to a server to share om data among other computers that operate in disconnected mode"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "OM data should be synchronized so that all instances of OM applications working from the same server are able to share and use the same data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "om data should be synchronized so that all instances of om applications working from the same server are able to share and use the same data"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "Systems supporting OM should be able to electronically record and store data from remote devices that may be uploaded to an aggregating system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be able to electronically record and store data from remote devices that may be uploaded to an aggregating system"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "Systems supporting OM should be capable of using configurable, domain-specific vocabulary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be capable of using configurable domain specific vocabulary"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "Systems supporting OM must have the capability to capture demographic data about persons involved in an OM investigation, including: Subject ID, name, address, date of birth, gender, phone number, race, ethnicity, and country of citizenship.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must have the capability to capture demographic data about persons involved in an om investigation including subject id name address date of birth gender phone number race ethnicity and country of citizenship"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "Systems supporting OM must have the capability to capture data about organizations (e.g., a local health department, a university, a professional association) involved in an OM investigation, including: organization name, location, and contact information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must have the capability to capture data about organizations e g a local health department a university a professional association involved in an om investigation including organization name location and contact information"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "A Subject ID should also be collected for animals in an OM investigation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a subject id should also be collected for animals in an om investigation"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "Systems supporting OM must have the capability to capture data about any conveyance involved in an OM investigation, including: type of conveyance, route taken (e.g., flight number), etc.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must have the capability to capture data about any conveyance involved in an om investigation including type of conveyance route taken e g flight number etc"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "Systems supporting OM must have the capability to capture data about any public or private gathering of people (e.g., church social, ball game) involved in an OM investigation, including: time, location, nature of the event, etc.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must have the capability to capture data about any public or private gathering of people e g church social ball game involved in an om investigation including time location nature of the event etc"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "Systems supporting OM must have the capability to capture data about any living things other than persons or animals that are involved in an OM investigation, including: type of living thing, and other customizable data collection questions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must have the capability to capture data about any living things other than persons or animals that are involved in an om investigation including type of living thing and other customizable data collection questions"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "Systems supporting OM must have the capability to capture an entity’s travel history to support investigations of entities infected, exposed or potentially exposed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must have the capability to capture an entity s travel history to support investigations of entities infected exposed or potentially exposed"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "Health Event Data When a health event is investigated, it must be assigned an event identifier (i.e., Event ID) that is unique within the jurisdiction.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "health event data when a health event is investigated it must be assigned an event identifier i e event id that is unique within the jurisdiction"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "Data describing the health event should be captured, including the reason for the investigation, the category of event (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "data describing the health event should be captured including the reason for the investigation the category of event e g"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "Systems supporting OM should have the ability to record the case definition for a health event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should have the ability to record the case definition for a health event"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "Systems supporting OM should have the ability to capture changes to the case definition that occur as the health event evolves.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should have the ability to capture changes to the case definition that occur as the health event evolves"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "Travel history data should include information such as the method of transportation (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "travel history data should include information such as the method of transportation e g"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "Information about each leg of a trip, as well as the parent information about the trip, should be captured.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "information about each leg of a trip as well as the parent information about the trip should be captured"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "For example, if a person who lives in Georgia travels to Seattle and becomes exposed to monkey pox, then visits a friend in Santa Fe, travel history and conveyance data should be noted accordingly for each place the exposed person traveled.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "for example if a person who lives in georgia travels to seattle and becomes exposed to monkey pox then visits a friend in santa fe travel history and conveyance data should be noted accordingly for each place the exposed person traveled"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "Travel history data to be collected for an animal or object should include shipping invoices, animal shelter delivery and adoption receipts, and delivery schedules (including delivery vehicle and driver information).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "travel history data to be collected for an animal or object should include shipping invoices animal shelter delivery and adoption receipts and delivery schedules including delivery vehicle and driver information"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "Because attributes of both case and exposure data may describe the same entity, systems supporting OM must have the ability to avoid capturing redundant entity demographic information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "because attributes of both case and exposure data may describe the same entity systems supporting om must have the ability to avoid capturing redundant entity demographic information"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "There must be a means to update the case diagnosis either manually or automatically if the case definition changes during an event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there must be a means to update the case diagnosis either manually or automatically if the case definition changes during an event"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "Epidemiological (epi) data must be collected to assist in the case investigation of events.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "epidemiological epi data must be collected to assist in the case investigation of events"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "Systems supporting OM must allow for dynamic, event-specific case investigation data to be captured.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must allow for dynamic event specific case investigation data to be captured"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "In the context of a case, all entities exposed to a case must be recorded and linked to the case.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the context of a case all entities exposed to a case must be recorded and linked to the case"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "Demographic information should be collected about the investigator, including their name, address, and contact information, so that the investigator may be contacted to answer questions or to provide additional information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "demographic information should be collected about the investigator including their name address and contact information so that the investigator may be contacted to answer questions or to provide additional information"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "Both the jurisdiction investigating the event and the jurisdiction reporting the cases and associated investigations must be captured.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "both the jurisdiction investigating the event and the jurisdiction reporting the cases and associated investigations must be captured"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "Systems supporting OM should have the ability to classify entities associated with the investigation as investigation controls.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should have the ability to classify entities associated with the investigation as investigation controls"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "Detailed data must be collected about the source of exposure as well as the exposed entity to support contact exposure tracing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "detailed data must be collected about the source of exposure as well as the exposed entity to support contact exposure tracing"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "Epi data must be collected to assist in the exposure investigation of health events.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "epi data must be collected to assist in the exposure investigation of health events"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "Systems supporting OM must support capturing dynamic, event-specific data that describes contact between two subjects.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must support capturing dynamic event specific data that describes contact between two subjects"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "Systems supporting OM should support the monitoring and follow-up activities required when tracking the status of cases and exposed individuals.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should support the monitoring and follow up activities required when tracking the status of cases and exposed individuals"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "Monitoring data should be collected about cases and exposed individuals who are isolated or quarantined because of a health event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "monitoring data should be collected about cases and exposed individuals who are isolated or quarantined because of a health event"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "Follow-up data should be collected from subjects or their proxies to track symptoms and compliance with recommended treatment plans or prophylaxis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "follow up data should be collected from subjects or their proxies to track symptoms and compliance with recommended treatment plans or prophylaxis"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "Specimens/samples collected for laboratory testing must be assigned an identifier (i.e., Specimen ID) that is unique within the jurisdiction.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "specimens samples collected for laboratory testing must be assigned an identifier i e specimen id that is unique within the jurisdiction"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "The subject of a specimen/sample collected for laboratory testing must be linked to the specimen/sample by an identifier (i.e., Subject ID) that is unique within the jurisdiction.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the subject of a specimen sample collected for laboratory testing must be linked to the specimen sample by an identifier i e subject id that is unique within the jurisdiction"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "Systems supporting OM must be able to store data about the specimens/samples that are collected for laboratory testing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to store data about the specimens samples that are collected for laboratory testing"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "Clinical specimen data should include information about the specimen source/site from which the specimen was taken, symptom date of onset, and whether the sample is acute or convalescent.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "clinical specimen data should include information about the specimen source site from which the specimen was taken symptom date of onset and whether the sample is acute or convalescent"
+    },
+    {
+      "req_id": "AUTO-0054",
+      "text": "Food sample data should include information about the lot number, batch number, manufacturer name, shipping invoice, temperature, sample type (e.g., dairy – milk, red meat, spice), and product storage condition.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "food sample data should include information about the lot number batch number manufacturer name shipping invoice temperature sample type e g dairy milk red meat spice and product storage condition"
+    },
+    {
+      "req_id": "AUTO-0055",
+      "text": "Bar-coding should be supported for the capture of detailed specimen/sample data to improve the quality and efficiency of data collection.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "bar coding should be supported for the capture of detailed specimen sample data to improve the quality and efficiency of data collection"
+    },
+    {
+      "req_id": "AUTO-0056",
+      "text": "Chain of custody information for all specimens/samples should be captured.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "chain of custody information for all specimens samples should be captured"
+    },
+    {
+      "req_id": "AUTO-0057",
+      "text": "Systems supporting OM must be able to create a laboratory test request for a specimen/sample or group of specimens/samples.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to create a laboratory test request for a specimen sample or group of specimens samples"
+    },
+    {
+      "req_id": "AUTO-0058",
+      "text": "Information about batch shipments of specimens/samples that are transferred to test laboratories or other facilities must be collected, including the shipper (e.g., UPS, FedEx), shipment tracking number, and the sending organization’s contact information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "information about batch shipments of specimens samples that are transferred to test laboratories or other facilities must be collected including the shipper e g ups fedex shipment tracking number and the sending organization s contact information"
+    },
+    {
+      "req_id": "AUTO-0059",
+      "text": "Systems supporting OM should be able to support the inclusion of labeling, packaging and shipping instructions (e.g., container type, storage condition, preservative), and the shipping manifest with batch shipments of specimens/samples.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be able to support the inclusion of labeling packaging and shipping instructions e g container type storage condition preservative and the shipping manifest with batch shipments of specimens samples"
+    },
+    {
+      "req_id": "AUTO-0060",
+      "text": "Systems supporting OM must be able to store laboratory result(s) and link the result(s) to the original laboratory test request.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to store laboratory result s and link the result s to the original laboratory test request"
+    },
+    {
+      "req_id": "AUTO-0061",
+      "text": "Systems supporting OM must store data about laboratory results.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must store data about laboratory results"
+    },
+    {
+      "req_id": "AUTO-0062",
+      "text": "If the specimen/sample collection record exists, the laboratory result must be linked to the specimen collection record by the Specimen ID.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the specimen sample collection record exists the laboratory result must be linked to the specimen collection record by the specimen id"
+    },
+    {
+      "req_id": "AUTO-0063",
+      "text": "If the specimen/sample collection record does not exist, the laboratory result must be linked to the subject by the Subject ID.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the specimen sample collection record does not exist the laboratory result must be linked to the subject by the subject id"
+    },
+    {
+      "req_id": "AUTO-0064",
+      "text": "All levels of granularity of results (e.g., specimen/sample level, assay level) must be supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all levels of granularity of results e g specimen sample level assay level must be supported"
+    },
+    {
+      "req_id": "AUTO-0065",
+      "text": "Contraindication information should be collected to indicate why vaccinations, treatments, or antidotes may not have been administered or why the patient may not have complied with prescribed interventions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "contraindication information should be collected to indicate why vaccinations treatments or antidotes may not have been administered or why the patient may not have complied with prescribed interventions"
+    },
+    {
+      "req_id": "AUTO-0066",
+      "text": "Activity Logging Data Systems supporting OM should capture information such as the date and time of an activity, activity type, who initiated the activity, and contact information to generate activity logs for management purposes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "activity logging data systems supporting om should capture information such as the date and time of an activity activity type who initiated the activity and contact information to generate activity logs for management purposes"
+    },
+    {
+      "req_id": "AUTO-0067",
+      "text": "Activity logs, which are tools for investigators to track their actions during a case, should be supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "activity logs which are tools for investigators to track their actions during a case should be supported"
+    },
+    {
+      "req_id": "AUTO-0068",
+      "text": "SYSTEM FUNCTIONS AND BEHAVIORS Case Investigation Electronic questionnaires must be developed and validated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "system functions and behaviors case investigation electronic questionnaires must be developed and validated"
+    },
+    {
+      "req_id": "AUTO-0069",
+      "text": "Electronic questionnaires should provide the capability to accept digital signatures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "electronic questionnaires should provide the capability to accept digital signatures"
+    },
+    {
+      "req_id": "AUTO-0070",
+      "text": "Systems supporting OM must provide the ability to control the configuration of and revisions to investigation-specific questionnaires.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must provide the ability to control the configuration of and revisions to investigation specific questionnaires"
+    },
+    {
+      "req_id": "AUTO-0071",
+      "text": "Systems supporting OM must provide the ability to publish investigation-specific questionnaires and implementation guides.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must provide the ability to publish investigation specific questionnaires and implementation guides"
+    },
+    {
+      "req_id": "AUTO-0072",
+      "text": "Case investigation should be supported by reusable questionnaire libraries that use common terminology (where available) to maximize the efficiency of data exchange.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "case investigation should be supported by reusable questionnaire libraries that use common terminology where available to maximize the efficiency of data exchange"
+    },
+    {
+      "req_id": "AUTO-0073",
+      "text": "Systems supporting OM should provide a manual or automatic means of updating the status of case records as the case definition changes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should provide a manual or automatic means of updating the status of case records as the case definition changes"
+    },
+    {
+      "req_id": "AUTO-0074",
+      "text": "Systems supporting OM should track the changes made to the status of case records as a result of changes in the case definition.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should track the changes made to the status of case records as a result of changes in the case definition"
+    },
+    {
+      "req_id": "AUTO-0075",
+      "text": "Systems supporting OM must support dynamically defined associations between entities for the purpose of defining relationships.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must support dynamically defined associations between entities for the purpose of defining relationships"
+    },
+    {
+      "req_id": "AUTO-0076",
+      "text": "Entity-to-epi data links must match the entity to their symptoms, survey questions, specimens/samples collected, laboratory results, and prophylaxis and treatment data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "entity to epi data links must match the entity to their symptoms survey questions specimens samples collected laboratory results and prophylaxis and treatment data"
+    },
+    {
+      "req_id": "AUTO-0077",
+      "text": "Each new case must be able to link an assigned Entity ID to an Event ID within the scope of the investigation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each new case must be able to link an assigned entity id to an event id within the scope of the investigation"
+    },
+    {
+      "req_id": "AUTO-0078",
+      "text": "Laboratory results must be linked to corresponding specimens/samples including multiple results from one specimen/sample), and subjects when the participating laboratory returns the results.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "laboratory results must be linked to corresponding specimens samples including multiple results from one specimen sample and subjects when the participating laboratory returns the results"
+    },
+    {
+      "req_id": "AUTO-0079",
+      "text": "These linkages must unambiguously associate multiple laboratory results to case and contact identifiers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these linkages must unambiguously associate multiple laboratory results to case and contact identifiers"
+    },
+    {
+      "req_id": "AUTO-0080",
+      "text": "If the specimen/sample was created from another specimen/sample (e.g., aliquots, and new specimen types created from a source sample), laboratory results for the child specimens/samples must be linked to the corresponding parent specimen/sample.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the specimen sample was created from another specimen sample e g aliquots and new specimen types created from a source sample laboratory results for the child specimens samples must be linked to the corresponding parent specimen sample"
+    },
+    {
+      "req_id": "AUTO-0081",
+      "text": "Systems supporting OM should be able to create new contacts from existing case records, and should also identify the contact type.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be able to create new contacts from existing case records and should also identify the contact type"
+    },
+    {
+      "req_id": "AUTO-0082",
+      "text": "Systems supporting OM must support contact exposure tracing by allowing one contact to be linked to multiple cases, and allowing multiple contacts to be linked to a single case.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must support contact exposure tracing by allowing one contact to be linked to multiple cases and allowing multiple contacts to be linked to a single case"
+    },
+    {
+      "req_id": "AUTO-0083",
+      "text": "Systems supporting OM should be able to produce contact work lists for each investigator to use, and should allow sorting by priority or geography.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be able to produce contact work lists for each investigator to use and should allow sorting by priority or geography"
+    },
+    {
+      "req_id": "AUTO-0084",
+      "text": "ANALYSIS, VISUALIZATION, AND REPORT GENERATION Systems supporting OM should allow for analytical searches based upon multiple criteria.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "analysis visualization and report generation systems supporting om should allow for analytical searches based upon multiple criteria"
+    },
+    {
+      "req_id": "AUTO-0085",
+      "text": "Reports generated by systems supporting OM should clearly indicate the number of cases, the number of contacts per case, the number of cases with no known epi-link at the time of diagnosis, the laboratory results, and the number of vaccinations and/or treatments administered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "reports generated by systems supporting om should clearly indicate the number of cases the number of contacts per case the number of cases with no known epi link at the time of diagnosis the laboratory results and the number of vaccinations and or treatments administered"
+    },
+    {
+      "req_id": "AUTO-0086",
+      "text": "Systems supporting OM should have the ability to produce pre-formatted queries and reports to allow faster and more accurate reporting, while still allowing the flexibility of ad-hoc reporting.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should have the ability to produce pre formatted queries and reports to allow faster and more accurate reporting while still allowing the flexibility of ad hoc reporting"
+    },
+    {
+      "req_id": "AUTO-0087",
+      "text": "Systems supporting OM should have the ability to produce individual reports for each emergency team member or investigator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should have the ability to produce individual reports for each emergency team member or investigator"
+    },
+    {
+      "req_id": "AUTO-0088",
+      "text": "Systems supporting OM should have the ability to compare characteristics of exposed and non-exposed (i.e., controls) persons.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should have the ability to compare characteristics of exposed and non exposed i e controls persons"
+    },
+    {
+      "req_id": "AUTO-0089",
+      "text": "Systems supporting OM should have the ability to produce lists of action items (e.g., to do lists).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should have the ability to produce lists of action items e g to do lists"
+    },
+    {
+      "req_id": "AUTO-0090",
+      "text": "Systems supporting OM must have the ability to print questionnaires for multiple uses, including taking to the field, use during phone interviews, etc.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must have the ability to print questionnaires for multiple uses including taking to the field use during phone interviews etc"
+    },
+    {
+      "req_id": "AUTO-0091",
+      "text": "Systems supporting OM must be able to aggregate data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to aggregate data"
+    },
+    {
+      "req_id": "AUTO-0092",
+      "text": "Health event data should be aggregated into a centralized data store (i.e., data warehouse) designed specifically to support analysis of events over time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "health event data should be aggregated into a centralized data store i e data warehouse designed specifically to support analysis of events over time"
+    },
+    {
+      "req_id": "AUTO-0093",
+      "text": "Data should be accessible for use with commonly available analytical tools (e.g., SAS, SPSS, EPI-INFO, MS Access, MS Excel, Crystal Reports).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "data should be accessible for use with commonly available analytical tools e g sas spss epi info ms access ms excel crystal reports"
+    },
+    {
+      "req_id": "AUTO-0094",
+      "text": "SYSTEM INTEGRATION AND DATA EXCHANGE SYSTEM INTEGRATION AND DATA EXCHANGE Systems integration requirements specific to systems supporting OM are included in the section below and describe the types of data that OM should be able to send and receive.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "system integration and data exchange system integration and data exchange systems integration requirements specific to systems supporting om are included in the section below and describe the types of data that om should be able to send and receive"
+    },
+    {
+      "req_id": "AUTO-0095",
+      "text": "This section is limited to describing the types of data exchange that OM must support;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this section is limited to describing the types of data exchange that om must support"
+    },
+    {
+      "req_id": "AUTO-0096",
+      "text": "Message construction and parsing, and secure data transport requirements that span PHIN functional areas are separately defined and should be reviewed in “PHIN Preparedness Cross Functional Components Requirements”, available at www.cdc.gov/phin.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "message construction and parsing and secure data transport requirements that span phin functional areas are separately defined and should be reviewed in phin preparedness cross functional components requirements available at www cdc gov phin"
+    },
+    {
+      "req_id": "AUTO-0097",
+      "text": "Contact information for key response partner organizations should be stored in a local instance of a public health directory for associating to a health event, as described in section 2.2.2 Health event Data of this document.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "contact information for key response partner organizations should be stored in a local instance of a public health directory for associating to a health event as described in section 2 2 2 health event data of this document"
+    },
+    {
+      "req_id": "AUTO-0098",
+      "text": "Systems supporting OM must be able to accept data from other partner systems supporting OM.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to accept data from other partner systems supporting om"
+    },
+    {
+      "req_id": "AUTO-0099",
+      "text": "Systems supporting OM must be able to create and send messages for laboratory test requests.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to create and send messages for laboratory test requests"
+    },
+    {
+      "req_id": "AUTO-0100",
+      "text": "Systems supporting OM should be able to receive, parse and process messages for laboratory test request responses, in accordance with PHIN Laboratory Test Order Response Message Implementation Guide, available at www.cdc.gov/phin.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be able to receive parse and process messages for laboratory test request responses in accordance with phin laboratory test order response message implementation guide available at www cdc gov phin"
+    },
+    {
+      "req_id": "AUTO-0101",
+      "text": "Systems supporting OM must be able to receive, parse and process messages for laboratory results.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to receive parse and process messages for laboratory results"
+    },
+    {
+      "req_id": "AUTO-0102",
+      "text": "Laboratory results should be linked to laboratory test requests, which are linked to subjects.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "laboratory results should be linked to laboratory test requests which are linked to subjects"
+    },
+    {
+      "req_id": "AUTO-0103",
+      "text": "Systems supporting OM should be able to exchange messages for laboratory results with systems supporting surveillance, early event detection (EED), and other preparedness areas.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be able to exchange messages for laboratory results with systems supporting surveillance early event detection eed and other preparedness areas"
+    },
+    {
+      "req_id": "AUTO-0104",
+      "text": "Systems supporting OM must be able to exchange messages for confirmed, probable and suspect cases, and the other case classifications that are noted in the PHIN message implementation guide, with systems supporting surveillance, early event detection (EED), and other preparedness areas.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to exchange messages for confirmed probable and suspect cases and the other case classifications that are noted in the phin message implementation guide with systems supporting surveillance early event detection eed and other preparedness areas"
+    },
+    {
+      "req_id": "AUTO-0105",
+      "text": "Systems supporting OM must exchange messages for investigations and for exposure contacts.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must exchange messages for investigations and for exposure contacts"
+    },
+    {
+      "req_id": "AUTO-0106",
+      "text": "Systems supporting OM must be able to receive, parse and process messages for countermeasures that have been administered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to receive parse and process messages for countermeasures that have been administered"
+    },
+    {
+      "req_id": "AUTO-0107",
+      "text": "Countermeasures that have been administered must be linked to the entity that was administered the countermeasures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "countermeasures that have been administered must be linked to the entity that was administered the countermeasures"
+    },
+    {
+      "req_id": "AUTO-0108",
+      "text": "Systems supporting OM must be able to create and send messages for countermeasure administration requests.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to create and send messages for countermeasure administration requests"
+    },
+    {
+      "req_id": "AUTO-0109",
+      "text": "Systems supporting OM must be able to exchange aggregated data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om must be able to exchange aggregated data"
+    },
+    {
+      "req_id": "AUTO-0110",
+      "text": "Systems supporting OM should be able to provide the aggregate data necessary for health event monitoring to systems that support response tracking, such as the number of suspect cases, number of persons under isolation or quarantine, and the number of patients receiving countermeasures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should be able to provide the aggregate data necessary for health event monitoring to systems that support response tracking such as the number of suspect cases number of persons under isolation or quarantine and the number of patients receiving countermeasures"
+    },
+    {
+      "req_id": "AUTO-0111",
+      "text": "Mapping interfaces and data dictionaries must be clearly defined and included in data exchanges to indicate and describe both standard and customized fields because systems supporting OM are configurable to meet the individual needs of each event and therefore collect data specific to each event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "mapping interfaces and data dictionaries must be clearly defined and included in data exchanges to indicate and describe both standard and customized fields because systems supporting om are configurable to meet the individual needs of each event and therefore collect data specific to each event"
+    },
+    {
+      "req_id": "AUTO-0112",
+      "text": "Message components should be grouped by observation type (e.g., laboratory, symptom, exposure, risk, treatment) by systems supporting OM.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "message components should be grouped by observation type e g laboratory symptom exposure risk treatment by systems supporting om"
+    },
+    {
+      "req_id": "AUTO-0113",
+      "text": "Systems supporting OM should support multiple file formats for import and export, such as databases, spreadsheets, messages, and text files, among others Data exchange should support analysis and information sharing of possible health events at all levels of public health (e.g., national, state, local).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "systems supporting om should support multiple file formats for import and export such as databases spreadsheets messages and text files among others data exchange should support analysis and information sharing of possible health events at all levels of public health e g national state local"
+    },
+    {
+      "req_id": "AUTO-0114",
+      "text": "however, it is required that vocabulary standards be used when exchanging data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however it is required that vocabulary standards be used when exchanging data"
+    },
+    {
+      "req_id": "AUTO-0115",
+      "text": "Vocabulary requirements that span PHIN functional areas should be reviewed in “PHIN Preparedness Cross Functional Components Requirements”, available at www.cdc.gov/phin.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "vocabulary requirements that span phin functional areas should be reviewed in phin preparedness cross functional components requirements available at www cdc gov phin"
+    },
+    {
+      "req_id": "AUTO-0116",
+      "text": "Operational requirements that span PHIN functional areas are separately defined and should be reviewed in “PHIN Preparedness Cross Functional Components Requirements”, available at www.cdc.gov/phin.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operational requirements that span phin functional areas are separately defined and should be reviewed in phin preparedness cross functional components requirements available at www cdc gov phin"
+    },
+    {
+      "req_id": "AUTO-0117",
+      "text": "Policies and procedures for communicating information to appropriate stakeholders (e.g., state and federal emergency management organizations, FEMA, hazmat teams, public works facilities, intelligence organizations, the media, and the public) should be clearly defined.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "policies and procedures for communicating information to appropriate stakeholders e g state and federal emergency management organizations fema hazmat teams public works facilities intelligence organizations the media and the public should be clearly defined"
+    },
+    {
+      "req_id": "AUTO-0118",
+      "text": "Polices regarding data synchronization should be defined to support multiple deployment options as discussed in section 2.1 System Architecture of this document.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "polices regarding data synchronization should be defined to support multiple deployment options as discussed in section 2 1 system architecture of this document"
+    },
+    {
+      "req_id": "AUTO-0119",
+      "text": "Configuration management protocols and personnel should be identified to support multiple deployment options.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "configuration management protocols and personnel should be identified to support multiple deployment options"
+    },
+    {
+      "req_id": "AUTO-0120",
+      "text": "Protocols and personnel should be identified to support the set-up and configuration of laptops and other field devices used in OM investigations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "protocols and personnel should be identified to support the set up and configuration of laptops and other field devices used in om investigations"
+    },
+    {
+      "req_id": "AUTO-0121",
+      "text": "Processes and personnel should be identified to support agent-specific deployment packages, including syndromic grouping libraries and vocabulary sub-sets, which will be used to efficiently collect data specific to the particular health event being investigated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "processes and personnel should be identified to support agent specific deployment packages including syndromic grouping libraries and vocabulary sub sets which will be used to efficiently collect data specific to the particular health event being investigated"
+    },
+    {
+      "req_id": "AUTO-0122",
+      "text": "Policies and procedures should be in place for determining when follow up and isolation and quarantine monitoring should be done as a part of a focused countermeasure administration and response effort, rather than as a function of contact exposure tracing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "policies and procedures should be in place for determining when follow up and isolation and quarantine monitoring should be done as a part of a focused countermeasure administration and response effort rather than as a function of contact exposure tracing"
+    },
+    {
+      "req_id": "AUTO-0123",
+      "text": "SYSTEM SECURITY AND AVAILABILITY Systems and data supporting OM must be protected from sabotage, corruption and unauthorized access, and must be available subsequent to a catastrophic event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "system security and availability systems and data supporting om must be protected from sabotage corruption and unauthorized access and must be available subsequent to a catastrophic event"
+    },
+    {
+      "req_id": "AUTO-0124",
+      "text": "Security and Availability requirements that span PHIN functional areas should be reviewed in “PHIN Preparedness Cross Functional Components Requirements”, available at www.cdc.gov/phin.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "security and availability requirements that span phin functional areas should be reviewed in phin preparedness cross functional components requirements available at www cdc gov phin"
+    },
+    {
+      "req_id": "AUTO-0125",
+      "text": "These requirements should be reviewed in “PHIN Preparedness Cross Functional Components Requirements”, available at www.cdc.gov/phin.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these requirements should be reviewed in phin preparedness cross functional components requirements available at www cdc gov phin"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 125,
+    "total_count": 125
+  }
+}

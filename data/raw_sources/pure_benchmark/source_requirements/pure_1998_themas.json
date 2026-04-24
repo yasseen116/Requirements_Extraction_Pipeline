@@ -1,0 +1,594 @@
+{
+  "sample_id": "pure_1998_themas",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1998_themas",
+    "title": "1998 - themas",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1998 - themas.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1998 - themas.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "Only those conditions expressed with the imperative \"shall\" are to be interp reted as binding requirements for this SRS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "only those conditions expressed with the imperative shall are to be interp reted as binding requirements for this srs"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "The SRS shall give a prototype of a simulated thermostat for verification and validation of THEMAS reliability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the srs shall give a prototype of a simulated thermostat for verification and validation of themas reliability"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "In the event of conflict between the documents referenced and the contents of this SRS, the contents of this document shall overrule all others, with the exception of the Statement of Work.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the event of conflict between the documents referenced and the contents of this srs the contents of this document shall overrule all others with the exception of the statement of work"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "The system should not need intervention from outside users other than the supervisor to maintain operation of THEMAS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should not need intervention from outside users other than the supervisor to maintain operation of themas"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "The system should provide warnings to the supervisor about faulty temperatures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should provide warnings to the supervisor about faulty temperatures"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "The displaying of the current status of the system to the supervisor should not contain excessive information which could confuse the supervisor.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the displaying of the current status of the system to the supervisor should not contain excessive information which could confuse the supervisor"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "The system should provide information in the form of reports to the supervisor so that the system can be run efficiently.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should provide information in the form of reports to the supervisor so that the system can be run efficiently"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "The thermostats shall only provide temperature values and temperature settings.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the thermostats shall only provide temperature values and temperature settings"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "When a signal is sent to a heating or cooling unit, no signal shall be available to allow the THEMAS system to determine if the signal sent to the unit was realized by the unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "when a signal is sent to a heating or cooling unit no signal shall be available to allow the themas system to determine if the signal sent to the unit was realized by the unit"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "Operating System Assumptions The THEMAS system shall be designed to run on the Microsoft ® Windows NT™ operating system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operating system assumptions the themas system shall be designed to run on the microsoft windows nt operating system"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "All the internal process communications shall be designed to operate on this operating system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all the internal process communications shall be designed to operate on this operating system"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "Any communication with the thermostats and heating and cooling units shall be done through the interface to these units.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any communication with the thermostats and heating and cooling units shall be done through the interface to these units"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "These interfaces shall run on this operating system as well.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these interfaces shall run on this operating system as well"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "The heating/cooling unit shall have the capability of being turned off and on by the supervisor of the THEMAS system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the heating cooling unit shall have the capability of being turned off and on by the supervisor of the themas system"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "Load H/C Unit Definitions (SRS -001) Introduction The THEMAS system shall control t he heating and cooling units that are defined as part of the THEMAS system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "load h c unit definitions srs 001 introduction the themas system shall control t he heating and cooling units that are defined as part of the themas system"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "The system shall read this file and the definitions shall be derived from the initialization data in the file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall read this file and the definitions shall be derived from the initialization data in the file"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "Inputs Initialization Data Processing The THEMAS system shall use the information contained in the initialization data file to determine which heating and cooling units are part of the THEMAS system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs initialization data processing the themas system shall use the information contained in the initialization data file to determine which heating and cooling units are part of the themas system"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "Outputs Operational Parameters Load Thermostat Definitions (SRS -002) Introduction Each thermostat shall have a unique identifier by which that thermostat is identified in the THEMAS system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs operational parameters load thermostat definitions srs 002 introduction each thermostat shall have a unique identifier by which that thermostat is identified in the themas system"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "Inputs Initialization Data Processing Each quadrant of each floor shall have a thermostat which is to be used to provide temperature data to the THEMAS system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs initialization data processing each quadrant of each floor shall have a thermostat which is to be used to provide temperature data to the themas system"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "The initialization file shall contain a unique identifier for each thermostat that the system is to monitor.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the initialization file shall contain a unique identifier for each thermostat that the system is to monitor"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "These identifiers shall be read from the initialization file and loaded into the THEMAS system during the initialization process.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these identifiers shall be read from the initialization file and loaded into the themas system during the initialization process"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "Outputs Operational Parameters Load Utilization Parameters (SRS -003) Introduction There shall be a maximum number of heating or cooling u nits that can be on at any given time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs operational parameters load utilization parameters srs 003 introduction there shall be a maximum number of heating or cooling u nits that can be on at any given time"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "Inputs Initialization Data Processing The maximum number of heating or cooling units that can run concurrently shall reside in an initialization file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs initialization data processing the maximum number of heating or cooling units that can run concurrently shall reside in an initialization file"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "The maximum number of concurrently running units shall be read from the initialization file and stored in the THEMAS system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the maximum number of concurrently running units shall be read from the initialization file and stored in the themas system"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "Outputs Utilization Parameters Set Trigger Values (SRS -004) Introduction The trigger value is used in combination with the current temperature to determine when a heating or cooling unit shall be turned on or off.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs utilization parameters set trigger values srs 004 introduction the trigger value is used in combination with the current temperature to determine when a heating or cooling unit shall be turned on or off"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "Inputs Initialization Data Processing The trigger values shall reside in an initialization file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs initialization data processing the trigger values shall reside in an initialization file"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "This procedure shall read the initialization file and establish the trigger value from the data in that file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this procedure shall read the initialization file and establish the trigger value from the data in that file"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "Outputs Operational Parameters Set Overtemp Values (SRS -005) Introduction The THEMAS system shall ensure the temperature reported by a given thermostat shall not exceed a maximum deviation value of 3 degrees Fahrenheit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs operational parameters set overtemp values srs 005 introduction the themas system shall ensure the temperature reported by a given thermostat shall not exceed a maximum deviation value of 3 degrees fahrenheit"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "Inputs Initialization Data Processing The overtemperature values shall reside in an initialization file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs initialization data processing the overtemperature values shall reside in an initialization file"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "This procedure shall read the initialization file and establish the overtemperature value from the data in that file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this procedure shall read the initialization file and establish the overtemperature value from the data in that file"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "Outputs Operational Parameters Establish Valid Temperature Range (SRS -006) Introduction The THEMAS system shall only respond to temperatures that are within a reasonable value.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs operational parameters establish valid temperature range srs 006 introduction the themas system shall only respond to temperatures that are within a reasonable value"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "Inputs Initialization Data Processing The valid temperature range value shall reside in an initialization file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs initialization data processing the valid temperature range value shall reside in an initialization file"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "This procedure shall read the initialization file and establish the valid temperature range from the data in it.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this procedure shall read the initialization file and establish the valid temperature range from the data in it"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "Outputs Operational Parameters Initialize System (SRS-007) Introduction When the THEMAS system is initialized, it shall first turn off all the heating and cooling units.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs operational parameters initialize system srs 007 introduction when the themas system is initialized it shall first turn off all the heating and cooling units"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "Then , it shall check all the thermostats and determine if any thermostat’s settings require a heating or cooling unit to be turned on back on.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "then it shall check all the thermostats and determine if any thermostat s settings require a heating or cooling unit to be turned on back on"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "Inputs Operational Parameters Processing This process shall first determine a known state of all the heating and cooling units by issuing a request to turn off all the units.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs operational parameters processing this process shall first determine a known state of all the heating and cooling units by issuing a request to turn off all the units"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "It shall then read the current temperature values and current temperature settings of each thermostat.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it shall then read the current temperature values and current temperature settings of each thermostat"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "If the settings reflect a need for a heating or cooling unit to be turned o n, the process shall issue a request to turn on the appropriate unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the settings reflect a need for a heating or cooling unit to be turned o n the process shall issue a request to turn on the appropriate unit"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "This determination shall be made in accordance with the rules outlined in section 3.1.4.1 and 3.1.4.2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this determination shall be made in accordance with the rules outlined in section 3 1 4 1 and 3 1 4 2"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "Outputs H/C Request Validate Temperature (SRS -008) Introduction The THEMAS system shall only respond to temperatures from the thermostats that are within the specified valid range.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs h c request validate temperature srs 008 introduction the themas system shall only respond to temperatures from the thermostats that are within the specified valid range"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "Inputs Operational Parameters Temperature Data Processing Two types of temperature data shall be recognized from the thermostats: 1) the temperature setting and 2) the current temperature.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs operational parameters temperature data processing two types of temperature data shall be recognized from the thermostats 1 the temperature setting and 2 the current temperature"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "This module shall process both types of data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this module shall process both types of data"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "A current temperature value that is received from an individual thermostat shall be compared to the valid temperature range values.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a current temperature value that is received from an individual thermostat shall be compared to the valid temperature range values"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "Otherwise, the THEMAS system shall output a valid temperature status.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "otherwise the themas system shall output a valid temperature status"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "A temperature setting value that is received from an individual thermostat shall be compared to the valid temperature range values.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a temperature setting value that is received from an individual thermostat shall be compared to the valid temperature range values"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "Otherwise, the THEMAS system shall realize the value for that thermostat’s temperature setting.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "otherwise the themas system shall realize the value for that thermostat s temperature setting"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "Determine Temperature Status (SRS -009) Introduction The THEMAS system shall determine wh en a reported temperature or a changed temperature setting exceeds the limits set by the overtemperature values.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "determine temperature status srs 009 introduction the themas system shall determine wh en a reported temperature or a changed temperature setting exceeds the limits set by the overtemperature values"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "Temperatures that exceed the overtemperature limits shall be reported as such.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "temperatures that exceed the overtemperature limits shall be reported as such"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "Temperatures that do not exceed these limits shall be output for subsequent processing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "temperatures that do not exceed these limits shall be output for subsequent processing"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "Inputs Valid Temperatures Trigger Values Overtemp Values Processing The THEMAS system shall compare the reported temperature value to the temperature setting and detect when the temperature value exceeds the specified limits.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs valid temperatures trigger values overtemp values processing the themas system shall compare the reported temperature value to the temperature setting and detect when the temperature value exceeds the specified limits"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "In this case this process shall output the condition of the temperature limit having been exceeded.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in this case this process shall output the condition of the temperature limit having been exceeded"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "If LO = T = UO, then this process shall output the temperature status.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if lo t uo then this process shall output the temperature status"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "If this condition is true, then the module shall output a request to turn off both the heating unit and the cooling unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if this condition is true then the module shall output a request to turn off both the heating unit and the cooling unit"
+    },
+    {
+      "req_id": "AUTO-0054",
+      "text": "If this condition is true, then this module shall output a request to turn on the heating unit if LO = T LT or the cooling unit if UT T = UO.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if this condition is true then this module shall output a request to turn on the heating unit if lo t lt or the cooling unit if ut t uo"
+    },
+    {
+      "req_id": "AUTO-0055",
+      "text": "Outputs H/C Request Determine utilizations Determine Status of All H/C Units (SRS -011) Introduction The THEMAS system shall control each of the heating and cooling units that are defined for the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs h c request determine utilizations determine status of all h c units srs 011 introduction the themas system shall control each of the heating and cooling units that are defined for the system"
+    },
+    {
+      "req_id": "AUTO-0056",
+      "text": "The THEMAS system shall limit the number of heating or cooling units t hat may be running simultaneously.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the themas system shall limit the number of heating or cooling units t hat may be running simultaneously"
+    },
+    {
+      "req_id": "AUTO-0057",
+      "text": "Inputs Operational Parameters H/C Request Processing The THEMAS system shall maintain the ON/OFF status of each heating and cooling unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs operational parameters h c request processing the themas system shall maintain the on off status of each heating and cooling unit"
+    },
+    {
+      "req_id": "AUTO-0058",
+      "text": "When a request to turn on a heating or cooling unit is received, the system shall determine if the request can be honored.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "when a request to turn on a heating or cooling unit is received the system shall determine if the request can be honored"
+    },
+    {
+      "req_id": "AUTO-0059",
+      "text": "When a request to turn off a heating or cooling unit is received, this process shall check the queue of waiting heating and cooling requests.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "when a request to turn off a heating or cooling unit is received this process shall check the queue of waiting heating and cooling requests"
+    },
+    {
+      "req_id": "AUTO-0060",
+      "text": "If the queue is not empty, this process shall remove one request from the LIFO queue and check the current state of the thermostat for which the queued request was made.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the queue is not empty this process shall remove one request from the lifo queue and check the current state of the thermostat for which the queued request was made"
+    },
+    {
+      "req_id": "AUTO-0061",
+      "text": "If that thermostat still needs a heating o r cooling unit turned on, this process shall submit a request to turn that unit on.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if that thermostat still needs a heating o r cooling unit turned on this process shall submit a request to turn that unit on"
+    },
+    {
+      "req_id": "AUTO-0062",
+      "text": "Outputs Unit Unavailable H/C ON/OFF Request Generate Unit Unavailable Event (SRS -012) Introduction When a request for a heating unit or cooling to be turned is denied, an event shall be generated and the THEMAS system shall record that event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs unit unavailable h c on off request generate unit unavailable event srs 012 introduction when a request for a heating unit or cooling to be turned is denied an event shall be generated and the themas system shall record that event"
+    },
+    {
+      "req_id": "AUTO-0063",
+      "text": "Inputs Unit Unavailable Processing This procedure shall realize the thermostat and heating or cooling information and use this information to generate a specific system event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs unit unavailable processing this procedure shall realize the thermostat and heating or cooling information and use this information to generate a specific system event"
+    },
+    {
+      "req_id": "AUTO-0064",
+      "text": "This system event shall consist of a description of the event type (a request denied event), a designation of the thermostat that made the request, and a designation of the heating or cooling unit that was not turned on.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this system event shall consist of a description of the event type a request denied event a designation of the thermostat that made the request and a designation of the heating or cooling unit that was not turned on"
+    },
+    {
+      "req_id": "AUTO-0065",
+      "text": "Outputs System Event Data Generate H/C Request (SRS -013) Introduction The THEMAS system shall control the heating and cooling units that are designated as part of the THEMAS system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs system event data generate h c request srs 013 introduction the themas system shall control the heating and cooling units that are designated as part of the themas system"
+    },
+    {
+      "req_id": "AUTO-0066",
+      "text": "Inputs H/C ON/OFF Request Processing When a request to turn on or off a heating or cooling unit is made, this process shall generate the appropriate request to carry out that request.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs h c on off request processing when a request to turn on or off a heating or cooling unit is made this process shall generate the appropriate request to carry out that request"
+    },
+    {
+      "req_id": "AUTO-0067",
+      "text": "This request shall include the designation of the heating or cooling unit and a flag to indicate whether that unit is to be turned on or off.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this request shall include the designation of the heating or cooling unit and a flag to indicate whether that unit is to be turned on or off"
+    },
+    {
+      "req_id": "AUTO-0068",
+      "text": "Outputs Approved H/C Request Generate H/C Signal (SRS -014) Introduction Once a request to turn on or off a heating or cooling unit, the THEMAS system shall provide the necessary control signal for the unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs approved h c request generate h c signal srs 014 introduction once a request to turn on or off a heating or cooling unit the themas system shall provide the necessary control signal for the unit"
+    },
+    {
+      "req_id": "AUTO-0069",
+      "text": "This control signal shall also provide an indication of the unit’s status at the requesting thermostat.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this control signal shall also provide an indication of the unit s status at the requesting thermostat"
+    },
+    {
+      "req_id": "AUTO-0070",
+      "text": "Inputs Approved H/C Request Processing This process shall recognize the values for the requested heating or cooling unit and the ON or OFF status that is being requested.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs approved h c request processing this process shall recognize the values for the requested heating or cooling unit and the on or off status that is being requested"
+    },
+    {
+      "req_id": "AUTO-0071",
+      "text": "In order to provide an indication of the status of the heating or cooling unit back to the requesting thermostat, this procedure shall output the status information of the heating or cooling unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to provide an indication of the status of the heating or cooling unit back to the requesting thermostat this procedure shall output the status information of the heating or cooling unit"
+    },
+    {
+      "req_id": "AUTO-0072",
+      "text": "In order to provide an operational history and statistical reports, this process shall generate an event each time a change is made to the status of a heating or cooling unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in order to provide an operational history and statistical reports this process shall generate an event each time a change is made to the status of a heating or cooling unit"
+    },
+    {
+      "req_id": "AUTO-0073",
+      "text": "This ev ent shall contain the identification of the heating or cooling unit whose status is being changed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this ev ent shall contain the identification of the heating or cooling unit whose status is being changed"
+    },
+    {
+      "req_id": "AUTO-0074",
+      "text": "This process shall determine which alarm event is to be generated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this process shall determine which alarm event is to be generated"
+    },
+    {
+      "req_id": "AUTO-0075",
+      "text": "Inputs Invalid Temperature Temperature Limit Exceeded Processing When the THEMAS system detects a request for an alarm, this process shall detect which of the two alarms are being requested.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs invalid temperature temperature limit exceeded processing when the themas system detects a request for an alarm this process shall detect which of the two alarms are being requested"
+    },
+    {
+      "req_id": "AUTO-0076",
+      "text": "If the system detects an invalid temperature, this process shall output a continuous series of alternating 500 Hz and 700 Hz beeps on the supervisor’s computer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the system detects an invalid temperature this process shall output a continuous series of alternating 500 hz and 700 hz beeps on the supervisor s computer"
+    },
+    {
+      "req_id": "AUTO-0077",
+      "text": "Each beep shall have a three - quarter second duration.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each beep shall have a three quarter second duration"
+    },
+    {
+      "req_id": "AUTO-0078",
+      "text": "This series of beeps shall continue until the supervisor manually resets the alarm through the supervisor’s interface window.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this series of beeps shall continue until the supervisor manually resets the alarm through the supervisor s interface window"
+    },
+    {
+      "req_id": "AUTO-0079",
+      "text": "If the system detects a temperature limit has been exceeded, this process shall output a continuous series of alternating 1000 Hz and 1500 Hz beeps on the supervisor’s computer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the system detects a temperature limit has been exceeded this process shall output a continuous series of alternating 1000 hz and 1500 hz beeps on the supervisor s computer"
+    },
+    {
+      "req_id": "AUTO-0080",
+      "text": "Each beep shall have a one-half second duration.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each beep shall have a one half second duration"
+    },
+    {
+      "req_id": "AUTO-0081",
+      "text": "Each time an alarm is requested, an alarm event shall be recorded.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each time an alarm is requested an alarm event shall be recorded"
+    },
+    {
+      "req_id": "AUTO-0082",
+      "text": "This event shall be used to provide operational and statistical reports about the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this event shall be used to provide operational and statistical reports about the system"
+    },
+    {
+      "req_id": "AUTO-0083",
+      "text": "Outputs Alarm Data Alarm Events Generate Event Data (SRS -016) Introduction For each event that is generated, the THEMAS system shall identify each event and generate the appropriate event data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs alarm data alarm events generate event data srs 016 introduction for each event that is generated the themas system shall identify each event and generate the appropriate event data"
+    },
+    {
+      "req_id": "AUTO-0084",
+      "text": "Inputs Alarm Events System Events Denied H/C Request Processing When an event occurs, the THEMAS system shall identify the event type and format an appropriate event message.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs alarm events system events denied h c request processing when an event occurs the themas system shall identify the event type and format an appropriate event message"
+    },
+    {
+      "req_id": "AUTO-0085",
+      "text": "The THEMAS system shall record each event by a description and the c urrent system time for that event.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the themas system shall record each event by a description and the c urrent system time for that event"
+    },
+    {
+      "req_id": "AUTO-0086",
+      "text": "This information shall be recorded in a Microsoft® Access® database that shall reside on the supervisor’s computer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this information shall be recorded in a microsoft access database that shall reside on the supervisor s computer"
+    },
+    {
+      "req_id": "AUTO-0087",
+      "text": "Outputs Event Data Change Thermostat Setting (SRS -017) Introduction The THEMAS system shall provide the supervisor a mechanism to change the temperature setting of any of the thermostats in the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "outputs event data change thermostat setting srs 017 introduction the themas system shall provide the supervisor a mechanism to change the temperature setting of any of the thermostats in the system"
+    },
+    {
+      "req_id": "AUTO-0088",
+      "text": "Inputs Operational Parameters Processing The supervisor’s interface shall display the available thermostats and their individual current temperature settings.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs operational parameters processing the supervisor s interface shall display the available thermostats and their individual current temperature settings"
+    },
+    {
+      "req_id": "AUTO-0089",
+      "text": "The supervisor shall be able to select one of the thermostats and select a value for the current temperature from a list of valid temperatures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the supervisor shall be able to select one of the thermostats and select a value for the current temperature from a list of valid temperatures"
+    },
+    {
+      "req_id": "AUTO-0090",
+      "text": "Inputs Event Data Processing The supervisor’s interface to the THEMAS system shall provide a mechanism to select between an operational history report or a statistical summary report.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "inputs event data processing the supervisor s interface to the themas system shall provide a mechanism to select between an operational history report or a statistical summary report"
+    },
+    {
+      "req_id": "AUTO-0091",
+      "text": "Either report shall consist of an ASCII file whose location and name shall be selectable by the operator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "either report shall consist of an ascii file whose location and name shall be selectable by the operator"
+    },
+    {
+      "req_id": "AUTO-0092",
+      "text": "If the operational history report is selected, the THEMAS system shall select all the events from the event database, sort the events by date and time, and create the ASCII report file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the operational history report is selected the themas system shall select all the events from the event database sort the events by date and time and create the ascii report file"
+    },
+    {
+      "req_id": "AUTO-0093",
+      "text": "If the statistical report is selected, the THEMAS system shall present the operator with a list of available months from which to make a selection.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the statistical report is selected the themas system shall present the operator with a list of available months from which to make a selection"
+    },
+    {
+      "req_id": "AUTO-0094",
+      "text": "After selecting one of the months, the system shall generate the ASCII report file.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "after selecting one of the months the system shall generate the ascii report file"
+    },
+    {
+      "req_id": "AUTO-0095",
+      "text": "The statistical reports shall consist of the following statistics: The percentage of time each heating and cooling unit was on for each day of that month.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the statistical reports shall consist of the following statistics the percentage of time each heating and cooling unit was on for each day of that month"
+    },
+    {
+      "req_id": "AUTO-0096",
+      "text": "A temperature at or beyond this delta indicates the thermostat has reached a critical value where the heating or cooling unit cannot satisfy the temperature setting value.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a temperature at or beyond this delta indicates the thermostat has reached a critical value where the heating or cooling unit cannot satisfy the temperature setting value"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 96,
+    "total_count": 96
+  }
+}

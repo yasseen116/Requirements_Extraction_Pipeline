@@ -1,0 +1,4 @@
+# This project currently runs on the Python standard library only.
+# If you add third-party deps, pin them here for reproducibility.
+
+reportlab==4.2.2

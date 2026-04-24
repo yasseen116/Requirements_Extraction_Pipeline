@@ -1,0 +1,37 @@
+{
+  "id": "sample_004",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "a food delivery mobile app"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "customers, restaurant staff, and delivery riders"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "order food, track delivery, and pay online"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "yes normal login, email or phone is fine"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "menus and tracking should load quickly"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "payments need to be secure"}
+  ],
+  "slots": {
+    "project_type": "food delivery mobile app",
+    "users": ["customer", "restaurant staff", "delivery rider"],
+    "core_features": ["order food", "track delivery", "pay online"],
+    "authentication": ["email login", "phone login"],
+    "performance_constraints": ["menus and tracking load quickly"],
+    "security_constraints": ["secure payment processing"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow users to log in using email or phone number.",
+      "The system shall allow customers to place food orders.",
+      "The system shall allow customers to track delivery status.",
+      "The system shall allow customers to pay online."
+    ],
+    "non_functional": [
+      "The system shall load menus and delivery tracking information quickly.",
+      "The system shall process payments securely."
+    ]
+  }
+}

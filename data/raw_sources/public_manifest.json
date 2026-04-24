@@ -1,0 +1,108 @@
+{
+  "manifest_version": "1.0",
+  "created_for": "controlled conversational requirements elicitation v1",
+  "datasets": [
+    {
+      "id": "pure",
+      "title": "PURE: a Dataset of Public Requirements Documents",
+      "role": "primary_source",
+      "doi": "10.5281/zenodo.7118517",
+      "record_url": "https://zenodo.org/records/7118517",
+      "notes": [
+        "Primary trusted source for authentic requirements text.",
+        "Use as the origin layer for source-grounded dialogue/slot/requirement annotations.",
+        "Do not treat as a conversational benchmark without derived annotations."
+      ],
+      "caveats": [
+        "The record states that the documents were gathered from the web and rights on the original documents may not be fully known.",
+        "Use provenance and citation carefully and avoid unnecessary redistribution of large source text excerpts."
+      ],
+      "files": [
+        {
+          "name": "req_document.xsd",
+          "download_url": "https://zenodo.org/records/7118517/files/req_document.xsd?download=1",
+          "md5": "f44c255db9414afb7c39265697abcb33",
+          "size_human": "5.4 kB"
+        },
+        {
+          "name": "requirements-xml.zip",
+          "download_url": "https://zenodo.org/records/7118517/files/requirements-xml.zip?download=1",
+          "md5": "c81235c40f88a2c947ae66e0eddad585",
+          "size_human": "378.7 kB"
+        },
+        {
+          "name": "requirements.zip",
+          "download_url": "https://zenodo.org/records/7118517/files/requirements.zip?download=1",
+          "md5": "bc319fe28619f6290badff328ca159dd",
+          "size_human": "33.6 MB"
+        }
+      ]
+    },
+    {
+      "id": "software_requirements_dataset",
+      "title": "Software Requirements Data Set",
+      "role": "supporting_source",
+      "doi": "10.5281/zenodo.7897601",
+      "record_url": "https://zenodo.org/records/7897601",
+      "notes": [
+        "Supporting source that preserves original files and plain text conversions from multiple requirement corpora.",
+        "Useful for extraction scripts and for cross-checking text conversions."
+      ],
+      "caveats": [
+        "This dataset aggregates from multiple sources, so split policy must avoid mixing document families across train and test."
+      ],
+      "files": [
+        {
+          "name": "Dataset.zip",
+          "download_url": "https://zenodo.org/records/7897601/files/Dataset.zip?download=1",
+          "md5": "89f141ad7376afdbec1cf6db858f10c4",
+          "size_human": "11.9 MB"
+        }
+      ]
+    },
+    {
+      "id": "promise_plus",
+      "title": "Promise+: A dataset of labeled software requirements",
+      "role": "external_eval",
+      "doi": "10.5281/zenodo.12805484",
+      "record_url": "https://zenodo.org/records/12805484",
+      "notes": [
+        "Use for external FR/NFR validation and classification-oriented sanity checks.",
+        "Do not use as the main source of conversational data."
+      ],
+      "files": [
+        {
+          "name": "Promise+.arff",
+          "download_url": "https://zenodo.org/records/12805484/files/Promise%2B.arff?download=1",
+          "md5": "f9227908ff871ccf9a30f53aa61c921a",
+          "size_human": "559.4 kB"
+        },
+        {
+          "name": "Lista dos tipos de software.xlsx",
+          "download_url": "https://zenodo.org/records/12805484/files/Lista%20dos%20tipos%20de%20software.xlsx?download=1",
+          "md5": "6d5b2062b3b33f150d6e1bf2d7383a76",
+          "size_human": "5.7 kB"
+        }
+      ]
+    },
+    {
+      "id": "nice",
+      "title": "NICE: Non-Functional Requirements Identification, Classification, and Explanation Using Small Language Models",
+      "role": "external_eval",
+      "doi": "10.5281/zenodo.14590935",
+      "record_url": "https://zenodo.org/records/14590935",
+      "notes": [
+        "Use for external NFR subtype validation and reporting.",
+        "This is a relabeled dataset derived from the PROMISE family."
+      ],
+      "files": [
+        {
+          "name": "PROMISE-relabeled-NICE.csv",
+          "download_url": "https://zenodo.org/records/14590935/files/PROMISE-relabeled-NICE.csv?download=1",
+          "md5": "977399184e55483b3c971b7094a53279",
+          "size_human": "95.7 kB"
+        }
+      ]
+    }
+  ]
+}

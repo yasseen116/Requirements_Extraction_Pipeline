@@ -1,0 +1,78 @@
+You are constructing a realistic requirements-elicitation conversation.
+
+Goal:
+- Convert the provided requirement statements into a multi-turn chatbot dialogue that can later be used to recover the same requirements.
+
+Stakeholder persona (CRITICAL — read carefully):
+- The USER is a non-technical domain stakeholder who knows what they want the system to do but does not write in requirements language.
+- They speak in terms of business goals, user needs, and problems they want solved.
+- They do NOT say "the system shall". They say things like "we need", "it should be able to", "the problem we have is", "customers expect", "we've had issues with", "ideally it would".
+- They use domain vocabulary (e.g., "invoices", "accounts", "fraudulent transactions"), not requirements vocabulary (e.g., "the system shall", "validation", "constraint").
+- They give examples and context, not formal statements.
+- They are naturally vague and incomplete — this is why elicitation is hard.
+- They may mention things out of order and combine multiple concerns in one answer.
+
+STRICT RULE — no verbatim copying:
+- User turns must NEVER copy requirement text verbatim or near-verbatim.
+- If a source requirement says "The system shall validate credit cards against fraud", the user turn must say something like:
+  "We've had issues with fraudulent transactions before — the system needs to catch those before they go through."
+- The meaning must be preserved but the wording must be natural speech.
+- Violating this rule invalidates the entire output.
+
+Example of BAD vs GOOD user turns:
+
+BAD (do NOT do this):
+  "The system shall encrypt all customer data in database. For returning customers, the system shall validate existing credit card in system after each log in."
+
+GOOD (do this):
+  "Security is a big concern for us. Customer data needs to be encrypted — we cannot afford a breach. And for returning customers we want it to remember their card details so they do not have to re-enter everything, but it should verify the card is still valid when they log in."
+
+Hard constraints (must follow):
+- Coverage: every requirement statement in the list MUST be covered by at least one user utterance that conveys its meaning naturally.
+  - You may group multiple requirements in one answer, but do not miss any.
+- No invention: do NOT introduce any new requirement that is not supported by the provided list.
+  - Do not infer "typical" domain features (e.g., cart/checkout/login) unless they are explicitly present in the list.
+- No meta: the dialogue MUST NOT mention the dataset or the existence of a "source requirements" list.
+  - Forbidden phrases include: "source requirements", "the requirements document says", "not specified in the requirements", "not mentioned above".
+  - If something is genuinely unknown, say "TBD / not decided yet" without referencing the source.
+- Preserve details: keep all numbers, units, algorithms, browser/OS names, interface labels, and quoted terms exactly as written in the list — but embed them in natural speech.
+
+Dialogue design:
+- Use alternating turns: bot, user, bot, user, ...
+- Start at turn_id = 1 and start with a bot turn.
+- The bot must ask a comprehensive set of elicitation questions (not only six questions), but questions must be targeted to elicit the listed requirements.
+- Ensure the dialogue is long enough to cover all {{REQUIREMENT_COUNT}} requirement statements.
+  - Minimum: 32 total turns, but increase length as needed for full coverage.
+- Keep the conversation realistic: the user sounds like a stakeholder describing needs, not like they are reading or referencing a document.
+
+Topic coverage guidance (do not force invention):
+- Cover as many of these themes as are supported by the provided list.
+- Do NOT ask about a theme unless at least one requirement statement clearly relates to it.
+  1) system goal and scope
+  2) user roles and permissions
+  3) functional capabilities
+  4) workflows and business rules
+  5) data entities and data validation
+  6) authentication and authorization
+  7) integrations and external interfaces
+  8) performance and capacity
+  9) availability and reliability
+  10) security and auditability
+  11) error handling and recovery
+  12) deployment / operating environment
+  13) reporting and analytics
+  14) compliance or policy constraints
+  15) usability and accessibility
+  16) out-of-scope clarifications
+
+Output rules:
+- Return JSON only.
+- Use the provided schema exactly.
+- The dialogue should read naturally, but remain requirements-focused and grounded.
+
+Sample id: {{SAMPLE_ID}}
+Document id: {{DOCUMENT_ID}}
+Title: {{TITLE}}
+
+Source requirement statements:
+{{SOURCE_REQUIREMENTS}}

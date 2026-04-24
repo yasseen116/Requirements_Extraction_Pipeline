@@ -1,0 +1,336 @@
+{
+  "sample_id": "pure_2010_blitdraft",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2010_blitdraft",
+    "title": "2010-blitdraft",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2010-blitdraft.xml",
+    "source_path": null
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "Specific Requirements Functionality Module: Admin Use Case: xxx Page, UC ID: UC_RR_xxx_xxx_000 System shall display the hyperlinks and descriptions for the user to perform the desired functions as specified in the related UIS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "specific requirements functionality module admin use case xxx page uc id uc rr xxx xxx 000 system shall display the hyperlinks and descriptions for the user to perform the desired functions as specified in the related uis"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "The User shall be able to view the hyperlinks and descriptions listed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user shall be able to view the hyperlinks and descriptions listed"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "The User shall be able to choose a function by clicking the hyperlink.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user shall be able to choose a function by clicking the hyperlink"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "The system shall display the desired operational page for the user after clicking the hyperlink.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall display the desired operational page for the user after clicking the hyperlink"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "Use Case: xxx Page, UC ID: UC_RR_xxx_xxx_000 Action: Create/Add User A user with admin privileges shall be able to Add/Create a new user and associate the user with specified role(s) in the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "use case xxx page uc id uc rr xxx xxx 000 action create add user a user with admin privileges shall be able to add create a new user and associate the user with specified role s in the system"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "The system shall display an error message if the new user is found in the [system name] system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall display an error message if the new user is found in the system name system"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "The system shall display an error message if the new user is not active in the Active Directory.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall display an error message if the new user is not active in the active directory"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "The system shall display the xxx tab as the default tab.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall display the xxx tab as the default tab"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "The user shall be able to create/add a new user manually or from a template.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user shall be able to create add a new user manually or from a template"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "The user record shall inherit all specified role(s) settings in the template when the user record is created from the user template The user shall be able to add additional roles manually while creating/adding a new user from a user template.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user record shall inherit all specified role s settings in the template when the user record is created from the user template the user shall be able to add additional roles manually while creating adding a new user from a user template"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "The system shall save the user info to the database with specified roles associated with divisions for the newly created/added user.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall save the user info to the database with specified roles associated with divisions for the newly created added user"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "The system shall perform a search on the [system name] user display name and user name columns in the user tables to find the user and verify the user’s existence.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall perform a search on the system name user display name and user name columns in the user tables to find the user and verify the user s existence"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "The system shall perform a search in the Active Directory to verify the status of the user — Active/Inactive within the company—when the user attempts to create/add a new user in the [system name] system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall perform a search in the active directory to verify the status of the user active inactive within the company when the user attempts to create add a new user in the system name system"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "The system shall generate a standard confirmation message after saving data and warning/caution messages after the cancel or close button is clicked.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall generate a standard confirmation message after saving data and warning caution messages after the cancel or close button is clicked"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "The user must have the flexibility to click any tab to commence the adding process, although the xxx Tab shall display as the default tab.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user must have the flexibility to click any tab to commence the adding process although the xxx tab shall display as the default tab"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "All required fields as specified in the UIS must be marked with a red asterisk alerting the user to fill the required fields in.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all required fields as specified in the uis must be marked with a red asterisk alerting the user to fill the required fields in"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "The user shall be able to save data after creating/adding a new user or cancel data to abort the process.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user shall be able to save data after creating adding a new user or cancel data to abort the process"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "The system shall clear up data if the user chooses to click the Cancel button in the midst of creating/adding a new user.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall clear up data if the user chooses to click the cancel button in the midst of creating adding a new user"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "The system shall direct the user to the xxx Page if the user chooses to click the close button without entering any data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall direct the user to the xxx page if the user chooses to click the close button without entering any data"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "The user must associate at least one role, division, designator code, and lab location at the time of creating/adding a new user.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user must associate at least one role division designator code and lab location at the time of creating adding a new user"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "The user must fill in the required fields—User Name and Display Name—in the User Information section at the time of creating/adding a new user.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user must fill in the required fields user name and display name in the user information section at the time of creating adding a new user"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "The system shall generate a standard error/warning message after the user attempts to save data without associating one of each of the following criteria—xxx—and/or without filling in the required fields in the User Information section.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall generate a standard error warning message after the user attempts to save data without associating one of each of the following criteria xxx and or without filling in the required fields in the user information section"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "Usability User Interface Guidelines The Project Team must demonstrate mockups of UI changes to project stakeholders early in the development process.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "usability user interface guidelines the project team must demonstrate mockups of ui changes to project stakeholders early in the development process"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "The Project Team must permit reasonable adjustment to the user interfaces of new functionality by project stakeholders when project schedule permits those adjustments.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the project team must permit reasonable adjustment to the user interfaces of new functionality by project stakeholders when project schedule permits those adjustments"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "Reliability System Downtime The Project Team shall schedule updates to the production environment only on Tuesdays between 7pm and 7am.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "reliability system downtime the project team shall schedule updates to the production environment only on tuesdays between 7pm and 7am"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "(Example) Performance Quality Assurance The Project Team must perform applicable and appropriate testing against new functionality prior to releasing that functionality/build to the production environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "example performance quality assurance the project team must perform applicable and appropriate testing against new functionality prior to releasing that functionality build to the production environment"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "The project Team must allow a reasonable time to conduct User Acceptance Testing (UAT) against the built functionalities prior to deploying the product to the production environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the project team must allow a reasonable time to conduct user acceptance testing uat against the built functionalities prior to deploying the product to the production environment"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "Supportability Coding Standards The Development Team shall define coding standards for the application and follow those standards consistently.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "supportability coding standards the development team shall define coding standards for the application and follow those standards consistently"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "The Development Team shall be required to adjust existing source code to follow accepted coding standards only if that source code must be modified.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the development team shall be required to adjust existing source code to follow accepted coding standards only if that source code must be modified"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "Maintainability Standards The system shall log errors, warnings, and informational messages to an external log file on the application server.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "maintainability standards the system shall log errors warnings and informational messages to an external log file on the application server"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "The Development Team shall be required to adjust existing source code to use the external log file only if that source code must be modified to implement another requirement.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the development team shall be required to adjust existing source code to use the external log file only if that source code must be modified to implement another requirement"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "The system shall log an error message to the external data file when the user is directed to the [SYSTEM NAME] error page.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall log an error message to the external data file when the user is directed to the system name error page"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "The system shall send a notification email to a Client Services email distribution list if the user is directed to the xxx error page.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall send a notification email to a client services email distribution list if the user is directed to the xxx error page"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "Design Constraints Development Platform The Development Team shall develop functionalities using the xx language and on the supported .NET 3.5 Platform.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "design constraints development platform the development team shall develop functionalities using the xx language and on the supported net 3 5 platform"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "The Development Team shall utilize established open source frameworks instead of proprietary custom components wherever appropriate.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the development team shall utilize established open source frameworks instead of proprietary custom components wherever appropriate"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "The system shall continue to depend upon and use a single SQL Server 2008 database.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall continue to depend upon and use a single sql server 2008 database"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "Production Releases The Technical Owner/Lead shall provide signoff before any [SYSTEM NAME] build can be deployed to the production environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "production releases the technical owner lead shall provide signoff before any system name build can be deployed to the production environment"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "Development Process The Development Team shall perform weekly integrations of the [SYSTEM NAME] system and deploy these system updates to the Staging environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "development process the development team shall perform weekly integrations of the system name system and deploy these system updates to the staging environment"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "The Development Team shall label every scheduled [SYSTEM NAME] build in the source control system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the development team shall label every scheduled system name build in the source control system"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "The Development Team shall perform scheduled [SYSTEM NAME] builds using code checked out of source control using the label as defined and specified.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the development team shall perform scheduled system name builds using code checked out of source control using the label as defined and specified"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "The Development Team shall develop and then send out release notes via e-mail to all Project Team after each [SYSTEM NAME] build deployed to the Staging environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the development team shall develop and then send out release notes via e mail to all project team after each system name build deployed to the staging environment"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "The Technical Lead shall perform code reviews of every system change before those changes may be committed to source control.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the technical lead shall perform code reviews of every system change before those changes may be committed to source control"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "The QA/QC Team must perform regression testing against all scheduled builds.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the qa qc team must perform regression testing against all scheduled builds"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "The system shall provide the capability to open a pop-up window displaying information about the specific page along with links to supporting help topics upon selecting each Help link.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall provide the capability to open a pop up window displaying information about the specific page along with links to supporting help topics upon selecting each help link"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "The system shall display “[system name] Overview” page located under the Getting Started section of Help as default help topic page that will load upon selecting Help hypertext link.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall display system name overview page located under the getting started section of help as default help topic page that will load upon selecting help hypertext link"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "The system must allow users to easily navigate through each of the help topics by selecting a corresponding hypertext link provided in the left frame of the pop-up Help window.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system must allow users to easily navigate through each of the help topics by selecting a corresponding hypertext link provided in the left frame of the pop up help window"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "The system shall display the [company name] logo in the top, right side of the screen on each of the help pages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall display the company name logo in the top right side of the screen on each of the help pages"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "The system must exhibit each of the help pages using the same color scheme and background as specified.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system must exhibit each of the help pages using the same color scheme and background as specified"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "The system shall provide searching ability to the users to quickly find specific topic material through the online help tool.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall provide searching ability to the users to quickly find specific topic material through the online help tool"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "The system shall provide an index to the users for a more in-depth search of topic contents through the online help tool.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall provide an index to the users for a more in depth search of topic contents through the online help tool"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "The system shall provide a Glossary for industry-related terms associated with [company name] and the [system name] system to the users through the online help tool.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall provide a glossary for industry related terms associated with company name and the system name system to the users through the online help tool"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "Interfaces Applicable Standards The system shall retain existing HIPAA compliance capabilities.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "interfaces applicable standards the system shall retain existing hipaa compliance capabilities"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "The system shall follow HIPAA compliance capabilities in new functionality introduced to the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall follow hipaa compliance capabilities in new functionality introduced to the system"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 53,
+    "total_count": 53
+  }
+}

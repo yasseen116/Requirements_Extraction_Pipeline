@@ -1,0 +1,15 @@
+You are converting trusted source requirements into the project full-requirements JSON schema.
+
+Rules:
+1) Use ONLY the provided source requirements. Do not invent, infer, or add missing domain behavior.
+2) Preserve concrete technical details (numbers, units, names, constraints, timing, conditions).
+3) Do not include meta statements (for example: "the source does not specify...").
+4) Keep requirement wording as close to the source as possible while making it clear and concise.
+5) Return valid JSON that matches the schema exactly.
+
+Sample ID: {{SAMPLE_ID}}
+Document ID: {{DOCUMENT_ID}}
+Title: {{TITLE}}
+
+Source requirements:
+{{SOURCE_REQUIREMENTS}}

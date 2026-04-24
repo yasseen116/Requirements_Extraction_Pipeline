@@ -1,0 +1,68 @@
+{
+  "manifest_id": "pilot_source_documents_v1",
+  "purpose": "Initial public-source document set for manual gold annotation pilot",
+  "selection_policy": [
+    "Prefer documents with raw text conversions.",
+    "Prefer documents with functional requirement extracts or curated relevant text.",
+    "Mix PURE-family and custom public sources to avoid overfitting the pilot to one corpus style.",
+    "Cover different software domains so the slot schema is tested outside one vertical."
+  ],
+  "documents": [
+    {
+      "order": 1,
+      "dataset": "software_requirements_dataset",
+      "document_id": "p08_keepass_password_safe",
+      "folder_name": "P08. KeePass Password Safe",
+      "reason": "Strong PURE-family candidate with raw text and functional requirement extract."
+    },
+    {
+      "order": 2,
+      "dataset": "software_requirements_dataset",
+      "document_id": "p06_integrated_library_system",
+      "folder_name": "P06. Integrated Library System",
+      "reason": "Useful library-management domain with raw text and curated relevant text."
+    },
+    {
+      "order": 3,
+      "dataset": "software_requirements_dataset",
+      "document_id": "c07_restaurant_menu_ordering_system",
+      "folder_name": "C07. Restaurant Menu & Ordering System",
+      "reason": "Accessible transactional domain with functional requirement extract."
+    },
+    {
+      "order": 4,
+      "dataset": "software_requirements_dataset",
+      "document_id": "c06_online_national_election_voting",
+      "folder_name": "C06. Online National Election Voting",
+      "reason": "Security-sensitive domain with curated relevant text for NFR testing."
+    },
+    {
+      "order": 5,
+      "dataset": "software_requirements_dataset",
+      "document_id": "p14_publications_management_system",
+      "folder_name": "P14. Publications Management System",
+      "reason": "Administrative workflow domain with functional requirement extract."
+    },
+    {
+      "order": 6,
+      "dataset": "software_requirements_dataset",
+      "document_id": "p13_public_health_information_network",
+      "folder_name": "P13. Public Health Information Network",
+      "reason": "Useful for privacy and security constraints with curated relevant text."
+    },
+    {
+      "order": 7,
+      "dataset": "software_requirements_dataset",
+      "document_id": "c05_nodes_portal_toolkit",
+      "folder_name": "C05. Nodes Portal Toolkit",
+      "reason": "High-value pilot candidate because it includes raw text, functional extracts, relevant text, and use cases."
+    },
+    {
+      "order": 8,
+      "dataset": "software_requirements_dataset",
+      "document_id": "p12_pontis_5_0_bridge_management_system",
+      "folder_name": "P12. Pontis 5.0 Bridge Management System",
+      "reason": "Domain-diverse infrastructure system with functional requirement extract."
+    }
+  ]
+}

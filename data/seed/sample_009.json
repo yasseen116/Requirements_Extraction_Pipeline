@@ -1,0 +1,37 @@
+{
+  "id": "sample_009",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "a task management web app"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "teams, managers, and admins"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "create tasks, assign them, and track progress"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "yes, each user should have an account"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "dashboards should load quickly"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "team data should not leak"}
+  ],
+  "slots": {
+    "project_type": "task management web application",
+    "users": ["team member", "manager", "admin"],
+    "core_features": ["create tasks", "assign tasks", "track progress"],
+    "authentication": ["user account login"],
+    "performance_constraints": ["fast dashboard loading"],
+    "security_constraints": ["protect team data"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow users to sign in with individual accounts.",
+      "The system shall allow users to create tasks.",
+      "The system shall allow managers to assign tasks.",
+      "The system shall allow users to track task progress."
+    ],
+    "non_functional": [
+      "The system shall load dashboards quickly.",
+      "The system shall protect team data from unauthorized access."
+    ]
+  }
+}

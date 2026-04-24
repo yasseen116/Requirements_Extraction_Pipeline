@@ -1,0 +1,45 @@
+Extract the controlled requirements slots from this dialogue.
+
+Task:
+- Read the 6-question requirements elicitation dialogue.
+- Return one JSON object only.
+- Do not add markdown fences.
+- Use the exact schema and key names below.
+- Keep evidence turns tied to the fixed dialogue flow:
+  - system_type -> turn 2
+  - user_roles -> turn 4
+  - functional_capabilities -> turn 6
+  - authentication -> turn 8
+  - performance_constraints -> turn 10
+  - security_constraints -> turn 12
+
+Schema:
+{
+  "slots": {
+    "system_type": {"value": "string", "evidence_turns": [2]},
+    "user_roles": [{"value": "string", "evidence_turns": [4]}],
+    "functional_capabilities": [{"actor": "string", "action": "string", "evidence_turns": [6]}],
+    "authentication": {"required": true, "methods": ["string"], "evidence_turns": [8]},
+    "performance_constraints": [{"text": "string", "evidence_turns": [10]}],
+    "security_constraints": [{"text": "string", "evidence_turns": [12]}]
+  }
+}
+
+Current pilot domains and canonical system types:
+- restaurant discovery mobile application
+- restaurant menu and ordering system
+- password safe application
+
+Rules:
+- Normalize noisy user wording into short, clean requirement slot values.
+- Preserve the meaning from the dialogue.
+- Use lists for multiple roles, capabilities, methods, and constraints.
+- If authentication is not needed, set "required" to false and return an empty methods list.
+- Do not invent unsupported details.
+- Do not output explanations.
+
+Sample id: {{SAMPLE_ID}}
+Domain hint: {{DOMAIN}}
+
+Dialogue:
+{{DIALOGUE}}

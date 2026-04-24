@@ -1,0 +1,181 @@
+{
+  "dataset": "pure",
+  "input_documents": 18,
+  "generated_samples": 16,
+  "skipped_samples": 2,
+  "total_ground_truth_requirements": 2647,
+  "samples": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "title": "0000 - cctns",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_0000_cctns.json",
+      "requirement_count": 100,
+      "explicit_count": 0,
+      "inferred_count": 100,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "title": "0000 - gamma j",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_0000_gamma_j.json",
+      "requirement_count": 57,
+      "explicit_count": 0,
+      "inferred_count": 57,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_1995_gemini",
+      "document_id": "1995_gemini",
+      "title": "1995 - gemini",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_1995_gemini.json",
+      "requirement_count": 286,
+      "explicit_count": 0,
+      "inferred_count": 286,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_1998_themas",
+      "document_id": "1998_themas",
+      "title": "1998 - themas",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_1998_themas.json",
+      "requirement_count": 96,
+      "explicit_count": 0,
+      "inferred_count": 96,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "title": "1999 - dii",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_1999_dii.json",
+      "requirement_count": 22,
+      "explicit_count": 0,
+      "inferred_count": 22,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_1999_tcs",
+      "document_id": "1999_tcs",
+      "title": "1999 - tcs",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_1999_tcs.json",
+      "requirement_count": 426,
+      "explicit_count": 0,
+      "inferred_count": 426,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2003_qheadache",
+      "document_id": "2003_qheadache",
+      "title": "2003 - qheadache",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2003_qheadache.json",
+      "requirement_count": 13,
+      "explicit_count": 0,
+      "inferred_count": 13,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "title": "2005 - microcare",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2005_microcare.json",
+      "requirement_count": 25,
+      "explicit_count": 0,
+      "inferred_count": 25,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2005_phin",
+      "document_id": "2005_phin",
+      "title": "2005 - phin",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2005_phin.json",
+      "requirement_count": 125,
+      "explicit_count": 0,
+      "inferred_count": 125,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2006_eirene_sys_15",
+      "document_id": "2006_eirene_sys_15",
+      "title": "2006 - eirene sys 15",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2006_eirene_sys_15.json",
+      "requirement_count": 340,
+      "explicit_count": 0,
+      "inferred_count": 340,
+      "status": "ok"
+    },
+    {
+      "document_id": "2007_get_real_0_2",
+      "title": "2007 - get real 0.2",
+      "status": "skipped_too_few_requirements",
+      "requirement_count": 7
+    },
+    {
+      "sample_id": "pure_2007_eirene_fun_7_2",
+      "document_id": "2007_eirene_fun_7_2",
+      "title": "2007-eirene_fun_7-2",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2007_eirene_fun_7_2.json",
+      "requirement_count": 507,
+      "explicit_count": 0,
+      "inferred_count": 507,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2007_ertms",
+      "document_id": "2007_ertms",
+      "title": "2007-ertms",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2007_ertms.json",
+      "requirement_count": 163,
+      "explicit_count": 0,
+      "inferred_count": 163,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2008_keepass",
+      "document_id": "2008_keepass",
+      "title": "2008 - keepass",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2008_keepass.json",
+      "requirement_count": 43,
+      "explicit_count": 7,
+      "inferred_count": 36,
+      "status": "ok"
+    },
+    {
+      "document_id": "2008_peering",
+      "title": "2008 - peering",
+      "status": "skipped_too_few_requirements",
+      "requirement_count": 8
+    },
+    {
+      "sample_id": "pure_2009_peppol_approved",
+      "document_id": "2009_peppol_approved",
+      "title": "2009 - peppol approved",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2009_peppol_approved.json",
+      "requirement_count": 365,
+      "explicit_count": 0,
+      "inferred_count": 365,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2009_video_search",
+      "document_id": "2009_video_search",
+      "title": "2009 - video search",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2009_video_search.json",
+      "requirement_count": 26,
+      "explicit_count": 22,
+      "inferred_count": 4,
+      "status": "ok"
+    },
+    {
+      "sample_id": "pure_2010_blitdraft",
+      "document_id": "2010_blitdraft",
+      "title": "2010-blitdraft",
+      "path": "raw_sources/pure_benchmark/source_requirements/pure_2010_blitdraft.json",
+      "requirement_count": 53,
+      "explicit_count": 0,
+      "inferred_count": 53,
+      "status": "ok"
+    }
+  ]
+}

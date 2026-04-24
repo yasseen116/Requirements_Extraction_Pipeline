@@ -1,0 +1,37 @@
+{
+  "id": "sample_008",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "a hotel reservation website"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "guests and hotel staff"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "search rooms, book them, and cancel reservations"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "guests can have accounts, staff definitely should"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "room search should be fast"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "customer info and payments should be protected"}
+  ],
+  "slots": {
+    "project_type": "hotel reservation website",
+    "users": ["guest", "hotel staff"],
+    "core_features": ["search rooms", "book rooms", "cancel reservations"],
+    "authentication": ["guest account login", "staff login"],
+    "performance_constraints": ["fast room search"],
+    "security_constraints": ["protect customer information", "protect payments"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow guests and staff to sign in.",
+      "The system shall allow guests to search available rooms.",
+      "The system shall allow guests to book rooms.",
+      "The system shall allow guests to cancel reservations."
+    ],
+    "non_functional": [
+      "The system shall provide fast room search responses.",
+      "The system shall protect customer information and payment data."
+    ]
+  }
+}

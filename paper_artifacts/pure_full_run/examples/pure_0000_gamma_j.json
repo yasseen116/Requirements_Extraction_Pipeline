@@ -1,0 +1,459 @@
+{
+  "sample_id": "pure_0000_gamma_j",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_gamma_j",
+    "title": "0000 - gamma j",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - gamma j.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - gamma j.pdf"
+  },
+  "method": "g_full_dialogue_to_full_requirements_v1",
+  "model": "gemini-2.5-flash-lite",
+  "prompt_hash": "6c02a8a3d4bb033221d737a11b0913af44f6f4f999c2c9771f317034f4db2213",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "repair_attempted": false,
+  "usage": {
+    "promptTokenCount": 2017,
+    "candidatesTokenCount": 3368,
+    "totalTokenCount": 5385,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 2017
+      }
+    ]
+  },
+  "error": null,
+  "project_summary": "The project aims to capture the main requirements and constraints for the 0000 - gamma j system, specifically for the WebOrder system.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "CI-2",
+        "text": "The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "Add Item To Cart",
+        "text": "Customer adds item(s) in the cart.",
+        "priority": "high",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "Add User",
+        "text": "Register a new customer, sales person, or administrator account with the system.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "SI-1.3",
+        "text": "The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "priority": "high",
+        "evidence_turns": [
+          20
+        ]
+      },
+      {
+        "id": "F-001",
+        "text": "The system shall be able to add product to shopping cart in less than 2ms.",
+        "priority": "high",
+        "evidence_turns": [
+          24
+        ]
+      },
+      {
+        "id": "F-002",
+        "text": "The system shall be able to search for a specified product in less than 1 second.",
+        "priority": "high",
+        "evidence_turns": [
+          24
+        ]
+      },
+      {
+        "id": "F-003",
+        "text": "The system shall be able to email customer and vendor in less than 1 second.",
+        "priority": "high",
+        "evidence_turns": [
+          24
+        ]
+      },
+      {
+        "id": "F-004",
+        "text": "The system shall be able to validate credit card in less than 2 seconds.",
+        "priority": "high",
+        "evidence_turns": [
+          26
+        ]
+      },
+      {
+        "id": "F-005",
+        "text": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+        "priority": "high",
+        "evidence_turns": [
+          26
+        ]
+      },
+      {
+        "id": "F-006",
+        "text": "The system shall validate credit cards against fraud.",
+        "priority": "high",
+        "evidence_turns": [
+          30
+        ]
+      },
+      {
+        "id": "F-007",
+        "text": "The system shall detect consecutive failed login attempts.",
+        "priority": "high",
+        "evidence_turns": [
+          30
+        ]
+      },
+      {
+        "id": "F-008",
+        "text": "The system shall auto detect IP DOS attacks and block IP automatically.",
+        "priority": "high",
+        "evidence_turns": [
+          46
+        ]
+      },
+      {
+        "id": "F-009",
+        "text": "The system shall automatically compress image files that are too large in size.",
+        "priority": "high",
+        "evidence_turns": [
+          46
+        ]
+      },
+      {
+        "id": "F-010",
+        "text": "The system shall create logs of all changes, updates, or fixes that are done to the site.",
+        "priority": "high",
+        "evidence_turns": [
+          48
+        ]
+      },
+      {
+        "id": "F-011",
+        "text": "The system should be able to run test shipping orders.",
+        "priority": "medium",
+        "evidence_turns": [
+          48
+        ]
+      },
+      {
+        "id": "F-012",
+        "text": "The system should be able to create test environment of weborder system.",
+        "priority": "medium",
+        "evidence_turns": [
+          48
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "The system shall be able to restore 1000 records per second.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-002",
+        "text": "Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.",
+        "priority": "high",
+        "evidence_turns": [
+          22
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-003",
+        "text": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+        "priority": "high",
+        "evidence_turns": [
+          22
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-004",
+        "text": "The system shall be able to retrieve 200 products per second.",
+        "priority": "high",
+        "evidence_turns": [
+          22
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-005",
+        "text": "The system shall have an availability of 99.99%.",
+        "priority": "high",
+        "evidence_turns": [
+          28
+        ],
+        "category": "availability"
+      },
+      {
+        "id": "NFR-006",
+        "text": "The system shall encrypt all sensitive information via https.",
+        "priority": "high",
+        "evidence_turns": [
+          30
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-007",
+        "text": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+        "priority": "high",
+        "evidence_turns": [
+          36
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-008",
+        "text": "The system shall perform searches via Dijkstra's shortest path algorithm.",
+        "priority": "high",
+        "evidence_turns": [
+          38
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-009",
+        "text": "The system shall utilize interchangeable plugins.",
+        "priority": "high",
+        "evidence_turns": [
+          40
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-010",
+        "text": "The system shall be easily updatable for fixes and patches.",
+        "priority": "high",
+        "evidence_turns": [
+          40
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-011",
+        "text": "The system shall be easy to upgrade.",
+        "priority": "high",
+        "evidence_turns": [
+          40
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-012",
+        "text": "The system shall be extremely portable via the usb drive.",
+        "priority": "high",
+        "evidence_turns": [
+          42
+        ],
+        "category": "portability"
+      },
+      {
+        "id": "NFR-013",
+        "text": "The system shall be easy to migrate or backed up via another usb drive.",
+        "priority": "high",
+        "evidence_turns": [
+          42
+        ],
+        "category": "portability"
+      },
+      {
+        "id": "NFR-014",
+        "text": "The system should be able to run under debug mode.",
+        "priority": "medium",
+        "evidence_turns": [
+          42
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-015",
+        "text": "The system shall utilize consistent symbols and colors for clear notifications.",
+        "priority": "high",
+        "evidence_turns": [
+          46
+        ],
+        "category": "usability"
+      }
+    ],
+    "data": [
+      {
+        "id": "D-001",
+        "text": "The system shall use SQL based database to store inventory information.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "D-002",
+        "text": "The system shall encrypt all customer data in database.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "D-003",
+        "text": "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "D-004",
+        "text": "The system shall validate email address existence.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "D-005",
+        "text": "The system should be able to run test credit card transactions.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "BR-002",
+        "text": "Pre condition: A condition that must be satisfied or a state the system must be in before a use case may begin.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "INT-001",
+        "text": "Plug-ins interface.",
+        "priority": "high",
+        "evidence_turns": [
+          20
+        ]
+      },
+      {
+        "id": "INT-002",
+        "text": "The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "priority": "high",
+        "evidence_turns": [
+          20
+        ]
+      },
+      {
+        "id": "INT-003",
+        "text": "User Documentation Shall install online help for users via the web interface.",
+        "priority": "high",
+        "evidence_turns": [
+          44
+        ]
+      },
+      {
+        "id": "INT-004",
+        "text": "Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+        "priority": "high",
+        "evidence_turns": [
+          44
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "Must use a SQL based database.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "C-002",
+        "text": "Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",
+        "priority": "high",
+        "evidence_turns": [
+          36
+        ]
+      },
+      {
+        "id": "C-003",
+        "text": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+        "priority": "high",
+        "evidence_turns": [
+          36
+        ]
+      },
+      {
+        "id": "C-004",
+        "text": "The system hardware shall be fixed and patched via an internet connection.",
+        "priority": "high",
+        "evidence_turns": [
+          38
+        ]
+      },
+      {
+        "id": "C-005",
+        "text": "The system shall be protected by open source firewall called Firestarter.",
+        "priority": "high",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "C-006",
+        "text": "Customer must be able to access the web order system via a web browser with HTTPS.",
+        "priority": "high",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "C-007",
+        "text": "Administrator must be able to access the weborder system via a web browser with HTTPS.",
+        "priority": "high",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "C-008",
+        "text": "Sales Person must be able to access the weborder system via a web browser with HTTPS.",
+        "priority": "high",
+        "evidence_turns": [
+          34
+        ]
+      }
+    ]
+  }
+}

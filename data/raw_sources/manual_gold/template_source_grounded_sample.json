@@ -1,0 +1,240 @@
+{
+  "sample_id": "manual_001",
+  "metadata": {
+    "domain": "replace_me",
+    "source_type": "manual",
+    "parent_id": null,
+    "split": "train",
+    "dialogue_style": "clean"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "record_url": "https://zenodo.org/records/7118517",
+    "document_id": "replace_me",
+    "source_sentence_ids": [
+      "replace_me"
+    ]
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "What kind of system do you want?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "replace_me"
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Who will use it?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "replace_me"
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "What should users be able to do?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "replace_me"
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "Do users need login or authentication?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "replace_me"
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "Are there performance requirements?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "replace_me"
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "Are there security requirements?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "replace_me"
+    }
+  ],
+  "frames": [
+    {
+      "frame_id": "F1",
+      "kind": "system_context",
+      "actor": null,
+      "action": "system_type",
+      "object": "replace_me",
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        2
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F2",
+      "kind": "user_role",
+      "actor": "replace_me",
+      "action": "user_role",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        4
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F3",
+      "kind": "functional_capability",
+      "actor": "replace_me",
+      "action": "replace_me",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        6
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F4",
+      "kind": "authentication",
+      "actor": null,
+      "action": "authenticate",
+      "object": "replace_me",
+      "constraint": "required",
+      "channel": null,
+      "evidence_turns": [
+        8
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F5",
+      "kind": "performance",
+      "actor": null,
+      "action": null,
+      "object": null,
+      "constraint": "replace_me",
+      "channel": null,
+      "evidence_turns": [
+        10
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F6",
+      "kind": "security",
+      "actor": null,
+      "action": null,
+      "object": null,
+      "constraint": "replace_me",
+      "channel": null,
+      "evidence_turns": [
+        12
+      ],
+      "status": "confirmed"
+    }
+  ],
+  "slots": {
+    "system_type": {
+      "value": "replace_me",
+      "evidence_turns": [
+        2
+      ]
+    },
+    "user_roles": [
+      {
+        "value": "replace_me",
+        "evidence_turns": [
+          4
+        ]
+      }
+    ],
+    "functional_capabilities": [
+      {
+        "actor": "replace_me",
+        "action": "replace_me",
+        "evidence_turns": [
+          6
+        ]
+      }
+    ],
+    "authentication": {
+      "required": true,
+      "methods": [
+        "replace_me"
+      ],
+      "evidence_turns": [
+        8
+      ]
+    },
+    "performance_constraints": [
+      {
+        "text": "replace_me",
+        "evidence_turns": [
+          10
+        ]
+      }
+    ],
+    "security_constraints": [
+      {
+        "text": "replace_me",
+        "evidence_turns": [
+          12
+        ]
+      }
+    ]
+  },
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR1",
+        "text": "The system shall replace_me.",
+        "source_slots": [
+          "functional_capabilities[0]"
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR1",
+        "category": "performance",
+        "text": "The system shall replace_me.",
+        "source_slots": [
+          "performance_constraints[0]"
+        ]
+      },
+      {
+        "id": "NFR2",
+        "category": "security",
+        "text": "The system shall replace_me.",
+        "source_slots": [
+          "security_constraints[0]"
+        ]
+      }
+    ]
+  }
+}

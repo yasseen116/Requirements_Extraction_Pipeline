@@ -1,0 +1,1734 @@
+{
+  "sample_id": "pure_1995_gemini",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1995_gemini",
+    "title": "1995 - gemini",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1995 - gemini.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1995 - gemini.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "Under no circumstances should monitoring affect the performance of an ongoing observation C.Operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "under no circumstances should monitoring affect the performance of an ongoing observation c operation"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "Under no circumstances should testing affect the performance of an ongoing observation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "under no circumstances should testing affect the performance of an ongoing observation"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "Under no circumstances should administrative access affect the performance of an ongoing observation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "under no circumstances should administrative access affect the performance of an ongoing observation"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "It should also be noted that what the system has to guarantee in terms of operations must fulfill all possible requirements, but it does not mean that all features will be made available to all users at all locations at all times.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should also be noted that what the system has to guarantee in terms of operations must fulfill all possible requirements but it does not mean that all features will be made available to all users at all locations at all times"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "Privileges Observing astronomers shall have no privileges as far as the direct control of the telescope is concerned.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "privileges observing astronomers shall have no privileges as far as the direct control of the telescope is concerned"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "They shall not be able to send control commands directly but they must be able to enquire about the status of the telescope or any subsystem at any time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "they shall not be able to send control commands directly but they must be able to enquire about the status of the telescope or any subsystem at any time"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "Operation mode Traditional interactive operation shall normally be replaced by operation via an automatic sequencer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operation mode traditional interactive operation shall normally be replaced by operation via an automatic sequencer"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "A certain degree of interaction shall be provided, meaning in this case that the user will interact with the scheduler program, rather than with the control programs directly.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a certain degree of interaction shall be provided meaning in this case that the user will interact with the scheduler program rather than with the control programs directly"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "It must also be possible to break and resequence this queue.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must also be possible to break and resequence this queue"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "In particular, Operations staff will be able to enable direct interactive operation, but this shall not be considered as the normal operation mode for the reasons explained in Section 2.7 on page 2-12.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in particular operations staff will be able to enable direct interactive operation but this shall not be considered as the normal operation mode for the reasons explained in section 2 7 on page 2 12"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "It is evident that, for some functions (such as adjustment of spectrograph slit width for seeing conditions) it must be necessary to include interactive capability.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is evident that for some functions such as adjustment of spectrograph slit width for seeing conditions it must be necessary to include interactive capability"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "However each instance of such a function should be examined as a candidate for automation - such as focussing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however each instance of such a function should be examined as a candidate for automation such as focussing"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "The existence of the scheduling queue shall be transparent to the on-site observer during the initial phases of telescope operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the existence of the scheduling queue shall be transparent to the on site observer during the initial phases of telescope operation"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "They shall also monitor general performance and system safety.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "they shall also monitor general performance and system safety"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "Privileges Operations staff shall have privileges to access all commands and maintenance procedures in case of problems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "privileges operations staff shall have privileges to access all commands and maintenance procedures in case of problems"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "However, they shall not have access to subsystems while these are in normal operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however they shall not have access to subsystems while these are in normal operation"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "Operation mode Operations staff shall have access to operation tables in update mode, while observing astronomers will have access to them only in read mode (for example the list of filters mounted on an instrument).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operation mode operations staff shall have access to operation tables in update mode while observing astronomers will have access to them only in read mode for example the list of filters mounted on an instrument"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "They shall be able to change the operational status of units according to the results of tests performed on such units (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "they shall be able to change the operational status of units according to the results of tests performed on such units e g"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "Nevertheless strict configuration control guidelines must be followed to prevent interference with ongoing normal operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nevertheless strict configuration control guidelines must be followed to prevent interference with ongoing normal operation"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "Parallel access to all the mounted instruments shall be provided, though only one instrument has access to the telescope beam (active instrument).Instruments which feed two detectors by using beam splitters or ﬁeld splitters is considered as a single active instrument.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "parallel access to all the mounted instruments shall be provided though only one instrument has access to the telescope beam active instrument instruments which feed two detectors by using beam splitters or eld splitters is considered as a single active instrument"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "In this case a subset of the available functionality must be made available through a standardized interface.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in this case a subset of the available functionality must be made available through a standardized interface"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "Visitor instruments must be capable of operating in this mode to be adequately supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "visitor instruments must be capable of operating in this mode to be adequately supported"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "It should be the goal of this interface that it be a subset of the existing instrumentation interface (rather than a separate system).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be the goal of this interface that it be a subset of the existing instrumentation interface rather than a separate system"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "As more complicated functionality will be supported via standardized interfaces for the Gemini instruments, such as coordinated motions, it should be possible to adapt visitor instruments to this standard.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "as more complicated functionality will be supported via standardized interfaces for the gemini instruments such as coordinated motions it should be possible to adapt visitor instruments to this standard"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "Independently of the location of users at the telescope site, they shall be able to access (according to their privileges) any part of the whole setup with a simple logon and conﬁguration operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "independently of the location of users at the telescope site they shall be able to access according to their privileges any part of the whole setup with a simple logon and con guration operation"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "any subsection of the whole Gemini 8m Telescopes system should be accessible and controllable from any single point (but of course with protection ensuring security and safety).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any subsection of the whole gemini 8m telescopes system should be accessible and controllable from any single point but of course with protection ensuring security and safety"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "Monitoring shall exist both in the form of automatic displays of status information at different locations, and in the form of explicit access to the required status information from any point.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "monitoring shall exist both in the form of automatic displays of status information at different locations and in the form of explicit access to the required status information from any point"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "Monitoring shall not affect the performance of ongoing observations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "monitoring shall not affect the performance of ongoing observations"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "The observing program must be fully automated, requiring very little human interaction during the observation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the observing program must be fully automated requiring very little human interaction during the observation"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "The means that the Gemini software must include a sufﬁciently rich programming environment to make this feasible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the means that the gemini software must include a suf ciently rich programming environment to make this feasible"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "In addition, this should be a visually-oriented environment providing a simple, easy-to-use interface to the astronomer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in addition this should be a visually oriented environment providing a simple easy to use interface to the astronomer"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "There should be a full telescope simulator to enable the astronomer to test observing programs for completeness, errors, and functionality.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there should be a full telescope simulator to enable the astronomer to test observing programs for completeness errors and functionality"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "This simulator should function within the virtual telescope environment of the Gemini system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this simulator should function within the virtual telescope environment of the gemini system"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "All control software must provide support for simulated use within the virtual telescope There is a requirement for software to assist in object selection both within an observing program and across observing programs, in order to optimize observing efﬁciency.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all control software must provide support for simulated use within the virtual telescope there is a requirement for software to assist in object selection both within an observing program and across observing programs in order to optimize observing ef ciency"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "This software must consider target positions, weather conditions, and instrument conﬁgurations There must be software to support the ﬂexible scheduling, both manually and via a scheduler, allowing for the interleaving of observing programs in a manner that is transparent to the individual observing programs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this software must consider target positions weather conditions and instrument con gurations there must be software to support the exible scheduling both manually and via a scheduler allowing for the interleaving of observing programs in a manner that is transparent to the individual observing programs"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "To maximize the use of the available observing time it must be possible to queue all of the observing that is possible with the currently available instruments.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to maximize the use of the available observing time it must be possible to queue all of the observing that is possible with the currently available instruments"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "It should be possible to resort the queue so that the next observation to take place comes to the front of the queue.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be possible to resort the queue so that the next observation to take place comes to the front of the queue"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "The system design, if it does not include a scheduler, should speciﬁcally allow for its future implementation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system design if it does not include a scheduler should speci cally allow for its future implementation"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "(There will always be support staff on-site during observations, however.) The requirements for supporting remote operations are: All software should be developed to permit remote operations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there will always be support staff on site during observations however the requirements for supporting remote operations are all software should be developed to permit remote operations"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "There should be no conceptual difference between software working on-site and remotely.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there should be no conceptual difference between software working on site and remotely"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "All observing facilities should work both on-site and off-site.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all observing facilities should work both on site and off site"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "It should be possible to do full operations remotely Team observing, with multiple observers at different sites should be supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be possible to do full operations remotely team observing with multiple observers at different sites should be supported"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "It must be possible to restrict speciﬁc operations to speciﬁc remote sites.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must be possible to restrict speci c operations to speci c remote sites"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "The method used to restrict such operations should be independent of the operations themselves, and dynamic.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the method used to restrict such operations should be independent of the operations themselves and dynamic"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "Despite the obvious limitations introduced by the link bandwidths available at the different locations, the system shall be totally transparent to local or remote use.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "despite the obvious limitations introduced by the link bandwidths available at the different locations the system shall be totally transparent to local or remote use"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "However the system design should minimize the impact of link bandwidth on transparency.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however the system design should minimize the impact of link bandwidth on transparency"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "Security of operation shall be considered and might imply different operation levels and privileges at different sites.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "security of operation shall be considered and might imply different operation levels and privileges at different sites"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "It is required that the remote operations software be considered from the beginning in the Gemini 8m Telescopes software design, to avoid redesign later.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is required that the remote operations software be considered from the beginning in the gemini 8m telescopes software design to avoid redesign later"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "This should reduce the amount of speciﬁc software needed for remote operations, as the common layers of software shall cope from the beginning with a distributed environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this should reduce the amount of speci c software needed for remote operations as the common layers of software shall cope from the beginning with a distributed environment"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "Remote Access Quite apart from remote observing, remote access to the Gemini 8m Telescopes and its instruments is required for monitoring and diagnostic purposes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "remote access quite apart from remote observing remote access to the gemini 8m telescopes and its instruments is required for monitoring and diagnostic purposes"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "Remote access, in this case, must be possible from the Gemini 8m Telescopes base facility.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "remote access in this case must be possible from the gemini 8m telescopes base facility"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "The requirements speciﬁc to service observing are: The observing program must be automated, requiring little human interaction during the observation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the requirements speci c to service observing are the observing program must be automated requiring little human interaction during the observation"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "This programming environment should be available both to the astronomer, for developing the program, and to the observer, for review and adjustment of the program.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this programming environment should be available both to the astronomer for developing the program and to the observer for review and adjustment of the program"
+    },
+    {
+      "req_id": "AUTO-0054",
+      "text": "The programming environment should allow for the communication of special notes, instructions, and comments from the astronomer to the observer, possibly involving multimedia techniques.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the programming environment should allow for the communication of special notes instructions and comments from the astronomer to the observer possibly involving multimedia techniques"
+    },
+    {
+      "req_id": "AUTO-0055",
+      "text": "So whichever scheme is adopted to perform automatic sequences, interaction shall be allowed at the desired level (for example, only on error conditions, any time the user is allowed to break a sequence, etc.).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "so whichever scheme is adopted to perform automatic sequences interaction shall be allowed at the desired level for example only on error conditions any time the user is allowed to break a sequence etc"
+    },
+    {
+      "req_id": "AUTO-0056",
+      "text": "It will require the use of service and/or remote observing, as users cannot stay around indeﬁnitely waiting for the conditions required by their program.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it will require the use of service and or remote observing as users cannot stay around inde nitely waiting for the conditions required by their program"
+    },
+    {
+      "req_id": "AUTO-0057",
+      "text": "This can be achieved only with the help of appropriate scheduling software, which must advise the operations team on the best choice to make which is compatible with the relative priorities of the various observing programs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this can be achieved only with the help of appropriate scheduling software which must advise the operations team on the best choice to make which is compatible with the relative priorities of the various observing programs"
+    },
+    {
+      "req_id": "AUTO-0058",
+      "text": "It should be recognized that such ‘expert scheduling’ software does not currently exist - it should be a requirement of such software that it have an operational mode which merely supports the decision making process by presenting appropriate information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be recognized that such expert scheduling software does not currently exist it should be a requirement of such software that it have an operational mode which merely supports the decision making process by presenting appropriate information"
+    },
+    {
+      "req_id": "AUTO-0059",
+      "text": "All subsystems must respond to a common set of commands to test operational status, inquiries as to version, perform self-tests, etc.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all subsystems must respond to a common set of commands to test operational status inquiries as to version perform self tests etc"
+    },
+    {
+      "req_id": "AUTO-0060",
+      "text": "All IOC subsystems must respond to additional common commands for such activities as start, stop, initialize, reset parameters, etc.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all ioc subsystems must respond to additional common commands for such activities as start stop initialize reset parameters etc"
+    },
+    {
+      "req_id": "AUTO-0061",
+      "text": "The support structure for communicating commands must be reliable, with a uniform ACK/NAK protocol adopted across all systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the support structure for communicating commands must be reliable with a uniform ack nak protocol adopted across all systems"
+    },
+    {
+      "req_id": "AUTO-0062",
+      "text": "Timeouts must be supported at approximately 500 msec.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "timeouts must be supported at approximately 500 msec"
+    },
+    {
+      "req_id": "AUTO-0063",
+      "text": "Handshaking of commands between IOCs must occur within 100-200 msec, signaling acceptance of each command.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "handshaking of commands between iocs must occur within 100 200 msec signaling acceptance of each command"
+    },
+    {
+      "req_id": "AUTO-0064",
+      "text": "For commands allowing delayed replies, timeouts for that reply must also be supported.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "for commands allowing delayed replies timeouts for that reply must also be supported"
+    },
+    {
+      "req_id": "AUTO-0065",
+      "text": "Data from detectors must be stored in the most effective method permitted by available technology.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "data from detectors must be stored in the most effective method permitted by available technology"
+    },
+    {
+      "req_id": "AUTO-0066",
+      "text": "For mosaicked, large optical detectors, a full readout of the detector must be done in about 2 or 3 minutes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "for mosaicked large optical detectors a full readout of the detector must be done in about 2 or 3 minutes"
+    },
+    {
+      "req_id": "AUTO-0067",
+      "text": "Since the Gemini system supports monitoring of operation, there must be the capability of providing multiple, simultaneous access to data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "since the gemini system supports monitoring of operation there must be the capability of providing multiple simultaneous access to data"
+    },
+    {
+      "req_id": "AUTO-0068",
+      "text": "The LAN must support a transfer rate of 20-40 Mbits/second.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the lan must support a transfer rate of 20 40 mbits second"
+    },
+    {
+      "req_id": "AUTO-0069",
+      "text": "The system data capacity is capable of retaining 7 days of data produced by the largest instrument, the last 3 days of which must be available interactively from hard disk or similar medium.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system data capacity is capable of retaining 7 days of data produced by the largest instrument the last 3 days of which must be available interactively from hard disk or similar medium"
+    },
+    {
+      "req_id": "AUTO-0070",
+      "text": "The requirements for transferring video data are: The system must allow for fast transmission of rough images every 0.5 sec.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the requirements for transferring video data are the system must allow for fast transmission of rough images every 0 5 sec"
+    },
+    {
+      "req_id": "AUTO-0071",
+      "text": "This high-quality transmission must require less than 20 sec, and can only be assisted with loss-less compression.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this high quality transmission must require less than 20 sec and can only be assisted with loss less compression"
+    },
+    {
+      "req_id": "AUTO-0072",
+      "text": "Operation Privileges, Protections, and Procedures To preserve the integrity of the system, there must be a system of privileges established at each operating level of the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operation privileges protections and procedures to preserve the integrity of the system there must be a system of privileges established at each operating level of the system"
+    },
+    {
+      "req_id": "AUTO-0073",
+      "text": "These privileges should be determined in a simple manner during logging into the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these privileges should be determined in a simple manner during logging into the system"
+    },
+    {
+      "req_id": "AUTO-0074",
+      "text": "The allocation system must ensure that the system cannot remain deadlocked with respect to this resource allocation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the allocation system must ensure that the system cannot remain deadlocked with respect to this resource allocation"
+    },
+    {
+      "req_id": "AUTO-0075",
+      "text": "Finally, procedures must be implemented for convenience and system integrity, to simplify and codify common tasks.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "finally procedures must be implemented for convenience and system integrity to simplify and codify common tasks"
+    },
+    {
+      "req_id": "AUTO-0076",
+      "text": "The control software should know what subsystems are installed and their status at all times.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the control software should know what subsystems are installed and their status at all times"
+    },
+    {
+      "req_id": "AUTO-0077",
+      "text": "Test and checkout Requirements The telescope and instrument software shall contain built-in test (BIT) facilities to verify Gemini 8m Telescopes system and Gemini 8m Telescopes software performances.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "test and checkout requirements the telescope and instrument software shall contain built in test bit facilities to verify gemini 8m telescopes system and gemini 8m telescopes software performances"
+    },
+    {
+      "req_id": "AUTO-0078",
+      "text": "Every Gemini 8m Telescopes software module shall have corresponding test speciﬁcations to check normal operation of releases, to be used both for acceptance tests and as an on-line test procedure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "every gemini 8m telescopes software module shall have corresponding test speci cations to check normal operation of releases to be used both for acceptance tests and as an on line test procedure"
+    },
+    {
+      "req_id": "AUTO-0079",
+      "text": "The Gemini 8m Telescopes control software shall also provide for execution of self-test sequences of the Gemini 8m Telescopes system and subsystems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the gemini 8m telescopes control software shall also provide for execution of self test sequences of the gemini 8m telescopes system and subsystems"
+    },
+    {
+      "req_id": "AUTO-0080",
+      "text": "These shall automatically exercise all subsystems present in a given operational conﬁguration.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these shall automatically exercise all subsystems present in a given operational con guration"
+    },
+    {
+      "req_id": "AUTO-0081",
+      "text": "Regression tests should be a part of every Gemini 8m Telescopes software package Contingencies Fault Notification Subsystems must notify the user when faults occur.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "regression tests should be a part of every gemini 8m telescopes software package contingencies fault notification subsystems must notify the user when faults occur"
+    },
+    {
+      "req_id": "AUTO-0082",
+      "text": "This notiﬁcation must be speciﬁc as to origin and problem.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this noti cation must be speci c as to origin and problem"
+    },
+    {
+      "req_id": "AUTO-0083",
+      "text": "The notiﬁcation must also be capable of being electronically logged.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the noti cation must also be capable of being electronically logged"
+    },
+    {
+      "req_id": "AUTO-0084",
+      "text": "Fault tollerance Should a subsystem fail (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "fault tollerance should a subsystem fail e g"
+    },
+    {
+      "req_id": "AUTO-0085",
+      "text": "one detector, one instrument) predeﬁned procedures must exist to redeﬁne the environment in such a way that operation can restart with the remaining equipment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "one detector one instrument prede ned procedures must exist to rede ne the environment in such a way that operation can restart with the remaining equipment"
+    },
+    {
+      "req_id": "AUTO-0086",
+      "text": "In case of computer hardware failure concerning the user station equipment, it shall be possible to transfer control from one user station to another via a simple software reconﬁguration procedure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in case of computer hardware failure concerning the user station equipment it shall be possible to transfer control from one user station to another via a simple software recon guration procedure"
+    },
+    {
+      "req_id": "AUTO-0087",
+      "text": "In this case there shall be a procedure to replace faulty cards and/or assemblies.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in this case there shall be a procedure to replace faulty cards and or assemblies"
+    },
+    {
+      "req_id": "AUTO-0088",
+      "text": "If it is possible to observe with that particular IOC in a failed state (in general, this is limited to IOCs that are associated with individual scientiﬁc instruments) then it must be possible to reconﬁgure the system to do so.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if it is possible to observe with that particular ioc in a failed state in general this is limited to iocs that are associated with individual scienti c instruments then it must be possible to recon gure the system to do so"
+    },
+    {
+      "req_id": "AUTO-0089",
+      "text": "All communication shall be based on the use of standard communication protocols, where retry procedures are applied (a form of software redundancy) as part of the protocol.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all communication shall be based on the use of standard communication protocols where retry procedures are applied a form of software redundancy as part of the protocol"
+    },
+    {
+      "req_id": "AUTO-0090",
+      "text": "User constraints .There should be no restrictions imposed by the software on users.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "user constraints there should be no restrictions imposed by the software on users"
+    },
+    {
+      "req_id": "AUTO-0091",
+      "text": "Only policy decisions (permissions, access privileges, etc.) should prevent any user from accessing any part of the Gemini system from any local or remote station.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "only policy decisions permissions access privileges etc should prevent any user from accessing any part of the gemini system from any local or remote station"
+    },
+    {
+      "req_id": "AUTO-0092",
+      "text": ".Similar functionality should be presented to the users using similar user interfaces.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "similar functionality should be presented to the users using similar user interfaces"
+    },
+    {
+      "req_id": "AUTO-0093",
+      "text": "However, user interfaces should clearly reﬂect access modes and operating levels.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however user interfaces should clearly re ect access modes and operating levels"
+    },
+    {
+      "req_id": "AUTO-0094",
+      "text": "These are: Commercial packages, off-the-shelf public domain software, and standards are to be used whenever feasible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these are commercial packages off the shelf public domain software and standards are to be used whenever feasible"
+    },
+    {
+      "req_id": "AUTO-0095",
+      "text": "Gemini software developers should maintain accurate change logs showing software modiﬁcations as they are applied to the system software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "gemini software developers should maintain accurate change logs showing software modi cations as they are applied to the system software"
+    },
+    {
+      "req_id": "AUTO-0096",
+      "text": "Gemini software developers should adhere to a standard method for the reporting and recording of errors from both internal and external sources.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "gemini software developers should adhere to a standard method for the reporting and recording of errors from both internal and external sources"
+    },
+    {
+      "req_id": "AUTO-0097",
+      "text": "The interfaces required of these user interface modules are described in Section 3.3 on page 3-6.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the interfaces required of these user interface modules are described in section 3 3 on page 3 6"
+    },
+    {
+      "req_id": "AUTO-0098",
+      "text": "External documentation must include Unix-style man pages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "external documentation must include unix style man pages"
+    },
+    {
+      "req_id": "AUTO-0099",
+      "text": "All Gemini subsystem packages must provide modules for the testing and diagnosis of the subsystem.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all gemini subsystem packages must provide modules for the testing and diagnosis of the subsystem"
+    },
+    {
+      "req_id": "AUTO-0100",
+      "text": "All instrumentation control software must provide full access to all instrument functionality.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all instrumentation control software must provide full access to all instrument functionality"
+    },
+    {
+      "req_id": "AUTO-0101",
+      "text": "The information required of each interface module is found in the Functional Requirements speciﬁcations for each instrument.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the information required of each interface module is found in the functional requirements speci cations for each instrument"
+    },
+    {
+      "req_id": "AUTO-0102",
+      "text": "All Gemini software must be version labeled, both in source and binary form.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all gemini software must be version labeled both in source and binary form"
+    },
+    {
+      "req_id": "AUTO-0103",
+      "text": "Therefore all hardware subsystems must provide a software simulation module (as stated earlier) that responds in reasonable fashion to commands directed at that hardware.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "therefore all hardware subsystems must provide a software simulation module as stated earlier that responds in reasonable fashion to commands directed at that hardware"
+    },
+    {
+      "req_id": "AUTO-0104",
+      "text": "This simulation may require a standard environment, such as VxWorks, EPICS, and VME crate/cpu, but it cannot require any hardware speciﬁc to the application.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this simulation may require a standard environment such as vxworks epics and vme crate cpu but it cannot require any hardware speci c to the application"
+    },
+    {
+      "req_id": "AUTO-0105",
+      "text": ".Gemini subsystem should be as self-contained and autonomous as possible, thereby decreasing the functional width of the interface to the rest of the Gemini system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "gemini subsystem should be as self contained and autonomous as possible thereby decreasing the functional width of the interface to the rest of the gemini system"
+    },
+    {
+      "req_id": "AUTO-0106",
+      "text": "No subsystem package should make any assumptions about the surrounding environment beyond that provided in the interface speciﬁcations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "no subsystem package should make any assumptions about the surrounding environment beyond that provided in the interface speci cations"
+    },
+    {
+      "req_id": "AUTO-0107",
+      "text": "Control Information Flow Control information must be transferred, typically in the form of commands and replies from users, to telescope and instruments.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "control information flow control information must be transferred typically in the form of commands and replies from users to telescope and instruments"
+    },
+    {
+      "req_id": "AUTO-0108",
+      "text": "Control information on all controlled variables must be provided by all subsystems on request.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "control information on all controlled variables must be provided by all subsystems on request"
+    },
+    {
+      "req_id": "AUTO-0109",
+      "text": "No request for information shall produce a delay of control activities or locking, even if the corresponding equipment is not available or faulty.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "no request for information shall produce a delay of control activities or locking even if the corresponding equipment is not available or faulty"
+    },
+    {
+      "req_id": "AUTO-0110",
+      "text": "Delay times for the exchange of control information must stay within precise time limits to be deﬁned in “General Description” in Chapter 2.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "delay times for the exchange of control information must stay within precise time limits to be de ned in general description in chapter 2"
+    },
+    {
+      "req_id": "AUTO-0111",
+      "text": "One can afford to retransmit commands in case of transmission error or collision, but the protocol has to be predictable in that commands cannot get lost and replies have to come back reliably.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "one can afford to retransmit commands in case of transmission error or collision but the protocol has to be predictable in that commands cannot get lost and replies have to come back reliably"
+    },
+    {
+      "req_id": "AUTO-0112",
+      "text": "It is explicitly required that all such information is available to the Gemini 8m Telescopes software and is capable of being available to all users of the Gemini 8m Telescopes, subject only to restrictions with respect to updating.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it is explicitly required that all such information is available to the gemini 8m telescopes software and is capable of being available to all users of the gemini 8m telescopes subject only to restrictions with respect to updating"
+    },
+    {
+      "req_id": "AUTO-0113",
+      "text": "It must also be possible to restrict user access to such information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must also be possible to restrict user access to such information"
+    },
+    {
+      "req_id": "AUTO-0114",
+      "text": "In particular also, the meteorological information coming from a weather station should be available centrally.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in particular also the meteorological information coming from a weather station should be available centrally"
+    },
+    {
+      "req_id": "AUTO-0115",
+      "text": "Astronomical Data Flow Data Flow Detector data must be acquired and stored in the most effective way technology will allow;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "astronomical data flow data flow detector data must be acquired and stored in the most effective way technology will allow"
+    },
+    {
+      "req_id": "AUTO-0116",
+      "text": "effectiveness should be evaluated in terms of cost, space requirements, longevity, and speed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "effectiveness should be evaluated in terms of cost space requirements longevity and speed"
+    },
+    {
+      "req_id": "AUTO-0117",
+      "text": "This shall lead to the deﬁnition of a Gemini 8m Telescopes standard, used on all instruments.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this shall lead to the de nition of a gemini 8m telescopes standard used on all instruments"
+    },
+    {
+      "req_id": "AUTO-0118",
+      "text": "In general, operational overheads must be kept as low as possible, to maximize actual observing times.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in general operational overheads must be kept as low as possible to maximize actual observing times"
+    },
+    {
+      "req_id": "AUTO-0119",
+      "text": "Intermediate storage of raw data in memory on different nodes and in different formats should be kept to a minimum.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "intermediate storage of raw data in memory on different nodes and in different formats should be kept to a minimum"
+    },
+    {
+      "req_id": "AUTO-0120",
+      "text": "However, there must be at least two copies - one to secure data as acquired and one to do assessment of data quality on-line (this last copy preferably on removable media).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "however there must be at least two copies one to secure data as acquired and one to do assessment of data quality on line this last copy preferably on removable media"
+    },
+    {
+      "req_id": "AUTO-0121",
+      "text": "The link chosen to transfer data should represent as small a bottleneck as possible for data acquisition.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the link chosen to transfer data should represent as small a bottleneck as possible for data acquisition"
+    },
+    {
+      "req_id": "AUTO-0122",
+      "text": "Other astronomical information such as that coming from sky ﬁeld monitors, autoguider cameras and sky monitoring devices such as cloud and seeing monitors shall also be capable of being available.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "other astronomical information such as that coming from sky eld monitors autoguider cameras and sky monitoring devices such as cloud and seeing monitors shall also be capable of being available"
+    },
+    {
+      "req_id": "AUTO-0123",
+      "text": "It shall be possible to update all non-protected parameter values, i.e.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it shall be possible to update all non protected parameter values i e"
+    },
+    {
+      "req_id": "AUTO-0124",
+      "text": "Protections Protections must also be enforced (see also Security in Section 3.5.6 on page 3- 20) among users and the operational software should indicate clearly to users the current operation level and check the compatibility between subsystems in different modes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "protections protections must also be enforced see also security in section 3 5 6 on page 3 20 among users and the operational software should indicate clearly to users the current operation level and check the compatibility between subsystems in different modes"
+    },
+    {
+      "req_id": "AUTO-0125",
+      "text": "In addition, the system must support off-site observing modes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in addition the system must support off site observing modes"
+    },
+    {
+      "req_id": "AUTO-0126",
+      "text": "As a conclusion, the Gemini 8m Telescopes control software shall allow simultaneous operation of up to six active control nodes and up to two more monitoring nodes (one local and one remote) without appreciable degradation of performance.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "as a conclusion the gemini 8m telescopes control software shall allow simultaneous operation of up to six active control nodes and up to two more monitoring nodes one local and one remote without appreciable degradation of performance"
+    },
+    {
+      "req_id": "AUTO-0127",
+      "text": "Every command must be acknowledged in a positive or negative way before the occurrence of the corresponding action within given response times.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "every command must be acknowledged in a positive or negative way before the occurrence of the corresponding action within given response times"
+    },
+    {
+      "req_id": "AUTO-0128",
+      "text": "Procedures There must be automatic procedures to implement startup and shutdown of the telescope and instruments.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "procedures there must be automatic procedures to implement startup and shutdown of the telescope and instruments"
+    },
+    {
+      "req_id": "AUTO-0129",
+      "text": "These must allow startup and shutdown of instruments independently of the telescope and without affecting the telescope operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these must allow startup and shutdown of instruments independently of the telescope and without affecting the telescope operation"
+    },
+    {
+      "req_id": "AUTO-0130",
+      "text": "Reconﬁguration procedures must exist, to change the observing environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "recon guration procedures must exist to change the observing environment"
+    },
+    {
+      "req_id": "AUTO-0131",
+      "text": "The deﬁnition of the observing environments must be dynamic, i.e.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the de nition of the observing environments must be dynamic i e"
+    },
+    {
+      "req_id": "AUTO-0132",
+      "text": "Operations staff have privileges to change the environment, meaning selecting a suitable combination of instrumentsThe operational software should know which subsystems are installed and operational at any given time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operations staff have privileges to change the environment meaning selecting a suitable combination of instrumentsthe operational software should know which subsystems are installed and operational at any given time"
+    },
+    {
+      "req_id": "AUTO-0133",
+      "text": "The user interface should not be seen as a package linked to a speciﬁc computer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user interface should not be seen as a package linked to a speci c computer"
+    },
+    {
+      "req_id": "AUTO-0134",
+      "text": "Given the requirement to be able to access the Gemini 8m Telescopes from several points, the user interface should rather be seen as a package to be callable from a large number of stations, depending on where a user is.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "given the requirement to be able to access the gemini 8m telescopes from several points the user interface should rather be seen as a package to be callable from a large number of stations depending on where a user is"
+    },
+    {
+      "req_id": "AUTO-0135",
+      "text": "It should also be network transparent so that it does not matter where it is being run.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should also be network transparent so that it does not matter where it is being run"
+    },
+    {
+      "req_id": "AUTO-0136",
+      "text": "The user interface tools shall be based on standards, deﬁned in Section 4.2.5 on page 4- 7, which will be portable across different computer hardware platforms (Portable User Interface Toolkit).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the user interface tools shall be based on standards de ned in section 4 2 5 on page 4 7 which will be portable across different computer hardware platforms portable user interface toolkit"
+    },
+    {
+      "req_id": "AUTO-0137",
+      "text": "Microprocessor software in particular tends to contain hardware speciﬁc software, though one should try to keep it as hardware independent as possible, isolating different software layers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "microprocessor software in particular tends to contain hardware speci c software though one should try to keep it as hardware independent as possible isolating different software layers"
+    },
+    {
+      "req_id": "AUTO-0138",
+      "text": "The standard software must be adequate for the real-time requirements and must offer drivers to the standard electronics to be used on all the Gemini 8m Telescopes software subsystems and instruments.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the standard software must be adequate for the real time requirements and must offer drivers to the standard electronics to be used on all the gemini 8m telescopes software subsystems and instruments"
+    },
+    {
+      "req_id": "AUTO-0139",
+      "text": "Links between electronics interfaces and main processors must meet the requirements imposed by the data speciﬁcations (see Section 3.1 on page 3- 1).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "links between electronics interfaces and main processors must meet the requirements imposed by the data speci cations see section 3 1 on page 3 1"
+    },
+    {
+      "req_id": "AUTO-0140",
+      "text": "On-line image processing interfaces In order to make efﬁcient use of the telescope, to support different observing modes, and to support the versatility requirements, some form of on-line image (or pixel) quick-look analysis is required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "on line image processing interfaces in order to make ef cient use of the telescope to support different observing modes and to support the versatility requirements some form of on line image or pixel quick look analysis is required"
+    },
+    {
+      "req_id": "AUTO-0141",
+      "text": "The following statements are proposed: “It shall be possible to monitor the quality (image quality, spectral resolution, signal to noise, etc.) of the astronomical data as it comes in.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the following statements are proposed it shall be possible to monitor the quality image quality spectral resolution signal to noise etc of the astronomical data as it comes in"
+    },
+    {
+      "req_id": "AUTO-0142",
+      "text": "Standard reduction procedures should be available for basic on-line calibrations of the observed data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "standard reduction procedures should be available for basic on line calibrations of the observed data"
+    },
+    {
+      "req_id": "AUTO-0143",
+      "text": "Advanced pipeline procedures might make this feasible, at least for observations of a standard nature.” The above statements deﬁne the goal of quick-look analysis for the Gemini 8m Telescopes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "advanced pipeline procedures might make this feasible at least for observations of a standard nature the above statements de ne the goal of quick look analysis for the gemini 8m telescopes"
+    },
+    {
+      "req_id": "AUTO-0144",
+      "text": "Quick-look data processing should be provided on the Gemini 8m Telescopes, with procedures suitable for fast on-line data preprocessing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quick look data processing should be provided on the gemini 8m telescopes with procedures suitable for fast on line data preprocessing"
+    },
+    {
+      "req_id": "AUTO-0145",
+      "text": "Quick-look should be usable within exposure sequences to provide results and feedback parameters to the control software in a programmed way, without the need for manual intervention.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quick look should be usable within exposure sequences to provide results and feedback parameters to the control software in a programmed way without the need for manual intervention"
+    },
+    {
+      "req_id": "AUTO-0146",
+      "text": "This document does not try to be speciﬁc about the requirements for Quick-look other than that it should be synchronous.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this document does not try to be speci c about the requirements for quick look other than that it should be synchronous"
+    },
+    {
+      "req_id": "AUTO-0147",
+      "text": "Near-line processing should be available for simple data reductions required for data integrity validation (i.e.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "near line processing should be available for simple data reductions required for data integrity validation i e"
+    },
+    {
+      "req_id": "AUTO-0148",
+      "text": "Off-line pixel processing for full data reduction should also exist at the Gemini 8m Telescopes site, but does not have any interface to the Gemini 8m Telescopes software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "off line pixel processing for full data reduction should also exist at the gemini 8m telescopes site but does not have any interface to the gemini 8m telescopes software"
+    },
+    {
+      "req_id": "AUTO-0149",
+      "text": "The Astronomical communities have made considerable investments in image processing software, and therefore, compatibility with and adaptations to these packages must be sought.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the astronomical communities have made considerable investments in image processing software and therefore compatibility with and adaptations to these packages must be sought"
+    },
+    {
+      "req_id": "AUTO-0150",
+      "text": "EXTERNAL INTERFACE REQUIREMENTS It should also be noted that some Gemini 8m Telescopes subsystems, such as adaptive optics, may require their own special on-line pixel processing software, which is better deﬁned in the requirements for those subsystems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "external interface requirements it should also be noted that some gemini 8m telescopes subsystems such as adaptive optics may require their own special on line pixel processing software which is better de ned in the requirements for those subsystems"
+    },
+    {
+      "req_id": "AUTO-0151",
+      "text": "In all these cases the speciﬁc on-line (quick-look) software development shall be seen as a subset of the development for the off-line data reduction system, to avoid as far as possible duplication of development effort.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in all these cases the speci c on line quick look software development shall be seen as a subset of the development for the off line data reduction system to avoid as far as possible duplication of development effort"
+    },
+    {
+      "req_id": "AUTO-0152",
+      "text": "On-line access to catalogules and previous data The output format of the Gemini 8m Telescopes data must be compatible with the GEMINI archive requirements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "on line access to catalogules and previous data the output format of the gemini 8m telescopes data must be compatible with the gemini archive requirements"
+    },
+    {
+      "req_id": "AUTO-0153",
+      "text": "As comparisons with previous data might be of great value and affect the actual observing program, on-line interactive access to the data archiving system should exist, so that access to this database is possible for Gemini 8m Telescopes users.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "as comparisons with previous data might be of great value and affect the actual observing program on line interactive access to the data archiving system should exist so that access to this database is possible for gemini 8m telescopes users"
+    },
+    {
+      "req_id": "AUTO-0154",
+      "text": "Computer access to star catalogues is also required, so that an automatic selection of candidate guide and standard stars can be made.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "computer access to star catalogues is also required so that an automatic selection of candidate guide and standard stars can be made"
+    },
+    {
+      "req_id": "AUTO-0155",
+      "text": "Access to other packages The Gemini 8m Telescopes software must be able to interface with all commercial software packages available on the Gemini 8m Telescopes and integrated into the Gemini 8m Telescopes operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "access to other packages the gemini 8m telescopes software must be able to interface with all commercial software packages available on the gemini 8m telescopes and integrated into the gemini 8m telescopes operation"
+    },
+    {
+      "req_id": "AUTO-0156",
+      "text": "Local area network (LAN) The LAN shall support the majority of the Gemini 8m Telescopes system internal communication needs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "local area network lan the lan shall support the majority of the gemini 8m telescopes system internal communication needs"
+    },
+    {
+      "req_id": "AUTO-0157",
+      "text": "This LAN must be capable of dealing both with the data bandwidths required (at peak and on average) and with the required response times and synchronization needs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this lan must be capable of dealing both with the data bandwidths required at peak and on average and with the required response times and synchronization needs"
+    },
+    {
+      "req_id": "AUTO-0158",
+      "text": "This LAN shall be supplemented with a Local Time Bus, for distribution of absolute and relative time signals, and both a digital reﬂective memory bus and an analog event-based bus, for distribution of signals with requirements not satisﬁed by a LAN.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this lan shall be supplemented with a local time bus for distribution of absolute and relative time signals and both a digital re ective memory bus and an analog event based bus for distribution of signals with requirements not satis ed by a lan"
+    },
+    {
+      "req_id": "AUTO-0159",
+      "text": "This layer could be considered as internal to a given subsystem or instrument, but as more than one subsystem might need it, one should aim for a unique solution at the hardware and software level.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this layer could be considered as internal to a given subsystem or instrument but as more than one subsystem might need it one should aim for a unique solution at the hardware and software level"
+    },
+    {
+      "req_id": "AUTO-0160",
+      "text": "The required accuracy will be deﬁned in Section 2.9 on page 2- 19.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the required accuracy will be de ned in section 2 9 on page 2 19"
+    },
+    {
+      "req_id": "AUTO-0161",
+      "text": "No distinction is made here between WAN and point to point links as there shall be no difference in the software between the two cases.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "no distinction is made here between wan and point to point links as there shall be no difference in the software between the two cases"
+    },
+    {
+      "req_id": "AUTO-0162",
+      "text": "For maintenance reasons and hardware independence, a clear hierarchical model must be implemented, supporting separation of logical and physical layers, e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "for maintenance reasons and hardware independence a clear hierarchical model must be implemented supporting separation of logical and physical layers e g"
+    },
+    {
+      "req_id": "AUTO-0163",
+      "text": "Network redundancy should also be considered in the design phase as a way to increase reliability and security, in particular for control information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "network redundancy should also be considered in the design phase as a way to increase reliability and security in particular for control information"
+    },
+    {
+      "req_id": "AUTO-0164",
+      "text": "All essential tasks, not including remote observing, must take place on resources controlled by the project (such as leased lines).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all essential tasks not including remote observing must take place on resources controlled by the project such as leased lines"
+    },
+    {
+      "req_id": "AUTO-0165",
+      "text": "The use of these features must be limited and constrained by the following guidelines: Peer-to-peer connectivity should only be used to overcome a demonstrated performance problem.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the use of these features must be limited and constrained by the following guidelines peer to peer connectivity should only be used to overcome a demonstrated performance problem"
+    },
+    {
+      "req_id": "AUTO-0166",
+      "text": "To allow coordination both locally at the Gemini 8m Telescopes site between the various users and with remote users, the software shall support access to the system from any user station.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to allow coordination both locally at the gemini 8m telescopes site between the various users and with remote users the software shall support access to the system from any user station"
+    },
+    {
+      "req_id": "AUTO-0167",
+      "text": "This should greatly simplify the coordination problem posed by the large number of simultaneous users (as already described in the Capacity requirements, Section 3.2.2).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this should greatly simplify the coordination problem posed by the large number of simultaneous users as already described in the capacity requirements section 3 2 2"
+    },
+    {
+      "req_id": "AUTO-0168",
+      "text": "Computer hardware must be able to run the Gemini 8m Telescopes software environment (operating systems, Gemini 8m Telescopes software) and provide compatibility in data format (identical internal data representation).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "computer hardware must be able to run the gemini 8m telescopes software environment operating systems gemini 8m telescopes software and provide compatibility in data format identical internal data representation"
+    },
+    {
+      "req_id": "AUTO-0169",
+      "text": "In any case, remote operation must include remote monitoring from the Gemini 8m Telescopes base facilities, together with access tools for diagnostic and test use.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in any case remote operation must include remote monitoring from the gemini 8m telescopes base facilities together with access tools for diagnostic and test use"
+    },
+    {
+      "req_id": "AUTO-0170",
+      "text": "It should be a goal to support remote observing from the Gemini 8m Telescopes base facilities.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be a goal to support remote observing from the gemini 8m telescopes base facilities"
+    },
+    {
+      "req_id": "AUTO-0171",
+      "text": "These are: Individual instruments must be able to run fully independently.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these are individual instruments must be able to run fully independently"
+    },
+    {
+      "req_id": "AUTO-0172",
+      "text": "Telescope software at the two telescopes must be maintained to be identical in the upper layers (even if hardware should differ).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "telescope software at the two telescopes must be maintained to be identical in the upper layers even if hardware should differ"
+    },
+    {
+      "req_id": "AUTO-0173",
+      "text": "Additions of new instruments should aim, as a goal, at introducing no modiﬁcation to already operational parts.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "additions of new instruments should aim as a goal at introducing no modi cation to already operational parts"
+    },
+    {
+      "req_id": "AUTO-0174",
+      "text": "Modiﬁcations should be conﬁned to the operational procedures and should not affect the bulk of the existing software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "modi cations should be con ned to the operational procedures and should not affect the bulk of the existing software"
+    },
+    {
+      "req_id": "AUTO-0175",
+      "text": ".Switching to different conﬁgurations must be possible at any time with appropriate procedures.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "switching to different con gurations must be possible at any time with appropriate procedures"
+    },
+    {
+      "req_id": "AUTO-0176",
+      "text": "There must be easy procedures to reconﬁgure the system when subsystems are modiﬁed or removed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there must be easy procedures to recon gure the system when subsystems are modi ed or removed"
+    },
+    {
+      "req_id": "AUTO-0177",
+      "text": "The number of main packages of software must be kept to a minimum to facilitate maintenance, but compatibly with the need to have the right degree of modularity.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the number of main packages of software must be kept to a minimum to facilitate maintenance but compatibly with the need to have the right degree of modularity"
+    },
+    {
+      "req_id": "AUTO-0178",
+      "text": "Commercial and public domain packages should be used whenever possible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "commercial and public domain packages should be used whenever possible"
+    },
+    {
+      "req_id": "AUTO-0179",
+      "text": "Existing software packages should be reused wherever possible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "existing software packages should be reused wherever possible"
+    },
+    {
+      "req_id": "AUTO-0180",
+      "text": "Existing software expertise should be consulted whenever possible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "existing software expertise should be consulted whenever possible"
+    },
+    {
+      "req_id": "AUTO-0181",
+      "text": "All software which does not directly control speciﬁc hardware must be written as machine independent, portable code.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all software which does not directly control speci c hardware must be written as machine independent portable code"
+    },
+    {
+      "req_id": "AUTO-0182",
+      "text": "Even for microprocessor software, the software should be hardware independent, to allow a later choice of the target microprocessors.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "even for microprocessor software the software should be hardware independent to allow a later choice of the target microprocessors"
+    },
+    {
+      "req_id": "AUTO-0183",
+      "text": "To allow for expansion and maintenance, Gemini 8m Telescopes standards must be deﬁned for the on-line software and the development environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to allow for expansion and maintenance gemini 8m telescopes standards must be de ned for the on line software and the development environment"
+    },
+    {
+      "req_id": "AUTO-0184",
+      "text": "On-line version control must be implemented.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "on line version control must be implemented"
+    },
+    {
+      "req_id": "AUTO-0185",
+      "text": "That is, the version control system must be available to recover/restore versions at all times.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "that is the version control system must be available to recover restore versions at all times"
+    },
+    {
+      "req_id": "AUTO-0186",
+      "text": ".At boot time, the Gemini 8m Telescopes software shall check the consistency of versions of all the various software components.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "at boot time the gemini 8m telescopes software shall check the consistency of versions of all the various software components"
+    },
+    {
+      "req_id": "AUTO-0187",
+      "text": ".Table-driven software should be used whenever possible, to avoid unnecessary compilations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "table driven software should be used whenever possible to avoid unnecessary compilations"
+    },
+    {
+      "req_id": "AUTO-0188",
+      "text": "Changing system constants, such as arcseconds/bit for an encoder, shall not require recompiling but will be updated as part of system startup, and, for some constants, will be modiﬁable during operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "changing system constants such as arcseconds bit for an encoder shall not require recompiling but will be updated as part of system startup and for some constants will be modi able during operation"
+    },
+    {
+      "req_id": "AUTO-0189",
+      "text": "Strict checking should be applied on this to preserve maintainability and reconﬁguration of the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "strict checking should be applied on this to preserve maintainability and recon guration of the system"
+    },
+    {
+      "req_id": "AUTO-0190",
+      "text": "To guarantee maximum availability of the control system, retry procedures must be embodied in the software in case of error or failure (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to guarantee maximum availability of the control system retry procedures must be embodied in the software in case of error or failure e g"
+    },
+    {
+      "req_id": "AUTO-0191",
+      "text": "time-out, hardware failure) to achieve recovery on-line whenever possible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "time out hardware failure to achieve recovery on line whenever possible"
+    },
+    {
+      "req_id": "AUTO-0192",
+      "text": "Should recovery also fail, the error or failure has to be reported in a clear form (to identify the cause of the problem) and the system shall put itself into a safe state, whenever a safety aspect might be involved.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "should recovery also fail the error or failure has to be reported in a clear form to identify the cause of the problem and the system shall put itself into a safe state whenever a safety aspect might be involved"
+    },
+    {
+      "req_id": "AUTO-0193",
+      "text": "This must be possible ahead of time, preparing observing sequences for automatic observations and simulating observations to estimate results.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this must be possible ahead of time preparing observing sequences for automatic observations and simulating observations to estimate results"
+    },
+    {
+      "req_id": "AUTO-0194",
+      "text": "On-line pre-checking of the operational status of equipment should be done prior to sending critical or time consuming commands.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "on line pre checking of the operational status of equipment should be done prior to sending critical or time consuming commands"
+    },
+    {
+      "req_id": "AUTO-0195",
+      "text": "It must be possible to apply continuous monitoring to all subsystems on request, both when in operation and when idle, to check their operational status.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it must be possible to apply continuous monitoring to all subsystems on request both when in operation and when idle to check their operational status"
+    },
+    {
+      "req_id": "AUTO-0196",
+      "text": "A measure of fault rates should be done during commissioning to establish baseline rates for system reliability monitoring.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a measure of fault rates should be done during commissioning to establish baseline rates for system reliability monitoring"
+    },
+    {
+      "req_id": "AUTO-0197",
+      "text": "The system should be constantly monitoring active subsystems to be sure they are operating correctly before sending command to each subsystem.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should be constantly monitoring active subsystems to be sure they are operating correctly before sending command to each subsystem"
+    },
+    {
+      "req_id": "AUTO-0198",
+      "text": "This monitoring should continue on inactive subsystems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this monitoring should continue on inactive subsystems"
+    },
+    {
+      "req_id": "AUTO-0199",
+      "text": "The plan will consider: Maintenance requirements including an estimate of required resources.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the plan will consider maintenance requirements including an estimate of required resources"
+    },
+    {
+      "req_id": "AUTO-0200",
+      "text": "Areas where upgrades are anticipated should be identiﬁed with an estimate of the required effort and resources.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "areas where upgrades are anticipated should be identi ed with an estimate of the required effort and resources"
+    },
+    {
+      "req_id": "AUTO-0201",
+      "text": "Simple mechanisms should exist for replacing a subsystem with its simulation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "simple mechanisms should exist for replacing a subsystem with its simulation"
+    },
+    {
+      "req_id": "AUTO-0202",
+      "text": "The following self-check levels are to be supplied with sub-system software: Monitor level Each subsystem should have a background task running whenever that subsystem is operational, performing such tasks as checking power supply levels, temperatures, performance, correct responses to commands.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the following self check levels are to be supplied with sub system software monitor level each subsystem should have a background task running whenever that subsystem is operational performing such tasks as checking power supply levels temperatures performance correct responses to commands"
+    },
+    {
+      "req_id": "AUTO-0203",
+      "text": "Each subsystem should provide a module for fully exercising all subsystem components, both hardware and software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "each subsystem should provide a module for fully exercising all subsystem components both hardware and software"
+    },
+    {
+      "req_id": "AUTO-0204",
+      "text": "Levels of Maintenance The levels at which maintenance may be performed are: Organizational level These should be done in situ during an observing session.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "levels of maintenance the levels at which maintenance may be performed are organizational level these should be done in situ during an observing session"
+    },
+    {
+      "req_id": "AUTO-0205",
+      "text": "The requirements must be achievable and stated in such a way that veriﬁcation is permitted.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the requirements must be achievable and stated in such a way that veri cation is permitted"
+    },
+    {
+      "req_id": "AUTO-0206",
+      "text": "Security and Safety Requirements The Gemini system must be self-monitoring to invoke safety monitoring to prevent risk to people or damage to equipment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "security and safety requirements the gemini system must be self monitoring to invoke safety monitoring to prevent risk to people or damage to equipment"
+    },
+    {
+      "req_id": "AUTO-0207",
+      "text": "The software should be able to quickly bring the Gemini system to a safe state upon notiﬁcation of such danger.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the software should be able to quickly bring the gemini system to a safe state upon noti cation of such danger"
+    },
+    {
+      "req_id": "AUTO-0208",
+      "text": "Subsystems must be able to detect such danger and report it appropriately.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "subsystems must be able to detect such danger and report it appropriately"
+    },
+    {
+      "req_id": "AUTO-0209",
+      "text": "In the event that the risk persists, subsystems must be able to move themselves into safe states to protect people and equipment (i.e.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the event that the risk persists subsystems must be able to move themselves into safe states to protect people and equipment i e"
+    },
+    {
+      "req_id": "AUTO-0210",
+      "text": "Safety protection must be applied whenever there is the risk that the actions of the control software could endanger people or cause damage to any Gemini 8m Telescopes subsystem, for example, by driving beyond limits or by overexposing detectors.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "safety protection must be applied whenever there is the risk that the actions of the control software could endanger people or cause damage to any gemini 8m telescopes subsystem for example by driving beyond limits or by overexposing detectors"
+    },
+    {
+      "req_id": "AUTO-0211",
+      "text": "This protection, where implemented, must be independent of the software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this protection where implemented must be independent of the software"
+    },
+    {
+      "req_id": "AUTO-0212",
+      "text": "the software/electrical systems will allow movement off of hard limits hardware interlocks - these will prevent both software and hardware from action - there will be no bypass of these systems hard stops - the mechanism cannot move beyond this point due to mechanical limit(s).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the software electrical systems will allow movement off of hard limits hardware interlocks these will prevent both software and hardware from action there will be no bypass of these systems hard stops the mechanism cannot move beyond this point due to mechanical limit s"
+    },
+    {
+      "req_id": "AUTO-0213",
+      "text": "The Gemini 8m Telescopes software shall be able to bring the Gemini 8m Telescopes system quickly to a safe state upon detection of danger.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the gemini 8m telescopes software shall be able to bring the gemini 8m telescopes system quickly to a safe state upon detection of danger"
+    },
+    {
+      "req_id": "AUTO-0214",
+      "text": "Safety aspects shall be analyzed during the functional speciﬁcation phase of the software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "safety aspects shall be analyzed during the functional speci cation phase of the software"
+    },
+    {
+      "req_id": "AUTO-0215",
+      "text": "Security must be provided in order to both prevent accidental mix-up of commands from different users on different parts of the system and to prevent intrusion from the wide area network into the Gemini 8m Telescopes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "security must be provided in order to both prevent accidental mix up of commands from different users on different parts of the system and to prevent intrusion from the wide area network into the gemini 8m telescopes"
+    },
+    {
+      "req_id": "AUTO-0216",
+      "text": "In particular, the astronomical database must be protected from intrusion, whether the purpose is to access private data or to be destructive.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in particular the astronomical database must be protected from intrusion whether the purpose is to access private data or to be destructive"
+    },
+    {
+      "req_id": "AUTO-0217",
+      "text": "A system that is operating in Engineering/Maintenance mode must ignore directives from other systems, though status information should still be provided for use by other systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "a system that is operating in engineering maintenance mode must ignore directives from other systems though status information should still be provided for use by other systems"
+    },
+    {
+      "req_id": "AUTO-0218",
+      "text": "There should be security preventing the intrusion into the system by unauthorized users, or users at unauthorized access levels.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there should be security preventing the intrusion into the system by unauthorized users or users at unauthorized access levels"
+    },
+    {
+      "req_id": "AUTO-0219",
+      "text": "This interlock must not depend on any software for reliable operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this interlock must not depend on any software for reliable operation"
+    },
+    {
+      "req_id": "AUTO-0220",
+      "text": "The interlock philosophy is as follows: All hazards capable of causing death and/or loss of irreplacable equipment shall be passively interlocked.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the interlock philosophy is as follows all hazards capable of causing death and or loss of irreplacable equipment shall be passively interlocked"
+    },
+    {
+      "req_id": "AUTO-0221",
+      "text": "All hazards capable of causing injury and/or severe damage to equipment shall be actively interlocked (severe damage implies that repairs are not repairable at the depot level All other hazards may be interlocked via software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all hazards capable of causing injury and or severe damage to equipment shall be actively interlocked severe damage implies that repairs are not repairable at the depot level all other hazards may be interlocked via software"
+    },
+    {
+      "req_id": "AUTO-0222",
+      "text": "minimize risks created by human error use interlocks and other protective devices when hazards cannot be eliminated provide distinctive markings and warnings to protect people testabilty A Controls Test Plan is part of the Gemini Control System.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "minimize risks created by human error use interlocks and other protective devices when hazards cannot be eliminated provide distinctive markings and warnings to protect people testabilty a controls test plan is part of the gemini control system"
+    },
+    {
+      "req_id": "AUTO-0223",
+      "text": "The software itself, its installation process, and its documentation must be developed with this expandability in mind, using general industry standards.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the software itself its installation process and its documentation must be developed with this expandability in mind using general industry standards"
+    },
+    {
+      "req_id": "AUTO-0224",
+      "text": "Module selection should be done in logical fashion to minimize the size of the interfaces between modules.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "module selection should be done in logical fashion to minimize the size of the interfaces between modules"
+    },
+    {
+      "req_id": "AUTO-0225",
+      "text": "The software must be strictly modular, i.e.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the software must be strictly modular i e"
+    },
+    {
+      "req_id": "AUTO-0226",
+      "text": "At the same time, the possibility must exist to acquire information about other parts of the system (for example, telescope coordinates) (as mentioned in the control ﬂow requirements in Section 3.1.1).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "at the same time the possibility must exist to acquire information about other parts of the system for example telescope coordinates as mentioned in the control ow requirements in section 3 1 1"
+    },
+    {
+      "req_id": "AUTO-0227",
+      "text": "The security and safety of the system should be guaranteed even in the event of failure of any component, including the higher-level software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the security and safety of the system should be guaranteed even in the event of failure of any component including the higher level software"
+    },
+    {
+      "req_id": "AUTO-0228",
+      "text": "The Telescope Control System should be capable of detecting and invoking parallel operation as it is responsible for control of all of the telescope and enclosure subsystems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the telescope control system should be capable of detecting and invoking parallel operation as it is responsible for control of all of the telescope and enclosure subsystems"
+    },
+    {
+      "req_id": "AUTO-0229",
+      "text": "The following criteria for later selection shall be kept in mind: Emphasis on development and productivity requirements, including cross support tools Portability of software (target hardware independence) Hardware and vendor independence Use of industrial and defacto standards.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the following criteria for later selection shall be kept in mind emphasis on development and productivity requirements including cross support tools portability of software target hardware independence hardware and vendor independence use of industrial and defacto standards"
+    },
+    {
+      "req_id": "AUTO-0230",
+      "text": "Installation aspects Test procedure methods have to be deﬁned in the Software Test Plan (STP), while test plans shall be written for all individual software packages and modules comprising the Gemini 8m Telescopes software.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "installation aspects test procedure methods have to be de ned in the software test plan stp while test plans shall be written for all individual software packages and modules comprising the gemini 8m telescopes software"
+    },
+    {
+      "req_id": "AUTO-0231",
+      "text": "Apart from the component and integration test procedures, a formal release system should exist at package and module level, which should be checkable on-line by the operational procedures for consistency.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "apart from the component and integration test procedures a formal release system should exist at package and module level which should be checkable on line by the operational procedures for consistency"
+    },
+    {
+      "req_id": "AUTO-0232",
+      "text": "Every system must thus be able to supply its current version upon request.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "every system must thus be able to supply its current version upon request"
+    },
+    {
+      "req_id": "AUTO-0233",
+      "text": "The on-line databases can be considered part of this interface, but are only accessible Reliability and availability A measure of fault rates should be done during commissioning to establish baseline rates for system reliability monitoring.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the on line databases can be considered part of this interface but are only accessible reliability and availability a measure of fault rates should be done during commissioning to establish baseline rates for system reliability monitoring"
+    },
+    {
+      "req_id": "AUTO-0234",
+      "text": "During science planning, there should be validity and feasibility checks to help ensure effective and efﬁcient use of the telescope.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "during science planning there should be validity and feasibility checks to help ensure effective and ef cient use of the telescope"
+    },
+    {
+      "req_id": "AUTO-0235",
+      "text": "Where appropriate, these checks should also be performed during operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "where appropriate these checks should also be performed during operation"
+    },
+    {
+      "req_id": "AUTO-0236",
+      "text": "The system should be constantly monitoring active subsystems to be sure they are operating correctly before sending commands to each subsystem.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should be constantly monitoring active subsystems to be sure they are operating correctly before sending commands to each subsystem"
+    },
+    {
+      "req_id": "AUTO-0237",
+      "text": "The database must support both remote access and distributed data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the database must support both remote access and distributed data"
+    },
+    {
+      "req_id": "AUTO-0238",
+      "text": "This means the video data signals must be encoded digitally and transferred via the WAN to remote sites.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this means the video data signals must be encoded digitally and transferred via the wan to remote sites"
+    },
+    {
+      "req_id": "AUTO-0239",
+      "text": "There must be some form of security to control access to system features, possibly restricting some operations to speciﬁc remote sites (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there must be some form of security to control access to system features possibly restricting some operations to speci c remote sites e g"
+    },
+    {
+      "req_id": "AUTO-0240",
+      "text": "(developed software) All additional data that is not required on line (conﬁguration information, detailed documentation, operation logs, etc.) are stored in a relational DBMS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "developed software all additional data that is not required on line con guration information detailed documentation operation logs etc are stored in a relational dbms"
+    },
+    {
+      "req_id": "AUTO-0241",
+      "text": "To improve this performance, all possible concurrencies in system operation should be used.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to improve this performance all possible concurrencies in system operation should be used"
+    },
+    {
+      "req_id": "AUTO-0242",
+      "text": "There are start-up and shut-down procedures that must exist at many different levels: Cold start-up, starting the system from scratch (including time to download all software) should take about 5 minutes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there are start up and shut down procedures that must exist at many different levels cold start up starting the system from scratch including time to download all software should take about 5 minutes"
+    },
+    {
+      "req_id": "AUTO-0243",
+      "text": "Warm start-up, starting from scratch but also excluding software download time should take about 1 minute.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "warm start up starting from scratch but also excluding software download time should take about 1 minute"
+    },
+    {
+      "req_id": "AUTO-0244",
+      "text": "Telescope start-up, measured from end of cold or warm start-up should be about 4 minutes.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "telescope start up measured from end of cold or warm start up should be about 4 minutes"
+    },
+    {
+      "req_id": "AUTO-0245",
+      "text": "Instrument start-up, measured from end of telescope start-up, should take 2 minutes or less.There must be a way to shut down all subsystems (hardware and software).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "instrument start up measured from end of telescope start up should take 2 minutes or less there must be a way to shut down all subsystems hardware and software"
+    },
+    {
+      "req_id": "AUTO-0246",
+      "text": "Logging System logging information should include all important events, properly timestamped and indexed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "logging system logging information should include all important events properly timestamped and indexed"
+    },
+    {
+      "req_id": "AUTO-0247",
+      "text": "Engineering Logging It must be possible to log engineering data at up to 200 Hz rates for short periods of time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "engineering logging it must be possible to log engineering data at up to 200 hz rates for short periods of time"
+    },
+    {
+      "req_id": "AUTO-0248",
+      "text": "This data must be available to external software packages for analysis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this data must be available to external software packages for analysis"
+    },
+    {
+      "req_id": "AUTO-0249",
+      "text": "Long-term logging of engineering data must be possible at slower (1 Hz or less) rates, into a common format (baselined as SYBASE).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "long term logging of engineering data must be possible at slower 1 hz or less rates into a common format baselined as sybase"
+    },
+    {
+      "req_id": "AUTO-0250",
+      "text": "Serious Under serious errors, the system does not need to move off-line, but the current operation cannot be completed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "serious under serious errors the system does not need to move off line but the current operation cannot be completed"
+    },
+    {
+      "req_id": "AUTO-0251",
+      "text": "All subsystems must group errors into these categories.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all subsystems must group errors into these categories"
+    },
+    {
+      "req_id": "AUTO-0252",
+      "text": "In addition, errors that result in an \"alarm\" should be described, along with the proper action required to acknowledge and eliminate the alarm condition.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in addition errors that result in an alarm should be described along with the proper action required to acknowledge and eliminate the alarm condition"
+    },
+    {
+      "req_id": "AUTO-0253",
+      "text": "Besides the time-stamp, error logging should provide enough information to trace the condition back to its apparent source, both in equipment and in event sequence.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "besides the time stamp error logging should provide enough information to trace the condition back to its apparent source both in equipment and in event sequence"
+    },
+    {
+      "req_id": "AUTO-0254",
+      "text": "There should be tools available to extract error (and other) logging information by subsystem component, time- sequence, previous events, and so on.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there should be tools available to extract error and other logging information by subsystem component time sequence previous events and so on"
+    },
+    {
+      "req_id": "AUTO-0255",
+      "text": "Recovery In addition to start-up procedures, there must be well-deﬁned recovery procedures for any subsystem that has become inoperative.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "recovery in addition to start up procedures there must be well de ned recovery procedures for any subsystem that has become inoperative"
+    },
+    {
+      "req_id": "AUTO-0256",
+      "text": "Command retries must be included in the system for most common timeouts or noresponse conditions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "command retries must be included in the system for most common timeouts or noresponse conditions"
+    },
+    {
+      "req_id": "AUTO-0257",
+      "text": "These retries should occur automatically in the command handling to avoid unnecessary error conditions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these retries should occur automatically in the command handling to avoid unnecessary error conditions"
+    },
+    {
+      "req_id": "AUTO-0258",
+      "text": "other errors may result in operation with a different instrument Under normal conditions, the number of warnings should be small.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "other errors may result in operation with a different instrument under normal conditions the number of warnings should be small"
+    },
+    {
+      "req_id": "AUTO-0259",
+      "text": "The system should monitor the rate of warning messages since an increase might indicate that some tuning or maintenance is appropriate.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should monitor the rate of warning messages since an increase might indicate that some tuning or maintenance is appropriate"
+    },
+    {
+      "req_id": "AUTO-0260",
+      "text": "Ideally, such conditions should be noted by the subsystems before reaching the OCS level.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "ideally such conditions should be noted by the subsystems before reaching the ocs level"
+    },
+    {
+      "req_id": "AUTO-0261",
+      "text": "That is, failure of one subsystem should not affect other, working, subsystems, including communication links.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "that is failure of one subsystem should not affect other working subsystems including communication links"
+    },
+    {
+      "req_id": "AUTO-0262",
+      "text": "An object-oriented approach is encouraged but not required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "an object oriented approach is encouraged but not required"
+    },
+    {
+      "req_id": "AUTO-0263",
+      "text": "Real-time support is required at the IOC level.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "real time support is required at the ioc level"
+    },
+    {
+      "req_id": "AUTO-0264",
+      "text": "Any special needs that cannot be acceptably met by the available operating system calls are to be discussed with the GPO on a case-by-case basis.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "any special needs that cannot be acceptably met by the available operating system calls are to be discussed with the gpo on a case by case basis"
+    },
+    {
+      "req_id": "AUTO-0265",
+      "text": "The GNU software tool suite should be used where possible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the gnu software tool suite should be used where possible"
+    },
+    {
+      "req_id": "AUTO-0266",
+      "text": "There is likely to be software below the IOC level, but it should not require downloading, except possibly for upgrades, typically being placed into ROM or FLASH memory.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there is likely to be software below the ioc level but it should not require downloading except possibly for upgrades typically being placed into rom or flash memory"
+    },
+    {
+      "req_id": "AUTO-0267",
+      "text": "The communication software must support the standard ARPA services (telnet, FTP, SMTP, etc) as well as NFS, RPC, IPC, and the Unix socket interface library.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the communication software must support the standard arpa services telnet ftp smtp etc as well as nfs rpc ipc and the unix socket interface library"
+    },
+    {
+      "req_id": "AUTO-0268",
+      "text": "These interface routines are part of the Gemini software and must conform to the standards given in this document.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "these interface routines are part of the gemini software and must conform to the standards given in this document"
+    },
+    {
+      "req_id": "AUTO-0269",
+      "text": "Harware requirements The computer hardware used for development must conform to the following: Workstations must match speciﬁed software standards and present a well-designed development environment, including cross-support for VxWorks development, if needed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "harware requirements the computer hardware used for development must conform to the following workstations must match speci ed software standards and present a well designed development environment including cross support for vxworks development if needed"
+    },
+    {
+      "req_id": "AUTO-0270",
+      "text": "Internal data formats must be compatible across workstations used for development.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "internal data formats must be compatible across workstations used for development"
+    },
+    {
+      "req_id": "AUTO-0271",
+      "text": "Peripherals Workstations are to have at least 2GB of disk.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "peripherals workstations are to have at least 2gb of disk"
+    },
+    {
+      "req_id": "AUTO-0272",
+      "text": "Communication hardware All communication hardware must meet the data ﬂow requirements and software protocols deﬁned in this document.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "communication hardware all communication hardware must meet the data ow requirements and software protocols de ned in this document"
+    },
+    {
+      "req_id": "AUTO-0273",
+      "text": "The detector LAN is also based on Ethernet, at least for the development systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the detector lan is also based on ethernet at least for the development systems"
+    },
+    {
+      "req_id": "AUTO-0274",
+      "text": "The backbone LAN cannot be Ethernet because of bandwidth requirements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the backbone lan cannot be ethernet because of bandwidth requirements"
+    },
+    {
+      "req_id": "AUTO-0275",
+      "text": "Interlock connections must be provided for all critical subsystems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "interlock connections must be provided for all critical subsystems"
+    },
+    {
+      "req_id": "AUTO-0276",
+      "text": "There is a requirement of at least one dedicated link of a T1 bandwidth for remote support, development and testing.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "there is a requirement of at least one dedicated link of a t1 bandwidth for remote support development and testing"
+    },
+    {
+      "req_id": "AUTO-0277",
+      "text": "The ﬁrst ﬁeld of every database record holds the record name, which must be unique across all IOCs attached to the same TCP/IP subnet.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the rst eld of every database record holds the record name which must be unique across all iocs attached to the same tcp ip subnet"
+    },
+    {
+      "req_id": "AUTO-0278",
+      "text": "An IOC device driver interrupt routine must be available to accept the external interrupts.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "an ioc device driver interrupt routine must be available to accept the external interrupts"
+    },
+    {
+      "req_id": "AUTO-0279",
+      "text": "Every record support module must provide a record processing routine.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "every record support module must provide a record processing routine"
+    },
+    {
+      "req_id": "AUTO-0280",
+      "text": "No other software should use the database monitors.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "no other software should use the database monitors"
+    },
+    {
+      "req_id": "AUTO-0281",
+      "text": "It should be noted that channel access does not provide access to database records as records.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "it should be noted that channel access does not provide access to database records as records"
+    },
+    {
+      "req_id": "AUTO-0282",
+      "text": "Required developer skills For each class of developer a speciﬁc set of skills is required.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "required developer skills for each class of developer a speci c set of skills is required"
+    },
+    {
+      "req_id": "AUTO-0283",
+      "text": "Because the experimental areas must be coordinated with the main facility control system and since 25% of the beamtime must be made available to independent investigators it was strongly recommended that EPICS be used as the toolkit for all CATS development work.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "because the experimental areas must be coordinated with the main facility control system and since 25 of the beamtime must be made available to independent investigators it was strongly recommended that epics be used as the toolkit for all cats development work"
+    },
+    {
+      "req_id": "AUTO-0284",
+      "text": "In this project, the only required IOC-based Internals work is the creation of record, device, and driver support for three VME I/O cards.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in this project the only required ioc based internals work is the creation of record device and driver support for three vme i o cards"
+    },
+    {
+      "req_id": "AUTO-0285",
+      "text": "General purpose commands This section presents the “generic” commands that all Gemini systems must respond to.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "general purpose commands this section presents the generic commands that all gemini systems must respond to"
+    },
+    {
+      "req_id": "AUTO-0286",
+      "text": "Time Handling Time synchronization is commonly required among control subsystems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "time handling time synchronization is commonly required among control subsystems"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 286,
+    "total_count": 286
+  }
+}

@@ -1,0 +1,24 @@
+## Python environments
+venv/
+.venv/
+
+## Python caches
+__pycache__/
+*.py[cod]
+
+## Jupyter
+.ipynb_checkpoints/
+
+## Generated artifacts
+outputs/
+data/outputs/
+
+## Temporary eval files
+**/evaluation_tmp.json
+
+## Cached model/provider raw responses
+**/*.raw_response.json
+
+## OS/editor noise
+.DS_Store
+

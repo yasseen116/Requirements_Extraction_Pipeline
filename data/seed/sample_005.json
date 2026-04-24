@@ -1,0 +1,37 @@
+{
+  "id": "sample_005",
+  "dialogue": [
+    {"role": "bot", "text": "What kind of system do you want?"},
+    {"role": "user", "text": "a student portal for a university"},
+    {"role": "bot", "text": "Who will use it?"},
+    {"role": "user", "text": "students, instructors, and admins"},
+    {"role": "bot", "text": "What should users be able to do?"},
+    {"role": "user", "text": "see grades, register courses, and download materials"},
+    {"role": "bot", "text": "Do users need login or authentication?"},
+    {"role": "user", "text": "of course, university accounts"},
+    {"role": "bot", "text": "Any speed or performance requirements?"},
+    {"role": "user", "text": "pages should not lag, especially during registration"},
+    {"role": "bot", "text": "Any security requirements?"},
+    {"role": "user", "text": "grades and personal info should be protected"}
+  ],
+  "slots": {
+    "project_type": "university student portal",
+    "users": ["student", "instructor", "admin"],
+    "core_features": ["view grades", "register courses", "download materials"],
+    "authentication": ["university account login"],
+    "performance_constraints": ["stable performance during registration periods"],
+    "security_constraints": ["protect grades", "protect personal information"]
+  },
+  "requirements": {
+    "functional": [
+      "The system shall allow users to sign in using university accounts.",
+      "The system shall allow students to view grades.",
+      "The system shall allow students to register for courses.",
+      "The system shall allow students to download course materials."
+    ],
+    "non_functional": [
+      "The system shall maintain stable performance during course registration periods.",
+      "The system shall protect student grades and personal information."
+    ]
+  }
+}

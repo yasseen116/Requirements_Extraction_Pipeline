@@ -1,0 +1,498 @@
+{
+  "sample_id": "manual_001_amazing_lunch_indicator",
+  "metadata": {
+    "domain": "restaurant_discovery",
+    "source_type": "manual",
+    "parent_id": null,
+    "split": "train",
+    "dialogue_style": "noisy"
+  },
+  "source": {
+    "dataset": "software_requirements_dataset",
+    "dataset_doi": "10.5281/zenodo.7897601",
+    "record_url": "https://zenodo.org/records/7897601",
+    "document_id": "c01_amazing_lunch_indicator",
+    "source_sentence_ids": [
+      "FR3",
+      "FR4",
+      "FR6",
+      "FR7",
+      "FR8",
+      "FR9",
+      "FR11",
+      "QR6",
+      "QR8",
+      "QR12",
+      "QR15"
+    ]
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "What kind of system do you want?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "A mobile app that helps people find nearby restaurants and check their details."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Who will use it?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "Normal users on their phones, restaurant owners on a web portal, and admins."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "What should users be able to do?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "Users should search for restaurants, switch between map and list results, open detailed restaurant info, and get GPS navigation. Restaurant owners should manage restaurant info, and admins should verify owners."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "Do users need login or authentication?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "Yeah, users should log in on the mobile app, and owners plus admins need portal accounts too."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "Are there performance requirements?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "Search should come back in 2 seconds max, and if GPS or internet drops, the app should tell the user."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "Are there security requirements?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "Login messages have to be encrypted, and after three failed portal logins it should lock things for half an hour."
+    }
+  ],
+  "slots": {
+    "system_type": {
+      "value": "restaurant discovery mobile application",
+      "evidence_turns": [
+        2
+      ]
+    },
+    "user_roles": [
+      {
+        "value": "users",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "value": "restaurant owners",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "value": "administrators",
+        "evidence_turns": [
+          4
+        ]
+      }
+    ],
+    "functional_capabilities": [
+      {
+        "actor": "users",
+        "action": "search for restaurants using multiple search options",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "actor": "users",
+        "action": "view restaurant results in map and list views",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "actor": "users",
+        "action": "open detailed restaurant information pages",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "actor": "users",
+        "action": "navigate to a selected restaurant using GPS",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "actor": "restaurant owners",
+        "action": "manage restaurant information through the web portal",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "actor": "administrators",
+        "action": "verify restaurant owners",
+        "evidence_turns": [
+          6
+        ]
+      }
+    ],
+    "authentication": {
+      "required": true,
+      "methods": [
+        "mobile app username/password login",
+        "web portal username/password login"
+      ],
+      "evidence_turns": [
+        8
+      ]
+    },
+    "performance_constraints": [
+      {
+        "text": "return search results within 2 seconds",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "text": "inform the user if internet or GPS connectivity is lost",
+        "evidence_turns": [
+          10
+        ]
+      }
+    ],
+    "security_constraints": [
+      {
+        "text": "encrypt log-in communication messages",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "text": "disable restaurant owner and administrator log-in for 30 minutes after three failed attempts",
+        "evidence_turns": [
+          12
+        ]
+      }
+    ]
+  },
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR1",
+        "text": "The system shall support authentication using mobile app username/password login and web portal username/password login.",
+        "source_slots": [
+          "authentication"
+        ]
+      },
+      {
+        "id": "FR2",
+        "text": "The system shall allow users to search for restaurants using multiple search options.",
+        "source_slots": [
+          "functional_capabilities[0]"
+        ]
+      },
+      {
+        "id": "FR3",
+        "text": "The system shall allow users to view restaurant results in map and list views.",
+        "source_slots": [
+          "functional_capabilities[1]"
+        ]
+      },
+      {
+        "id": "FR4",
+        "text": "The system shall allow users to open detailed restaurant information pages.",
+        "source_slots": [
+          "functional_capabilities[2]"
+        ]
+      },
+      {
+        "id": "FR5",
+        "text": "The system shall allow users to navigate to a selected restaurant using GPS.",
+        "source_slots": [
+          "functional_capabilities[3]"
+        ]
+      },
+      {
+        "id": "FR6",
+        "text": "The system shall allow restaurant owners to manage restaurant information through the web portal.",
+        "source_slots": [
+          "functional_capabilities[4]"
+        ]
+      },
+      {
+        "id": "FR7",
+        "text": "The system shall allow administrators to verify restaurant owners.",
+        "source_slots": [
+          "functional_capabilities[5]"
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR1",
+        "category": "performance",
+        "text": "The system shall return search results within 2 seconds.",
+        "source_slots": [
+          "performance_constraints[0]"
+        ]
+      },
+      {
+        "id": "NFR2",
+        "category": "performance",
+        "text": "The system shall inform the user if internet or GPS connectivity is lost.",
+        "source_slots": [
+          "performance_constraints[1]"
+        ]
+      },
+      {
+        "id": "NFR3",
+        "category": "security",
+        "text": "The system shall encrypt log-in communication messages.",
+        "source_slots": [
+          "security_constraints[0]"
+        ]
+      },
+      {
+        "id": "NFR4",
+        "category": "security",
+        "text": "The system shall disable restaurant owner and administrator log-in for 30 minutes after three failed attempts.",
+        "source_slots": [
+          "security_constraints[1]"
+        ]
+      }
+    ]
+  },
+  "frames": [
+    {
+      "frame_id": "F1",
+      "kind": "system_context",
+      "actor": null,
+      "action": "system_type",
+      "object": "restaurant discovery mobile application",
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        2
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F2",
+      "kind": "user_role",
+      "actor": "users",
+      "action": "user_role",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        4
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F3",
+      "kind": "user_role",
+      "actor": "restaurant owners",
+      "action": "user_role",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        4
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F4",
+      "kind": "user_role",
+      "actor": "administrators",
+      "action": "user_role",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        4
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F5",
+      "kind": "functional_capability",
+      "actor": "users",
+      "action": "search for restaurants using multiple search options",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        6
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F6",
+      "kind": "functional_capability",
+      "actor": "users",
+      "action": "view restaurant results in map and list views",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        6
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F7",
+      "kind": "functional_capability",
+      "actor": "users",
+      "action": "open detailed restaurant information pages",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        6
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F8",
+      "kind": "functional_capability",
+      "actor": "users",
+      "action": "navigate to a selected restaurant using GPS",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        6
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F9",
+      "kind": "functional_capability",
+      "actor": "restaurant owners",
+      "action": "manage restaurant information through the web portal",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        6
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F10",
+      "kind": "functional_capability",
+      "actor": "administrators",
+      "action": "verify restaurant owners",
+      "object": null,
+      "constraint": null,
+      "channel": null,
+      "evidence_turns": [
+        6
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F11",
+      "kind": "authentication",
+      "actor": null,
+      "action": "authenticate",
+      "object": "mobile app username/password login",
+      "constraint": "required",
+      "channel": null,
+      "evidence_turns": [
+        8
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F12",
+      "kind": "authentication",
+      "actor": null,
+      "action": "authenticate",
+      "object": "web portal username/password login",
+      "constraint": "required",
+      "channel": null,
+      "evidence_turns": [
+        8
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F13",
+      "kind": "performance",
+      "actor": null,
+      "action": null,
+      "object": null,
+      "constraint": "return search results within 2 seconds",
+      "channel": null,
+      "evidence_turns": [
+        10
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F14",
+      "kind": "performance",
+      "actor": null,
+      "action": null,
+      "object": null,
+      "constraint": "inform the user if internet or GPS connectivity is lost",
+      "channel": null,
+      "evidence_turns": [
+        10
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F15",
+      "kind": "security",
+      "actor": null,
+      "action": null,
+      "object": null,
+      "constraint": "encrypt log-in communication messages",
+      "channel": null,
+      "evidence_turns": [
+        12
+      ],
+      "status": "confirmed"
+    },
+    {
+      "frame_id": "F16",
+      "kind": "security",
+      "actor": null,
+      "action": null,
+      "object": null,
+      "constraint": "disable restaurant owner and administrator log-in for 30 minutes after three failed attempts",
+      "channel": null,
+      "evidence_turns": [
+        12
+      ],
+      "status": "confirmed"
+    }
+  ]
+}

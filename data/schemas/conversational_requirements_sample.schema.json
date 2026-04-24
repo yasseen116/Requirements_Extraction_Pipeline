@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/conversational_requirements_sample.schema.json",
+  "title": "ConversationalRequirementsSample",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sample_id",
+    "metadata",
+    "source",
+    "dialogue",
+    "frames",
+    "slots",
+    "requirements"
+  ],
+  "properties": {
+    "sample_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "source_type",
+        "parent_id",
+        "split",
+        "dialogue_style"
+      ],
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "enum": [
+            "manual",
+            "synthetic"
+          ]
+        },
+        "parent_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "split": {
+          "enum": [
+            "train",
+            "dev",
+            "test"
+          ]
+        },
+        "dialogue_style": {
+          "enum": [
+            "clean",
+            "noisy"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset",
+        "dataset_doi",
+        "record_url",
+        "document_id",
+        "source_sentence_ids"
+      ],
+      "properties": {
+        "dataset": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dataset_doi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sentence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "dialogue": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "turn_id",
+          "role",
+          "text"
+        ],
+        "properties": {
+          "turn_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "role": {
+            "enum": [
+              "bot",
+              "user"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "frames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/frame"
+      }
+    },
+    "slots": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "system_type",
+        "user_roles",
+        "functional_capabilities",
+        "authentication",
+        "performance_constraints",
+        "security_constraints"
+      ],
+      "properties": {
+        "system_type": {
+          "$ref": "#/$defs/evidenceValue"
+        },
+        "user_roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceValue"
+          }
+        },
+        "functional_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "actor",
+              "action",
+              "evidence_turns"
+            ],
+            "properties": {
+              "actor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "action": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_turns": {
+                "$ref": "#/$defs/evidenceTurns"
+              }
+            }
+          }
+        },
+        "authentication": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "required",
+            "methods",
+            "evidence_turns"
+          ],
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "methods": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "evidence_turns": {
+              "$ref": "#/$defs/evidenceTurns"
+            }
+          }
+        },
+        "performance_constraints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceText"
+          }
+        },
+        "security_constraints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceText"
+          }
+        }
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "functional",
+        "non_functional"
+      ],
+      "properties": {
+        "functional": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/requirement"
+          }
+        },
+        "non_functional": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/requirement"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "category"
+                ],
+                "properties": {
+                  "category": {
+                    "enum": [
+                      "performance",
+                      "security"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidenceTurns": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "evidenceValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "evidence_turns"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_turns": {
+          "$ref": "#/$defs/evidenceTurns"
+        }
+      }
+    },
+    "evidenceText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "evidence_turns"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_turns": {
+          "$ref": "#/$defs/evidenceTurns"
+        }
+      }
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frame_id",
+        "kind",
+        "actor",
+        "action",
+        "object",
+        "constraint",
+        "channel",
+        "evidence_turns",
+        "status"
+      ],
+      "properties": {
+        "frame_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "system_context",
+            "user_role",
+            "functional_capability",
+            "authentication",
+            "performance",
+            "security"
+          ]
+        },
+        "actor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "object": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "constraint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "channel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_turns": {
+          "$ref": "#/$defs/evidenceTurns"
+        },
+        "status": {
+          "enum": [
+            "confirmed"
+          ]
+        }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "source_slots"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_slots": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "category": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

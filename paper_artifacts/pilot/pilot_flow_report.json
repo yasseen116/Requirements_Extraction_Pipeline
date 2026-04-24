@@ -1,0 +1,331 @@
+{
+  "generated_at_utc": "2026-04-24T15:07:48.075878+00:00",
+  "pilot_size": 3,
+  "best_baseline": {
+    "name": "B2",
+    "condition": "noisy",
+    "frame_f1": 1.0,
+    "slot_f1": 1.0,
+    "capability_f1": 1.0,
+    "security_f1": 1.0,
+    "requirement_f1": 1.0,
+    "coverage": 1.0,
+    "hallucination_rate": 0.0
+  },
+  "best_llm": {
+    "name": "G1",
+    "condition": "noisy",
+    "frame_f1": 1.0,
+    "slot_f1": 1.0,
+    "capability_f1": 1.0,
+    "security_f1": 1.0,
+    "requirement_f1": 1.0,
+    "coverage": 1.0,
+    "hallucination_rate": 0.0
+  },
+  "baseline_metrics": {
+    "b1_clean": {
+      "frame_f1": 1.0,
+      "slot_f1": 1.0,
+      "capability_f1": 1.0,
+      "security_f1": 1.0,
+      "requirement_f1": 1.0,
+      "coverage": 1.0,
+      "hallucination_rate": 0.0
+    },
+    "b1_noisy": {
+      "frame_f1": 0.23989898989898992,
+      "slot_f1": 0.30128205128205127,
+      "capability_f1": 0.09523809523809523,
+      "security_f1": 0.26666666666666666,
+      "requirement_f1": 0.20146520146520144,
+      "coverage": 0.13215488215488216,
+      "hallucination_rate": 0.5
+    },
+    "b2_clean": {
+      "frame_f1": 1.0,
+      "slot_f1": 1.0,
+      "capability_f1": 1.0,
+      "security_f1": 1.0,
+      "requirement_f1": 1.0,
+      "coverage": 1.0,
+      "hallucination_rate": 0.0
+    },
+    "b2_noisy": {
+      "frame_f1": 1.0,
+      "slot_f1": 1.0,
+      "capability_f1": 1.0,
+      "security_f1": 1.0,
+      "requirement_f1": 1.0,
+      "coverage": 1.0,
+      "hallucination_rate": 0.0
+    },
+    "g1_clean": {
+      "frame_f1": 1.0,
+      "slot_f1": 1.0,
+      "capability_f1": 1.0,
+      "security_f1": 1.0,
+      "requirement_f1": 1.0,
+      "coverage": 1.0,
+      "hallucination_rate": 0.0
+    },
+    "g1_noisy": {
+      "frame_f1": 1.0,
+      "slot_f1": 1.0,
+      "capability_f1": 1.0,
+      "security_f1": 1.0,
+      "requirement_f1": 1.0,
+      "coverage": 1.0,
+      "hallucination_rate": 0.0
+    }
+  },
+  "walkthrough_sample": {
+    "sample_id": "manual_001_amazing_lunch_indicator_noisy",
+    "source": {
+      "dataset": "software_requirements_dataset",
+      "dataset_doi": "10.5281/zenodo.7897601",
+      "record_url": "https://zenodo.org/records/7897601",
+      "document_id": "c01_amazing_lunch_indicator",
+      "source_sentence_ids": [
+        "FR3",
+        "FR4",
+        "FR6",
+        "FR7",
+        "FR8",
+        "FR9",
+        "FR11",
+        "QR6",
+        "QR8",
+        "QR12",
+        "QR15"
+      ]
+    },
+    "dialogue_turns": [
+      {
+        "turn_id": 1,
+        "role": "bot",
+        "text": "What kind of system do you want?"
+      },
+      {
+        "turn_id": 2,
+        "role": "user",
+        "text": "Basically a phone app for finding food spots near me and checking what each place offers."
+      },
+      {
+        "turn_id": 3,
+        "role": "bot",
+        "text": "Who will use it?"
+      },
+      {
+        "turn_id": 4,
+        "role": "user",
+        "text": "Regular app users, restaurant people using the portal, and whoever manages the whole thing."
+      },
+      {
+        "turn_id": 5,
+        "role": "bot",
+        "text": "What should users be able to do?"
+      },
+      {
+        "turn_id": 6,
+        "role": "user",
+        "text": "People should be able to look up places to eat, bounce between map and list results, open the full place details, and get directions. The restaurant side should update venue info, and management should approve those restaurant accounts."
+      },
+      {
+        "turn_id": 7,
+        "role": "bot",
+        "text": "Do users need login or authentication?"
+      },
+      {
+        "turn_id": 8,
+        "role": "user",
+        "text": "Yeah, the mobile side needs sign-in, and the portal side needs accounts too for the restaurant side and the people running it."
+      },
+      {
+        "turn_id": 9,
+        "role": "bot",
+        "text": "Are there performance requirements?"
+      },
+      {
+        "turn_id": 10,
+        "role": "user",
+        "text": "Searches need to feel quick, like two seconds tops, and if GPS or the internet dies the app should say so instead of just hanging."
+      },
+      {
+        "turn_id": 11,
+        "role": "bot",
+        "text": "Are there security requirements?"
+      },
+      {
+        "turn_id": 12,
+        "role": "user",
+        "text": "Login traffic needs protecting, and after three bad tries the portal account should cool off for about thirty minutes."
+      }
+    ],
+    "gold_slot_summary": [
+      "System type: `restaurant discovery mobile application`",
+      "User roles: users, restaurant owners, administrators",
+      "Authentication required: `true`",
+      "Authentication methods: mobile app username/password login, web portal username/password login",
+      "Functional capabilities (6):",
+      "users -> search for restaurants using multiple search options",
+      "users -> view restaurant results in map and list views",
+      "users -> open detailed restaurant information pages",
+      "users -> navigate to a selected restaurant using GPS",
+      "restaurant owners -> manage restaurant information through the web portal",
+      "administrators -> verify restaurant owners",
+      "Performance constraints (2): return search results within 2 seconds; inform the user if internet or GPS connectivity is lost",
+      "Security constraints (2): encrypt log-in communication messages; disable restaurant owner and administrator log-in for 30 minutes after three failed attempts"
+    ],
+    "b1": {
+      "slot_metrics": {
+        "precision": 0.42857142857142855,
+        "recall": 0.17647058823529413,
+        "f1": 0.25,
+        "tp": 3,
+        "fp": 4,
+        "fn": 14
+      },
+      "requirement_metrics": {
+        "precision": 0.5,
+        "recall": 0.09090909090909091,
+        "f1": 0.15384615384615385,
+        "tp": 1,
+        "fp": 1,
+        "fn": 10,
+        "coverage": 0.09090909090909091,
+        "hallucination_rate": 0.5
+      },
+      "predicted_slot_summary": [
+        "System type: `basically a phone app for finding food spots near me and checking what each place offers.`",
+        "User roles: regular app users, restaurant people using the portal, whoever manages the whole thing",
+        "Authentication required: `true`",
+        "Authentication methods: web portal username/password login",
+        "Functional capabilities (1):",
+        "users -> view restaurant results in map and list views",
+        "Performance constraints (0): none",
+        "Security constraints (0): none"
+      ],
+      "generated_requirement_summary": [
+        "Functional requirements (2):",
+        "The system shall support authentication using web portal username/password login.",
+        "The system shall allow users to view restaurant results in map and list views.",
+        "Non-functional requirements (0):",
+        "none"
+      ]
+    },
+    "b2": {
+      "slot_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0
+      },
+      "requirement_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "coverage": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "predicted_slot_summary": [
+        "System type: `restaurant discovery mobile application`",
+        "User roles: users, restaurant owners, administrators",
+        "Authentication required: `true`",
+        "Authentication methods: mobile app username/password login, web portal username/password login",
+        "Functional capabilities (6):",
+        "users -> search for restaurants using multiple search options",
+        "users -> view restaurant results in map and list views",
+        "users -> open detailed restaurant information pages",
+        "users -> navigate to a selected restaurant using GPS",
+        "restaurant owners -> manage restaurant information through the web portal",
+        "administrators -> verify restaurant owners",
+        "Performance constraints (2): return search results within 2 seconds; inform the user if internet or GPS connectivity is lost",
+        "Security constraints (2): encrypt log-in communication messages; disable restaurant owner and administrator log-in for 30 minutes after three failed attempts"
+      ],
+      "generated_requirement_summary": [
+        "Functional requirements (7):",
+        "The system shall support authentication using mobile app username/password login and web portal username/password login.",
+        "The system shall allow users to search for restaurants using multiple search options.",
+        "The system shall allow users to view restaurant results in map and list views.",
+        "The system shall allow users to open detailed restaurant information pages.",
+        "The system shall allow users to navigate to a selected restaurant using GPS.",
+        "The system shall allow restaurant owners to manage restaurant information through the web portal.",
+        "The system shall allow administrators to verify restaurant owners.",
+        "Non-functional requirements (4):",
+        "performance: The system shall return search results within 2 seconds.",
+        "performance: The system shall inform the user if internet or GPS connectivity is lost.",
+        "security: The system shall encrypt log-in communication messages.",
+        "security: The system shall disable restaurant owner and administrator log-in for 30 minutes after three failed attempts."
+      ]
+    },
+    "g1": {
+      "frame_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 16,
+        "fp": 0,
+        "fn": 0
+      },
+      "slot_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0
+      },
+      "requirement_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "coverage": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "predicted_slot_summary": [
+        "System type: `restaurant discovery mobile application`",
+        "User roles: users, restaurant owners, administrators",
+        "Authentication required: `true`",
+        "Authentication methods: mobile app username/password login, web portal username/password login",
+        "Functional capabilities (6):",
+        "users -> search for restaurants using multiple search options",
+        "users -> view restaurant results in map and list views",
+        "users -> open detailed restaurant information pages",
+        "users -> navigate to a selected restaurant using GPS",
+        "restaurant owners -> manage restaurant information through the web portal",
+        "administrators -> verify restaurant owners",
+        "Performance constraints (2): return search results within 2 seconds; inform the user if internet or GPS connectivity is lost",
+        "Security constraints (2): encrypt log-in communication messages; disable restaurant owner and administrator log-in for 30 minutes after three failed attempts"
+      ],
+      "generated_requirement_summary": [
+        "Functional requirements (7):",
+        "The system shall support authentication using mobile app username/password login and web portal username/password login.",
+        "The system shall allow users to search for restaurants using multiple search options.",
+        "The system shall allow users to view restaurant results in map and list views.",
+        "The system shall allow users to open detailed restaurant information pages.",
+        "The system shall allow users to navigate to a selected restaurant using GPS.",
+        "The system shall allow restaurant owners to manage restaurant information through the web portal.",
+        "The system shall allow administrators to verify restaurant owners.",
+        "Non-functional requirements (4):",
+        "performance: The system shall return search results within 2 seconds.",
+        "performance: The system shall inform the user if internet or GPS connectivity is lost.",
+        "security: The system shall encrypt log-in communication messages.",
+        "security: The system shall disable restaurant owner and administrator log-in for 30 minutes after three failed attempts."
+      ]
+    }
+  },
+  "warnings": [
+    "B2 is the current best pilot system, but it is still a hand-built normalized rule baseline.",
+    "The pilot set is only 3 source-grounded samples, so these scores are useful for proving the pipeline works, not for claiming broad generalization.",
+    "The next stronger result is to scale the manual gold set and then keep the same evaluation scripts unchanged."
+  ]
+}

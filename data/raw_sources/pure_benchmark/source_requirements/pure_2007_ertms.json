@@ -1,0 +1,996 @@
+{
+  "sample_id": "pure_2007_ertms",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2007_ertms",
+    "title": "2007-ertms",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2007-ertms.xml",
+    "source_path": null
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "In the requirements of this document: (M) = Mandatory:The requirement shall be respected in every ETCS application.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the requirements of this document m mandatory the requirement shall be respected in every etcs application"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "The applicable requirements stated in ETCS SRS and lower level mandatory specifications shall be respected.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the applicable requirements stated in etcs srs and lower level mandatory specifications shall be respected"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "If implemented, the applicable requirements stated in ETCS SRS and lower level mandatory specifications shall be respected.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if implemented the applicable requirements stated in etcs srs and lower level mandatory specifications shall be respected"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "Note that the CCS TSI may define specific conditions, where implementation of O functions may be required for safety reasons.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "note that the ccs tsi may define specific conditions where implementation of o functions may be required for safety reasons"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "General requirements Basic functioning ETCS shall provide the driver with information to allow him to drive the train safely.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "general requirements basic functioning etcs shall provide the driver with information to allow him to drive the train safely"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "M ETCS shall be able to supervise train and shunting movements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m etcs shall be able to supervise train and shunting movements"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "M If the supervision is performed by a RBC it shall be possible to prevent movements of a traction unit in its area if not authorised by the RBC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if the supervision is performed by a rbc it shall be possible to prevent movements of a traction unit in its area if not authorised by the rbc"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "M ETCS is required to be functional to a maximum train speed of 500 km/h.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m etcs is required to be functional to a maximum train speed of 500 km h"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "M Application levels The following definitions shall apply for the ETCS application levels: Level 0: ETCS active for limited train control function;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m application levels the following definitions shall apply for the etcs application levels level 0 etcs active for limited train control function"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "M It shall be possible to implement one or more of the ETCS application levels on a line.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to implement one or more of the etcs application levels on a line"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "M The current application level shall be indicated on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the current application level shall be indicated on the dmi"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "M The driver shall acknowledge the level transitions, if requested from trackside.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver shall acknowledge the level transitions if requested from trackside"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "If the driver does not acknowledge after the transition the brake shall be applied.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the driver does not acknowledge after the transition the brake shall be applied"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "M Transitions which occur while the train is stationary, shall be initiated automatically or manually as appropriate.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m transitions which occur while the train is stationary shall be initiated automatically or manually as appropriate"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "M If, as a result of an automatic transition, except for transitions to and from National Operation (STM), the responsibility for the driver increases, the ETCS shall seek an acknowledgement from the driver, whether the train is stationary or not.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if as a result of an automatic transition except for transitions to and from national operation stm the responsibility for the driver increases the etcs shall seek an acknowledgement from the driver whether the train is stationary or not"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "M For transitions to and from National Operation (STM) the ETCS shall request, an acknowledgement by the driver.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m for transitions to and from national operation stm the etcs shall request an acknowledgement by the driver"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "M If an ETCS equipped train passes a level transition to a line fitted with more than one level, the onboard shall switch to the highest level, according to the priority given by trackside, for which it is equipped.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if an etcs equipped train passes a level transition to a line fitted with more than one level the onboard shall switch to the highest level according to the priority given by trackside for which it is equipped"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "M If an ETCS equipped train passes a level transition to one or more levels for which it is not equipped, ETCS shall initiate a brake application.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if an etcs equipped train passes a level transition to one or more levels for which it is not equipped etcs shall initiate a brake application"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "M Default values shall be harmonised values, permanently stored in all ERTMS/ETCS on board equipment M Functions Operational Functions On Board Equipment self Test At Start Up, the on board equipment shall perform an automatic self-test.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m default values shall be harmonised values permanently stored in all ertms etcs on board equipment m functions operational functions on board equipment self test at start up the on board equipment shall perform an automatic self test"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "M The test shall require no action on the part of the driver.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the test shall require no action on the part of the driver"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "M The DMI shall indicate the result of the self-test.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the dmi shall indicate the result of the self test"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "M Train and driver Data Entry Train data shall be entered before the on-board ETCS equipment allows train movement.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m train and driver data entry train data shall be entered before the on board etcs equipment allows train movement"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "M The driver shall be able to select Train Data Entry on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver shall be able to select train data entry on the dmi"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "M Entering or overwriting data manually by the driver shall be possible but only when stationary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m entering or overwriting data manually by the driver shall be possible but only when stationary"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "O The driver shall be able to consult train data when the train is stationary or moving.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "o the driver shall be able to consult train data when the train is stationary or moving"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "M Current train data shall be stored (except at transition to shunting) in the ETCS equipment until the traction unit is not operative.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m current train data shall be stored except at transition to shunting in the etcs equipment until the traction unit is not operative"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "M Stored train data shall be offered to the driver to be confirmed when Data Entry starts.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m stored train data shall be offered to the driver to be confirmed when data entry starts"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "M The system for Train Data Entry shall provide for the input of other data required by STMs connected to ETCS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the system for train data entry shall provide for the input of other data required by stms connected to etcs"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "This may require additional items, not required for ETCS, to be entered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this may require additional items not required for etcs to be entered"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "M The entry of driver identification and the selection of the language shall be possible.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the entry of driver identification and the selection of the language shall be possible"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "M The change of driver identification during a journey or a Train Running Number shall be possible M Following successful completion of Train Data Entry, the driver shall be able to perform shunting movements or train movements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the change of driver identification during a journey or a train running number shall be possible m following successful completion of train data entry the driver shall be able to perform shunting movements or train movements"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "M Transfer to Shunting on driver’s selection shall only be possible when stationary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m transfer to shunting on driver s selection shall only be possible when stationary"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "M To prevent unauthorised use of the function permission shall be obtained from the RBC if the train is operating under the control of the RBC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m to prevent unauthorised use of the function permission shall be obtained from the rbc if the train is operating under the control of the rbc"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "M Permission received shall be indicated to the driver.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m permission received shall be indicated to the driver"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "M Before authomatic transition to Shunting, ETCS shall request confirmation from the driver.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m before authomatic transition to shunting etcs shall request confirmation from the driver"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "M ETCS shall supervise Shunting operation to a permitted national speed value.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m etcs shall supervise shunting operation to a permitted national speed value"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "M The supervised Shunting speed shall be indicated to the driver on request.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the supervised shunting speed shall be indicated to the driver on request"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "M It shall be possible to apply the train trip function, if the shunting movement passes a signal showing \"danger for shunting\".",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to apply the train trip function if the shunting movement passes a signal showing danger for shunting"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "M Exit from Shunting shall only be possible when the train is stationary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m exit from shunting shall only be possible when the train is stationary"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "M Exit from Shunting shall take place when the driver selects exit from shunting.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m exit from shunting shall take place when the driver selects exit from shunting"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "M Partial Supervision Partial Supervision shall be selected either by the Driver, or by information received from track-to-train transmission.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m partial supervision partial supervision shall be selected either by the driver or by information received from track to train transmission"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "M If acknowledgement is specified the driver shall acknowledge transfer from Full Supervision to Partial Supervision within 5 seconds M Partial Supervision shall be indicated on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if acknowledgement is specified the driver shall acknowledge transfer from full supervision to partial supervision within 5 seconds m partial supervision shall be indicated on the dmi"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "M In Partial Supervision the train shall be supervised according to train speed and distance data available.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in partial supervision the train shall be supervised according to train speed and distance data available"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "M The train shall have the capability of being supervised to a ceiling speed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train shall have the capability of being supervised to a ceiling speed"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "M This ceiling speed shall not be shown continually on the DMI but may be shown momentarily when selected by the driver.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m this ceiling speed shall not be shown continually on the dmi but may be shown momentarily when selected by the driver"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "M The train shall leave Partial Supervision when the trainborne equipment is not operative any longer, when Shunting is selected or when Full Supervision is available.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train shall leave partial supervision when the trainborne equipment is not operative any longer when shunting is selected or when full supervision is available"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "M It shall be possible to order a train trip when passing a stop signal M Full Supervision operation Transferring to Full Supervision shall occur automatically when a movement authority and all other necessary information is received through track-to-train transmission.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to order a train trip when passing a stop signal m full supervision operation transferring to full supervision shall occur automatically when a movement authority and all other necessary information is received through track to train transmission"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "M It shall be possible for the trackside to ask a driver for confirmation about the occupancy of the track ahead before sending a Full Supervision movement authority.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible for the trackside to ask a driver for confirmation about the occupancy of the track ahead before sending a full supervision movement authority"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "M Full Supervision shall provide supervision of speed and distance.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m full supervision shall provide supervision of speed and distance"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "M The trainborne equipment shall remain in Full Supervision until the trainborne equipment is not active any longer, when Shunting is selected or when Partial Supervision information is received.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the trainborne equipment shall remain in full supervision until the trainborne equipment is not active any longer when shunting is selected or when partial supervision information is received"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "M Isolation of ETCS trainborne equipment The ETCS trainborne equipment shall be capable of being isolated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m isolation of etcs trainborne equipment the etcs trainborne equipment shall be capable of being isolated"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "M When the ETCS trainborne equipment is isolated, the system shall not show any ETCS information other than the fact that the system is isolated.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m when the etcs trainborne equipment is isolated the system shall not show any etcs information other than the fact that the system is isolated"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "M Isolation of the ETCS trainborne equipment shall disconnect the ETCS trainborne equipment from the vehicle braking system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m isolation of the etcs trainborne equipment shall disconnect the etcs trainborne equipment from the vehicle braking system"
+    },
+    {
+      "req_id": "AUTO-0054",
+      "text": "M Compatibility with existing train control and protection systems The ETCS trainborne equipment shall be capable of receiving information from the national train control systems by means of the STM.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m compatibility with existing train control and protection systems the etcs trainborne equipment shall be capable of receiving information from the national train control systems by means of the stm"
+    },
+    {
+      "req_id": "AUTO-0055",
+      "text": "M The DMI shall display or be compatible with information from national train control systems.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the dmi shall display or be compatible with information from national train control systems"
+    },
+    {
+      "req_id": "AUTO-0056",
+      "text": "M It shall be possible to send information on adhesion conditions from trackside.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to send information on adhesion conditions from trackside"
+    },
+    {
+      "req_id": "AUTO-0057",
+      "text": "M It shall also be possible, to allow the driver to change the adhesion conditions;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall also be possible to allow the driver to change the adhesion conditions"
+    },
+    {
+      "req_id": "AUTO-0058",
+      "text": "M The trackside shall be able to send information for the calculation of speed profiles.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the trackside shall be able to send information for the calculation of speed profiles"
+    },
+    {
+      "req_id": "AUTO-0059",
+      "text": "M If track data at least to the location where the relevant movement authority ends are not available on-board, the movement authority shall be rejected.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if track data at least to the location where the relevant movement authority ends are not available on board the movement authority shall be rejected"
+    },
+    {
+      "req_id": "AUTO-0060",
+      "text": "M Track to train transmission shall provide the capability to send different speed profiles for specific train categories.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m track to train transmission shall provide the capability to send different speed profiles for specific train categories"
+    },
+    {
+      "req_id": "AUTO-0061",
+      "text": "M End of movement authority The ETCS trainborne equipment shall supervise the end of movement authority, if this information is available on-board.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m end of movement authority the etcs trainborne equipment shall supervise the end of movement authority if this information is available on board"
+    },
+    {
+      "req_id": "AUTO-0062",
+      "text": "M The target distance to be displayed on the DMI shall be based on the most restrictive braking curve.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the target distance to be displayed on the dmi shall be based on the most restrictive braking curve"
+    },
+    {
+      "req_id": "AUTO-0063",
+      "text": "M Together with the movement authority, the on board shall be able to receive one or more time-out(s) for certain sections of the movement authority, and shorten the movement authority accordingly when a time out expires.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m together with the movement authority the on board shall be able to receive one or more time out s for certain sections of the movement authority and shorten the movement authority accordingly when a time out expires"
+    },
+    {
+      "req_id": "AUTO-0064",
+      "text": "M Supervision of driving into a section of track which could be occupied (On Sight operation) Using train data and infrastructure data, braking curves shall be calculated taking into account the target information but not the location of vehicles occupying the track.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m supervision of driving into a section of track which could be occupied on sight operation using train data and infrastructure data braking curves shall be calculated taking into account the target information but not the location of vehicles occupying the track"
+    },
+    {
+      "req_id": "AUTO-0065",
+      "text": "M The ceiling speed level for the movement authority shall be defined as data National Value.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the ceiling speed level for the movement authority shall be defined as data national value"
+    },
+    {
+      "req_id": "AUTO-0066",
+      "text": "M Before entering an occupied track, a driver acknowledgement shall be requested.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m before entering an occupied track a driver acknowledgement shall be requested"
+    },
+    {
+      "req_id": "AUTO-0067",
+      "text": "M The train shall be supervised according to train speed data available.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train shall be supervised according to train speed data available"
+    },
+    {
+      "req_id": "AUTO-0068",
+      "text": "M The train shall, as a minimum, be supervised to a ceiling speed;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train shall as a minimum be supervised to a ceiling speed"
+    },
+    {
+      "req_id": "AUTO-0069",
+      "text": "the supervised speed shall not be shown on the DMI unless selected by the driver.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the supervised speed shall not be shown on the dmi unless selected by the driver"
+    },
+    {
+      "req_id": "AUTO-0070",
+      "text": "M The target distance shall not be shown on the DMI unless selected by the driver.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the target distance shall not be shown on the dmi unless selected by the driver"
+    },
+    {
+      "req_id": "AUTO-0071",
+      "text": "M On request of the RBC, the driver shall have the possibility to confirm that the track ahead of him until the end of the on sight section is clear M Trainborne Functions ETCS shall collect all relevant information concerning train and line speed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m on request of the rbc the driver shall have the possibility to confirm that the track ahead of him until the end of the on sight section is clear m trainborne functions etcs shall collect all relevant information concerning train and line speed"
+    },
+    {
+      "req_id": "AUTO-0072",
+      "text": "M ETCS shall calculate the permitted speed for the train for all locations of the authorised movement.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m etcs shall calculate the permitted speed for the train for all locations of the authorised movement"
+    },
+    {
+      "req_id": "AUTO-0073",
+      "text": "M This static train speed profile shall also respect maximum line speed and track speed and special speed levels for special classes of trains.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m this static train speed profile shall also respect maximum line speed and track speed and special speed levels for special classes of trains"
+    },
+    {
+      "req_id": "AUTO-0074",
+      "text": "M When changing to a higher speed level the rear end of the train shall respect the static train speed profile.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m when changing to a higher speed level the rear end of the train shall respect the static train speed profile"
+    },
+    {
+      "req_id": "AUTO-0075",
+      "text": "M It shall be possible to define certain locations (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to define certain locations e g"
+    },
+    {
+      "req_id": "AUTO-0076",
+      "text": "M The braking curves shall ensure that the train complies with its speed requirements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the braking curves shall ensure that the train complies with its speed requirements"
+    },
+    {
+      "req_id": "AUTO-0077",
+      "text": "M Where failure to apply the full service brake is detected the emergency brake shall stop the train in rear of the danger point.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m where failure to apply the full service brake is detected the emergency brake shall stop the train in rear of the danger point"
+    },
+    {
+      "req_id": "AUTO-0078",
+      "text": "M Release speed calculation The release speed shall be calculated on board, based on either: safety distance and overlap accuracy of odometry deceleration performance of the train, etc or given from the trackside.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m release speed calculation the release speed shall be calculated on board based on either safety distance and overlap accuracy of odometry deceleration performance of the train etc or given from the trackside"
+    },
+    {
+      "req_id": "AUTO-0079",
+      "text": "The release speed given from the trackside shall take priority over the release speed calculated on board.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the release speed given from the trackside shall take priority over the release speed calculated on board"
+    },
+    {
+      "req_id": "AUTO-0080",
+      "text": "M The release speed shall be indicated on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the release speed shall be indicated on the dmi"
+    },
+    {
+      "req_id": "AUTO-0081",
+      "text": "M If the release speed is calculated on board it shall ensure that the train will stop before reaching the danger point M When the train is stationary or after a certain time (e.g.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if the release speed is calculated on board it shall ensure that the train will stop before reaching the danger point m when the train is stationary or after a certain time e g"
+    },
+    {
+      "req_id": "AUTO-0082",
+      "text": "the time for \"route releasing\" of the overlap, the release speed calculation shall be based on the distance to the danger point (if calculated on-board).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the time for route releasing of the overlap the release speed calculation shall be based on the distance to the danger point if calculated on board"
+    },
+    {
+      "req_id": "AUTO-0083",
+      "text": "The condition for this change shall be defined for each target as infrastructure data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the condition for this change shall be defined for each target as infrastructure data"
+    },
+    {
+      "req_id": "AUTO-0084",
+      "text": "M Each railway shall have the possibility of allowing a different release speed for every signal.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m each railway shall have the possibility of allowing a different release speed for every signal"
+    },
+    {
+      "req_id": "AUTO-0085",
+      "text": "M Train location The ETCS trainborne equipment shall be able to determine the location of the entire train.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m train location the etcs trainborne equipment shall be able to determine the location of the entire train"
+    },
+    {
+      "req_id": "AUTO-0086",
+      "text": "M On lines fitted with RBC, the ETCS trainborne equipment shall be able to transmit the location of the entire train to the RBC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m on lines fitted with rbc the etcs trainborne equipment shall be able to transmit the location of the entire train to the rbc"
+    },
+    {
+      "req_id": "AUTO-0087",
+      "text": "M The train location calculation shall take into account error of odometry.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train location calculation shall take into account error of odometry"
+    },
+    {
+      "req_id": "AUTO-0088",
+      "text": "M The driver shall know the distance to the next point defining the indicated braking curve and the permitted speed allowed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver shall know the distance to the next point defining the indicated braking curve and the permitted speed allowed"
+    },
+    {
+      "req_id": "AUTO-0089",
+      "text": "This shall be shown to the driver in a way that is understandable and logical.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this shall be shown to the driver in a way that is understandable and logical"
+    },
+    {
+      "req_id": "AUTO-0090",
+      "text": "M Visual and acoustic warnings to the driver about possible intervention from ETCS shall be given to enable the driver to react and avoid intervention.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m visual and acoustic warnings to the driver about possible intervention from etcs shall be given to enable the driver to react and avoid intervention"
+    },
+    {
+      "req_id": "AUTO-0091",
+      "text": "M The driver shall have the possibility to select the language, this does not concern non pre-defined texts sent from the trackside.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver shall have the possibility to select the language this does not concern non pre defined texts sent from the trackside"
+    },
+    {
+      "req_id": "AUTO-0092",
+      "text": "M Supervision of movement authorities and speed limits A train shall be supervised to its static and dynamic train speed profiles.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m supervision of movement authorities and speed limits a train shall be supervised to its static and dynamic train speed profiles"
+    },
+    {
+      "req_id": "AUTO-0093",
+      "text": "M Within the braking curve area, a warning shall be given to the driver to enable him to react and avoid intervention from ETCS equipment at least 5 sec.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m within the braking curve area a warning shall be given to the driver to enable him to react and avoid intervention from etcs equipment at least 5 sec"
+    },
+    {
+      "req_id": "AUTO-0094",
+      "text": "M If the train or the shunting movement exceeds the permitted ceiling speed by a certain harmonised margin, the trainborne equipment shall execute a brake intervention until the actual speed does not exceed permitted speed;",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if the train or the shunting movement exceeds the permitted ceiling speed by a certain harmonised margin the trainborne equipment shall execute a brake intervention until the actual speed does not exceed permitted speed"
+    },
+    {
+      "req_id": "AUTO-0095",
+      "text": "then the driver shall be able to release the brake M The driver shall be able to release an ETCS emergency brake application when stationary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "then the driver shall be able to release the brake m the driver shall be able to release an etcs emergency brake application when stationary"
+    },
+    {
+      "req_id": "AUTO-0096",
+      "text": "M Roll away and reverse movement protection To protect a traction unit from roll away and unwanted reverse movements the trainborne equipment shall monitor the direction of movement in relation to the permitted direction.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m roll away and reverse movement protection to protect a traction unit from roll away and unwanted reverse movements the trainborne equipment shall monitor the direction of movement in relation to the permitted direction"
+    },
+    {
+      "req_id": "AUTO-0097",
+      "text": "M The trainborne equipment shall apply the emergency brake after a distance, defined by a national value, is travelled by the train.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the trainborne equipment shall apply the emergency brake after a distance defined by a national value is travelled by the train"
+    },
+    {
+      "req_id": "AUTO-0098",
+      "text": "M The roll away/reverse movement intervention shall be indicated on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the roll away reverse movement intervention shall be indicated on the dmi"
+    },
+    {
+      "req_id": "AUTO-0099",
+      "text": "M When the traction unit has come to a standstill, the driver shall be able to release the emergency brake.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m when the traction unit has come to a standstill the driver shall be able to release the emergency brake"
+    },
+    {
+      "req_id": "AUTO-0100",
+      "text": "M After releasing the emergency brake ETCS will provide the supervision appertaining when roll away protection was initiated M When using more than one traction unit this function shall be disabled in all but the leading traction unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m after releasing the emergency brake etcs will provide the supervision appertaining when roll away protection was initiated m when using more than one traction unit this function shall be disabled in all but the leading traction unit"
+    },
+    {
+      "req_id": "AUTO-0101",
+      "text": "M Recording the ETCS information All data entered, received or indicated to the driver shall be recorded onboard.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m recording the etcs information all data entered received or indicated to the driver shall be recorded onboard"
+    },
+    {
+      "req_id": "AUTO-0102",
+      "text": "All data shall be related to UTC (Universal Time Corrected) and a reference point.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "all data shall be related to utc universal time corrected and a reference point"
+    },
+    {
+      "req_id": "AUTO-0103",
+      "text": "M Information shall be recorded to an accuracy which enables a clear view of the functioning of ETCS and way the traction unit has been driven.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m information shall be recorded to an accuracy which enables a clear view of the functioning of etcs and way the traction unit has been driven"
+    },
+    {
+      "req_id": "AUTO-0104",
+      "text": "Operational data to enable assessment of driver performance shall be stored for at least one week.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operational data to enable assessment of driver performance shall be stored for at least one week"
+    },
+    {
+      "req_id": "AUTO-0105",
+      "text": "M Information received shall not influence the traction unit(s) with in-operative cabs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m information received shall not influence the traction unit s with in operative cabs"
+    },
+    {
+      "req_id": "AUTO-0106",
+      "text": "M The train trip function 4.6.12 shall be suppressed in traction unit(s) with in-operative cabs.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train trip function 4 6 12 shall be suppressed in traction unit s with in operative cabs"
+    },
+    {
+      "req_id": "AUTO-0107",
+      "text": "M Using multiple traction units It shall be possible to use tandem traction units without isolating the ETCS trainborne equipment on the tandem traction unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m using multiple traction units it shall be possible to use tandem traction units without isolating the etcs trainborne equipment on the tandem traction unit"
+    },
+    {
+      "req_id": "AUTO-0108",
+      "text": "M The train trip function 4.6.12 shall be suppressed on the tandem traction unit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train trip function 4 6 12 shall be suppressed on the tandem traction unit"
+    },
+    {
+      "req_id": "AUTO-0109",
+      "text": "M The driver shall select an override control according to the permission received.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver shall select an override control according to the permission received"
+    },
+    {
+      "req_id": "AUTO-0110",
+      "text": "M The override control shall be protected against inadvertent operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the override control shall be protected against inadvertent operation"
+    },
+    {
+      "req_id": "AUTO-0111",
+      "text": "M When the train passes the stop signal, the train trip function shall be suppressed.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m when the train passes the stop signal the train trip function shall be suppressed"
+    },
+    {
+      "req_id": "AUTO-0112",
+      "text": "M Actual speed shall still be shown on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m actual speed shall still be shown on the dmi"
+    },
+    {
+      "req_id": "AUTO-0113",
+      "text": "M A special indication shall be shown on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m a special indication shall be shown on the dmi"
+    },
+    {
+      "req_id": "AUTO-0114",
+      "text": "M The supervised speed shall not be shown on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the supervised speed shall not be shown on the dmi"
+    },
+    {
+      "req_id": "AUTO-0115",
+      "text": "M The train shall be capable of receiving any track-to-train information intended and relevant for this train including movement authority.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train shall be capable of receiving any track to train information intended and relevant for this train including movement authority"
+    },
+    {
+      "req_id": "AUTO-0116",
+      "text": "M Protection Functions Emergency stop to train(s) If supervised by an RBC it shall be possible to command an emergency stop to all trains in a particular area or to a specific train M It shall be possible to command an immediate train stop.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m protection functions emergency stop to train s if supervised by an rbc it shall be possible to command an emergency stop to all trains in a particular area or to a specific train m it shall be possible to command an immediate train stop"
+    },
+    {
+      "req_id": "AUTO-0117",
+      "text": "M It shall be possible to command a conditional emergency stop.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m it shall be possible to command a conditional emergency stop"
+    },
+    {
+      "req_id": "AUTO-0118",
+      "text": "If the train has already passed the location for the emergency stop the command shall be ignored M When a train has received an emergency stop ETCS shall command the emergency brake.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if the train has already passed the location for the emergency stop the command shall be ignored m when a train has received an emergency stop etcs shall command the emergency brake"
+    },
+    {
+      "req_id": "AUTO-0119",
+      "text": "M The emergency stop shall be indicated to the driver on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the emergency stop shall be indicated to the driver on the dmi"
+    },
+    {
+      "req_id": "AUTO-0120",
+      "text": "M Route suitability It shall be possible to prevent a train from entering a route for which it does not meet the required criteria.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m route suitability it shall be possible to prevent a train from entering a route for which it does not meet the required criteria"
+    },
+    {
+      "req_id": "AUTO-0121",
+      "text": "M Route unsuitability shall be indicated on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m route unsuitability shall be indicated on the dmi"
+    },
+    {
+      "req_id": "AUTO-0122",
+      "text": "M The driver shall be able to override the function when the train is stationary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the driver shall be able to override the function when the train is stationary"
+    },
+    {
+      "req_id": "AUTO-0123",
+      "text": "M After overriding this function the movement authority shall be re-established.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m after overriding this function the movement authority shall be re established"
+    },
+    {
+      "req_id": "AUTO-0124",
+      "text": "M Train trip When a traction unit passes a stop-signal the emergency brake shall be triggered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m train trip when a traction unit passes a stop signal the emergency brake shall be triggered"
+    },
+    {
+      "req_id": "AUTO-0125",
+      "text": "M Operation of the train trip shall be indicated on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m operation of the train trip shall be indicated on the dmi"
+    },
+    {
+      "req_id": "AUTO-0126",
+      "text": "M The emergency brake shall be applied until the traction unit is stationary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the emergency brake shall be applied until the traction unit is stationary"
+    },
+    {
+      "req_id": "AUTO-0127",
+      "text": "M When the traction unit is stationary the driver shall be required to acknowledge the train trip condition.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m when the traction unit is stationary the driver shall be required to acknowledge the train trip condition"
+    },
+    {
+      "req_id": "AUTO-0128",
+      "text": "M The train running number shall consist of a maximum of 8 numeric digits.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the train running number shall consist of a maximum of 8 numeric digits"
+    },
+    {
+      "req_id": "AUTO-0129",
+      "text": "M Geographical position of the train On demand, the position of the front end of the train at the time of the demand shall be indicated on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m geographical position of the train on demand the position of the front end of the train at the time of the demand shall be indicated on the dmi"
+    },
+    {
+      "req_id": "AUTO-0130",
+      "text": "This shall be possible while the train is moving or stationary.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "this shall be possible while the train is moving or stationary"
+    },
+    {
+      "req_id": "AUTO-0131",
+      "text": "M Additional Functions Control of pantograph and power supply The ETCS on-board shall be capable of receiving information about pantograph and power supply from the trackside.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m additional functions control of pantograph and power supply the etcs on board shall be capable of receiving information about pantograph and power supply from the trackside"
+    },
+    {
+      "req_id": "AUTO-0132",
+      "text": "M The ETCS trainborne equipment shall indicate on the DMI the information regarding pantograph and power supply.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the etcs trainborne equipment shall indicate on the dmi the information regarding pantograph and power supply"
+    },
+    {
+      "req_id": "AUTO-0133",
+      "text": "M The information regarding lowering and raising of the pantograph and opening/closing of the circuit breaker shall be provided separately and in combinations.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the information regarding lowering and raising of the pantograph and opening closing of the circuit breaker shall be provided separately and in combinations"
+    },
+    {
+      "req_id": "AUTO-0134",
+      "text": "M Air tightness control The ETCS on-board shall be capable of receiving information regarding air tightness from the trackside.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m air tightness control the etcs on board shall be capable of receiving information regarding air tightness from the trackside"
+    },
+    {
+      "req_id": "AUTO-0135",
+      "text": "M Plain text transmission It shall be possible to send plain text messages from track to train.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m plain text transmission it shall be possible to send plain text messages from track to train"
+    },
+    {
+      "req_id": "AUTO-0136",
+      "text": "M When the plain text message appears on the DMI, the driver shall be alerted.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m when the plain text message appears on the dmi the driver shall be alerted"
+    },
+    {
+      "req_id": "AUTO-0137",
+      "text": "M The onboard equipment shall display plain text messages as received.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the onboard equipment shall display plain text messages as received"
+    },
+    {
+      "req_id": "AUTO-0138",
+      "text": "M The character set used shall support different languages.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the character set used shall support different languages"
+    },
+    {
+      "req_id": "AUTO-0139",
+      "text": "train speed train length M Revocation of a Movement Authority It shall be possible to revoke a Movement Authority that has already been issued to a train in a co-operative way between RBC and train.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "train speed train length m revocation of a movement authority it shall be possible to revoke a movement authority that has already been issued to a train in a co operative way between rbc and train"
+    },
+    {
+      "req_id": "AUTO-0140",
+      "text": "M The co-operative revocation of the MA shall be possible to a new target location, proposed from RBC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the co operative revocation of the ma shall be possible to a new target location proposed from rbc"
+    },
+    {
+      "req_id": "AUTO-0141",
+      "text": "M The new target location shall be checked for acceptance by the on board.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the new target location shall be checked for acceptance by the on board"
+    },
+    {
+      "req_id": "AUTO-0142",
+      "text": "M If a train cannot stop at the proposed new target location it shall reject the request and keep the old target location.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if a train cannot stop at the proposed new target location it shall reject the request and keep the old target location"
+    },
+    {
+      "req_id": "AUTO-0143",
+      "text": "M Reversing The Reversing function shall only be possible in one active cab which is not closed at any time during the procedure.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m reversing the reversing function shall only be possible in one active cab which is not closed at any time during the procedure"
+    },
+    {
+      "req_id": "AUTO-0144",
+      "text": "M Reversing shall be possible as defined by a value given with the MA M The driver shall be able to use the Reversing function without needing to re-confirm the train data.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m reversing shall be possible as defined by a value given with the ma m the driver shall be able to use the reversing function without needing to re confirm the train data"
+    },
+    {
+      "req_id": "AUTO-0145",
+      "text": "M Reversing shall be supervised to a distance and speed set as National Values M The distance supervised can be extended from the trackside.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m reversing shall be supervised to a distance and speed set as national values m the distance supervised can be extended from the trackside"
+    },
+    {
+      "req_id": "AUTO-0146",
+      "text": "M Once the train starts reversing the MA shall be cancelled.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m once the train starts reversing the ma shall be cancelled"
+    },
+    {
+      "req_id": "AUTO-0147",
+      "text": "M Handover when passing from one RBC area to another The train shall be able to automatically pass from one RBC area to another without driver intervention.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m handover when passing from one rbc area to another the train shall be able to automatically pass from one rbc area to another without driver intervention"
+    },
+    {
+      "req_id": "AUTO-0148",
+      "text": "M If the train is equipped with two operational radios there shall be no performance penalty as a result of a transition from one RBC to another (train spacing and train speed).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if the train is equipped with two operational radios there shall be no performance penalty as a result of a transition from one rbc to another train spacing and train speed"
+    },
+    {
+      "req_id": "AUTO-0149",
+      "text": "M If the train is equipped with only one operational radio, passing from one RBC to another shall still be possible but might result in a performance penalty.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m if the train is equipped with only one operational radio passing from one rbc to another shall still be possible but might result in a performance penalty"
+    },
+    {
+      "req_id": "AUTO-0150",
+      "text": "M Failures and Fall-back Procedures Interruption in transmission Transmission Failures In the event of a Transmission Failure the following reactions, shall be capable of being applied in accordance with a National Value: Option 1.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m failures and fall back procedures interruption in transmission transmission failures in the event of a transmission failure the following reactions shall be capable of being applied in accordance with a national value option 1"
+    },
+    {
+      "req_id": "AUTO-0151",
+      "text": "The ETCS trainborne equipment shall immediately command the emergency brake.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the etcs trainborne equipment shall immediately command the emergency brake"
+    },
+    {
+      "req_id": "AUTO-0152",
+      "text": "The failure shall be shown on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the failure shall be shown on the dmi"
+    },
+    {
+      "req_id": "AUTO-0153",
+      "text": "The ETCS trainborne equipment shall immediately command the full service brake.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the etcs trainborne equipment shall immediately command the full service brake"
+    },
+    {
+      "req_id": "AUTO-0154",
+      "text": "The indication on the DMI shall remain, and the driver shall be informed about the loss of transmission.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the indication on the dmi shall remain and the driver shall be informed about the loss of transmission"
+    },
+    {
+      "req_id": "AUTO-0155",
+      "text": "M On board equipment failures If there are failures of the trainborne equipment which compromise the safety of train supervision, the ETCS trainborne equipment shall immediately command the brake and bring the train to a stop.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m on board equipment failures if there are failures of the trainborne equipment which compromise the safety of train supervision the etcs trainborne equipment shall immediately command the brake and bring the train to a stop"
+    },
+    {
+      "req_id": "AUTO-0156",
+      "text": "M The occurrence of a failure shall be displayed on the DMI.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m the occurrence of a failure shall be displayed on the dmi"
+    },
+    {
+      "req_id": "AUTO-0157",
+      "text": "M In ETCS with RBC this restriction on performance shall, if possible be transmitted to the RBC.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "m in etcs with rbc this restriction on performance shall if possible be transmitted to the rbc"
+    },
+    {
+      "req_id": "AUTO-0158",
+      "text": "Absolute braking distance The distance between a train following another train shall be equal to or greater than the braking distance of the following train.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "absolute braking distance the distance between a train following another train shall be equal to or greater than the braking distance of the following train"
+    },
+    {
+      "req_id": "AUTO-0159",
+      "text": "Confirm The driver’s approval/validation that new data/information shall be taken into account by the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "confirm the driver s approval validation that new data information shall be taken into account by the system"
+    },
+    {
+      "req_id": "AUTO-0160",
+      "text": "Confirmation The driver’s approval/validation that new data/information shall be taken into account by the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "confirmation the driver s approval validation that new data information shall be taken into account by the system"
+    },
+    {
+      "req_id": "AUTO-0161",
+      "text": "The overlap must not be released until the train has stopped.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the overlap must not be released until the train has stopped"
+    },
+    {
+      "req_id": "AUTO-0162",
+      "text": "Route map A data base providing infrastructure data required for train operation.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "route map a data base providing infrastructure data required for train operation"
+    },
+    {
+      "req_id": "AUTO-0163",
+      "text": "Train data Data that characterises a train and which is required by ETCS in order to supervise a train movement Train memory Tables in the trainborne ETCS equipment for the countries to be selected according to national rules.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "train data data that characterises a train and which is required by etcs in order to supervise a train movement train memory tables in the trainborne etcs equipment for the countries to be selected according to national rules"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 163,
+    "total_count": 163
+  }
+}
