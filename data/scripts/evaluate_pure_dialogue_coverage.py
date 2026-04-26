@@ -60,11 +60,18 @@ def evaluate_dialogue_coverage(gold_sample: dict, dialogue_sample: dict, thresho
     covered = 0
     best_scores = []
     uncovered_examples = []
-    for text in gold_texts:
-        if not turn_texts:
+    
+    if turn_texts and gold_texts:
+        sim_matrix = ev.calculate_similarity_matrix(gold_texts, turn_texts).cpu().numpy()
+    else:
+        sim_matrix = None
+
+    for g_idx, text in enumerate(gold_texts):
+        if sim_matrix is None:
             best = 0.0
         else:
-            best = max(ev.token_f1(text, candidate) for candidate in turn_texts)
+            best = float(max(sim_matrix[g_idx]))
+            
         best_scores.append(best)
         if best >= threshold:
             covered += 1

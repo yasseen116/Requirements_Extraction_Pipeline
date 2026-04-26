@@ -28,7 +28,7 @@ class OllamaConfig:
         model = os.environ.get("REQ_OLLAMA_MODEL", "").strip() or "qwen2.5:7b-instruct"
         base_url = os.environ.get("REQ_OLLAMA_BASE_URL", "http://localhost:11434").strip()
         timeout_raw = os.environ.get("REQ_OLLAMA_TIMEOUT_SECONDS", "900").strip()
-        num_ctx_raw = os.environ.get("REQ_OLLAMA_NUM_CTX", "8192").strip()
+        num_ctx_raw = os.environ.get("REQ_OLLAMA_NUM_CTX", "16384").strip()
         num_predict_raw = os.environ.get("REQ_OLLAMA_NUM_PREDICT", "4096").strip()
         seed_raw = os.environ.get("REQ_OLLAMA_SEED", "42").strip()
         return cls(

@@ -8,6 +8,26 @@ import json
 import re
 from pathlib import Path
 
+import torch
+from sentence_transformers import SentenceTransformer, util
+
+_MODEL = None
+
+def get_model():
+    global _MODEL
+    if _MODEL is None:
+        # Load standard small semantic embedding model
+        _MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+    return _MODEL
+
+def calculate_similarity_matrix(texts_a: list[str], texts_b: list[str]) -> torch.Tensor:
+    if not texts_a or not texts_b:
+        return torch.zeros((len(texts_a), len(texts_b)))
+    model = get_model()
+    embeddings_a = model.encode(texts_a, convert_to_tensor=True)
+    embeddings_b = model.encode(texts_b, convert_to_tensor=True)
+    return util.cos_sim(embeddings_a, embeddings_b)
+
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_GOLD_DIR = ROOT / "raw_sources" / "pure_benchmark" / "source_requirements"
@@ -111,11 +131,13 @@ def load_predictions(pred_dir: Path) -> dict[str, dict]:
 
 def greedy_match(gold_texts: list[str], pred_texts: list[str], threshold: float) -> tuple[list[dict], set[int], set[int]]:
     candidates = []
-    for g_idx, g_text in enumerate(gold_texts):
-        for p_idx, p_text in enumerate(pred_texts):
-            score = token_f1(g_text, p_text)
-            if score >= threshold:
-                candidates.append((score, g_idx, p_idx))
+    if gold_texts and pred_texts:
+        sim_matrix = calculate_similarity_matrix(gold_texts, pred_texts).cpu().numpy()
+        for g_idx in range(len(gold_texts)):
+            for p_idx in range(len(pred_texts)):
+                score = float(sim_matrix[g_idx][p_idx])
+                if score >= threshold:
+                    candidates.append((score, g_idx, p_idx))
     candidates.sort(reverse=True, key=lambda item: item[0])
 
     used_gold = set()
@@ -156,11 +178,16 @@ def evaluate_sample(gold_sample: dict, pred_sample: dict, threshold: float) -> d
     unmatched_pred = [pred_texts[index] for index in range(pred_count) if index not in used_pred]
 
     best_source_scores = []
-    for g_text in gold_texts:
-        if not pred_texts:
+    if gold_texts and pred_texts:
+        sim_matrix = calculate_similarity_matrix(gold_texts, pred_texts).cpu().numpy()
+    else:
+        sim_matrix = None
+
+    for g_idx in range(gold_count):
+        if sim_matrix is None:
             best_source_scores.append(0.0)
         else:
-            best_source_scores.append(max(token_f1(g_text, p_text) for p_text in pred_texts))
+            best_source_scores.append(float(max(sim_matrix[g_idx])))
 
     return {
         "sample_id": gold_sample["sample_id"],

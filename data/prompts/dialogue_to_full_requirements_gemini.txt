@@ -5,25 +5,138 @@ Task:
 - Generate a comprehensive structured requirements file.
 - Keep everything grounded in the dialogue content and preserve key terms.
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXTRACTION RULES — MANDATORY, NOT SUGGESTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RULE 1 — NO SPLITTING:
+One user statement = at most one requirement.
+If a user says "we need fast search, fast cart, and fast email"
+that is ONE requirement about performance, not three.
+Only split if the user explicitly separates two distinct concerns
+across different sentences about clearly different topics.
+
+BAD (do not do this):
+  FR-001 The system shall perform fast search.
+  FR-002 The system shall have fast cart operations.
+  FR-003 The system shall send emails quickly.
+
+GOOD (do this):
+  FR-001 The system shall perform search, cart operations, and email delivery within one second each.
+
+RULE 2 — NO META-REQUIREMENTS:
+Never generate a requirement about requirements, about the document,
+about nonfunctional properties in general, or about the elicitation process.
+
+FORBIDDEN outputs include anything like:
+  - "The system shall provide clear nonfunctional requirements"
+  - "The document shall define performance criteria"
+  - "Requirements shall be easy to understand"
+  - "The system shall meet performance standards"
+
+If you find yourself writing something like this, delete it.
+
+RULE 3 — PRESERVE EXACT TECHNICAL SPECIFICS:
+Numbers, names, thresholds, algorithms, product names, and version numbers
+must appear verbatim in the requirement.
+
+If the user says "1000 concurrent users" write exactly "1000 concurrent users"
+— never "a large number of users" or "high concurrency".
+
+If the user says "less than 2ms" write "less than 2ms" — not "quickly" or "in real time".
+
+RULE 4 — GROUNDED ONLY:
+Every requirement you generate must be directly traceable to something
+a user explicitly said in the dialogue.
+
+If you cannot point to the exact user turn that supports a requirement,
+do not generate it. Do not infer, assume, or complete unstated requirements
+even if they seem obvious for this domain.
+
+Evidence: for each requirement, populate evidence_turns with the turn_id(s)
+from which it was extracted.
+
+RULE 5 — NO DUPLICATES ACROSS CATEGORIES:
+A requirement may appear in only one category.
+Do not write the same requirement as both FR and NFR.
+Do not write the same requirement twice with different wording.
+Before finalising each category, check it against all others and remove
+any requirement that expresses the same meaning as one already listed.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 Output rules:
 - Return JSON only.
 - Use the provided schema exactly.
-- Only include requirements that are explicitly stated in the dialogue by the user (or clearly confirmed).
-  - Do NOT add "typical" domain requirements unless the user actually said them.
 - Do NOT include meta statements like "not specified", "not mentioned", or "the source requirements ...".
 - Preserve details exactly: numbers, units, algorithm names, browser/OS names, interface labels, and quoted terms.
-- Prefer 1-to-1 mapping with the dialogue content:
-  - If the user states a requirement sentence, output the same sentence as a requirement (minor cleanup allowed).
-  - Avoid splitting one requirement into many new ones unless the dialogue clearly enumerates them.
+- Keep the subject as stated (e.g., "Web Store shall ...", "The solution should ...", "Citizens can ...").
+  Do not force every sentence to start with "The system shall" if it changes the original subject.
 - Requirement text must be atomic and testable.
-  - Keep the subject as stated (e.g., "Web Store shall ...", "The solution should ...", "Citizens can ...").
-  - Do not force every sentence to start with "The system shall" if it changes the original subject.
-- If a requirement is implied but not clearly confirmed, omit it.
-- Include evidence_turns for each requirement item.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FEW-SHOT EXAMPLES — PAY ATTENTION TO JSON STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Example 1 Input (Dialogue Chunk):
+[BOT]: What performance and security needs do we have for the login portal?
+[USER]: Security is huge for us. The portal needs to use standard HTTPS encryption everywhere, and we want to lock out accounts after 5 failed password attempts. Performance-wise, the login needs to complete in less than 2 seconds even when 1000 users log in at exactly 9am.
+
+Example 1 Output (JSON):
+{
+  "requirements": {
+    "functional": [],
+    "non_functional": [
+      {
+        "text": "The portal needs to use standard HTTPS encryption everywhere.",
+        "evidence_turns": [2]
+      },
+      {
+        "text": "Accounts shall be locked out after 5 failed password attempts.",
+        "evidence_turns": [2]
+      },
+      {
+        "text": "The login needs to complete in less than 2 seconds even with 1000 concurrent users.",
+        "evidence_turns": [2]
+      }
+    ],
+    "data": [],
+    "business_rules": [],
+    "interfaces": [],
+    "constraints": []
+  }
+}
+
+Example 2 Input (Dialogue Chunk):
+[BOT]: What main actions should the dashboard support?
+[USER]: First, the admin users should be able to view a daily summary report of all transactions. Also, they need to be able to export that summary as a CSV file to their local machine. That's about it for the main dashboard.
+
+Example 2 Output (JSON):
+{
+  "requirements": {
+    "functional": [
+      {
+        "text": "Admin users should be able to view a daily summary report of all transactions.",
+        "evidence_turns": [2]
+      },
+      {
+        "text": "Admin users need to be able to export the daily summary report as a CSV file to their local machine.",
+        "evidence_turns": [2]
+      }
+    ],
+    "non_functional": [],
+    "data": [],
+    "business_rules": [],
+    "interfaces": [],
+    "constraints": []
+  }
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Coverage goal:
 - Capture all major functional and non-functional content from the dialogue.
 - Include data, interfaces, business rules, and operational constraints when present.
+- When in doubt, OMIT rather than invent.
 
 Sample id: {{SAMPLE_ID}}
 Domain hint: {{DOMAIN_HINT}}

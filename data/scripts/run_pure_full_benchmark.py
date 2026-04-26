@@ -19,6 +19,22 @@ LATEST_POINTER = ROOT / "outputs" / "pure_full_latest_run.json"
 
 PYTHON_BIN = "python3"
 
+def check_dependencies() -> None:
+    missing = []
+    try:
+        import sentence_transformers
+    except ImportError:
+        missing.append("sentence-transformers")
+    try:
+        import torch
+    except ImportError:
+        missing.append("torch")
+        
+    if missing:
+        print(f"[error] Missing required dependencies: {', '.join(missing)}")
+        print(f"Please run: {PYTHON_BIN} -m pip install {' '.join(missing)}")
+        sys.exit(1)
+
 
 def run(cmd: list[str]) -> None:
     if cmd and cmd[0] == "python3":
@@ -80,13 +96,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--self-consistency",
         type=int,
-        default=1,
+        default=3,
         help="Number of independent generations per sample (merged by dedup).",
     )
     parser.add_argument(
         "--self-consistency-temperature",
         type=float,
-        default=0.0,
+        default=0.3,
         help="Temperature for self-consistency runs (ignored when self-consistency=1).",
     )
     return parser.parse_args()
@@ -103,6 +119,7 @@ def has_llm_env() -> bool:
 
 
 def main() -> int:
+    check_dependencies()
     global PYTHON_BIN
     args = parse_args()
     PYTHON_BIN = args.python_bin or os.environ.get("REQ_PYTHON_BIN") or sys.executable or "python3"
@@ -248,6 +265,7 @@ def main() -> int:
     direct_error_analysis_path = None
     pipeline_eval_path = None
     pipeline_error_analysis_path = None
+    validation_report_path = None
     legacy_gemini_eval_path = None
     legacy_gemini_error_analysis_path = None
     pipeline_status = "skipped_missing_env"
@@ -311,6 +329,7 @@ def main() -> int:
             ]
         )
 
+        raw_generated_dir = run_dir / "raw_generated_requirements"
         run(
             [
                 "python3",
@@ -318,7 +337,7 @@ def main() -> int:
                 "--input-dir",
                 str(effective_dialogue_dir),
                 "--output-dir",
-                str(generated_dir),
+                str(raw_generated_dir),
                 "--self-consistency",
                 str(args.self_consistency),
                 "--temperature",
@@ -336,6 +355,23 @@ def main() -> int:
                 else []
             )
         )
+        
+        validation_report_path = metrics_dir / "pipeline_validation_report.json"
+        run(
+            [
+                "python3",
+                "scripts/validate_pure_extracted_requirements.py",
+                "--pred-dir",
+                str(raw_generated_dir),
+                "--dialogue-dir",
+                str(effective_dialogue_dir),
+                "--output-dir",
+                str(generated_dir),
+                "--report-path",
+                str(validation_report_path),
+            ]
+        )
+        
         pipeline_eval_path = metrics_dir / "pipeline_coverage.json"
         run(
             [
@@ -407,6 +443,7 @@ def main() -> int:
             "direct_error_analysis": str(direct_error_analysis_path.relative_to(ROOT)) if direct_error_analysis_path else None,
             "pipeline_coverage": str(pipeline_eval_path.relative_to(ROOT)) if pipeline_eval_path else None,
             "pipeline_error_analysis": str(pipeline_error_analysis_path.relative_to(ROOT)) if pipeline_error_analysis_path else None,
+            "pipeline_validation_report": str(validation_report_path.relative_to(ROOT)) if has_llm_env() else None,
             "gemini_coverage": str(legacy_gemini_eval_path.relative_to(ROOT)) if legacy_gemini_eval_path else None,
             "gemini_error_analysis": str(legacy_gemini_error_analysis_path.relative_to(ROOT)) if legacy_gemini_error_analysis_path else None,
             "dialogue_coverage_user_only": str(dialogue_eval_path.relative_to(ROOT)),

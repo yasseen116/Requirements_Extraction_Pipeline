@@ -205,11 +205,10 @@ def main() -> int:
                     usages.append({"segment_index": segment_index, "repair": response.usage})
                     raw_responses.append({"segment_index": segment_index, "responses": [response.raw_response]})
                 except Exception as second_error:  # noqa: BLE001
-                    segment_statuses.append(f"segment_{segment_index}:failed")
-                    error_messages.append(
+                    raise RuntimeError(
                         f"segment_{segment_index}: {type(first_error).__name__}: {first_error}; "
                         f"repair failed with {type(second_error).__name__}: {second_error}"
-                    )
+                    ) from second_error
 
         normalized_payload = merge_normalized_payloads(segment_payloads) if segment_payloads else None
         if args.chunk_source_requirements:

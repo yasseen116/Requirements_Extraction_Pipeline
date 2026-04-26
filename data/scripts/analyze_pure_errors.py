@@ -45,7 +45,8 @@ META_TERMS = {
 def best_score_against(text: str, candidates: list[str]) -> float:
     if not candidates:
         return 0.0
-    return max(ev.token_f1(text, candidate) for candidate in candidates)
+    sim_matrix = ev.calculate_similarity_matrix([text], candidates).cpu().numpy()
+    return float(max(sim_matrix[0]))
 
 
 def classify_unmatched_source(text: str, pred_texts: list[str], threshold: float) -> str:

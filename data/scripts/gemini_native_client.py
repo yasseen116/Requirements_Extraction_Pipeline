@@ -46,23 +46,21 @@ class GeminiConfig:
     base_url: str = "https://generativelanguage.googleapis.com/v1beta"
     timeout_seconds: int = 90
     temperature: float = 0.0
-    max_retries: int = 3
-    retry_backoff_seconds: float = 2.0
+    max_retries: int = 10
+    retry_backoff_seconds: float = 10.0
 
     @classmethod
     def from_env(cls) -> "GeminiConfig":
         api_key = os.environ.get("REQ_GEMINI_API_KEY", "").strip()
-        model = os.environ.get("REQ_GEMINI_MODEL", "").strip()
+        model = os.environ.get("REQ_GEMINI_MODEL", "gemini-2.0-flash-lite").strip() or "gemini-2.0-flash-lite"
         base_url = os.environ.get("REQ_GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta").strip()
         timeout_raw = os.environ.get("REQ_GEMINI_TIMEOUT_SECONDS", "90").strip()
         temperature_raw = os.environ.get("REQ_GEMINI_TEMPERATURE", "0.0").strip()
-        max_retries_raw = os.environ.get("REQ_GEMINI_MAX_RETRIES", "3").strip()
-        retry_backoff_raw = os.environ.get("REQ_GEMINI_RETRY_BACKOFF_SECONDS", "2.0").strip()
+        max_retries_raw = os.environ.get("REQ_GEMINI_MAX_RETRIES", "10").strip()
+        retry_backoff_raw = os.environ.get("REQ_GEMINI_RETRY_BACKOFF_SECONDS", "10.0").strip()
 
         if not api_key:
             raise ValueError("Missing REQ_GEMINI_API_KEY")
-        if not model:
-            raise ValueError("Missing REQ_GEMINI_MODEL")
 
         return cls(
             api_key=api_key,
@@ -145,6 +143,8 @@ class GeminiNativeClient:
         if not text:
             raise ValueError(f"Gemini response did not contain text parts: {raw}")
 
+        print(f"\n--- [Gemini Response] ---\n{text[:500]}...\n-------------------------")
+
         return {
             "text": text,
             "usage": payload.get("usageMetadata", {}),
@@ -162,7 +162,10 @@ class GeminiNativeClient:
                 retriable = exc.code in {429, 500, 503}
                 last_error = RuntimeError(f"HTTP {exc.code} from Gemini API: {error_body}")
                 if retriable and attempt < self.config.max_retries:
-                    time.sleep(self._retry_delay_seconds(error_body, attempt))
+                    delay = self._retry_delay_seconds(error_body, attempt)
+                    if exc.code == 429:
+                        print(f"\n[Gemini API] Rate limit (429) hit. Waiting {delay:.1f}s (Attempt {attempt+1}/{self.config.max_retries})...")
+                    time.sleep(delay)
                     continue
                 raise last_error from exc
             except urllib.error.URLError as exc:
@@ -184,5 +187,7 @@ class GeminiNativeClient:
         for pattern in patterns:
             match = re.search(pattern, body)
             if match:
-                return min(float(match.group(1)), 60.0)
+                val = float(match.group(1))
+                if val > 0:
+                    return min(val, 60.0)
         return min(self.config.retry_backoff_seconds * (2 ** attempt), 60.0)

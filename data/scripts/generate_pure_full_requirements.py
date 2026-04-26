@@ -529,13 +529,10 @@ def main() -> int:
                     usages.append({"segment_index": segment_index, "repair": response.usage})
                     raw_responses.append({"segment_index": segment_index, "responses": [response.raw_response]})
                 except Exception as second_error:  # noqa: BLE001
-                    fallback_payload = heuristic_payload_from_dialogue(segment_sample)
-                    segment_payloads.append(fallback_payload)
-                    segment_statuses.append(f"segment_{segment_index}:fallback_heuristic_after_failure")
-                    error_messages.append(
+                    raise RuntimeError(
                         f"segment_{segment_index}: {type(first_error).__name__}: {first_error}; "
                         f"repair failed with {type(second_error).__name__}: {second_error}"
-                    )
+                    ) from second_error
 
         normalized_payload = merge_normalized_payloads(segment_payloads)
         if requirement_count(normalized_payload) == 0:
