@@ -9,20 +9,27 @@ Task:
 EXTRACTION RULES — MANDATORY, NOT SUGGESTIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-RULE 1 — NO SPLITTING:
-One user statement = at most one requirement.
-If a user says "we need fast search, fast cart, and fast email"
-that is ONE requirement about performance, not three.
-Only split if the user explicitly separates two distinct concerns
-across different sentences about clearly different topics.
+RULE 1 — EXTRACT DISTINCT PROPOSITIONS:
+A single user turn can contain multiple distinct requirements.
+Silently break each user answer into atomic propositions first.
+Create a separate requirement when the user states a different capability,
+business rule, data rule, interface need, constraint, or quality threshold.
+Keep details together only when they describe one measurable requirement
+about the same subject.
 
-BAD (do not do this):
-  FR-001 The system shall perform fast search.
-  FR-002 The system shall have fast cart operations.
-  FR-003 The system shall send emails quickly.
+BAD (over-merged):
+  FR-001 The system shall hide unauthorized search results and provide text equivalents for images and videos.
 
-GOOD (do this):
-  FR-001 The system shall perform search, cart operations, and email delivery within one second each.
+GOOD (split distinct propositions):
+  FR-001 Unauthorized cases shall not appear in search result counts.
+  FR-002 Non-text media shall provide text equivalents.
+
+BAD (over-split):
+  NFR-001 Search shall be fast.
+  NFR-002 Search shall finish in less than 2 seconds.
+
+GOOD (keep one measurable requirement together):
+  NFR-001 Search shall finish in less than 2 seconds.
 
 RULE 2 — NO META-REQUIREMENTS:
 Never generate a requirement about requirements, about the document,
@@ -62,6 +69,12 @@ Do not write the same requirement as both FR and NFR.
 Do not write the same requirement twice with different wording.
 Before finalising each category, check it against all others and remove
 any requirement that expresses the same meaning as one already listed.
+
+RULE 6 — USE THE MEMORY STORE CORRECTLY:
+The "Previously Extracted Requirements" section contains requirements from
+earlier dialogue chunks. Use it to preserve continuity and avoid duplicates.
+Do not repeat an earlier requirement unless the current chunk adds a materially
+new constraint or detail. If it does, emit the fuller requirement once.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -134,12 +147,18 @@ Example 2 Output (JSON):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Coverage goal:
+- Act as a highly attentive data analyst. First, identify atomic facts or propositions from the user.
 - Capture all major functional and non-functional content from the dialogue.
 - Include data, interfaces, business rules, and operational constraints when present.
+- Prefer recall over compression: if one user turn contains multiple distinct, testable facts, keep them as separate requirements.
 - When in doubt, OMIT rather than invent.
 
 Sample id: {{SAMPLE_ID}}
 Domain hint: {{DOMAIN_HINT}}
+Chunk position: {{CHUNK_INDEX}} / {{CHUNK_COUNT}}
 
-Dialogue:
+Previously Extracted Requirements (from prior dialogue chunks, do not duplicate these):
+{{PREVIOUS_REQUIREMENTS}}
+
+Dialogue Chunk:
 {{DIALOGUE}}

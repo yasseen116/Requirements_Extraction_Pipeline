@@ -3,7 +3,7 @@
 Validate generated PURE requirements against the source dialogue.
 
 For each generated requirement, check whether it is grounded in at least one
-user turn in the dialogue using token-F1 (no external ML deps needed).
+user sentence/span in the dialogue using token-F1 (no external ML deps needed).
 
 A requirement is GROUNDED  if its best token-F1 against any user turn >= threshold.
 A requirement is HALLUCINATED if no user turn supports it.
@@ -53,6 +53,7 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 
 CATEGORY_ORDER = ["functional", "non_functional", "data", "business_rules", "interfaces", "constraints"]
+SENTENCE_SPLIT_RE = re.compile(r"(?<=[\.\!\?;])\s+")
 
 
 # ── Token-F1 (zero-dep fallback) ───────────────────────────────────────────────
@@ -88,6 +89,35 @@ def _best_token_f1(req: str, user_turns: list[str]) -> tuple[float, int]:
         return 0.0, 0
     best_idx = max(range(len(scores)), key=lambda i: scores[i])
     return scores[best_idx], best_idx
+
+
+def _split_into_sentences(text: str) -> list[str]:
+    text = " ".join(str(text).split())
+    if not text:
+        return []
+    sentences = [sentence.strip() for sentence in SENTENCE_SPLIT_RE.split(text) if sentence.strip()]
+    return sentences or [text]
+
+
+def _extract_user_support_units(dialogue: list[dict]) -> list[dict]:
+    units = []
+    for turn in dialogue:
+        if (turn.get("role") or "").lower() not in {"user"}:
+            continue
+        turn_text = " ".join((turn.get("content") or turn.get("text", "")).split())
+        if not turn_text:
+            continue
+        sentences = _split_into_sentences(turn_text)
+        for sentence_index, sentence in enumerate(sentences, start=1):
+            units.append(
+                {
+                    "turn_id": turn.get("turn_id"),
+                    "turn_text": turn_text,
+                    "text": sentence,
+                    "sentence_index": sentence_index,
+                }
+            )
+    return units
 
 
 # ── Semantic deduplication (cross-category) ────────────────────────────────────
@@ -157,21 +187,17 @@ def validate_requirements(
     We are asking: "could this requirement have been motivated by something
     the user said?" — a softer test than "does this match a source req?"
     """
-    # Extract user turns only
-    user_turns = [
-        t.get("content") or t.get("text", "")
-        for t in dialogue
-        if (t.get("role") or "").lower() in {"user", "USER"}
-    ]
-    user_turns = [t for t in user_turns if t.strip()]
+    support_units = _extract_user_support_units(dialogue)
+    support_texts = [unit["text"] for unit in support_units]
 
-    if not user_turns or not requirements:
+    if not support_texts or not requirements:
         return {
             "total": len(requirements),
             "grounded": len(requirements),
             "hallucinated": 0,
             "hallucination_rate": 0.0,
             "similarity_method": SIMILARITY_METHOD,
+            "support_unit": "user_sentence",
             "grounded_requirements": requirements,
             "hallucinated_requirements": [],
         }
@@ -180,18 +206,25 @@ def validate_requirements(
     hallucinated = []
 
     for req in requirements:
-        best_score, best_idx = _semantic_sim(req, user_turns)
+        best_score, best_idx = _semantic_sim(req, support_texts)
+        best_unit = support_units[best_idx]
         if best_score >= threshold:
             grounded.append({
                 "requirement": req,
-                "best_supporting_turn": user_turns[best_idx],
+                "best_supporting_turn": best_unit["turn_text"],
+                "best_supporting_turn_id": best_unit.get("turn_id"),
+                "best_supporting_span": best_unit["text"],
+                "best_supporting_sentence_index": best_unit["sentence_index"],
                 "similarity": round(best_score, 3),
             })
         else:
             hallucinated.append({
                 "requirement": req,
                 "best_score": round(best_score, 3),
-                "closest_turn": user_turns[best_idx] if user_turns else "",
+                "closest_turn": best_unit["turn_text"],
+                "closest_turn_id": best_unit.get("turn_id"),
+                "closest_span": best_unit["text"],
+                "closest_sentence_index": best_unit["sentence_index"],
             })
 
     return {
@@ -200,6 +233,7 @@ def validate_requirements(
         "hallucinated": len(hallucinated),
         "hallucination_rate": round(len(hallucinated) / len(requirements), 4) if requirements else 0.0,
         "similarity_method": SIMILARITY_METHOD,
+        "support_unit": "user_sentence",
         "grounded_requirements": [g["requirement"] for g in grounded],
         "hallucinated_requirements": hallucinated,
         "grounded_detail": grounded,

@@ -36,11 +36,14 @@ def check_dependencies() -> None:
         sys.exit(1)
 
 
-def run(cmd: list[str]) -> None:
+def run(cmd: list[str], *, extra_env: dict[str, str] | None = None) -> None:
     if cmd and cmd[0] == "python3":
         cmd = [PYTHON_BIN, *cmd[1:]]
     print(f"[run] {' '.join(cmd)}")
-    subprocess.run(cmd, cwd=ROOT, check=True)
+    env = os.environ.copy()
+    if extra_env:
+        env.update(extra_env)
+    subprocess.run(cmd, cwd=ROOT, check=True, env=env)
 
 
 def load_json(path: Path) -> dict:
@@ -105,23 +108,53 @@ def parse_args() -> argparse.Namespace:
         default=0.3,
         help="Temperature for self-consistency runs (ignored when self-consistency=1).",
     )
+    parser.add_argument(
+        "--llm-provider",
+        choices=["gemini", "ollama"],
+        default=None,
+        help="Override REQ_LLM_PROVIDER for this benchmark invocation.",
+    )
+    parser.add_argument(
+        "--dialogue-chunking",
+        choices=["auto", "always", "never"],
+        default="auto",
+        help="Dialogue chunking policy for dialogue->requirements extraction. 'auto' chunks for Ollama only.",
+    )
+    parser.add_argument("--dialogue-chunk-max-turns", type=int, default=8)
+    parser.add_argument("--dialogue-chunk-max-chars", type=int, default=2600)
+    parser.add_argument("--dialogue-chunk-overlap-turns", type=int, default=2)
+    parser.add_argument("--memory-max-items", type=int, default=24)
+    parser.add_argument("--memory-max-chars", type=int, default=3500)
     return parser.parse_args()
 
 
-def llm_provider() -> str:
+def llm_provider(provider_override: str | None = None) -> str:
+    if provider_override:
+        return provider_override.strip().lower()
     return (os.environ.get("REQ_LLM_PROVIDER", "gemini") or "gemini").strip().lower()
 
 
-def has_llm_env() -> bool:
-    if llm_provider() == "ollama":
+def has_llm_env(provider_override: str | None = None) -> bool:
+    if llm_provider(provider_override) == "ollama":
         return True
     return bool(os.environ.get("REQ_GEMINI_API_KEY")) and bool(os.environ.get("REQ_GEMINI_MODEL"))
+
+
+def should_chunk_dialogues(provider_name: str, mode: str) -> bool:
+    if mode == "always":
+        return True
+    if mode == "never":
+        return False
+    return provider_name == "ollama"
 
 
 def main() -> int:
     check_dependencies()
     global PYTHON_BIN
     args = parse_args()
+    provider_name = llm_provider(args.llm_provider)
+    extra_env = {"REQ_LLM_PROVIDER": provider_name} if args.llm_provider else None
+    dialogue_chunking_enabled = should_chunk_dialogues(provider_name, args.dialogue_chunking)
     PYTHON_BIN = args.python_bin or os.environ.get("REQ_PYTHON_BIN") or sys.executable or "python3"
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "_pure_full"
     run_dir = RUNS_ROOT / run_id
@@ -179,7 +212,8 @@ def main() -> int:
                 str(args.max_samples),
                 "--seed",
                 str(args.seed),
-            ]
+            ],
+            extra_env=extra_env,
         )
 
     run(
@@ -190,7 +224,8 @@ def main() -> int:
             str(source_dir),
             "--output-dir",
             str(oracle_dir),
-        ]
+        ],
+        extra_env=extra_env,
     )
 
     oracle_eval_path = metrics_dir / "oracle_coverage.json"
@@ -206,7 +241,8 @@ def main() -> int:
             str(args.match_threshold),
             "--output",
             str(oracle_eval_path),
-        ]
+        ],
+        extra_env=extra_env,
     )
 
     dialogue_eval_path = metrics_dir / "dialogue_coverage_user_only.json"
@@ -226,7 +262,7 @@ def main() -> int:
         "--clarification-rounds",
         str(args.clarification_rounds),
     ]
-    run(controlled_cmd)
+    run(controlled_cmd, extra_env=extra_env)
     effective_dialogue_dir = dialogue_dir
     if args.dialogue_variant != "controlled":
         variant_cmd = [
@@ -243,7 +279,7 @@ def main() -> int:
             "--partial-drop-rate",
             str(args.partial_drop_rate),
         ]
-        run(variant_cmd)
+        run(variant_cmd, extra_env=extra_env)
         effective_dialogue_dir = variant_dialogue_dir
     run(
         [
@@ -258,7 +294,8 @@ def main() -> int:
             "--user-only",
             "--output",
             str(dialogue_eval_path),
-        ]
+        ],
+        extra_env=extra_env,
     )
 
     direct_eval_path = None
@@ -269,7 +306,7 @@ def main() -> int:
     legacy_gemini_eval_path = None
     legacy_gemini_error_analysis_path = None
     pipeline_status = "skipped_missing_env"
-    if has_llm_env():
+    if has_llm_env(provider_name):
         pipeline_status = "ran"
         run(
             [
@@ -294,9 +331,10 @@ def main() -> int:
                     "--source-chunk-char-budget",
                     "6000",
                 ]
-                if llm_provider() == "ollama"
+                if provider_name == "ollama"
                 else []
-            )
+            ),
+            extra_env=extra_env,
         )
         direct_eval_path = metrics_dir / "direct_coverage.json"
         run(
@@ -311,7 +349,8 @@ def main() -> int:
                 str(args.match_threshold),
                 "--output",
                 str(direct_eval_path),
-            ]
+            ],
+            extra_env=extra_env,
         )
         direct_error_analysis_path = metrics_dir / "direct_error_analysis.json"
         run(
@@ -326,7 +365,8 @@ def main() -> int:
                 str(args.match_threshold),
                 "--output",
                 str(direct_error_analysis_path),
-            ]
+            ],
+            extra_env=extra_env,
         )
 
         raw_generated_dir = run_dir / "raw_generated_requirements"
@@ -347,15 +387,22 @@ def main() -> int:
                 [
                     "--chunk-dialogues",
                     "--dialogue-chunk-max-turns",
-                    "8",
+                    str(args.dialogue_chunk_max_turns),
                     "--dialogue-chunk-max-chars",
-                    "2600",
+                    str(args.dialogue_chunk_max_chars),
+                    "--dialogue-chunk-overlap-turns",
+                    str(args.dialogue_chunk_overlap_turns),
+                    "--memory-max-items",
+                    str(args.memory_max_items),
+                    "--memory-max-chars",
+                    str(args.memory_max_chars),
                 ]
-                if llm_provider() == "ollama"
+                if dialogue_chunking_enabled
                 else []
-            )
+            ),
+            extra_env=extra_env,
         )
-        
+
         validation_report_path = metrics_dir / "pipeline_validation_report.json"
         run(
             [
@@ -369,9 +416,10 @@ def main() -> int:
                 str(generated_dir),
                 "--report-path",
                 str(validation_report_path),
-            ]
+            ],
+            extra_env=extra_env,
         )
-        
+
         pipeline_eval_path = metrics_dir / "pipeline_coverage.json"
         run(
             [
@@ -385,7 +433,8 @@ def main() -> int:
                 str(args.match_threshold),
                 "--output",
                 str(pipeline_eval_path),
-            ]
+            ],
+            extra_env=extra_env,
         )
         pipeline_error_analysis_path = metrics_dir / "pipeline_error_analysis.json"
         run(
@@ -400,7 +449,8 @@ def main() -> int:
                 str(args.match_threshold),
                 "--output",
                 str(pipeline_error_analysis_path),
-            ]
+            ],
+            extra_env=extra_env,
         )
         legacy_gemini_eval_path = metrics_dir / "gemini_coverage.json"
         legacy_gemini_error_analysis_path = metrics_dir / "gemini_error_analysis.json"
@@ -425,10 +475,18 @@ def main() -> int:
             "partial_drop_rate": args.partial_drop_rate if args.dialogue_variant == "partial_information" else None,
             "self_consistency": args.self_consistency,
             "self_consistency_temperature": args.self_consistency_temperature,
+            "llm_provider": provider_name,
+            "dialogue_chunking": args.dialogue_chunking,
+            "dialogue_chunking_enabled": dialogue_chunking_enabled,
+            "dialogue_chunk_max_turns": args.dialogue_chunk_max_turns,
+            "dialogue_chunk_max_chars": args.dialogue_chunk_max_chars,
+            "dialogue_chunk_overlap_turns": args.dialogue_chunk_overlap_turns,
+            "memory_max_items": args.memory_max_items,
+            "memory_max_chars": args.memory_max_chars,
             "python_bin": PYTHON_BIN,
         },
         "oracle": load_json(oracle_eval_path)["aggregate"],
-        "llm_provider": llm_provider(),
+        "llm_provider": provider_name,
         "pipeline_status": pipeline_status,
         "gemini_status": pipeline_status,
         "direct": load_json(direct_eval_path)["aggregate"] if direct_eval_path else None,
@@ -443,7 +501,7 @@ def main() -> int:
             "direct_error_analysis": str(direct_error_analysis_path.relative_to(ROOT)) if direct_error_analysis_path else None,
             "pipeline_coverage": str(pipeline_eval_path.relative_to(ROOT)) if pipeline_eval_path else None,
             "pipeline_error_analysis": str(pipeline_error_analysis_path.relative_to(ROOT)) if pipeline_error_analysis_path else None,
-            "pipeline_validation_report": str(validation_report_path.relative_to(ROOT)) if has_llm_env() else None,
+            "pipeline_validation_report": str(validation_report_path.relative_to(ROOT)) if has_llm_env(provider_name) else None,
             "gemini_coverage": str(legacy_gemini_eval_path.relative_to(ROOT)) if legacy_gemini_eval_path else None,
             "gemini_error_analysis": str(legacy_gemini_error_analysis_path.relative_to(ROOT)) if legacy_gemini_error_analysis_path else None,
             "dialogue_coverage_user_only": str(dialogue_eval_path.relative_to(ROOT)),

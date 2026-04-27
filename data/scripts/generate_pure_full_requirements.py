@@ -39,6 +39,14 @@ CATEGORY_PREFIXES = {
     "interfaces": "IF",
     "constraints": "C",
 }
+MEMORY_CATEGORY_LABELS = {
+    "functional": "Functional",
+    "non_functional": "Non-functional",
+    "data": "Data",
+    "business_rules": "Business rules",
+    "interfaces": "Interfaces",
+    "constraints": "Constraints",
+}
 
 
 def ensure_period(text: str) -> str:
@@ -109,12 +117,28 @@ def render_dialogue(sample: dict) -> str:
     return "\n".join(f"{turn['turn_id']}. {turn['role']}: {turn['text']}" for turn in sample["dialogue"])
 
 
-def build_prompt(template: str, sample: dict) -> str:
-    return (
+def build_prompt(
+    template: str,
+    sample: dict,
+    memory_text: str = "",
+    *,
+    chunk_index: int = 1,
+    chunk_count: int = 1,
+) -> str:
+    prompt = (
         template.replace("{{SAMPLE_ID}}", sample["sample_id"])
         .replace("{{DOMAIN_HINT}}", sample["metadata"]["domain"])
         .replace("{{DIALOGUE}}", render_dialogue(sample))
     )
+    replacements = {
+        "{{PREVIOUS_REQUIREMENTS}}": memory_text if memory_text else "None yet.",
+        "{{CHUNK_INDEX}}": str(chunk_index),
+        "{{CHUNK_COUNT}}": str(chunk_count),
+    }
+    for marker, value in replacements.items():
+        if marker in prompt:
+            prompt = prompt.replace(marker, value)
+    return prompt
 
 
 def load_samples(input_dir: Path) -> list[dict]:
@@ -268,6 +292,60 @@ def requirement_count(normalized_payload: dict) -> int:
     return sum(len(reqs.get(key, [])) for key in REQUIREMENT_KEYS)
 
 
+def update_memory_entries(memory_entries: list[dict], normalized_payload: dict) -> None:
+    reqs = normalized_payload.get("requirements", {})
+    if not isinstance(reqs, dict):
+        return
+
+    seen = {dedup_text_key(entry.get("text", "")) for entry in memory_entries}
+    for key in REQUIREMENT_KEYS:
+        items = reqs.get(key, [])
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            text = clean_text(item.get("text", ""))
+            text_key = dedup_text_key(text)
+            if not text_key or text_key in seen:
+                continue
+            seen.add(text_key)
+            memory_entries.append(
+                {
+                    "category": key,
+                    "text": text,
+                }
+            )
+
+
+def format_memory_entries(memory_entries: list[dict]) -> str:
+    if not memory_entries:
+        return "None yet."
+
+    lines = []
+    for key in REQUIREMENT_KEYS:
+        category_entries = [entry for entry in memory_entries if entry.get("category") == key]
+        if not category_entries:
+            continue
+        lines.append(f"{MEMORY_CATEGORY_LABELS[key]}:")
+        for entry in category_entries:
+            lines.append(f"- {entry.get('text', '')}")
+    return "\n".join(lines) if lines else "None yet."
+
+
+def render_memory_text(memory_entries: list[dict], *, max_items: int, max_chars: int) -> str:
+    if not memory_entries or max_items == 0:
+        return "None yet."
+
+    selected = memory_entries[-max_items:] if max_items > 0 else list(memory_entries)
+    while selected:
+        rendered = format_memory_entries(selected)
+        if max_chars <= 0 or len(rendered) <= max_chars:
+            return rendered
+        selected = selected[1:]
+    return "None yet."
+
+
 def heuristic_payload_from_dialogue(sample: dict) -> dict:
     dialogue = sample.get("dialogue", [])
     functional = []
@@ -341,60 +419,117 @@ def select_dialogue_turns(sample: dict, turn_ids: list[int]) -> list[dict]:
     return [turn for turn in sample.get("dialogue", []) if isinstance(turn, dict) and turn.get("turn_id") in wanted]
 
 
-def build_dialogue_segments(sample: dict, *, max_turns: int, max_chars: int) -> list[list[dict]]:
+def merge_turn_lists(*turn_groups: list[dict]) -> list[dict]:
+    merged = []
+    seen_turn_ids = set()
+    for turn_group in turn_groups:
+        for turn in turn_group:
+            if not isinstance(turn, dict):
+                continue
+            turn_id = turn.get("turn_id")
+            key = turn_id if isinstance(turn_id, int) else sha256_text(json.dumps(turn, sort_keys=True, ensure_ascii=False))
+            if key in seen_turn_ids:
+                continue
+            seen_turn_ids.add(key)
+            merged.append(turn)
+    return merged
+
+
+def segment_char_count(turns: list[dict]) -> int:
+    return sum(len(clean_text(turn.get("text", ""))) for turn in turns if isinstance(turn, dict))
+
+
+def segment_turn_ids(turns: list[dict]) -> list[int]:
+    return [
+        turn.get("turn_id")
+        for turn in turns
+        if isinstance(turn, dict) and isinstance(turn.get("turn_id"), int)
+    ]
+
+
+def fits_segment(turns: list[dict], *, max_turns: int, max_chars: int) -> bool:
+    return len(turns) <= max_turns and segment_char_count(turns) <= max_chars
+
+
+def build_seed_segment(
+    scope_turns: list[dict],
+    overlap_context: list[dict],
+    pair_segment: list[dict],
+    *,
+    max_turns: int,
+    max_chars: int,
+) -> list[dict]:
+    candidates = [
+        merge_turn_lists(scope_turns, overlap_context, pair_segment),
+        merge_turn_lists(overlap_context, pair_segment),
+        merge_turn_lists(scope_turns, pair_segment),
+        merge_turn_lists(pair_segment),
+    ]
+    for candidate in candidates:
+        if fits_segment(candidate, max_turns=max_turns, max_chars=max_chars):
+            return candidate
+    return candidates[-1]
+
+
+def build_dialogue_segments(
+    sample: dict,
+    *,
+    max_turns: int,
+    max_chars: int,
+    overlap_turns: int,
+) -> list[list[dict]]:
     dialogue = sample.get("dialogue", [])
     if not isinstance(dialogue, list) or not dialogue:
         return []
 
+    overlap_turns = max(0, overlap_turns)
+    segments = []
     trace = sample.get("dialogue_generation", {}).get("trace", [])
     if isinstance(trace, list) and trace:
-        scope_turns: list[int] = []
-        segments = []
-        current_turn_ids: list[int] = []
-        current_chars = 0
+        scope_turns: list[dict] = []
+        trace_pairs: list[list[dict]] = []
         for item in trace:
             if not isinstance(item, dict):
-                continue
-            if item.get("theme") == "goal_scope" or not item.get("req_ids"):
                 continue
             bot_turn_id = item.get("bot_turn_id")
             user_turn_id = item.get("user_turn_id")
             if not isinstance(bot_turn_id, int) or not isinstance(user_turn_id, int):
                 continue
-            pair_turn_ids = [bot_turn_id, user_turn_id]
-            pair_segment = select_dialogue_turns(sample, pair_turn_ids)
+            pair_segment = select_dialogue_turns(sample, [bot_turn_id, user_turn_id])
             if not pair_segment:
                 continue
-            pair_chars = sum(len(clean_text(turn.get("text", ""))) for turn in pair_segment)
-            candidate_turn_ids = current_turn_ids + pair_turn_ids
-            candidate_segment = select_dialogue_turns(sample, candidate_turn_ids)
-            candidate_chars = current_chars + pair_chars
-            if len(candidate_segment) <= max_turns and candidate_chars <= max_chars:
-                current_turn_ids = candidate_turn_ids
-                current_chars = candidate_chars
+            if item.get("theme") == "goal_scope":
+                scope_turns = pair_segment
                 continue
-            current_segment = select_dialogue_turns(sample, current_turn_ids)
-            if current_segment:
-                segments.append(current_segment)
-            # Start a new segment with scope context if it fits, otherwise use only the local pair.
-            scoped_turn_ids = scope_turns + pair_turn_ids
-            scoped_segment = select_dialogue_turns(sample, scoped_turn_ids)
-            scoped_chars = sum(len(clean_text(turn.get("text", ""))) for turn in scoped_segment)
-            if scoped_segment and len(scoped_segment) <= max_turns and scoped_chars <= max_chars:
-                current_turn_ids = scoped_turn_ids
-                current_chars = scoped_chars
-            else:
-                current_turn_ids = pair_turn_ids
-                current_chars = pair_chars
-        current_segment = select_dialogue_turns(sample, current_turn_ids)
-        if current_segment:
-            segments.append(current_segment)
-        if segments:
-            return segments
+            if not item.get("req_ids"):
+                continue
+            trace_pairs.append(pair_segment)
 
-    segments = []
+        if trace_pairs:
+            current = list(scope_turns)
+            for pair_segment in trace_pairs:
+                candidate = merge_turn_lists(current, pair_segment)
+                if current and not fits_segment(candidate, max_turns=max_turns, max_chars=max_chars):
+                    segments.append(current)
+                    overlap_context = current[-overlap_turns:] if overlap_turns > 0 else []
+                    current = build_seed_segment(
+                        scope_turns,
+                        overlap_context,
+                        pair_segment,
+                        max_turns=max_turns,
+                        max_chars=max_chars,
+                    )
+                    continue
+                current = candidate
+
+            if current and (not segments or segment_turn_ids(current) != segment_turn_ids(segments[-1])):
+                segments.append(current)
+            if segments:
+                return segments
+
     current = []
     current_chars = 0
+
     for turn in dialogue:
         if not isinstance(turn, dict):
             continue
@@ -402,11 +537,12 @@ def build_dialogue_segments(sample: dict, *, max_turns: int, max_chars: int) -> 
         turn_chars = len(turn_text)
         if current and (len(current) >= max_turns or current_chars + turn_chars > max_chars):
             segments.append(current)
-            current = []
-            current_chars = 0
+            current = current[-overlap_turns:] if len(current) > overlap_turns else []
+            current_chars = sum(len(clean_text(t.get("text", ""))) for t in current)
         current.append(turn)
         current_chars += turn_chars
-    if current:
+
+    if current and (not segments or segment_turn_ids(current) != segment_turn_ids(segments[-1])):
         segments.append(current)
     return segments
 
@@ -433,6 +569,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--chunk-dialogues", action="store_true")
     parser.add_argument("--dialogue-chunk-max-turns", type=int, default=8)
     parser.add_argument("--dialogue-chunk-max-chars", type=int, default=2600)
+    parser.add_argument("--dialogue-chunk-overlap-turns", type=int, default=2)
+    parser.add_argument("--memory-max-items", type=int, default=24)
+    parser.add_argument("--memory-max-chars", type=int, default=3500)
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
@@ -481,14 +620,26 @@ def main() -> int:
                 sample,
                 max_turns=args.dialogue_chunk_max_turns,
                 max_chars=args.dialogue_chunk_max_chars,
+                overlap_turns=args.dialogue_chunk_overlap_turns,
             )
             if not segments:
                 segments = [sample.get("dialogue", [])]
 
+        memory_entries: list[dict] = []
         for segment_index, segment in enumerate(segments, start=1):
             segment_sample = dict(sample)
             segment_sample["dialogue"] = segment
-            prompt = build_prompt(prompt_template, segment_sample)
+            prompt = build_prompt(
+                prompt_template,
+                segment_sample,
+                render_memory_text(
+                    memory_entries,
+                    max_items=max(0, args.memory_max_items),
+                    max_chars=max(0, args.memory_max_chars),
+                ),
+                chunk_index=segment_index,
+                chunk_count=len(segments),
+            )
             invalid_text = ""
             try:
                 runs = max(1, int(args.self_consistency))
@@ -513,6 +664,7 @@ def main() -> int:
                 segment_payloads.append(merged_segment)
                 usages.append({"segment_index": segment_index, "runs": runs, "per_run": segment_usages})
                 raw_responses.append({"segment_index": segment_index, "responses": segment_raw_responses})
+                update_memory_entries(memory_entries, merged_segment)
             except Exception as first_error:  # noqa: BLE001
                 repair_attempted = True
                 try:
@@ -528,6 +680,7 @@ def main() -> int:
                     segment_payloads.append(repaired_payload)
                     usages.append({"segment_index": segment_index, "repair": response.usage})
                     raw_responses.append({"segment_index": segment_index, "responses": [response.raw_response]})
+                    update_memory_entries(memory_entries, repaired_payload)
                 except Exception as second_error:  # noqa: BLE001
                     raise RuntimeError(
                         f"segment_{segment_index}: {type(first_error).__name__}: {first_error}; "
@@ -564,6 +717,13 @@ def main() -> int:
                 "segment_statuses": segment_statuses,
                 "dialogue_chunk_max_turns": args.dialogue_chunk_max_turns if args.chunk_dialogues else None,
                 "dialogue_chunk_max_chars": args.dialogue_chunk_max_chars if args.chunk_dialogues else None,
+                "dialogue_chunk_overlap_turns": args.dialogue_chunk_overlap_turns if args.chunk_dialogues else None,
+            },
+            "memory": {
+                "enabled": bool(args.chunk_dialogues),
+                "max_items": args.memory_max_items,
+                "max_chars": args.memory_max_chars,
+                "stored_unique_requirements": len(memory_entries),
             },
             "project_summary": normalized_payload["project_summary"] if normalized_payload else "",
             "requirements": normalized_payload["requirements"] if normalized_payload else {
