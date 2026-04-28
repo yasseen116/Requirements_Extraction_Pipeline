@@ -21,16 +21,24 @@ try:
     from reportlab.pdfgen import canvas
     from reportlab.platypus import LongTable, PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 except ImportError as exc:  # pragma: no cover - runtime dependency guard
-    raise SystemExit(
-        "reportlab is required for scripts/build_run_report.py. "
-        "Install it with `python3 -m pip install reportlab`."
-    ) from exc
+    colors = None  # type: ignore[assignment]
+    letter = None  # type: ignore[assignment]
+    ParagraphStyle = None  # type: ignore[assignment]
+    getSampleStyleSheet = None  # type: ignore[assignment]
+    inch = None  # type: ignore[assignment]
+    pdfmetrics = None  # type: ignore[assignment]
+    TTFont = None  # type: ignore[assignment]
+    canvas = None  # type: ignore[assignment]
+    LongTable = PageBreak = Paragraph = SimpleDocTemplate = Spacer = Table = TableStyle = None  # type: ignore[assignment]
+    _REPORTLAB_IMPORT_ERROR = exc
+else:
+    _REPORTLAB_IMPORT_ERROR = None
 
 import evaluate_pure_requirements_coverage as coverage_eval
 
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MODEL = "qwen2.5:7b-instruct"
+DEFAULT_MODEL = "unknown"
 MATCH_THRESHOLD = 0.55
 CATEGORY_ORDER = ["functional", "non_functional", "data", "business_rules", "interfaces", "constraints"]
 CATEGORY_LABELS = {
@@ -46,18 +54,34 @@ FONT_REGULAR = "Helvetica"
 FONT_BOLD = "Helvetica-Bold"
 FONT_UNICODE = "Helvetica"
 
-LIGHT_BLUE = colors.HexColor("#D9EAFE")
-LIGHT_GREEN = colors.HexColor("#E7F6E7")
-LIGHT_RED = colors.HexColor("#FDECEC")
-LIGHT_AMBER = colors.HexColor("#FFF4D6")
-VERY_LIGHT_GRAY = colors.HexColor("#F5F5F5")
-BAR_GREEN = colors.HexColor("#66BB6A")
-BAR_AMBER = colors.HexColor("#FFB74D")
-BAR_RED = colors.HexColor("#EF5350")
-BAR_BG = colors.HexColor("#E0E0E0")
+if colors is not None:
+    LIGHT_BLUE = colors.HexColor("#D9EAFE")
+    LIGHT_GREEN = colors.HexColor("#E7F6E7")
+    LIGHT_RED = colors.HexColor("#FDECEC")
+    LIGHT_AMBER = colors.HexColor("#FFF4D6")
+    VERY_LIGHT_GRAY = colors.HexColor("#F5F5F5")
+    BAR_GREEN = colors.HexColor("#66BB6A")
+    BAR_AMBER = colors.HexColor("#FFB74D")
+    BAR_RED = colors.HexColor("#EF5350")
+    BAR_BG = colors.HexColor("#E0E0E0")
+else:  # pragma: no cover - import-time fallback for non-report tests
+    LIGHT_BLUE = None
+    LIGHT_GREEN = None
+    LIGHT_RED = None
+    LIGHT_AMBER = None
+    VERY_LIGHT_GRAY = None
+    BAR_GREEN = None
+    BAR_AMBER = None
+    BAR_RED = None
+    BAR_BG = None
 
 
 def register_fonts() -> None:
+    if _REPORTLAB_IMPORT_ERROR is not None:
+        raise SystemExit(
+            "reportlab is required for scripts/build_run_report.py. "
+            "Install it with `python3 -m pip install reportlab`."
+        ) from _REPORTLAB_IMPORT_ERROR
     global FONT_REGULAR, FONT_BOLD, FONT_UNICODE
 
     unicode_candidates = [
@@ -120,21 +144,63 @@ def find_first_existing(run_dir: Path, candidates: list[str], kind: str) -> Path
     raise FileNotFoundError(f"Could not find {kind} in {run_dir}: tried {candidates}")
 
 
-def load_model_name(run_dir: Path) -> str:
+def load_model_metadata(run_dir: Path, comparison_summary: dict) -> dict:
+    comparison_metadata = comparison_summary.get("model_metadata", {})
+    if isinstance(comparison_metadata, dict):
+        generation = comparison_metadata.get("generation", {})
+        validator = comparison_metadata.get("standard_validator", {})
+        if (
+            isinstance(generation, dict)
+            and any(generation.get(key) for key in ["provider", "model"])
+        ) or (
+            isinstance(validator, dict)
+            and any(validator.get(key) for key in ["provider", "model", "enabled"])
+        ):
+            return {
+                "generation_provider": (generation or {}).get("provider"),
+                "generation_model": (generation or {}).get("model") or DEFAULT_MODEL,
+                "validator_provider": (validator or {}).get("provider"),
+                "validator_model": (validator or {}).get("model"),
+                "validator_method": (validator or {}).get("method"),
+                "validator_enabled": bool((validator or {}).get("enabled")),
+            }
+
     run_config = run_dir / "run_config.json"
     if run_config.exists():
         payload = load_json(run_config)
         if isinstance(payload, dict):
+            validator = payload.get("validator", {})
             for key in ["model", "llm_model"]:
                 value = payload.get(key)
                 if isinstance(value, str) and value.strip():
-                    return value.strip()
+                    return {
+                        "generation_provider": payload.get("provider"),
+                        "generation_model": value.strip(),
+                        "validator_provider": validator.get("provider") if isinstance(validator, dict) else None,
+                        "validator_model": validator.get("model") if isinstance(validator, dict) else None,
+                        "validator_method": validator.get("method") if isinstance(validator, dict) else None,
+                        "validator_enabled": bool(validator.get("enabled")) if isinstance(validator, dict) else False,
+                    }
             llm_config = payload.get("llm")
             if isinstance(llm_config, dict):
                 value = llm_config.get("model")
                 if isinstance(value, str) and value.strip():
-                    return value.strip()
-    return DEFAULT_MODEL
+                    return {
+                        "generation_provider": payload.get("provider"),
+                        "generation_model": value.strip(),
+                        "validator_provider": validator.get("provider") if isinstance(validator, dict) else None,
+                        "validator_model": validator.get("model") if isinstance(validator, dict) else None,
+                        "validator_method": validator.get("method") if isinstance(validator, dict) else None,
+                        "validator_enabled": bool(validator.get("enabled")) if isinstance(validator, dict) else False,
+                    }
+    return {
+        "generation_provider": None,
+        "generation_model": DEFAULT_MODEL,
+        "validator_provider": None,
+        "validator_model": None,
+        "validator_method": None,
+        "validator_enabled": False,
+    }
 
 
 def format_metric(value: float | None) -> str:
@@ -145,6 +211,10 @@ def format_metric(value: float | None) -> str:
 
 def format_percent(value: float) -> str:
     return f"{value * 100:.1f}%"
+
+
+def format_metric_row(value: float | None) -> str:
+    return format_metric(value)
 
 
 def normalize_role(role: str) -> str:
@@ -376,10 +446,12 @@ def build_styles() -> dict[str, ParagraphStyle]:
 
 def build_summary_pdf(context: dict, output_path: Path) -> None:
     run_id = context["run_id"]
-    model_name = context["model_name"]
+    model_metadata = context["model_metadata"]
     direct = context["direct_metrics"]["aggregate"]
     pipeline = context["pipeline_metrics"]["aggregate"]
     dialogue = context["dialogue_metrics"]["aggregate"]
+    direct_llm = context.get("direct_llm_metrics", {})
+    pipeline_llm = context.get("pipeline_llm_metrics", {})
     per_sample = context["pipeline_metrics"]["per_sample"]
     clarification_summary = context["clarification_summary"]
     pipeline_diagnostics = context.get("comparison_summary", {}).get("pipeline_diagnostics", {}).get("aggregate", {})
@@ -406,7 +478,15 @@ def build_summary_pdf(context: dict, output_path: Path) -> None:
     header_lines = [
         f"Run ID: {run_id}",
         f"Date generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-        f"Model used: {model_name}",
+        f"Generation model: {(model_metadata.get('generation_provider') or 'N/A')} / {model_metadata.get('generation_model') or 'N/A'}",
+        (
+            "Standard validator: "
+            + (
+                f"{model_metadata.get('validator_provider')} / {model_metadata.get('validator_model')}"
+                if model_metadata.get("validator_enabled")
+                else "not configured"
+            )
+        ),
         f"Dialogue method: {question_algorithm.get('method') or 'N/A'}",
         f"Question algorithm: {question_algorithm.get('question_algorithm_version') or 'N/A'}",
         f"Clarification rounds: requested {clarification_summary['requested_label']} | used {clarification_summary['used_label']}",
@@ -416,6 +496,10 @@ def build_summary_pdf(context: dict, output_path: Path) -> None:
         y -= 14
 
     y -= 8
+    pdf.setFont(FONT_BOLD, 11)
+    pdf.drawString(margin, y, "Layer 1 - Sentence-transformer matching")
+    y -= 14
+
     table_data = [
         ["Condition", "Precision", "Recall", "F1", "Hallucination rate"],
         [
@@ -457,6 +541,61 @@ def build_summary_pdf(context: dict, output_path: Path) -> None:
     _, table_height = metrics_table.wrapOn(pdf, page_width - 2 * margin, y)
     metrics_table.drawOn(pdf, margin, y - table_height)
     y -= table_height + 18
+
+    if direct_llm and pipeline_llm:
+        pdf.setFont(FONT_BOLD, 11)
+        pdf.drawString(margin, y, "Layer 2 - Gemini checklist judge")
+        y -= 14
+
+        llm_direct = direct_llm["aggregate"]
+        llm_pipeline = pipeline_llm["aggregate"]
+        llm_table_data = [
+            ["Condition", "Strict P", "Strict R", "Strict F1", "Weighted P", "Weighted R", "Weighted F1"],
+            [
+                "Direct baseline",
+                format_metric_row(llm_direct.get("micro_precision")),
+                format_metric_row(llm_direct.get("micro_coverage_recall")),
+                format_metric_row(llm_direct.get("micro_f1")),
+                format_metric_row(llm_direct.get("micro_weighted_precision")),
+                format_metric_row(llm_direct.get("micro_weighted_coverage_recall")),
+                format_metric_row(llm_direct.get("micro_weighted_f1")),
+            ],
+            [
+                "Conversational pipeline",
+                format_metric_row(llm_pipeline.get("micro_precision")),
+                format_metric_row(llm_pipeline.get("micro_coverage_recall")),
+                format_metric_row(llm_pipeline.get("micro_f1")),
+                format_metric_row(llm_pipeline.get("micro_weighted_precision")),
+                format_metric_row(llm_pipeline.get("micro_weighted_coverage_recall")),
+                format_metric_row(llm_pipeline.get("micro_weighted_f1")),
+            ],
+        ]
+        llm_table = Table(llm_table_data, colWidths=[145, 52, 52, 52, 60, 60, 60])
+        llm_table.setStyle(
+            TableStyle(
+                [
+                    ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#EAEAEA")),
+                    ("BACKGROUND", (0, 2), (-1, 2), LIGHT_BLUE),
+                    ("BOX", (0, 0), (-1, -1), 0.5, colors.black),
+                    ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.grey),
+                    ("FONTNAME", (0, 0), (-1, 0), FONT_BOLD),
+                    ("FONTNAME", (0, 1), (-1, -1), FONT_REGULAR),
+                    ("FONTSIZE", (0, 0), (-1, -1), 8),
+                    ("ALIGN", (1, 1), (-1, -1), "CENTER"),
+                    ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 5),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 5),
+                    ("TOPPADDING", (0, 0), (-1, -1), 4),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                ]
+            )
+        )
+        _, llm_height = llm_table.wrapOn(pdf, page_width - 2 * margin, y)
+        llm_table.drawOn(pdf, margin, y - llm_height)
+        y -= llm_height + 12
+        pdf.setFont(FONT_REGULAR, 8)
+        pdf.drawString(margin, y, "Judge scoring: strict counts full=1, partial=0, none=0. Weighted counts full=1, partial=0.5, none=0.")
+        y -= 16
 
     pdf.setFont(FONT_BOLD, 11)
     pdf.drawString(margin, y, "Per-document coverage")
@@ -534,11 +673,25 @@ def build_document_header_table(doc_metrics: dict, styles: dict[str, ParagraphSt
     clarification_info = doc_metrics.get("clarification_info", {})
     diagnostics = doc_metrics.get("pipeline_diagnostics", {})
     question_algorithm = doc_metrics.get("question_algorithm", {})
+    llm_validation = doc_metrics.get("llm_validation_metrics", {})
+    model_metadata = doc_metrics.get("model_metadata", {})
     clarification_requested = clarification_info.get("clarification_rounds_requested")
     clarification_used = clarification_info.get("clarification_rounds_used")
     clarification_chunks = clarification_info.get("clarification_chunk_count")
     rows = [
         ["Document ID", str(doc_metrics.get("document_id") or doc_metrics.get("sample_id", ""))],
+        [
+            "Generation model",
+            f"{model_metadata.get('generation_provider') or 'N/A'} / {model_metadata.get('generation_model') or 'N/A'}",
+        ],
+        [
+            "Standard validator",
+            (
+                f"{model_metadata.get('validator_provider')} / {model_metadata.get('validator_model')}"
+                if model_metadata.get("validator_enabled")
+                else "not configured"
+            ),
+        ],
         ["Dialogue method", str(question_algorithm.get("method") or "N/A")],
         ["Question algorithm", str(question_algorithm.get("question_algorithm_version") or "N/A")],
         ["Source requirement count", str(doc_metrics.get("source_requirement_count", 0))],
@@ -553,11 +706,27 @@ def build_document_header_table(doc_metrics: dict, styles: dict[str, ParagraphSt
             str(clarification_chunks if clarification_chunks is not None else "N/A"),
         ],
         [
-            "Precision / Recall / F1",
+            "Semantic P / R / F1",
             (
                 f"{format_metric(doc_metrics.get('precision'))} / "
                 f"{format_metric(doc_metrics.get('coverage_recall'))} / "
                 f"{format_metric(doc_metrics.get('f1'))}"
+            ),
+        ],
+        [
+            "LLM strict P / R / F1",
+            (
+                f"{format_metric(llm_validation.get('precision'))} / "
+                f"{format_metric(llm_validation.get('coverage_recall'))} / "
+                f"{format_metric(llm_validation.get('f1'))}"
+            ),
+        ],
+        [
+            "LLM weighted P / R / F1",
+            (
+                f"{format_metric(llm_validation.get('weighted_precision'))} / "
+                f"{format_metric(llm_validation.get('weighted_coverage_recall'))} / "
+                f"{format_metric(llm_validation.get('weighted_f1'))}"
             ),
         ],
         [
@@ -706,6 +875,118 @@ def build_match_table(match_rows: list[dict], doc_width: float, styles: dict[str
     return table
 
 
+def build_llm_validation_flowables(llm_metrics: dict, doc_width: float, styles: dict[str, ParagraphStyle]) -> list:
+    if not llm_metrics:
+        return [make_paragraph("No Gemini validator metrics found for this document.", styles["body"])]
+
+    flowables = [
+        make_paragraph(
+            (
+                "Strict P/R/F1: "
+                f"{format_metric(llm_metrics.get('precision'))} / "
+                f"{format_metric(llm_metrics.get('coverage_recall'))} / "
+                f"{format_metric(llm_metrics.get('f1'))}. "
+                "Weighted P/R/F1: "
+                f"{format_metric(llm_metrics.get('weighted_precision'))} / "
+                f"{format_metric(llm_metrics.get('weighted_coverage_recall'))} / "
+                f"{format_metric(llm_metrics.get('weighted_f1'))}."
+            ),
+            styles["body"],
+        ),
+        make_paragraph(
+            "Judge scoring: strict counts only full matches. Weighted counts full=1 and partial=0.5.",
+            styles["body_small"],
+        ),
+        Spacer(1, 6),
+    ]
+
+    match_examples = llm_metrics.get("validator_match_examples", [])
+    if match_examples:
+        rows = [
+            [
+                Paragraph(f"<font name='{FONT_BOLD}'>Verdict</font>", styles["body_small"]),
+                Paragraph(f"<font name='{FONT_BOLD}'>Source requirement</font>", styles["body_small"]),
+                Paragraph(f"<font name='{FONT_BOLD}'>Generated requirement</font>", styles["body_small"]),
+                Paragraph(f"<font name='{FONT_BOLD}'>Judge reason</font>", styles["body_small"]),
+            ]
+        ]
+        table_style = [
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#EAEAEA")),
+            ("BOX", (0, 0), (-1, -1), 0.35, colors.grey),
+            ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#DDDDDD")),
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("LEFTPADDING", (0, 0), (-1, -1), 4),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+            ("TOPPADDING", (0, 0), (-1, -1), 4),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+        ]
+        for row_index, item in enumerate(match_examples, start=1):
+            verdict = str(item.get("verdict", "")).lower()
+            if verdict == "full":
+                background = LIGHT_GREEN
+            elif verdict == "partial":
+                background = LIGHT_AMBER
+            else:
+                background = LIGHT_RED
+            rows.append(
+                [
+                    make_paragraph(verdict or "n/a", styles["body_small"]),
+                    make_paragraph(str(item.get("source_requirement", "")), styles["body_small"]),
+                    make_paragraph(str(item.get("generated_requirement", "")), styles["body_small"]),
+                    make_paragraph(str(item.get("reason", "")), styles["body_small"]),
+                ]
+            )
+            table_style.append(("BACKGROUND", (0, row_index), (-1, row_index), background))
+        flowables.append(
+            LongTable(
+                rows,
+                colWidths=[doc_width * 0.10, doc_width * 0.27, doc_width * 0.31, doc_width * 0.32],
+                repeatRows=1,
+                style=TableStyle(table_style),
+            )
+        )
+        flowables.append(Spacer(1, 6))
+
+    partial_examples = llm_metrics.get("partial_only_examples", [])
+    if partial_examples:
+        flowables.append(Paragraph("Additional partial-match examples", styles["subheading"]))
+        rows = [
+            [
+                Paragraph(f"<font name='{FONT_BOLD}'>Source requirement</font>", styles["body_small"]),
+                Paragraph(f"<font name='{FONT_BOLD}'>Generated requirement</font>", styles["body_small"]),
+                Paragraph(f"<font name='{FONT_BOLD}'>Judge reason</font>", styles["body_small"]),
+            ]
+        ]
+        table_style = [
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#EAEAEA")),
+            ("BOX", (0, 0), (-1, -1), 0.35, colors.grey),
+            ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#DDDDDD")),
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("LEFTPADDING", (0, 0), (-1, -1), 4),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+            ("TOPPADDING", (0, 0), (-1, -1), 4),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+        ]
+        for row_index, item in enumerate(partial_examples, start=1):
+            rows.append(
+                [
+                    make_paragraph(str(item.get("source_requirement", "")), styles["body_small"]),
+                    make_paragraph(str(item.get("generated_requirement", "")), styles["body_small"]),
+                    make_paragraph(str(item.get("reason", "")), styles["body_small"]),
+                ]
+            )
+            table_style.append(("BACKGROUND", (0, row_index), (-1, row_index), LIGHT_AMBER))
+        flowables.append(
+            LongTable(
+                rows,
+                colWidths=[doc_width * 0.34, doc_width * 0.33, doc_width * 0.33],
+                repeatRows=1,
+                style=TableStyle(table_style),
+            )
+        )
+    return flowables
+
+
 def build_full_detail_pdf(context: dict, output_path: Path) -> None:
     styles = build_styles()
     doc = SimpleDocTemplate(
@@ -722,17 +1003,41 @@ def build_full_detail_pdf(context: dict, output_path: Path) -> None:
     story = [
         Paragraph("Benchmark run full detail", styles["title"]),
         Paragraph(f"Run ID: {context['run_id']}", styles["body"]),
-        Paragraph(f"Model used: {context['model_name']}", styles["body"]),
+        Paragraph(
+            "Generation model: "
+            f"{context['model_metadata'].get('generation_provider') or 'N/A'} / "
+            f"{context['model_metadata'].get('generation_model') or 'N/A'}",
+            styles["body"],
+        ),
+        Paragraph(
+            "Standard validator: "
+            + (
+                f"{context['model_metadata'].get('validator_provider')} / {context['model_metadata'].get('validator_model')}"
+                if context["model_metadata"].get("validator_enabled")
+                else "not configured"
+            ),
+            styles["body"],
+        ),
+        Paragraph(
+            "Layer 1 uses sentence-transformer greedy one-to-one matching at threshold 0.55. "
+            "Layer 2 uses a checklist-based Gemini judge with strict and weighted scoring.",
+            styles["body"],
+        ),
         Spacer(1, 10),
     ]
 
     pipeline_by_sample = {item["sample_id"]: item for item in context["pipeline_metrics"]["per_sample"]}
+    pipeline_llm_by_sample = {
+        item["sample_id"]: item for item in (context.get("pipeline_llm_metrics") or {}).get("per_sample", [])
+    }
 
     for doc_index, sample in enumerate(context["documents"]):
         sample_id = sample["sample_id"]
         metrics = dict(pipeline_by_sample.get(sample_id, {}))
         metrics["clarification_info"] = sample.get("clarification_info", {})
         metrics["pipeline_diagnostics"] = sample.get("pipeline_diagnostics", {})
+        metrics["llm_validation_metrics"] = pipeline_llm_by_sample.get(sample_id, {})
+        metrics["model_metadata"] = context["model_metadata"]
 
         if doc_index > 0:
             story.append(PageBreak())
@@ -752,6 +1057,10 @@ def build_full_detail_pdf(context: dict, output_path: Path) -> None:
 
         story.append(Paragraph("Part D - Matched vs missed table", styles["subheading"]))
         story.append(build_match_table(sample["match_rows"], doc_width, styles))
+        story.append(Spacer(1, 10))
+
+        story.append(Paragraph("Part E - Gemini judge requirement matching", styles["subheading"]))
+        story.extend(build_llm_validation_flowables(metrics.get("llm_validation_metrics", {}), doc_width, styles))
 
     doc.build(story, onFirstPage=page_footer, onLaterPages=page_footer)
 
@@ -859,6 +1168,46 @@ def summarize_question_algorithm(documents: list[dict], comparison_summary: dict
     }
 
 
+def enrich_model_metadata(
+    model_metadata: dict,
+    *,
+    documents: list[dict],
+    comparison_summary: dict,
+    direct_llm_metrics: dict,
+    pipeline_llm_metrics: dict,
+) -> dict:
+    enriched = dict(model_metadata)
+
+    if not enriched.get("generation_provider"):
+        provider = comparison_summary.get("llm_provider")
+        if isinstance(provider, str) and provider.strip():
+            enriched["generation_provider"] = provider.strip()
+
+    if not enriched.get("generation_model") or enriched.get("generation_model") == DEFAULT_MODEL:
+        for item in documents:
+            pred_payload = item.get("pred_payload", {})
+            model_name = pred_payload.get("model")
+            if isinstance(model_name, str) and model_name.strip():
+                enriched["generation_model"] = model_name.strip()
+                break
+            dialogue_generation = item.get("dialogue_payload", {}).get("dialogue_generation", {})
+            if isinstance(dialogue_generation, dict):
+                model_name = dialogue_generation.get("model")
+                if isinstance(model_name, str) and model_name.strip():
+                    enriched["generation_model"] = model_name.strip()
+                    break
+
+    if not enriched.get("validator_enabled"):
+        validator = (pipeline_llm_metrics or {}).get("validator") or (direct_llm_metrics or {}).get("validator")
+        if isinstance(validator, dict):
+            enriched["validator_enabled"] = True
+            enriched["validator_provider"] = validator.get("provider")
+            enriched["validator_model"] = validator.get("model")
+            enriched["validator_method"] = validator.get("method")
+
+    return enriched
+
+
 def build_context(run_dir: Path) -> dict:
     metrics_dir = run_dir / "metrics"
     pipeline_metrics_path = find_first_existing(
@@ -893,16 +1242,27 @@ def build_context(run_dir: Path) -> dict:
     direct_metrics = load_json(direct_metrics_path)
     dialogue_metrics = load_json(dialogue_metrics_path)
     comparison_summary = load_json(run_dir / "comparison_summary.json") if (run_dir / "comparison_summary.json").exists() else {}
+    direct_llm_metrics = load_json(metrics_dir / "direct_coverage_llm.json") if (metrics_dir / "direct_coverage_llm.json").exists() else {}
+    pipeline_llm_metrics = load_json(metrics_dir / "pipeline_coverage_llm.json") if (metrics_dir / "pipeline_coverage_llm.json").exists() else {}
 
     documents = collect_documents(run_dir, source_dir, pred_dir, dialogue_dir)
+    model_metadata = enrich_model_metadata(
+        load_model_metadata(run_dir, comparison_summary),
+        documents=documents,
+        comparison_summary=comparison_summary,
+        direct_llm_metrics=direct_llm_metrics,
+        pipeline_llm_metrics=pipeline_llm_metrics,
+    )
     return {
         "run_dir": run_dir,
         "run_id": run_dir.name,
-        "model_name": load_model_name(run_dir),
+        "model_metadata": model_metadata,
         "metrics_dir": metrics_dir,
         "pipeline_metrics": pipeline_metrics,
         "direct_metrics": direct_metrics,
+        "direct_llm_metrics": direct_llm_metrics,
         "dialogue_metrics": dialogue_metrics,
+        "pipeline_llm_metrics": pipeline_llm_metrics,
         "source_dir": source_dir,
         "pred_dir": pred_dir,
         "dialogue_dir": dialogue_dir,

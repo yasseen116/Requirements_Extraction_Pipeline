@@ -22,7 +22,14 @@ DEFAULT_MAX_TURNS = 28
 DEFAULT_TARGET_DIALOGUE_RECALL = 0.82
 DEFAULT_THEME_MAX_EXCHANGES = 3
 THEME_MARGIN = 0.05
-QUESTION_ALGORITHM_VERSION = "semantic_gap_llm_v1"
+QUESTION_ALGORITHM_VERSION = "semantic_gap_llm_v2"
+CRITICAL_THEME_RECALL_FLOORS = {
+    "user_roles_permissions": 0.60,
+    "availability_reliability": 0.60,
+    "security_audit": 0.70,
+    "interfaces_integrations": 0.65,
+    "data_validation": 0.65,
+}
 
 ANSWER_SCHEMA = {
     "type": "object",
@@ -135,7 +142,9 @@ QUESTION_ALGORITHM_SUMMARY = (
     "Select the next question by semantically scoring uncovered requirements against dialogue evidence, "
     "ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the "
     "top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly "
-    "one natural follow-up question. Fixed fallback templates are used only if JSON generation fails."
+    "one natural follow-up question. If global recall is reached but critical themes remain under-covered, "
+    "use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates "
+    "are used only if JSON generation fails."
 )
 
 
@@ -448,6 +457,41 @@ def build_stopped_reason(exchange_count: int, max_turns: int, recall: float, tar
     return "no_viable_theme"
 
 
+def critical_theme_gaps(theme_coverage: dict[str, dict]) -> list[dict]:
+    gaps = []
+    for theme, min_recall in CRITICAL_THEME_RECALL_FLOORS.items():
+        stats = theme_coverage.get(theme, {})
+        total = int(stats.get("total", 0) or 0)
+        uncovered = int(stats.get("uncovered", 0) or 0)
+        recall = float(stats.get("recall", 1.0) or 0.0)
+        if total > 0 and uncovered > 0 and recall < min_recall:
+            gaps.append(
+                {
+                    "theme": theme,
+                    "recall": recall,
+                    "min_recall": min_recall,
+                    "uncovered": uncovered,
+                    "total": total,
+                }
+            )
+    gaps.sort(key=lambda item: (item["recall"], -item["uncovered"], theme_priority(item["theme"])))
+    return gaps
+
+
+def should_force_clarification(
+    *,
+    recall: float,
+    target_dialogue_recall: float,
+    theme_coverage: dict[str, dict],
+    uncovered_results: list[dict],
+) -> bool:
+    if not uncovered_results:
+        return False
+    if recall < target_dialogue_recall:
+        return True
+    return bool(critical_theme_gaps(theme_coverage))
+
+
 def build_dialogue(
     sample: dict,
     template: str,
@@ -496,6 +540,7 @@ def build_dialogue(
         scorer,
         coverage_threshold,
     )
+    current_theme_coverage = compute_theme_coverage(coverage_results)
     initial_uncovered_count = len(uncovered_results)
     coverage_history.append(recall)
 
@@ -553,23 +598,41 @@ def build_dialogue(
             scorer,
             coverage_threshold,
         )
+        current_theme_coverage = compute_theme_coverage(coverage_results)
         coverage_history.append(recall)
 
     clarification_used = 0
     for _round_index in range(clarification_rounds):
-        if exchange_count >= max_turns or recall >= target_dialogue_recall or not uncovered_results:
+        if exchange_count >= max_turns or not should_force_clarification(
+            recall=recall,
+            target_dialogue_recall=target_dialogue_recall,
+            theme_coverage=current_theme_coverage,
+            uncovered_results=uncovered_results,
+        ):
             break
 
         clusters: dict[str, list[dict]] = defaultdict(list)
         for item in uncovered_results:
             clusters[focus_label_for_requirement(item)].append(item)
-        ranked_clusters = sorted(
-            clusters.items(),
-            key=lambda pair: (-len(pair[1]), theme_priority(pair[1][0].get("primary_theme") or "other_constraints")),
-        )
+        ranked_clusters = []
+        gap_by_theme = {item["theme"]: item for item in critical_theme_gaps(current_theme_coverage)}
+        for label, items in clusters.items():
+            primary_theme = items[0].get("primary_theme") or "other_constraints"
+            gap = gap_by_theme.get(primary_theme)
+            ranked_clusters.append(
+                (
+                    0 if gap else 1,
+                    gap["recall"] if gap else 1.0,
+                    -len(items),
+                    theme_priority(primary_theme),
+                    label,
+                    items,
+                )
+            )
+        ranked_clusters.sort()
         if not ranked_clusters:
             break
-        focus_label, focus_items = ranked_clusters[0]
+        _, _, _, _, focus_label, focus_items = ranked_clusters[0]
         target_theme = focus_items[0].get("primary_theme") or "other_constraints"
         candidates = select_candidate_requirements(
             focus_items,
@@ -622,9 +685,10 @@ def build_dialogue(
             scorer,
             coverage_threshold,
         )
+        current_theme_coverage = compute_theme_coverage(coverage_results)
         coverage_history.append(recall)
 
-    final_theme_coverage = compute_theme_coverage(coverage_results)
+    final_theme_coverage = current_theme_coverage
     coverage_summary = {
         "clarification_rounds_requested": clarification_rounds,
         "clarification_rounds_used": clarification_used,
@@ -637,6 +701,7 @@ def build_dialogue(
         "final_dialogue_recall": recall,
         "theme_exchange_counts": dict(theme_exchange_counts),
         "theme_coverage": final_theme_coverage,
+        "critical_theme_gaps": critical_theme_gaps(final_theme_coverage),
         "stopped_reason": build_stopped_reason(exchange_count, max_turns, recall, target_dialogue_recall, uncovered_results),
     }
     return dialogue, trace, coverage_summary

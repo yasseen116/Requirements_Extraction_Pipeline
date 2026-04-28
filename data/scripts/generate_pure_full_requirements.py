@@ -11,7 +11,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-from coverage_scorer import CoverageScorer, clean_text
+from coverage_scorer import CoverageScorer, clean_text, token_f1
 import llm_router as llm
 
 
@@ -62,6 +62,23 @@ GENERIC_MARKERS = {
     "a lot of data",
     "a lot of users",
 }
+CRITICAL_EVIDENCE_PHRASES = [
+    "user profile",
+    "browser interface",
+    "outside the application",
+    "inside the application",
+    "specified users or user groups",
+    "display title and metadata",
+    "configuration time",
+    "super-user",
+    "role-based",
+    "menu contents",
+    "unalterable",
+    "persistent defaults",
+    "default values",
+]
+NEGATIVE_MARKERS = (" must not ", " never ", " not ", " without ")
+EXCLUSIVITY_MARKERS = (" only ", " both ", " outside ", " inside ", " each ", " every ")
 PROPOSITION_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
@@ -743,8 +760,22 @@ def is_generic_proposition(proposition: dict, unit_lookup: dict[str, dict]) -> b
         return True
     source_units = [unit_lookup.get(unit_id) for unit_id in proposition.get("source_unit_ids", [])]
     source_context = " ".join(clean_text(unit.get("context_text", "")) for unit in source_units if unit)
+    source_texts = [clean_text(unit.get("text", "")) for unit in source_units if unit]
+    lowered_context = f" {source_context.lower()} "
+    lowered_text = f" {text} "
     if any(ch.isdigit() for ch in source_context) and not any(ch.isdigit() for ch in text):
         return True
+    if any(marker in lowered_context for marker in NEGATIVE_MARKERS) and not any(marker in lowered_text for marker in NEGATIVE_MARKERS):
+        return True
+    if any(marker in lowered_context for marker in EXCLUSIVITY_MARKERS) and not any(marker in lowered_text for marker in EXCLUSIVITY_MARKERS):
+        return True
+    for phrase in CRITICAL_EVIDENCE_PHRASES:
+        if phrase in lowered_context and phrase not in lowered_text:
+            return True
+    if source_texts:
+        best_overlap = max(token_f1(candidate, proposition.get("text", "")) for candidate in source_texts)
+        if best_overlap < 0.33:
+            return True
     return False
 
 
@@ -767,6 +798,12 @@ def rewrite_generic_propositions(
     prompt = (
         "Rewrite the following propositions so they preserve exact technical details from the evidence. "
         "Do not invent new details and do not add or remove propositions.\n\n"
+        "Rules:\n"
+        "- Preserve roles, conditions, negative constraints, storage locations, and response options exactly when present.\n"
+        "- If the evidence says 'both', 'only', 'must not', 'never', 'user profile', 'browser interface', "
+        "'specified users or user groups', 'display title and metadata', or 'super-user', keep that precision.\n"
+        "- Prefer the narrowest fully supported wording over a broader paraphrase.\n"
+        "- You may reuse short exact evidence phrases when needed for accuracy.\n\n"
         "Return JSON only.\n\n"
         + "\n".join(evidence_lines)
     )

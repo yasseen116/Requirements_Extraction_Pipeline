@@ -12,13 +12,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "data" / "scripts"))
 
 from coverage_scorer import CoverageScorer, split_support_text
-from generate_pure_controlled_dialogues import annotate_requirements, choose_target_theme
+from generate_pure_controlled_dialogues import annotate_requirements, choose_target_theme, should_force_clarification
 from generate_pure_full_requirements import (
     build_theme_batches,
+    is_generic_proposition,
     merge_proposition_entries,
     novelty_gap_units,
     render_dialogue_context,
 )
+from evaluate_pure_requirements_coverage_llm import build_candidate_pairs, select_matches
+from build_run_report import load_model_metadata
 import validate_pure_extracted_requirements as validation_module
 
 
@@ -77,7 +80,7 @@ class RecallPipelineTests(unittest.TestCase):
                 text=True,
             )
         payload = json.loads(result.stdout)
-        self.assertEqual(payload["question_algorithm_version"], "semantic_gap_llm_v1")
+        self.assertEqual(payload["question_algorithm_version"], "semantic_gap_llm_v2")
         self.assertNotIn("question_generation", payload)
 
     def test_split_support_text_uses_sentences_and_semicolons(self) -> None:
@@ -124,6 +127,18 @@ class RecallPipelineTests(unittest.TestCase):
         ]
         theme = choose_target_theme(uncovered, theme_exchange_counts={"deployment_environment_constraints": 3}, theme_max_exchanges=3)
         self.assertEqual(theme, "functional_capabilities")
+
+    def test_force_clarification_when_critical_theme_stays_low_after_global_target(self) -> None:
+        should_continue = should_force_clarification(
+            recall=0.84,
+            target_dialogue_recall=0.82,
+            theme_coverage={
+                "user_roles_permissions": {"total": 9, "covered": 3, "uncovered": 6, "recall": 0.3333},
+                "availability_reliability": {"total": 6, "covered": 5, "uncovered": 1, "recall": 0.8333},
+            },
+            uncovered_results=[{"req_id": "R1"}],
+        )
+        self.assertTrue(should_continue)
 
     def test_render_dialogue_context_scopes_to_relevant_exchange_for_evidence_bank(self) -> None:
         sample = {
@@ -176,6 +191,19 @@ class RecallPipelineTests(unittest.TestCase):
         self.assertEqual(merged[0]["evidence_turns"], [2, 4])
         self.assertEqual(len(removed), 1)
 
+    def test_generic_proposition_flags_missing_user_profile_anchor(self) -> None:
+        proposition = {
+            "text": "Users can save their own settings for later use.",
+            "source_unit_ids": ["4:1"],
+        }
+        unit_lookup = {
+            "4:1": {
+                "text": "Such configurations must be saved in the user profile.",
+                "context_text": "Such configurations must be saved in the user profile.",
+            }
+        }
+        self.assertTrue(is_generic_proposition(proposition, unit_lookup))
+
     def test_validate_items_prefers_claimed_evidence_turns(self) -> None:
         dialogue_payload = {
             "dialogue": [
@@ -212,6 +240,58 @@ class RecallPipelineTests(unittest.TestCase):
         propositions = [{"text": "Save defaults in the user profile."}]
         gap_units = novelty_gap_units(units, propositions, scorer, top_k=1)
         self.assertEqual(gap_units[0]["unit_id"], "4:1")
+
+    def test_llm_candidate_pairs_include_lexical_shortlist(self) -> None:
+        gold_items = [{"id": "SRC-1", "text": "Support SAML single sign-on.", "category": "interfaces"}]
+        pred_items = [
+            {"id": "IF-1", "text": "Provide SAML SSO support.", "category": "interfaces"},
+            {"id": "IF-2", "text": "Allow CSV export.", "category": "interfaces"},
+        ]
+        pairs = build_candidate_pairs(gold_items, pred_items, semantic_top_k=1, lexical_top_k=1)
+        pair_ids = {(item["gold_index"], item["pred_index"]) for item in pairs}
+        self.assertIn((0, 0), pair_ids)
+
+    def test_llm_weighted_matching_preserves_partial_credit(self) -> None:
+        candidate_pairs = [
+            {
+                "pair_id": "g0_p0",
+                "gold_index": 0,
+                "pred_index": 0,
+                "gold": {"text": "Save defaults in the user profile."},
+                "pred": {"text": "Save defaults for users."},
+                "semantic_score": 0.8,
+                "lexical_score": 0.6,
+            }
+        ]
+        verdicts = {
+            "g0_p0": {
+                "verdict": "partial",
+                "brief_reason": "Loses the profile-storage detail.",
+                "same_core_need": True,
+                "preserves_critical_details": False,
+                "no_material_additions": True,
+            }
+        }
+        matches, used_gold, used_pred, score_total = select_matches(candidate_pairs, verdicts, {"full": 1.0, "partial": 0.5, "none": 0.0})
+        self.assertEqual(len(matches), 1)
+        self.assertEqual(matches[0]["verdict"], "partial")
+        self.assertEqual(score_total, 0.5)
+        self.assertEqual(used_gold, {0})
+        self.assertEqual(used_pred, {0})
+
+    def test_report_model_metadata_prefers_comparison_summary(self) -> None:
+        metadata = load_model_metadata(
+            ROOT / "data" / "outputs" / "pure_full_runs",
+            {
+                "model_metadata": {
+                    "generation": {"provider": "gemini", "model": "gemini-3.1-pro-preview"},
+                    "standard_validator": {"enabled": True, "provider": "gemini", "model": "gemini-2.5-flash"},
+                }
+            },
+        )
+        self.assertEqual(metadata["generation_model"], "gemini-3.1-pro-preview")
+        self.assertEqual(metadata["validator_model"], "gemini-2.5-flash")
+        self.assertTrue(metadata["validator_enabled"])
 
 
 if __name__ == "__main__":

@@ -94,6 +94,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--theme-max-exchanges", type=int, default=3)
     parser.add_argument("--target-dialogue-recall", type=float, default=0.82)
     parser.add_argument("--max-turns", type=int, default=28)
+    parser.add_argument("--disable-llm-validator", action="store_true")
+    parser.add_argument("--validator-semantic-top-k", type=int, default=2)
+    parser.add_argument("--validator-lexical-top-k", type=int, default=1)
+    parser.add_argument("--validator-batch-size", type=int, default=24)
+    parser.add_argument("--skip-report-build", action="store_true")
     return parser.parse_args()
 
 
@@ -112,6 +117,26 @@ def has_llm_env(provider_override: str | None = None) -> bool:
             os.environ.get("REQ_OPENAI_MODEL") or os.environ.get("REQ_LLM_MODEL")
         )
     return bool(os.environ.get("REQ_GEMINI_API_KEY")) and bool(os.environ.get("REQ_GEMINI_MODEL"))
+
+
+def has_validator_env() -> bool:
+    return bool(os.environ.get("REQ_VALIDATOR_GEMINI_API_KEY") or os.environ.get("REQ_GEMINI_API_KEY"))
+
+
+def generation_model_name(provider_name: str) -> str | None:
+    if provider_name == "ollama":
+        return os.environ.get("REQ_OLLAMA_MODEL", "").strip() or None
+    if provider_name == "openai":
+        return os.environ.get("REQ_OPENAI_MODEL", "").strip() or os.environ.get("REQ_LLM_MODEL", "").strip() or None
+    return os.environ.get("REQ_GEMINI_MODEL", "").strip() or None
+
+
+def validator_model_name() -> str:
+    return (
+        os.environ.get("REQ_VALIDATOR_GEMINI_MODEL", "").strip()
+        or os.environ.get("REQ_GEMINI_VALIDATION_MODEL", "").strip()
+        or "gemini-2.5-flash"
+    )
 
 
 def should_chunk_dialogues(provider_name: str, mode: str) -> bool:
@@ -371,6 +396,35 @@ def run_pipeline_variant(
     }
 
 
+def run_llm_validation(
+    *,
+    source_dir: Path,
+    pred_dir: Path,
+    output_path: Path,
+    args: argparse.Namespace,
+    extra_env: dict[str, str] | None,
+) -> None:
+    run(
+        [
+            "python3",
+            "scripts/evaluate_pure_requirements_coverage_llm.py",
+            "--gold-dir",
+            str(source_dir),
+            "--pred-dir",
+            str(pred_dir),
+            "--output",
+            str(output_path),
+            "--semantic-top-k",
+            str(args.validator_semantic_top_k),
+            "--lexical-top-k",
+            str(args.validator_lexical_top_k),
+            "--batch-size",
+            str(args.validator_batch_size),
+        ],
+        extra_env=extra_env,
+    )
+
+
 def load_hard_slice_metrics(eval_payload: dict) -> dict | None:
     for item in eval_payload.get("per_sample", []):
         if item.get("sample_id") == "pure_0000_cctns":
@@ -588,9 +642,11 @@ def main() -> int:
 
     direct_eval_path = None
     direct_error_analysis_path = None
+    direct_llm_eval_path = None
     pipeline_eval_path = None
     pipeline_error_analysis_path = None
     validation_report_path = None
+    pipeline_llm_eval_path = None
     pipeline_diagnostics = None
     gemini_comparison = None
     legacy_gemini_eval_path = None
@@ -653,6 +709,15 @@ def main() -> int:
             ],
             extra_env=extra_env,
         )
+        if has_validator_env() and not args.disable_llm_validator:
+            direct_llm_eval_path = metrics_dir / "direct_coverage_llm.json"
+            run_llm_validation(
+                source_dir=source_dir,
+                pred_dir=direct_generated_dir,
+                output_path=direct_llm_eval_path,
+                args=args,
+                extra_env=extra_env,
+            )
 
         effective_preset = args.pipeline_preset
         if provider_name == "gemini" and effective_preset == "auto":
@@ -705,7 +770,29 @@ def main() -> int:
         legacy_gemini_error_analysis_path = metrics_dir / "gemini_error_analysis.json"
         shutil.copy2(pipeline_eval_path, legacy_gemini_eval_path)
         shutil.copy2(pipeline_error_analysis_path, legacy_gemini_error_analysis_path)
+        if has_validator_env() and not args.disable_llm_validator:
+            pipeline_llm_eval_path = metrics_dir / "pipeline_coverage_llm.json"
+            run_llm_validation(
+                source_dir=source_dir,
+                pred_dir=generated_dir,
+                output_path=pipeline_llm_eval_path,
+                args=args,
+                extra_env=extra_env,
+            )
 
+    validator_enabled = bool(has_validator_env() and not args.disable_llm_validator)
+    model_metadata = {
+        "generation": {
+            "provider": provider_name,
+            "model": generation_model_name(provider_name),
+        },
+        "standard_validator": {
+            "enabled": validator_enabled,
+            "provider": "gemini" if validator_enabled else None,
+            "model": validator_model_name() if validator_enabled else None,
+            "method": "gemini_checklist_judge_v1" if validator_enabled else None,
+        },
+    }
     comparison = {
         "run_id": run_id,
         "run_dir": str(run_dir.resolve()),
@@ -737,7 +824,21 @@ def main() -> int:
             "theme_max_exchanges": args.theme_max_exchanges,
             "target_dialogue_recall": args.target_dialogue_recall,
             "max_turns": args.max_turns,
+            "llm_validator_enabled": validator_enabled,
+            "validator_semantic_top_k": args.validator_semantic_top_k,
+            "validator_lexical_top_k": args.validator_lexical_top_k,
+            "validator_batch_size": args.validator_batch_size,
             "python_bin": PYTHON_BIN,
+        },
+        "model_metadata": model_metadata,
+        "validation_layers": {
+            "semantic_matcher": {
+                "enabled": True,
+                "method": "sentence_transformer_greedy_match",
+                "model": "all-MiniLM-L6-v2",
+                "threshold": args.match_threshold,
+            },
+            "standard_llm_validator": model_metadata["standard_validator"],
         },
         "oracle": load_json(oracle_eval_path)["aggregate"],
         "llm_provider": provider_name,
@@ -745,7 +846,9 @@ def main() -> int:
         "gemini_status": pipeline_status,
         "controlled_dialogue_method": controlled_dialogue_method,
         "direct": load_json(direct_eval_path)["aggregate"] if direct_eval_path else None,
+        "direct_llm_validation": load_json(direct_llm_eval_path)["aggregate"] if direct_llm_eval_path else None,
         "pipeline": load_json(pipeline_eval_path)["aggregate"] if pipeline_eval_path else None,
+        "pipeline_llm_validation": load_json(pipeline_llm_eval_path)["aggregate"] if pipeline_llm_eval_path else None,
         "gemini": load_json(pipeline_eval_path)["aggregate"] if pipeline_eval_path else None,
         "dialogue_lower_bound": load_json(dialogue_eval_path)["aggregate"],
         "dialogue_upper_bound": load_json(dialogue_eval_path)["aggregate"],
@@ -756,9 +859,11 @@ def main() -> int:
             "oracle_coverage": str(oracle_eval_path.relative_to(ROOT)),
             "direct_coverage": str(direct_eval_path.relative_to(ROOT)) if direct_eval_path else None,
             "direct_error_analysis": str(direct_error_analysis_path.relative_to(ROOT)) if direct_error_analysis_path else None,
+            "direct_coverage_llm": str(direct_llm_eval_path.relative_to(ROOT)) if direct_llm_eval_path else None,
             "pipeline_coverage": str(pipeline_eval_path.relative_to(ROOT)) if pipeline_eval_path else None,
             "pipeline_error_analysis": str(pipeline_error_analysis_path.relative_to(ROOT)) if pipeline_error_analysis_path else None,
             "pipeline_validation_report": str(validation_report_path.relative_to(ROOT)) if validation_report_path else None,
+            "pipeline_coverage_llm": str(pipeline_llm_eval_path.relative_to(ROOT)) if pipeline_llm_eval_path else None,
             "gemini_coverage": str(legacy_gemini_eval_path.relative_to(ROOT)) if legacy_gemini_eval_path else None,
             "gemini_error_analysis": str(legacy_gemini_error_analysis_path.relative_to(ROOT)) if legacy_gemini_error_analysis_path else None,
             "dialogue_coverage_user_only": str(dialogue_eval_path.relative_to(ROOT)),
@@ -767,10 +872,38 @@ def main() -> int:
 
     comparison_path = run_dir / "comparison_summary.json"
     comparison_path.write_text(json.dumps(comparison, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    run_config_path = run_dir / "run_config.json"
+    run_config_path.write_text(
+        json.dumps(
+            {
+                "run_id": run_id,
+                "provider": provider_name,
+                "model": model_metadata["generation"]["model"],
+                "validator": model_metadata["standard_validator"],
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     LATEST_POINTER.write_text(
         json.dumps({"run_id": run_id, "run_dir": str(run_dir.resolve())}, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
+    if pipeline_eval_path and direct_eval_path and not args.skip_report_build:
+        try:
+            run(
+                [
+                    "python3",
+                    "scripts/build_run_report.py",
+                    "--run-dir",
+                    str(run_dir),
+                ],
+                extra_env=extra_env,
+            )
+        except subprocess.CalledProcessError as exc:
+            print(f"[warn] Automatic report build failed: {exc}")
     print(json.dumps(comparison, indent=2, ensure_ascii=False))
     return 0
 

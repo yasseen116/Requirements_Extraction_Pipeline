@@ -20,10 +20,15 @@ Task:
   - browser names, OS names, server names
   - algorithms, tools, firewall names, plugins
   - login/security/audit terms
+  - exact role labels, access conditions, negative constraints, and exclusivity terms such as
+    "only", "never", "must not", "specified users or user groups", "super-user"
+  - exact storage or interface phrases such as "user profile", "browser interface",
+    "display title and metadata", and configuration-time options when present
 
-STRICT RULE — no verbatim copying:
-- NEVER copy requirement text verbatim or near-verbatim into the answer.
-- Transform the wording into natural stakeholder speech while preserving the meaning.
+STRICT RULE — natural speech first, but exact phrases are allowed when they carry critical precision:
+- Do NOT copy full requirement sentences verbatim.
+- DO preserve short exact phrases when they contain the critical technical detail.
+- It is better to sound slightly formal than to lose an important constraint.
 
 Example of BAD vs GOOD (do NOT copy this example — it is illustration only):
 
@@ -36,6 +41,12 @@ GOOD (do this):
    we cannot afford a breach. And for returning customers we want it to remember
    their card details so they do not have to re-enter everything, but it should
    verify the card is still valid when they log in."
+
+Another GOOD pattern:
+  "People should be able to reach support features both inside the application
+   and through a browser interface. And if someone asks for a case they are not
+   allowed to see, we need configurable responses like showing only the title
+   and metadata or not showing it in result counts at all."
 
 Output rules:
 - Return JSON only.

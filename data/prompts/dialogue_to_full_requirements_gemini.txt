@@ -24,11 +24,16 @@ RULE 3 — PRESERVE EXACT DETAILS:
 - Keep numbers, units, browser names, operating systems, algorithms, quoted terms, and product names exactly.
 - Do not paraphrase away precision.
 - Prefer the original subject wording when possible.
+- Preserve negation, exclusivity, role labels, configuration options, and storage/interface phrases exactly when they matter.
+- If the evidence says things like "must not", "never", "only", "both", "user profile",
+  "browser interface", "specified users or user groups", "display title and metadata",
+  or "super-user", keep that wording in the proposition rather than broadening it.
 
 RULE 4 — RECALL OVER COMPRESSION:
 - If an evidence unit contains multiple independent details, extract them separately.
 - Do not merge unrelated facts just to reduce count.
 - It is acceptable to output many propositions if they are all grounded and distinct.
+- If one clause contains a narrow policy option or response mode, keep that as its own proposition.
 
 RULE 5 — NO META OUTPUT:
 - Do not mention the dataset, source requirements, missing information, or that something is “not specified”.

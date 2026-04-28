@@ -1,6 +1,6 @@
 # Requirements Dataset Project: Current Workflow And Verified Results
 
-This document is the current paper-facing overview of the project. It replaces older notes that focused on earlier Gemini-only runs and now also records the methodology fixes implemented on April 27-28, 2026.
+This document is the current paper-facing overview of the project. It replaces older notes that focused on earlier Gemini-only runs and now also records the methodology and recall-improvement fixes implemented on April 27-28, 2026.
 
 ## 1. Project Goal
 
@@ -43,25 +43,32 @@ Current documented algorithm:
    - uncovered requirement count
    - average semantic gap
    - a cap on low-yield repeated questioning for the same theme
-4. Select the top uncovered requirements for the chosen theme.
-5. Ask the active LLM to generate exactly one natural follow-up question using:
+4. If the global dialogue target is met but critical themes remain below their floor, force clarification rounds on those weak themes instead of stopping early.
+5. Select the top uncovered requirements for the chosen theme.
+6. Ask the active LLM to generate exactly one natural follow-up question using:
    - the target theme
    - the most important uncovered requirement snippets
    - the recent dialogue history
    - an optional clarification focus hint for known hard clusters
-6. Use fixed fallback question templates only if JSON question generation fails.
+7. Ask the active LLM to generate one consolidated stakeholder answer that may preserve short exact phrases for critical technical details instead of paraphrasing them away.
+8. Use fixed fallback question templates only if JSON question generation fails.
 
 This algorithm is the same for Ollama and Gemini runs. Provider choice may affect model quality or latency, but not the question-selection logic or prompt construction.
+
+The current controller version is:
+
+- `semantic_gap_llm_v2`
 
 Algorithm 1: Controlled dialogue generation controller
 
 1. Initialize all gold requirements as uncovered and assign each one to one or two semantic themes.
 2. Select the next theme using semantic uncoveredness, fixed theme priority, uncovered count, average gap score, and a low-yield repetition cap.
-3. Build one interviewer prompt from the top uncovered requirement snippets for that theme plus the recent dialogue history.
-4. Ask the active LLM for exactly one follow-up question in JSON form.
-5. Ask the active LLM for one consolidated user answer that compresses several target requirements into natural dialogue under the configured `max_reqs_per_answer` and `max_chars_per_answer` limits.
-6. Split the new user answer into sentence/clause support units and recompute semantic coverage against every gold requirement with the shared sentence-transformer scorer.
-7. Stop when the target dialogue recall is reached, the turn budget is exhausted, or all clarification rounds are consumed.
+3. If the global recall target is reached but any critical theme remains below its configured recall floor, override the normal stop condition and force a clarification round on those weak themes.
+4. Build one interviewer prompt from the top uncovered requirement snippets for that theme plus the recent dialogue history.
+5. Ask the active LLM for exactly one follow-up question in JSON form.
+6. Ask the active LLM for one consolidated user answer that compresses several target requirements into natural dialogue under the configured `max_reqs_per_answer` and `max_chars_per_answer` limits, while preserving short exact phrases for critical roles, interfaces, storage concepts, and negative constraints.
+7. Split the new user answer into sentence/clause support units and recompute semantic coverage against every gold requirement with the shared sentence-transformer scorer.
+8. Stop only when the target dialogue recall is reached and all critical theme floors are satisfied, or when the turn budget and clarification budget are both exhausted.
 
 Output:
 
@@ -89,9 +96,10 @@ Current implemented extraction flow:
 3. Give the model a scoped dialogue excerpt plus only the relevant evidence units for that batch.
 4. Extract atomic propositions first.
 5. Merge proposition duplicates conservatively.
-6. Rewrite generic propositions using their supporting evidence.
-7. Run one optional gap pass on semantically uncovered evidence.
-8. Convert propositions back into the unchanged final requirements schema.
+6. Detect grounded-but-generic propositions that drop important anchors such as numbers, negation, exclusivity, role names, interface phrases, storage phrases, and configuration terms.
+7. Rewrite those generic propositions using only their supporting evidence while preserving exact anchors when possible.
+8. Run one optional gap pass on semantically uncovered evidence.
+9. Convert propositions back into the unchanged final requirements schema.
 
 Important implementation details added on April 27-28, 2026:
 
@@ -100,6 +108,8 @@ Important implementation details added on April 27-28, 2026:
 - local Ollama calls now use bounded per-batch output caps
 - local Ollama calls now use per-batch timeouts so pathological structured generations fall back instead of hanging indefinitely
 - validation searches claimed `evidence_turns` first, then falls back once to the full dialogue
+- the stakeholder-answer and extraction prompts now preserve short exact phrases such as `user profile`, `browser interface`, `specified users or user groups`, and `super-user` more deliberately
+- the rewrite trigger is now more aggressive on missing numbers, negation, exclusivity, role labels, interface/storage phrases, and configuration anchors
 
 Algorithm 2: Dialogue-to-requirements extractor
 
@@ -108,9 +118,10 @@ Algorithm 2: Dialogue-to-requirements extractor
 3. For each batch, prompt the model with the scoped dialogue context, the selected evidence units, and the running memory of previously extracted propositions.
 4. Extract atomic propositions in JSON form and merge duplicate propositions at a conservative semantic threshold.
 5. Update the running memory so later batches can reuse already recovered global facts without re-reading the whole transcript.
-6. Detect grounded-but-generic propositions and run one constrained rewrite pass using only their supporting evidence.
-7. Run one optional gap pass over the highest-novelty uncovered evidence units.
-8. Convert the final proposition set into the unchanged structured requirements schema and validate every output against the dialogue before scoring it against the source requirements.
+6. Flag grounded-but-generic propositions when they drop critical anchors such as numbers, negation, exclusivity, role names, interface/storage phrases, or configuration terms that were present in the evidence.
+7. Run one constrained rewrite pass using only the supporting evidence for those flagged propositions, preferring narrower source-faithful wording over broad paraphrase.
+8. Run one optional gap pass over the highest-novelty uncovered evidence units.
+9. Convert the final proposition set into the unchanged structured requirements schema and validate every output against the dialogue before scoring it against the source requirements.
 
 Output:
 
@@ -129,6 +140,11 @@ Main metrics:
 - F1
 - hallucination rate
 
+There are now two evaluation layers:
+
+1. A deterministic semantic layer using the shared sentence-transformer scorer and one-to-one greedy matching at threshold `0.55`.
+2. A standardized Gemini verification layer that re-judges shortlisted source/generated requirement pairs with a checklist rubric.
+
 We also compute a dialogue-only diagnostic score:
 
 - how much gold requirement content is explicitly recoverable from user turns alone
@@ -138,6 +154,21 @@ Important evaluation update:
 - `sentence-transformers` is now treated as core benchmark infrastructure, not just an auxiliary metric
 - the same semantic sentence/clause-level scorer is now used consistently for dialogue coverage, pipeline coverage, validation, and reporting
 - the old dialogue metric bug that compared short gold requirements to whole user turns is fixed
+- the reports can now include a second-layer Gemini judge using a checklist-style validator rather than a free-form scalar score
+
+The current standardized LLM validator is:
+
+- provider: `gemini`
+- model: `gemini-2.5-flash`
+- role: second-layer requirement matching and verification across all runs, including runs generated by Ollama or other providers
+- default shortlist: top-`2` semantic candidates plus top-`1` lexical candidate per requirement direction before Gemini adjudication
+
+The LLM validator should be described carefully in the paper:
+
+- it is methodologically useful as a second verification layer
+- it should not replace the deterministic semantic scorer as the sole benchmark metric
+- it is most defensible when it uses a fixed rubric, structured outputs, and explicit partial-credit rules
+- it should be treated as scalable adjudication support, not as a substitute for final human adjudication in high-stakes claims
 
 This change materially affected the measured recall bound on the hard PURE document.
 
@@ -149,6 +180,14 @@ So the sentence-transformer scorer should be described in the paper as a methodo
 
 This dialogue-only score should still be read as a diagnostic bound, not as a strict theoretical ceiling on final recall.
 
+The new Gemini judge layer should also be interpreted carefully:
+
+- strict LLM metrics count only `full` requirement recoveries
+- weighted LLM metrics count `full = 1.0`, `partial = 0.5`, and `none = 0.0`
+- the semantic layer remains the reproducible backbone of the benchmark
+- the Gemini layer is used to surface near-miss recoveries and paraphrastic partial matches that the semantic threshold may miss
+- because LLM-as-a-judge methods can be prompt-sensitive and attack-sensitive, this layer is explicitly reported as secondary rather than replacing the main scorer
+
 Algorithm 3: End-to-end benchmark procedure
 
 1. Build or reuse trusted source-grounded requirement JSON for each PURE document.
@@ -158,7 +197,18 @@ Algorithm 3: End-to-end benchmark procedure
 5. Run the conversational pipeline from dialogue to evidence bank to propositions to final requirements.
 6. Validate conversational outputs against dialogue evidence.
 7. Score direct and conversational outputs against the trusted source requirements.
-8. Run error analysis, compare variants, and publish the selected run summary and report artifacts.
+8. Re-score shortlisted requirement matches with the standardized Gemini checklist judge.
+9. Run error analysis, compare variants, and publish the selected run summary and report artifacts.
+
+Algorithm 4: Dual-layer requirement matching and adjudication
+
+1. Embed all source and generated requirements with the shared sentence-transformer scorer and build semantic candidate shortlists.
+2. Run deterministic greedy one-to-one semantic matching at threshold `0.55` to compute the primary precision, recall, F1, and hallucination metrics.
+3. For the second layer, build a small shortlist per requirement direction using top semantic candidates plus one lexical-backup candidate.
+4. Ask the standardized Gemini validator to classify each shortlisted pair as `full`, `partial`, or `none` under a fixed checklist rubric focused on actors, conditions, constraints, and scope preservation.
+5. Convert judge outputs into strict metrics with `full = 1.0`, `partial = 0.0`, `none = 0.0`.
+6. Convert the same judge outputs into weighted metrics with `full = 1.0`, `partial = 0.5`, `none = 0.0`.
+7. Report both layers together: the semantic layer as the main continuity metric, and the Gemini layer as a source-faithfulness diagnostic that distinguishes exact recovery from partial recovery.
 
 ## 3. Current Best Paper-Facing Benchmark
 
@@ -295,6 +345,22 @@ Gemini hard-slice run:
 | Conversational Gemini pipeline | Source -> dialogue -> Gemini -> requirements | 0.6548 | 0.5500 | 0.5978 | 0.3452 |
 | Oracle | Perfect source reconstruction sanity check | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
 
+### Second-Layer Gemini Judge On The Same Gemini Run
+
+The same `20260428T015358Z_pure_full` run now also has a standardized Gemini validation layer using `gemini-2.5-flash` as a fixed evaluator after the semantic scorer.
+
+| Layer | Strict Precision | Strict Recall | Strict F1 | Weighted Precision | Weighted Recall | Weighted F1 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Direct baseline | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Conversational pipeline | 0.3690 | 0.3100 | 0.3370 | 0.5655 | 0.4750 | 0.5163 |
+
+Interpretation:
+
+- the semantic benchmark still reports conversational recall at `0.55`
+- the Gemini judge only counts `31` conversational outputs as full source-faithful recoveries
+- another `33` conversational outputs are judged as partial matches rather than full recoveries
+- so the second layer strengthens the conclusion that the frontier conversational run is dominated by partial paraphrase recovery rather than exact source reconstruction
+
 ### Direct Comparison: Latest Ollama vs Frontier Gemini On The Same Hard Slice
 
 | Metric | Ollama `20260427T213602Z` | Gemini `20260428T015358Z` |
@@ -335,85 +401,191 @@ More specifically:
    Gemini full-context extraction reached only `0.50` recall, while the evidence-bank path reached `0.55`. That means the long context window helped less than the retrieval-based structure, but even the better variant still did not cross the `0.60` target.
 8. The genericity detector under-triggered on Gemini outputs.
    The Gemini evidence-bank run reported only `4` rewrite candidates, versus `13` in the patched Ollama run, despite generating more paraphrastic outputs. This suggests the current rewrite trigger catches obviously weak local outputs, but misses fluent frontier-model paraphrases that remain semantically too broad.
+9. The second-layer Gemini judge confirms that many apparent semantic matches are only partial recoveries.
+   On the same run, the fixed Gemini validator scored only `31` conversational outputs as full requirement recoveries and `33` as partial matches. This means the semantic metric is useful for benchmark continuity, but the validator layer exposes how much of the remaining output is still paraphrastic or detail-losing rather than fully source-faithful.
 
 The paper implication is important:
 
 The frontier Gemini model substantially improves the direct source-to-requirements task, but it does not materially improve the dialogue-mediated source-recovery task under the current pipeline. That means the dominant bottleneck is algorithmic and representational, not just model strength.
 
-## 5. What The April 27-28, 2026 Improvements Changed
+### Second Gemini Hard-Slice Rerun After Recall-Focused Fixes (April 28, 2026)
+
+I then reran the same hard-slice benchmark after implementing the recall-focused controller and rewrite fixes.
+
+Second Gemini hard-slice run:
+
+- run id: `20260428T032711Z_pure_full`
+- provider: `gemini`
+- model: `gemini-3.1-pro-preview`
+- validator model: `gemini-2.5-flash`
+- document: `pure_0000_cctns`
+- dialogue question algorithm: `semantic_gap_llm_v2`
+- selected conversational variant by benchmark rule: `gemini_evidence_bank`
+- best raw conversational recall variant: `gemini_full_context`
+
+### Aggregate Results: Second Gemini Hard Single Document
+
+| Track | What it measures | Micro Precision | Micro Recall | Micro F1 | Hallucination |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| Dialogue-only lower bound | Requirement content explicitly present in user turns | N/A | 0.9400 | N/A | N/A |
+| Direct Gemini baseline | Source requirements -> Gemini -> requirements | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+| Conversational Gemini pipeline | Source -> dialogue -> Gemini -> requirements | 0.8272 | 0.6700 | 0.7403 | 0.1728 |
+| Oracle | Perfect source reconstruction sanity check | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+
+### Second-Layer Gemini Judge On The Second Gemini Run
+
+The same `20260428T032711Z_pure_full` run also has the standardized Gemini validation layer using `gemini-2.5-flash` as a fixed evaluator after the semantic scorer.
+
+| Layer | Strict Precision | Strict Recall | Strict F1 | Weighted Precision | Weighted Recall | Weighted F1 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Direct baseline | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Conversational pipeline | 0.4691 | 0.3800 | 0.4199 | 0.6420 | 0.5200 | 0.5746 |
+
+### Conversational Diagnostics: Second Gemini Hard Single Document
+
+| Diagnostic | Value |
+| :--- | ---: |
+| Dialogue recall | 0.9400 |
+| Evidence units | 108 |
+| Propositions | 81 |
+| Final grounded requirements | 81 |
+| Validation hallucinations | 0 |
+| Gap-pass additions | 0 |
+| Rewrite candidates | 42 |
+
+### Direct Comparison: First Gemini Run vs Second Gemini Run
+
+| Metric | First Gemini `20260428T015358Z` | Second Gemini `20260428T032711Z` |
+| :--- | ---: | ---: |
+| Dialogue recall | 0.8400 | 0.9400 |
+| Conversational semantic precision | 0.6548 | 0.8272 |
+| Conversational semantic recall | 0.5500 | 0.6700 |
+| Conversational semantic F1 | 0.5978 | 0.7403 |
+| Gemini strict recall | 0.3100 | 0.3800 |
+| Gemini weighted recall | 0.4750 | 0.5200 |
+| Full conversational recoveries | 31 | 38 |
+| Partial conversational recoveries | 33 | 28 |
+
+### Why The Second Gemini Run Improved
+
+The second Gemini run is important because it shows that the earlier `0.55` conversational ceiling was not a hard model limit.
+
+The main reasons for the improvement are:
+
+1. The controller changed from `semantic_gap_llm_v1` to `semantic_gap_llm_v2`.
+   The new controller does not stop just because global recall is good enough. It now forces clarification rounds when critical themes remain under-covered.
+2. The weak dialogue themes were materially repaired.
+   The latest run pushed `user_roles_permissions` from the earlier `0.3333` failure state to `1.0000`, and `availability_reliability` from `0.1667` to `0.8333`.
+3. The stakeholder-answer prompt became less paraphrase-happy for critical details.
+   Preserving short exact phrases made it easier for the downstream extractor to recover narrower source-faithful propositions.
+4. The rewrite trigger became more sensitive to dropped anchors.
+   It now catches missing roles, negative constraints, interface/storage phrases, exclusivity markers, and configuration terms that were being smoothed away in the first Gemini run.
+5. The extractor gained recall without losing control of groundedness.
+   All `81` conversational outputs remained grounded in the dialogue, while semantic source recall rose from `0.55` to `0.67`.
+
+### What The Second Gemini Run Still Does Not Solve
+
+The hard-slice semantic target is now met, but the run is still not equivalent to perfect source reconstruction.
+
+- the standardized semantic benchmark now clears the `0.60` target on the selected Gemini variant
+- the stricter Gemini judge still reports only `0.38` strict recall and `0.52` weighted recall
+- this means many outputs are now close enough to count semantically, but are still partial rather than fully source-faithful under a checklist reading
+- the current benchmark selector still chose `gemini_evidence_bank`, even though `gemini_full_context` had slightly higher raw recall at `0.68`, because the selection rule requires at least a `0.02` recall advantage to switch variants
+
+## 5. What The April 27-28, 2026 Improvements And Recall Fixes Changed
 
 The latest implementation work introduced several concrete improvements that matter for the paper draft:
 
 1. The semantic scorer is now shared across dialogue coverage, requirement coverage, validation, and reporting.
 2. Dialogue coverage is now computed against sentence/clause support units rather than full user turns, which removed the previous under-reporting bug.
 3. The question-generation algorithm is now explicitly unified across providers and recorded in run metadata.
-4. The evidence-bank extractor now uses scoped dialogue excerpts per batch instead of repeating the full transcript every time.
-5. The benchmark runner now preserves the intended Python environment instead of resolving the venv symlink away.
-6. Error analysis is now compatible with the shared list-based semantic scorer.
-7. Local Ollama proposition extraction now uses bounded per-batch output caps and timeouts, so pathological structured JSON calls do not stall the entire run indefinitely.
-8. The hard-slice rerun now records per-theme dialogue coverage, evidence-bank counts, proposition counts, rewrite counts, and gap-pass counts, which makes failure analysis much more specific than the earlier run logs.
-9. A frontier Gemini hard-slice comparison run is now logged using the same dialogue controller and the same semantic evaluation stack, which makes the model-vs-pipeline bottleneck separation explicit.
+4. The dialogue controller is now `semantic_gap_llm_v2`, which forces clarification rounds when critical themes remain below their recall floors.
+5. The stakeholder-answer prompt now preserves short exact source phrases for critical roles, interfaces, storage concepts, and negative constraints instead of paraphrasing them away by default.
+6. The evidence-bank extractor now uses scoped dialogue excerpts per batch instead of repeating the full transcript every time.
+7. The benchmark runner now preserves the intended Python environment instead of resolving the venv symlink away.
+8. Error analysis is now compatible with the shared list-based semantic scorer.
+9. Local Ollama proposition extraction now uses bounded per-batch output caps and timeouts, so pathological structured JSON calls do not stall the entire run indefinitely.
+10. The rewrite trigger is now more aggressive on missing anchors such as numbers, negation, exclusivity, role labels, interface/storage phrases, and configuration wording.
+11. The hard-slice runs now record per-theme dialogue coverage, evidence-bank counts, proposition counts, rewrite counts, and gap-pass counts, which makes failure analysis much more specific than the earlier run logs.
+12. A standardized Gemini second-layer validator now re-judges shortlisted requirement pairs across all runs, including Ollama-generated runs.
+13. Reports are now generated automatically after completed runs and include both the deterministic semantic layer and the fixed Gemini validation layer.
+14. The second Gemini hard-slice rerun demonstrates that the current algorithm can now exceed the `0.60` semantic recall target on the hard document.
 
-These changes improved methodological rigor even when they did not immediately improve the final hard-slice recall number.
+These changes improved both methodological rigor and actual hard-slice recovery.
 
 ## 6. What These Results Mean
 
-There are now two different paper-relevant messages:
+There are now four different paper-relevant messages:
 
 ### Message A: Best Current Headline Result
 
 On the verified 2-document slice, the controlled conversational pipeline still clearly outperforms the direct local baseline.
 
-That remains the strongest current paper-facing result.
+That remains the strongest current paper-facing result for a compact verified slice.
 
-### Message B: Hard-Document Stress Test
+### Message B: Local Hard-Document Stress Test
 
 On the hard single-document slice, the updated local memory-augmented proposition pipeline now completes reliably enough to evaluate.
 
-However, it currently reaches:
+However, the local Ollama path still reaches only:
 
 - dialogue recall: `0.85`
 - pipeline recall: `0.55`
 
-That is below the target `0.60` hard-slice recall.
+So the local hard-slice result is best interpreted as a successful infrastructure and methodology fix, but not yet as a headline-quality hard-slice recovery result.
 
-So the latest rerun should be interpreted as a successful infrastructure and methodology fix, but not yet as a new headline-quality extraction result.
+### Message C: First Frontier Comparison
 
-### Message C: Frontier Model Comparison
+The first frontier Gemini run changed the direct baseline dramatically, but not the conversational benchmark.
 
-The frontier Gemini run changes the direct baseline dramatically, but not the conversational benchmark.
+That initial comparison showed that the hard-slice gap should not be framed as "local models are too weak". It isolated the bottleneck as the pipeline itself.
 
-That means the paper should not frame the hard-slice gap as "local models are too weak".
+### Message D: Recall-Fixed Frontier Rerun
 
-The more accurate framing is:
+After the recall-focused controller and rewrite fixes, the second Gemini rerun materially improved the same hard-slice conversational benchmark:
 
-The current controlled dialogue and proposition pipeline loses too much source-exactness before the final matcher ever sees the requirements, so stronger models mostly produce better paraphrases rather than better benchmark recovery.
+- dialogue recall: `0.94`
+- selected conversational semantic recall: `0.67`
+- selected conversational semantic precision: `0.8272`
+- selected conversational semantic F1: `0.7403`
+
+So the hard-slice semantic target is now met with the updated Gemini pipeline.
+
+However, the stricter second-layer judge still reports:
+
+- strict recall: `0.38`
+- weighted recall: `0.52`
+
+So the main remaining bottleneck is no longer broad omission alone. It is exact source-faithfulness and requirement-boundary preservation.
 
 ## 7. Important Limitations And Paper Caution
 
 Current limitations:
 
 - the best current paper-facing benchmark still covers 2 PURE documents, not all 6
-- the latest hard-slice rerun covers 1 difficult document and should be treated as a stress test, not a replacement for the stronger 2-document headline result
-- the exact hard-slice rerun was completed after patching and resuming the pipeline stages in place
-- the hard-slice conversational pipeline used `self-consistency=1` for the local extractor so the run would finish under bounded Ollama generation
+- the latest frontier hard-slice rerun still covers only 1 difficult document and should be treated as a stress test, not a replacement for the stronger 2-document headline result
+- the exact hard-slice local rerun was completed after patching and resuming the pipeline stages in place
+- the hard-slice conversational local pipeline used `self-consistency=1` for the local extractor so the run would finish under bounded Ollama generation
+- the semantic hard-slice target is now exceeded on the second Gemini rerun, but the stricter validator layer still shows that many apparent recoveries remain partial
 - grounded-to-dialogue does not automatically imply grounded-to-source when the dialogue itself drifts semantically
-- the frontier Gemini hard-slice run used the same controller and semantic scorer, so its failure to beat the patched Ollama run should be interpreted as evidence of a pipeline bottleneck, not as evidence that Gemini is weak on source-grounded extraction in general
+- the latest Gemini hard-slice rerun selected `gemini_evidence_bank` by methodology rule even though `gemini_full_context` had slightly higher raw recall, so the reported selected variant and the best raw variant should not be conflated
 
 Methodological caution:
 
-- do not claim broad industrial generalization from the current local runs
-- do not mix earlier Gemini experiments, the verified 2-document local slice, and the latest hard-slice rerun as if they were the same condition
+- do not claim broad industrial generalization from the current local and frontier runs
+- do not mix earlier Gemini experiments, the verified 2-document local slice, the local hard-slice rerun, and the second Gemini rerun as if they were the same condition
 - do not treat dialogue-only coverage as a strict ceiling on final source-grounded recall
-- do not interpret the direct Gemini `1.00 / 1.00` result and the conversational Gemini `0.55` result as contradictory; they are evaluating different points in the pipeline and therefore isolate different bottlenecks
+- do not collapse the semantic metric and the Gemini judge into one number; they measure related but different notions of recovery
+- do not interpret the direct Gemini `1.00 / 1.00` result, the conversational semantic `0.67` result, and the conversational strict `0.38` result as contradictory; they isolate different stages and different definitions of success
+- do not report the selected Gemini variant and the best raw Gemini variant interchangeably without stating the selection rule
 
 ## 8. Current Best Interpretation For The Paper
 
 The strongest current paper-safe interpretation is:
 
-"A controlled conversational pipeline can outperform a direct local baseline on a verified PURE benchmark slice, and the updated evidence-bank extractor now completes end to end on a previously problematic hard document. However, on that hard document the main remaining bottleneck is extraction fidelity rather than dialogue coverage or benchmark infrastructure. A frontier Gemini model solves the direct source-to-requirements condition on that same document, yet still does not materially improve the dialogue-mediated recovery condition, which indicates that the current bottleneck is primarily algorithmic rather than purely model-capacity-limited."
+"A controlled conversational pipeline can outperform a direct local baseline on a verified PURE benchmark slice. On a previously problematic hard PURE document, the updated frontier Gemini pipeline now exceeds the `0.60` semantic recall target, reaching `0.67` under the selected evidence-bank variant and `0.68` in the best raw full-context variant. However, a fixed second-layer Gemini judge still scores the selected conversational run at only `0.38` strict recall and `0.52` weighted recall, which indicates that the remaining bottleneck is exact source-faithfulness and requirement-boundary preservation rather than gross coverage failure or benchmark infrastructure."
 
-That statement is more accurate than claiming that the latest hard-slice rerun already solved recall.
+That statement is more accurate than claiming either that the hard-slice problem is fully solved or that the frontier model made no practical progress.
 
 ## 9. Recommended Next Fixes
 
@@ -421,15 +593,14 @@ The next practical improvements are:
 
 1. Reduce off-domain drift in the generated dialogue so grounded extraction is more source-faithful.
 2. Tighten proposition synthesis so one dialogue sentence does not produce multiple loosely paraphrased requirements.
-3. Improve user-role and access-control extraction, which is a major miss cluster on `pure_0000_cctns` with only `0.3333` dialogue recall in the latest hard rerun.
-4. Improve availability and reliability elicitation, which is the weakest major theme in the hard rerun at `0.1667` dialogue recall.
-5. Add stronger constraints on proposition wording so exact source terminology is preserved more often.
-6. Force clarification rounds on low-recall critical themes even after the global dialogue recall target is reached, especially for access control and availability.
-7. Improve the genericity detector so fluent frontier-model paraphrases are still flagged for rewrite when they drift away from the benchmark requirement boundary.
-8. Make the gap pass useful on both local and Gemini runs; in the current Ollama and Gemini hard-slice runs it added `0` new grounded requirements.
-9. Add stricter source-faithfulness constraints to proposition synthesis for audit, access-control, and configurability requirements.
-10. Rerun the fixed `paper_regression_3doc` slice after these quality fixes.
-11. Only after that, rerun the full 6-document local benchmark.
+3. Improve the remaining weaker dialogue themes in the latest Gemini rerun, especially `reporting_documentation` at `0.7500`, `other_constraints` at `0.7778`, `deployment_environment_constraints` at `0.8000`, and the remaining unrecovered availability item.
+4. Improve exact-faithfulness for audit detail, complaint workflow, alerting/reporting detail, and user-profile-storage requirements that still degrade from `full` to `partial` under the Gemini judge.
+5. Add even stronger constraints on proposition wording so exact source terminology is preserved more often.
+6. Revisit the Gemini variant-selection rule if the research goal for a given run is pure best recall rather than preset-selection consistency.
+7. Improve the genericity detector further so fluent frontier-model paraphrases are still flagged for rewrite when they drift away from the benchmark requirement boundary.
+8. Make the gap pass useful on both local and Gemini runs; in the current hard-slice runs it still added `0` new grounded requirements.
+9. Rerun the fixed `paper_regression_3doc` slice with `semantic_gap_llm_v2` and the standardized Gemini second-layer validator.
+10. Only after that, rerun the full 6-document benchmark.
 
 ## 10. Files To Use
 
@@ -439,24 +610,39 @@ Best current paper-facing 2-document result:
 - [best pipeline coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260424T205611Z_pure_full/metrics/pipeline_coverage_postprocessed_v3.json:1)
 - [best baseline coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260424T205611Z_pure_full/metrics/direct_coverage.json:1)
 
-Latest hard-slice rerun after method fixes:
+Local hard-slice rerun after infrastructure fixes:
 
-- [rerun summary](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/comparison_summary.json:1)
-- [rerun pipeline coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/metrics/pipeline_coverage.json:1)
-- [rerun pipeline validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/metrics/pipeline_validation_report.json:1)
-- [rerun dialogue coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/metrics/dialogue_coverage_user_only.json:1)
-- [rerun summary PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/reports/summary.pdf:1)
-- [rerun full-detail PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/reports/full_detail.pdf:1)
+- [local hard-slice summary](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/comparison_summary.json:1)
+- [local hard-slice pipeline coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/metrics/pipeline_coverage.json:1)
+- [local hard-slice pipeline validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/metrics/pipeline_validation_report.json:1)
+- [local hard-slice dialogue coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/metrics/dialogue_coverage_user_only.json:1)
+- [local hard-slice summary PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/reports/summary.pdf:1)
+- [local hard-slice full-detail PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260427T213602Z_pure_full/reports/full_detail.pdf:1)
 
-Frontier Gemini hard-slice comparison run:
+First frontier Gemini hard-slice comparison run:
 
-- [Gemini run summary](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/comparison_summary.json:1)
-- [Gemini pipeline coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/pipeline_coverage.json:1)
-- [Gemini pipeline validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/pipeline_validation_report.json:1)
-- [Gemini error analysis](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/pipeline_error_analysis.json:1)
-- [Gemini dialogue coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/dialogue_coverage_user_only.json:1)
-- [Gemini summary PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/reports/summary.pdf:1)
-- [Gemini full-detail PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/reports/full_detail.pdf:1)
+- [first Gemini summary](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/comparison_summary.json:1)
+- [first Gemini pipeline coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/pipeline_coverage.json:1)
+- [first Gemini direct LLM validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/direct_coverage_llm.json:1)
+- [first Gemini pipeline LLM validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/pipeline_coverage_llm.json:1)
+- [first Gemini pipeline validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/pipeline_validation_report.json:1)
+- [first Gemini error analysis](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/pipeline_error_analysis.json:1)
+- [first Gemini dialogue coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/metrics/dialogue_coverage_user_only.json:1)
+- [first Gemini summary PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/reports/summary.pdf:1)
+- [first Gemini full-detail PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T015358Z_pure_full/reports/full_detail.pdf:1)
+
+Second Gemini hard-slice rerun after recall fixes:
+
+- [second Gemini summary](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/comparison_summary.json:1)
+- [second Gemini pipeline coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_coverage.json:1)
+- [second Gemini direct LLM validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/direct_coverage_llm.json:1)
+- [second Gemini pipeline LLM validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_coverage_llm.json:1)
+- [second Gemini pipeline validation](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_validation_report.json:1)
+- [second Gemini error analysis](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_error_analysis.json:1)
+- [second Gemini dialogue coverage](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/dialogue_coverage_user_only.json:1)
+- [second Gemini summary PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/reports/summary.pdf:1)
+- [second Gemini full-detail PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/reports/full_detail.pdf:1)
+- [second Gemini changes log](</Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full/Changes and Improvements.md:1>)
 
 ## 11. Reproduce The Local Runs
 
@@ -486,9 +672,9 @@ python3 scripts/run_pure_full_benchmark.py \
   --max-turns 28
 ```
 
-For the exact April 27-28, 2026 hard-slice rerun, the direct baseline remained at `self-consistency=3`, while the conversational local extractor was completed with `self-consistency=1` after the local proposition batching fixes were validated.
+For the exact April 27-28, 2026 hard-slice local rerun, the direct baseline remained at `self-consistency=3`, while the conversational local extractor was completed with `self-consistency=1` after the local proposition batching fixes were validated.
 
-Recommended environment for the frontier Gemini comparison run:
+Recommended environment for the frontier Gemini comparison and rerun:
 
 ```bash
 export REQ_LLM_PROVIDER=gemini
@@ -497,6 +683,7 @@ export REQ_GEMINI_TIMEOUT_SECONDS=180
 export REQ_GEMINI_MAX_RETRIES=8
 export REQ_GEMINI_RETRY_BACKOFF_SECONDS=10
 export REQ_GEMINI_CACHE_TTL_SECONDS=3600
+export REQ_VALIDATOR_GEMINI_MODEL=gemini-2.5-flash
 ```
 
 Example hard-slice Gemini launch:
@@ -515,4 +702,4 @@ python3 scripts/run_pure_full_benchmark.py \
   --max-turns 28
 ```
 
-In the exact April 28, 2026 Gemini comparison run, the benchmark runner evaluated both `gemini_full_context` and `gemini_evidence_bank`, then selected `gemini_evidence_bank` because it improved hard-slice recall from `0.50` to `0.55`.
+In the exact April 28, 2026 second Gemini rerun, the benchmark runner evaluated both `gemini_full_context` and `gemini_evidence_bank`, selected `gemini_evidence_bank` under the current benchmark rule because the full-context recall advantage was only `0.01`, ran `gemini-2.5-flash` as the fixed second-layer validator, and generated the final reports automatically at run completion.
