@@ -72,8 +72,19 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--partial-drop-rate", type=float, default=0.2)
     parser.add_argument("--self-consistency", type=int, default=3)
     parser.add_argument("--self-consistency-temperature", type=float, default=0.3)
-    parser.add_argument("--llm-provider", choices=["gemini", "ollama"], default=None)
-    parser.add_argument("--pipeline-preset", choices=["auto", "local_recall", "gemini_full_context", "gemini_evidence_bank"], default="auto")
+    parser.add_argument("--llm-provider", choices=["gemini", "openai", "ollama"], default=None)
+    parser.add_argument(
+        "--pipeline-preset",
+        choices=[
+            "auto",
+            "local_recall",
+            "gemini_full_context",
+            "gemini_evidence_bank",
+            "openai_full_context",
+            "openai_evidence_bank",
+        ],
+        default="auto",
+    )
     parser.add_argument("--dialogue-chunking", choices=["auto", "always", "never"], default="auto")
     parser.add_argument("--dialogue-chunk-overlap-turns", type=int, default=2)
     parser.add_argument("--memory-max-items", type=int, default=24)
@@ -93,8 +104,13 @@ def llm_provider(provider_override: str | None = None) -> str:
 
 
 def has_llm_env(provider_override: str | None = None) -> bool:
-    if llm_provider(provider_override) == "ollama":
+    provider_name = llm_provider(provider_override)
+    if provider_name == "ollama":
         return True
+    if provider_name == "openai":
+        return bool(os.environ.get("REQ_OPENAI_API_KEY") or os.environ.get("REQ_LLM_API_KEY")) and bool(
+            os.environ.get("REQ_OPENAI_MODEL") or os.environ.get("REQ_LLM_MODEL")
+        )
     return bool(os.environ.get("REQ_GEMINI_API_KEY")) and bool(os.environ.get("REQ_GEMINI_MODEL"))
 
 
@@ -215,7 +231,12 @@ def prepare_source_dir(args: argparse.Namespace, source_dir: Path, source_summar
 def preset_config(provider_name: str, preset_name: str, args: argparse.Namespace) -> dict:
     effective = preset_name
     if preset_name == "auto":
-        effective = "local_recall" if provider_name == "ollama" else "gemini_evidence_bank"
+        if provider_name == "ollama":
+            effective = "local_recall"
+        elif provider_name == "openai":
+            effective = "openai_evidence_bank"
+        else:
+            effective = "gemini_evidence_bank"
 
     config = {
         "name": effective,
@@ -225,7 +246,7 @@ def preset_config(provider_name: str, preset_name: str, args: argparse.Namespace
         "retrieval_top_k": args.retrieval_top_k,
         "overlap": args.dialogue_chunk_overlap_turns,
     }
-    if effective == "gemini_full_context":
+    if effective in {"gemini_full_context", "openai_full_context"}:
         config.update(
             {
                 "chunk_dialogues": False,
@@ -234,7 +255,7 @@ def preset_config(provider_name: str, preset_name: str, args: argparse.Namespace
                 "overlap": 0,
             }
         )
-    elif effective == "gemini_evidence_bank":
+    elif effective in {"gemini_evidence_bank", "openai_evidence_bank"}:
         config.update(
             {
                 "chunk_dialogues": True,

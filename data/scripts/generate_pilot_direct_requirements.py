@@ -146,7 +146,7 @@ def main() -> int:
     prompt_hash = sha256_text(template)
     schema_hash = sha256_text(json.dumps(RESPONSE_SCHEMA, sort_keys=True))
 
-    model_name = os.environ.get("REQ_OLLAMA_MODEL") if llm.provider() == "ollama" else os.environ.get("REQ_GEMINI_MODEL")
+    model_name = llm.active_model_name()
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     summary = []

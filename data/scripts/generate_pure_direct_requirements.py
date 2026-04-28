@@ -151,7 +151,7 @@ def main() -> int:
         print(json.dumps(preview, indent=2, ensure_ascii=False))
         return 0
 
-    model_name = os.environ.get("REQ_OLLAMA_MODEL") if llm.provider() == "ollama" else os.environ.get("REQ_GEMINI_MODEL")
+    model_name = llm.active_model_name()
     summary = []
 
     for sample in samples:

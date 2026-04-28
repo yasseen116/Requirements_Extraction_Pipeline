@@ -159,7 +159,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    model_name = os.environ.get("REQ_OLLAMA_MODEL") if llm.provider() == "ollama" else os.environ.get("REQ_GEMINI_MODEL")
+    model_name = llm.active_model_name()
 
     rewrite_template = args.rewrite_prompt.read_text(encoding="utf-8")
 

@@ -69,15 +69,21 @@ class OpenAICompatibleConfig:
 
     @classmethod
     def from_env(cls) -> "OpenAICompatibleConfig":
-        base_url = os.environ.get("REQ_LLM_BASE_URL", "").strip()
-        model = os.environ.get("REQ_LLM_MODEL", "").strip()
-        api_key = os.environ.get("REQ_LLM_API_KEY", "").strip() or None
-        timeout_raw = os.environ.get("REQ_LLM_TIMEOUT_SECONDS", "90").strip()
+        base_url = (
+            os.environ.get("REQ_OPENAI_BASE_URL", "").strip()
+            or os.environ.get("REQ_LLM_BASE_URL", "").strip()
+            or "https://api.openai.com/v1"
+        )
+        model = os.environ.get("REQ_OPENAI_MODEL", "").strip() or os.environ.get("REQ_LLM_MODEL", "").strip()
+        api_key = os.environ.get("REQ_OPENAI_API_KEY", "").strip() or os.environ.get("REQ_LLM_API_KEY", "").strip() or None
+        timeout_raw = (
+            os.environ.get("REQ_OPENAI_TIMEOUT_SECONDS", "").strip()
+            or os.environ.get("REQ_LLM_TIMEOUT_SECONDS", "").strip()
+            or "90"
+        )
 
-        if not base_url:
-            raise ValueError("Missing REQ_LLM_BASE_URL")
         if not model:
-            raise ValueError("Missing REQ_LLM_MODEL")
+            raise ValueError("Missing REQ_OPENAI_MODEL or REQ_LLM_MODEL")
 
         return cls(
             base_url=base_url,
@@ -92,7 +98,14 @@ class OpenAICompatibleClient:
         self.config = config
         self.chat_url = resolve_chat_url(config.base_url)
 
-    def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0) -> dict:
+    def chat(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        temperature: float = 0.0,
+        response_schema: dict | None = None,
+        max_output_tokens: int | None = None,
+    ) -> dict:
         payload = {
             "model": self.config.model,
             "temperature": temperature,
@@ -101,6 +114,17 @@ class OpenAICompatibleClient:
                 {"role": "user", "content": user_prompt},
             ],
         }
+        if max_output_tokens is not None:
+            payload["max_tokens"] = max_output_tokens
+        if response_schema is not None:
+            payload["response_format"] = {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "req_benchmark_json",
+                    "strict": True,
+                    "schema": response_schema,
+                },
+            }
         body = json.dumps(payload).encode("utf-8")
         headers = {
             "Content-Type": "application/json",
