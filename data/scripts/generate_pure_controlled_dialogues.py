@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
-"""Generate adaptive elicitation dialogues from PURE requirements.
-
-Architecture (3-component adaptive loop):
-1. Coverage tracker  — keyword hit-rate per category after each user turn
-2. Gap question generator — LLM generates a targeted question for the top gap
-3. Stopping criterion — stops when all covered, max turns reached, or
-                         coverage gain has plateaued (diminishing returns)
-"""
+"""Generate adaptive elicitation dialogues from PURE requirements."""
 
 from __future__ import annotations
 
@@ -14,9 +7,10 @@ import argparse
 import hashlib
 import json
 import os
-import re
+from collections import Counter, defaultdict
 from pathlib import Path
 
+from coverage_scorer import CoverageScorer, average, clean_text
 import llm_router as llm
 
 
@@ -24,14 +18,12 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_INPUT = ROOT / "raw_sources" / "pure_benchmark" / "source_requirements"
 DEFAULT_OUTPUT = ROOT / "outputs" / "pure_full" / "expanded_dialogues"
 DEFAULT_PROMPT = ROOT / "prompts" / "pure_requirement_group_to_answer.txt"
+DEFAULT_MAX_TURNS = 28
+DEFAULT_TARGET_DIALOGUE_RECALL = 0.82
+DEFAULT_THEME_MAX_EXCHANGES = 3
+THEME_MARGIN = 0.05
+QUESTION_ALGORITHM_VERSION = "semantic_gap_llm_v1"
 
-# ── Adaptive loop constants ────────────────────────────────────────────────────
-MAX_TURNS = 20          # hard ceiling on bot/user exchange pairs
-COVERAGE_THRESHOLD = 0.35   # keyword hit-rate needed to count a category as covered
-MIN_COVERAGE_GAIN = 0.05    # stop if coverage fraction gain < 5% over last 3 turns
-COVERAGE_GAIN_WINDOW = 3    # number of turns to look back for diminishing returns
-
-# ── Answer-schema (unchanged from original) ────────────────────────────────────
 ANSWER_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
@@ -44,7 +36,6 @@ ANSWER_SCHEMA = {
     },
 }
 
-# Schema for LLM-generated gap question
 GAP_QUESTION_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
@@ -57,7 +48,6 @@ GAP_QUESTION_SCHEMA = {
     },
 }
 
-# ── Theme taxonomy ─────────────────────────────────────────────────────────────
 THEME_ORDER = [
     "goal_scope",
     "user_roles_permissions",
@@ -75,24 +65,22 @@ THEME_ORDER = [
     "other_constraints",
 ]
 
-# Priority order for gap targeting (highest-value categories first)
 PRIORITY_ORDER = [
     "functional_capabilities",
-    "performance_capacity",
+    "usability_help_accessibility",
     "security_audit",
     "data_validation",
     "interfaces_integrations",
-    "deployment_environment_constraints",
-    "maintainability_portability_testability",
-    "availability_reliability",
+    "performance_capacity",
     "workflows_business_rules",
     "user_roles_permissions",
-    "usability_help_accessibility",
+    "availability_reliability",
+    "deployment_environment_constraints",
+    "maintainability_portability_testability",
     "reporting_documentation",
     "other_constraints",
 ]
 
-# Fixed fallback questions (used when LLM gap-question fails)
 QUESTION_MAP = {
     "goal_scope": "To start, what is the overall purpose and scope of this system?",
     "user_roles_permissions": "Who are the main users or roles, and what access responsibilities do they have?",
@@ -110,107 +98,49 @@ QUESTION_MAP = {
     "other_constraints": "Are there any additional technical or operational constraints we have not covered yet?",
 }
 
-THEME_KEYWORDS: dict[str, list[str]] = {
-    "performance_capacity": [
-        "less than", "under ", "per second", "ms", "milliseconds", "seconds",
-        "concurrent", "concurrently", "response time", "throughput", "performance", "latency",
-    ],
-    "availability_reliability": [
-        "availability", "uptime", "reliability", "reliable", "restore", "recovery",
-        "recover", "backup", "backed up", "failover", "operational in less than",
-    ],
-    "security_audit": [
-        "security", "secure", "encrypt", "https", "password", "login", "log in",
-        "authentication", "authorization", "authorisation", "audit", "audit trail",
-        "fraud", "unauthorised", "unauthorized", "firewall", "access rights",
-        "privileges", "super-user", "security attributes",
-    ],
-    "usability_help_accessibility": [
-        "help material", "online help", "usability", "error messages", "special needs",
-        "look and feel", "horizontal scrolling", "input devices", "navigation",
-        "customizable", "configurable", "user interface", "interface rules",
-        "accessibility", "meaningful", "controls",
-    ],
-    "deployment_environment_constraints": [
-        "operating environment", "operate on", "browser", "internet explorer",
-        "netscape", "slackware", "apache", "intel based", "hardware", "usb",
-        "deployment", "technical constraints", "shortest path algorithm",
-    ],
-    "maintainability_portability_testability": [
-        "maintainability", "portable", "portability", "migrate", "upgrade",
-        "updatable", "patches", "debug mode", "plugins", "interchangeable",
-        "testability", "easy to upgrade", "easy to migrate",
-    ],
-    "reporting_documentation": [
-        "report", "reports", "manual", "guide book", "guide", "documentation",
-        "installation instructions", "operations and maintenance", "users guide",
-    ],
-    "interfaces_integrations": [
-        "interface", "interfaces", "email", "sms", "plug-ins", "plugin interface",
-        "web interface", "communicat", "tracking number", "technical queries",
-    ],
-    "data_validation": [
-        "database", "data", "store", "stored", "capture", "records", "inventory",
-        "validate", "validation", "entities", "suspect", "property",
-        "credit card", "email address",
-    ],
-    "workflows_business_rules": [
-        "if ", "when ", "after ", "before ", "based on", "thereafter",
-        "returning customers", "chooses to", "selectable", "must allow only",
-        "shall take", "workflow", "business rule",
-    ],
-    "user_roles_permissions": [
-        "citizens", "citizen", "police", "help-desk", "admin-users",
-        "administrator", "administrators", "sales people", "sales person",
-        "customer", "customers", "user groups", "groups", "user profiles",
-        "role-based", "member of more than one group",
-    ],
-    "goal_scope": ["main goal", "overall scope", "overall purpose", "solution", "system goal", "scope"],
-    "functional_capabilities": [
-        "allow", "enable", "provide", "support", "view", "search", "register",
-        "log", "track", "display", "manage", "send", "export", "browse", "checkout",
-        "order", "purchase", "add", "remove", "upload", "download",
-    ],
-    "other_constraints": [],
+THEME_DESCRIPTIONS = {
+    "goal_scope": "Overall purpose, product scope, and the system's main business objective.",
+    "user_roles_permissions": "Users, actors, roles, groups, permissions, privileges, and access responsibilities.",
+    "functional_capabilities": "Core actions, services, workflows users perform, and system behaviors that deliver business value.",
+    "workflows_business_rules": "Decision logic, process rules, sequencing, conditional behavior, and business policies.",
+    "data_validation": "Data storage, database needs, records, input validation, user profiles, defaults, and data quality rules.",
+    "interfaces_integrations": "Browser access, web interfaces, external systems, APIs, email, SMS, plugins, and communication interfaces.",
+    "performance_capacity": "Response times, throughput, concurrency, timing, latency, and capacity requirements.",
+    "availability_reliability": "Availability, uptime, recovery, backup, resiliency, and failover expectations.",
+    "security_audit": "Authentication, authorization, encryption, audit trails, immutability, login security, and firewall/security controls.",
+    "usability_help_accessibility": "Navigation, accessibility, readability, help content, interface consistency, scrolling, text resizing, input independence, and user experience.",
+    "deployment_environment_constraints": "Operating systems, browsers, hardware, servers, deployment platforms, and technical environment constraints.",
+    "maintainability_portability_testability": "Portability, upgradeability, debugging, maintainability, migration, configurability, and testability constraints.",
+    "reporting_documentation": "Reports, manuals, documentation, user guides, and operational instructions.",
+    "other_constraints": "Remaining technical, legal, or operational constraints that do not fit another theme.",
 }
 
+FOCUS_HINTS = {
+    "usability_accessibility": "Focus on usability, accessibility, navigation clarity, text handling, and browser presentation expectations.",
+    "audit_immutability": "Focus on whether audit trail data can ever be modified, deleted, or altered by any user.",
+    "persistent_defaults": "Focus on persistent defaults, customizable entry values, and whether users can keep their own saved defaults.",
+    "user_profile_storage": "Focus on whether personal configuration settings must be stored in the user profile.",
+    "browser_interface_support": "Focus on support both inside the application and outside it through a browser interface.",
+}
 
-# ── Utilities ──────────────────────────────────────────────────────────────────
+FOCUS_QUESTION_MAP = {
+    "usability_accessibility": "What expectations do you have around accessibility, navigation, readability, and how easy the interface should be to use?",
+    "audit_immutability": "On the audit side, should that history ever be editable or removable by users, or does it need to stay locked down?",
+    "persistent_defaults": "Do users need their own saved defaults or repeated entry values so they do not have to set them every time?",
+    "user_profile_storage": "If users customize settings, do those preferences need to be stored in their profile and kept between sessions?",
+    "browser_interface_support": "Should people be able to reach the support features only inside the application, or also through a regular browser interface?",
+}
+
+QUESTION_ALGORITHM_SUMMARY = (
+    "Select the next question by semantically scoring uncovered requirements against dialogue evidence, "
+    "ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the "
+    "top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly "
+    "one natural follow-up question. Fixed fallback templates are used only if JSON generation fails."
+)
+
 
 def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
-
-
-def clean_text(text: str) -> str:
-    return " ".join(str(text).replace("\u00a0", " ").split())
-
-
-def normalize_text(text: str) -> str:
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", " ", text)
-    return " ".join(text.split())
-
-
-def tokenize(text: str) -> set[str]:
-    stopwords = {
-        "the", "a", "an", "of", "to", "in", "on", "and", "or", "for", "with",
-        "by", "is", "are", "be", "as", "that", "this", "it", "from", "at",
-        "must", "shall", "should",
-    }
-    return {token for token in normalize_text(text).split() if token not in stopwords and len(token) > 1}
-
-
-def token_f1(a: str, b: str) -> float:
-    ta = tokenize(a)
-    tb = tokenize(b)
-    if not ta or not tb:
-        return 0.0
-    overlap = len(ta & tb)
-    precision = overlap / len(ta)
-    recall = overlap / len(tb)
-    if precision + recall == 0.0:
-        return 0.0
-    return 2 * precision * recall / (precision + recall)
 
 
 def load_samples(input_dir: Path) -> list[dict]:
@@ -225,17 +155,6 @@ def load_samples(input_dir: Path) -> list[dict]:
     return samples
 
 
-def classify_requirement(text: str) -> str:
-    scores = {theme: sum(1 for kw in kws if kw in text.lower()) for theme, kws in THEME_KEYWORDS.items()}
-    best_theme = max(scores, key=scores.get)
-    if scores[best_theme] > 0:
-        return best_theme
-    lowered = text.lower()
-    if re.search(r"\b(allow|enable|provide|support|view|search|register|log|track|display|manage|send|export)\b", lowered):
-        return "functional_capabilities"
-    return "other_constraints"
-
-
 def build_scope_answer(sample: dict) -> str:
     title = clean_text(sample["source"]["title"])
     doc_id = clean_text(sample["source"]["document_id"])
@@ -246,7 +165,13 @@ def build_scope_answer(sample: dict) -> str:
 
 
 def build_requirements_block(items: list[dict]) -> str:
-    return "\n".join(f"- {item['req_id']}: {clean_text(item['text'])}" for item in items)
+    lines = []
+    for item in items:
+        labels = [item["req_id"]]
+        if item.get("primary_theme"):
+            labels.append(item["primary_theme"])
+        lines.append(f"- {' | '.join(labels)}: {clean_text(item['text'])}")
+    return "\n".join(lines)
 
 
 def build_answer_prompt(template: str, theme: str, question: str, items: list[dict]) -> str:
@@ -261,125 +186,232 @@ def deterministic_answer(items: list[dict]) -> str:
     return " ".join(clean_text(item["text"]).rstrip(".") + "." for item in items if clean_text(item["text"]))
 
 
-def answer_covers_items(answer: str, items: list[dict], threshold: float) -> tuple[bool, float]:
-    if not answer.strip():
-        return False, 0.0
-    scores = [token_f1(item["text"], answer) for item in items]
-    covered = sum(score >= threshold for score in scores)
-    ratio = covered / len(items) if items else 1.0
-    return ratio >= 1.0, ratio
+def build_dialogue_payload(dialogue: list[dict], trace: list[dict]) -> dict:
+    return {"dialogue": dialogue, "dialogue_generation": {"trace": trace}}
 
 
-def collect_user_turn_texts(dialogue: list[dict]) -> list[str]:
-    return [clean_text(t.get("text", "")) for t in dialogue if t.get("role") == "user" and t.get("text")]
+def annotate_requirements(requirements: list[dict], scorer: CoverageScorer) -> list[dict]:
+    theme_names = [theme for theme in THEME_ORDER if theme != "goal_scope"]
+    theme_texts = [f"{theme}: {THEME_DESCRIPTIONS[theme]}" for theme in theme_names]
+    req_texts = [req["text"] for req in requirements]
+    matrix = scorer.similarity_matrix(req_texts, theme_texts)
+
+    annotated = []
+    for index, req in enumerate(requirements):
+        row = matrix[index] if index < len(matrix) else []
+        ranked = sorted(
+            [
+                {"theme": theme_names[theme_index], "score": float(score)}
+                for theme_index, score in enumerate(row)
+            ],
+            key=lambda item: item["score"],
+            reverse=True,
+        )
+        primary = ranked[0]["theme"] if ranked else "other_constraints"
+        primary_score = ranked[0]["score"] if ranked else 0.0
+        secondary = None
+        secondary_score = 0.0
+        if len(ranked) > 1 and primary_score - ranked[1]["score"] < THEME_MARGIN:
+            secondary = ranked[1]["theme"]
+            secondary_score = ranked[1]["score"]
+        annotated.append(
+            {
+                **req,
+                "primary_theme": primary,
+                "primary_theme_score": primary_score,
+                "secondary_theme": secondary,
+                "secondary_theme_score": secondary_score,
+            }
+        )
+    return annotated
 
 
-def find_uncovered_requirements(sample: dict, dialogue: list[dict], threshold: float) -> list[dict]:
-    user_texts = collect_user_turn_texts(dialogue)
-    uncovered = []
-    for item in sample["ground_truth_requirements"]:
-        best = max((token_f1(item["text"], u) for u in user_texts), default=0.0)
-        if best < threshold:
-            uncovered.append({**item, "best_dialogue_coverage": best})
-    return uncovered
-
-
-# ── Component 1: Coverage tracker ─────────────────────────────────────────────
-
-def score_category_coverage(user_turn_texts: list[str], category: str) -> float:
-    """Keyword hit-rate for a category across all user turns."""
-    keywords = THEME_KEYWORDS.get(category, [])
-    if not keywords:
-        return 1.0
-    full_text = " ".join(user_turn_texts).lower()
-    hits = sum(1 for kw in keywords if kw in full_text)
-    return hits / len(keywords)
-
-
-def get_uncovered_categories(user_turn_texts: list[str]) -> list[str]:
-    """Return categories not yet sufficiently covered in user turns."""
-    return [
-        cat for cat in THEME_ORDER
-        if cat != "goal_scope"
-        and THEME_KEYWORDS.get(cat)  # skip categories with no keywords
-        and score_category_coverage(user_turn_texts, cat) < COVERAGE_THRESHOLD
-    ]
-
-
-def coverage_fraction(user_turn_texts: list[str]) -> float:
-    """Overall fraction of trackable categories that are covered."""
-    trackable = [cat for cat in THEME_ORDER if cat != "goal_scope" and THEME_KEYWORDS.get(cat)]
-    if not trackable:
-        return 1.0
-    covered = sum(
-        1 for cat in trackable
-        if score_category_coverage(user_turn_texts, cat) >= COVERAGE_THRESHOLD
+def evaluate_requirement_coverage(
+    annotated_requirements: list[dict],
+    dialogue: list[dict],
+    trace: list[dict],
+    scorer: CoverageScorer,
+    threshold: float,
+) -> tuple[list[dict], list[dict], float]:
+    payload = build_dialogue_payload(dialogue, trace)
+    support_units = scorer.build_dialogue_support_units(payload, user_only=True)
+    results = scorer.coverage_against_units(
+        [item["text"] for item in annotated_requirements],
+        support_units,
+        threshold=threshold,
+        contextualized=True,
     )
-    return covered / len(trackable)
+
+    coverage_results = []
+    for req, result in zip(annotated_requirements, results):
+        coverage_results.append(
+            {
+                **req,
+                "best_score": float(result["best_score"]),
+                "covered": bool(result["covered"]),
+                "best_unit": result.get("best_unit"),
+            }
+        )
+    uncovered = [item for item in coverage_results if not item["covered"]]
+    recall = 1.0 - (len(uncovered) / len(coverage_results) if coverage_results else 0.0)
+    return coverage_results, uncovered, recall
 
 
-# ── Component 2: Gap-targeted question generator ───────────────────────────────
+def compute_theme_coverage(coverage_results: list[dict]) -> dict[str, dict]:
+    summary = {theme: {"total": 0, "covered": 0} for theme in THEME_ORDER if theme != "goal_scope"}
+    for item in coverage_results:
+        themes = [item.get("primary_theme")]
+        if item.get("secondary_theme"):
+            themes.append(item["secondary_theme"])
+        seen = set()
+        for theme in themes:
+            if not theme or theme in seen or theme == "goal_scope":
+                continue
+            seen.add(theme)
+            summary.setdefault(theme, {"total": 0, "covered": 0})
+            summary[theme]["total"] += 1
+            if item["covered"]:
+                summary[theme]["covered"] += 1
+    for theme, stats in summary.items():
+        total = stats["total"]
+        covered = stats["covered"]
+        stats["uncovered"] = max(0, total - covered)
+        stats["recall"] = covered / total if total else 1.0
+    return summary
+
+
+def focus_label_for_requirement(item: dict) -> str:
+    text = clean_text(item.get("text", "")).lower()
+    if "audit trail" in text or "unalterable" in text or "cannot be modified" in text or "deleted by any user" in text:
+        return "audit_immutability"
+    if "user profile" in text:
+        return "user_profile_storage"
+    if "persistent defaults" in text or "defaults should include" in text or "user-definable values" in text:
+        return "persistent_defaults"
+    if "browser interface" in text or "outside the application" in text:
+        return "browser_interface_support"
+    if item.get("primary_theme") == "usability_help_accessibility":
+        return "usability_accessibility"
+    return item.get("primary_theme") or "other_constraints"
+
+
+def theme_priority(theme: str) -> int:
+    try:
+        return PRIORITY_ORDER.index(theme)
+    except ValueError:
+        return len(PRIORITY_ORDER)
+
+
+def choose_target_theme(
+    uncovered_results: list[dict],
+    theme_exchange_counts: Counter,
+    theme_max_exchanges: int,
+) -> str | None:
+    theme_buckets: dict[str, list[dict]] = defaultdict(list)
+    for item in uncovered_results:
+        primary = item.get("primary_theme")
+        secondary = item.get("secondary_theme")
+        if primary:
+            theme_buckets[primary].append(item)
+        if secondary:
+            theme_buckets[secondary].append(item)
+
+    ranked = []
+    for theme, items in theme_buckets.items():
+        uncovered_count = len({item["req_id"] for item in items})
+        if uncovered_count == 0:
+            continue
+        if int(theme_exchange_counts.get(theme, 0)) >= theme_max_exchanges and uncovered_count < 2:
+            continue
+        avg_gap = average((1.0 - item["best_score"]) for item in items)
+        ranked.append((theme_priority(theme), -uncovered_count, -avg_gap, theme))
+
+    if not ranked:
+        return None
+    ranked.sort()
+    return ranked[0][3]
+
+
+def select_candidate_requirements(
+    uncovered_results: list[dict],
+    target_theme: str,
+    max_reqs_per_answer: int,
+    max_chars_per_answer: int,
+) -> list[dict]:
+    candidates = []
+    for item in uncovered_results:
+        primary_match = item.get("primary_theme") == target_theme
+        secondary_match = item.get("secondary_theme") == target_theme
+        if not (primary_match or secondary_match):
+            continue
+        candidates.append(
+            (
+                0 if primary_match else 1,
+                item["best_score"],
+                len(clean_text(item["text"])),
+                item,
+            )
+        )
+
+    candidates.sort(key=lambda item: (item[0], item[1], item[2]))
+    selected = []
+    char_budget = max_chars_per_answer
+    for _, _, _, item in candidates:
+        req_len = len(clean_text(item["text"]))
+        if len(selected) >= max_reqs_per_answer:
+            break
+        if selected and char_budget - req_len < 0:
+            break
+        selected.append(item)
+        char_budget -= req_len
+    return selected
+
 
 def generate_gap_question(
-    target_category: str,
-    covered_categories: list[str],
+    *,
+    target_theme: str,
+    covered_theme_names: list[str],
+    candidate_requirements: list[dict],
     dialogue_history: list[dict],
-) -> str:
-    """Ask the LLM to generate one natural analyst question targeting a coverage gap."""
-    covered_labels = [c.replace("_", " ") for c in covered_categories]
-    target_label = target_category.replace("_", " ")
-
-    recent = dialogue_history[-6:]  # last 3 exchanges
-    history_text = "\n".join(
-        f"[{t['role'].upper()}]: {t['text']}" for t in recent
-    )
+    stage: str,
+    focus_label: str | None = None,
+) -> tuple[str, str]:
+    target_label = target_theme.replace("_", " ")
+    covered_labels = [theme.replace("_", " ") for theme in covered_theme_names]
+    recent = dialogue_history[-8:]
+    history_text = "\n".join(f"[{turn['role'].upper()}]: {turn['text']}" for turn in recent)
+    examples = "\n".join(f"- {clean_text(item['text'])}" for item in candidate_requirements[:3])
+    extra_focus = FOCUS_HINTS.get(focus_label or "", "")
 
     prompt = (
-        f"You are a skilled requirements analyst conducting a stakeholder interview.\n\n"
-        f"Topics already covered reasonably well: {covered_labels}.\n\n"
-        f"The following requirement area has NOT been discussed yet: '{target_label}'.\n\n"
-        f"Generate ONE natural, conversational follow-up question specifically targeting "
-        f"the '{target_label}' area.\n\n"
-        f"Rules:\n"
-        f"- Ask as a real analyst would — curious, specific, building on what was said\n"
-        f"- Do NOT use requirements language like 'shall' or 'must'\n"
-        f"- Keep it to ONE focused question, not multiple\n"
-        f"- Make it feel like a natural continuation of this conversation\n\n"
-        f"Last few turns:\n{history_text}\n\n"
-        f"Return JSON with a single 'question' field."
+        "You are a skilled requirements analyst conducting a stakeholder interview.\n\n"
+        f"Requirement area to target next: {target_label}.\n"
+        f"Topics already covered reasonably well: {covered_labels or ['none yet']}.\n"
+        f"Stage: {stage}.\n"
+        f"{extra_focus}\n\n"
+        "These are the specific requirement ideas that still seem under-covered. "
+        "Do not quote them; use them only to ask one focused follow-up question.\n"
+        f"{examples}\n\n"
+        "Rules:\n"
+        "- Ask exactly one natural, conversational question.\n"
+        "- Do not use specification language like 'shall' or 'must'.\n"
+        "- Build on the recent conversation instead of starting over.\n"
+        "- Keep the question focused on one area.\n\n"
+        f"Recent conversation:\n{history_text}\n\n"
+        "Return JSON with a single 'question' field."
     )
     try:
-        response = llm.generate_json(prompt, GAP_QUESTION_SCHEMA, temperature=0.7)
+        response = llm.generate_json(prompt, GAP_QUESTION_SCHEMA, temperature=0.4)
         parsed = llm.parse_first_json_object(response.text)
         question = clean_text(parsed.get("question", ""))
         if question:
-            return question
+            return question, llm.provider()
     except Exception:
         pass
-    # Fallback to fixed question map
-    return QUESTION_MAP.get(target_category, f"What else should I know about {target_label}?")
+    if focus_label and focus_label in FOCUS_QUESTION_MAP:
+        return FOCUS_QUESTION_MAP[focus_label], "fallback_question"
+    return QUESTION_MAP.get(target_theme, f"What else should I know about {target_label}?"), "fallback_question"
 
-
-# ── Component 3: Stopping criterion ───────────────────────────────────────────
-
-def should_stop(
-    uncovered: list[str],
-    exchange_count: int,
-    coverage_history: list[float],
-) -> bool:
-    """
-    Stop when:
-    1. All categories are covered, OR
-    2. Hard turn ceiling reached
-    """
-    if not uncovered:
-        return True
-    if exchange_count >= MAX_TURNS:
-        return True
-    return False
-
-
-# ── Answer generation ──────────────────────────────────────────────────────────
 
 def generate_answer(
     template: str,
@@ -388,10 +420,6 @@ def generate_answer(
     items: list[dict],
     threshold: float,
 ) -> tuple[str, str, float]:
-    """
-    Generate a naturalistic user answer for the given requirements chunk.
-    Uses LLM answer whenever it returns non-empty; fallback only on error.
-    """
     fallback = deterministic_answer(items)
     prompt = build_answer_prompt(template, theme, question, items)
     try:
@@ -399,15 +427,26 @@ def generate_answer(
         parsed = llm.parse_first_json_object(response.text)
         answer = clean_text(parsed.get("answer", ""))
         if answer:
-            # Coverage guardrail intentionally disabled — naturalistic paraphrases
-            # score low against formal requirement text; we want that gap.
-            _, ratio = answer_covers_items(answer, items, threshold)
+            ratios = []
+            for item in items:
+                overlap = 1.0 if clean_text(item["text"]).lower() in answer.lower() else 0.0
+                ratios.append(overlap)
+            ratio = average(ratios) if ratios else 1.0
             return answer, llm.provider(), ratio
-    except Exception as e:
-        raise RuntimeError(f"Failed to generate answer from LLM: {e}") from e
+    except Exception:
+        pass
+    return fallback, "fallback_answer", 1.0 if items else threshold
 
 
-# ── Main adaptive dialogue builder ─────────────────────────────────────────────
+def build_stopped_reason(exchange_count: int, max_turns: int, recall: float, target_recall: float, uncovered_results: list[dict]) -> str:
+    if not uncovered_results:
+        return "all_covered"
+    if recall >= target_recall:
+        return "target_dialogue_recall_reached"
+    if exchange_count >= max_turns:
+        return "max_turns"
+    return "no_viable_theme"
+
 
 def build_dialogue(
     sample: dict,
@@ -415,132 +454,193 @@ def build_dialogue(
     max_reqs_per_answer: int,
     max_chars_per_answer: int,
     coverage_threshold: float,
-    clarification_rounds: int,  # kept for API compat, not used in adaptive loop
+    clarification_rounds: int,
+    *,
+    max_turns: int,
+    target_dialogue_recall: float,
+    theme_max_exchanges: int,
 ) -> tuple[list[dict], list[dict], dict]:
+    scorer = CoverageScorer(threshold=coverage_threshold)
+    annotated_requirements = annotate_requirements(sample["ground_truth_requirements"], scorer)
+
     dialogue: list[dict] = []
     trace: list[dict] = []
     turn_id = 1
+    exchange_count = 0
+    theme_exchange_counts: Counter = Counter()
     coverage_history: list[float] = []
 
-    # ── Turn 0: broad opening ──────────────────────────────────────────────────
     opening_q = QUESTION_MAP["goal_scope"]
     dialogue.append({"turn_id": turn_id, "role": "bot", "text": opening_q})
     turn_id += 1
     scope_answer = build_scope_answer(sample)
     dialogue.append({"turn_id": turn_id, "role": "user", "text": scope_answer})
-    trace.append({
-        "theme": "goal_scope",
-        "req_ids": [],
-        "bot_turn_id": turn_id - 1,
-        "user_turn_id": turn_id,
-        "generation_mode": "deterministic_scope",
-        "coverage_ratio": 1.0,
-        "stage": "adaptive_opening",
-    })
+    trace.append(
+        {
+            "theme": "goal_scope",
+            "req_ids": [],
+            "bot_turn_id": turn_id - 1,
+            "user_turn_id": turn_id,
+            "generation_mode": "deterministic_scope",
+            "coverage_ratio": 1.0,
+            "stage": "adaptive_opening",
+        }
+    )
     turn_id += 1
+    exchange_count += 1
 
-    user_turns: list[str] = [scope_answer]
-    coverage_history.append(coverage_fraction(user_turns))
-    exchange_count = 1  # number of bot/user pairs so far
+    coverage_results, uncovered_results, recall = evaluate_requirement_coverage(
+        annotated_requirements,
+        dialogue,
+        trace,
+        scorer,
+        coverage_threshold,
+    )
+    initial_uncovered_count = len(uncovered_results)
+    coverage_history.append(recall)
 
-    # Build a quick index: category -> list of requirements
-    category_reqs: dict[str, list[dict]] = {cat: [] for cat in THEME_ORDER}
-    for req in sample["ground_truth_requirements"]:
-        cat = classify_requirement(req["text"])
-        category_reqs[cat].append(req)
-
-    # Track which requirements have been presented to the LLM already
-    presented_req_ids: set[str] = set()
-
-    # ── Adaptive loop ──────────────────────────────────────────────────────────
-    while True:
-        uncovered_cats = get_uncovered_categories(user_turns)
-        covered_cats = [c for c in THEME_ORDER if c not in uncovered_cats and c != "goal_scope"]
-
-        if should_stop(uncovered_cats, exchange_count, coverage_history):
+    while exchange_count < max_turns and recall < target_dialogue_recall and uncovered_results:
+        target_theme = choose_target_theme(uncovered_results, theme_exchange_counts, theme_max_exchanges)
+        if not target_theme:
+            break
+        candidates = select_candidate_requirements(
+            uncovered_results,
+            target_theme,
+            max_reqs_per_answer=max_reqs_per_answer,
+            max_chars_per_answer=max_chars_per_answer,
+        )
+        if not candidates:
             break
 
-        # Pick the highest-priority uncovered category
-        target = next((c for c in PRIORITY_ORDER if c in uncovered_cats), uncovered_cats[0])
-
-        # Generate a targeted gap question via LLM
-        question = generate_gap_question(target, covered_cats, dialogue)
+        covered_themes = [
+            theme
+            for theme, stats in compute_theme_coverage(coverage_results).items()
+            if stats["recall"] >= target_dialogue_recall or stats["uncovered"] == 0
+        ]
+        question, question_mode = generate_gap_question(
+            target_theme=target_theme,
+            covered_theme_names=covered_themes,
+            candidate_requirements=candidates,
+            dialogue_history=dialogue,
+            stage="adaptive",
+        )
         dialogue.append({"turn_id": turn_id, "role": "bot", "text": question})
         turn_id += 1
 
-        # Select requirements to answer from — prefer unseen ones in the target category
-        candidate_reqs = [
-            r for r in category_reqs.get(target, [])
-            if r["req_id"] not in presented_req_ids
-        ]
-        if not candidate_reqs:
-            # Fall back to any unseen requirement whose coverage is low
-            candidate_reqs = [
-                r for r in sample["ground_truth_requirements"]
-                if r["req_id"] not in presented_req_ids
-                and max(
-                    (token_f1(r["text"], u) for u in user_turns),
-                    default=0.0,
-                ) < coverage_threshold
-            ]
-        if not candidate_reqs:
-            # All requirements seen — pick least-covered ones
-            candidate_reqs = sorted(
-                sample["ground_truth_requirements"],
-                key=lambda r: max((token_f1(r["text"], u) for u in user_turns), default=0.0),
-            )[:max_reqs_per_answer]
-
-        # Truncate to budget and track char count
-        chunk: list[dict] = []
-        char_budget = max_chars_per_answer
-        for req in candidate_reqs:
-            if len(chunk) >= max_reqs_per_answer:
-                break
-            req_len = len(req["text"])
-            if chunk and char_budget - req_len < 0:
-                break
-            chunk.append(req)
-            char_budget -= req_len
-            presented_req_ids.add(req["req_id"])
-
-        answer, mode, ratio = generate_answer(template, target, question, chunk, coverage_threshold)
+        answer, answer_mode, ratio = generate_answer(template, target_theme, question, candidates, coverage_threshold)
         dialogue.append({"turn_id": turn_id, "role": "user", "text": answer})
-        trace.append({
-            "theme": target,
-            "req_ids": [r["req_id"] for r in chunk],
-            "bot_turn_id": turn_id - 1,
-            "user_turn_id": turn_id,
-            "generation_mode": mode,
-            "coverage_ratio": ratio,
-            "stage": "adaptive",
-            "uncovered_at_start": uncovered_cats,
-        })
+        trace.append(
+            {
+                "theme": target_theme,
+                "req_ids": [item["req_id"] for item in candidates],
+                "bot_turn_id": turn_id - 1,
+                "user_turn_id": turn_id,
+                "generation_mode": f"{question_mode}|{answer_mode}",
+                "coverage_ratio": ratio,
+                "stage": "adaptive",
+                "focus_label": None,
+                "uncovered_requirement_count_at_start": len(uncovered_results),
+            }
+        )
+        turn_id += 1
+        exchange_count += 1
+        theme_exchange_counts[target_theme] += 1
+
+        coverage_results, uncovered_results, recall = evaluate_requirement_coverage(
+            annotated_requirements,
+            dialogue,
+            trace,
+            scorer,
+            coverage_threshold,
+        )
+        coverage_history.append(recall)
+
+    clarification_used = 0
+    for _round_index in range(clarification_rounds):
+        if exchange_count >= max_turns or recall >= target_dialogue_recall or not uncovered_results:
+            break
+
+        clusters: dict[str, list[dict]] = defaultdict(list)
+        for item in uncovered_results:
+            clusters[focus_label_for_requirement(item)].append(item)
+        ranked_clusters = sorted(
+            clusters.items(),
+            key=lambda pair: (-len(pair[1]), theme_priority(pair[1][0].get("primary_theme") or "other_constraints")),
+        )
+        if not ranked_clusters:
+            break
+        focus_label, focus_items = ranked_clusters[0]
+        target_theme = focus_items[0].get("primary_theme") or "other_constraints"
+        candidates = select_candidate_requirements(
+            focus_items,
+            target_theme,
+            max_reqs_per_answer=max_reqs_per_answer,
+            max_chars_per_answer=max_chars_per_answer,
+        )
+        if not candidates:
+            candidates = focus_items[:max_reqs_per_answer]
+        covered_themes = [
+            theme
+            for theme, stats in compute_theme_coverage(coverage_results).items()
+            if stats["uncovered"] == 0
+        ]
+        question, question_mode = generate_gap_question(
+            target_theme=target_theme,
+            covered_theme_names=covered_themes,
+            candidate_requirements=candidates,
+            dialogue_history=dialogue,
+            stage="clarification",
+            focus_label=focus_label,
+        )
+        dialogue.append({"turn_id": turn_id, "role": "bot", "text": question})
         turn_id += 1
 
-        user_turns.append(answer)
-        coverage_history.append(coverage_fraction(user_turns))
+        answer, answer_mode, ratio = generate_answer(template, target_theme, question, candidates, coverage_threshold)
+        dialogue.append({"turn_id": turn_id, "role": "user", "text": answer})
+        trace.append(
+            {
+                "theme": target_theme,
+                "req_ids": [item["req_id"] for item in candidates],
+                "bot_turn_id": turn_id - 1,
+                "user_turn_id": turn_id,
+                "generation_mode": f"{question_mode}|{answer_mode}",
+                "coverage_ratio": ratio,
+                "stage": "clarification",
+                "focus_label": focus_label,
+                "uncovered_requirement_count_at_start": len(uncovered_results),
+            }
+        )
+        turn_id += 1
         exchange_count += 1
+        clarification_used += 1
+        theme_exchange_counts[target_theme] += 1
 
-    # ── Build coverage summary ─────────────────────────────────────────────────
-    final_uncovered_reqs = find_uncovered_requirements(sample, dialogue, coverage_threshold)
+        coverage_results, uncovered_results, recall = evaluate_requirement_coverage(
+            annotated_requirements,
+            dialogue,
+            trace,
+            scorer,
+            coverage_threshold,
+        )
+        coverage_history.append(recall)
+
+    final_theme_coverage = compute_theme_coverage(coverage_results)
     coverage_summary = {
-        "clarification_rounds_requested": 0,
-        "clarification_rounds_used": 0,
-        "initial_uncovered_requirement_count": len(final_uncovered_reqs),
-        "final_uncovered_requirement_count": len(final_uncovered_reqs),
-        "final_uncovered_req_ids": [r["req_id"] for r in final_uncovered_reqs],
+        "clarification_rounds_requested": clarification_rounds,
+        "clarification_rounds_used": clarification_used,
+        "initial_uncovered_requirement_count": initial_uncovered_count,
+        "final_uncovered_requirement_count": len(uncovered_results),
+        "final_uncovered_req_ids": [item["req_id"] for item in uncovered_results],
         "coverage_history": coverage_history,
         "exchanges": exchange_count,
-        "stopped_reason": (
-            "all_covered" if not get_uncovered_categories(user_turns)
-            else "max_turns" if exchange_count >= MAX_TURNS
-            else "diminishing_returns"
-        ),
+        "target_dialogue_recall": target_dialogue_recall,
+        "final_dialogue_recall": recall,
+        "theme_exchange_counts": dict(theme_exchange_counts),
+        "theme_coverage": final_theme_coverage,
+        "stopped_reason": build_stopped_reason(exchange_count, max_turns, recall, target_dialogue_recall, uncovered_results),
     }
     return dialogue, trace, coverage_summary
 
-
-# ── CLI ────────────────────────────────────────────────────────────────────────
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -548,10 +648,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--prompt-path", type=Path, default=DEFAULT_PROMPT)
     parser.add_argument("--max-samples", type=int, default=None)
-    parser.add_argument("--max-reqs-per-answer", type=int, default=3)
-    parser.add_argument("--max-chars-per-answer", type=int, default=650)
+    parser.add_argument("--max-reqs-per-answer", type=int, default=4)
+    parser.add_argument("--max-chars-per-answer", type=int, default=900)
     parser.add_argument("--coverage-threshold", type=float, default=0.55)
-    parser.add_argument("--clarification-rounds", type=int, default=0)
+    parser.add_argument("--clarification-rounds", type=int, default=2)
+    parser.add_argument("--max-turns", type=int, default=DEFAULT_MAX_TURNS)
+    parser.add_argument("--target-dialogue-recall", type=float, default=DEFAULT_TARGET_DIALOGUE_RECALL)
+    parser.add_argument("--theme-max-exchanges", type=int, default=DEFAULT_THEME_MAX_EXCHANGES)
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
@@ -568,24 +671,28 @@ def main() -> int:
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     if args.dry_run:
-        print(json.dumps({
-            "prompt_hash": prompt_hash,
-            "schema_hash": schema_hash,
-            "sample_count": len(samples),
-            "max_reqs_per_answer": args.max_reqs_per_answer,
-            "max_chars_per_answer": args.max_chars_per_answer,
-            "coverage_threshold": args.coverage_threshold,
-            "max_turns": MAX_TURNS,
-            "coverage_threshold_keyword": COVERAGE_THRESHOLD,
-            "min_coverage_gain": MIN_COVERAGE_GAIN,
-        }, indent=2, ensure_ascii=False))
+        print(
+            json.dumps(
+                {
+                    "prompt_hash": prompt_hash,
+                    "schema_hash": schema_hash,
+                    "sample_count": len(samples),
+                    "max_reqs_per_answer": args.max_reqs_per_answer,
+                    "max_chars_per_answer": args.max_chars_per_answer,
+                    "coverage_threshold": args.coverage_threshold,
+                    "max_turns": args.max_turns,
+                    "target_dialogue_recall": args.target_dialogue_recall,
+                    "theme_max_exchanges": args.theme_max_exchanges,
+                    "clarification_rounds": args.clarification_rounds,
+                    "question_algorithm_version": QUESTION_ALGORITHM_VERSION,
+                },
+                indent=2,
+                ensure_ascii=False,
+            )
+        )
         return 0
 
-    model_name = (
-        os.environ.get("REQ_OLLAMA_MODEL") if llm.provider() == "ollama"
-        else os.environ.get("REQ_GEMINI_MODEL")
-    )
-
+    model_name = os.environ.get("REQ_OLLAMA_MODEL") if llm.provider() == "ollama" else os.environ.get("REQ_GEMINI_MODEL")
     summary = []
     for sample in samples:
         dialogue, trace, coverage_summary = build_dialogue(
@@ -595,9 +702,16 @@ def main() -> int:
             args.max_chars_per_answer,
             args.coverage_threshold,
             args.clarification_rounds,
+            max_turns=args.max_turns,
+            target_dialogue_recall=args.target_dialogue_recall,
+            theme_max_exchanges=args.theme_max_exchanges,
         )
-        fallback_count = sum(1 for t in trace if "error_fallback" in t.get("generation_mode", ""))
-        clarification_chunk_count = sum(1 for t in trace if t.get("stage") == "clarification")
+        fallback_count = sum(
+            1
+            for item in trace
+            if "fallback" in item.get("generation_mode", "")
+        )
+        clarification_chunk_count = sum(1 for item in trace if item.get("stage") == "clarification")
         payload = {
             "sample_id": sample["sample_id"],
             "metadata": {
@@ -605,22 +719,24 @@ def main() -> int:
                 "source_type": "synthetic",
                 "parent_id": sample["sample_id"],
                 "split": "benchmark",
-                "dialogue_style": "adaptive_coverage_driven",
+                "dialogue_style": "adaptive_semantic_coverage",
             },
             "source": sample["source"],
             "dialogue": dialogue,
             "dialogue_generation": {
-                "method": "g_adaptive_coverage_driven_v1",
+                "method": "g_adaptive_semantic_coverage_v2",
                 "model": model_name,
                 "prompt_hash": prompt_hash,
                 "schema_hash": schema_hash,
                 "max_reqs_per_answer": args.max_reqs_per_answer,
                 "max_chars_per_answer": args.max_chars_per_answer,
                 "coverage_threshold": args.coverage_threshold,
-                "keyword_coverage_threshold": COVERAGE_THRESHOLD,
-                "max_turns": MAX_TURNS,
-                "min_coverage_gain": MIN_COVERAGE_GAIN,
-                "clarification_rounds": 0,
+                "max_turns": args.max_turns,
+                "target_dialogue_recall": args.target_dialogue_recall,
+                "theme_max_exchanges": args.theme_max_exchanges,
+                "question_algorithm_version": QUESTION_ALGORITHM_VERSION,
+                "question_algorithm_summary": QUESTION_ALGORITHM_SUMMARY,
+                "clarification_rounds": args.clarification_rounds,
                 "trace": trace,
                 "fallback_chunk_count": fallback_count,
                 "clarification_chunk_count": clarification_chunk_count,
@@ -629,20 +745,24 @@ def main() -> int:
         }
         output_path = args.output_dir / f"{sample['sample_id']}.json"
         output_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        summary.append({
-            "sample_id": sample["sample_id"],
-            "path": str(output_path),
-            "turn_count": len(dialogue),
-            "chunk_count": len(trace),
-            "fallback_chunk_count": fallback_count,
-            "clarification_chunk_count": clarification_chunk_count,
-            "final_uncovered_requirement_count": coverage_summary["final_uncovered_requirement_count"],
-            "stopped_reason": coverage_summary.get("stopped_reason"),
-            "exchanges": coverage_summary.get("exchanges"),
-        })
+        summary.append(
+            {
+                "sample_id": sample["sample_id"],
+                "path": str(output_path),
+                "turn_count": len(dialogue),
+                "chunk_count": len(trace),
+                "fallback_chunk_count": fallback_count,
+                "clarification_chunk_count": clarification_chunk_count,
+                "final_uncovered_requirement_count": coverage_summary["final_uncovered_requirement_count"],
+                "stopped_reason": coverage_summary.get("stopped_reason"),
+                "exchanges": coverage_summary.get("exchanges"),
+                "final_dialogue_recall": coverage_summary.get("final_dialogue_recall"),
+            }
+        )
 
     (args.output_dir / "summary.json").write_text(
-        json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(summary, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
     )
     print(json.dumps(summary, indent=2, ensure_ascii=False))
     return 0

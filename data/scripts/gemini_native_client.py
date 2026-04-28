@@ -12,6 +12,9 @@ import urllib.request
 from dataclasses import dataclass
 
 
+_CACHE_REGISTRY: dict[str, str] = {}
+
+
 def extract_first_json_object(text: str) -> dict:
     stripped = text.strip()
     if stripped.startswith("```"):
@@ -48,6 +51,7 @@ class GeminiConfig:
     temperature: float = 0.0
     max_retries: int = 10
     retry_backoff_seconds: float = 10.0
+    cache_ttl_seconds: int = 3600
 
     @classmethod
     def from_env(cls) -> "GeminiConfig":
@@ -58,6 +62,7 @@ class GeminiConfig:
         temperature_raw = os.environ.get("REQ_GEMINI_TEMPERATURE", "0.0").strip()
         max_retries_raw = os.environ.get("REQ_GEMINI_MAX_RETRIES", "10").strip()
         retry_backoff_raw = os.environ.get("REQ_GEMINI_RETRY_BACKOFF_SECONDS", "10.0").strip()
+        cache_ttl_raw = os.environ.get("REQ_GEMINI_CACHE_TTL_SECONDS", "3600").strip()
 
         if not api_key:
             raise ValueError("Missing REQ_GEMINI_API_KEY")
@@ -70,6 +75,7 @@ class GeminiConfig:
             temperature=float(temperature_raw),
             max_retries=max(0, int(max_retries_raw)),
             retry_backoff_seconds=max(0.0, float(retry_backoff_raw)),
+            cache_ttl_seconds=max(0, int(cache_ttl_raw)),
         )
 
     @classmethod
@@ -91,6 +97,7 @@ class GeminiConfig:
                 temperature=primary.temperature,
                 max_retries=primary.max_retries,
                 retry_backoff_seconds=primary.retry_backoff_seconds,
+                cache_ttl_seconds=primary.cache_ttl_seconds,
             )
             for model in models
         ]
@@ -100,19 +107,28 @@ class GeminiNativeClient:
     def __init__(self, config: GeminiConfig) -> None:
         self.config = config
         self.url = f"{self.config.base_url}/models/{self.config.model}:generateContent"
+        self.cache_url = f"{self.config.base_url}/cachedContents"
 
     def generate_json(
         self,
         prompt: str,
         response_schema: dict,
         temperature: float | None = None,
+        cache_prefix: str | None = None,
+        cache_namespace: str | None = None,
     ) -> dict:
+        cached_content = None
+        prompt_text = prompt
+        if cache_prefix and prompt.startswith(cache_prefix) and self._estimated_tokens(cache_prefix) >= 4096:
+            cached_content = self._get_or_create_cached_content(cache_prefix, cache_namespace=cache_namespace)
+            prompt_text = prompt[len(cache_prefix):].lstrip() or "Continue using the cached context and return JSON only."
+
         payload = {
             "contents": [
                 {
                     "parts": [
                         {
-                            "text": prompt,
+                            "text": prompt_text,
                         }
                     ]
                 }
@@ -123,6 +139,8 @@ class GeminiNativeClient:
                 "responseJsonSchema": response_schema,
             },
         }
+        if cached_content:
+            payload["cachedContent"] = cached_content
         body = json.dumps(payload).encode("utf-8")
         headers = {
             "Content-Type": "application/json",
@@ -150,6 +168,44 @@ class GeminiNativeClient:
             "usage": payload.get("usageMetadata", {}),
             "raw_response": payload,
         }
+
+    def _estimated_tokens(self, text: str) -> int:
+        return max(1, len(text) // 4)
+
+    def _get_or_create_cached_content(self, cached_prefix: str, *, cache_namespace: str | None = None) -> str | None:
+        if self.config.cache_ttl_seconds <= 0:
+            return None
+        cache_key = sha256_for_cache(f"{self.config.model}|{cache_namespace or 'default'}|{cached_prefix}")
+        cached_name = _CACHE_REGISTRY.get(cache_key)
+        if cached_name:
+            return cached_name
+        try:
+            payload = {
+                "model": f"models/{self.config.model}",
+                "displayName": f"{(cache_namespace or 'req-benchmark')[:24]}-{cache_key[:8]}",
+                "contents": [
+                    {
+                        "role": "user",
+                        "parts": [{"text": cached_prefix}],
+                    }
+                ],
+                "ttl": f"{self.config.cache_ttl_seconds}s",
+            }
+            body = json.dumps(payload).encode("utf-8")
+            headers = {
+                "Content-Type": "application/json",
+                "x-goog-api-key": self.config.api_key,
+            }
+            request = urllib.request.Request(self.cache_url, data=body, headers=headers, method="POST")
+            raw = self._request_with_retries(request)
+            response_payload = json.loads(raw)
+            cache_name = response_payload.get("name")
+            if isinstance(cache_name, str) and cache_name:
+                _CACHE_REGISTRY[cache_key] = cache_name
+                return cache_name
+        except Exception:
+            return None
+        return None
 
     def _request_with_retries(self, request: urllib.request.Request) -> str:
         last_error: Exception | None = None
@@ -191,3 +247,9 @@ class GeminiNativeClient:
                 if val > 0:
                     return min(val, 60.0)
         return min(self.config.retry_backoff_seconds * (2 ** attempt), 60.0)
+
+
+def sha256_for_cache(text: str) -> str:
+    import hashlib
+
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()

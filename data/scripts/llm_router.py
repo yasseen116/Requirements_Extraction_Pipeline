@@ -39,7 +39,16 @@ def get_client() -> object:
     return GeminiNativeClient(GeminiConfig.from_env())
 
 
-def generate_json(prompt: str, schema: dict, *, temperature: float = 0.0) -> LLMResponse:
+def generate_json(
+    prompt: str,
+    schema: dict,
+    *,
+    temperature: float = 0.0,
+    cache_prefix: str | None = None,
+    cache_namespace: str | None = None,
+    max_output_tokens: int | None = None,
+    timeout_seconds: int | None = None,
+) -> LLMResponse:
     """Generate JSON for the given schema from the selected provider."""
     prov = provider()
     if prov == "ollama":
@@ -49,11 +58,23 @@ def generate_json(prompt: str, schema: dict, *, temperature: float = 0.0) -> LLM
             + "\n\nOutput rules:\n- Return JSON only.\n- Must match this JSON schema exactly:\n"
             + json.dumps(schema, ensure_ascii=False)
         )
-        resp = client.chat(wrapped, temperature=temperature, response_schema=schema)
+        resp = client.chat(
+            wrapped,
+            temperature=temperature,
+            response_schema=schema,
+            max_output_tokens=max_output_tokens,
+            timeout_seconds=timeout_seconds,
+        )
         return LLMResponse(text=resp["text"], usage=resp.get("usage", {}), raw_response=resp["raw_response"])
 
     client = GeminiNativeClient(GeminiConfig.from_env())
-    resp = client.generate_json(prompt, schema, temperature=temperature)
+    resp = client.generate_json(
+        prompt,
+        schema,
+        temperature=temperature,
+        cache_prefix=cache_prefix,
+        cache_namespace=cache_namespace,
+    )
     return LLMResponse(text=resp["text"], usage=resp.get("usage", {}), raw_response=resp["raw_response"])
 
 

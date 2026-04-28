@@ -5,28 +5,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 from pathlib import Path
 
-import torch
-from sentence_transformers import SentenceTransformer, util
-
-_MODEL = None
-
-def get_model():
-    global _MODEL
-    if _MODEL is None:
-        # Load standard small semantic embedding model
-        _MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-    return _MODEL
-
-def calculate_similarity_matrix(texts_a: list[str], texts_b: list[str]) -> torch.Tensor:
-    if not texts_a or not texts_b:
-        return torch.zeros((len(texts_a), len(texts_b)))
-    model = get_model()
-    embeddings_a = model.encode(texts_a, convert_to_tensor=True)
-    embeddings_b = model.encode(texts_b, convert_to_tensor=True)
-    return util.cos_sim(embeddings_a, embeddings_b)
+from coverage_scorer import CoverageScorer, average, normalize_text, token_f1
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -34,56 +15,11 @@ DEFAULT_GOLD_DIR = ROOT / "raw_sources" / "pure_benchmark" / "source_requirement
 DEFAULT_PRED_DIR = ROOT / "outputs" / "pure_full" / "generated_requirements"
 DEFAULT_OUTPUT = ROOT / "outputs" / "pure_full" / "coverage_evaluation.json"
 
-STOPWORDS = {
-    "the",
-    "a",
-    "an",
-    "of",
-    "to",
-    "in",
-    "on",
-    "and",
-    "or",
-    "for",
-    "with",
-    "by",
-    "is",
-    "are",
-    "be",
-    "as",
-    "that",
-    "this",
-    "it",
-    "from",
-    "at",
-    "must",
-    "shall",
-    "should",
-}
+_SCORER = CoverageScorer()
 
 
-def normalize_text(text: str) -> str:
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", " ", text)
-    return " ".join(text.split())
-
-
-def tokenize(text: str) -> set[str]:
-    tokens = normalize_text(text).split()
-    return {token for token in tokens if token not in STOPWORDS and len(token) > 1}
-
-
-def token_f1(a: str, b: str) -> float:
-    ta = tokenize(a)
-    tb = tokenize(b)
-    if not ta or not tb:
-        return 0.0
-    overlap = len(ta & tb)
-    precision = overlap / len(ta)
-    recall = overlap / len(tb)
-    if precision + recall == 0.0:
-        return 0.0
-    return 2 * precision * recall / (precision + recall)
+def calculate_similarity_matrix(texts_a: list[str], texts_b: list[str]) -> list[list[float]]:
+    return _SCORER.similarity_matrix(texts_a, texts_b)
 
 
 def extract_predicted_texts(payload: dict) -> list[str]:
@@ -130,36 +66,7 @@ def load_predictions(pred_dir: Path) -> dict[str, dict]:
 
 
 def greedy_match(gold_texts: list[str], pred_texts: list[str], threshold: float) -> tuple[list[dict], set[int], set[int]]:
-    candidates = []
-    if gold_texts and pred_texts:
-        sim_matrix = calculate_similarity_matrix(gold_texts, pred_texts).cpu().numpy()
-        for g_idx in range(len(gold_texts)):
-            for p_idx in range(len(pred_texts)):
-                score = float(sim_matrix[g_idx][p_idx])
-                if score >= threshold:
-                    candidates.append((score, g_idx, p_idx))
-    candidates.sort(reverse=True, key=lambda item: item[0])
-
-    used_gold = set()
-    used_pred = set()
-    matches = []
-    for score, g_idx, p_idx in candidates:
-        if g_idx in used_gold or p_idx in used_pred:
-            continue
-        used_gold.add(g_idx)
-        used_pred.add(p_idx)
-        matches.append(
-            {
-                "gold_index": g_idx,
-                "pred_index": p_idx,
-                "score": score,
-            }
-        )
-    return matches, used_gold, used_pred
-
-
-def average(values: list[float]) -> float:
-    return sum(values) / len(values) if values else 0.0
+    return _SCORER.greedy_match(gold_texts, pred_texts, threshold)
 
 
 def evaluate_sample(gold_sample: dict, pred_sample: dict, threshold: float) -> dict:
@@ -179,7 +86,7 @@ def evaluate_sample(gold_sample: dict, pred_sample: dict, threshold: float) -> d
 
     best_source_scores = []
     if gold_texts and pred_texts:
-        sim_matrix = calculate_similarity_matrix(gold_texts, pred_texts).cpu().numpy()
+        sim_matrix = calculate_similarity_matrix(gold_texts, pred_texts)
     else:
         sim_matrix = None
 
@@ -199,7 +106,7 @@ def evaluate_sample(gold_sample: dict, pred_sample: dict, threshold: float) -> d
         "coverage_recall": recall,
         "f1": f1,
         "hallucination_rate": len(unmatched_pred) / pred_count if pred_count else 0.0,
-        "average_match_score": average([item["score"] for item in matches]),
+        "average_match_score": average(item["score"] for item in matches),
         "average_best_source_score": average(best_source_scores),
         "unmatched_source_examples": unmatched_gold[:15],
         "unmatched_generated_examples": unmatched_pred[:15],
@@ -227,12 +134,12 @@ def build_aggregate(per_sample: list[dict]) -> dict:
     )
     return {
         "sample_count": len(per_sample),
-        "macro_precision": average([item["precision"] for item in per_sample]),
-        "macro_coverage_recall": average([item["coverage_recall"] for item in per_sample]),
-        "macro_f1": average([item["f1"] for item in per_sample]),
-        "macro_hallucination_rate": average([item["hallucination_rate"] for item in per_sample]),
-        "macro_average_match_score": average([item["average_match_score"] for item in per_sample]),
-        "macro_average_best_source_score": average([item["average_best_source_score"] for item in per_sample]),
+        "macro_precision": average(item["precision"] for item in per_sample),
+        "macro_coverage_recall": average(item["coverage_recall"] for item in per_sample),
+        "macro_f1": average(item["f1"] for item in per_sample),
+        "macro_hallucination_rate": average(item["hallucination_rate"] for item in per_sample),
+        "macro_average_match_score": average(item["average_match_score"] for item in per_sample),
+        "macro_average_best_source_score": average(item["average_best_source_score"] for item in per_sample),
         "micro_precision": micro_precision,
         "micro_coverage_recall": micro_recall,
         "micro_f1": micro_f1,
@@ -282,6 +189,7 @@ def main() -> int:
         "gold_dir": safe_rel(args.gold_dir),
         "pred_dir": safe_rel(args.pred_dir),
         "match_threshold": threshold,
+        "similarity_method": _SCORER.similarity_method,
         "aggregate": build_aggregate(per_sample),
         "per_sample": per_sample,
     }

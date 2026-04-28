@@ -46,7 +46,15 @@ class OllamaClient:
         self.config = config
         self.chat_url = f"{self.config.base_url}/api/chat"
 
-    def chat(self, prompt: str, *, temperature: float = 0.2, response_schema: dict | None = None) -> dict:
+    def chat(
+        self,
+        prompt: str,
+        *,
+        temperature: float = 0.2,
+        response_schema: dict | None = None,
+        max_output_tokens: int | None = None,
+        timeout_seconds: int | None = None,
+    ) -> dict:
         payload = {
             "model": self.config.model,
             "messages": [{"role": "user", "content": prompt}],
@@ -54,7 +62,7 @@ class OllamaClient:
             "options": {
                 "temperature": float(temperature),
                 "num_ctx": int(self.config.num_ctx),
-                "num_predict": int(self.config.num_predict),
+                "num_predict": int(max_output_tokens if max_output_tokens is not None else self.config.num_predict),
                 "seed": int(self.config.seed),
             },
         }
@@ -69,7 +77,7 @@ class OllamaClient:
             method="POST",
         )
         try:
-            with urllib.request.urlopen(req, timeout=self.config.timeout_seconds) as resp:
+            with urllib.request.urlopen(req, timeout=timeout_seconds or self.config.timeout_seconds) as resp:
                 raw = resp.read().decode("utf-8")
         except urllib.error.URLError as exc:
             raise RuntimeError(

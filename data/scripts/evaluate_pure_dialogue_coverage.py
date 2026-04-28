@@ -1,28 +1,20 @@
 #!/usr/bin/env python3
-"""Measure how much of the PURE gold requirements are recoverable from the dialogue.
-
-This is an *upper bound* diagnostic metric:
-- If a gold requirement isn't mentioned anywhere in the elicitation dialogue, no dialogue->requirements
-  system can recover it.
-
-We compute coverage by checking whether each gold requirement has at least one dialogue turn that
-token-matches above a threshold (same token-F1 as the main coverage evaluator).
-"""
+"""Measure how much of the PURE gold requirements are recoverable from the dialogue."""
 
 from __future__ import annotations
 
 import argparse
 import json
-import re
 from pathlib import Path
 
+from coverage_scorer import CoverageScorer, average
 import evaluate_pure_requirements_coverage as ev
 
 
 ROOT = Path(__file__).resolve().parent.parent
 LATEST_POINTER = ROOT / "outputs" / "pure_full_latest_run.json"
 DEFAULT_OUTPUT_NAME = "dialogue_coverage_user_only_fixed.json"
-SENTENCE_SPLIT_RE = re.compile(r"(?<=[\.\!\?;])\s+")
+_SCORER = CoverageScorer()
 
 
 def load_gold(gold_dir: Path) -> dict[str, dict]:
@@ -41,51 +33,21 @@ def load_dialogues(dialogue_dir: Path) -> dict[str, dict]:
     return payload
 
 
-def extract_turn_texts(dialogue_sample: dict, *, user_only: bool) -> list[str]:
-    turns = dialogue_sample.get("dialogue", [])
-    if not isinstance(turns, list):
-        return []
-    texts = []
-    for turn in turns:
-        if not isinstance(turn, dict):
-            continue
-        if user_only and turn.get("role") != "user":
-            continue
-        text = str(turn.get("text", "")).strip()
-        if not text:
-            continue
-        for sentence in SENTENCE_SPLIT_RE.split(text):
-            sentence = sentence.strip()
-            if sentence:
-                texts.append(sentence)
-    return texts
-
-
 def evaluate_dialogue_coverage(gold_sample: dict, dialogue_sample: dict, threshold: float, *, user_only: bool) -> dict:
     gold_texts = [item["text"] for item in gold_sample["ground_truth_requirements"]]
-    turn_texts = extract_turn_texts(dialogue_sample, user_only=user_only)
+    support_units = _SCORER.build_dialogue_support_units(dialogue_sample, user_only=user_only)
+    coverage = _SCORER.coverage_against_units(gold_texts, support_units, threshold=threshold, contextualized=True)
 
+    uncovered_examples = []
     covered = 0
     best_scores = []
-    uncovered_examples = []
-    
-    if turn_texts and gold_texts:
-        sim_matrix = ev.calculate_similarity_matrix(gold_texts, turn_texts).cpu().numpy()
-    else:
-        sim_matrix = None
-
-    for g_idx, text in enumerate(gold_texts):
-        if sim_matrix is None:
-            best = 0.0
-        else:
-            best = float(max(sim_matrix[g_idx]))
-            
-        best_scores.append(best)
-        if best >= threshold:
+    for item in coverage:
+        best_scores.append(float(item["best_score"]))
+        if item["covered"]:
             covered += 1
-        else:
-            if len(uncovered_examples) < 15:
-                uncovered_examples.append(text)
+            continue
+        if len(uncovered_examples) < 15:
+            uncovered_examples.append(item["query_text"])
 
     total = len(gold_texts)
     recall = covered / total if total else 0.0
@@ -95,14 +57,11 @@ def evaluate_dialogue_coverage(gold_sample: dict, dialogue_sample: dict, thresho
         "source_requirement_count": total,
         "covered_count": covered,
         "coverage_recall": recall,
-        "average_best_turn_score": ev.average(best_scores),
+        "average_best_turn_score": average(best_scores),
         "uncovered_source_examples": uncovered_examples,
         "turn_count": len(dialogue_sample.get("dialogue", [])) if isinstance(dialogue_sample.get("dialogue", []), list) else 0,
+        "support_unit_count": len(support_units),
     }
-
-
-def average(values: list[float]) -> float:
-    return sum(values) / len(values) if values else 0.0
 
 
 def load_latest_run_dir() -> Path | None:
@@ -191,14 +150,16 @@ def main() -> int:
         "dialogue_dir": safe_rel(dialogue_dir),
         "match_threshold": args.match_threshold,
         "user_only": bool(args.user_only),
-        "support_unit": "user_sentence",
+        "support_unit": "user_sentence_or_clause_context",
+        "similarity_method": _SCORER.similarity_method,
         "aggregate": {
             "sample_count": len(per_sample),
-            "macro_coverage_recall": average([item["coverage_recall"] for item in per_sample]),
+            "macro_coverage_recall": average(item["coverage_recall"] for item in per_sample),
             "micro_coverage_recall": micro_recall,
-            "macro_average_best_turn_score": average([item["average_best_turn_score"] for item in per_sample]),
+            "macro_average_best_turn_score": average(item["average_best_turn_score"] for item in per_sample),
             "total_source_requirements": total_source,
             "total_covered_requirements": total_covered,
+            "total_support_units": sum(item.get("support_unit_count", 0) for item in per_sample),
         },
         "per_sample": per_sample,
     }

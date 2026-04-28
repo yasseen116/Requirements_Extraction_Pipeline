@@ -191,6 +191,30 @@ def extract_clarification_info(payload: dict) -> dict:
         "clarification_chunk_count": dialogue_generation.get("clarification_chunk_count"),
         "initial_uncovered_requirement_count": coverage_summary.get("initial_uncovered_requirement_count"),
         "final_uncovered_requirement_count": coverage_summary.get("final_uncovered_requirement_count"),
+        "theme_coverage": coverage_summary.get("theme_coverage", {}),
+    }
+
+
+def extract_question_algorithm_info(payload: dict) -> dict:
+    dialogue_generation = payload.get("dialogue_generation", {})
+    if not isinstance(dialogue_generation, dict):
+        dialogue_generation = {}
+    return {
+        "method": dialogue_generation.get("method"),
+        "question_algorithm_version": dialogue_generation.get("question_algorithm_version"),
+        "question_algorithm_summary": dialogue_generation.get("question_algorithm_summary"),
+    }
+
+
+def extract_pipeline_diagnostics(payload: dict) -> dict:
+    diagnostics = payload.get("diagnostics", {})
+    if not isinstance(diagnostics, dict):
+        diagnostics = {}
+    return {
+        "evidence_bank_count": diagnostics.get("evidence_bank_count"),
+        "proposition_count": diagnostics.get("proposition_count"),
+        "gap_pass_added_count": diagnostics.get("gap_pass_added_count"),
+        "grounded_after_rewrite_count": diagnostics.get("grounded_after_rewrite_count"),
     }
 
 
@@ -358,6 +382,8 @@ def build_summary_pdf(context: dict, output_path: Path) -> None:
     dialogue = context["dialogue_metrics"]["aggregate"]
     per_sample = context["pipeline_metrics"]["per_sample"]
     clarification_summary = context["clarification_summary"]
+    pipeline_diagnostics = context.get("comparison_summary", {}).get("pipeline_diagnostics", {}).get("aggregate", {})
+    question_algorithm = context.get("question_algorithm_summary", {})
 
     page_width, page_height = letter
     margin = 40
@@ -381,6 +407,8 @@ def build_summary_pdf(context: dict, output_path: Path) -> None:
         f"Run ID: {run_id}",
         f"Date generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         f"Model used: {model_name}",
+        f"Dialogue method: {question_algorithm.get('method') or 'N/A'}",
+        f"Question algorithm: {question_algorithm.get('question_algorithm_version') or 'N/A'}",
         f"Clarification rounds: requested {clarification_summary['requested_label']} | used {clarification_summary['used_label']}",
     ]
     for line in header_lines:
@@ -465,6 +493,15 @@ def build_summary_pdf(context: dict, output_path: Path) -> None:
         f"Dialogue upper bound: {dialogue.get('micro_coverage_recall', 0.0) * 100:.1f}% of source requirements present in user turns",
     )
     y -= 18
+    if pipeline_diagnostics:
+        diagnostics_line = (
+            f"Evidence units: {pipeline_diagnostics.get('evidence_bank_count', 'N/A')} | "
+            f"Propositions: {pipeline_diagnostics.get('proposition_count', 'N/A')} | "
+            f"Gap-pass additions: {pipeline_diagnostics.get('gap_pass_added_count', 'N/A')} | "
+            f"Grounded after rewrite: {pipeline_diagnostics.get('grounded_after_rewrite_count', 'N/A')}"
+        )
+        pdf.drawString(margin, y, diagnostics_line)
+        y -= 18
 
     direct_f1 = float(direct.get("micro_f1", 0.0))
     pipeline_f1 = float(pipeline.get("micro_f1", 0.0))
@@ -495,11 +532,15 @@ def page_footer(pdf_canvas, doc) -> None:  # pragma: no cover - rendering callba
 
 def build_document_header_table(doc_metrics: dict, styles: dict[str, ParagraphStyle]) -> Table:
     clarification_info = doc_metrics.get("clarification_info", {})
+    diagnostics = doc_metrics.get("pipeline_diagnostics", {})
+    question_algorithm = doc_metrics.get("question_algorithm", {})
     clarification_requested = clarification_info.get("clarification_rounds_requested")
     clarification_used = clarification_info.get("clarification_rounds_used")
     clarification_chunks = clarification_info.get("clarification_chunk_count")
     rows = [
         ["Document ID", str(doc_metrics.get("document_id") or doc_metrics.get("sample_id", ""))],
+        ["Dialogue method", str(question_algorithm.get("method") or "N/A")],
+        ["Question algorithm", str(question_algorithm.get("question_algorithm_version") or "N/A")],
         ["Source requirement count", str(doc_metrics.get("source_requirement_count", 0))],
         ["Generated requirement count", str(doc_metrics.get("generated_requirement_count", 0))],
         ["Matched count", str(doc_metrics.get("matched_count", 0))],
@@ -519,6 +560,15 @@ def build_document_header_table(doc_metrics: dict, styles: dict[str, ParagraphSt
                 f"{format_metric(doc_metrics.get('f1'))}"
             ),
         ],
+        [
+            "Evidence / Propositions / Gap",
+            (
+                f"{diagnostics.get('evidence_bank_count', 'N/A')} / "
+                f"{diagnostics.get('proposition_count', 'N/A')} / "
+                f"{diagnostics.get('gap_pass_added_count', 'N/A')}"
+            ),
+        ],
+        ["Grounded after rewrite", str(diagnostics.get("grounded_after_rewrite_count", "N/A"))],
     ]
     table = Table(rows, colWidths=[170, 330])
     table.setStyle(
@@ -682,6 +732,7 @@ def build_full_detail_pdf(context: dict, output_path: Path) -> None:
         sample_id = sample["sample_id"]
         metrics = dict(pipeline_by_sample.get(sample_id, {}))
         metrics["clarification_info"] = sample.get("clarification_info", {})
+        metrics["pipeline_diagnostics"] = sample.get("pipeline_diagnostics", {})
 
         if doc_index > 0:
             story.append(PageBreak())
@@ -726,6 +777,8 @@ def collect_documents(run_dir: Path, source_dir: Path, pred_dir: Path, dialogue_
         generated_requirements, generated_grouped = extract_generated_requirements(pred_payload)
         dialogue_turns = extract_dialogue_turns(dialogue_payload)
         clarification_info = extract_clarification_info(dialogue_payload)
+        question_algorithm = extract_question_algorithm_info(dialogue_payload)
+        pipeline_diagnostics = extract_pipeline_diagnostics(pred_payload)
         match_rows = build_requirement_match_rows(source_requirements, generated_requirements)
 
         documents.append(
@@ -740,6 +793,8 @@ def collect_documents(run_dir: Path, source_dir: Path, pred_dir: Path, dialogue_
                 "generated_grouped": generated_grouped,
                 "dialogue_turns": dialogue_turns,
                 "clarification_info": clarification_info,
+                "question_algorithm": question_algorithm,
+                "pipeline_diagnostics": pipeline_diagnostics,
                 "match_rows": match_rows,
             }
         )
@@ -777,6 +832,33 @@ def summarize_clarification(documents: list[dict]) -> dict:
     }
 
 
+def summarize_question_algorithm(documents: list[dict], comparison_summary: dict) -> dict:
+    comparison_info = comparison_summary.get("controlled_dialogue_method", {})
+    if isinstance(comparison_info, dict) and comparison_info.get("question_algorithm_version"):
+        return comparison_info
+
+    versions = []
+    methods = []
+    summaries = []
+    for item in documents:
+        info = item.get("question_algorithm", {})
+        version = info.get("question_algorithm_version")
+        method = info.get("method")
+        summary = info.get("question_algorithm_summary")
+        if isinstance(version, str) and version.strip():
+            versions.append(version.strip())
+        if isinstance(method, str) and method.strip():
+            methods.append(method.strip())
+        if isinstance(summary, str) and summary.strip():
+            summaries.append(summary.strip())
+
+    return {
+        "method": methods[0] if methods else None,
+        "question_algorithm_version": versions[0] if versions else None,
+        "question_algorithm_summary": summaries[0] if summaries else None,
+    }
+
+
 def build_context(run_dir: Path) -> dict:
     metrics_dir = run_dir / "metrics"
     pipeline_metrics_path = find_first_existing(
@@ -810,6 +892,7 @@ def build_context(run_dir: Path) -> dict:
     pipeline_metrics = load_json(pipeline_metrics_path)
     direct_metrics = load_json(direct_metrics_path)
     dialogue_metrics = load_json(dialogue_metrics_path)
+    comparison_summary = load_json(run_dir / "comparison_summary.json") if (run_dir / "comparison_summary.json").exists() else {}
 
     documents = collect_documents(run_dir, source_dir, pred_dir, dialogue_dir)
     return {
@@ -825,6 +908,8 @@ def build_context(run_dir: Path) -> dict:
         "dialogue_dir": dialogue_dir,
         "documents": documents,
         "clarification_summary": summarize_clarification(documents),
+        "question_algorithm_summary": summarize_question_algorithm(documents, comparison_summary),
+        "comparison_summary": comparison_summary,
     }
 
 

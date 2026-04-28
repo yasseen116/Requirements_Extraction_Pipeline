@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-"""
-Validate generated PURE requirements against the source dialogue.
-
-For each generated requirement, check whether it is grounded in at least one
-user sentence/span in the dialogue using token-F1 (no external ML deps needed).
-
-A requirement is GROUNDED  if its best token-F1 against any user turn >= threshold.
-A requirement is HALLUCINATED if no user turn supports it.
-
-Semantic similarity via sentence-transformers is used when available;
-otherwise falls back to token-F1 (always available, no deps).
-"""
+"""Semantic deduplication and grounding validation for generated requirements."""
 
 from __future__ import annotations
 
@@ -19,308 +8,201 @@ import json
 import re
 from pathlib import Path
 
-# ── optional sentence-transformer support ─────────────────────────────────────
-try:
-    from sentence_transformers import SentenceTransformer, util as st_util  # type: ignore
-
-    _ST_MODEL: SentenceTransformer | None = None
-
-    def _get_st_model() -> SentenceTransformer:
-        global _ST_MODEL
-        if _ST_MODEL is None:
-            _ST_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-        return _ST_MODEL
-
-    def _semantic_sim(req: str, user_turns: list[str]) -> tuple[float, int]:
-        model = _get_st_model()
-        req_emb = model.encode([req], convert_to_tensor=True)
-        turn_embs = model.encode(user_turns, convert_to_tensor=True)
-        sims = st_util.cos_sim(req_emb, turn_embs)[0].tolist()
-        best_idx = max(range(len(sims)), key=lambda i: sims[i])
-        return sims[best_idx], best_idx
-
-    _HAS_ST = True
-    SIMILARITY_METHOD = "cosine_sentence_transformer"
-
-except ImportError:
-    _HAS_ST = False
-    SIMILARITY_METHOD = "token_f1"
-
-    def _semantic_sim(req: str, user_turns: list[str]) -> tuple[float, int]:  # type: ignore
-        return _best_token_f1(req, user_turns)
+from coverage_scorer import CoverageScorer, clean_text
 
 
 ROOT = Path(__file__).resolve().parent.parent
-
 CATEGORY_ORDER = ["functional", "non_functional", "data", "business_rules", "interfaces", "constraints"]
-SENTENCE_SPLIT_RE = re.compile(r"(?<=[\.\!\?;])\s+")
+_SCORER = CoverageScorer()
 
 
-# ── Token-F1 (zero-dep fallback) ───────────────────────────────────────────────
-
-def _normalize(text: str) -> str:
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", " ", text)
-    return " ".join(text.split())
+def dedup_text_key(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", clean_text(text).lower()).strip()
 
 
-def _tokenize(text: str) -> set[str]:
-    stopwords = {
-        "the", "a", "an", "of", "to", "in", "on", "and", "or", "for",
-        "with", "by", "is", "are", "be", "as", "that", "this", "it",
-        "from", "at", "must", "shall", "should",
-    }
-    return {t for t in _normalize(text).split() if t not in stopwords and len(t) > 1}
-
-
-def _token_f1(a: str, b: str) -> float:
-    ta, tb = _tokenize(a), _tokenize(b)
-    if not ta or not tb:
-        return 0.0
-    overlap = len(ta & tb)
-    p = overlap / len(ta)
-    r = overlap / len(tb)
-    return 2 * p * r / (p + r) if p + r else 0.0
-
-
-def _best_token_f1(req: str, user_turns: list[str]) -> tuple[float, int]:
-    scores = [_token_f1(req, t) for t in user_turns]
-    if not scores:
-        return 0.0, 0
-    best_idx = max(range(len(scores)), key=lambda i: scores[i])
-    return scores[best_idx], best_idx
-
-
-def _split_into_sentences(text: str) -> list[str]:
-    text = " ".join(str(text).split())
-    if not text:
-        return []
-    sentences = [sentence.strip() for sentence in SENTENCE_SPLIT_RE.split(text) if sentence.strip()]
-    return sentences or [text]
-
-
-def _extract_user_support_units(dialogue: list[dict]) -> list[dict]:
-    units = []
-    for turn in dialogue:
-        if (turn.get("role") or "").lower() not in {"user"}:
-            continue
-        turn_text = " ".join((turn.get("content") or turn.get("text", "")).split())
-        if not turn_text:
-            continue
-        sentences = _split_into_sentences(turn_text)
-        for sentence_index, sentence in enumerate(sentences, start=1):
-            units.append(
-                {
-                    "turn_id": turn.get("turn_id"),
-                    "turn_text": turn_text,
-                    "text": sentence,
-                    "sentence_index": sentence_index,
-                }
-            )
-    return units
-
-
-# ── Semantic deduplication (cross-category) ────────────────────────────────────
-
-def semantic_deduplicate(
-    requirements: list[str],
-    threshold: float = 0.85,
-) -> tuple[list[str], list[dict]]:
-    """
-    Remove semantically duplicate requirements globally across all categories.
-    Keeps the first occurrence, removes later near-duplicates.
-    threshold=0.85 is conservative — only removes near-identical meaning.
-
-    Uses sentence-transformers when available, falls back to token-F1.
-    """
-    if not requirements:
-        return [], []
-
-    if _HAS_ST:
-        model = _get_st_model()
-        embeddings = model.encode(requirements, convert_to_tensor=True)
-
-        def _sim(i: int, j: int) -> float:
-            return st_util.cos_sim(embeddings[i], embeddings[j]).item()  # type: ignore
-    else:
-        # Token-F1 fallback: acts as a soft similarity measure
-        def _sim(i: int, j: int) -> float:
-            return _token_f1(requirements[i], requirements[j])
-
-    kept_indices: list[int] = []
-    removed: list[dict] = []
-
-    for i, req in enumerate(requirements):
-        is_dup = False
-        for j in kept_indices:
-            sim = _sim(i, j)
-            if sim >= threshold:
-                is_dup = True
-                removed.append({
-                    "removed": req,
-                    "kept": requirements[j],
-                    "similarity": round(sim, 3),
-                    "method": SIMILARITY_METHOD,
-                })
-                break
-        if not is_dup:
-            kept_indices.append(i)
-
-    return [requirements[i] for i in kept_indices], removed
-
-
-# ── Grounding validator ────────────────────────────────────────────────────────
-
-def validate_requirements(
-    dialogue: list[dict],
-    requirements: list[str],
-    threshold: float = 0.25,
-) -> dict:
-    """
-    For each generated requirement, check whether it is supported by at least
-    one user turn in the dialogue.
-
-    A requirement is GROUNDED    if best similarity >= threshold.
-    A requirement is HALLUCINATED if no user turn supports it.
-
-    threshold=0.40 is intentionally lower than the match threshold (0.55).
-    We are asking: "could this requirement have been motivated by something
-    the user said?" — a softer test than "does this match a source req?"
-    """
-    support_units = _extract_user_support_units(dialogue)
-    support_texts = [unit["text"] for unit in support_units]
-
-    if not support_texts or not requirements:
-        return {
-            "total": len(requirements),
-            "grounded": len(requirements),
-            "hallucinated": 0,
-            "hallucination_rate": 0.0,
-            "similarity_method": SIMILARITY_METHOD,
-            "support_unit": "user_sentence",
-            "grounded_requirements": requirements,
-            "hallucinated_requirements": [],
-        }
-
-    grounded = []
-    hallucinated = []
-
-    for req in requirements:
-        best_score, best_idx = _semantic_sim(req, support_texts)
-        best_unit = support_units[best_idx]
-        if best_score >= threshold:
-            grounded.append({
-                "requirement": req,
-                "best_supporting_turn": best_unit["turn_text"],
-                "best_supporting_turn_id": best_unit.get("turn_id"),
-                "best_supporting_span": best_unit["text"],
-                "best_supporting_sentence_index": best_unit["sentence_index"],
-                "similarity": round(best_score, 3),
-            })
-        else:
-            hallucinated.append({
-                "requirement": req,
-                "best_score": round(best_score, 3),
-                "closest_turn": best_unit["turn_text"],
-                "closest_turn_id": best_unit.get("turn_id"),
-                "closest_span": best_unit["text"],
-                "closest_sentence_index": best_unit["sentence_index"],
-            })
-
-    return {
-        "total": len(requirements),
-        "grounded": len(grounded),
-        "hallucinated": len(hallucinated),
-        "hallucination_rate": round(len(hallucinated) / len(requirements), 4) if requirements else 0.0,
-        "similarity_method": SIMILARITY_METHOD,
-        "support_unit": "user_sentence",
-        "grounded_requirements": [g["requirement"] for g in grounded],
-        "hallucinated_requirements": hallucinated,
-        "grounded_detail": grounded,
-    }
-
-
-# ── File-level processing ──────────────────────────────────────────────────────
-
-def flatten_requirements(payload: dict) -> list[str]:
-    """Collect all requirement texts across all categories."""
+def flatten_requirement_items(payload: dict) -> list[dict]:
     reqs = payload.get("requirements", {})
     if not isinstance(reqs, dict):
         return []
     flat = []
-    for cat in CATEGORY_ORDER:
-        for item in reqs.get(cat, []):
-            if isinstance(item, dict):
-                text = item.get("text", "")
-            else:
-                text = str(item)
-            text = " ".join(text.split())
-            if text:
-                flat.append(text)
+    for category in CATEGORY_ORDER:
+        items = reqs.get(category, [])
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            text = clean_text(item.get("text", ""))
+            if not text:
+                continue
+            flat.append(
+                {
+                    "category": category,
+                    "id": clean_text(item.get("id", "")),
+                    "text": text,
+                    "priority": clean_text(item.get("priority", "medium")).lower() or "medium",
+                    "evidence_turns": [int(turn) for turn in item.get("evidence_turns", []) if isinstance(turn, int) and turn >= 1],
+                    "nfr_category": clean_text(item.get("category", "")).lower() if category == "non_functional" else None,
+                }
+            )
     return flat
 
 
-def rebuild_payload_with_grounded_only(payload: dict, grounded_texts: set[str]) -> dict:
-    """Return a copy of payload keeping only grounded requirements."""
-    reqs = payload.get("requirements", {})
-    if not isinstance(reqs, dict):
-        return payload
-    filtered = {}
-    for cat in CATEGORY_ORDER:
-        filtered[cat] = [
-            item for item in reqs.get(cat, [])
-            if (item.get("text", "") if isinstance(item, dict) else str(item)).strip() in grounded_texts
-        ]
-    return {**payload, "requirements": filtered}
+def merge_semantic_duplicates(items: list[dict], *, threshold: float) -> tuple[list[dict], list[dict]]:
+    kept: list[dict] = []
+    removed = []
+    for item in items:
+        duplicate_index = None
+        duplicate_score = 0.0
+        for index, kept_item in enumerate(kept):
+            score = _SCORER.similarity_row(item["text"], [kept_item["text"]])[0]
+            if score >= threshold:
+                duplicate_index = index
+                duplicate_score = float(score)
+                break
+        if duplicate_index is None:
+            kept.append(dict(item))
+            continue
+        target = kept[duplicate_index]
+        target["evidence_turns"] = sorted(set(target["evidence_turns"]) | set(item["evidence_turns"]))
+        if len(item["text"]) > len(target["text"]):
+            target["text"] = item["text"]
+            target["category"] = item["category"]
+            target["id"] = item["id"] or target["id"]
+            target["priority"] = item["priority"] or target["priority"]
+            if item["nfr_category"]:
+                target["nfr_category"] = item["nfr_category"]
+        removed.append(
+            {
+                "removed": item["text"],
+                "kept": target["text"],
+                "similarity": round(duplicate_score, 3),
+                "method": _SCORER.similarity_method,
+            }
+        )
+    return kept, removed
 
 
-def process_sample(
-    pred_payload: dict,
-    dialogue_payload: dict,
-    dedup_threshold: float,
-    grounding_threshold: float,
-) -> dict:
-    """Full Layer 2 + Layer 3 processing for one sample."""
-    flat_reqs = flatten_requirements(pred_payload)
+def build_requirement_payload(template_payload: dict, items: list[dict]) -> dict:
+    grouped = {category: [] for category in CATEGORY_ORDER}
+    for item in items:
+        payload_item = {
+            "id": item["id"],
+            "text": item["text"],
+            "priority": item["priority"],
+            "evidence_turns": item["evidence_turns"],
+        }
+        if item["category"] == "non_functional":
+            payload_item["category"] = item.get("nfr_category") or "performance"
+        grouped[item["category"]].append(payload_item)
 
-    # Layer 2: cross-category semantic deduplication
-    deduped, removed_dups = semantic_deduplicate(flat_reqs, threshold=dedup_threshold)
+    result = dict(template_payload)
+    result["requirements"] = grouped
+    diagnostics = dict(result.get("diagnostics", {})) if isinstance(result.get("diagnostics"), dict) else {}
+    diagnostics["grounded_after_rewrite_count"] = len(items)
+    result["diagnostics"] = diagnostics
+    return result
 
-    # Layer 3: grounding validation
-    dialogue_turns = dialogue_payload.get("dialogue", [])
-    validation = validate_requirements(dialogue_turns, deduped, threshold=grounding_threshold)
 
-    grounded_set = set(validation["grounded_requirements"])
-    filtered_payload = rebuild_payload_with_grounded_only(pred_payload, grounded_set)
+def validate_items(dialogue_payload: dict, items: list[dict], *, threshold: float) -> dict:
+    support_units = _SCORER.build_dialogue_support_units(dialogue_payload, user_only=True)
+    if not support_units or not items:
+        return {
+            "total": len(items),
+            "grounded": len(items),
+            "hallucinated": 0,
+            "hallucination_rate": 0.0,
+            "similarity_method": _SCORER.similarity_method,
+            "support_unit": "user_sentence_or_clause_context",
+            "grounded_items": items,
+            "hallucinated_items": [],
+        }
 
+    grounded = []
+    hallucinated = []
+    for item in items:
+        candidate_turn_ids = set(item["evidence_turns"]) if item["evidence_turns"] else None
+        best_score, best_unit = _SCORER.best_unit_for_query(
+            item["text"],
+            support_units,
+            candidate_turn_ids=candidate_turn_ids,
+            contextualized=True,
+        )
+        matched_claimed_turns = bool(best_unit) and (not candidate_turn_ids or best_unit.get("turn_id") in candidate_turn_ids)
+        if best_score < threshold and candidate_turn_ids:
+            fallback_score, fallback_unit = _SCORER.best_unit_for_query(
+                item["text"],
+                support_units,
+                candidate_turn_ids=None,
+                contextualized=True,
+            )
+            if fallback_score > best_score:
+                best_score = fallback_score
+                best_unit = fallback_unit
+                matched_claimed_turns = False
+        if best_score >= threshold and best_unit is not None:
+            grounded.append(
+                {
+                    "item": item,
+                    "best_supporting_turn_id": best_unit.get("turn_id"),
+                    "best_supporting_span": best_unit.get("text"),
+                    "best_supporting_context": best_unit.get("context_text"),
+                    "best_supporting_sentence_index": best_unit.get("sentence_index"),
+                    "matched_claimed_turns": matched_claimed_turns,
+                    "similarity": round(best_score, 3),
+                }
+            )
+        else:
+            hallucinated.append(
+                {
+                    "item": item,
+                    "best_score": round(best_score, 3),
+                    "closest_turn_id": best_unit.get("turn_id") if best_unit else None,
+                    "closest_span": best_unit.get("text") if best_unit else None,
+                    "closest_context": best_unit.get("context_text") if best_unit else None,
+                }
+            )
+
+    return {
+        "total": len(items),
+        "grounded": len(grounded),
+        "hallucinated": len(hallucinated),
+        "hallucination_rate": round(len(hallucinated) / len(items), 4) if items else 0.0,
+        "similarity_method": _SCORER.similarity_method,
+        "support_unit": "user_sentence_or_clause_context",
+        "grounded_items": grounded,
+        "hallucinated_items": hallucinated,
+    }
+
+
+def process_sample(pred_payload: dict, dialogue_payload: dict, *, dedup_threshold: float, grounding_threshold: float) -> dict:
+    flat_items = flatten_requirement_items(pred_payload)
+    deduped_items, removed_dups = merge_semantic_duplicates(flat_items, threshold=dedup_threshold)
+    validation = validate_items(dialogue_payload, deduped_items, threshold=grounding_threshold)
+    grounded_items = [entry["item"] for entry in validation["grounded_items"]]
+    filtered_payload = build_requirement_payload(pred_payload, grounded_items)
     return {
         "sample_id": pred_payload.get("sample_id", ""),
         "filtered_payload": filtered_payload,
         "deduplication": {
-            "input_count": len(flat_reqs),
-            "after_dedup_count": len(deduped),
+            "input_count": len(flat_items),
+            "after_dedup_count": len(deduped_items),
             "removed_count": len(removed_dups),
             "removed_details": removed_dups,
         },
         "validation": validation,
-        "output_requirement_count": len(grounded_set),
+        "output_requirement_count": len(grounded_items),
     }
 
 
-# ── CLI ────────────────────────────────────────────────────────────────────────
-
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Semantic dedup + grounding validation for generated requirements."
-    )
+    parser = argparse.ArgumentParser(description="Semantic dedup + grounding validation for generated requirements.")
     parser.add_argument("--pred-dir", type=Path, required=True, help="Generated requirements directory.")
     parser.add_argument("--dialogue-dir", type=Path, required=True, help="Expanded dialogues directory.")
     parser.add_argument("--output-dir", type=Path, required=True, help="Output directory for filtered requirements.")
     parser.add_argument("--report-path", type=Path, default=None, help="Path to write validation report JSON.")
-    parser.add_argument("--dedup-threshold", type=float, default=0.85,
-                        help="Similarity threshold for deduplication (default 0.85).")
-    parser.add_argument("--grounding-threshold", type=float, default=0.25,
-                        help="Minimum similarity to a user turn to count as grounded (default 0.25).")
+    parser.add_argument("--dedup-threshold", type=float, default=0.90, help="Similarity threshold for deduplication.")
+    parser.add_argument("--grounding-threshold", type=float, default=0.25, help="Minimum similarity to count as grounded.")
     return parser.parse_args()
 
 
@@ -330,7 +212,6 @@ def main() -> int:
 
     pred_paths = sorted(args.pred_dir.glob("*.json"))
     all_results = []
-
     for pred_path in pred_paths:
         if pred_path.name in {"summary.json", "evaluation.json"} or pred_path.name.endswith(".raw_response.json"):
             continue
@@ -340,11 +221,11 @@ def main() -> int:
 
         sample_id = pred_payload["sample_id"]
         dialogue_path = args.dialogue_dir / f"{sample_id}.json"
-        if not dialogue_path.exists():
-            print(f"[warn] No dialogue found for {sample_id}, skipping validation.")
-            dialogue_payload = {"dialogue": []}
-        else:
+        if dialogue_path.exists():
             dialogue_payload = json.loads(dialogue_path.read_text(encoding="utf-8"))
+        else:
+            print(f"[warn] No dialogue found for {sample_id}, validating against empty dialogue.")
+            dialogue_payload = {"dialogue": []}
 
         result = process_sample(
             pred_payload,
@@ -353,31 +234,28 @@ def main() -> int:
             grounding_threshold=args.grounding_threshold,
         )
 
-        # Write filtered requirements payload
         out_path = args.output_dir / f"{sample_id}.json"
-        out_path.write_text(
-            json.dumps(result["filtered_payload"], indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        all_results.append({k: v for k, v in result.items() if k != "filtered_payload"})
+        out_path.write_text(json.dumps(result["filtered_payload"], indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        all_results.append({key: value for key, value in result.items() if key != "filtered_payload"})
         print(
-            f"[{sample_id}] {result['deduplication']['input_count']} reqs → "
-            f"{result['deduplication']['after_dedup_count']} after dedup → "
-            f"{result['output_requirement_count']} grounded (method: {SIMILARITY_METHOD})"
+            f"[{sample_id}] {result['deduplication']['input_count']} reqs -> "
+            f"{result['deduplication']['after_dedup_count']} after dedup -> "
+            f"{result['output_requirement_count']} grounded (method: {_SCORER.similarity_method})"
         )
 
-    # Write validation report
     report_path = args.report_path or (args.output_dir / "validation_report.json")
     aggregate = {
-        "similarity_method": SIMILARITY_METHOD,
+        "similarity_method": _SCORER.similarity_method,
+        "support_unit": "user_sentence_or_clause_context",
         "samples": len(all_results),
-        "total_input": sum(r["deduplication"]["input_count"] for r in all_results),
-        "total_after_dedup": sum(r["deduplication"]["after_dedup_count"] for r in all_results),
-        "total_grounded": sum(r["output_requirement_count"] for r in all_results),
-        "total_hallucinated": sum(r["validation"]["hallucinated"] for r in all_results),
+        "total_input": sum(item["deduplication"]["input_count"] for item in all_results),
+        "total_after_dedup": sum(item["deduplication"]["after_dedup_count"] for item in all_results),
+        "total_grounded": sum(item["output_requirement_count"] for item in all_results),
+        "total_hallucinated": sum(item["validation"]["hallucinated"] for item in all_results),
         "mean_hallucination_rate": (
-            round(sum(r["validation"]["hallucination_rate"] for r in all_results) / len(all_results), 4)
-            if all_results else 0.0
+            round(sum(item["validation"]["hallucination_rate"] for item in all_results) / len(all_results), 4)
+            if all_results
+            else 0.0
         ),
     }
     report = {"aggregate": aggregate, "per_sample": all_results}

@@ -1,164 +1,80 @@
-You are an expert requirements engineer.
+You are an expert requirements analyst performing recall-oriented extraction.
 
 Task:
-- Read the full elicitation dialogue.
-- Generate a comprehensive structured requirements file.
-- Keep everything grounded in the dialogue content and preserve key terms.
+- Read the provided evidence units from an elicitation dialogue.
+- Extract atomic propositions first, not final merged requirements.
+- Each proposition must represent one distinct, testable fact grounded in the evidence.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EXTRACTION RULES — MANDATORY, NOT SUGGESTIONS
+MANDATORY RULES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-RULE 1 — EXTRACT DISTINCT PROPOSITIONS:
-A single user turn can contain multiple distinct requirements.
-Silently break each user answer into atomic propositions first.
-Create a separate requirement when the user states a different capability,
-business rule, data rule, interface need, constraint, or quality threshold.
-Keep details together only when they describe one measurable requirement
-about the same subject.
+RULE 1 — ATOMIC ONLY:
+- One proposition per distinct fact.
+- If one evidence span mentions multiple separate facts, split them.
+- Keep a measurable threshold together with the capability it constrains.
 
-BAD (over-merged):
-  FR-001 The system shall hide unauthorized search results and provide text equivalents for images and videos.
+RULE 2 — GROUNDED ONLY:
+- Every proposition must be directly supported by one or more evidence units.
+- Use `evidence_turns` from the supporting dialogue turn ids.
+- Use `source_unit_ids` from the supporting evidence unit ids.
+- If you cannot point to the evidence, do not output the proposition.
 
-GOOD (split distinct propositions):
-  FR-001 Unauthorized cases shall not appear in search result counts.
-  FR-002 Non-text media shall provide text equivalents.
+RULE 3 — PRESERVE EXACT DETAILS:
+- Keep numbers, units, browser names, operating systems, algorithms, quoted terms, and product names exactly.
+- Do not paraphrase away precision.
+- Prefer the original subject wording when possible.
 
-BAD (over-split):
-  NFR-001 Search shall be fast.
-  NFR-002 Search shall finish in less than 2 seconds.
+RULE 4 — RECALL OVER COMPRESSION:
+- If an evidence unit contains multiple independent details, extract them separately.
+- Do not merge unrelated facts just to reduce count.
+- It is acceptable to output many propositions if they are all grounded and distinct.
 
-GOOD (keep one measurable requirement together):
-  NFR-001 Search shall finish in less than 2 seconds.
+RULE 5 — NO META OUTPUT:
+- Do not mention the dataset, source requirements, missing information, or that something is “not specified”.
+- Do not produce generic claims like “security is important” unless the evidence itself says that in a testable way.
 
-RULE 2 — NO META-REQUIREMENTS:
-Never generate a requirement about requirements, about the document,
-about nonfunctional properties in general, or about the elicitation process.
+RULE 6 — USE MEMORY TO AVOID DUPLICATES:
+- “Previously Extracted Propositions” are prior outputs from earlier batches.
+- Do not repeat a prior proposition unless the current evidence adds a materially new detail.
+- If the current evidence is more specific, output the more specific proposition once.
 
-FORBIDDEN outputs include anything like:
-  - "The system shall provide clear nonfunctional requirements"
-  - "The document shall define performance criteria"
-  - "Requirements shall be easy to understand"
-  - "The system shall meet performance standards"
+RULE 7 — CATEGORY CHOICE:
+- `functional`: actions, capabilities, services, user-visible behavior.
+- `non_functional`: performance, security, reliability, availability, usability, maintainability, portability, compliance.
+- `data`: storage, database, records, profiles, defaults, validation rules.
+- `business_rules`: workflow rules, decision logic, policies, sequencing constraints.
+- `interfaces`: browser access, APIs, plugins, email, SMS, external systems.
+- `constraints`: environment, deployment, platform, documentation, or other hard constraints.
 
-If you find yourself writing something like this, delete it.
-
-RULE 3 — PRESERVE EXACT TECHNICAL SPECIFICS:
-Numbers, names, thresholds, algorithms, product names, and version numbers
-must appear verbatim in the requirement.
-
-If the user says "1000 concurrent users" write exactly "1000 concurrent users"
-— never "a large number of users" or "high concurrency".
-
-If the user says "less than 2ms" write "less than 2ms" — not "quickly" or "in real time".
-
-RULE 4 — GROUNDED ONLY:
-Every requirement you generate must be directly traceable to something
-a user explicitly said in the dialogue.
-
-If you cannot point to the exact user turn that supports a requirement,
-do not generate it. Do not infer, assume, or complete unstated requirements
-even if they seem obvious for this domain.
-
-Evidence: for each requirement, populate evidence_turns with the turn_id(s)
-from which it was extracted.
-
-RULE 5 — NO DUPLICATES ACROSS CATEGORIES:
-A requirement may appear in only one category.
-Do not write the same requirement as both FR and NFR.
-Do not write the same requirement twice with different wording.
-Before finalising each category, check it against all others and remove
-any requirement that expresses the same meaning as one already listed.
-
-RULE 6 — USE THE MEMORY STORE CORRECTLY:
-The "Previously Extracted Requirements" section contains requirements from
-earlier dialogue chunks. Use it to preserve continuity and avoid duplicates.
-Do not repeat an earlier requirement unless the current chunk adds a materially
-new constraint or detail. If it does, emit the fuller requirement once.
+For `non_functional`, also fill `nfr_category` with one of:
+- performance
+- security
+- reliability
+- availability
+- usability
+- maintainability
+- portability
+- compliance
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Output rules:
 - Return JSON only.
-- Use the provided schema exactly.
-- Do NOT include meta statements like "not specified", "not mentioned", or "the source requirements ...".
-- Preserve details exactly: numbers, units, algorithm names, browser/OS names, interface labels, and quoted terms.
-- Keep the subject as stated (e.g., "Web Store shall ...", "The solution should ...", "Citizens can ...").
-  Do not force every sentence to start with "The system shall" if it changes the original subject.
-- Requirement text must be atomic and testable.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FEW-SHOT EXAMPLES — PAY ATTENTION TO JSON STRUCTURE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Example 1 Input (Dialogue Chunk):
-[BOT]: What performance and security needs do we have for the login portal?
-[USER]: Security is huge for us. The portal needs to use standard HTTPS encryption everywhere, and we want to lock out accounts after 5 failed password attempts. Performance-wise, the login needs to complete in less than 2 seconds even when 1000 users log in at exactly 9am.
-
-Example 1 Output (JSON):
-{
-  "requirements": {
-    "functional": [],
-    "non_functional": [
-      {
-        "text": "The portal needs to use standard HTTPS encryption everywhere.",
-        "evidence_turns": [2]
-      },
-      {
-        "text": "Accounts shall be locked out after 5 failed password attempts.",
-        "evidence_turns": [2]
-      },
-      {
-        "text": "The login needs to complete in less than 2 seconds even with 1000 concurrent users.",
-        "evidence_turns": [2]
-      }
-    ],
-    "data": [],
-    "business_rules": [],
-    "interfaces": [],
-    "constraints": []
-  }
-}
-
-Example 2 Input (Dialogue Chunk):
-[BOT]: What main actions should the dashboard support?
-[USER]: First, the admin users should be able to view a daily summary report of all transactions. Also, they need to be able to export that summary as a CSV file to their local machine. That's about it for the main dashboard.
-
-Example 2 Output (JSON):
-{
-  "requirements": {
-    "functional": [
-      {
-        "text": "Admin users should be able to view a daily summary report of all transactions.",
-        "evidence_turns": [2]
-      },
-      {
-        "text": "Admin users need to be able to export the daily summary report as a CSV file to their local machine.",
-        "evidence_turns": [2]
-      }
-    ],
-    "non_functional": [],
-    "data": [],
-    "business_rules": [],
-    "interfaces": [],
-    "constraints": []
-  }
-}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Coverage goal:
-- Act as a highly attentive data analyst. First, identify atomic facts or propositions from the user.
-- Capture all major functional and non-functional content from the dialogue.
-- Include data, interfaces, business rules, and operational constraints when present.
-- Prefer recall over compression: if one user turn contains multiple distinct, testable facts, keep them as separate requirements.
-- When in doubt, OMIT rather than invent.
+- Use the schema exactly.
+- `project_summary` should be one short sentence.
+- Proposition text must be atomic, grounded, and testable.
 
 Sample id: {{SAMPLE_ID}}
 Domain hint: {{DOMAIN_HINT}}
-Chunk position: {{CHUNK_INDEX}} / {{CHUNK_COUNT}}
+Batch position: {{CHUNK_INDEX}} / {{CHUNK_COUNT}}
+Extraction mode: {{EXTRACTION_MODE}}
 
-Previously Extracted Requirements (from prior dialogue chunks, do not duplicate these):
-{{PREVIOUS_REQUIREMENTS}}
-
-Dialogue Chunk:
+Dialogue Context:
 {{DIALOGUE}}
+
+Previously Extracted Propositions:
+{{PREVIOUS_PROPOSITIONS}}
+
+Evidence Units:
+{{EVIDENCE_BANK}}
