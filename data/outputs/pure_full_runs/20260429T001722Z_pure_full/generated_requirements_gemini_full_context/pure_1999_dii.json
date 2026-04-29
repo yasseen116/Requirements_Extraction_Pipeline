@@ -1,0 +1,276 @@
+{
+  "sample_id": "pure_1999_dii",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": "gemini-2.5-pro",
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": [
+          {
+            "promptTokenCount": 5260,
+            "candidatesTokenCount": 1911,
+            "totalTokenCount": 11193,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 5260
+              }
+            ],
+            "thoughtsTokenCount": 4022
+          }
+        ]
+      },
+      {
+        "batch_id": "gap_pass",
+        "usage": [
+          {
+            "promptTokenCount": 2601,
+            "candidatesTokenCount": 242,
+            "totalTokenCount": 4957,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 2601
+              }
+            ],
+            "thoughtsTokenCount": 2114
+          }
+        ]
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:ok",
+      "gap_pass:ok"
+    ],
+    "retrieval_top_k": 24,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 24,
+    "max_chars": 3500,
+    "stored_unique_requirements": 20
+  },
+  "diagnostics": {
+    "evidence_bank_count": 32,
+    "proposition_count": 22,
+    "removed_duplicate_propositions": 0,
+    "rewrite_candidate_count": 6,
+    "gap_pass_added_count": 2,
+    "grounded_after_rewrite_count": 22
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_1999_dii.json",
+    "proposition_path": "_artifacts/propositions/pure_1999_dii.json"
+  },
+  "project_summary": "This project is to capture the main requirements and constraints for the 1999_dii document, based on the 1999 - dii system.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "The system shall provide XS services to several different classes of users.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "The user classes shall include 'data consumers', 'data and database managers', and 'network information infrastructure resource managers'.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "'On-site personnel' must be able to tune the data management services.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "The ability to tune data management services must be available when the system is in a 'fixed (static) mode of operation'.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "The ability to tune data management services must be available at a 'base or data processing megacenter'.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "Tuning data management services must include the ability to 'adjust for varying workloads and sizes of associated databases'.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "The qualification methods applied to the software must include all of the approaches: test, demonstration, analysis, and inspection.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "Personnel must have the ability to redefine or reset the names of connect descriptors to database server instances if a server name or location changes.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "The system must support bringing parts of the system online or offline.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "The system must support being managed in specific states like 'open not-mounted'.",
+        "priority": "low",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "The session time-out values must be user definable.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "Session time-out values must be able to be reset before a user session is initialized.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "The system must provide verification methods to confirm that adjustments are correct and have not introduced any issues.",
+        "priority": "high",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-014",
+        "text": "Maintenance activities shall cover planned shutdowns, upgrades, and modifications.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "The ability to redefine or reset the names of connect descriptors to database server instances must be transparent to the operator.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-002",
+        "text": "As a general rule, all XS components for the DII COE must adhere to the compliance level requirements described in the I&RTS.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-003",
+        "text": "The Registry software is required to execute on any COE-compliant platforms.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ],
+        "category": "portability"
+      }
+    ],
+    "data": [],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "If a user cannot find an existing specification ('spec') in the Registry to reuse for their task, then they must create a new one.",
+        "priority": "high",
+        "evidence_turns": [
+          18
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "IF-001",
+        "text": "The system must internally interface with the existing data elements of the DBIF.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "IF-002",
+        "text": "The system must internally interface with the existing data elements of the DAC.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "IF-003",
+        "text": "The system must internally interface with the existing data elements of COTS RDBMS products.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "Training requirements for the XS module are to be determined by the developers of the main system.",
+        "priority": "low",
+        "evidence_turns": [
+          12
+        ]
+      }
+    ]
+  }
+}

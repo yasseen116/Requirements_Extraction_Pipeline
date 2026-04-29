@@ -1,0 +1,225 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": "qwen2.5:7b-instruct",
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": [
+          {
+            "prompt_eval_count": 2189,
+            "eval_count": 1369,
+            "total_duration": 123872938875,
+            "load_duration": 44010583,
+            "prompt_eval_duration": 17705867043,
+            "eval_duration": 91233751875
+          }
+        ]
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:repaired"
+    ],
+    "retrieval_top_k": 8,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 12,
+    "max_chars": 2200,
+    "stored_unique_requirements": 19
+  },
+  "diagnostics": {
+    "evidence_bank_count": 47,
+    "proposition_count": 19,
+    "removed_duplicate_propositions": 0,
+    "rewrite_candidate_count": 12,
+    "gap_pass_added_count": 0,
+    "grounded_after_rewrite_count": null
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_2005_microcare.json",
+    "proposition_path": "_artifacts/propositions/pure_2005_microcare.json"
+  },
+  "project_summary": "Capture and manage sales, claims, voucher allocation, and user roles for the 2005-microcare system.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "The Salesman master should record customer's name and contact details during a sale.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "The Salesman master should track the product or service being sold, including its ID and description during a sale.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "The Salesman master should record the quantity sold during a sale.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "The Salesman master should capture the price per unit and total sale amount during a sale.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "The Salesman master should record payment method information for each transaction.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "The Salesman master should log the date and time of the sale, along with any special notes or comments from the Salesman.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "During the claim entry process, we need to capture detailed information such as the claimant's name, contact details, date of birth, and a description of the incident. This is important because it helps us verify the identity and ensure accurate claims processing.",
+        "priority": "high",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "The system should log IP address and timestamp for each entry to maintain audit trails. Regarding sales information, we only need to capture basic transaction data like order ID and total amount, but not any personal details.",
+        "priority": "high",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "Authorized users should be able to amend or alter claim entries if needed.",
+        "priority": "high",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "The system should allocate relevant vouchers based on the number required by the distributor.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "The system should match the number of forms entered during claim submission with available forms in stock.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "The system should print a receipt document when allocating vouchers.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "When allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution. Each voucher allocated should include its number and batch number.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-014",
+        "text": "The system should include the number and batch number of each voucher allocated.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-015",
+        "text": "System admins should be able to add new salesmen to the Team Master.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ]
+      }
+    ],
+    "non_functional": [],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "Each voucher slip should contain a barcode with two unique identifiers: one for the client and another for the partner.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "The system should validate invoice amounts as the number of vouchers multiplied by the wholesale price.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "DATA-003",
+        "text": "Cash is the only mode accepted during distribution transactions.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "If the claim status is either ‘Rejection’ or ‘Quarantine’, we have a provision to capture the reason for the rejection or quarantine. This will help us understand the issues better and improve our processes.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ]
+      }
+    ],
+    "interfaces": [],
+    "constraints": []
+  }
+}

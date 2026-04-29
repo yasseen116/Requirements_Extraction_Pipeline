@@ -1,0 +1,492 @@
+{
+  "sample_id": "pure_0000_gamma_j",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_gamma_j",
+    "title": "0000 - gamma j",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - gamma j.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - gamma j.pdf"
+  },
+  "method": "oracle_source_projection_v1",
+  "model": null,
+  "prompt_hash": null,
+  "schema_hash": null,
+  "parse_status": "ok",
+  "repair_attempted": false,
+  "usage": {},
+  "error": null,
+  "project_summary": "Oracle baseline projection from source PURE requirements for 0000 - gamma j.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "Operating Environment Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "The system shall use SQL based database to store inventory information.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "Design and Implementation Constraints Must use a SQL based database.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "CI-2: The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "Quality Attribute Requirements Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "The system shall be able to retrieve 200 products per second.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "The system shall be able to add product to shopping cart in less than 2ms.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "The system shall be able to search for a specified product in less than 1 second.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-014",
+        "text": "The system shall be able to email customer and vendor in less than 1 second.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-015",
+        "text": "The system shall be able to restore 1000 records per second.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-016",
+        "text": "The system shall auto detect IP DOS attacks and block IP automatically.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-017",
+        "text": "The system shall detect consecutive failed login attempts.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-018",
+        "text": "The system shall be protected by open source firewall called Firestarter.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-019",
+        "text": "Efficiency Requirements The system shall perform searches via Dijkstra's shortest path algorithm.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-020",
+        "text": "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-021",
+        "text": "The system shall automatically compress image files that are too large in size.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-022",
+        "text": "The system shall validate email address existence.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-023",
+        "text": "The system shall utilize consistent symbols and colors for clear notifications.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-024",
+        "text": "Maintainability Requirements The system shall utilize interchangeable plugins.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-025",
+        "text": "The system shall be easily updatable for fixes and patches.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-026",
+        "text": "The system shall create logs of all changes, updates, or fixes that are done to the site.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-027",
+        "text": "The system shall be easy to upgrade.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-028",
+        "text": "Portability Requirements The system shall be extremely portable via the usb drive.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-029",
+        "text": "The system shall be easy to migrate or backed up via another usb drive.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-030",
+        "text": "Testability Requirements The system should be able to run under debug mode.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-031",
+        "text": "The system should be able to run test credit card transactions.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-032",
+        "text": "The system should be able to run test shipping orders.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-033",
+        "text": "The system should be able to create test environment of weborder system.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-034",
+        "text": "Other Requirements The system hardware shall be fixed and patched via an internet connection.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-035",
+        "text": "Yoggie shall coordinate on future enhancement and features with our organization.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-036",
+        "text": "Functional requirements: A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-037",
+        "text": "Nonfunctional requirements: A description of a property or characteristic that the system should exhibit.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-038",
+        "text": "Pre condition: A condition that must be satisfied or a state the system must be in before a use case may begin.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-039",
+        "text": "Requirement: A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-040",
+        "text": "Actors: Customer Weborder System Preconditions: Customer must be able to access the web order system via a web browser with HTTPS.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-041",
+        "text": "Actors: Customer Weborder System Preconditions: Customer account must already be registered.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-042",
+        "text": "Actors: Customer Weborder System Preconditions: Customer must be logged-in on the system.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-043",
+        "text": "Add Item To Cart Goal Customer adds item(s) in the cart Actors: Customer Weborder System Preconditions: The customer must be logged-in on the system.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-044",
+        "text": "Customer must have item(s) in the shopping cart.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-045",
+        "text": "Actors: Administrator Weborder System Preconditions: Administrator account must already be registered.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-046",
+        "text": "Actors: Administrator Weborder System Preconditions: Administrator must be logged-in on the system.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-047",
+        "text": "Add User Goal Register a new customer, sales person, or administrator account with the system Actors: Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-048",
+        "text": "Actors: Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-049",
+        "text": "Actors: Sales Person Weborder System Preconditions: Sales Person account must already be registered.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-050",
+        "text": "Actors: Sales Person Weborder System Preconditions: Sales Person must be logged-in on the system.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-051",
+        "text": "Actors: Sales Person Weborder System Preconditions: Sales Person must be able to access the weborder system via a web browser with HTTPS.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "category": "performance",
+        "text": "The system shall be able to validate credit card in less than 2 seconds.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-002",
+        "category": "performance",
+        "text": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-003",
+        "category": "security",
+        "text": "Security Requirements The system shall validate credit cards against fraud.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-004",
+        "category": "security",
+        "text": "The system shall encrypt all sensitive information via https.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-005",
+        "category": "security",
+        "text": "The system shall encrypt all customer data in database.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-006",
+        "category": "security",
+        "text": "http://www.fs-security.com/ Availability Requirements The system shall have an availability of 99.99%.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      }
+    ],
+    "data": [],
+    "business_rules": [],
+    "interfaces": [],
+    "constraints": []
+  }
+}

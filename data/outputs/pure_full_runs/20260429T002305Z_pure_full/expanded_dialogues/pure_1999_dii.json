@@ -1,0 +1,413 @@
+{
+  "sample_id": "pure_1999_dii",
+  "metadata": {
+    "domain": "pure_document",
+    "source_type": "synthetic",
+    "parent_id": "pure_1999_dii",
+    "split": "benchmark",
+    "dialogue_style": "adaptive_semantic_coverage"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "To start, what is the overall purpose and scope of this system?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "This project is based on the 1999 - dii system, and the goal is to capture the main requirements and constraints for document 1999_dii."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Could you provide more details on how the data management services will be adjusted by on-site personnel during varying workloads and database sizes?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "Our data management services need to be flexible so that on-site personnel can adjust them based on varying workloads and database sizes. Specifically, we want various classes of users to have access: data consumers, data and database managers, and network information infrastructure resource managers. In our fixed mode of operation, it should be possible for the team to tune these services as needed. This is important because we need to ensure smooth performance regardless of how much data or traffic we're handling."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "How will the data validation processes be adapted by on-site personnel to ensure they meet the T, D, A, and I qualification methods during different workload scenarios?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "Our team needs to be able to apply the T, D, A, and I qualification methods during different workload scenarios. During testing (T), we need to ensure that our on-site personnel can run thorough checks under various conditions. For demonstrations (D), it should be clear how the system performs in real-time usage. Analysis (A) is important for deep diving into data and identifying any issues, especially when load increases. Inspection (I) will help us catch any potential problems before they become critical. We need to make sure these methods can be adapted flexibly depending on the workload — whether it's a small team or handling 1000 concurrent users. It should also work across different browsers and operating systems, like Chrome, Firefox, Windows, and macOS."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "Can you explain how the on-site personnel will manage and adjust the data access services APIs as specified in Appendix C during different workload scenarios?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "In our operations, we need the system to allow on-site personnel to manage and adjust data access services APIs as specified in Appendix C. Specifically, it should be able to redefine or reset names of connect descriptors for database server instances. The system must internally interface with existing data elements from DBIF, DAC, and COTS RDBMS products without requiring operator intervention. Additionally, the XS function needs to provide standard APIs as outlined in Appendix C. This is all part of our broader software capabilities required for the DII COE components."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "How will the compliance level requirements described in the I&RTS be enforced and monitored by on-site personnel during different workload scenarios?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "Compliance level requirements described in the I&RTS will be enforced and monitored by on-site personnel through adherence to these standards. COE sponsors are responsible for ensuring that all operations comply with these requirements. For the deployment environment, developers of the system embedding the XS module need to determine specific training needs to ensure everyone is up to speed on how to meet these compliance levels during different workload scenarios."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "How will the session time-out values be configured and managed by on-site personnel to ensure they align with varying user roles and workloads?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "We need to be able to configure session time-out values based on user roles and workloads. For example, super-users might have longer sessions than regular users. It should allow us to set these values before a user logs in and also let us adjust them as needed without affecting the current active sessions. Maintenance tasks like shutting down or upgrading the system should not disrupt this setting process. We want to ensure that all modifications and upgrades are handled smoothly, including when we go online or offline."
+    },
+    {
+      "turn_id": 13,
+      "role": "bot",
+      "text": "How will the Registry software's portability and execution on COE-compliant platforms impact the deployment process and potential challenges for on-site personnel during different workload scenarios?"
+    },
+    {
+      "turn_id": 14,
+      "role": "user",
+      "text": "Portability and execution on COE-compliant platforms are crucial for us. The Registry software needs to be flexible enough to run smoothly across different environments, which means it should work well on any COE-compliant platform we choose. This is important because our deployment process will need to accommodate various scenarios, from small-scale testing to large-scale production with up to 1000 concurrent users. On-site personnel might face challenges during these deployments, especially when dealing with different workload conditions. We want the software to handle everything from light usage periods to peak times without any issues. Ideally, it should be able to scale efficiently and maintain performance even under heavy load. Security is also a big concern; we need to ensure that all data remains encrypted both in transit and at rest. That's important to us because we cannot afford any breaches. We want the system to validate credit card information for returning users but not require them to re-enter everything every time they log in."
+    },
+    {
+      "turn_id": 15,
+      "role": "bot",
+      "text": "How will the maintainability of the Registry software be ensured during different workload scenarios, particularly in terms of ease of updating and debugging?"
+    },
+    {
+      "turn_id": 16,
+      "role": "user",
+      "text": "Maintaining the Registry software during different workload scenarios is crucial for us. We need a system that allows easy updates and debugging to ensure smooth operation under various conditions. For instance, when we have more than 1000 concurrent users, it should handle the load without any issues. The software should be designed with clear architecture and modular components so that updating or fixing bugs becomes straightforward. Ideally, it would have a robust logging system in place for easy debugging. We've had issues before where updates caused unexpected downtime, so we need to ensure that changes can be made without disrupting service. That's important to us because our users expect consistent performance and reliability."
+    },
+    {
+      "turn_id": 17,
+      "role": "bot",
+      "text": "How will the testing process for the Registry software be structured to ensure it meets maintainability and portability requirements during different workload scenarios?"
+    },
+    {
+      "turn_id": 18,
+      "role": "user",
+      "text": "To ensure the Registry software meets maintainability and portability requirements during different workload scenarios, we need a comprehensive testing process. This should include automated tests for both functional and non-functional aspects of the system. We'll use load testing to simulate up to 1000 concurrent users and stress testing to push the limits beyond that. It's crucial that our tests cover various environments — including different browsers like Chrome, Firefox, and Safari on Windows, macOS, and Linux. For security, we must verify that all customer data is encrypted both in transit and at rest. We also need to ensure that the system can be easily ported to other platforms if needed, so testing should include cross-platform compatibility checks. Additionally, it's important that our tests validate the system’s ability to handle different types of user roles and permissions without conflicts. Ideally, we want a robust logging mechanism in place for debugging and auditing purposes. That's important to us because maintaining a clear trail is key for compliance and troubleshooting."
+    },
+    {
+      "turn_id": 19,
+      "role": "bot",
+      "text": "How will the Registry software's maintainability be ensured during updates and debugging processes, especially when transitioning between different COE-compliant platforms?"
+    },
+    {
+      "turn_id": 20,
+      "role": "user",
+      "text": "Maintaining the Registry software's portability and testability is crucial for us. We need to ensure that when we update or debug the system, especially during transitions between different COE-compliant platforms, it should be easy to switch without causing disruptions. Ideally, it would have a consistent codebase that can adapt to various environments. The problem we have is ensuring that all components are well-documented and modular so they can be easily replaced or updated. We've had issues with legacy systems where changes in one area caused unexpected problems elsewhere. That's important to us because maintaining the system should not require extensive rework every time we make a change. It should be able to run on multiple platforms without needing significant modifications, and it must support automated testing across all environments to catch any issues early."
+    },
+    {
+      "turn_id": 21,
+      "role": "bot",
+      "text": "Could you provide more details on the specific metadata fields and formats that need to be supported for contributing to the registry?"
+    },
+    {
+      "turn_id": 22,
+      "role": "user",
+      "text": "For contributing to the registry, we need our system to be able to receive XML registry forms. The producer should be able to submit metadata and related information resource artifacts. It's important that this process is seamless and efficient. We also need the system to render semantically valid views from an XML document, like XSL transformations, which will disassemble hierarchical views into a relational representation. This needs to align with standard APIs as specified in Appendix B of our documentation. The goal here is to ensure that all metadata fields are correctly formatted and can be easily integrated into the registry services."
+    }
+  ],
+  "dialogue_generation": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "model": "qwen2.5:7b-instruct",
+    "prompt_hash": "fedce691ffc0c220a6c2ce1eafe35d01f4b661ebbfe2e77f828010c8af7381a9",
+    "schema_hash": "9be8d6915a55c470069248e40ccedc82f618947177ed980cd44251e29f62cc21",
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "coverage_threshold": 0.55,
+    "max_turns": 28,
+    "target_dialogue_recall": 0.82,
+    "theme_max_exchanges": 3,
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails.",
+    "clarification_rounds": 2,
+    "trace": [
+      {
+        "theme": "goal_scope",
+        "req_ids": [],
+        "bot_turn_id": 1,
+        "user_turn_id": 2,
+        "generation_mode": "deterministic_scope",
+        "coverage_ratio": 1.0,
+        "stage": "adaptive_opening"
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0006",
+          "AUTO-0003"
+        ],
+        "bot_turn_id": 3,
+        "user_turn_id": 4,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 22
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0019"
+        ],
+        "bot_turn_id": 5,
+        "user_turn_id": 6,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 17
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0004",
+          "AUTO-0014",
+          "AUTO-0013",
+          "AUTO-0001"
+        ],
+        "bot_turn_id": 7,
+        "user_turn_id": 8,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 16
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0002",
+          "AUTO-0017"
+        ],
+        "bot_turn_id": 9,
+        "user_turn_id": 10,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 11
+      },
+      {
+        "theme": "availability_reliability",
+        "req_ids": [
+          "AUTO-0005",
+          "AUTO-0008"
+        ],
+        "bot_turn_id": 11,
+        "user_turn_id": 12,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 8
+      },
+      {
+        "theme": "deployment_environment_constraints",
+        "req_ids": [
+          "AUTO-0015"
+        ],
+        "bot_turn_id": 13,
+        "user_turn_id": 14,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 6
+      },
+      {
+        "theme": "maintainability_portability_testability",
+        "req_ids": [
+          "AUTO-0021"
+        ],
+        "bot_turn_id": 15,
+        "user_turn_id": 16,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 5
+      },
+      {
+        "theme": "maintainability_portability_testability",
+        "req_ids": [
+          "AUTO-0021"
+        ],
+        "bot_turn_id": 17,
+        "user_turn_id": 18,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 5
+      },
+      {
+        "theme": "maintainability_portability_testability",
+        "req_ids": [
+          "AUTO-0021"
+        ],
+        "bot_turn_id": 19,
+        "user_turn_id": 20,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 5
+      },
+      {
+        "theme": "reporting_documentation",
+        "req_ids": [
+          "AUTO-0012",
+          "AUTO-0011"
+        ],
+        "bot_turn_id": 21,
+        "user_turn_id": 22,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 5
+      }
+    ],
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 0,
+    "coverage_summary": {
+      "clarification_rounds_requested": 2,
+      "clarification_rounds_used": 0,
+      "initial_uncovered_requirement_count": 22,
+      "final_uncovered_requirement_count": 3,
+      "final_uncovered_req_ids": [
+        "AUTO-0020",
+        "AUTO-0021",
+        "AUTO-0022"
+      ],
+      "coverage_history": [
+        0.0,
+        0.2272727272727273,
+        0.2727272727272727,
+        0.5,
+        0.6363636363636364,
+        0.7272727272727273,
+        0.7727272727272727,
+        0.7727272727272727,
+        0.7727272727272727,
+        0.7727272727272727,
+        0.8636363636363636
+      ],
+      "exchanges": 11,
+      "target_dialogue_recall": 0.82,
+      "final_dialogue_recall": 0.8636363636363636,
+      "theme_exchange_counts": {
+        "functional_capabilities": 1,
+        "data_validation": 1,
+        "interfaces_integrations": 2,
+        "availability_reliability": 1,
+        "deployment_environment_constraints": 1,
+        "maintainability_portability_testability": 3,
+        "reporting_documentation": 1
+      },
+      "theme_coverage": {
+        "user_roles_permissions": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "data_validation": {
+          "total": 4,
+          "covered": 4,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 4,
+          "covered": 3,
+          "uncovered": 1,
+          "recall": 0.75
+        },
+        "reporting_documentation": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "other_constraints": {
+          "total": 5,
+          "covered": 2,
+          "uncovered": 3,
+          "recall": 0.4
+        }
+      },
+      "critical_theme_gaps": [],
+      "stopped_reason": "target_dialogue_recall_reached"
+    }
+  }
+}

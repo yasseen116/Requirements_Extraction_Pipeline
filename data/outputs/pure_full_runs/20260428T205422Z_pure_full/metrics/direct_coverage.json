@@ -1,0 +1,125 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T205422Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T205422Z_pure_full/direct_generated_requirements",
+  "match_threshold": 0.55,
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 1,
+    "macro_precision": 0.96,
+    "macro_coverage_recall": 0.96,
+    "macro_f1": 0.96,
+    "macro_hallucination_rate": 0.04,
+    "macro_average_match_score": 0.953950364763538,
+    "macro_average_best_source_score": 0.9480076158046722,
+    "micro_precision": 0.96,
+    "micro_coverage_recall": 0.96,
+    "micro_f1": 0.96,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 100,
+    "total_matched_requirements": 96
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 100,
+      "matched_count": 96,
+      "precision": 0.96,
+      "coverage_recall": 0.96,
+      "f1": 0.96,
+      "hallucination_rate": 0.04,
+      "average_match_score": 0.953950364763538,
+      "average_best_source_score": 0.9480076158046722,
+      "unmatched_source_examples": [
+        "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "The System must allow the user to limit access to cases to specified users or user groups.",
+        "The user interfaces of the system should follow the guidelines specified under www.usability.gov System Availability The System must be available to users: from <xx:00> to <xx:00>;"
+      ],
+      "unmatched_generated_examples": [
+        "Ensure system availability from <xx:00> to <xx:00>.",
+        "The System must provide an interface for the user to log defects or enhancement requests on the application and track thereafter.",
+        "The System should allow a user to access the support solution both from within the application and also outside the application through a browser interface.",
+        "The System must ensure that the audit trail is not tampered with or deleted by any unauthorized user."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The solution should enable the user to track the submitted defect or enhancement request."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "generated_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age-wise."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error.",
+          "generated_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "generated_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "Space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "generated_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "generated_requirement": "If a splash screen is used, a navigation option to skip it should be offered."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Text quality: The quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+          "generated_requirement": "Text quality: The quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Color should never be the only means of coding.",
+          "generated_requirement": "Color should never be the only means of coding."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "generated_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "Writing style: The reading and understanding of the textual content on the screen should be supported by suitable means, including the use of short sentences, the division of the text into shorter chunks or the presentation of content items in the form of bullet points.",
+          "generated_requirement": "Writing style: The reading and understanding of the textual content on the screen should be supported by suitable means, including the use of short sentences, the division of the text into shorter chunks or the presentation of content items in the form of bullet points."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+          "generated_requirement": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "The System should allow a user to stipulate which other users or groups can access cases.",
+          "generated_requirement": "The System should allow a user to stipulate which other users or groups can access cases."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+          "generated_requirement": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access."
+        }
+      ]
+    }
+  ]
+}

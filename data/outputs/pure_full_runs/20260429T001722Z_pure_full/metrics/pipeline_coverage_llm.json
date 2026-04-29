@@ -1,0 +1,845 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260429T001722Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260429T001722Z_pure_full/generated_requirements_gemini_full_context",
+  "validator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "method": "gemini_checklist_judge_v1",
+    "semantic_candidate_top_k": 2,
+    "lexical_candidate_top_k": 1,
+    "batch_size": 8,
+    "strict_scoring": {
+      "full": 1.0,
+      "partial": 0.0,
+      "none": 0.0
+    },
+    "weighted_scoring": {
+      "full": 1.0,
+      "partial": 0.5,
+      "none": 0.0
+    }
+  },
+  "aggregate": {
+    "sample_count": 4,
+    "macro_precision": 0.32163669663669664,
+    "macro_coverage_recall": 0.30935406698564594,
+    "macro_f1": 0.3127401973187743,
+    "macro_hallucination_rate": 0.6783633033633034,
+    "macro_weighted_precision": 0.4909526237651237,
+    "macro_weighted_coverage_recall": 0.4914992025518341,
+    "macro_weighted_f1": 0.4862374047004122,
+    "micro_precision": 0.39086294416243655,
+    "micro_coverage_recall": 0.37745098039215685,
+    "micro_f1": 0.38403990024937656,
+    "micro_weighted_precision": 0.5482233502538071,
+    "micro_weighted_coverage_recall": 0.5294117647058824,
+    "micro_weighted_f1": 0.5386533665835411,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 197,
+    "total_strict_matches": 77,
+    "total_weighted_match_score": 108.0,
+    "total_full_matches": 77,
+    "total_partial_matches": 62
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 91,
+      "strict_match_count": 44,
+      "weighted_match_score": 57.0,
+      "full_match_count": 44,
+      "partial_match_count": 26,
+      "precision": 0.4835164835164835,
+      "coverage_recall": 0.44,
+      "f1": 0.46073298429319376,
+      "hallucination_rate": 0.5164835164835165,
+      "weighted_precision": 0.6263736263736264,
+      "weighted_coverage_recall": 0.57,
+      "weighted_f1": 0.5968586387434556,
+      "candidate_pair_count": 263,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+          "generated_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+          "reason": "The generated requirement is an exact match of the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System must be able to display several entities (cases, suspects) simultaneously.",
+          "generated_requirement": "The system must be able to display several entities, like cases and suspects, simultaneously.",
+          "reason": "The generated requirement faithfully covers the same core need and preserves all critical details, merely rephrasing the parenthetical example."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "Empty space filled only with the background color must be used in a way that does not impair the visual skimming of the page.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details. \"Empty\" clarifies \"space filled only with the background color\" and the modality change is a strengthening."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System user interface must be suitable for users with special needs;",
+          "generated_requirement": "The user interface must be suitable for users with special needs.",
+          "reason": "The generated requirement faithfully covers the source requirement, preserving all critical details. The omission of 'System' is not a material loss as 'user interface' implies it's part of the system."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Marking links opening new windows: Links that open new browser windows or pop-up windows should be clearly marked.",
+          "generated_requirement": "Links that open new browser windows or pop-up windows must be clearly marked.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details. The modality is strengthened from 'should' to 'must' but the core intent remains."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "ICT accessibility: ISO 9241-20 shall be the standard for guidance on ICT accessibility.",
+          "generated_requirement": "The system must use ISO 9241-20 as the standard for guidance on ICT accessibility.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details regarding the standard and its purpose."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "generated_requirement": "If a splash screen is used, it must provide a navigation option to skip it.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details and conditions regarding offering a skip option for splash screens."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+          "generated_requirement": "The system must maintain the audit trail for at least the life of the case to which it refers.",
+          "reason": "The generated requirement accurately captures the minimum retention period specified in the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+          "generated_requirement": "The system must never include a record in a search result list if the user does not have the right to access it.",
+          "reason": "The generated requirement fully preserves the core need and critical details, stating that unauthorized records must never be included in search results. The generalization from 'quick or advanced search' to 'a search result list' does not lose material detail."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The planned downtime for the System must not exceed <xx> hours per <rolling three month period>.",
+          "generated_requirement": "Planned maintenance downtime must not exceed <xx> hours in any rolling three month period.",
+          "reason": "The generated requirement faithfully covers the source requirement regarding planned downtime limits, with 'maintenance' being a reasonable specification of 'planned'."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Distinguishable within-page links: Within-page links should be clearly distinguishable from other links that lead to a different page.",
+          "generated_requirement": "Within-page links must be clearly distinguishable from links that go to a different page.",
+          "reason": "The generated requirement faithfully covers the same need to distinguish within-page links from other links. The change in modality from 'should' to 'must' does not alter the core requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+          "generated_requirement": "The system must avoid using splash screens unless they provide useful content or feedback on the application state.",
+          "reason": "The generated requirement accurately reflects the source, preserving the condition for avoiding splash screens and their exceptions."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Offering alternative access paths: Alternative access paths for navigating to a specific unit of content should be offered to support different navigation strategies.",
+          "generated_requirement": "The system must support different navigation strategies by offering alternative access paths to the same content.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details about offering alternative access paths to support different navigation strategies for content."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "Context-sensitive help must be available for all possible actions and scenarios on all user interfaces.",
+          "reason": "The generated requirement faithfully covers the availability and scope of context-sensitive help, preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Distinguishing navigation links from controls: Navigation links should be clearly distinguishable from controls activating some action.",
+          "generated_requirement": "Navigation links must be clearly distinguishable from controls that activate an action.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details. The change in modality from \"should\" to \"must\" is a strengthening but does not alter the core requirement."
+        }
+      ],
+      "unmatched_source_examples": [
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the user to track the submitted defect or enhancement request.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+        "The System should allow a user to stipulate which other users or groups can access cases.",
+        "the most stringent) implies that the System must not include such cases in any count of search results;",
+        "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",
+        "Where the System employs a graphical user interface, it must allow users to customise it.",
+        "Usability The user interfaces should be designed to make them user-intuitive.",
+        "The user interfaces of the system should comply with Standard ISO 9241.",
+        "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility."
+      ],
+      "unmatched_generated_examples": [
+        "The system shall allow a user to create a new case.",
+        "The system shall allow a user to update an existing case.",
+        "For long pages, the system shall provide within-page links to help users jump to the right section.",
+        "Users must be able to resize text.",
+        "The navigation must always indicate the user's current location.",
+        "The system must provide help directly on the screen.",
+        "Users must be able to find support from within the application.",
+        "Users must be able to delete their user-specified profile on demand.",
+        "The system must support a multilingual interface.",
+        "The system's response when a user tries to access a specific case they do not have rights to must be configurable at configuration time.",
+        "A user must be able to be a member of more than one group.",
+        "Frequently-executed system transactions must be designed to be quick.",
+        "If frames are used, they must not cause issues with bookmarking pages.",
+        "If frames are used, they must not cause weird scrolling behavior.",
+        "Help content must have good spelling and grammar."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "Help material must be context-sensitive to the user's current task within the application.",
+          "reason": "The generated requirement loses the critical detail that context-sensitive help must be available for *all* possible actions and scenarios on *all* user interfaces."
+        },
+        {
+          "source_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "generated_requirement": "The system must provide an interface for anyone to log any defects or enhancement requests on the application.",
+          "reason": "The generated requirement generalizes the role from 'the user' to 'anyone' and loses the critical detail that users should be able to track their logged requests."
+        },
+        {
+          "source_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "generated_requirement": "Users must be able to track the defects or enhancement requests they have logged.",
+          "reason": "The generated requirement generalizes the user role and loses critical details about viewing reports category-wise, status-wise, and age-wise, only covering the general ability to track."
+        },
+        {
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "Users must be able to find support from within the application.",
+          "reason": "The generated requirement only covers accessibility from within the application and omits the critical detail of accessibility outside the application through a browser interface."
+        },
+        {
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "The system must be able to export audit trails for specified cases for an auditor.",
+          "reason": "The generated requirement adds a specific role ('for an auditor') and omits the critical detail about not affecting the stored audit trail."
+        },
+        {
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "The audit trail data stored by the system cannot be modified in any way or deleted by any user.",
+          "reason": "The generated requirement generalizes the condition 'without affecting the audit trail stored by the System' to a broader statement about audit trail data immutability and undeletability by any user, which is a material addition and change in scope."
+        },
+        {
+          "source_requirement": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+          "generated_requirement": "The system must be able to export audit trails for specified cases for an auditor.",
+          "reason": "The generated requirement introduces exporting audit trails for an auditor and loses the specific organization criteria (workstation, network address) mentioned in the source."
+        },
+        {
+          "source_requirement": "The system should provide for role-based control for the functionality within the system The System must allow a user to be a member of more than one group.",
+          "generated_requirement": "A user must be able to be a member of more than one group.",
+          "reason": "The generated requirement covers only the multi-group membership aspect and omits the detail about role-based control."
+        },
+        {
+          "source_requirement": "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+          "generated_requirement": "Changes to security attributes for groups or users can be made only by a super-user.",
+          "reason": "The generated requirement generalizes the specific actions of setting up profiles and allocating users to groups to a broader category of 'changes to security attributes', which is a material alteration of scope."
+        },
+        {
+          "source_requirement": "The System should allow a user to stipulate which other users or groups can access cases.",
+          "generated_requirement": "A user must be able to stipulate which other users or user groups can access their cases.",
+          "reason": "The generated requirement changes the modality from 'should' to 'must' and specifies 'their cases' instead of general 'cases', altering the strength and scope slightly."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 48,
+      "strict_match_count": 24,
+      "weighted_match_score": 30.5,
+      "full_match_count": 24,
+      "partial_match_count": 13,
+      "precision": 0.5,
+      "coverage_recall": 0.42105263157894735,
+      "f1": 0.45714285714285713,
+      "hallucination_rate": 0.5,
+      "weighted_precision": 0.6354166666666666,
+      "weighted_coverage_recall": 0.5350877192982456,
+      "weighted_f1": 0.580952380952381,
+      "candidate_pair_count": 145,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall be able to retrieve 200 products per second.",
+          "generated_requirement": "The system must be able to retrieve 200 products per second.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall be able to restore 1000 records per second.",
+          "generated_requirement": "The system must be able to restore 1000 records per second.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details including the action, quantity, and rate."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall detect consecutive failed login attempts.",
+          "generated_requirement": "The system must detect consecutive failed login attempts.",
+          "reason": "The generated requirement is an exact match to the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall be protected by open source firewall called Firestarter.",
+          "generated_requirement": "The system must be protected by the open source firewall called Firestarter.",
+          "reason": "The generated requirement is an exact match to the source requirement, preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall automatically compress image files that are too large in size.",
+          "generated_requirement": "The system must automatically compress image files that are too large in size.",
+          "reason": "The generated requirement faithfully covers the source requirement, preserving all critical details. The change from 'shall' to 'must' does not alter the mandatory nature of the requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+          "generated_requirement": "The system must acquire shipping charges in less than 2 seconds.",
+          "reason": "The generated requirement faithfully covers all aspects of the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall utilize consistent symbols and colors for clear notifications.",
+          "generated_requirement": "The system must utilize consistent symbols and colors for notifications.",
+          "reason": "The generated requirement faithfully covers the source, preserving the core need for consistent symbols and colors for notifications. The omission of 'clear' does not materially alter the requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+          "generated_requirement": "The system must be able to handle 1000 customers logged in concurrently.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details. 'at the same time' is redundant with 'concurrently'."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system should be able to create test environment of weborder system.",
+          "generated_requirement": "It must be possible to create a test environment of the weborder system.",
+          "reason": "The generated requirement faithfully covers the same core need and preserves all critical details, with only a minor change in modality."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Quality Attribute Requirements Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.",
+          "generated_requirement": "The system must be deployed and fully operational in less than 1 minute upon a USB being plugged in.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details and constraints."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall encrypt all sensitive information via https.",
+          "generated_requirement": "All sensitive information must be encrypted via https.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details. The subject 'The system' is implied."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall encrypt all customer data in database.",
+          "generated_requirement": "All customer data in the database must be encrypted.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details. The subject 'The system' is implied."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Pre condition: A condition that must be satisfied or a state the system must be in before a use case may begin.",
+          "generated_requirement": "A certain condition must be satisfied or the system has to be in a specific state before a use case can begin.",
+          "reason": "The generated text accurately rephrases the definition of a pre-condition, preserving all critical details and the core meaning."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Actors: Customer Weborder System Preconditions: Customer must be able to access the web order system via a web browser with HTTPS.",
+          "generated_requirement": "The customer must be able to access the web order system through a web browser using HTTPS.",
+          "reason": "The generated text accurately restates the precondition for customer access to the web order system, preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall be able to add product to shopping cart in less than 2ms.",
+          "generated_requirement": "Adding a product to the shopping cart must take less than 2ms.",
+          "reason": "The generated requirement faithfully rephrases the source, preserving all critical details including the action, object, and performance constraint."
+        }
+      ],
+      "unmatched_source_examples": [
+        "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+        "The system shall be able to validate credit card in less than 2 seconds.",
+        "Security Requirements The system shall validate credit cards against fraud.",
+        "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+        "Maintainability Requirements The system shall utilize interchangeable plugins.",
+        "The system shall be easily updatable for fixes and patches.",
+        "The system shall create logs of all changes, updates, or fixes that are done to the site.",
+        "The system shall be easy to upgrade.",
+        "Testability Requirements The system should be able to run under debug mode.",
+        "The system should be able to run test shipping orders.",
+        "Yoggie shall coordinate on future enhancement and features with our organization.",
+        "Functional requirements: A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions.",
+        "Nonfunctional requirements: A description of a property or characteristic that the system should exhibit.",
+        "Requirement: A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective.",
+        "Actors: Customer Weborder System Preconditions: Customer must be logged-in on the system."
+      ],
+      "unmatched_generated_examples": [
+        "The system must email both the customer and the vendor after a purchase.",
+        "The system needs to have a clear function or behavior for when a payment is declined.",
+        "Notifications must support error, warning, and success message types.",
+        "The order confirmation email must include the tracking number.",
+        "The system must automatically compress image files that are too large in size when users are adding product photos.",
+        "The system must automatically block the IP address from a detected IP DOS attack.",
+        "The interface has to be intuitive.",
+        "The system should get running again quickly after a recovery.",
+        "The Web Store must work with Netscape Communicator Version 4.",
+        "The Web Store must operate on Slackware Linux 2.6.",
+        "The Web Store must operate with an Apache Web Server."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "Operating Environment Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",
+          "generated_requirement": "The Web Store must work with Netscape Communicator Version 4.",
+          "reason": "The generated requirement only specifies one browser version (Netscape 4) out of the four specified in the source (IE 6, 7, Netscape 4, 5)."
+        },
+        {
+          "source_requirement": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+          "generated_requirement": "The Web Store must operate on Slackware Linux 2.6.",
+          "reason": "The generated requirement correctly identifies Slackware Linux 2.6 but omits the Intel based system and Apache Web Server constraints from the source."
+        },
+        {
+          "source_requirement": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+          "generated_requirement": "The Web Store must operate with an Apache Web Server.",
+          "reason": "The generated requirement correctly identifies Apache Web Server but omits the Intel based system and Slackware Linux 2.6 constraints from the source."
+        },
+        {
+          "source_requirement": "The system shall use SQL based database to store inventory information.",
+          "generated_requirement": "The system must use a SQL based database.",
+          "reason": "The generated requirement correctly states the use of a SQL based database but omits the critical detail that it is specifically for storing inventory information."
+        },
+        {
+          "source_requirement": "Design and Implementation Constraints Must use a SQL based database.",
+          "generated_requirement": "All inventory information must be stored in the SQL based database.",
+          "reason": "The generated requirement adds a specific detail about \"inventory information\" being stored, which is a material addition not present in the general constraint of the source requirement."
+        },
+        {
+          "source_requirement": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+          "generated_requirement": "The interface has to be intuitive.",
+          "reason": "The generated requirement omits the critical detail that the interface must also \"remain consistent among various web browsers,\" only covering the intuitiveness aspect."
+        },
+        {
+          "source_requirement": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+          "generated_requirement": "The order confirmation email must include the tracking number.",
+          "reason": "The generated requirement omits the critical detail that the email confirmation must also state that \"items they ordered will be delivered to the shipping address.\""
+        },
+        {
+          "source_requirement": "The system shall be able to email customer and vendor in less than 1 second.",
+          "generated_requirement": "The system must email both the customer and the vendor after a purchase.",
+          "reason": "Loses the time constraint and adds a new condition 'after a purchase'."
+        },
+        {
+          "source_requirement": "The system shall be able to validate credit card in less than 2 seconds.",
+          "generated_requirement": "The system must be able to run test credit card transactions.",
+          "reason": "Changes the purpose from validating credit cards to running test transactions and loses the time constraint."
+        },
+        {
+          "source_requirement": "The system shall auto detect IP DOS attacks and block IP automatically.",
+          "generated_requirement": "The system must automatically block the IP address from a detected IP DOS attack.",
+          "reason": "The generated requirement covers blocking IP addresses from detected IP DOS attacks but omits the requirement to automatically detect the attacks."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 22,
+      "strict_match_count": 3,
+      "weighted_match_score": 7.5,
+      "full_match_count": 3,
+      "partial_match_count": 9,
+      "precision": 0.13636363636363635,
+      "coverage_recall": 0.13636363636363635,
+      "f1": 0.13636363636363635,
+      "hallucination_rate": 0.8636363636363636,
+      "weighted_precision": 0.3409090909090909,
+      "weighted_coverage_recall": 0.3409090909090909,
+      "weighted_f1": 0.3409090909090909,
+      "candidate_pair_count": 63,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+          "generated_requirement": "The qualification methods applied to the software must include all of the approaches: test, demonstration, analysis, and inspection.",
+          "reason": "The generated requirement accurately restates the source, preserving all critical details regarding the qualification methods and their mandatory inclusion."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+          "generated_requirement": "Training requirements for the XS module are to be determined by the developers of the main system.",
+          "reason": "The generated requirement accurately reflects that the main system developers determine the XS module's training requirements, preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+          "generated_requirement": "If a user cannot find an existing specification ('spec') in the Registry to reuse for their task, then they must create a new one.",
+          "reason": "The generated requirement faithfully completes the implied rule from the incomplete source text, preserving the core condition and providing a logical consequence."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+          "generated_requirement": "The ability to redefine or reset the names of connect descriptors to database server instances must be transparent to the operator.",
+          "reason": "The generated requirement adds a new material condition ('transparent to the operator') and loses the specific actor 'XS' from the source."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+          "generated_requirement": "The Registry software is required to execute on any COE-compliant platforms.",
+          "reason": "The generated requirement loses the critical detail that the Registry software 'shall be portable'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+          "generated_requirement": "The system must internally interface with the existing data elements of COTS RDBMS products.",
+          "reason": "The generated requirement covers internal interfacing with COTS RDBMS products but loses the specific mention of 'DBIF', 'DAC', and 'transparent to the operator', and generalizes 'XS' to 'system'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+          "generated_requirement": "The session time-out values must be user definable.",
+          "reason": "The generated requirement loses the critical detail that session time-out values must also 'be able to be reset prior to initialization of a user session'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+          "generated_requirement": "The user classes shall include 'data consumers', 'data and database managers', and 'network information infrastructure resource managers'.",
+          "reason": "The generated requirement loses the context that these user classes will use a 'Portion of XS services' in 'End User Mode'. It only lists the classes."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+          "generated_requirement": "As a general rule, all XS components for the DII COE must adhere to the compliance level requirements described in the I&RTS.",
+          "reason": "The generated requirement changes the subject from 'COE sponsors' to 'XS components for the DII COE', which is a material alteration of the actor responsible for adherence."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "Tuning data management services must include the ability to 'adjust for varying workloads and sizes of associated databases'.",
+          "reason": "The generated requirement loses critical details regarding the mode of operation (fixed/static), the location (base or data processing megacenter), and the actor (on-site personnel) who performs the tuning."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "DATA ACCESS SERVICES INTERNAL INTERFACE REQUIREMENTS The XS function shall provide standard APIs as specified in Appendix C.",
+          "generated_requirement": "The system shall provide XS services to several different classes of users.",
+          "reason": "The generated requirement covers 'XS services' but loses the critical details of 'standard APIs' and 'Appendix C' and adds 'to several different classes of users'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+          "generated_requirement": "The system must support being managed in specific states like 'open not-mounted'.",
+          "reason": "The generated requirement preserves one specific state ('open not-mounted') but loses other critical details about maintenance actions and states mentioned in the source (shutdown, online/off-line, modifications, upgrade)."
+        }
+      ],
+      "unmatched_source_examples": [
+        "DOCUMENT OVERVIEW This document outlines the software capabilities required for the XS components for the DII COE.",
+        "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+        "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+        "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+        "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify.",
+        "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+        "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable.",
+        "OTHER REQUIREMENTS None PACKAGING REQUIREMENTS The XS software shall be delivered in accordance with DII COE guidelines.",
+        "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+        "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+      ],
+      "unmatched_generated_examples": [
+        "'On-site personnel' must be able to tune the data management services.",
+        "The ability to tune data management services must be available when the system is in a 'fixed (static) mode of operation'.",
+        "The ability to tune data management services must be available at a 'base or data processing megacenter'.",
+        "Personnel must have the ability to redefine or reset the names of connect descriptors to database server instances if a server name or location changes.",
+        "The system must support bringing parts of the system online or offline.",
+        "Session time-out values must be able to be reset before a user session is initialized.",
+        "The system must provide verification methods to confirm that adjustments are correct and have not introduced any issues.",
+        "Maintenance activities shall cover planned shutdowns, upgrades, and modifications.",
+        "The system must internally interface with the existing data elements of the DBIF.",
+        "The system must internally interface with the existing data elements of the DAC."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "The ability to tune data management services must be available when the system is in a 'fixed (static) mode of operation'.",
+          "reason": "The generated requirement loses critical details about the purpose of tuning (adjusting for workloads/database sizes), the actor (on-site personnel), and the specific location (base or data processing megacenter)."
+        },
+        {
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "The ability to tune data management services must be available at a 'base or data processing megacenter'.",
+          "reason": "The generated requirement loses critical details about the purpose of tuning (adjusting for workloads/database sizes), the actor (on-site personnel), and the mode of operation (fixed/static)."
+        },
+        {
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "'On-site personnel' must be able to tune the data management services.",
+          "reason": "The generated requirement loses the context of 'fixed (static) mode of operation' and the purpose of tuning 'to adjust for varying workloads and sizes of associated databases'."
+        },
+        {
+          "source_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+          "generated_requirement": "Personnel must have the ability to redefine or reset the names of connect descriptors to database server instances if a server name or location changes.",
+          "reason": "The generated requirement changes the actor from 'The XS' to 'Personnel' and adds a new material condition ('if a server name or location changes')."
+        },
+        {
+          "source_requirement": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+          "generated_requirement": "Session time-out values must be able to be reset before a user session is initialized.",
+          "reason": "The generated requirement loses the critical detail that session time-out values must also be 'user definable'."
+        },
+        {
+          "source_requirement": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+          "generated_requirement": "The system shall provide XS services to several different classes of users.",
+          "reason": "The generated requirement generalizes 'Portion of XS services' to 'XS services' and omits the specific examples of user classes (data consumers, data and database managers, network information infrastructure resource managers)."
+        },
+        {
+          "source_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+          "generated_requirement": "Maintenance activities shall cover planned shutdowns, upgrades, and modifications.",
+          "reason": "The generated requirement covers some maintenance activities (shutdowns, upgrades, modifications) but omits others (open not-mounted, online/off-line implementations, other related actions) and adds 'planned' to shutdowns."
+        },
+        {
+          "source_requirement": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+          "generated_requirement": "The system must internally interface with the existing data elements of the DBIF.",
+          "reason": "The generated requirement loses the 'transparent to the operator' condition and only specifies one of the three required interfaces (DBIF, DAC, COTS RDBMS)."
+        },
+        {
+          "source_requirement": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+          "generated_requirement": "The system must internally interface with the existing data elements of the DAC.",
+          "reason": "The generated requirement loses the 'transparent to the operator' condition and only specifies one of the three required interfaces (DBIF, DAC, COTS RDBMS)."
+        },
+        {
+          "source_requirement": "OTHER REQUIREMENTS None PACKAGING REQUIREMENTS The XS software shall be delivered in accordance with DII COE guidelines.",
+          "generated_requirement": "As a general rule, all XS components for the DII COE must adhere to the compliance level requirements described in the I&RTS.",
+          "reason": "The generated requirement shifts from 'delivery in accordance with DII COE guidelines' to 'adherence to compliance level requirements described in the I&RTS' for DII COE components, losing the 'delivery' aspect and adding specific compliance details."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "generated_requirement_count": 36,
+      "strict_match_count": 6,
+      "weighted_match_score": 13.0,
+      "full_match_count": 6,
+      "partial_match_count": 14,
+      "precision": 0.16666666666666666,
+      "coverage_recall": 0.24,
+      "f1": 0.19672131147540983,
+      "hallucination_rate": 0.8333333333333334,
+      "weighted_precision": 0.3611111111111111,
+      "weighted_coverage_recall": 0.52,
+      "weighted_f1": 0.42622950819672134,
+      "candidate_pair_count": 85,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+          "generated_requirement": "Each voucher slip should have a bar code with two identifications, one for the client and one for the partner.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details about the barcode and its two identifications."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The authorized user can alter / amend the Claim if required.",
+          "generated_requirement": "Only an authorized user can alter or amend a claim.",
+          "reason": "The generated requirement faithfully captures that only an authorized user can alter or amend a claim, which is the core intent of the source. The 'if required' condition from the source is a contextual detail for when the action happens, not who can perform it."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "During every distribution transaction the user should select the name of the sales man listed from Team Master.",
+          "generated_requirement": "During every distribution transaction, the user must select the name of the salesman from the Team Master list.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details including the action, actor, context, and data source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+          "generated_requirement": "The voucher validity date can only be amended or altered at the system level by an authorized user.",
+          "reason": "The generated requirement accurately and completely captures the detail about the voucher validity date being amended or altered only by an authorized user at the system level."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The 'Salesman master' record must capture all necessary information for each person.",
+          "reason": "The generated requirement faithfully covers the source, interpreting 'following information’s' as 'all necessary information' which is a reasonable and faithful interpretation given the source's vagueness."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Patient Status - (Select from list of status options populating from Patient Status Master) suppose the status is Referral then the system will have the provision to capture Referred To and Reason for Referral, the reason for Referral should be populated from Referral master.",
+          "generated_requirement": "The `Reason for Referral` must be populated from the `Referral master`.",
+          "reason": "The generated requirement faithfully captures the detail that 'Reason for Referral' must be populated from 'Referral master'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.",
+          "generated_requirement": "The system needs a place to enter payment terms agreed upon between MSIU and the VSP, which are then displayed on the VSP Master Information screen.",
+          "reason": "The generated requirement alters the location of the entry provision, implying the entry might not be directly on the VSP Master Information screen, and adds a display aspect."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "During the claim entry the system should capture the following information.",
+          "generated_requirement": "During the claim entry process, the system must capture the necessary information about what's happening.",
+          "reason": "The generated requirement generalizes 'the following information' to 'the necessary information about what's happening', losing specificity."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "If the claim from same VSP having more than two times of Thump Impression mismatching, then the system should automatically produce a warning message and the same time the system should In-Activate the VSP.",
+          "generated_requirement": "If a claim from the same VSP has a thumb impression mismatch more than two times, the system must in-activate that VSP.",
+          "reason": "The generated requirement misses one of the two critical actions specified in the source: producing a warning message."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group.",
+          "generated_requirement": "Only a system admin can create User Groups.",
+          "reason": "The generated requirement covers the first part of the source (system admin creating user groups) but completely omits the second part about creating individual users under groups."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+          "generated_requirement": "The system must allow a user to save a new staff member with an existing name if required.",
+          "reason": "The generated requirement only covers the saving aspect and omits the critical detail about generating a message when creating a new staff with an existing name."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.",
+          "generated_requirement": "One of the voucher's tear-off slips must have a sub-section tear-off for the partner.",
+          "reason": "The generated requirement significantly alters the described physical structure of the voucher, changing 'two portions with three tear off voucher slips each for Client and Partner' to 'one of the voucher's tear-off slips must have a sub-section tear-off for the partner'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The principles of the voucher, the contents of the health care services, their required quality, the standards to be met by the providers and their infrastructure, as well as the measures for monitoring the quality have been defined in the PDS.",
+          "generated_requirement": "All rules for the voucher, including health care services and quality standards for providers, are defined in the PDS.",
+          "reason": "The generated requirement generalizes several specific details from the source, such as 'required quality' of services, 'infrastructure' for providers, and completely omits 'measures for monitoring the quality'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "The receipt needs to automatically list the details for each voucher used, pulling the `Batch No` and `voucher No` from the available voucher stock.",
+          "reason": "The generated requirement loses the condition 'While entering the No of vouchers required' and the display format 'as a grid format' mentioned in the source."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+          "generated_requirement": "For transactions where the invoice amount is the number of vouchers multiplied by the wholesale price, the mode of payment is always Cash.",
+          "reason": "The generated requirement makes the cash payment conditional on the invoice calculation, which is not explicitly stated in the source. It also completely omits the part about mandatory information."
+        }
+      ],
+      "unmatched_source_examples": [
+        "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+        "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office.",
+        "These information is vital and shall be used for compared with the processed claims.",
+        "Before the claim entry the user should check the form manually to understand whether any mandatory information is missed in the Claim or not.",
+        "The system should have a provision to capture the reason suppose if the claim status is “Rejection or Quarantine” Claim Amount – The calculation of claim amount is explained below."
+      ],
+      "unmatched_generated_examples": [
+        "When creating a new staff member, if a staff with an existing name is entered, the system must generate a warning message.",
+        "The system must allow a rejected claim to be sent back to the VSP.",
+        "The receipt must automatically list the details for each voucher used.",
+        "The system needs to provide the flexibility to create any number of individual users under any of the user groups.",
+        "The details for each voucher used on a receipt should be shown in a grid format.",
+        "The value for 'Health Sub – District' must be selected from a master list.",
+        "When a user is entering VSP details, the value for 'Locality' should come from its own master list.",
+        "When a user is entering VSP details, the value for 'Registration Body' should come from its own master list.",
+        "The voucher will have an MRP, or maximum retail price.",
+        "The receipt must include the `Patient Status`.",
+        "The `Patient Status` must be selected from the `Patient Status Master` list.",
+        "The value for 'Locality' must be selected from a master list.",
+        "The value for 'Level Of Facility' must be selected from a master list.",
+        "The invoice amount shall be calculated as the number of vouchers multiplied by the wholesale price.",
+        "If the `Patient Status` is 'Referral', the receipt must capture who the patient was `Referred To`."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.",
+          "generated_requirement": "The physical voucher must be designed with three tear-off portioned slips.",
+          "reason": "The generated requirement loses critical details about the voucher's structure, specifically 'two portions' and the explicit allocation 'each for Client and Partner'."
+        },
+        {
+          "source_requirement": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes.",
+          "generated_requirement": "The voucher will have an MRP, or maximum retail price.",
+          "reason": "The source specifies properties like batch numbers, voucher numbers, and project codes. The generated requirement introduces MRP as a property, which is a new material detail, and misses the specific properties mentioned in the source."
+        },
+        {
+          "source_requirement": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+          "generated_requirement": "One of the voucher's tear-off slips must have a sub-section tear-off for the partner.",
+          "reason": "The source specifies 'three tear off portioned slips with a sub-section tear-off for the partner'. The generated loses the critical detail about the total number of slips ('three') and implies only 'one' slip has the sub-section."
+        },
+        {
+          "source_requirement": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+          "generated_requirement": "Each voucher slip must have a bar code.",
+          "reason": "The generated requirement loses the critical detail about the two identifications (client and partner) associated with the barcode."
+        },
+        {
+          "source_requirement": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+          "generated_requirement": "The receipt needs to automatically list the details for each voucher used, pulling the `Batch No` and `voucher No` from the available voucher stock.",
+          "reason": "The generated requirement correctly identifies 'Batch No' and 'voucher No' related to 'voucher stock' as mentioned in the source. However, it introduces the concept of a 'receipt' and 'vouchers used', which are not explicitly part of the source's core need for *allocating* vouchers."
+        },
+        {
+          "source_requirement": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+          "generated_requirement": "The invoice amount shall be calculated as the number of vouchers multiplied by the wholesale price.",
+          "reason": "The generated requirement only covers the invoice amount calculation and omits the details about the mode of payment and mandatory information from the source."
+        },
+        {
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "The receipt must automatically list the details for each voucher used.",
+          "reason": "The generated requirement is a significant generalization, losing critical details such as the trigger condition ('While entering the No of vouchers required'), the specific data to be picked ('Batch No’s with voucher No’s from the available voucher stock'), and the display format ('as a grid format')."
+        },
+        {
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "The details for each voucher used on a receipt should be shown in a grid format.",
+          "reason": "The generated requirement only captures the display format ('grid format') and loses the context of when this listing occurs ('While entering the No of vouchers required') and how the data is obtained ('system should automatically pick the Batch No’s with voucher No’s from the available voucher stock')."
+        },
+        {
+          "source_requirement": "The values of Health Sub – District, Locality, Level Of Facility, Type of facility, Registration Body would be list from their own master and should select the details based on the VSP.",
+          "generated_requirement": "When a user is entering VSP details, the value for 'Registration Body' should come from its own master list.",
+          "reason": "The generated requirement only covers one of the listed fields and adds a user action context, while omitting the \"based on VSP\" selection condition."
+        },
+        {
+          "source_requirement": "The values of Health Sub – District, Locality, Level Of Facility, Type of facility, Registration Body would be list from their own master and should select the details based on the VSP.",
+          "generated_requirement": "When a user is entering VSP details, the value for 'Locality' should come from its own master list.",
+          "reason": "The generated requirement only covers one of the listed fields and adds a user action context, while omitting the \"based on VSP\" selection condition."
+        }
+      ]
+    }
+  ]
+}

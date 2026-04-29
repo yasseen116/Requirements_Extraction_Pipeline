@@ -1,0 +1,587 @@
+{
+  "sample_id": "pure_0000_gamma_j",
+  "metadata": {
+    "domain": "pure_document",
+    "source_type": "synthetic",
+    "parent_id": "pure_0000_gamma_j",
+    "split": "benchmark",
+    "dialogue_style": "adaptive_semantic_coverage"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_gamma_j",
+    "title": "0000 - gamma j",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - gamma j.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - gamma j.pdf"
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "To start, what is the overall purpose and scope of this system?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "This project is based on the 0000 - gamma j system, and the goal is to capture the main requirements and constraints for document 0000_gamma_j."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Okay, to help us start capturing those requirements for the gamma j system, could you describe the primary tasks a user will need to accomplish with it?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "Well, the main thing is for customers to buy things, and for that to happen, they must have one or more items in the shopping cart. We also need to make sure the payment side works, so it's important that the system can run test credit card transactions. Looking ahead, it's also critical that Yoggie coordinates with us on future enhancements and features. And just so we're on the same page, when we talk about what it needs to do, we're focused on its required functionality—the specific behaviors the system will exhibit under certain conditions."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "That makes sense. Thinking about what happens right after a successful purchase, does the system need to send out any confirmation emails to the customer or perhaps notify the vendor?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "Yes, absolutely. After a purchase, we need to email both the customer and the vendor. It's really important that this happens fast, so it should be able to send those emails in less than 1 second."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "That's a helpful performance detail. We've covered what happens after a successful purchase, but what should the system do if a customer's payment is declined?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "When a payment is declined, that's a specific condition where the system needs to have a clear function or behavior. It's important because we have to satisfy the customer's objective, so the product must possess the capability to handle that situation properly."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "That makes sense. When the system handles that declined payment, how should it present that information to the customer to make sure the message is clear and easy to act on?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "To make sure the message is clear, we need to make sure we utilize consistent symbols and colors for our notifications. That way, users will immediately recognize what kind of message they're seeing, whether it's an error, a warning, or a success."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "That's a great point about making notifications clear for users. Thinking about system-level events, what kind of alerts or automatic responses should happen if we detect a potential security threat, like an unusually high volume of traffic from a single source?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "That's a critical area for us. If we see something like an IP DOS attack, the system absolutely needs to auto detect it and block that IP automatically. We also need it to be smart enough to detect consecutive failed login attempts, since that's another common attack vector. For overall protection, we're planning to have the system protected by that open source firewall called Firestarter. And of course, it's a given that all sensitive information must be encrypted via https."
+    },
+    {
+      "turn_id": 13,
+      "role": "bot",
+      "text": "That's very clear on the security front. Thinking about the data itself—like the inventory details and customer information that needs to be protected—do you have any specific requirements for the database system where all this will be stored?"
+    },
+    {
+      "turn_id": 14,
+      "role": "user",
+      "text": "Yes, we do. It's a firm constraint that we must use a SQL based database for this project, and that's where all the inventory information will need to be stored. Beyond that, we have a couple of other data integrity concerns. When users are adding product photos, we need the system to automatically compress image files that are too large in size. And for customer data, it's really important that the system can validate email address existence when a new user signs up, to make sure we're getting legitimate contact information."
+    },
+    {
+      "turn_id": 15,
+      "role": "bot",
+      "text": "That's great information on validating emails and compressing images. You also mentioned the need for a SQL database to store this data. When we're storing sensitive customer information in that database, should we be taking any specific measures, like encryption, to protect it?"
+    },
+    {
+      "turn_id": 16,
+      "role": "user",
+      "text": "Yes, absolutely. Protecting our customers' information is a top priority for us. We need to encrypt all customer data in the database. And you're correct, we've decided we must use a SQL based database for this."
+    },
+    {
+      "turn_id": 17,
+      "role": "bot",
+      "text": "Thanks for clarifying the encryption requirement. Since the system will be built on a SQL database, is there a particular one, like PostgreSQL or MySQL, that your team already uses or prefers?"
+    },
+    {
+      "turn_id": 18,
+      "role": "user",
+      "text": "We don't have a strong preference for a specific one like PostgreSQL or MySQL. The main thing for us is that it must use a SQL based database. As long as that requirement is met, we'll leave the final choice up to the technical team."
+    },
+    {
+      "turn_id": 19,
+      "role": "bot",
+      "text": "That's helpful regarding the database choice. Thinking about how the system communicates with customers after a purchase, what kind of information should we automatically include in the order confirmation email?"
+    },
+    {
+      "turn_id": 20,
+      "role": "user",
+      "text": "The confirmation email should definitely tell the customer that their items will be delivered to their shipping address and it absolutely must include the tracking number. On a related note, if any customers or our own sales people have technical queries, we need an e-mail to go straight to the System Administrator. This is all part of making sure the experience is smooth for the customer, so the interface has to be intuitive and remain consistent among various web browsers. And just to be clear, the whole Web Store needs to operate on our required platform, which is an Intel based system with Slackware Linux 2.6 and an Apache Web Server."
+    },
+    {
+      "turn_id": 21,
+      "role": "bot",
+      "text": "That's a helpful detail about routing technical queries. To make sure we handle that correctly, how would a customer or salesperson initiate that email to the System Administrator—is it through a specific 'contact support' form on the website?"
+    },
+    {
+      "turn_id": 22,
+      "role": "user",
+      "text": "That's a good question, but I'm more concerned about the communications that happen after an order is placed. When a customer uses the WebOrder system, we need to send an e-mail confirmation letting them know the items they ordered will be delivered to their shipping address, and it's very important that this email includes the tracking number. For any of this to happen, of course, the customer must be able to access the web order system through a web browser using HTTPS for security."
+    },
+    {
+      "turn_id": 23,
+      "role": "bot",
+      "text": "You’ve emphasized the importance of a smooth experience for the customer. To ensure the site feels responsive, when a customer searches for a specific product, what's our goal for how quickly those results should appear?"
+    },
+    {
+      "turn_id": 24,
+      "role": "user",
+      "text": "A customer should be able to search for a specified product and see the results in less than 1 second. To make that happen, I know the team said we need to perform searches using Dijkstra's shortest path algorithm. Overall, the system needs to be pretty robust, able to retrieve 200 products per second to handle the load. And on a related note about performance, if something goes wrong, it's important that we can restore 1000 records per second to get back up and running quickly."
+    },
+    {
+      "turn_id": 25,
+      "role": "bot",
+      "text": "That's a great performance target for product retrieval. To get a fuller picture of the system's load, how many customers do we anticipate will be logged in and actively using the site at the same time during your busiest periods?"
+    },
+    {
+      "turn_id": 26,
+      "role": "user",
+      "text": "During our busiest periods, we need to be able to handle 1000 customers logged in concurrently at the same time. The experience for those users has to be really snappy. For instance, adding a product to the shopping cart should be incredibly fast, less than 2ms. And when a customer is ready to buy, we need to acquire the shipping charges in less than 2 seconds. We also have an operational requirement that's important: upon the USB being plugged in, the system has to be deployed and fully operational in less than 1 minute."
+    },
+    {
+      "turn_id": 27,
+      "role": "bot",
+      "text": "You mentioned that acquiring shipping charges needs to be very fast. To make that calculation possible, what information must a customer have already provided before they can see those charges?"
+    },
+    {
+      "turn_id": 28,
+      "role": "user",
+      "text": "Right, for that to work, there's a pre-condition. Basically, a certain condition must be satisfied or the system has to be in a specific state before that use case can even begin."
+    },
+    {
+      "turn_id": 29,
+      "role": "bot",
+      "text": "You’ve brought up several different users like customers, salespeople, and administrators. It sounds like the first step for any of them is to have an account. Once they're logged in, what are the key differences in what each of them can see and do within the system?"
+    },
+    {
+      "turn_id": 30,
+      "role": "user",
+      "text": "That's a great question. You're right, the first step for any of these users is getting set up. A Customer, for instance, has to have a registered account before they can use the Weborder System. It's the same for our Sales Person role – they also need an account to be registered. And for an Administrator, not only do they need a registered account, but they must be logged-in on the system to perform any of their functions."
+    },
+    {
+      "turn_id": 31,
+      "role": "bot",
+      "text": "It's clear that keeping the system running smoothly for our customers is a top priority. To make sure it's always there when they need it, how much total downtime, for things like maintenance or unexpected issues, would be acceptable over the course of a year?"
+    },
+    {
+      "turn_id": 32,
+      "role": "user",
+      "text": "We need this to be extremely reliable for our customers, so it should have an availability of 99.99%. And if something does go wrong, we need a simple recovery process. It should be easy to migrate the system or have it backed up via another usb drive to get things running again quickly."
+    },
+    {
+      "turn_id": 33,
+      "role": "bot",
+      "text": "You mentioned deploying and recovering the system from a USB drive, which sounds very self-contained. To help us understand the full environment, will the hardware it's running on have an internet connection for things like security patches and updates?"
+    },
+    {
+      "turn_id": 34,
+      "role": "user",
+      "text": "Yes, absolutely. The hardware will need an internet connection so it can be fixed and patched. While we're on the topic of being online, the Web Store needs to operate with some specific browsers for our users; it has to work with Microsoft Internet Explorer version 6 and 7, and also Netscape Communicator Version 4 and 5. It's also important that we're able to create a test environment of the weborder system to make sure everything is working correctly before it goes live."
+    }
+  ],
+  "dialogue_generation": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "model": "gemini-2.5-pro",
+    "prompt_hash": "fedce691ffc0c220a6c2ce1eafe35d01f4b661ebbfe2e77f828010c8af7381a9",
+    "schema_hash": "9be8d6915a55c470069248e40ccedc82f618947177ed980cd44251e29f62cc21",
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "coverage_threshold": 0.55,
+    "max_turns": 28,
+    "target_dialogue_recall": 0.82,
+    "theme_max_exchanges": 3,
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails.",
+    "clarification_rounds": 2,
+    "trace": [
+      {
+        "theme": "goal_scope",
+        "req_ids": [],
+        "bot_turn_id": 1,
+        "user_turn_id": 2,
+        "generation_mode": "deterministic_scope",
+        "coverage_ratio": 1.0,
+        "stage": "adaptive_opening"
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0050",
+          "AUTO-0041",
+          "AUTO-0042",
+          "AUTO-0037"
+        ],
+        "bot_turn_id": 3,
+        "user_turn_id": 4,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 57
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0042",
+          "AUTO-0014",
+          "AUTO-0045"
+        ],
+        "bot_turn_id": 5,
+        "user_turn_id": 6,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 50
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0042",
+          "AUTO-0045"
+        ],
+        "bot_turn_id": 7,
+        "user_turn_id": 8,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 49
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0029"
+        ],
+        "bot_turn_id": 9,
+        "user_turn_id": 10,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 48
+      },
+      {
+        "theme": "security_audit",
+        "req_ids": [
+          "AUTO-0023",
+          "AUTO-0019",
+          "AUTO-0021",
+          "AUTO-0022"
+        ],
+        "bot_turn_id": 11,
+        "user_turn_id": 12,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 47
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0027",
+          "AUTO-0004",
+          "AUTO-0003",
+          "AUTO-0028"
+        ],
+        "bot_turn_id": 13,
+        "user_turn_id": 14,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 43
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0020",
+          "AUTO-0004"
+        ],
+        "bot_turn_id": 15,
+        "user_turn_id": 16,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 40
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0004"
+        ],
+        "bot_turn_id": 17,
+        "user_turn_id": 18,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 39
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0007",
+          "AUTO-0006",
+          "AUTO-0008",
+          "AUTO-0002"
+        ],
+        "bot_turn_id": 19,
+        "user_turn_id": 20,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 38
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0007",
+          "AUTO-0046"
+        ],
+        "bot_turn_id": 21,
+        "user_turn_id": 22,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 35
+      },
+      {
+        "theme": "performance_capacity",
+        "req_ids": [
+          "AUTO-0025",
+          "AUTO-0011",
+          "AUTO-0013",
+          "AUTO-0017"
+        ],
+        "bot_turn_id": 23,
+        "user_turn_id": 24,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 30
+      },
+      {
+        "theme": "performance_capacity",
+        "req_ids": [
+          "AUTO-0016",
+          "AUTO-0012",
+          "AUTO-0010",
+          "AUTO-0009"
+        ],
+        "bot_turn_id": 25,
+        "user_turn_id": 26,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 26
+      },
+      {
+        "theme": "workflows_business_rules",
+        "req_ids": [
+          "AUTO-0044"
+        ],
+        "bot_turn_id": 27,
+        "user_turn_id": 28,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 22
+      },
+      {
+        "theme": "user_roles_permissions",
+        "req_ids": [
+          "AUTO-0055",
+          "AUTO-0051",
+          "AUTO-0047",
+          "AUTO-0052"
+        ],
+        "bot_turn_id": 29,
+        "user_turn_id": 30,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 21
+      },
+      {
+        "theme": "availability_reliability",
+        "req_ids": [
+          "AUTO-0035",
+          "AUTO-0024"
+        ],
+        "bot_turn_id": 31,
+        "user_turn_id": 32,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 14
+      },
+      {
+        "theme": "deployment_environment_constraints",
+        "req_ids": [
+          "AUTO-0040",
+          "AUTO-0001",
+          "AUTO-0039"
+        ],
+        "bot_turn_id": 33,
+        "user_turn_id": 34,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 12
+      }
+    ],
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 0,
+    "coverage_summary": {
+      "clarification_rounds_requested": 2,
+      "clarification_rounds_used": 0,
+      "initial_uncovered_requirement_count": 57,
+      "final_uncovered_requirement_count": 8,
+      "final_uncovered_req_ids": [
+        "AUTO-0005",
+        "AUTO-0030",
+        "AUTO-0032",
+        "AUTO-0033",
+        "AUTO-0034",
+        "AUTO-0036",
+        "AUTO-0042",
+        "AUTO-0043"
+      ],
+      "coverage_history": [
+        0.0,
+        0.1228070175438597,
+        0.14035087719298245,
+        0.1578947368421053,
+        0.17543859649122806,
+        0.24561403508771928,
+        0.29824561403508776,
+        0.3157894736842105,
+        0.33333333333333337,
+        0.38596491228070173,
+        0.4736842105263158,
+        0.543859649122807,
+        0.6140350877192983,
+        0.631578947368421,
+        0.7543859649122807,
+        0.7894736842105263,
+        0.8596491228070176
+      ],
+      "exchanges": 17,
+      "target_dialogue_recall": 0.82,
+      "final_dialogue_recall": 0.8596491228070176,
+      "theme_exchange_counts": {
+        "functional_capabilities": 3,
+        "usability_help_accessibility": 1,
+        "security_audit": 1,
+        "data_validation": 3,
+        "interfaces_integrations": 2,
+        "performance_capacity": 2,
+        "workflows_business_rules": 1,
+        "user_roles_permissions": 1,
+        "availability_reliability": 1,
+        "deployment_environment_constraints": 1
+      },
+      "theme_coverage": {
+        "user_roles_permissions": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "workflows_business_rules": {
+          "total": 3,
+          "covered": 3,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "data_validation": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 6,
+          "covered": 6,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 10,
+          "covered": 10,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 6,
+          "covered": 6,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 6,
+          "covered": 6,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 9,
+          "covered": 4,
+          "uncovered": 5,
+          "recall": 0.4444444444444444
+        },
+        "reporting_documentation": {
+          "total": 2,
+          "covered": 0,
+          "uncovered": 2,
+          "recall": 0.0
+        },
+        "other_constraints": {
+          "total": 3,
+          "covered": 2,
+          "uncovered": 1,
+          "recall": 0.6666666666666666
+        }
+      },
+      "critical_theme_gaps": [],
+      "stopped_reason": "target_dialogue_recall_reached"
+    }
+  }
+}

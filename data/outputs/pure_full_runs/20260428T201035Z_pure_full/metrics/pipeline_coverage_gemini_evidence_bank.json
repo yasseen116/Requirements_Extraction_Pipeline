@@ -1,0 +1,147 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/generated_requirements_gemini_evidence_bank",
+  "match_threshold": 0.55,
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 1,
+    "macro_precision": 0.7945205479452054,
+    "macro_coverage_recall": 0.58,
+    "macro_f1": 0.6705202312138728,
+    "macro_hallucination_rate": 0.2054794520547945,
+    "macro_average_match_score": 0.818880582677907,
+    "macro_average_best_source_score": 0.7120634427666664,
+    "micro_precision": 0.7945205479452054,
+    "micro_coverage_recall": 0.58,
+    "micro_f1": 0.6705202312138728,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 73,
+    "total_matched_requirements": 58
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 73,
+      "matched_count": 58,
+      "precision": 0.7945205479452054,
+      "coverage_recall": 0.58,
+      "f1": 0.6705202312138728,
+      "hallucination_rate": 0.2054794520547945,
+      "average_match_score": 0.818880582677907,
+      "average_best_source_score": 0.7120634427666664,
+      "unmatched_source_examples": [
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+        "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "The System must be able to capture and store violations (i.e.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "the most stringent) implies that the System must not include such cases in any count of search results;",
+        "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+        "The System must employ a single set of user interface rules, or a small number of sets to provide a familiar and common look and feel for the application.",
+        "The System must be able to display several entities (cases, suspects) simultaneously.",
+        "Such configurations must be saved in the user profile.",
+        "Where the System employs a graphical user interface, it must allow users to customise it.",
+        "Usability The user interfaces should be designed to make them user-intuitive."
+      ],
+      "unmatched_generated_examples": [
+        "The system must allow the user to track logged enhancement requests on the application thereafter.",
+        "The system must avoid requiring users to click through endless screens to complete their daily work.",
+        "The navigation component must clearly indicate where the user is currently located.",
+        "The system must be designed in a manner that operational data is not lost in case of any failure of equipment or communication network, and it must hold onto that information safely until the connection is back.",
+        "If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time.",
+        "The audit trail data cannot be deleted by any user.",
+        "Whenever possible, error messages must spell out the actions the user can take to resolve the error, rather than just giving them a dead end.",
+        "The system must support police operations that run around the clock.",
+        "System restoration following a software or hardware failure must be complete with inline synchronization.",
+        "The system must provide solid role-based control for the functionality within the system to manage permissions.",
+        "The system design must take into account human capabilities and restrictions in perceiving color.",
+        "The police will take the complaint forward based on the evidence, facts and following investigation.",
+        "The system must provide an interface for the user to log any enhancement requests on the application.",
+        "The setup must be compatible with specialist software that may be used.",
+        "The software is not expected to do all the heavy lifting on validation itself."
+      ],
+      "match_examples": [
+        {
+          "score": 0.9999997615814209,
+          "source_requirement": "The interfaces must be made customizable or user-configurable to the extent possible.",
+          "generated_requirement": "The interfaces must be made customizable or user-configurable to the extent possible."
+        },
+        {
+          "score": 0.9929530024528503,
+          "source_requirement": "Splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+          "generated_requirement": "Splash screens must be avoided unless they provide useful content or feedback about the application state to the user."
+        },
+        {
+          "score": 0.9899122714996338,
+          "source_requirement": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+          "generated_requirement": "The system must maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers."
+        },
+        {
+          "score": 0.9820891618728638,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "Any space filled only with the background color must be used in such a way that it does not impair the visual skimming of the page."
+        },
+        {
+          "score": 0.9778141379356384,
+          "source_requirement": "Frequently-executed System transactions must be designed so that they can be completed with a small number of interactions (e.g.",
+          "generated_requirement": "Frequently-executed system transactions must be designed so they can be completed with a small number of interactions."
+        },
+        {
+          "score": 0.9752966165542603,
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "The system must provide the ability to export audit trails for specified cases, but doing so must happen without affecting the audit trail stored by the System."
+        },
+        {
+          "score": 0.9669778943061829,
+          "source_requirement": "The System should allow a user to stipulate which other users or groups can access cases.",
+          "generated_requirement": "The system must allow a user to stipulate which other users or groups can access cases."
+        },
+        {
+          "score": 0.94161456823349,
+          "source_requirement": "The number of incidents of unplanned downtime for the System must not exceed <x> per <rolling three month period>.",
+          "generated_requirement": "The actual number of incidents of unplanned downtime must not exceed <x> per <rolling three month period>."
+        },
+        {
+          "score": 0.9279583692550659,
+          "source_requirement": "Ease of Use All error messages produced by the System must be meaningful, so that they can be appropriately acted upon by the users who are likely to see them.",
+          "generated_requirement": "All error messages produced by the system must be meaningful so they can be appropriately acted upon by the users who are likely to see them."
+        },
+        {
+          "score": 0.9239632487297058,
+          "source_requirement": "Making text resizable by the user: Text should be able to be resized by the user, using functions provided by the user agent or other appropriate means i.e.",
+          "generated_requirement": "Text must be able to be resized by the user easily using functions provided by the user agent or other appropriate means."
+        },
+        {
+          "score": 0.9229156970977783,
+          "source_requirement": "Unplanned downtime for the System must not exceed <xx hours/minutes> per <rolling three month period>.",
+          "generated_requirement": "Total unplanned downtime must not exceed <xx hours/minutes> over a <rolling three month period>."
+        },
+        {
+          "score": 0.9197942614555359,
+          "source_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "generated_requirement": "The system must consult and comply with ISO 9241-303 for screen text legibility requirements."
+        },
+        {
+          "score": 0.9192033410072327,
+          "source_requirement": "Making individualization and adaptation evident: It should be made evident to the user when individualization and/or adaptation are used.",
+          "generated_requirement": "It must be made evident to the user when individualization and/or adaptation are used."
+        },
+        {
+          "score": 0.917338490486145,
+          "source_requirement": "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",
+          "generated_requirement": "The audit trail must store any access to cases, and all other activities involving the cases and related documents or data, to assist in data recovery if something goes wrong."
+        },
+        {
+          "score": 0.9127830266952515,
+          "source_requirement": "Consistency between navigation components and content: If navigation components (or overviews) are shown in conjunction with associated content, consistency between the navigation component and the content shown should be maintained by indicating in the navigation component (e.g.",
+          "generated_requirement": "The system must maintain consistency between the navigation component and the associated content whenever navigation components or overviews are shown in conjunction with associated content."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,997 @@
+{
+  "sample_id": "pure_0000_cctns",
+  "project_summary": "The project involves capturing core requirements for the CCTNS system, focusing on streamlining workflows and improving user efficiency.",
+  "propositions": [
+    {
+      "id": "prop_1",
+      "category": "non_functional",
+      "text": "Frequently-executed system transactions must be designed so they can be completed with a small number of interactions.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_2",
+      "category": "non_functional",
+      "text": "The system must avoid requiring users to click through endless screens to complete their daily work.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_01",
+      "category": "non_functional",
+      "text": "Page titles must be placed in a consistent location on the different pages.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:1"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_02",
+      "category": "non_functional",
+      "text": "The system must maintain consistency between the navigation component and the associated content whenever navigation components or overviews are shown in conjunction with associated content.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_03",
+      "category": "non_functional",
+      "text": "The navigation component must clearly indicate where the user is currently located.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_04",
+      "category": "non_functional",
+      "text": "Every single page must have a link leading to the home page of the application, or at least to a landmark page that is easy to recognize for the user.",
+      "priority": "high",
+      "evidence_turns": [
+        6,
+        14,
+        32
+      ],
+      "source_unit_ids": [
+        "14:1",
+        "32:4",
+        "6:4",
+        "6:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_05",
+      "category": "non_functional",
+      "text": "End User and Administrator functions must be easy to use and intuitive throughout.",
+      "priority": "medium",
+      "evidence_turns": [
+        6,
+        14,
+        32
+      ],
+      "source_unit_ids": [
+        "14:3",
+        "32:5",
+        "6:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_06",
+      "category": "non_functional",
+      "text": "Text pages containing large proportions of links must be formatted so that the presence of links does not impede the readability of the text.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_07",
+      "category": "non_functional",
+      "text": "The system must be designed in a manner that operational data is not lost in case of any failure of equipment or communication network, and it must hold onto that information safely until the connection is back.",
+      "priority": "high",
+      "evidence_turns": [
+        8,
+        14,
+        32,
+        34
+      ],
+      "source_unit_ids": [
+        "14:4",
+        "32:6",
+        "34:1",
+        "34:2",
+        "8:1",
+        "8:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_08",
+      "category": "non_functional",
+      "text": "The user interfaces must ensure input device independence and be designed to allow activation of controls by a variety of input devices, not just a standard mouse.",
+      "priority": "high",
+      "evidence_turns": [
+        8,
+        14
+      ],
+      "source_unit_ids": [
+        "14:5",
+        "8:3",
+        "8:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_09",
+      "category": "non_functional",
+      "text": "The length of a page must be selected to support the primary purpose and use of the page.",
+      "priority": "high",
+      "evidence_turns": [
+        8,
+        16
+      ],
+      "source_unit_ids": [
+        "16:1",
+        "16:2",
+        "8:5"
+      ],
+      "nfr_category": "compliance"
+    },
+    {
+      "id": "prop_10",
+      "category": "non_functional",
+      "text": "The system must consult and comply with ISO 9241-303 for screen text legibility requirements.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:6"
+      ],
+      "nfr_category": "compliance"
+    },
+    {
+      "id": "prop_11",
+      "category": "functional",
+      "text": "If the visual layout is ever an issue for accessibility or preference, the user must be provided with an equivalent alternative text-only page.",
+      "priority": "high",
+      "evidence_turns": [
+        10,
+        16,
+        30
+      ],
+      "source_unit_ids": [
+        "10:1",
+        "16:4",
+        "30:4"
+      ]
+    },
+    {
+      "id": "prop_12",
+      "category": "functional",
+      "text": "A dedicated Help Module must offer detailed context-sensitive help material for all the possible actions and scenarios the user might encounter.",
+      "priority": "high",
+      "evidence_turns": [
+        10,
+        16
+      ],
+      "source_unit_ids": [
+        "10:2",
+        "16:5"
+      ]
+    },
+    {
+      "id": "prop_13",
+      "category": "functional",
+      "text": "Context-sensitive help material must be available across all user interfaces in the application so users are never left guessing.",
+      "priority": "high",
+      "evidence_turns": [
+        10,
+        18
+      ],
+      "source_unit_ids": [
+        "10:3",
+        "18:1"
+      ]
+    },
+    {
+      "id": "prop_14",
+      "category": "non_functional",
+      "text": "Text must be able to be resized by the user easily using functions provided by the user agent or other appropriate means.",
+      "priority": "high",
+      "evidence_turns": [
+        10,
+        18
+      ],
+      "source_unit_ids": [
+        "10:4",
+        "10:5",
+        "18:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_15",
+      "category": "non_functional",
+      "text": "Navigation links must be clearly distinguishable from controls activating some action so users shouldn't have to guess if a click will take them to a new page or trigger a process.",
+      "priority": "medium",
+      "evidence_turns": [
+        10,
+        18
+      ],
+      "source_unit_ids": [
+        "10:6",
+        "10:7",
+        "18:3",
+        "18:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_16",
+      "category": "non_functional",
+      "text": "The system must use clear links, bulleted lists, highlighted keywords, logical headings, short phrases, and sentences to support fast skimming of text.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_17",
+      "category": "non_functional",
+      "text": "Horizontal scrolling must be avoided wherever possible because it really disrupts the flow.",
+      "priority": "high",
+      "evidence_turns": [
+        12,
+        18
+      ],
+      "source_unit_ids": [
+        "12:3",
+        "18:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_01",
+      "category": "non_functional",
+      "text": "The system must minimize the number of navigation steps needed to reach a certain piece of content.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_02",
+      "category": "non_functional",
+      "text": "The system must take into account different mental models, navigation strategies, and tasks of the user.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_03",
+      "category": "functional",
+      "text": "The system must offer alternative access paths for navigating to a specific unit of content.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:8"
+      ]
+    },
+    {
+      "id": "prop_06",
+      "category": "functional",
+      "text": "Workspace customisation must include, but need not be limited to, changes like adjusting the menu contents.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:3"
+      ]
+    },
+    {
+      "id": "prop_10",
+      "category": "non_functional",
+      "text": "Any space filled only with the background color must be used in such a way that it does not impair the visual skimming of the page.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_16",
+      "category": "non_functional",
+      "text": "The quality of textual content with respect to spelling and grammar must be sufficient so as not to impede readability.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:5",
+        "18:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_18",
+      "category": "non_functional",
+      "text": "Each presentation segment, whether a page or a window, must provide the user with a clear and sufficient indication of where they are in the navigation structure and their current segment position with respect to the overall structure.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:1",
+        "20:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_19",
+      "category": "non_functional",
+      "text": "Links that open new browser windows or pop-up windows must be clearly marked so users are not surprised.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_001",
+      "category": "non_functional",
+      "text": "The reading and understanding of the textual content on the screen must be supported by suitable means, such as the use of short sentences.",
+      "priority": "medium",
+      "evidence_turns": [
+        20,
+        38
+      ],
+      "source_unit_ids": [
+        "20:4",
+        "20:5",
+        "20:6",
+        "38:1"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_002",
+      "category": "non_functional",
+      "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time.",
+      "priority": "medium",
+      "evidence_turns": [
+        20,
+        38
+      ],
+      "source_unit_ids": [
+        "20:4",
+        "20:5",
+        "20:6",
+        "38:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_003",
+      "category": "non_functional",
+      "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the system must provide a configuration option to just display title and metadata instead of the full file.",
+      "priority": "medium",
+      "evidence_turns": [
+        20,
+        38
+      ],
+      "source_unit_ids": [
+        "20:4",
+        "20:5",
+        "20:6",
+        "38:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_004",
+      "category": "interfaces",
+      "text": "The system must allow a user to stipulate which other users or groups can access cases.",
+      "priority": "high",
+      "evidence_turns": [
+        20,
+        38
+      ],
+      "source_unit_ids": [
+        "20:7",
+        "38:4"
+      ]
+    },
+    {
+      "id": "prop_006",
+      "category": "functional",
+      "text": "The system must allow a user to be a member of more than one group.",
+      "priority": "high",
+      "evidence_turns": [
+        22,
+        38
+      ],
+      "source_unit_ids": [
+        "22:2",
+        "22:3",
+        "38:6"
+      ]
+    },
+    {
+      "id": "prop_008",
+      "category": "non_functional",
+      "text": "If frames are used in the interface, the system must provide an alternative way of presenting relevant information without frames.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:4",
+        "22:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "p1",
+      "category": "data",
+      "text": "Any access to cases must be stored in the audit trail.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:1"
+      ]
+    },
+    {
+      "id": "p2",
+      "category": "data",
+      "text": "All other activities involving the cases and related documents or data must be stored in the audit trail.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:1"
+      ]
+    },
+    {
+      "id": "p3",
+      "category": "non_functional",
+      "text": "The audit trail must store any access to cases, and all other activities involving the cases and related documents or data, to assist in data recovery if something goes wrong.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:2"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "p5",
+      "category": "non_functional",
+      "text": "The audit trail data cannot be modified in any way by any user.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "p6",
+      "category": "non_functional",
+      "text": "The audit trail data cannot be deleted by any user.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "p7",
+      "category": "data",
+      "text": "The system must maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:4"
+      ]
+    },
+    {
+      "id": "p8",
+      "category": "functional",
+      "text": "The system must provide the ability to export audit trails for specified cases, but doing so must happen without affecting the audit trail stored by the System.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:5"
+      ]
+    },
+    {
+      "id": "p10",
+      "category": "non_functional",
+      "text": "Any changes to access rights for groups or users must be restricted so they are made only by super-user.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "p11",
+      "category": "non_functional",
+      "text": "Any changes to security level for groups or users must be restricted so they are made only by super-user.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "p13",
+      "category": "non_functional",
+      "text": "Any changes to password allocation and management for groups or users must be restricted so they are made only by super-user.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "p14",
+      "category": "interfaces",
+      "text": "The system must provide an interface for the user to log any defects on the application.",
+      "priority": "medium",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:5"
+      ]
+    },
+    {
+      "id": "p15",
+      "category": "interfaces",
+      "text": "The system must provide an interface for the user to log any enhancement requests on the application.",
+      "priority": "medium",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:5"
+      ]
+    },
+    {
+      "id": "p16",
+      "category": "functional",
+      "text": "The system must allow the user to track logged defects on the application thereafter.",
+      "priority": "medium",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:5"
+      ]
+    },
+    {
+      "id": "p17",
+      "category": "functional",
+      "text": "The system must allow the user to track logged enhancement requests on the application thereafter.",
+      "priority": "medium",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:5"
+      ]
+    },
+    {
+      "id": "prop_1",
+      "category": "data",
+      "text": "Persistent defaults for data entry must not be limited to standard system defaults.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:1",
+        "28:2"
+      ]
+    },
+    {
+      "id": "prop_3",
+      "category": "functional",
+      "text": "Persistent defaults for data entry must include user-definable values so individuals can tailor the inputs to their daily work.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:3"
+      ]
+    },
+    {
+      "id": "prop_4",
+      "category": "non_functional",
+      "text": "Ease of use must be the main priority when mistakes happen.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_5",
+      "category": "non_functional",
+      "text": "All error messages produced by the system must be meaningful so they can be appropriately acted upon by the users who are likely to see them.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_6",
+      "category": "non_functional",
+      "text": "Whether error messages are shown on the pages themselves or on special error pages, the content must clearly state the reason why the error occurred.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_7",
+      "category": "non_functional",
+      "text": "Whenever possible, error messages must spell out the actions the user can take to resolve the error, rather than just giving them a dead end.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_8",
+      "category": "functional",
+      "text": "The system must allow citizens to register their complaints with the police.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:1"
+      ]
+    },
+    {
+      "id": "prop_9",
+      "category": "constraints",
+      "text": "The software is not expected to do all the heavy lifting on validation itself.",
+      "priority": "medium",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:2"
+      ]
+    },
+    {
+      "id": "prop_10",
+      "category": "business_rules",
+      "text": "The police will take the complaint forward based on the evidence, facts and following investigation.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:3"
+      ]
+    },
+    {
+      "id": "prop_01",
+      "category": "interfaces",
+      "text": "The system must support a multilingual interface.",
+      "priority": "high",
+      "evidence_turns": [
+        32,
+        34
+      ],
+      "source_unit_ids": [
+        "32:2",
+        "34:3"
+      ]
+    },
+    {
+      "id": "prop_02",
+      "category": "interfaces",
+      "text": "The interfaces must be made customizable or user-configurable to the extent possible.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:3"
+      ]
+    },
+    {
+      "id": "prop_03",
+      "category": "interfaces",
+      "text": "The setup must be compatible with specialist software that may be used.",
+      "priority": "high",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:4"
+      ]
+    },
+    {
+      "id": "prop_1",
+      "category": "non_functional",
+      "text": "The system must support police operations that run around the clock.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:1"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "prop_2",
+      "category": "non_functional",
+      "text": "Total unplanned downtime must not exceed <xx hours/minutes> over a <rolling three month period>.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:2",
+        "36:3"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "prop_4",
+      "category": "non_functional",
+      "text": "The actual number of incidents of unplanned downtime must not exceed <x> per <rolling three month period>.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:4"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "prop_5",
+      "category": "non_functional",
+      "text": "In the event of any software or hardware failure, the system must be able to be restored within no more than <xx> hours.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:5"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "prop_6",
+      "category": "non_functional",
+      "text": "System restoration following a software or hardware failure must be complete with inline synchronization.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:5"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "prop_005",
+      "category": "non_functional",
+      "text": "The system must provide solid role-based control for the functionality within the system to manage permissions.",
+      "priority": "high",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:5"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "prop_01",
+      "category": "non_functional",
+      "text": "Whenever the platform is individualizing or adapting content based on predefined user profiles or user-specified profiles, the profile currently used must be made evident to the person looking at the screen.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_02",
+      "category": "non_functional",
+      "text": "Splash screens must be avoided unless they provide useful content or feedback about the application state to the user.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_03",
+      "category": "non_functional",
+      "text": "The entire user interface must be suitable for users with special needs.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_04",
+      "category": "non_functional",
+      "text": "Accessibility must be a priority for the user interface.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_05",
+      "category": "non_functional",
+      "text": "When designing visual cues, color must be used with care.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_06",
+      "category": "non_functional",
+      "text": "Color must not be used as the only means of conveying information.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_07",
+      "category": "non_functional",
+      "text": "The system design must take into account human capabilities and restrictions in perceiving color.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "prop_08",
+      "category": "non_functional",
+      "text": "It must be made evident to the user when individualization and/or adaptation are used.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:7"
+      ],
+      "nfr_category": "usability"
+    }
+  ],
+  "removed_duplicates": []
+}

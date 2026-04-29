@@ -10,8 +10,11 @@ __pycache__/
 .ipynb_checkpoints/
 
 ## Generated artifacts
-outputs/
-data/outputs/
+/outputs/
+data/outputs/*
+!data/outputs/README.md
+!data/outputs/pure_full_runs/
+!data/outputs/pure_full_runs/**
 
 ## Temporary eval files
 **/evaluation_tmp.json
@@ -21,4 +24,3 @@ data/outputs/
 
 ## OS/editor noise
 .DS_Store
-

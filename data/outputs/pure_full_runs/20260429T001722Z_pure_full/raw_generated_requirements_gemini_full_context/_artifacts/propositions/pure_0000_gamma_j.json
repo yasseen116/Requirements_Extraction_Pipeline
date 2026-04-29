@@ -1,0 +1,610 @@
+{
+  "sample_id": "pure_0000_gamma_j",
+  "project_summary": "This project aims to capture the requirements for the 0000 - gamma j e-commerce system for customers to purchase items.",
+  "propositions": [
+    {
+      "id": "4:1-1",
+      "category": "business_rules",
+      "text": "A customer must have one or more items in the shopping cart to buy things.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:1"
+      ]
+    },
+    {
+      "id": "4:2-1",
+      "category": "functional",
+      "text": "The system must be able to run test credit card transactions.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:2"
+      ]
+    },
+    {
+      "id": "6:2-1",
+      "category": "functional",
+      "text": "The system must email both the customer and the vendor after a purchase.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:2"
+      ]
+    },
+    {
+      "id": "6:3-1",
+      "category": "non_functional",
+      "text": "The system should be able to send emails in less than 1 second after a purchase.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "8:1-1",
+      "category": "functional",
+      "text": "The system needs to have a clear function or behavior for when a payment is declined.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:1"
+      ]
+    },
+    {
+      "id": "10:1-1",
+      "category": "non_functional",
+      "text": "The system must utilize consistent symbols and colors for notifications.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:1"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "10:2-1",
+      "category": "functional",
+      "text": "Notifications must support error, warning, and success message types.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:2"
+      ]
+    },
+    {
+      "id": "12:2-1",
+      "category": "non_functional",
+      "text": "The system must automatically detect IP DOS attacks.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:2"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "12:2-2",
+      "category": "non_functional",
+      "text": "The system must automatically block the IP address from a detected IP DOS attack.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:2"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "12:3-1",
+      "category": "non_functional",
+      "text": "The system must detect consecutive failed login attempts.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "12:4-1",
+      "category": "constraints",
+      "text": "The system must be protected by the open source firewall called Firestarter.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ]
+    },
+    {
+      "id": "12:5-1",
+      "category": "non_functional",
+      "text": "All sensitive information must be encrypted via https.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:5"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "14:2-1",
+      "category": "constraints",
+      "text": "The system must use a SQL based database.",
+      "priority": "high",
+      "evidence_turns": [
+        14,
+        16,
+        18
+      ],
+      "source_unit_ids": [
+        "14:2",
+        "16:4",
+        "18:2"
+      ]
+    },
+    {
+      "id": "14:2-2",
+      "category": "data",
+      "text": "All inventory information must be stored in the SQL based database.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:2"
+      ]
+    },
+    {
+      "id": "14:4-1",
+      "category": "functional",
+      "text": "The system must automatically compress image files that are too large in size.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:4"
+      ]
+    },
+    {
+      "id": "14:5-1",
+      "category": "data",
+      "text": "The system must validate the existence of an email address when a new user signs up.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:5"
+      ]
+    },
+    {
+      "id": "16:3-1",
+      "category": "non_functional",
+      "text": "All customer data in the database must be encrypted.",
+      "priority": "high",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "20:1-1",
+      "category": "functional",
+      "text": "The order confirmation email must state that items will be delivered to the customer's shipping address.",
+      "priority": "high",
+      "evidence_turns": [
+        20,
+        22
+      ],
+      "source_unit_ids": [
+        "20:1",
+        "22:2"
+      ]
+    },
+    {
+      "id": "20:1-2",
+      "category": "functional",
+      "text": "The order confirmation email must include the tracking number.",
+      "priority": "high",
+      "evidence_turns": [
+        20,
+        22
+      ],
+      "source_unit_ids": [
+        "20:1",
+        "22:2"
+      ]
+    },
+    {
+      "id": "20:2-1",
+      "category": "interfaces",
+      "text": "An email for technical queries from customers or sales people must be sent directly to the System Administrator.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:2"
+      ]
+    },
+    {
+      "id": "20:3-1",
+      "category": "non_functional",
+      "text": "The interface has to be intuitive.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "20:3-2",
+      "category": "non_functional",
+      "text": "The interface must remain consistent among various web browsers.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "20:4-1",
+      "category": "constraints",
+      "text": "The Web Store must operate on an Intel based system.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:4"
+      ]
+    },
+    {
+      "id": "20:4-2",
+      "category": "constraints",
+      "text": "The Web Store must operate on Slackware Linux 2.6.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:4"
+      ]
+    },
+    {
+      "id": "20:4-3",
+      "category": "constraints",
+      "text": "The Web Store must operate with an Apache Web Server.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:4"
+      ]
+    },
+    {
+      "id": "22:3-1",
+      "category": "interfaces",
+      "text": "The customer must be able to access the web order system through a web browser using HTTPS.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:3"
+      ]
+    },
+    {
+      "id": "24:1-1",
+      "category": "non_functional",
+      "text": "A customer search for a specified product must show results in less than 1 second.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:1"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "24:2-1",
+      "category": "constraints",
+      "text": "Searches must be performed using Dijkstra's shortest path algorithm.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:2"
+      ]
+    },
+    {
+      "id": "24:3-1",
+      "category": "non_functional",
+      "text": "The system must be able to retrieve 200 products per second.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "24:4-1",
+      "category": "non_functional",
+      "text": "The system must be able to restore 1000 records per second.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:4"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "26:1-1",
+      "category": "non_functional",
+      "text": "The system must be able to handle 1000 customers logged in concurrently.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:1"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "26:3-1",
+      "category": "non_functional",
+      "text": "Adding a product to the shopping cart must take less than 2ms.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "26:4-1",
+      "category": "non_functional",
+      "text": "The system must acquire shipping charges in less than 2 seconds.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "26:5-1",
+      "category": "constraints",
+      "text": "The system must be deployed and fully operational in less than 1 minute upon a USB being plugged in.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:5"
+      ]
+    },
+    {
+      "id": "30:3-1",
+      "category": "business_rules",
+      "text": "A Customer must have a registered account to use the Weborder System.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:3"
+      ]
+    },
+    {
+      "id": "30:4-1",
+      "category": "business_rules",
+      "text": "A Sales Person must have a registered account.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:4"
+      ]
+    },
+    {
+      "id": "30:5-1",
+      "category": "business_rules",
+      "text": "An Administrator must have a registered account.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:5"
+      ]
+    },
+    {
+      "id": "30:5-2",
+      "category": "business_rules",
+      "text": "An Administrator must be logged-in on the system to perform any of their functions.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:5"
+      ]
+    },
+    {
+      "id": "32:1-1",
+      "category": "non_functional",
+      "text": "The system should have an availability of 99.99%.",
+      "priority": "high",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:1"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "32:3-1",
+      "category": "non_functional",
+      "text": "The system must be able to be migrated or backed up via a USB drive.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:3"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "34:2-1",
+      "category": "constraints",
+      "text": "The hardware will need an internet connection for fixes and patches.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:2"
+      ]
+    },
+    {
+      "id": "34:4-1",
+      "category": "interfaces",
+      "text": "The Web Store must work with Microsoft Internet Explorer version 6.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:4"
+      ]
+    },
+    {
+      "id": "34:4-3",
+      "category": "interfaces",
+      "text": "The Web Store must work with Netscape Communicator Version 4.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:4"
+      ]
+    },
+    {
+      "id": "34:5-1",
+      "category": "constraints",
+      "text": "It must be possible to create a test environment of the weborder system.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:5"
+      ]
+    },
+    {
+      "id": "14:4_1",
+      "category": "functional",
+      "text": "The system must automatically compress image files that are too large in size when users are adding product photos.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:4"
+      ]
+    },
+    {
+      "id": "28:2_1",
+      "category": "business_rules",
+      "text": "A certain condition must be satisfied or the system has to be in a specific state before a use case can begin.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:2"
+      ]
+    },
+    {
+      "id": "32:3_1",
+      "category": "non_functional",
+      "text": "It should be easy to migrate the system or have it backed up via a USB drive.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "32:3_2",
+      "category": "non_functional",
+      "text": "The system should get running again quickly after a recovery.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:3"
+      ],
+      "nfr_category": "performance"
+    }
+  ],
+  "removed_duplicates": []
+}

@@ -1,0 +1,146 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/generated_requirements_gemini_evidence_bank",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 1,
+    "total_unmatched_source": 42,
+    "total_unmatched_generated": 15,
+    "counts": {
+      "omission_full": 0,
+      "omission_partial": 21,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 0,
+      "hallucination_unsupported": 1,
+      "near_match_paraphrase": 14
+    },
+    "rates": {
+      "omission_full_rate": 0.0,
+      "omission_partial_rate": 0.5,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.0,
+      "hallucination_unsupported_rate": 0.06666666666666667,
+      "near_match_paraphrase_rate": 0.9333333333333333
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 73,
+      "unmatched_source_count": 42,
+      "unmatched_generated_count": 15,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 21,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 1,
+        "near_match_paraphrase": 14
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface."
+          },
+          {
+            "category": "omission_partial",
+            "text": "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must at a minimum be able to provide reports for actions on cases organised: By case;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address."
+          },
+          {
+            "category": "omission_partial",
+            "text": "the most stringent) implies that the System must not include such cases in any count of search results;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Such configurations must be saved in the user profile."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Providing text equivalents for non-text media objects: All non-text media objects, such as graphical images or video, should be provided with alternative equivalent textual descriptions and/or with equivalent text-based functionality."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Making navigation self-descriptive: Navigation should be designed to help users understand where they are, where they have been and where they can go next."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must allow the user to track logged enhancement requests on the application thereafter."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must avoid requiring users to click through endless screens to complete their daily work."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The navigation component must clearly indicate where the user is currently located."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must be designed in a manner that operational data is not lost in case of any failure of equipment or communication network, and it must hold onto that information safely until the connection is back."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The audit trail data cannot be deleted by any user."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Whenever possible, error messages must spell out the actions the user can take to resolve the error, rather than just giving them a dead end."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must support police operations that run around the clock."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "System restoration following a software or hardware failure must be complete with inline synchronization."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must provide solid role-based control for the functionality within the system to manage permissions."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system design must take into account human capabilities and restrictions in perceiving color."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The police will take the complaint forward based on the evidence, facts and following investigation."
+          }
+        ]
+      }
+    }
+  ]
+}

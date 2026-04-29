@@ -1,0 +1,30 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/direct_generated_requirements/pure_0000_cctns.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 49
+  },
+  {
+    "sample_id": "pure_0000_gamma_j",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/direct_generated_requirements/pure_0000_gamma_j.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 54
+  },
+  {
+    "sample_id": "pure_1999_dii",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/direct_generated_requirements/pure_1999_dii.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 19
+  },
+  {
+    "sample_id": "pure_2005_microcare",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/direct_generated_requirements/pure_2005_microcare.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 26
+  }
+]

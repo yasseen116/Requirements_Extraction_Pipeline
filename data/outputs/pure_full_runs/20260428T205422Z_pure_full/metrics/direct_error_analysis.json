@@ -1,0 +1,65 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T205422Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T205422Z_pure_full/direct_generated_requirements",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 1,
+    "total_unmatched_source": 4,
+    "total_unmatched_generated": 4,
+    "counts": {
+      "omission_full": 0,
+      "omission_partial": 0,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 1,
+      "hallucination_unsupported": 0,
+      "near_match_paraphrase": 3
+    },
+    "rates": {
+      "omission_full_rate": 0.0,
+      "omission_partial_rate": 0.0,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.25,
+      "hallucination_unsupported_rate": 0.0,
+      "near_match_paraphrase_rate": 0.75
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 100,
+      "unmatched_source_count": 4,
+      "unmatched_generated_count": 4,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 0,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 1,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 3
+      },
+      "examples": {
+        "omitted": [],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "Ensure system availability from <xx:00> to <xx:00>."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The System must provide an interface for the user to log defects or enhancement requests on the application and track thereafter."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "The System should allow a user to access the support solution both from within the application and also outside the application through a browser interface."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The System must ensure that the audit trail is not tampered with or deleted by any unauthorized user."
+          }
+        ]
+      }
+    }
+  ]
+}

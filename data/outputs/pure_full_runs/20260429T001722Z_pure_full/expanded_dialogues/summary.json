@@ -1,0 +1,50 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/expanded_dialogues/pure_0000_cctns.json",
+    "turn_count": 40,
+    "chunk_count": 20,
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 2,
+    "final_uncovered_requirement_count": 6,
+    "stopped_reason": "target_dialogue_recall_reached",
+    "exchanges": 20,
+    "final_dialogue_recall": 0.94
+  },
+  {
+    "sample_id": "pure_0000_gamma_j",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/expanded_dialogues/pure_0000_gamma_j.json",
+    "turn_count": 34,
+    "chunk_count": 17,
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 0,
+    "final_uncovered_requirement_count": 8,
+    "stopped_reason": "target_dialogue_recall_reached",
+    "exchanges": 17,
+    "final_dialogue_recall": 0.8596491228070176
+  },
+  {
+    "sample_id": "pure_1999_dii",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/expanded_dialogues/pure_1999_dii.json",
+    "turn_count": 18,
+    "chunk_count": 9,
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 0,
+    "final_uncovered_requirement_count": 3,
+    "stopped_reason": "target_dialogue_recall_reached",
+    "exchanges": 9,
+    "final_dialogue_recall": 0.8636363636363636
+  },
+  {
+    "sample_id": "pure_2005_microcare",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/expanded_dialogues/pure_2005_microcare.json",
+    "turn_count": 18,
+    "chunk_count": 9,
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 2,
+    "final_uncovered_requirement_count": 1,
+    "stopped_reason": "target_dialogue_recall_reached",
+    "exchanges": 9,
+    "final_dialogue_recall": 0.96
+  }
+]

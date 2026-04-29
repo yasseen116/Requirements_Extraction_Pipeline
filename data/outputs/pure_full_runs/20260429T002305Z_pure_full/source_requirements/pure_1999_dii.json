@@ -1,0 +1,150 @@
+{
+  "sample_id": "pure_1999_dii",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "DOCUMENT OVERVIEW This document outlines the software capabilities required for the XS components for the DII COE.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "document overview this document outlines the software capabilities required for the xs components for the dii coe"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "coe sponsors shall adhere to compliance level requirements described in the i rts"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in the fixed static mode of operation base or data processing megacenter the data management services shall have the capability of being tuned by on site personnel to adjust for varying workloads and sizes of associated databases"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the xs shall have the ability to redefine or reset names of connect descriptors to database server instances"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "at a minimum the session time out values shall be user definable and be able to be reset prior to initialization of a user session"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "end user mode portion of xs services shall be used by various classes of users data consumers data and database managers network information infrastructure resource managers"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of xs services"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in addition maintenance also shall pertain to shutdown open not mounted and online off line implementations modifications upgrade or other related actions"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the data management services shall support managing various types of data database architectures and platforms that includes hardware and software at the specified sites"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "in support of training activities the data management services shall provide for the same processing as would be encountered in a production environment"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "to contribute metadata to a registry the producer must be able to receive xml registry forms submit metadata and the related information resource artifacts and notify"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "extract semantically valid views from an xml document e g xsl disassemble hierarchical view to relational representation render registry services the registry shall provide standard apis as specified in appendix b"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "DATA ACCESS SERVICES INTERNAL INTERFACE REQUIREMENTS The XS function shall provide standard APIs as specified in Appendix C.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "data access services internal interface requirements the xs function shall provide standard apis as specified in appendix c"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the xs shall internally interface transparent to the operator with the existing data elements of the dbif dac and cots rdbms products"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "registry services environment requirements the registry software shall be portable and required to execute on coe compliant platforms"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "personnel requirements shall be determined by the developers of the system in which the xs module is embedded training related requirements not applicable"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "training requirements shall be determined by the developers of the system in which the xs module is embedded"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "OTHER REQUIREMENTS None PACKAGING REQUIREMENTS The XS software shall be delivered in accordance with DII COE guidelines.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "other requirements none packaging requirements the xs software shall be delivered in accordance with dii coe guidelines"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the qualification methods applied to the software shall include test demonstration analysis and inspection t d a i"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "facts are either links relationships between entities or associations between an entity and attributes constraints are conditions about the data that must always be true"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "if after reviewing the tags in the registry you cannot reuse an existing specification a k a"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "but if they were identified as attributes of the element ctry then the additional baggage other attributes must be carried or submitted as separate elements"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 22,
+    "total_count": 22
+  }
+}

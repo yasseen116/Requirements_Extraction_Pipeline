@@ -1,0 +1,54 @@
+{
+  "reconstructed_from_tracked_draft": true,
+  "original_run_id": "20260428T032711Z_pure_full",
+  "reconstructed_from": "data/docs/project_workflow_and_results.md",
+  "llm_provider": "gemini",
+  "generation_model": "gemini-3.1-pro-preview",
+  "validator_model": "gemini-2.5-flash",
+  "document": "pure_0000_cctns",
+  "controlled_dialogue_method": {
+    "question_algorithm_version": "semantic_gap_llm_v2"
+  },
+  "selected_variant": "gemini_evidence_bank",
+  "best_raw_variant": "gemini_full_context",
+  "direct": {
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0
+  },
+  "pipeline": {
+    "micro_precision": 0.8272,
+    "micro_coverage_recall": 0.67,
+    "micro_f1": 0.7403,
+    "macro_hallucination_rate": 0.1728,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 81,
+    "total_matched_requirements": 67
+  },
+  "pipeline_llm_validation": {
+    "strict_precision": 0.4691,
+    "strict_recall": 0.38,
+    "strict_f1": 0.4199,
+    "weighted_precision": 0.642,
+    "weighted_recall": 0.52,
+    "weighted_f1": 0.5746,
+    "full_recoveries": 38,
+    "partial_recoveries": 28
+  },
+  "dialogue_lower_bound": {
+    "micro_coverage_recall": 0.94
+  },
+  "dialogue_upper_bound": {
+    "micro_coverage_recall": 0.94
+  },
+  "pipeline_diagnostics": {
+    "aggregate": {
+      "evidence_bank_count": 108,
+      "proposition_count": 81,
+      "grounded_after_rewrite_count": 81,
+      "gap_pass_added_count": 0,
+      "rewrite_candidate_count": 42
+    }
+  },
+  "note": "This is a reconstructed summary from tracked paper documentation because the original output folder was deleted by git clean."
+}

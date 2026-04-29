@@ -1,0 +1,389 @@
+{
+  "sample_id": "pure_2008_keepass",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2008_keepass",
+    "title": "2008 - keepass",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2008 - keepass.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2008 - keepass.pdf"
+  },
+  "method": "oracle_source_projection_v1",
+  "model": null,
+  "prompt_hash": null,
+  "schema_hash": null,
+  "parse_status": "ok",
+  "repair_attempted": false,
+  "usage": {},
+  "error": null,
+  "project_summary": "Oracle baseline projection from source PURE requirements for 2008 - keepass.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "KeePass must be downloaded and installed.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "The database can be opened and closed whenever user wants it.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "Those groups can be modified whenever.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "Not all fields are required for an entry.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "All these together form the Composite Master Key and are all required in order to open the database.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "So the user cannot use a combination of them to unlock the database.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "So to unlock it the Master Key is required again.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "Other Audience Operating Environment KeePass should run on Operating Systems: WINE, 32-bit MS Windows (95/98), 32-bit MS Windows (NT/2000/XP), All 32-bit MS Windows (95/98/NT/2000/XP),Win2K, WinXP, Microsoft Windows Server 2003.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "Nothing more than these is required for a fully functional KeePass.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "KeePass should run perfectly on older releases without any features limitations or data loss.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "New Database This feature provides the ability to create a new database Description It is the first thing a user must do to begin using KeePass.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "When creating a group/subgroup the user must select a name and then he can add entries into it.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "In order for that to happen, he must have chosen first a group/subgroup.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-014",
+        "text": "Not all fields are required for an entry to be created.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-015",
+        "text": "In order for that to happen, the user must select an entry first.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-016",
+        "text": "A message appears that informs user that the installation has been done and in order for the changes to take place KeePass must be restarted 4.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-017",
+        "text": "The sequence must be prefixed with “Auto-Type” and length of one line.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-018",
+        "text": "If a sequence is more than a line it cannot be used and in case of two sequences in one note’s field only the first one is used.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-019",
+        "text": "But the same composition of them must be used always.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-020",
+        "text": "Once a master key is created for a database, it is always required.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-021",
+        "text": "In case the user forgets it, the database can never be opened again by any way.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-022",
+        "text": "If the file is lost and there are no copies of it, all data are gone forever and database never unlocks again.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-023",
+        "text": "In TAN entries, user cannot change the title, user name or URL but notes can be added.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-024",
+        "text": "Functional Requirements Title, username or URL cannot be changed in a TAN entry.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-025",
+        "text": "When a TAN is used, it expires automatically and can never be used again.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-026",
+        "text": "At this time the main database window is inactive and cannot be accessed unless the current active window is closed.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-027",
+        "text": "If in the meanwhile it is not pasted anywhere, it must be copied again.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-028",
+        "text": "Safety Requirements When a USB which contains the database is removed from a computer while changes haven’t been completely saved, the database is damaged and cannot be opened.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "category": "security",
+        "text": "Master Password has no limits in length. A whole sentence can be used with more than 100 characters. Open Database This feature allows the user to open an existing database. Description When choosing to open a database a user is transferred to his documents where he navigates to find the database he wants. When the database is found, the master password is wanted so that the database will be unlocked. Once this is done the user is free to access his data. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and select Open->Database User navigates through his folders User selects a database User types Master Password The main database window opens Alternative Data Flows Alternative Data Flow 1 User selects a type of folder non suitable for database A message “file not found” appears User selects another folder Alternative Data Flow 2 Master Password is wrong A message “invalid/wrong key” appears User types another master key Alternative Data Flow 3 User chooses cancel Exit from KeePass Functional Requirements Folder selected must be of type the database can read and that is “name”.kdb Save Database This feature allows the user to save any changes or updates he has performed to his database. Description When a database is opened, the user can access his passwords, organize them into new groups and subgroups, delete and add entries and so much more. But when it is time for the database to close or during his working on the database, he can save the changes made. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and changes his data User selects save database Database is saved User exits KeePass Alternative Data Flows Alternative Data Flow 1 User selects save as User gives a new database name New database is saved and opens with the same master password Alternative Data Flow 2 User continues working after he saves the database Alternative Data Flow 3 User wants to exit KeePass A message is appeared asking if he wants to save the database User selects yes and exits, or no and exits or cancel and return to database Alternative Data Flow 4 Users minimizes the database A message is appeared asking if he wants to save the database before locking Functional Requirements Databases must have different names or else the previews one will be replace if selected Print Database This feature allows user to print a selection of data that are stored in the database. Description While working on the database, the user has the option to print data from his database. This can be done by selecting print. When this happens, a list of data types that can be printed are shown and the user can select the data to be printed. More specifically fields that can be selected for printing are: Backup entries, which contain entries in the back up group, password groups, group tree, title, username, password, URL, notes, creation time, last access, last modification, expires, icon, UUID and attachment. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass User selects print from file menu The list of options opens with checked the fields: password groups, title, user name, password, URL, notes User selects OK Data are print User returns on the main window Alternative Data Flows Alternative Data Flow 1 3a. User selects some more fields and/or unselects some others. Alternative Data Flow 2 User unselects all fields An empty report is printed Alternative Data Flow 3 User selects Cancel User returns on the main window Functional Requirements There must be entries in the database in order for them to be printed Search Database This feature allows user to search for keywords in his database. Description There is the ability to search in the database for usernames, groups, passwords, URLs, notes and titles. This is very useful when the user needs to find out very quickly which password is required in one account or what username he has put on another account. It is not necessary to write in the search field all characters. By writing just one character the database will present all data which contains it or are related with it. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass User types a password, user name, URL, word of notes, title or group that exist in the database The list of data related to search word are appeared in the main window Alternative Data Flows Alternative Data Flow 1 User types two or more words in the search field Nothing appears in the main window Alternative Data Flow 2 User does not type anything Nothing appears in the main window Alternative Data Flow 3 User types part or even just one character of password, user name, URL, word of notes, title or group Alternative Data Flow 4 User types data not related with the database Nothing appears in the main window Functional Requirements All data related to the word must be shown. For example if user types “abc” and abc is part of a password and of a username, both entries must be shown Add Group/Subgroup This feature is used to keep data organized in categories for easier access. Description There is the ability to organize data into groups and subgroups. The user can create a new group or subgroups into an existing group. When creating a group/subgroup the user must select a name and then he can add entries into it. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects to add new group/subgroup User types a name and has the option to select an image User selects OK The group/subgroup is created The access returns to the database main window Alternative Data Flows Alternative Data Flow 1 User leaves the group/subgroup name field empty A message is appeared “Add a name for the group/subgroup” Alternative Data Flow 2 User selects Cancel The access returns to main window Functional Requirements A name is required in order for the new group/subgroup to be created A subgroup cannot be created when no group is selected Modify group/subgroup This feature allows user to change a name given to a group/subgroup. Description When user wants to change a group or subgroup’s name he has the ability to do that by modifying it. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects modify group/subgroup User types the new name and has the option to select an image User selects OK The group/subgroup changes name The access returns to the database main window Alternative Data Flows Alternative Data Flow 1 User leaves the group/subgroup name field empty A message is appeared “Add a name for the group/subgroup” Alternative Data Flow 2 User selects Cancel The group/subgroup’s name remains the same The access returns to main window Functional Requirements A name is required in order for the group/subgroup to be renamed Delete Group/Subgroup This feature allows the user to delete a group/subgroup. Description When a user wants to delete an existing group/subgroup he can do this by selecting Delete group/subgroup from the edit menu. In order for that to happen, he must have chosen first a group/subgroup. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects a group/subgroup User selects to delete the group/subgroup A message is appeared to confirm the delete User selects yes The group/subgroup is deleted The main window opens Alternative Data Flows Alternative Data Flow 1 User selects no The group/subgroup is not deleted Functional Requirements Not exists. Find Group/Subgroup This feature allows user to find data into a specific group/subgroup. Description The user selects a group/subgroup and then he chooses “find in this group” from file menu. Then a window appears which prompts the user to write a sequence of characters (letters and numbers) from one character to 200 (or more). After that a menu of options to choose from appears and the user can select to search for: title, user name, password, URL, notes, group name. Search results appear in the main window. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects to find something in a selected group/subgroup User types the word to search for User selects the fields which will be searched User selects OK Results appears at the database main window Alternative Data Flows Alternative Data Flow 1 User leaves the find field empty All data from the group/subgroup appear Alternative Data Flow 2 User leaves all search in boxes unchecked Nothing appears in the main window Alternative Data Flow 3 User selects cancel The main window appears Alternative Data Flow 4 User leaves the find field empty User leaves all search in boxes unchecked Nothing appears in the main window Functional Requirements In order to find something in a group a word must be placed in the find field Add Entry This feature adds a new entry on the database. Description The user can add a new entry on the database by clicking add entry on the main menu. When he does this, a window opens which is actually a form. In this form the user completes the fields he wants. He can fill in fields like: group where the entry will be added, title, user name, password, repeat password, URL, notes, expiration date and attachment file. Not all fields are required for an entry to be created. In fact an entry can be added with no fields at all. By selecting OK the entry is created in the group selected. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects to add an entry User fills in the form, as many fields as he wants, from 1 to 9 User selects OK The new entry is added in the selected group Alternative Data Flows Alternative Data Flow 1 User fills in the password field The repeat password field is not identical with the password field A message appears “the repeated password must be identical with the password Alternative Data Flow 2 User leaves all fields empty Alternative Data Flow 3 User selects help The help file or URL field features or Autotype is opened Alternative Data Flow 4 User selects cancel The main window opens Functional Requirements An entry must belong to a group to be created When the password field is completed the repeat password field must be completed.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-002",
+        "category": "security",
+        "text": "Password field and repeat password field must be identical View/Edit Entry This feature allows the user to change or modify an existing entry. Description The user can modify the context of an entry he already has added. This can be done by selecting view/edit entry. In order for that to happen, the user must select an entry first. When he does this, the form he filled in when he created or last modified the entry open. Then the user can change the group, title, user name, password, URL, notes, expiration date and attachment file. His changes are saved by clicking OK. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects to view/edit an existing entry User changes the fields he wants in the form User selects OK The modified entry is saved in the selected group Alternative Data Flows Alternative Data Flow 1 User changes the password field The repeat password field is not identical with the password field A message appears “the repeated password must be identical with the password Alternative Data Flow 2 User selects help The help file or URL field features or Autotype is opened Alternative Data Flow 3 User selects cancel The main window opens and the selected entry is not modified Functional Requirements ìAn entry must be selected to be viewed or modified ìWhen the password field is changed the repeat password field must be Changed and be identical with password field Duplicate Entry This feature creates an exact copy of the selected entry in the same group. Description The user can create an exact copy of an entry. This can be done by selecting an entry and clicking duplicate entry. When this is done the new entry is added in the same group were the first was. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects an existing entry User duplicates entry The new entry is added below the first one Alternative Data Flows Not exist Functional Requirements An entry must be selected before it is duplicated Delete Entry This feature allows the user to delete an existing entry Description The user can delete an existing entry by selecting it and then by clicking delete entry. When this is done a message appears and informs the user that if he deletes the entry he won’t be able to restore it back. Stimulus/Response Sequences Data Flow Basic Data Flow User opens KeePass and selects to delete an existing entry A message appears “Are you sure you want to delete the selected entry?” User selects yes The deleted entry is permanently removed from the database Alternative Data Flows Alternative Data Flow 1 User selects more than one entry Alternative Data Flow 2 User selects no No entry is deleted Functional Requirements.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-003",
+        "category": "security",
+        "text": "An entry must be selected to be deleted Change Language This feature allows user to choose one of the language translations that are available in KeePass Description The user can select between a number of translations that are available at KeePass website. There are available translations in Arabic, Brazilian, Bulgarian, Catalan, Chinese (Simplified and Traditional), Czech, Danish, Dutch, English, Estonian, Finnish, French, Galician, German, Greek, Hebrew, Hungarian, Italian, Japanese, Korean, Lithuanian, Macedonian, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Turkish and Ukrainian. All the user has to do is to select change language from the view menu and then the language he wants. If he already has download languages packets he can choose one of them. If he wants another language pack he can select get more language. Doing this he will be transferred at KeePass website and choose the language he wants for downloading. Stimulus/Response Sequences Data Flow Basic Data Flow 1. User opens KeePass and selects to change language from the view menu 2. The user selects a language to load from the list that appears 3. A message appears that informs user that the installation has been done and in order for the changes to take place KeePass must be restarted 4. User selects yes (restart now) 5. KeePass asks to save any changes that may have been made in the database and restarts 6. User unlocks the database using the Master Password 7. The database appears translated in the new language Alternative Data Flows Alternative Data Flow 1 User selects get more languages The browser opens in KeePass website were translations are located User selects a language he wants The language file downloads and can be found at the list with available languages in the language menu Alternative Data Flow 2 User selects no (restart later) No changes are appeared in the database until the next time KeePass restarts Alternative Data Flow 3 User selects close No changes are made in the database Functional Requirements.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-004",
+        "category": "security",
+        "text": "An internet connection and a browser are required in order to download new language translations For the following features, use cases are not included Auto-type This feature allows user to define a sequence of keypresses which KeePass will automatically perform. Description The user defines the sequences which can be sent to any other open window like browsers or login accounts. By default the sent keystroke sequence is {USERNAME}{TAB}{PASSWORD}{ENTER}. There is the ability for the user to define his own auto-type sequence in the notes field of each entry. The sequence must be prefixed with “Auto-Type” and length of one line. If a sequence is more than a line it cannot be used and in case of two sequences in one note’s field only the first one is used. There are 3 methods to invoke auto-type. The first method is to use the context menu command and perform auto-type while the entry is selected. The second method is to select an entry and press Ctrl+V The third method is to use the system-wide auto-type hot key so that KeePass can search all entries in the database for matching sequences. Functional Requirements The prefix “Auto-Type:” is required in front of each sequence Sequence’s length must not be more than a line (59 characters) If two auto-types are referred in one note field, only the first is used Command Line Options This feature allows user to pass a file patch in the command line so that KeePass will open it immediately after start up. Description The database file location is passed as argument in the command line. More about this feature and examples for using it can be found at help contents in KeePass Functional Requirements Only one database file is allowed in command line options In case a space is found in the path, it must be enclosed into quotes Composite Master Key This feature is a composition of master password and key files and all its composites are required so that the database can be unlocked. Description The database can be unlocked with a master password, a key file or both of them. But the same composition of them must be used always. A master key is a password the user creates. Once a master key is created for a database, it is always required. In case the user forgets it, the database can never be opened again by any way. A key file is a file that locks the database. The database opens when this file is present. If the file is lost and there are no copies of it, all data are gone forever and database never unlocks again. Functional Requirements If a master password is required to unlock the database, the database doesn’t open unless the password is entered If a key file is required to unlock the database, the database doesn’t open unless the key file is present If there is a composite key, both master password and key file are required In case of lost master password or key file, the database never unlocks again. There is no recovery There is no backdoor or key that unlocks all databases Import/Export This feature gives the ability to user to import/export files from/to database. Description There is the ability to import data from CSV files, code wallet, password safe and password vault. There are available plug-ins which add more import capabilities and formats and those are: File format CSV and File format XML. There isn’t any standard password database format and every password manager uses its own file format. Despite that, almost all support exporting to CSV or XML files. Functional Requirements.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-005",
+        "category": "security",
+        "text": "File formats are not specialized password database formats.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-006",
+        "category": "performance",
+        "text": "File formats only specify a low-level layout of stored data Integration This feature allows switching back from an application to KeePass. Description The global hot key takes the user back from one window to KeePass. In case of multiple databases running of KeePass the global hot key restores the window which was opened first of all. The global hot key is Ctrl+Alt+K Functional Requirements Global hot key cannot be changed Password Generator This feature generates random passwords. Description The password generator creates random passwords every time an entry is created. This password may contain letters (big and small) and numbers. The user can keep it or he can put his own in the field. The generation can be based on character sets, patterns or can be created according by rules. This feature can be disabled if user wants it by selecting 0 as password length in the password generator dialog. More about characters sets and patterns can be found at KeePass Help Files including directions and examples. Functional Requirements According to restriction rules that are applied every time. TAN Support This feature allows creation of Transaction Authentication Numbers. Description TANs can be passwords that provide security because they can never be used for more than once time. They can be added to user’s database by using TAN wizard and can contain all letters and numbers. When TAN are created, they appear as typical entries which in the field title contain “TAN” so that KeePass will know it’s a TAN. In TAN entries, user cannot change the title, user name or URL but notes can be added. When a TAN is used, its expiration time is set to that current time and the entry expires automatically. Functional Requirements Title, username or URL cannot be changed in a TAN entry. When a TAN is used, it expires automatically and can never be used again. External Interface Requirements User Interfaces User interface includes various forms and windows. The main database window consists of the main menu bar with file, edit, view, tools and help. Under main menu there is a toolbar with shortcuts to most used functions of KeePass. Those are: new, open, save, add entry, edit/view entry, delete entry, copy username to clipboard, copy password to clipboard, find in database and lock workspace. On the main database window are appeared entries from a selected group. Groups and subgroups can be found at a side bar. When a function is performed like adding, editing or deleting, the active window is the one performing the action. At this time the main database window is inactive and cannot be accessed unless the current active window is closed. KeePass as referred previously uses NET/Mono and Win32 (MS Windows) interfaces. Communications Interfaces Internet connection and a browser are required in order for several functions to be executed such as downloading plug-ins Other Nonfunctional Requirements Performance Requirements When a password is copied, it remains on memory for only 10 seconds. If in the meanwhile it is not pasted anywhere, it must be copied again. That happens so that if user copies a password and not paste it anywhere, the password cannot be found by anyone later. Safety Requirements When a USB which contains the database is removed from a computer while changes haven’t been completely saved, the database is damaged and cannot be opened. In this case the repair functionality can help by repairing KeePass database file from tools menu. In case the user forgets or loses the Master Password, the repair functionality won’t help. In case the header of the database, which is the first few bytes, is corrupted, again the repair functionality won’t help. To avoid this kind of situations, backups can be done regularly. Software Quality Attributes KeePass is a small and light project so it does not need to be installed. All it takes is unpacking from the Zip package. It can be transferred also in a USB stick with no additional configuration needed. KeePass is a project that once uninstalled from a computer, leaves no trace behind. So there is no way passwords and other data in the database to be found later. KeePass is developed under GNU General Public License version 2 or later (copy from http://www.gnu.org/licenses/gpl.html) and can be distributed under those terms. KeePass can be found and downloaded from www.sourceforge.com and the project’s official website at http://keepass.info/ for free.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-007",
+        "category": "security",
+        "text": "What security technologies are required, how the system will response in each user’s action etc.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-008",
+        "category": "security",
+        "text": "There are no duplicates, anywhere in your computer, of this Master Password and/or key file so in case of lost database cannot be opened by anyone.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-009",
+        "category": "security",
+        "text": "Composite Master Key To open a database you must use all key sources such as password, key file and/or Windows account details that were used when the Master Key was created.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-010",
+        "category": "security",
+        "text": "This is very useful when the user needs to find out very quickly which password is required in one account or what username he has put on another account.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-011",
+        "category": "security",
+        "text": "For example if user types “abc” and abc is part of a password and of a username, both entries must be shown Add Group/Subgroup This feature is used to keep data organized in categories for easier access.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-012",
+        "category": "security",
+        "text": "The global hot key is Ctrl+Alt+K Functional Requirements Global hot key cannot be changed Password Generator This feature generates random passwords.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-013",
+        "category": "security",
+        "text": "Description TANs can be passwords that provide security because they can never be used for more than once time.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-014",
+        "category": "performance",
+        "text": "Communications Interfaces Internet connection and a browser are required in order for several functions to be executed such as downloading plug-ins Other Nonfunctional Requirements Performance Requirements When a password is copied, it remains on memory for only 10 seconds.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-015",
+        "category": "security",
+        "text": "That happens so that if user copies a password and not paste it anywhere, the password cannot be found by anyone later.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      }
+    ],
+    "data": [],
+    "business_rules": [],
+    "interfaces": [],
+    "constraints": []
+  }
+}

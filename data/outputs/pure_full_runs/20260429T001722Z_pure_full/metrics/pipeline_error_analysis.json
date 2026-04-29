@@ -1,0 +1,396 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260429T001722Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260429T001722Z_pure_full/generated_requirements_gemini_full_context",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 4,
+    "total_unmatched_source": 63,
+    "total_unmatched_generated": 56,
+    "counts": {
+      "omission_full": 0,
+      "omission_partial": 25,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 6,
+      "hallucination_unsupported": 3,
+      "near_match_paraphrase": 47
+    },
+    "rates": {
+      "omission_full_rate": 0.0,
+      "omission_partial_rate": 0.3968253968253968,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.10714285714285714,
+      "hallucination_unsupported_rate": 0.05357142857142857,
+      "near_match_paraphrase_rate": 0.8392857142857143
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 91,
+      "unmatched_source_count": 28,
+      "unmatched_generated_count": 19,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 9,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 3,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 16
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert."
+          },
+          {
+            "category": "omission_partial",
+            "text": "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address."
+          },
+          {
+            "category": "omission_partial",
+            "text": "the most stringent) implies that the System must not include such cases in any count of search results;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "Such configurations must be saved in the user profile."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Supporting text skimming: Fast skimming of text should be supported by the provision of clear links, bulleted lists, highlighted keywords, logical headings, and short phrases and sentences."
+          },
+          {
+            "category": "omission_partial",
+            "text": "In addition, when designing multimedia information presentations, the design principles and recommendations described in ISO 14915-1 to ISO 14915-3 should be taken into account."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System be scaleable and must not have any features which would preclude use in small or large police stations, with varying numbers of cases handled."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system shall allow a user to create a new case."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system shall allow a user to update an existing case."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "For long pages, the system shall provide within-page links to help users jump to the right section."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must provide help directly on the screen."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Users must be able to delete their user-specified profile on demand."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Frequently-executed system transactions must be designed to be quick."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "If a page has a lot of links, the text must still be easy to read."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "If frames are used, they must not cause issues with bookmarking pages."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "If frames are used, they must not cause weird scrolling behavior."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Help content must have good spelling and grammar."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Error messages must clearly state the reason for the problem."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Operational data must not be lost in case of any failure of equipment or the communication network."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 48,
+      "unmatched_source_count": 22,
+      "unmatched_generated_count": 13,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 11,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 2,
+        "hallucination_unsupported": 1,
+        "near_match_paraphrase": 10
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator."
+          },
+          {
+            "category": "omission_partial",
+            "text": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Maintainability Requirements The system shall utilize interchangeable plugins."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system shall create logs of all changes, updates, or fixes that are done to the site."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system shall be easy to upgrade."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Portability Requirements The system shall be extremely portable via the usb drive."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Testability Requirements The system should be able to run under debug mode."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Yoggie shall coordinate on future enhancement and features with our organization."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Functional requirements: A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Nonfunctional requirements: A description of a property or characteristic that the system should exhibit."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Requirement: A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must email both the customer and the vendor after a purchase."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "The system needs to have a clear function or behavior for when a payment is declined."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Notifications must support error, warning, and success message types."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The order confirmation email must state that items will be delivered to the customer's shipping address."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The order confirmation email must include the tracking number."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must automatically compress image files that are too large in size when users are adding product photos."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must automatically block the IP address from a detected IP DOS attack."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The interface has to be intuitive."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must be able to be migrated or backed up via a USB drive."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "The system should get running again quickly after a recovery."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The Web Store must work with Netscape Communicator Version 4."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The Web Store must operate on an Intel based system."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 22,
+      "unmatched_source_count": 9,
+      "unmatched_generated_count": 9,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 4,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 2,
+        "near_match_paraphrase": 7
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true."
+          },
+          {
+            "category": "omission_partial",
+            "text": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "The user classes shall include 'data consumers', 'data and database managers', and 'network information infrastructure resource managers'."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The ability to tune data management services must be available when the system is in a 'fixed (static) mode of operation'."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must support bringing parts of the system online or offline."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "The system must support being managed in specific states like 'open not-mounted'."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The session time-out values must be user definable."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "The system must provide verification methods to confirm that adjustments are correct and have not introduced any issues."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The ability to redefine or reset the names of connect descriptors to database server instances must be transparent to the operator."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must internally interface with the existing data elements of the DAC."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must internally interface with the existing data elements of COTS RDBMS products."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "generated_requirement_count": 36,
+      "unmatched_source_count": 4,
+      "unmatched_generated_count": 15,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 1,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 1,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 14
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "The document should have the following information."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "When creating a new staff member, if a staff with an existing name is entered, the system must generate a warning message."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system needs to provide the flexibility to create any number of individual users under any of the user groups."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system needs to have a 'Salesman master' record that captures all the necessary information for each person."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The value for 'Health Sub – District' must be selected from a master list."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "When a user is entering VSP details, the value for 'Locality' should come from its own master list."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "When a user is entering VSP details, the value for 'Registration Body' should come from its own master list."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The voucher will have an MRP, or maximum retail price."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The receipt must include the `Patient Status`."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The `Patient Status` must be selected from the `Patient Status Master` list."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The `Reason for Referral` must be populated from the `Referral master`."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The value for 'Locality' must be selected from a master list."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The value for 'Level Of Facility' must be selected from a master list."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "sample_id": "pure_0000_cctns",
+  "metadata": {
+    "domain": "pure_document",
+    "source_type": "synthetic",
+    "parent_id": "pure_0000_cctns",
+    "split": "benchmark",
+    "dialogue_style": "adaptive_semantic_coverage"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_cctns",
+    "title": "0000 - cctns",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - cctns.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - cctns.pdf"
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "To start, what is the overall purpose and scope of this system?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "This project is based on the 0000 - cctns system, and the goal is to capture the main requirements and constraints for document 0000_cctns."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Got it. Since we are capturing the core requirements for the CCTNS system, could you describe the most frequent day-to-day tasks users will perform and how we might streamline those specific workflows to require as few steps as possible?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "To answer your question about streamlining workflows, our main goal is efficiency. For the things our team does all the time, we really need those frequently-executed system transactions to be designed so they can be completed with a small number of interactions. We want to avoid having them click through endless screens just to get their daily work done."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "That makes perfect sense for keeping things efficient. As users are moving quickly through these streamlined screens, how can we best design the layout—like the placement of page titles and navigation menus—so they always know exactly where they are in the system without getting lost?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "To keep people from getting lost, we definitely need page titles placed in a consistent location on the different pages. Also, whenever navigation components or overviews are shown in conjunction with associated content, we have to maintain consistency between the navigation component and the content shown. It should clearly indicate where the user is right in the navigation component. When designing these visual cues, color should be used with care. We have to take into account human capabilities and restrictions in perceiving color, so it shouldn't be used as the only means of conveying information. Finally, to avoid link overload, within-page links are shown with dashed rather than solid underlines. If we have text pages containing large proportions of links, they need to be formatted so that the presence of links does not impede the readability of the text."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "Those are excellent points about ensuring readability and accommodating color perception. Building on that accessibility focus, how should we handle non-text elements like images or videos so that users who rely on text-based alternatives can still get all the information they need?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "To answer your question, it is crucial that all non-text media objects, such as graphical images or video, are provided with alternative equivalent textual descriptions and/or with equivalent text-based functionality. That way, users relying on screen readers do not miss anything. While we are on the topic of accessibility, we also need to ensure input device independence. The user interfaces should be designed to allow activation of controls by a variety of input devices, not just a standard mouse. For our overall approach to ICT accessibility, we will use ISO 9241-20 as the standard for guidance. And specifically for making sure the text itself is easy to read, ISO 9241-303 needs to be consulted for screen text legibility requirements."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "Those legibility standards are great to have in place. Beyond just making the text readable, if a user gets stuck or isn't sure how to complete a specific action on a screen, what kind of contextual help or guidance should the system offer them?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "When someone gets stuck, we really need a dedicated Help Module. It has to offer detailed context-sensitive help material for all the possible actions and scenarios they might encounter. And this needs to be available across all user interfaces in the application, so they are never left guessing. Also, going back to the legibility you mentioned, it is crucial that text should be able to be resized by the user. They should be able to do this easily using functions provided by the user agent or other appropriate means. Finally, if the system is tailoring the experience for them, we need to be transparent. It should be made evident to the user when individualization and/or adaptation are used, so they understand why the interface looks or behaves a certain way."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "It makes a lot of sense to allow users to resize text for better legibility. To further help them digest information efficiently, how might we structure the content—perhaps using clear headings, bulleted lists, or highlighted keywords—so they can quickly skim the pages to find what they need?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "Yes, exactly. To really support fast skimming of text, we definitely need to use clear links, bulleted lists, highlighted keywords, and logical headings, along with short phrases and sentences. Also, while they are reading, horizontal scrolling should be avoided wherever possible because it really disrupts the flow. But it's not just about how the page looks; getting to the information is just as important. We want to minimize the number of navigation steps needed to reach a certain piece of content. At the same time, we know people look for things in different ways, so we need to make sure different mental models, navigation strategies and tasks of the user are taken into account. To do that effectively, we should be offering alternative access paths for navigating to a specific unit of content, which will really help support those different navigation strategies."
+    },
+    {
+      "turn_id": 13,
+      "role": "bot",
+      "text": "Since we're offering those alternative access paths and trying to minimize navigation steps, how should we handle linking back to the home page or other key landmark pages so users can easily reorient themselves if they navigate deep into the content?"
+    },
+    {
+      "turn_id": 14,
+      "role": "user",
+      "text": "To answer your question directly, we need every single page to have a link leading to the home page of the application, or at least to a landmark page that is easy to recognize for the user. That way they never get lost. To help them navigate even better, we want them to be able to personalize their workspace, so customisation should include, but need not be limited to, changes like adjusting the menu contents. Also, regarding the overall layout, if frames are used, care should be taken to avoid possible problems—especially those involving the use of the back button, bookmarking of pages, or scrolling of information. Finally, we want to get users into the content quickly, so splash screens should be avoided unless they provide useful content or feedback about the application state to the user."
+    },
+    {
+      "turn_id": 15,
+      "role": "bot",
+      "text": "Building on your points about clean layouts and getting users straight to the content, how should we determine the ideal length for individual pages, and how might we use empty background space or text-only alternatives to ensure the information remains easy to skim?"
+    },
+    {
+      "turn_id": 16,
+      "role": "user",
+      "text": "For page lengths, there isn't a strict rule. Instead, the length of a page should be selected to support the primary purpose and use of the page. As for the empty areas, any space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page. If the visual layout is ever an issue for accessibility or preference, alternatively, the user should be provided with an equivalent alternative text-only page. On top of that, to help users find what they need, we definitely need a separate navigation overview, such as a site map, showing the structure of the site in an overview form."
+    },
+    {
+      "turn_id": 17,
+      "role": "bot",
+      "text": "That site map will definitely help users grasp the overall structure. As we build out that overview and the main menus, how should we choose the terminology for our navigation links to ensure the labels are instantly familiar to users based on their prior experience?"
+    },
+    {
+      "turn_id": 18,
+      "role": "user",
+      "text": "For the terminology, we really need to label our navigation links—particularly links representing the main navigation structure—with terms that are familiar to the user. We should draw on their general knowledge, their prior experience in the application domain, or their experience of using other systems so they instantly know where to click. While we're designing those menus, we also have to ensure that navigation links are clearly distinguishable from controls activating some action. Users shouldn't have to guess if a click will take them to a new page or trigger a process. Also, please make sure the quality of textual content with respect to spelling and grammar is sufficient so as not to impede readability; bad typos just ruin the experience. Finally, the entire user interface needs to be suitable for users with special needs, so accessibility has to be a priority."
+    },
+    {
+      "turn_id": 19,
+      "role": "bot",
+      "text": "Building on your points about clear navigation links and overall accessibility, how should we indicate to users exactly where they currently are within the site's overall structure as they move from page to page?"
+    },
+    {
+      "turn_id": 20,
+      "role": "user",
+      "text": "To answer your question directly, we need to make sure that each presentation segment, whether that is a page or a window, provides the user with a clear and sufficient indication of where they are in the navigation structure. They should always understand their current segment position with respect to the overall structure. While we are talking about moving around, it is also really important that any links that open new browser windows or pop-up windows are clearly marked so users are not surprised. Beyond just navigation, we want to make sure the actual information is easy to digest. The reading and understanding of the textual content on the screen should be supported by suitable means. Ideally, we would see things like the use of short sentences, the division of the text into shorter chunks, or the presentation of content items in the form of bullet points. Finally, if they do get stuck, the support solution should be accessible to the users both from within the application and also outside the application through a browser interface."
+    },
+    {
+      "turn_id": 21,
+      "role": "bot",
+      "text": "Building on your point about keeping users oriented and allowing them to personalize their workspace, if the system adapts content based on different user profiles, how should we clearly indicate to the user which profile is currently active?"
+    },
+    {
+      "turn_id": 22,
+      "role": "user",
+      "text": "That is a great question. Whenever the platform is individualizing or adapting content based on predefined user profiles or user-specified profiles, it is crucial that the profile currently used is made evident to the person looking at the screen. They should never have to guess why they are seeing certain things. Also, on a related note about how we display this content, if frames are used in the interface, we absolutely need an alternative way of presenting relevant information without frames. Some of our users might rely on accessibility tools that struggle with framed layouts, so having that fallback is really important to us."
+    },
+    {
+      "turn_id": 23,
+      "role": "bot",
+      "text": "Building on the idea of different user profiles interacting with the system, how should we track their access to cases and related documents behind the scenes to ensure those activity records remain completely unalterable and are kept for the entire life of the case?"
+    },
+    {
+      "turn_id": 24,
+      "role": "user",
+      "text": "To answer your question about tracking, we need to make sure that any access to cases, and all other activities involving the cases and related documents or data, are stored in the audit trail. This is crucial to ensure legal admissibility and to assist in data recovery if something goes wrong. When we say these records need to be 'unalterable,' we mean exactly that: the audit trail data cannot be modified in any way or deleted by any user. As for retention, we have to maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers. Finally, we will sometimes need to pull this data out for review, so we need the ability to export audit trails for specified cases, but doing so must happen without affecting the audit trail stored by the System."
+    },
+    {
+      "turn_id": 25,
+      "role": "bot",
+      "text": "Since we just discussed how strict the system needs to be about tracking user access and preventing anyone from altering the audit logs, how should we handle the process of assigning or changing user access rights, privileges, and passwords to ensure only authorized super-users can make those security updates?"
+    },
+    {
+      "turn_id": 26,
+      "role": "user",
+      "text": "That's a critical point. When it comes to managing who can do what, we need to be absolutely strict. Any changes to security attributes for groups or users—which includes things like access rights, security level, privileges, password allocation and management—need to be restricted so they are made only by super-user. We can't have regular users messing with those settings. Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter. It helps us keep on top of issues and improvements."
+    },
+    {
+      "turn_id": 27,
+      "role": "bot",
+      "text": "Building on your point about giving users a way to log application issues, let's talk about preventing and handling everyday data entry errors. How should we utilize persistent, user-definable default values to streamline input, and what specific details should our error messages include to help users quickly resolve any mistakes they do make?"
+    },
+    {
+      "turn_id": 28,
+      "role": "user",
+      "text": "To speed up our workflows, we definitely want to allow persistent defaults for data entry where desirable. It shouldn't just be standard system defaults either; we need those to include user-definable values so individuals can tailor the inputs to their daily work. Now, when mistakes do happen, ease of use is our main priority. All error messages produced by the system have to be meaningful so they can be appropriately acted upon by the users who are likely to see them. Whether these messages are shown on the pages themselves or on special error pages, the content should clearly state the reason why the error occurred. And whenever possible, it needs to spell out the actions the user can take to resolve the error, rather than just giving them a dead end."
+    },
+    {
+      "turn_id": 29,
+      "role": "bot",
+      "text": "Following up on how we handle data entry errors and guide users to fix them, when citizens are registering their complaints, how should the system validate the facts and evidence they submit to ensure the police have reliable information for their investigations, and are there any specific international standards we should consult to guide this validation process?"
+    },
+    {
+      "turn_id": 30,
+      "role": "user",
+      "text": "To answer your first point, the basic workflow is that citizens can register their complaints with the police. We don't expect the software to do all the heavy lifting on validation itself; rather, based on the evidence, facts and following investigation, the police will take the complaint forward. As for how we guide that overall process and ensure reliability, we definitely want to ensure that the International Standards mentioned below are consulted for guidance."
+    },
+    {
+      "turn_id": 31,
+      "role": "bot",
+      "text": "Since we're consulting international standards for how citizens and police handle complaints, how should we approach the design of the interfaces to ensure they support multiple languages and can be customized or integrated with any specialist software the police might need?"
+    },
+    {
+      "turn_id": 32,
+      "role": "user",
+      "text": "That is a great question. First off, we definitely need to support a multilingual interface so different communities can use it easily. We also want the screens to be flexible, so the interfaces should be made customizable or user-configurable to the extent possible. Since the police have their own tools, the setup has to be compatible with specialist software that may be used, and it needs to follow appropriate interface guidelines. Whether someone is filing a complaint or managing the backend, we need End User and Administrator functions which are easy to use and intuitive throughout. Lastly, reliability is huge for us—we need the system designed in a manner that operational data is not lost in case of any failure of equipment or communication network."
+    },
+    {
+      "turn_id": 33,
+      "role": "bot",
+      "text": "Building on your point about preventing data loss during network or equipment failures, how should the system's interfaces interact with the specialist police software to ensure information is safely queued and synced if a connection temporarily drops?"
+    },
+    {
+      "turn_id": 34,
+      "role": "user",
+      "text": "To answer your question about handling those drops, our broad guidelines for system functionality really come down to this: we need it designed in a manner that operational data is not lost in case of any failure of equipment or communication network. It just has to hold onto that information safely until the connection is back. Also, while we are discussing the interface itself, we need to make sure it supports a multilingual interface so that different users can work with it comfortably."
+    },
+    {
+      "turn_id": 35,
+      "role": "bot",
+      "text": "Building on your requirement to keep data safe during equipment or network failures, I would like to clarify our targets for the system's overall availability. Over a typical three-month period, how much total time can we afford for planned maintenance versus unplanned outages, and is there a limit to the number of separate unplanned incidents the police operations can tolerate?"
+    },
+    {
+      "turn_id": 36,
+      "role": "user",
+      "text": "Police operations run around the clock, so availability is critical for us. Looking at a <rolling three month period>, we need to schedule things carefully so that planned downtime doesn't exceed <xx> hours. For unexpected issues, the total unplanned downtime shouldn't exceed <xx hours/minutes> over that same <rolling three month period>. It's also really disruptive if the system keeps dropping, so the actual number of incidents of unplanned downtime can't exceed <x> per <rolling three month period>. Finally, if the worst happens and we experience any software or hardware failure, we absolutely need to be able to restore the System—complete with inline synchronization—within no more than <xx> hours."
+    },
+    {
+      "turn_id": 37,
+      "role": "bot",
+      "text": "Now that we've established the strict availability and recovery targets for keeping the operational data safe, let's talk about who gets to see that data. When someone searches for a case they don't have full permissions for, should the system hide it entirely from the results, or just show basic metadata like the title, and will users need the ability to grant case access to specific colleagues or groups?"
+    },
+    {
+      "turn_id": 38,
+      "role": "user",
+      "text": "To answer your question about searches, if someone runs a quick or advanced search, we absolutely never want to include in the search result list any record which the user does not have the right to access. However, we need some flexibility depending on how we set things up. If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time—for example, having the option to just display title and metadata instead of the full file. Regarding sharing, yes, we definitely want to allow a user to stipulate which other users or groups can access cases. More broadly, we need solid role-based control for the functionality within the system to manage all these permissions. And since our staff often wear multiple hats, it's crucial that we allow a user to be a member of more than one group."
+    }
+  ],
+  "dialogue_generation": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "model": "gemini-3.1-pro-preview",
+    "prompt_hash": "fedce691ffc0c220a6c2ce1eafe35d01f4b661ebbfe2e77f828010c8af7381a9",
+    "schema_hash": "9be8d6915a55c470069248e40ccedc82f618947177ed980cd44251e29f62cc21",
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "coverage_threshold": 0.55,
+    "max_turns": 28,
+    "target_dialogue_recall": 0.82,
+    "theme_max_exchanges": 3,
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails.",
+    "clarification_rounds": 2,
+    "trace": [
+      {
+        "theme": "goal_scope",
+        "req_ids": [],
+        "bot_turn_id": 1,
+        "user_turn_id": 2,
+        "generation_mode": "deterministic_scope",
+        "coverage_ratio": 1.0,
+        "stage": "adaptive_opening"
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0037"
+        ],
+        "bot_turn_id": 3,
+        "user_turn_id": 4,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 100
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0080",
+          "AUTO-0086",
+          "AUTO-0073",
+          "AUTO-0067"
+        ],
+        "bot_turn_id": 5,
+        "user_turn_id": 6,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 99
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0055",
+          "AUTO-0065",
+          "AUTO-0046",
+          "AUTO-0042"
+        ],
+        "bot_turn_id": 7,
+        "user_turn_id": 8,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 90
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0002",
+          "AUTO-0003",
+          "AUTO-0060",
+          "AUTO-0089"
+        ],
+        "bot_turn_id": 9,
+        "user_turn_id": 10,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 81
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0050",
+          "AUTO-0054",
+          "AUTO-0063",
+          "AUTO-0049"
+        ],
+        "bot_turn_id": 11,
+        "user_turn_id": 12,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 76
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0075",
+          "AUTO-0084",
+          "AUTO-0039",
+          "AUTO-0051"
+        ],
+        "bot_turn_id": 13,
+        "user_turn_id": 14,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.25,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 69
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0072",
+          "AUTO-0071",
+          "AUTO-0078",
+          "AUTO-0085"
+        ],
+        "bot_turn_id": 15,
+        "user_turn_id": 16,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.5,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 64
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0061",
+          "AUTO-0068",
+          "AUTO-0033",
+          "AUTO-0070"
+        ],
+        "bot_turn_id": 17,
+        "user_turn_id": 18,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 59
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0062",
+          "AUTO-0048",
+          "AUTO-0008",
+          "AUTO-0069"
+        ],
+        "bot_turn_id": 19,
+        "user_turn_id": 20,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.25,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 51
+      },
+      {
+        "theme": "usability_help_accessibility",
+        "req_ids": [
+          "AUTO-0090",
+          "AUTO-0076"
+        ],
+        "bot_turn_id": 21,
+        "user_turn_id": 22,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 46
+      },
+      {
+        "theme": "security_audit",
+        "req_ids": [
+          "AUTO-0010",
+          "AUTO-0027",
+          "AUTO-0013",
+          "AUTO-0014"
+        ],
+        "bot_turn_id": 23,
+        "user_turn_id": 24,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 43
+      },
+      {
+        "theme": "security_audit",
+        "req_ids": [
+          "AUTO-0004",
+          "AUTO-0022"
+        ],
+        "bot_turn_id": 25,
+        "user_turn_id": 26,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 35
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0059",
+          "AUTO-0036",
+          "AUTO-0035",
+          "AUTO-0028"
+        ],
+        "bot_turn_id": 27,
+        "user_turn_id": 28,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 29
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0001",
+          "AUTO-0082"
+        ],
+        "bot_turn_id": 29,
+        "user_turn_id": 30,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 24
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0100",
+          "AUTO-0031",
+          "AUTO-0034"
+        ],
+        "bot_turn_id": 31,
+        "user_turn_id": 32,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 22
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0100"
+        ],
+        "bot_turn_id": 33,
+        "user_turn_id": 34,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 19
+      },
+      {
+        "theme": "availability_reliability",
+        "req_ids": [
+          "AUTO-0094",
+          "AUTO-0093",
+          "AUTO-0095",
+          "AUTO-0096"
+        ],
+        "bot_turn_id": 35,
+        "user_turn_id": 36,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "clarification",
+        "focus_label": "availability_reliability",
+        "uncovered_requirement_count_at_start": 18
+      },
+      {
+        "theme": "user_roles_permissions",
+        "req_ids": [
+          "AUTO-0025",
+          "AUTO-0023",
+          "AUTO-0021",
+          "AUTO-0019"
+        ],
+        "bot_turn_id": 37,
+        "user_turn_id": 38,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "clarification",
+        "focus_label": "user_roles_permissions",
+        "uncovered_requirement_count_at_start": 14
+      }
+    ],
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 2,
+    "coverage_summary": {
+      "clarification_rounds_requested": 2,
+      "clarification_rounds_used": 2,
+      "initial_uncovered_requirement_count": 100,
+      "final_uncovered_requirement_count": 10,
+      "final_uncovered_req_ids": [
+        "AUTO-0005",
+        "AUTO-0007",
+        "AUTO-0011",
+        "AUTO-0016",
+        "AUTO-0017",
+        "AUTO-0024",
+        "AUTO-0030",
+        "AUTO-0057",
+        "AUTO-0097",
+        "AUTO-0098"
+      ],
+      "coverage_history": [
+        0.0,
+        0.010000000000000009,
+        0.09999999999999998,
+        0.18999999999999995,
+        0.24,
+        0.31000000000000005,
+        0.36,
+        0.41000000000000003,
+        0.49,
+        0.54,
+        0.5700000000000001,
+        0.65,
+        0.71,
+        0.76,
+        0.78,
+        0.81,
+        0.8200000000000001,
+        0.86,
+        0.9
+      ],
+      "exchanges": 19,
+      "target_dialogue_recall": 0.82,
+      "final_dialogue_recall": 0.9,
+      "theme_exchange_counts": {
+        "functional_capabilities": 1,
+        "usability_help_accessibility": 9,
+        "security_audit": 2,
+        "data_validation": 2,
+        "interfaces_integrations": 2,
+        "availability_reliability": 1,
+        "user_roles_permissions": 1
+      },
+      "theme_coverage": {
+        "user_roles_permissions": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 5,
+          "covered": 2,
+          "uncovered": 3,
+          "recall": 0.4
+        },
+        "data_validation": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 7,
+          "covered": 7,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 4,
+          "covered": 0,
+          "uncovered": 4,
+          "recall": 0.0
+        },
+        "availability_reliability": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "security_audit": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 51,
+          "covered": 51,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "reporting_documentation": {
+          "total": 8,
+          "covered": 5,
+          "uncovered": 3,
+          "recall": 0.625
+        },
+        "other_constraints": {
+          "total": 9,
+          "covered": 7,
+          "uncovered": 2,
+          "recall": 0.7777777777777778
+        }
+      },
+      "critical_theme_gaps": [],
+      "stopped_reason": "target_dialogue_recall_reached"
+    }
+  }
+}

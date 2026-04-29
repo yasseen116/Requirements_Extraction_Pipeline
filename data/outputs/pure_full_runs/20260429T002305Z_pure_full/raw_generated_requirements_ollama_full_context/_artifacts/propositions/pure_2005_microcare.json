@@ -1,0 +1,235 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "project_summary": "Capture and manage sales, claims, voucher allocation, and user roles for the 2005-microcare system.",
+  "propositions": [
+    {
+      "id": "p1",
+      "category": "functional",
+      "text": "The Salesman master should record customer's name and contact details during a sale.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:1"
+      ]
+    },
+    {
+      "id": "p2",
+      "category": "functional",
+      "text": "The Salesman master should track the product or service being sold, including its ID and description during a sale.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:2"
+      ]
+    },
+    {
+      "id": "p3",
+      "category": "functional",
+      "text": "The Salesman master should record the quantity sold during a sale.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:3"
+      ]
+    },
+    {
+      "id": "p4",
+      "category": "functional",
+      "text": "The Salesman master should capture the price per unit and total sale amount during a sale.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:4"
+      ]
+    },
+    {
+      "id": "p5",
+      "category": "functional",
+      "text": "The Salesman master should record payment method information for each transaction.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:5"
+      ]
+    },
+    {
+      "id": "p6",
+      "category": "functional",
+      "text": "The Salesman master should log the date and time of the sale, along with any special notes or comments from the Salesman.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:6"
+      ]
+    },
+    {
+      "id": "p7",
+      "category": "functional",
+      "text": "During the claim entry process, we need to capture detailed information such as the claimant's name, contact details, date of birth, and a description of the incident. This is important because it helps us verify the identity and ensure accurate claims processing.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:1"
+      ]
+    },
+    {
+      "id": "p8",
+      "category": "functional",
+      "text": "The system should log IP address and timestamp for each entry to maintain audit trails. Regarding sales information, we only need to capture basic transaction data like order ID and total amount, but not any personal details.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ]
+    },
+    {
+      "id": "p9",
+      "category": "functional",
+      "text": "Authorized users should be able to amend or alter claim entries if needed.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:4"
+      ]
+    },
+    {
+      "id": "p10",
+      "category": "data",
+      "text": "Each voucher slip should contain a barcode with two unique identifiers: one for the client and another for the partner.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:6"
+      ]
+    },
+    {
+      "id": "p11",
+      "category": "data",
+      "text": "The system should validate invoice amounts as the number of vouchers multiplied by the wholesale price.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:3"
+      ]
+    },
+    {
+      "id": "p12",
+      "category": "data",
+      "text": "Cash is the only mode accepted during distribution transactions.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:4"
+      ]
+    },
+    {
+      "id": "p13",
+      "category": "functional",
+      "text": "The system should allocate relevant vouchers based on the number required by the distributor.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:1"
+      ]
+    },
+    {
+      "id": "p14",
+      "category": "functional",
+      "text": "The system should match the number of forms entered during claim submission with available forms in stock.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:2"
+      ]
+    },
+    {
+      "id": "p15",
+      "category": "functional",
+      "text": "The system should print a receipt document when allocating vouchers.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ]
+    },
+    {
+      "id": "p16",
+      "category": "functional",
+      "text": "When allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution. Each voucher allocated should include its number and batch number.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ]
+    },
+    {
+      "id": "p17",
+      "category": "functional",
+      "text": "The system should include the number and batch number of each voucher allocated.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:5"
+      ]
+    },
+    {
+      "id": "p18",
+      "category": "business_rules",
+      "text": "If the claim status is either ‘Rejection’ or ‘Quarantine’, we have a provision to capture the reason for the rejection or quarantine. This will help us understand the issues better and improve our processes.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:5"
+      ]
+    },
+    {
+      "id": "p19",
+      "category": "functional",
+      "text": "System admins should be able to add new salesmen to the Team Master.",
+      "priority": "high",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:1"
+      ]
+    }
+  ],
+  "removed_duplicates": []
+}

@@ -1,0 +1,366 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "metadata": {
+    "domain": "pure_document",
+    "source_type": "synthetic",
+    "parent_id": "pure_2005_microcare",
+    "split": "benchmark",
+    "dialogue_style": "adaptive_semantic_coverage"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "To start, what is the overall purpose and scope of this system?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "This project is based on the 2005 - microcare system, and the goal is to capture the main requirements and constraints for document 2005_microcare."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Great, that helps set the scope. Thinking about the functions from that 2005 system, what specific details would you need to capture for each salesperson in their master record?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "Yes, that's a key part of it. We need to have a 'Salesman master' record, and it's important that it captures all the necessary information for each person."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "Since those Salesman master records are so important, what kind of controls do we need around who can view or edit them, and should we keep a history of any changes?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "Yes, absolutely. We need to make sure that only an authorized user can alter or amend the claim if required. And it's also important that during the claim entry process, the system captures the necessary information about what's happening."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "Okay, that's clear on capturing the right information. During that claim entry process, when someone is creating an invoice, how should the system verify that the total amount is calculated correctly based on the number of vouchers and their price?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "That's a good question. The calculation itself is simple: the invoice amount should just be the number of vouchers multiplied by the wholesale price. For these transactions, the mode of payment is always Cash. To make sure we're tracking the right vouchers, each voucher slip should have a bar code with two identifications, one for the client and one for the partner. Speaking of getting the data right, there are a few other things. When a user is entering VSP details, we want to make sure the data is consistent. The values for Health Sub – District, Locality, Level Of Facility, Type of facility, and Registration Body should come from their own master list, so the user has to select the details based on the VSP. Also, when creating a new staff member, if a staff with an existing name is entered, the system should generate a message to warn the user, but it's important that the system will allow the user to save that new staff if it's required."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "That's very helpful for ensuring data consistency. Thinking more about the vouchers themselves, besides the price, are there other key details like an expiration date that the system needs to validate when a claim is processed?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "Yes, absolutely. The validity date is a key detail, and it's important that it can only be amended or altered at the system level by an authorized user. The voucher will also have an MRP, or maximum retail price. Generally, all the rules for the voucher, like the health care services included and the quality standards for providers, are defined in the PDS. The physical voucher is also designed with three tear off portioned slips, and one has a sub-section tear-off for the partner. If a claim doesn't meet these rules, our user needs to be able to mark the Claim status as 'Rejected' and send it back to the VSP."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "That's clear on how to handle rejected claims. For a successful claim, you mentioned printing a receipt. What specific information from the claim submission should be automatically included on that receipt?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "Yes, the receipt should be based on the information from the claim submission. A critical part for us is tracking the vouchers. The receipt needs to automatically list the details for each voucher used, pulling the `Batch No` and `voucher No` from our available voucher stock. It would be great if this was shown in a grid format to make it clear. We also need to include the `Patient Status`, which should be selected from our list in the `Patient Status Master`. If the status happens to be 'Referral', then it's very important that the receipt also captures who the patient was `Referred To` and the `Reason for Referral`, with that reason being populated from our `Referral master`."
+    },
+    {
+      "turn_id": 13,
+      "role": "bot",
+      "text": "You've mentioned a few times that only an 'authorized user' can make certain changes, like amending voucher validity. Could you tell me more about the different roles you see in the system? For instance, what would a system administrator be able to do that a standard claims processor could not?"
+    },
+    {
+      "turn_id": 14,
+      "role": "user",
+      "text": "That's a good question. A system admin would have much higher-level permissions. For instance, only a system admin should be able to create the User Groups we use to manage access. We'll need the flexibility to create any number of individual users under any of those user groups. A regular user, on the other hand, would be doing more of the daily tasks. For example, during every distribution transaction, they would need to select the name of the salesman from our Team Master list."
+    },
+    {
+      "turn_id": 15,
+      "role": "bot",
+      "text": "We've discussed entering VSP details and processing their claims. When you need to look up a VSP's master file, what key information, such as the agreed-upon payment terms, would you expect to see on that summary screen?"
+    },
+    {
+      "turn_id": 16,
+      "role": "user",
+      "text": "When we pull up a VSP's master file, it's critical that we can see all the key information for that partner. Specifically, the VSP Master Information screen needs to show the payment terms we've agreed upon between MSIU and the VSP. We need a place to enter those terms and then have them clearly displayed on that summary."
+    },
+    {
+      "turn_id": 17,
+      "role": "bot",
+      "text": "That's clear on the VSP master file. Thinking about how the VSPs will actually submit claims, I recall a mention of using thumb impressions for verification. Will they need to use a specific type of fingerprint scanner or device at their locations to interact with the system?"
+    },
+    {
+      "turn_id": 18,
+      "role": "user",
+      "text": "That's an important point. We're concerned about fraud, so if a claim from the same VSP has a thumb impression mismatch more than two times, we need the system to automatically show a warning message. At the same time, it should also in-activate that VSP to prevent any further submissions."
+    }
+  ],
+  "dialogue_generation": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "model": "gemini-2.5-pro",
+    "prompt_hash": "fedce691ffc0c220a6c2ce1eafe35d01f4b661ebbfe2e77f828010c8af7381a9",
+    "schema_hash": "9be8d6915a55c470069248e40ccedc82f618947177ed980cd44251e29f62cc21",
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "coverage_threshold": 0.55,
+    "max_turns": 28,
+    "target_dialogue_recall": 0.82,
+    "theme_max_exchanges": 3,
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails.",
+    "clarification_rounds": 2,
+    "trace": [
+      {
+        "theme": "goal_scope",
+        "req_ids": [],
+        "bot_turn_id": 1,
+        "user_turn_id": 2,
+        "generation_mode": "deterministic_scope",
+        "coverage_ratio": 1.0,
+        "stage": "adaptive_opening"
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0007"
+        ],
+        "bot_turn_id": 3,
+        "user_turn_id": 4,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 25
+      },
+      {
+        "theme": "security_audit",
+        "req_ids": [
+          "AUTO-0020",
+          "AUTO-0024"
+        ],
+        "bot_turn_id": 5,
+        "user_turn_id": 6,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 24
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0005",
+          "AUTO-0009",
+          "AUTO-0013",
+          "AUTO-0011"
+        ],
+        "bot_turn_id": 7,
+        "user_turn_id": 8,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 19
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0001",
+          "AUTO-0004",
+          "AUTO-0019"
+        ],
+        "bot_turn_id": 9,
+        "user_turn_id": 10,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 13
+      },
+      {
+        "theme": "workflows_business_rules",
+        "req_ids": [
+          "AUTO-0016",
+          "AUTO-0010",
+          "AUTO-0021"
+        ],
+        "bot_turn_id": 11,
+        "user_turn_id": 12,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 9
+      },
+      {
+        "theme": "user_roles_permissions",
+        "req_ids": [
+          "AUTO-0025",
+          "AUTO-0006"
+        ],
+        "bot_turn_id": 13,
+        "user_turn_id": 14,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 5
+      },
+      {
+        "theme": "reporting_documentation",
+        "req_ids": [
+          "AUTO-0017",
+          "AUTO-0012"
+        ],
+        "bot_turn_id": 15,
+        "user_turn_id": 16,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "clarification",
+        "focus_label": "reporting_documentation",
+        "uncovered_requirement_count_at_start": 3
+      },
+      {
+        "theme": "deployment_environment_constraints",
+        "req_ids": [
+          "AUTO-0023"
+        ],
+        "bot_turn_id": 17,
+        "user_turn_id": 18,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "clarification",
+        "focus_label": "deployment_environment_constraints",
+        "uncovered_requirement_count_at_start": 2
+      }
+    ],
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 2,
+    "coverage_summary": {
+      "clarification_rounds_requested": 2,
+      "clarification_rounds_used": 2,
+      "initial_uncovered_requirement_count": 25,
+      "final_uncovered_requirement_count": 1,
+      "final_uncovered_req_ids": [
+        "AUTO-0017"
+      ],
+      "coverage_history": [
+        0.0,
+        0.040000000000000036,
+        0.24,
+        0.48,
+        0.64,
+        0.8,
+        0.88,
+        0.92,
+        0.96
+      ],
+      "exchanges": 9,
+      "target_dialogue_recall": 0.82,
+      "final_dialogue_recall": 0.96,
+      "theme_exchange_counts": {
+        "functional_capabilities": 1,
+        "security_audit": 1,
+        "data_validation": 2,
+        "workflows_business_rules": 1,
+        "user_roles_permissions": 1,
+        "reporting_documentation": 1,
+        "deployment_environment_constraints": 1
+      },
+      "theme_coverage": {
+        "user_roles_permissions": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 10,
+          "covered": 10,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "data_validation": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "reporting_documentation": {
+          "total": 7,
+          "covered": 6,
+          "uncovered": 1,
+          "recall": 0.8571428571428571
+        },
+        "other_constraints": {
+          "total": 7,
+          "covered": 7,
+          "uncovered": 0,
+          "recall": 1.0
+        }
+      },
+      "critical_theme_gaps": [],
+      "stopped_reason": "target_dialogue_recall_reached"
+    }
+  }
+}

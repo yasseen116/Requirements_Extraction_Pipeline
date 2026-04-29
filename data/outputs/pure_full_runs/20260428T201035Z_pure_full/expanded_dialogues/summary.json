@@ -1,0 +1,14 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T201035Z_pure_full/expanded_dialogues/pure_0000_cctns.json",
+    "turn_count": 38,
+    "chunk_count": 19,
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 2,
+    "final_uncovered_requirement_count": 10,
+    "stopped_reason": "target_dialogue_recall_reached",
+    "exchanges": 19,
+    "final_dialogue_recall": 0.9
+  }
+]

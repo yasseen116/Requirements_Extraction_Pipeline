@@ -1,0 +1,944 @@
+{
+  "sample_id": "pure_0000_cctns",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_cctns",
+    "title": "0000 - cctns",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - cctns.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - cctns.pdf"
+  },
+  "method": "g_direct_source_to_full_requirements_v1",
+  "model": "gemini-3.1-pro-preview",
+  "prompt_hash": "7bc5ca53c65429050712190e18c0cc85d56cb5467d06842c84fceba93e2228ae",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "repair_attempted": false,
+  "usage": {
+    "segments": [
+      {
+        "segment_index": 1,
+        "runs": 1,
+        "per_run": [
+          {
+            "promptTokenCount": 3767,
+            "candidatesTokenCount": 5425,
+            "totalTokenCount": 23857,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 3767
+              }
+            ],
+            "thoughtsTokenCount": 14665
+          }
+        ]
+      }
+    ]
+  },
+  "error": null,
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "segment_1:ok"
+    ],
+    "source_chunk_size": null,
+    "source_chunk_char_budget": null
+  },
+  "project_summary": "CCTNS Project Requirements covering registration, help module, defect tracking, audit trails, security, usability, accessibility, and system performance.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "Registration Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "The solution should enable the user to track the submitted defect or enhancement request.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "The System must be able to capture and store violations.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "The System must at a minimum be able to provide reports for actions on cases organised: By case;.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "Allowing users to see and change profiles: If user-specified profiles are used, users should be able to see, modify and delete that profile on demand.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-002",
+        "text": "The System must allow the user to limit access to cases to specified users or user groups.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-003",
+        "text": "The system should provide for role-based control for the functionality within the system The System must allow a user to be a member of more than one group.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-004",
+        "text": "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-005",
+        "text": "The System should allow a user to stipulate which other users or groups can access cases.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-006",
+        "text": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-007",
+        "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide one of the following responses (selectable at configuration time): display title and metadata;.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-008",
+        "text": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-009",
+        "text": "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-010",
+        "text": "Ease of Use All error messages produced by the System must be meaningful, so that they can be appropriately acted upon by the users who are likely to see them.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-011",
+        "text": "The System must employ a single set of user interface rules, or a small number of sets to provide a familiar and common look and feel for the application.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-012",
+        "text": "The System must be able to display several entities (cases, suspects) simultaneously.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-013",
+        "text": "The interfaces must be made customizable or user-configurable to the extent possible.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-014",
+        "text": "The System user interface must be suitable for users with special needs;.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-015",
+        "text": "that is, compatible with specialist software that may be used and with appropriate interface guidelines The System must provide End User and Administrator functions which are easy to use and intuitive throughout.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-016",
+        "text": "The System must allow persistent defaults for data entry where desirable.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-017",
+        "text": "These defaults should include: user-definable values;.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-018",
+        "text": "Frequently-executed System transactions must be designed so that they can be completed with a small number of interactions.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-019",
+        "text": "Where the System employs a graphical user interface, it must allow users to customise it.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-020",
+        "text": "Customisation should include, but need not be limited to the following changes: menu contents;.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-021",
+        "text": "Usability The user interfaces should be designed to make them user-intuitive.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-022",
+        "text": "The user interfaces of the system should comply with Standard ISO 9241.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-023",
+        "text": "ICT accessibility: ISO 9241-20 shall be the standard for guidance on ICT accessibility.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-024",
+        "text": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-025",
+        "text": "User interfaces should meet its requirements and recommendations.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-026",
+        "text": "Content accessibility WCAG 1.0 shall be the standard used for guidance on content accessibility.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-027",
+        "text": "Providing text equivalents for non-text media objects: All non-text media objects, such as graphical images or video, should be provided with alternative equivalent textual descriptions and/or with equivalent text-based functionality.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-028",
+        "text": "Making navigation self-descriptive: Navigation should be designed to help users understand where they are, where they have been and where they can go next.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-029",
+        "text": "Showing users where they are: Each presentation segment (page or window) should provide the user with a clear and sufficient indication of where he or she is in the navigation structure and of the current segment position with respect to the overall structure.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-030",
+        "text": "Offering alternative access paths: Alternative access paths for navigating to a specific unit of content should be offered to support different navigation strategies.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-031",
+        "text": "Minimizing navigation effort: The number of navigation steps needed to reach a certain piece of content should be minimized as long as different mental models, navigation strategies and tasks of the user are taken into account.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-032",
+        "text": "Splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-033",
+        "text": "If a splash screen is used, a navigation option to skip it should be offered.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-034",
+        "text": "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-035",
+        "text": "Horizontal scrolling should be avoided wherever possible.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-036",
+        "text": "Designing for input device independence: User interfaces should be designed to allow activation of controls by a variety of input devices.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-037",
+        "text": "Making user interfaces robust: User interfaces should be designed to be as robust as possible in the face of changing technology.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-038",
+        "text": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-039",
+        "text": "Minimizing user errors: Potential user errors as well as the effort needed to recover from errors should be minimized.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-040",
+        "text": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-041",
+        "text": "Making text resizable by the user: Text should be able to be resized by the user, using functions provided by the user agent or other appropriate means.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-042",
+        "text": "Text quality: The quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-043",
+        "text": "Writing style: The reading and understanding of the textual content on the screen should be supported by suitable means, including the use of short sentences, the division of the text into shorter chunks or the presentation of content items in the form of bullet points.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-044",
+        "text": "Supporting text skimming: Fast skimming of text should be supported by the provision of clear links, bulleted lists, highlighted keywords, logical headings, and short phrases and sentences.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-045",
+        "text": "Readability of text: Text presented on the pages should be readable taking into account the expected display characteristics and spatial arrangement.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-046",
+        "text": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-047",
+        "text": "Distinguishable within-page links: Within-page links should be clearly distinguishable from other links that lead to a different page.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-048",
+        "text": "Within-page links are shown with dashed rather than solid underlines Avoiding link overload: Text pages containing large proportions of links should be formatted so that the presence of links does not impede the readability of the text.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-049",
+        "text": "Using familiar terminology for navigation links: Navigation links — particularly links representing the main navigation structure — should be labelled with terms that are familiar to the user, based on his/her general knowledge, prior experience in the application domain or experience of using other systems.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-050",
+        "text": "Marking links opening new windows: Links that open new browser windows or pop-up windows should be clearly marked.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-051",
+        "text": "Distinguishing navigation links from controls: Navigation links should be clearly distinguishable from controls activating some action.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-052",
+        "text": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-053",
+        "text": "Selecting appropriate page lengths The length of a page should be selected so as to support the primary purpose and use of the page.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-054",
+        "text": "Using colour: Colour should be used with care, taking into account human capabilities and restrictions in perceiving colour, and not as the only means of conveying information.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-055",
+        "text": "Color should never be the only means of coding.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-056",
+        "text": "Using frames with care: If frames are used, care should be taken to avoid possible problems, for example, those involving the use of the back button, bookmarking of pages, or scrolling of information.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-057",
+        "text": "Providing alternatives to frame-based presentation: If frames are used, an alternative way of presenting relevant information without frames should be provided.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-058",
+        "text": "Providing alternative text-only pages: When style sheets and/or frames are turned off it should be possible for the user to read and understand the page;.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-059",
+        "text": "alternatively, the user should be provided with an equivalent alternative text-only page.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-060",
+        "text": "Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-061",
+        "text": "Placing title information consistently: Page titles should be placed in a consistent location on the different pages.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-062",
+        "text": "Observing principles of human perception When designing application pages, the general principles of human perception should be taken into account.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-063",
+        "text": "The International Standards mentioned below shall be consulted for guidance.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-064",
+        "text": "In addition, when designing multimedia information presentations, the design principles and recommendations described in ISO 14915-1 to ISO 14915-3 should be taken into account.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-065",
+        "text": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-066",
+        "text": "Providing a site map: A separate navigation overview such as a site map should be provided for application showing the structure of the site in an overview form.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-067",
+        "text": "Consistency between navigation components and content: If navigation components (or overviews) are shown in conjunction with associated content, consistency between the navigation component and the content shown should be maintained by indicating in the navigation component.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-068",
+        "text": "Placing navigation components consistently: Navigation components should be placed consistently on the pages or in the framesets in the pages of the application.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-069",
+        "text": "Taking account of the users’ tasks and information needs: When providing different access paths or navigation structures for different user groups, the tasks and information needs of these user groups should be taken into consideration.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-070",
+        "text": "Making individualization and adaptation evident: It should be made evident to the user when individualization and/or adaptation are used.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-071",
+        "text": "Making user profiles evident: If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-072",
+        "text": "The user interfaces of the system should follow the guidelines specified under www.usability.gov System Availability The System must be available to users: from <xx:00> to <xx:00>;.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "availability"
+      },
+      {
+        "id": "NFR-073",
+        "text": "The planned downtime for the System must not exceed <xx> hours per <rolling three month period>.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "availability"
+      },
+      {
+        "id": "NFR-074",
+        "text": "Unplanned downtime for the System must not exceed <xx hours/minutes> per <rolling three month period>.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "availability"
+      },
+      {
+        "id": "NFR-075",
+        "text": "The number of incidents of unplanned downtime for the System must not exceed <x> per <rolling three month period>.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "availability"
+      },
+      {
+        "id": "NFR-076",
+        "text": "In the event of any software or hardware failure, it must be possible to restore the System (with inline synchronization) within no more than <xx> hours.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "reliability"
+      },
+      {
+        "id": "NFR-077",
+        "text": "The System must be able to retrieve and display within 5-8 seconds the case which has been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-078",
+        "text": "The System must be able to retrieve and display within 20 seconds the case which has not been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-079",
+        "text": "The System be scaleable and must not have any features which would preclude use in small or large police stations, with varying numbers of cases handled.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-080",
+        "text": "The systems should be designed with the following broad guidelines: System Functionality The system should support multilingual interface The system should be designed in manner that operational data is not lost in case of any failure of equipment or communication network.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "reliability"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "Such configurations must be saved in the user profile.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "the most stringent) implies that the System must not include such cases in any count of search results;.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "BR-002",
+        "text": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "IF-001",
+        "text": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "Administrative parameters The word “unalterable” is to mean that the audit trail data cannot be modified in any way or deleted by any user;.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "C-002",
+        "text": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      }
+    ]
+  }
+}

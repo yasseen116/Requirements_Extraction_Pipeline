@@ -1,0 +1,467 @@
+{
+  "sample_id": "pure_0000_gamma_j",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_gamma_j",
+    "title": "0000 - gamma j",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - gamma j.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - gamma j.pdf"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": "qwen2.5:7b-instruct",
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": []
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:fallback_heuristic"
+    ],
+    "retrieval_top_k": 8,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 12,
+    "max_chars": 2200,
+    "stored_unique_requirements": 49
+  },
+  "diagnostics": {
+    "evidence_bank_count": 88,
+    "proposition_count": 49,
+    "removed_duplicate_propositions": 0,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0,
+    "grounded_after_rewrite_count": 49
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_0000_gamma_j.json",
+    "proposition_path": "_artifacts/propositions/pure_0000_gamma_j.json"
+  },
+  "project_summary": "Heuristic proposition fallback generated from evidence units.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "It should be able to handle different types of products and quantities.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "Yoggie should work closely with our organization on future enhancements and new features.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "The system must exhibit specific functionalities under certain conditions, which is important for us because it ensures that all the necessary features are covered.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "We need the system to send emails to customers and vendors as quickly as possible — ideally in less than a second.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "For both customers and vendors, these emails should be triggered under specific conditions such as order confirmations, payment reminders, account updates, and support requests.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "For our e-commerce platform, it should be able to process transactions quickly — ideally within less than 2 seconds from when a customer clicks 'buy now'.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "We've had issues with slow login times, so we need the system to authenticate users efficiently, ensuring that it never takes more than 5 seconds for a user to log in.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "For returning customers, the system should remember their card details but verify the card is still valid upon each login.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "Additionally, the system must support multiple browsers including Chrome, Firefox, Safari, and Edge on both Windows and macOS operating systems.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "The user interface should display product titles and metadata prominently but never show any private information like credit card numbers or passwords in the browser interface.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "Only authorized users, identified by their unique login credentials, should have access to certain administrative features.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "We must not allow unauthorized users to modify or view sensitive data.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "Lastly, we need robust logging and auditing capabilities for all user activities, ensuring that every action is recorded and can be traced back to a specific user.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-014",
+        "text": "Sales people need to be able to place orders and manage their own profiles within the Weborder System.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ]
+      },
+      {
+        "id": "FR-015",
+        "text": "Their accounts must already be registered before they can log in.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ]
+      },
+      {
+        "id": "FR-016",
+        "text": "Once logged in, sales people should have access to order management tools but never administrative functions that only an Administrator would handle.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ]
+      },
+      {
+        "id": "FR-017",
+        "text": "Customer accounts also need to be registered for them to use the system, but customers should not have the ability to manage orders or other sensitive information.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ]
+      },
+      {
+        "id": "FR-018",
+        "text": "Customers should be able to add items to their cart and view product details.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "FR-019",
+        "text": "When they log in, the system should allow them to access their order history but never let them modify or delete orders that aren't theirs.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "FR-020",
+        "text": "It's important because we want to protect user data and ensure only authorized users can make changes.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "Additionally, the system should automatically detect and block IP addresses that show signs of DOS attacks.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-002",
+        "text": "if someone tries to log in multiple times without success, it should lock them out after a certain number of failed attempts.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-003",
+        "text": "During peak usage times, such as when we have a large number of concurrent users, the system should be able to handle searches efficiently.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-004",
+        "text": "For example, it should use Dijkstra's shortest path algorithm for searching, and it needs to perform these searches quickly — ideally in less than 1 second per search.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-005",
+        "text": "Specifically, it should be able to restore 1000 records per second and retrieve up to 200 products per second without any significant slowdowns.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-006",
+        "text": "Additionally, before performing any maintenance tasks, such as software updates or server checks, the system should automatically back up all critical data.",
+        "priority": "medium",
+        "evidence_turns": [
+          34
+        ],
+        "category": "reliability"
+      },
+      {
+        "id": "NFR-007",
+        "text": "This way, if something goes wrong with our primary storage, we can quickly recover from the last backup without losing too much information.",
+        "priority": "medium",
+        "evidence_turns": [
+          36
+        ],
+        "category": "reliability"
+      },
+      {
+        "id": "NFR-008",
+        "text": "It should be easy for us to migrate or back up via another USB drive as per AUTO-0035.",
+        "priority": "medium",
+        "evidence_turns": [
+          36
+        ],
+        "category": "reliability"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "This validation should occur every time a new email address is entered or an existing one is updated.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "The system must use a SQL-based database for both inventory and other data storage to ensure consistency and reliability.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "Ideally it would happen automatically at least once a day, but we should also have the option to manually trigger these tests whenever necessary.",
+        "priority": "medium",
+        "evidence_turns": [
+          24
+        ]
+      },
+      {
+        "id": "BR-002",
+        "text": "For sure, we need the system to send out automated test emails during scheduled maintenance and after software updates.",
+        "priority": "medium",
+        "evidence_turns": [
+          26
+        ]
+      },
+      {
+        "id": "BR-003",
+        "text": "During maintenance windows, say between 8 PM and 2 AM on Tuesday nights, the system should automatically check if all outgoing emails are working properly.",
+        "priority": "medium",
+        "evidence_turns": [
+          26
+        ]
+      },
+      {
+        "id": "BR-004",
+        "text": "Similarly, right after a new version of the software is deployed, we want to make sure everything is still functioning as expected, so the system should send out test emails then too.",
+        "priority": "medium",
+        "evidence_turns": [
+          26
+        ]
+      },
+      {
+        "id": "BR-005",
+        "text": "This way, any issues can be caught early and addressed before they affect our users.",
+        "priority": "medium",
+        "evidence_turns": [
+          26
+        ]
+      },
+      {
+        "id": "BR-006",
+        "text": "Specifically, the system should start backing up critical data between 2 AM and 6 AM local time.",
+        "priority": "medium",
+        "evidence_turns": [
+          28
+        ]
+      },
+      {
+        "id": "BR-007",
+        "text": "Additionally, before performing maintenance tasks such as software updates or server checks, it should complete a backup to ensure that any changes are safe and can be reverted if necessary.",
+        "priority": "medium",
+        "evidence_turns": [
+          28
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "IF-001",
+        "text": "For customer emails, we need the system to send an email confirmation that includes the items ordered and their tracking number.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "IF-002",
+        "text": "This should happen automatically after the order is placed.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "IF-003",
+        "text": "The web interface must be consistent across different browsers like Chrome, Firefox, and Safari, ensuring a user-friendly experience for our customers.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "IF-004",
+        "text": "For customer support queries, the system should send an email to our System Administrator whenever a technical issue is raised by customers or sales staff.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "IF-005",
+        "text": "The content of these emails should include details like the user's contact information and the nature of the problem so that it can be addressed promptly.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "IF-006",
+        "text": "This email should contain the tracking number for easy reference.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "IF-007",
+        "text": "Customers must access the web order system through a secure HTTPS connection from any compatible browser.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "IF-008",
+        "text": "We need the system to send an email confirmation to customers as soon as their order is placed.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ]
+      },
+      {
+        "id": "IF-009",
+        "text": "This email should include details about the items they ordered and the shipping address, along with a tracking number for easy reference.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ]
+      },
+      {
+        "id": "IF-010",
+        "text": "It's important because it helps ensure that customers are aware of their order status and can track their deliveries.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "For our system to operate smoothly, we need a fixed hardware setup that can be updated via an internet connection.",
+        "priority": "medium",
+        "evidence_turns": [
+          38
+        ]
+      },
+      {
+        "id": "C-002",
+        "text": "It's crucial for us to have reliable network connectivity so that we can patch and maintain the system as needed without downtime.",
+        "priority": "medium",
+        "evidence_turns": [
+          38
+        ]
+      }
+    ]
+  }
+}

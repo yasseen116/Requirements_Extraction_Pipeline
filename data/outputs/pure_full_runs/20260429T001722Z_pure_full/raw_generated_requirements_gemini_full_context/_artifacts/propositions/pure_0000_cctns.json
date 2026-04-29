@@ -1,0 +1,1151 @@
+{
+  "sample_id": "pure_0000_cctns",
+  "project_summary": "The project aims to capture the main requirements and constraints for the 0000 - cctns document management system.",
+  "propositions": [
+    {
+      "id": "REQ-001",
+      "category": "functional",
+      "text": "The system shall allow a user to create a new case.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:3"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "category": "functional",
+      "text": "The system shall allow a user to update an existing case.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:3"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "category": "non_functional",
+      "text": "Frequently-executed system transactions must be designed to be quick.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "REQ-004",
+      "category": "non_functional",
+      "text": "Users must be able to complete frequently-executed system transactions with a small number of interactions.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-005",
+      "category": "non_functional",
+      "text": "The length of a page must be appropriate for what the user is trying to do.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-006",
+      "category": "functional",
+      "text": "For long pages, the system shall provide within-page links to help users jump to the right section.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "category": "non_functional",
+      "text": "Within-page links must be clearly distinguishable from links that go to a different page.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-008",
+      "category": "non_functional",
+      "text": "Within-page links could have dashed rather than solid underlines to distinguish them.",
+      "priority": "low",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-009",
+      "category": "non_functional",
+      "text": "If a page has a lot of links, the text must still be easy to read.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-010",
+      "category": "functional",
+      "text": "Each page must always have a clear link leading back to a landmark page they can easily recognize or to the home page.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:6"
+      ]
+    },
+    {
+      "id": "REQ-012",
+      "category": "non_functional",
+      "text": "Color must not be the only means of conveying information.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-013",
+      "category": "non_functional",
+      "text": "The system must use ISO 9241-20 as the standard for guidance on ICT accessibility.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:3"
+      ],
+      "nfr_category": "compliance"
+    },
+    {
+      "id": "REQ-014",
+      "category": "non_functional",
+      "text": "All non-text media objects, like graphical images or video, must have equivalent textual descriptions.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-015",
+      "category": "functional",
+      "text": "Users must have the ability to change the menu contents.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:5"
+      ]
+    },
+    {
+      "id": "REQ-016",
+      "category": "functional",
+      "text": "Users must be able to resize text.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:2"
+      ]
+    },
+    {
+      "id": "REQ-017",
+      "category": "interfaces",
+      "text": "Users should be able to resize text using their browser's built-in functions or other appropriate means.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:2"
+      ]
+    },
+    {
+      "id": "REQ-018",
+      "category": "non_functional",
+      "text": "The system must avoid using splash screens unless they provide useful content or feedback on the application state.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-019",
+      "category": "functional",
+      "text": "If a splash screen is used, it must provide a navigation option to skip it.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:4"
+      ]
+    },
+    {
+      "id": "REQ-020",
+      "category": "non_functional",
+      "text": "If frames are used, they must not cause issues with the back button.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-021",
+      "category": "non_functional",
+      "text": "If frames are used, they must not cause issues with bookmarking pages.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-022",
+      "category": "non_functional",
+      "text": "If frames are used, they must not cause weird scrolling behavior.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-023",
+      "category": "non_functional",
+      "text": "User interfaces must allow activation of controls by a variety of input devices, not just a mouse.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-024",
+      "category": "functional",
+      "text": "The system must provide a site map that shows the structure of the site in an overview form.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ]
+    },
+    {
+      "id": "REQ-025",
+      "category": "non_functional",
+      "text": "Navigation components on the screen must remain consistent with the content being shown.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-026",
+      "category": "functional",
+      "text": "The navigation must always indicate the user's current location.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:5"
+      ]
+    },
+    {
+      "id": "REQ-027",
+      "category": "functional",
+      "text": "If the system is using individualization and/or adaptation for a user, it must be made evident to that user.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:6"
+      ]
+    },
+    {
+      "id": "REQ-028",
+      "category": "functional",
+      "text": "The system must provide help directly on the screen.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:2"
+      ]
+    },
+    {
+      "id": "REQ-029",
+      "category": "functional",
+      "text": "Help material must be context-sensitive to the user's current task within the application.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:3"
+      ]
+    },
+    {
+      "id": "REQ-030",
+      "category": "functional",
+      "text": "Context-sensitive help must be available for all possible actions and scenarios on all user interfaces.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:4"
+      ]
+    },
+    {
+      "id": "REQ-031",
+      "category": "non_functional",
+      "text": "Help content must be easy to digest, using techniques like short sentences, shorter paragraphs, and bullet points.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:5",
+        "14:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-032",
+      "category": "non_functional",
+      "text": "Help content must have good spelling and grammar.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-033",
+      "category": "non_functional",
+      "text": "The overall design must take into account the general principles of human perception.",
+      "priority": "low",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-034",
+      "category": "non_functional",
+      "text": "Page titles should always be placed in a consistent location on every page.",
+      "priority": "high",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-035",
+      "category": "non_functional",
+      "text": "Empty space filled only with the background color must be used in a way that does not impair the visual skimming of the page.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-036",
+      "category": "non_functional",
+      "text": "The system must minimize the number of navigation steps required to get to a piece of content, while considering that different users have different mental models, navigation strategies, and tasks they're trying to complete.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-037",
+      "category": "non_functional",
+      "text": "A single set of user interface rules must be used to provide a common look and feel across the entire application.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-038",
+      "category": "non_functional",
+      "text": "The user interface must be suitable for users with special needs.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-039",
+      "category": "non_functional",
+      "text": "The system should avoid horizontal scrolling wherever possible.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-040",
+      "category": "non_functional",
+      "text": "Navigation links must use familiar terminology.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-041",
+      "category": "non_functional",
+      "text": "If a user has style sheets or frames turned off, they must still be able to read and understand the page.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-042",
+      "category": "non_functional",
+      "text": "The text must always be readable and the spatial arrangement must make sense, even in a simplified view.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-043",
+      "category": "functional",
+      "text": "The system must provide an equivalent alternative text-only page to ensure content is always accessible.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:4"
+      ]
+    },
+    {
+      "id": "REQ-044",
+      "category": "non_functional",
+      "text": "User interfaces must follow the guidelines specified under www.usability.gov.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:6"
+      ],
+      "nfr_category": "compliance"
+    },
+    {
+      "id": "REQ-045",
+      "category": "non_functional",
+      "text": "Navigation links must be clearly distinguishable from controls that activate an action.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-046",
+      "category": "functional",
+      "text": "Every page or window must provide a clear indication of the user's location in the navigation structure.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:3"
+      ]
+    },
+    {
+      "id": "REQ-047",
+      "category": "functional",
+      "text": "The system must support different navigation strategies by offering alternative access paths to the same content.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:4"
+      ]
+    },
+    {
+      "id": "REQ-048",
+      "category": "non_functional",
+      "text": "Links that open new browser windows or pop-up windows must be clearly marked.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-049",
+      "category": "functional",
+      "text": "Users must be able to find support from within the application.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:2"
+      ]
+    },
+    {
+      "id": "REQ-050",
+      "category": "interfaces",
+      "text": "Users must be able to find support through a separate browser interface.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:2"
+      ]
+    },
+    {
+      "id": "REQ-051",
+      "category": "functional",
+      "text": "If frames are used for the presentation of help content, an alternative way of presenting the information without frames must be provided.",
+      "priority": "medium",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:4"
+      ]
+    },
+    {
+      "id": "REQ-052",
+      "category": "functional",
+      "text": "The system must be able to export audit trails for specified cases for an auditor.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:2"
+      ]
+    },
+    {
+      "id": "REQ-053",
+      "category": "business_rules",
+      "text": "Exporting an audit trail must have no effect on the audit trail stored by the System.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:2"
+      ]
+    },
+    {
+      "id": "REQ-054",
+      "category": "non_functional",
+      "text": "The audit trail data stored by the system cannot be modified in any way or deleted by any user.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "REQ-056",
+      "category": "non_functional",
+      "text": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:4"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "REQ-057",
+      "category": "data",
+      "text": "The system must maintain the audit trail for at least the life of the case to which it refers.",
+      "priority": "high",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:5"
+      ]
+    },
+    {
+      "id": "REQ-058",
+      "category": "non_functional",
+      "text": "The system must be able to capture and store security violations.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:1"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "REQ-059",
+      "category": "business_rules",
+      "text": "Changes to security attributes for groups or users can be made only by a super-user.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:2"
+      ]
+    },
+    {
+      "id": "REQ-060",
+      "category": "data",
+      "text": "Security attributes include access rights, security level, privileges, and password allocation and management.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:3"
+      ]
+    },
+    {
+      "id": "REQ-061",
+      "category": "functional",
+      "text": "Users must be able to see their user-specified profile on demand.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:4"
+      ]
+    },
+    {
+      "id": "REQ-062",
+      "category": "functional",
+      "text": "Users must be able to modify their user-specified profile on demand.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:4"
+      ]
+    },
+    {
+      "id": "REQ-063",
+      "category": "functional",
+      "text": "Users must be able to delete their user-specified profile on demand.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:4"
+      ]
+    },
+    {
+      "id": "REQ-064",
+      "category": "interfaces",
+      "text": "The system must provide an interface for anyone to log any defects or enhancement requests on the application.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:5"
+      ]
+    },
+    {
+      "id": "REQ-065",
+      "category": "functional",
+      "text": "Users must be able to track the defects or enhancement requests they have logged.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:5"
+      ]
+    },
+    {
+      "id": "REQ-066",
+      "category": "functional",
+      "text": "Users must be able to set up their own persistent defaults for data entry.",
+      "priority": "medium",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:2"
+      ]
+    },
+    {
+      "id": "REQ-067",
+      "category": "data",
+      "text": "Persistent default values for data entry must be user-definable.",
+      "priority": "medium",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:2"
+      ]
+    },
+    {
+      "id": "REQ-068",
+      "category": "non_functional",
+      "text": "Error messages must be meaningful to the people who see them.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:3",
+        "30:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-069",
+      "category": "non_functional",
+      "text": "Error messages must clearly state the reason for the problem.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-070",
+      "category": "non_functional",
+      "text": "Error messages must tell the user what actions they can take to resolve the error.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-071",
+      "category": "functional",
+      "text": "Citizens must be able to register their complaints.",
+      "priority": "high",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:1"
+      ]
+    },
+    {
+      "id": "REQ-072",
+      "category": "data",
+      "text": "The system must allow setting up default values for certain fields.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:2"
+      ]
+    },
+    {
+      "id": "REQ-073",
+      "category": "data",
+      "text": "Default values for fields must be user-definable.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:2"
+      ]
+    },
+    {
+      "id": "REQ-074",
+      "category": "non_functional",
+      "text": "Data validation rules should consult the relevant International Standards for guidance.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:3"
+      ],
+      "nfr_category": "compliance"
+    },
+    {
+      "id": "REQ-075",
+      "category": "non_functional",
+      "text": "Interfaces must be easy to use and intuitive for end users and administrators.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "REQ-076",
+      "category": "functional",
+      "text": "Interfaces must be user-configurable to the extent possible.",
+      "priority": "medium",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:3"
+      ]
+    },
+    {
+      "id": "REQ-077",
+      "category": "functional",
+      "text": "The system must support a multilingual interface.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:4"
+      ]
+    },
+    {
+      "id": "REQ-078",
+      "category": "non_functional",
+      "text": "Operational data must not be lost in case of any failure of equipment or the communication network.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:5"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "REQ-079",
+      "category": "non_functional",
+      "text": "The system must be compatible with any specialist software that might be used in the future.",
+      "priority": "medium",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:6"
+      ],
+      "nfr_category": "portability"
+    },
+    {
+      "id": "REQ-080",
+      "category": "non_functional",
+      "text": "An older case that has not been accessed within the previous 2 months must be displayed on screen in up to 20 seconds.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:3",
+        "36:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "REQ-082",
+      "category": "non_functional",
+      "text": "Case opening times must hold up regardless of the storage capacity or the total number of cases in the system.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "REQ-083",
+      "category": "functional",
+      "text": "The system must be able to display several entities, like cases and suspects, simultaneously.",
+      "priority": "medium",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:6"
+      ]
+    },
+    {
+      "id": "REQ-084",
+      "category": "non_functional",
+      "text": "Planned maintenance downtime must not exceed <xx> hours in any rolling three month period.",
+      "priority": "high",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:3"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "REQ-085",
+      "category": "non_functional",
+      "text": "There must be no more than <x> incidents of unplanned downtime in any rolling three-month window.",
+      "priority": "high",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:5"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "REQ-086",
+      "category": "non_functional",
+      "text": "The total unplanned downtime cannot add up to more than <xx hours/minutes> in any rolling three-month window.",
+      "priority": "high",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:5"
+      ],
+      "nfr_category": "availability"
+    },
+    {
+      "id": "REQ-087",
+      "category": "non_functional",
+      "text": "After a major failure, the system must be fully restored, including with inline synchronization, in no more than <xx> hours.",
+      "priority": "high",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:7"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "REQ-088",
+      "category": "business_rules",
+      "text": "The system must never include a record in a search result list if the user does not have the right to access it.",
+      "priority": "high",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:2"
+      ]
+    },
+    {
+      "id": "REQ-089",
+      "category": "functional",
+      "text": "The system's response when a user tries to access a specific case they do not have rights to must be configurable at configuration time.",
+      "priority": "medium",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:3",
+        "40:4"
+      ]
+    },
+    {
+      "id": "REQ-090",
+      "category": "functional",
+      "text": "A configurable option for when a user tries to access a specific case they do not have rights to is to 'display title and metadata'.",
+      "priority": "medium",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:5"
+      ]
+    },
+    {
+      "id": "REQ-091",
+      "category": "non_functional",
+      "text": "The system must provide role-based control for functionality.",
+      "priority": "high",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:6"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "REQ-092",
+      "category": "functional",
+      "text": "A user must be able to be a member of more than one group.",
+      "priority": "medium",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:6"
+      ]
+    },
+    {
+      "id": "REQ-093",
+      "category": "functional",
+      "text": "A user must be able to stipulate which other users or user groups can access their cases.",
+      "priority": "high",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:7"
+      ]
+    },
+    {
+      "id": "31b6017b-402f-4c5c-9d0d-854736f8319f",
+      "category": "non_functional",
+      "text": "The writing needs to have good spelling and grammar so it's clear and doesn't hurt readability.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:7"
+      ],
+      "nfr_category": "usability"
+    }
+  ],
+  "removed_duplicates": []
+}

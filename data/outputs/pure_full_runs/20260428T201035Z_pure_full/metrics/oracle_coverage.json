@@ -1,0 +1,115 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/oracle_requirements",
+  "match_threshold": 0.55,
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 1,
+    "macro_precision": 1.0,
+    "macro_coverage_recall": 1.0,
+    "macro_f1": 1.0,
+    "macro_hallucination_rate": 0.0,
+    "macro_average_match_score": 0.9992468541860581,
+    "macro_average_best_source_score": 0.9992468541860581,
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 100,
+    "total_matched_requirements": 100
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 100,
+      "matched_count": 100,
+      "precision": 1.0,
+      "coverage_recall": 1.0,
+      "f1": 1.0,
+      "hallucination_rate": 0.0,
+      "average_match_score": 0.9992468541860581,
+      "average_best_source_score": 0.9992468541860581,
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [],
+      "match_examples": [
+        {
+          "score": 1.0000007152557373,
+          "source_requirement": "Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages.",
+          "generated_requirement": "Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The solution should enable the user to track the submitted defect or enhancement request."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "generated_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task.",
+          "generated_requirement": "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g.",
+          "generated_requirement": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error.",
+          "generated_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "generated_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+          "generated_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Making user profiles evident: If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident.",
+          "generated_requirement": "Making user profiles evident: If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "generated_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+          "generated_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility.",
+          "generated_requirement": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "generated_requirement": "If a splash screen is used, a navigation option to skip it should be offered."
+        }
+      ]
+    }
+  ]
+}

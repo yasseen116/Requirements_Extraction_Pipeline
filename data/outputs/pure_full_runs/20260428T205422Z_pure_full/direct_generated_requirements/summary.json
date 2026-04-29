@@ -1,0 +1,9 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T205422Z_pure_full/direct_generated_requirements/pure_0000_cctns.json",
+    "parse_status": "chunked_4_segments",
+    "segment_count": 4,
+    "requirement_count": 100
+  }
+]

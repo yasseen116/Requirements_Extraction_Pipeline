@@ -1,0 +1,14 @@
+{
+  "dataset": "pure",
+  "slice": "hard_single_doc",
+  "generated_samples": 1,
+  "samples": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "path": "outputs/pure_full_runs/20260428T205422Z_pure_full/source_requirements/pure_0000_cctns.json",
+      "requirement_count": 100,
+      "status": "ok_slice_copy"
+    }
+  ]
+}

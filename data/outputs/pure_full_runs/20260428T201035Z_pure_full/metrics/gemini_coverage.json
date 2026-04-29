@@ -1,0 +1,136 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/generated_requirements_gemini_full_context",
+  "match_threshold": 0.55,
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 1,
+    "macro_precision": 0.9402985074626866,
+    "macro_coverage_recall": 0.63,
+    "macro_f1": 0.7544910179640718,
+    "macro_hallucination_rate": 0.05970149253731343,
+    "macro_average_match_score": 0.8224179659570966,
+    "macro_average_best_source_score": 0.7404832583665848,
+    "micro_precision": 0.9402985074626866,
+    "micro_coverage_recall": 0.63,
+    "micro_f1": 0.7544910179640718,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 67,
+    "total_matched_requirements": 63
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 67,
+      "matched_count": 63,
+      "precision": 0.9402985074626866,
+      "coverage_recall": 0.63,
+      "f1": 0.7544910179640718,
+      "hallucination_rate": 0.05970149253731343,
+      "average_match_score": 0.8224179659570966,
+      "average_best_source_score": 0.7404832583665848,
+      "unmatched_source_examples": [
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the user to track the submitted defect or enhancement request.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "Administrative parameters The word “unalterable” is to mean that the audit trail data cannot be modified in any way or deleted by any user;",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "The System must be able to capture and store violations (i.e.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "The System must allow the user to limit access to cases to specified users or user groups.",
+        "the most stringent) implies that the System must not include such cases in any count of search results;",
+        "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+        "The System must employ a single set of user interface rules, or a small number of sets to provide a familiar and common look and feel for the application.",
+        "The System must be able to display several entities (cases, suspects) simultaneously.",
+        "Such configurations must be saved in the user profile."
+      ],
+      "unmatched_generated_examples": [
+        "The system must format text pages containing large proportions of links so that the presence of links does not impede the readability of the text.",
+        "The system must ensure the quality of textual content with respect to spelling and grammar is sufficient so as not to impede readability.",
+        "The system must be designed in a manner that operational data is not lost in case of any failure of equipment or communication network.",
+        "The system must ensure operational data is not lost in case of any failure of equipment or communication network, holding onto that information safely until the connection is back."
+      ],
+      "match_examples": [
+        {
+          "score": 0.990448534488678,
+          "source_requirement": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+          "generated_requirement": "The system must maintain the audit trail for as long as required, keeping it at least for the life of the case to which it refers."
+        },
+        {
+          "score": 0.9778141379356384,
+          "source_requirement": "Frequently-executed System transactions must be designed so that they can be completed with a small number of interactions (e.g.",
+          "generated_requirement": "Frequently-executed system transactions must be designed so they can be completed with a small number of interactions."
+        },
+        {
+          "score": 0.9750460982322693,
+          "source_requirement": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.",
+          "generated_requirement": "The system must restrict changes to security attributes for groups or users—including access rights, security level, privileges, password allocation and management—so they are made only by super-user."
+        },
+        {
+          "score": 0.9669778943061829,
+          "source_requirement": "The System should allow a user to stipulate which other users or groups can access cases.",
+          "generated_requirement": "The system must allow a user to stipulate which other users or groups can access cases."
+        },
+        {
+          "score": 0.9514071345329285,
+          "source_requirement": "Unplanned downtime for the System must not exceed <xx hours/minutes> per <rolling three month period>.",
+          "generated_requirement": "The system must ensure total unplanned downtime does not exceed <xx hours/minutes> over a <rolling three month period>."
+        },
+        {
+          "score": 0.9496301412582397,
+          "source_requirement": "The number of incidents of unplanned downtime for the System must not exceed <x> per <rolling three month period>.",
+          "generated_requirement": "The system must ensure the number of incidents of unplanned downtime does not exceed <x> per <rolling three month period>."
+        },
+        {
+          "score": 0.9491586089134216,
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "The system must allow the export of audit trails for specified cases without affecting the audit trail stored by the System."
+        },
+        {
+          "score": 0.9345713257789612,
+          "source_requirement": "Splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+          "generated_requirement": "The system must avoid splash screens unless they provide useful content or feedback about the application state to the user."
+        },
+        {
+          "score": 0.9323334693908691,
+          "source_requirement": "The interfaces must be made customizable or user-configurable to the extent possible.",
+          "generated_requirement": "The system must make interfaces customizable or user-configurable to the extent possible."
+        },
+        {
+          "score": 0.9226992130279541,
+          "source_requirement": "In the event of any software or hardware failure, it must be possible to restore the System (with inline synchronization) within no more than <xx> hours.",
+          "generated_requirement": "The system must be able to restore complete with inline synchronization within no more than <xx> hours after any software or hardware failure."
+        },
+        {
+          "score": 0.9186293482780457,
+          "source_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "generated_requirement": "The system must consult ISO 9241-303 for screen text legibility requirements."
+        },
+        {
+          "score": 0.9172413349151611,
+          "source_requirement": "Providing a site map: A separate navigation overview such as a site map should be provided for application showing the structure of the site in an overview form.",
+          "generated_requirement": "The system must provide a separate navigation overview, such as a site map, showing the structure of the site in an overview form."
+        },
+        {
+          "score": 0.9159363508224487,
+          "source_requirement": "ICT accessibility: ISO 9241-20 shall be the standard for guidance on ICT accessibility.",
+          "generated_requirement": "The system must use ISO 9241-20 as the standard for guidance for the overall approach to ICT accessibility."
+        },
+        {
+          "score": 0.9131569862365723,
+          "source_requirement": "Marking links opening new windows: Links that open new browser windows or pop-up windows should be clearly marked.",
+          "generated_requirement": "Any links that open new browser windows or pop-up windows must be clearly marked."
+        },
+        {
+          "score": 0.9118148684501648,
+          "source_requirement": "Text quality: The quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+          "generated_requirement": "The quality of textual content with respect to spelling and grammar must be sufficient so as not to impede readability."
+        }
+      ]
+    }
+  ]
+}

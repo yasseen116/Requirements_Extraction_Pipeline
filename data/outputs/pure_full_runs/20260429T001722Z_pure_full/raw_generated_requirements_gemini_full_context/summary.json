@@ -1,0 +1,42 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/raw_generated_requirements_gemini_full_context/pure_0000_cctns.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 91,
+    "evidence_bank_count": 105,
+    "proposition_count": 91,
+    "gap_pass_added_count": 0
+  },
+  {
+    "sample_id": "pure_0000_gamma_j",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/raw_generated_requirements_gemini_full_context/pure_0000_gamma_j.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 48,
+    "evidence_bank_count": 60,
+    "proposition_count": 48,
+    "gap_pass_added_count": 4
+  },
+  {
+    "sample_id": "pure_1999_dii",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/raw_generated_requirements_gemini_full_context/pure_1999_dii.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 22,
+    "evidence_bank_count": 32,
+    "proposition_count": 22,
+    "gap_pass_added_count": 2
+  },
+  {
+    "sample_id": "pure_2005_microcare",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full/raw_generated_requirements_gemini_full_context/pure_2005_microcare.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 36,
+    "evidence_bank_count": 38,
+    "proposition_count": 36,
+    "gap_pass_added_count": 1
+  }
+]

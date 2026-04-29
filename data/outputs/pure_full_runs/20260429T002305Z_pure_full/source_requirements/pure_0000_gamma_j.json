@@ -1,0 +1,360 @@
+{
+  "sample_id": "pure_0000_gamma_j",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_gamma_j",
+    "title": "0000 - gamma j",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - gamma j.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - gamma j.pdf"
+  },
+  "ground_truth_requirements": [
+    {
+      "req_id": "AUTO-0001",
+      "text": "Operating Environment Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "operating environment web store shall operate with the following internet browsers microsoft internet explorer version 6 and 7 netscape communicator version 4 and 5"
+    },
+    {
+      "req_id": "AUTO-0002",
+      "text": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "web store shall operate on an intel based system with slackware linux 2 6 and apache web server"
+    },
+    {
+      "req_id": "AUTO-0003",
+      "text": "The system shall use SQL based database to store inventory information.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall use sql based database to store inventory information"
+    },
+    {
+      "req_id": "AUTO-0004",
+      "text": "Design and Implementation Constraints Must use a SQL based database.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "design and implementation constraints must use a sql based database"
+    },
+    {
+      "req_id": "AUTO-0005",
+      "text": "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "user documentation shall install online help for users via the web interface shall deliver operations and maintenance manual users guide book and installation instructions for the administrator"
+    },
+    {
+      "req_id": "AUTO-0006",
+      "text": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the interface must remain consistent among various web browsers and be intuitive to the customer"
+    },
+    {
+      "req_id": "AUTO-0007",
+      "text": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "si 1 3 plug ins interface communications interfaces ci 1 the weborder system shall send an e mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number"
+    },
+    {
+      "req_id": "AUTO-0008",
+      "text": "CI-2: The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "ci 2 the weborder system shall send an e mail to system administrator regarding any technical queries from customers or sales people"
+    },
+    {
+      "req_id": "AUTO-0009",
+      "text": "Quality Attribute Requirements Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "quality attribute requirements upon the usb being plugged in the system shall be able to be deployed and operational in less than 1 minute"
+    },
+    {
+      "req_id": "AUTO-0010",
+      "text": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to handle 1000 customers logged in concurrently at the same time"
+    },
+    {
+      "req_id": "AUTO-0011",
+      "text": "The system shall be able to retrieve 200 products per second.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to retrieve 200 products per second"
+    },
+    {
+      "req_id": "AUTO-0012",
+      "text": "The system shall be able to add product to shopping cart in less than 2ms.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to add product to shopping cart in less than 2ms"
+    },
+    {
+      "req_id": "AUTO-0013",
+      "text": "The system shall be able to search for a specified product in less than 1 second.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to search for a specified product in less than 1 second"
+    },
+    {
+      "req_id": "AUTO-0014",
+      "text": "The system shall be able to email customer and vendor in less than 1 second.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to email customer and vendor in less than 1 second"
+    },
+    {
+      "req_id": "AUTO-0015",
+      "text": "The system shall be able to validate credit card in less than 2 seconds.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to validate credit card in less than 2 seconds"
+    },
+    {
+      "req_id": "AUTO-0016",
+      "text": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to acquire shipping charges in less than 2 seconds"
+    },
+    {
+      "req_id": "AUTO-0017",
+      "text": "The system shall be able to restore 1000 records per second.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be able to restore 1000 records per second"
+    },
+    {
+      "req_id": "AUTO-0018",
+      "text": "Security Requirements The system shall validate credit cards against fraud.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "security requirements the system shall validate credit cards against fraud"
+    },
+    {
+      "req_id": "AUTO-0019",
+      "text": "The system shall encrypt all sensitive information via https.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall encrypt all sensitive information via https"
+    },
+    {
+      "req_id": "AUTO-0020",
+      "text": "The system shall encrypt all customer data in database.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall encrypt all customer data in database"
+    },
+    {
+      "req_id": "AUTO-0021",
+      "text": "The system shall auto detect IP DOS attacks and block IP automatically.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall auto detect ip dos attacks and block ip automatically"
+    },
+    {
+      "req_id": "AUTO-0022",
+      "text": "The system shall detect consecutive failed login attempts.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall detect consecutive failed login attempts"
+    },
+    {
+      "req_id": "AUTO-0023",
+      "text": "The system shall be protected by open source firewall called Firestarter.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be protected by open source firewall called firestarter"
+    },
+    {
+      "req_id": "AUTO-0024",
+      "text": "http://www.fs-security.com/ Availability Requirements The system shall have an availability of 99.99%.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "http www fs security com availability requirements the system shall have an availability of 99 99"
+    },
+    {
+      "req_id": "AUTO-0025",
+      "text": "Efficiency Requirements The system shall perform searches via Dijkstra's shortest path algorithm.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "efficiency requirements the system shall perform searches via dijkstra s shortest path algorithm"
+    },
+    {
+      "req_id": "AUTO-0026",
+      "text": "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "for returning customers the system shall validate existing credit card in system after each log in"
+    },
+    {
+      "req_id": "AUTO-0027",
+      "text": "The system shall automatically compress image files that are too large in size.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall automatically compress image files that are too large in size"
+    },
+    {
+      "req_id": "AUTO-0028",
+      "text": "The system shall validate email address existence.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall validate email address existence"
+    },
+    {
+      "req_id": "AUTO-0029",
+      "text": "The system shall utilize consistent symbols and colors for clear notifications.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall utilize consistent symbols and colors for clear notifications"
+    },
+    {
+      "req_id": "AUTO-0030",
+      "text": "Maintainability Requirements The system shall utilize interchangeable plugins.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "maintainability requirements the system shall utilize interchangeable plugins"
+    },
+    {
+      "req_id": "AUTO-0031",
+      "text": "The system shall be easily updatable for fixes and patches.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be easily updatable for fixes and patches"
+    },
+    {
+      "req_id": "AUTO-0032",
+      "text": "The system shall create logs of all changes, updates, or fixes that are done to the site.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall create logs of all changes updates or fixes that are done to the site"
+    },
+    {
+      "req_id": "AUTO-0033",
+      "text": "The system shall be easy to upgrade.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be easy to upgrade"
+    },
+    {
+      "req_id": "AUTO-0034",
+      "text": "Portability Requirements The system shall be extremely portable via the usb drive.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "portability requirements the system shall be extremely portable via the usb drive"
+    },
+    {
+      "req_id": "AUTO-0035",
+      "text": "The system shall be easy to migrate or backed up via another usb drive.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system shall be easy to migrate or backed up via another usb drive"
+    },
+    {
+      "req_id": "AUTO-0036",
+      "text": "Testability Requirements The system should be able to run under debug mode.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "testability requirements the system should be able to run under debug mode"
+    },
+    {
+      "req_id": "AUTO-0037",
+      "text": "The system should be able to run test credit card transactions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should be able to run test credit card transactions"
+    },
+    {
+      "req_id": "AUTO-0038",
+      "text": "The system should be able to run test shipping orders.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should be able to run test shipping orders"
+    },
+    {
+      "req_id": "AUTO-0039",
+      "text": "The system should be able to create test environment of weborder system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "the system should be able to create test environment of weborder system"
+    },
+    {
+      "req_id": "AUTO-0040",
+      "text": "Other Requirements The system hardware shall be fixed and patched via an internet connection.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "other requirements the system hardware shall be fixed and patched via an internet connection"
+    },
+    {
+      "req_id": "AUTO-0041",
+      "text": "Yoggie shall coordinate on future enhancement and features with our organization.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "yoggie shall coordinate on future enhancement and features with our organization"
+    },
+    {
+      "req_id": "AUTO-0042",
+      "text": "Functional requirements: A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "functional requirements a statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions"
+    },
+    {
+      "req_id": "AUTO-0043",
+      "text": "Nonfunctional requirements: A description of a property or characteristic that the system should exhibit.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "nonfunctional requirements a description of a property or characteristic that the system should exhibit"
+    },
+    {
+      "req_id": "AUTO-0044",
+      "text": "Pre condition: A condition that must be satisfied or a state the system must be in before a use case may begin.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "pre condition a condition that must be satisfied or a state the system must be in before a use case may begin"
+    },
+    {
+      "req_id": "AUTO-0045",
+      "text": "Requirement: A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "requirement a statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective"
+    },
+    {
+      "req_id": "AUTO-0046",
+      "text": "Actors: Customer Weborder System Preconditions: Customer must be able to access the web order system via a web browser with HTTPS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors customer weborder system preconditions customer must be able to access the web order system via a web browser with https"
+    },
+    {
+      "req_id": "AUTO-0047",
+      "text": "Actors: Customer Weborder System Preconditions: Customer account must already be registered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors customer weborder system preconditions customer account must already be registered"
+    },
+    {
+      "req_id": "AUTO-0048",
+      "text": "Actors: Customer Weborder System Preconditions: Customer must be logged-in on the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors customer weborder system preconditions customer must be logged in on the system"
+    },
+    {
+      "req_id": "AUTO-0049",
+      "text": "Add Item To Cart Goal Customer adds item(s) in the cart Actors: Customer Weborder System Preconditions: The customer must be logged-in on the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "add item to cart goal customer adds item s in the cart actors customer weborder system preconditions the customer must be logged in on the system"
+    },
+    {
+      "req_id": "AUTO-0050",
+      "text": "Customer must have item(s) in the shopping cart.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "customer must have item s in the shopping cart"
+    },
+    {
+      "req_id": "AUTO-0051",
+      "text": "Actors: Administrator Weborder System Preconditions: Administrator account must already be registered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors administrator weborder system preconditions administrator account must already be registered"
+    },
+    {
+      "req_id": "AUTO-0052",
+      "text": "Actors: Administrator Weborder System Preconditions: Administrator must be logged-in on the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors administrator weborder system preconditions administrator must be logged in on the system"
+    },
+    {
+      "req_id": "AUTO-0053",
+      "text": "Add User Goal Register a new customer, sales person, or administrator account with the system Actors: Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "add user goal register a new customer sales person or administrator account with the system actors administrator weborder system preconditions administrator must be able to access the weborder system via a web browser with https"
+    },
+    {
+      "req_id": "AUTO-0054",
+      "text": "Actors: Administrator Weborder System Preconditions: Administrator must be able to access the weborder system via a web browser with HTTPS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors administrator weborder system preconditions administrator must be able to access the weborder system via a web browser with https"
+    },
+    {
+      "req_id": "AUTO-0055",
+      "text": "Actors: Sales Person Weborder System Preconditions: Sales Person account must already be registered.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors sales person weborder system preconditions sales person account must already be registered"
+    },
+    {
+      "req_id": "AUTO-0056",
+      "text": "Actors: Sales Person Weborder System Preconditions: Sales Person must be logged-in on the system.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors sales person weborder system preconditions sales person must be logged in on the system"
+    },
+    {
+      "req_id": "AUTO-0057",
+      "text": "Actors: Sales Person Weborder System Preconditions: Sales Person must be able to access the weborder system via a web browser with HTTPS.",
+      "source_type": "inferred_modal_sentence",
+      "normalized_text": "actors sales person weborder system preconditions sales person must be able to access the weborder system via a web browser with https"
+    }
+  ],
+  "statistics": {
+    "explicit_count": 0,
+    "inferred_count": 57,
+    "total_count": 57
+  }
+}

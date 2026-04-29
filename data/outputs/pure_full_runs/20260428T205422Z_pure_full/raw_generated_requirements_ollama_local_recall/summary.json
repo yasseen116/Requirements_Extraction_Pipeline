@@ -1,0 +1,12 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T205422Z_pure_full/raw_generated_requirements_ollama_local_recall/pure_0000_cctns.json",
+    "parse_status": "ok",
+    "segment_count": 13,
+    "requirement_count": 66,
+    "evidence_bank_count": 128,
+    "proposition_count": 66,
+    "gap_pass_added_count": 4
+  }
+]

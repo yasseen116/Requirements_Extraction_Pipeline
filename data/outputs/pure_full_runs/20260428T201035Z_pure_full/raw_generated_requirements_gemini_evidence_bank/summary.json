@@ -1,0 +1,12 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T201035Z_pure_full/raw_generated_requirements_gemini_evidence_bank/pure_0000_cctns.json",
+    "parse_status": "ok",
+    "segment_count": 9,
+    "requirement_count": 73,
+    "evidence_bank_count": 103,
+    "proposition_count": 73,
+    "gap_pass_added_count": 0
+  }
+]

@@ -1,0 +1,780 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260429T002305Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260429T002305Z_pure_full/generated_requirements_ollama_full_context",
+  "validator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "method": "gemini_checklist_judge_v1",
+    "semantic_candidate_top_k": 2,
+    "lexical_candidate_top_k": 1,
+    "batch_size": 8,
+    "strict_scoring": {
+      "full": 1.0,
+      "partial": 0.0,
+      "none": 0.0
+    },
+    "weighted_scoring": {
+      "full": 1.0,
+      "partial": 0.5,
+      "none": 0.0
+    }
+  },
+  "aggregate": {
+    "sample_count": 4,
+    "macro_precision": 0.14877233324760594,
+    "macro_coverage_recall": 0.11447368421052631,
+    "macro_f1": 0.12917531822695677,
+    "macro_hallucination_rate": 0.851227666752394,
+    "macro_weighted_precision": 0.39264061814496,
+    "macro_weighted_coverage_recall": 0.291969696969697,
+    "macro_weighted_f1": 0.3340072773414382,
+    "micro_precision": 0.19607843137254902,
+    "micro_coverage_recall": 0.14705882352941177,
+    "micro_f1": 0.1680672268907563,
+    "micro_weighted_precision": 0.42810457516339867,
+    "micro_weighted_coverage_recall": 0.32107843137254904,
+    "micro_weighted_f1": 0.3669467787114846,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 153,
+    "total_strict_matches": 30,
+    "total_weighted_match_score": 65.5,
+    "total_full_matches": 30,
+    "total_partial_matches": 71
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 71,
+      "strict_match_count": 18,
+      "weighted_match_score": 35.0,
+      "full_match_count": 18,
+      "partial_match_count": 34,
+      "precision": 0.2535211267605634,
+      "coverage_recall": 0.18,
+      "f1": 0.2105263157894737,
+      "hallucination_rate": 0.7464788732394366,
+      "weighted_precision": 0.49295774647887325,
+      "weighted_coverage_recall": 0.35,
+      "weighted_f1": 0.4093567251461988,
+      "candidate_pair_count": 312,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Taking account of the users’ tasks and information needs: When providing different access paths or navigation structures for different user groups, the tasks and information needs of these user groups should be taken into consideration.",
+          "generated_requirement": "When designing different access paths or navigation structures for various user groups, we need to consider the specific tasks and information needs of each group to ensure they can efficiently find what they need.",
+          "reason": "The generated requirement accurately reflects the source's need to consider user tasks and information needs when designing navigation for different user groups, preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Allowing users to see and change profiles: If user-specified profiles are used, users should be able to see, modify and delete that profile on demand.",
+          "generated_requirement": "Users should have the ability to see, modify, and delete their own profiles as needed.",
+          "reason": "The generated requirement faithfully covers the ability for users to see, modify, and delete their own profiles, aligning with the source's intent for user-specified profiles on demand."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+          "generated_requirement": "For role-based permissions, we need to ensure that when a user performs a quick or advanced search, the system never includes any records in the result list that they don't have access to.",
+          "reason": "The generated requirement faithfully covers the same core need and preserves all critical details regarding excluding unauthorized records from search results. The phrase 'For role-based permissions' adds context but does not alter the core requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+          "generated_requirement": "Each page should have a link back to the home or a recognizable landmark page.",
+          "reason": "The generated requirement faithfully captures all critical details of the source, including the presence of a link on each page to either the home page or a recognizable landmark page."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Using familiar terminology for navigation links: Navigation links — particularly links representing the main navigation structure — should be labelled with terms that are familiar to the user, based on his/her general knowledge, prior experience in the application domain or experience of using other systems.",
+          "generated_requirement": "Familiar terms are key — navigation links should be intuitive, using language that users will recognize from their experience with similar systems.",
+          "reason": "The generated requirement faithfully captures the essence of using familiar and intuitive terminology for navigation links, referencing user experience with similar systems, which aligns with the source's details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "generated_requirement": "For user profiles in our application, we need a way for users to log any defects or enhancement requests and track them.",
+          "reason": "The generated requirement faithfully covers the core need of providing a way for users to log and track defects/enhancement requests, preserving all critical details. The mention of \"user profiles\" provides context but does not materially alter the requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Horizontal scrolling should be avoided wherever possible.",
+          "generated_requirement": "We also want to avoid horizontal scrolling as much as possible because it can be difficult for users with visual impairments to navigate using screen readers.",
+          "reason": "The generated requirement faithfully covers the source, preserving the core need and modality, and the added reason does not constitute a material addition."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "By exporting audit trails for specific cases without affecting the stored data, we can review these logs later if needed.",
+          "reason": "The generated requirement faithfully covers the ability to export audit trails for specific cases without altering stored data. The added phrase about reviewing logs later is a consequence, not a material addition or alteration of the core requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Within-page links are shown with dashed rather than solid underlines Avoiding link overload: Text pages containing large proportions of links should be formatted so that the presence of links does not impede the readability of the text.",
+          "generated_requirement": "The links themselves should be marked with dashed underlines instead of solid ones to avoid overwhelming the user.",
+          "reason": "The generated requirement accurately captures the specific detail about using dashed underlines for links instead of solid ones, which is the first part of the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Designing for input device independence: User interfaces should be designed to allow activation of controls by a variety of input devices.",
+          "generated_requirement": "We also want to make sure our user interfaces allow activation of controls through a variety of input devices, not just keyboards or mice.",
+          "reason": "The generated requirement faithfully captures the need for user interfaces to support various input devices, preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system should provide for role-based control for the functionality within the system The System must allow a user to be a member of more than one group.",
+          "generated_requirement": "Additionally, it should be possible for users to belong to more than one group, allowing for flexible role assignments based on their tasks and responsibilities.",
+          "reason": "The generated requirement faithfully covers the second part of the source requirement, stating that users can belong to more than one group. The additional explanation about flexible role assignments does not alter the core requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Placing navigation components consistently: Navigation components should be placed consistently on the pages or in the framesets in the pages of the application.",
+          "generated_requirement": "Lastly, we should ensure that navigation components like menus and links are placed consistently across the application so that users can predict where to find important features.",
+          "reason": "The generated requirement faithfully covers the consistent placement of navigation components across the application, preserving all critical details. The added explanation of the benefit does not alter the core requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Administrative parameters The word “unalterable” is to mean that the audit trail data cannot be modified in any way or deleted by any user;",
+          "generated_requirement": "The audit trail must be unalterable—no one should be able to change or delete it, ensuring its integrity.",
+          "reason": "The generated requirement accurately defines 'unalterable' for the audit trail, matching the source's definition of not being modifiable or deletable by any user."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Writing style: The reading and understanding of the textual content on the screen should be supported by suitable means, including the use of short sentences, the division of the text into shorter chunks or the presentation of content items in the form of bullet points.",
+          "generated_requirement": "To make sure users can understand the text quickly, we'll use short sentences, break up long texts into chunks, and present information as bullet points.",
+          "reason": "The generated requirement accurately captures the core need and all specific examples of writing style from the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System must allow persistent defaults for data entry where desirable.",
+          "generated_requirement": "For example, we allow users to define their own default values for certain fields, which is really helpful when they need to enter similar information repeatedly.",
+          "reason": "The generated requirement faithfully covers the allowance of persistent defaults for data entry, using an example that clarifies the 'desirable' aspect."
+        }
+      ],
+      "unmatched_source_examples": [
+        "Registration Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward.",
+        "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the user to track the submitted defect or enhancement request.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+        "The System must be able to capture and store violations (i.e.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "The System must allow the user to limit access to cases to specified users or user groups.",
+        "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+        "The System should allow a user to stipulate which other users or groups can access cases."
+      ],
+      "unmatched_generated_examples": [
+        "Similarly, checking order status should only require logging in or entering an order number, then viewing the current status page which displays all relevant information like delivery date and tracking details.",
+        "For example, when a customer logs in and starts a new order, it should recognize them and auto-populate fields like shipping address and payment method where applicable.",
+        "This will save them time and reduce errors.",
+        "Ideally, it would also allow us to show any saved payment details securely so they can just confirm or change if needed.",
+        "It should be able to manage a list of items across different orders, so that if they start one order but then want to make another, they can easily switch between them without losing any items.",
+        "Currently, some of our pages have a splash screen which can be an issue because it might not always allow for easy navigation using these tools.",
+        "Currently, the system can be a bit cumbersome because it has too many links that make the text hard to read at a glance.",
+        "For example, when a user is filling out a form for creating an account, it should clearly indicate which step they're on and how many steps remain.",
+        "For instance, screen readers should be able to navigate through the application smoothly without any issues.",
+        "Currently, we've had issues with too many clicks required to get to certain sections, which can be frustrating for everyone but especially problematic for those with cognitive disabilities.",
+        "For example, a user with limited permissions might try to view or modify a case they do not have access to.",
+        "This ensures that each user can manage their own information while maintaining a high level of security through strict control over who can make changes.",
+        "This ensures that while less frequently used data can take longer to load, it still meets our needs without causing significant delays.",
+        "Ideally, pages should open within less than 2 seconds under normal network conditions.",
+        "It's important that our application can handle a range of internet speeds from fast Wi-Fi to slow 3G connections."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "We need to ensure that users can easily find help when they need it.",
+          "reason": "The generated requirement is too general, losing critical details about the help being 'detailed,' 'context-sensitive,' and covering 'all possible actions and scenarios on all user interfaces.'"
+        },
+        {
+          "source_requirement": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "If someone needs help with something specific, they should be able to access that information quickly without having to navigate away from their current task.",
+          "reason": "The generated requirement captures the core need for quick, context-sensitive help access but loses the critical detail about the scope of the help material (all actions/scenarios on all UIs) and the explicit mention of 'detailed material'."
+        },
+        {
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "For user profiles in our application, we need a way for users to log any defects or enhancement requests and track them.",
+          "reason": "The generated requirement covers tracking defects/enhancement requests but also adds the requirement to provide a way for users to log them, which was not explicitly stated in the source."
+        },
+        {
+          "source_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+          "generated_requirement": "The audit trail must be unalterable—no one should be able to change or delete it, ensuring its integrity.",
+          "reason": "The generated requirement only covers the 'unalterable' aspect of the audit trail, omitting the critical details about the specific information (actions, entities, user) that must be captured and stored."
+        },
+        {
+          "source_requirement": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide one of the following responses (selectable at configuration time): display title and metadata;",
+          "generated_requirement": "For role-based permissions, we need to ensure that when a user performs a quick or advanced search, the system never includes any records in the result list that they don't have access to.",
+          "reason": "The source specifies providing a specific response (display title and metadata) for unauthorized access/search, while the generated text states that unauthorized records should never be included in the search result list, which is a different system behavior."
+        },
+        {
+          "source_requirement": "the most stringent) implies that the System must not include such cases in any count of search results;",
+          "generated_requirement": "For role-based permissions, we need to ensure that when a user performs a quick or advanced search, the system never includes any records in the result list that they don't have access to.",
+          "reason": "The source specifically states that unauthorized cases must not be included in any 'count of search results', a critical detail that is not explicitly preserved by the generated text's focus on the 'result list'."
+        },
+        {
+          "source_requirement": "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",
+          "generated_requirement": "The audit trail must be unalterable—no one should be able to change or delete it, ensuring its integrity.",
+          "reason": "The generated requirement focuses on the unalterability of the audit trail, which is a material addition and a different aspect than the source's focus on what activities must be stored and for what purpose (legal admissibility, data recovery)."
+        },
+        {
+          "source_requirement": "Ease of Use All error messages produced by the System must be meaningful, so that they can be appropriately acted upon by the users who are likely to see them.",
+          "generated_requirement": "This will save them time and reduce errors.",
+          "reason": "The generated text states a general benefit (\"save them time and reduce errors\") without specifying the requirement for meaningful and actionable error messages."
+        },
+        {
+          "source_requirement": "Ease of Use All error messages produced by the System must be meaningful, so that they can be appropriately acted upon by the users who are likely to see them.",
+          "generated_requirement": "We've had issues where the system doesn't provide clear instructions on how to correct the input, making it difficult for them to resolve errors themselves.",
+          "reason": "The generated text describes a specific issue with unclear error instructions, but does not state the requirement that error messages *must* be meaningful and actionable."
+        },
+        {
+          "source_requirement": "The System must be able to display several entities (cases, suspects) simultaneously.",
+          "generated_requirement": "For cases accessed within the last two months, it should be able to retrieve and display them within 5-8 seconds — this is crucial for a good user experience.",
+          "reason": "The generated requirement focuses on retrieval speed for a subset of cases, losing the critical detail of displaying multiple entities simultaneously and adding new constraints."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 49,
+      "strict_match_count": 9,
+      "weighted_match_score": 19.0,
+      "full_match_count": 9,
+      "partial_match_count": 20,
+      "precision": 0.1836734693877551,
+      "coverage_recall": 0.15789473684210525,
+      "f1": 0.16981132075471697,
+      "hallucination_rate": 0.8163265306122449,
+      "weighted_precision": 0.3877551020408163,
+      "weighted_coverage_recall": 0.3333333333333333,
+      "weighted_f1": 0.3584905660377358,
+      "candidate_pair_count": 194,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Yoggie shall coordinate on future enhancement and features with our organization.",
+          "generated_requirement": "Yoggie should work closely with our organization on future enhancements and new features.",
+          "reason": "The generated requirement accurately reflects the source, with 'work closely' being a faithful interpretation of 'coordinate' and all other critical details preserved. The modality shift from 'shall' to 'should' is minor in this context."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall auto detect IP DOS attacks and block IP automatically.",
+          "generated_requirement": "Additionally, the system should automatically detect and block IP addresses that show signs of DOS attacks.",
+          "reason": "The generated requirement faithfully covers the source requirement, preserving all critical details regarding automatic detection and blocking of IP DOS attacks."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+          "generated_requirement": "The web interface must be consistent across different browsers like Chrome, Firefox, and Safari, ensuring a user-friendly experience for our customers.",
+          "reason": "The generated requirement faithfully covers the source, rephrasing 'intuitive to the customer' as 'user-friendly experience' and providing examples for 'various web browsers' without altering the core need or adding material conditions."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The system shall be easy to migrate or backed up via another usb drive.",
+          "generated_requirement": "It should be easy for us to migrate or back up via another USB drive as per AUTO-0035.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details regarding ease of migration/backup via USB. The 'as per AUTO-0035' is a self-reference and not a material addition."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+          "generated_requirement": "For returning customers, the system should remember their card details but verify the card is still valid upon each login.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details regarding returning customers, existing credit card validation, and the trigger (after each login)."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Other Requirements The system hardware shall be fixed and patched via an internet connection.",
+          "generated_requirement": "For our system to operate smoothly, we need a fixed hardware setup that can be updated via an internet connection.",
+          "reason": "The generated requirement faithfully covers the source, stating the need for a fixed hardware setup that can be updated (patched) via an internet connection. The added justification does not alter the core requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Actors: Customer Weborder System Preconditions: Customer must be able to access the web order system via a web browser with HTTPS.",
+          "generated_requirement": "Customers must access the web order system through a secure HTTPS connection from any compatible browser.",
+          "reason": "The generated text faithfully captures the precondition for customer access to the web order system via a secure browser connection."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "CI-2: The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+          "generated_requirement": "For customer support queries, the system should send an email to our System Administrator whenever a technical issue is raised by customers or sales staff.",
+          "reason": "The generated requirement faithfully covers all critical details of the source requirement, including the sender, recipient, trigger, and content of the email."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Actors: Customer Weborder System Preconditions: Customer account must already be registered.",
+          "generated_requirement": "Their accounts must already be registered before they can log in.",
+          "reason": "The generated requirement faithfully states that accounts must be registered, which is the core precondition from the source."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system shall be able to email customer and vendor in less than 1 second.",
+          "generated_requirement": "We need the system to send emails to customers and vendors as quickly as possible — ideally in less than a second.",
+          "reason": "The generated requirement weakens the strict time constraint from 'less than 1 second' to 'ideally in less than a second'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system shall use SQL based database to store inventory information.",
+          "generated_requirement": "The system must use a SQL-based database for both inventory and other data storage to ensure consistency and reliability.",
+          "reason": "The generated requirement expands the scope of data stored in the SQL database beyond just inventory and adds a justification not in the source."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system shall be able to restore 1000 records per second.",
+          "generated_requirement": "Specifically, it should be able to restore 1000 records per second and retrieve up to 200 products per second without any significant slowdowns.",
+          "reason": "The generated requirement preserves the core detail of restoring 1000 records per second but adds a new, distinct requirement about retrieving products."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system shall detect consecutive failed login attempts.",
+          "generated_requirement": "if someone tries to log in multiple times without success, it should lock them out after a certain number of failed attempts.",
+          "reason": "The generated requirement covers the detection of failed login attempts but adds a material consequence (locking out the user) that is not present in the source requirement, which only specifies detection."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "Efficiency Requirements The system shall perform searches via Dijkstra's shortest path algorithm.",
+          "generated_requirement": "For example, it should use Dijkstra's shortest path algorithm for searching, and it needs to perform these searches quickly — ideally in less than 1 second per search.",
+          "reason": "The generated requirement correctly identifies Dijkstra's algorithm for searches but adds a new performance constraint (less than 1 second per search) not present in the source."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system shall validate email address existence.",
+          "generated_requirement": "This validation should occur every time a new email address is entered or an existing one is updated.",
+          "reason": "The generated requirement adds a material condition by specifying when the email validation should occur, which is an addition to the core need of simply validating email address existence."
+        }
+      ],
+      "unmatched_source_examples": [
+        "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+        "Design and Implementation Constraints Must use a SQL based database.",
+        "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+        "Quality Attribute Requirements Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.",
+        "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+        "The system shall be able to retrieve 200 products per second.",
+        "The system shall be able to validate credit card in less than 2 seconds.",
+        "The system shall be able to acquire shipping charges in less than 2 seconds.",
+        "Security Requirements The system shall validate credit cards against fraud.",
+        "The system shall encrypt all sensitive information via https.",
+        "The system shall be protected by open source firewall called Firestarter.",
+        "http://www.fs-security.com/ Availability Requirements The system shall have an availability of 99.99%.",
+        "The system shall automatically compress image files that are too large in size.",
+        "The system shall utilize consistent symbols and colors for clear notifications.",
+        "Maintainability Requirements The system shall utilize interchangeable plugins."
+      ],
+      "unmatched_generated_examples": [
+        "It should be able to handle different types of products and quantities.",
+        "For both customers and vendors, these emails should be triggered under specific conditions such as order confirmations, payment reminders, account updates, and support requests.",
+        "We've had issues with slow login times, so we need the system to authenticate users efficiently, ensuring that it never takes more than 5 seconds for a user to log in.",
+        "The user interface should display product titles and metadata prominently but never show any private information like credit card numbers or passwords in the browser interface.",
+        "Sales people need to be able to place orders and manage their own profiles within the Weborder System.",
+        "It's important because we want to protect user data and ensure only authorized users can make changes.",
+        "Additionally, before performing any maintenance tasks, such as software updates or server checks, the system should automatically back up all critical data.",
+        "This way, if something goes wrong with our primary storage, we can quickly recover from the last backup without losing too much information.",
+        "For sure, we need the system to send out automated test emails during scheduled maintenance and after software updates.",
+        "During maintenance windows, say between 8 PM and 2 AM on Tuesday nights, the system should automatically check if all outgoing emails are working properly.",
+        "Similarly, right after a new version of the software is deployed, we want to make sure everything is still functioning as expected, so the system should send out test emails then too.",
+        "This way, any issues can be caught early and addressed before they affect our users.",
+        "Specifically, the system should start backing up critical data between 2 AM and 6 AM local time.",
+        "Additionally, before performing maintenance tasks such as software updates or server checks, it should complete a backup to ensure that any changes are safe and can be reverted if necessary.",
+        "This should happen automatically after the order is placed."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "Operating Environment Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",
+          "generated_requirement": "The web interface must be consistent across different browsers like Chrome, Firefox, and Safari, ensuring a user-friendly experience for our customers.",
+          "reason": "The generated requirement changes the specific browsers and versions and shifts the focus from operating environment compatibility to interface consistency."
+        },
+        {
+          "source_requirement": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+          "generated_requirement": "For our system to operate smoothly, we need a fixed hardware setup that can be updated via an internet connection.",
+          "reason": "The generated requirement is too general, losing specific details about the hardware, OS, and web server, and adds an update mechanism not present in the source."
+        },
+        {
+          "source_requirement": "Design and Implementation Constraints Must use a SQL based database.",
+          "generated_requirement": "The system must use a SQL-based database for both inventory and other data storage to ensure consistency and reliability.",
+          "reason": "The generated requirement adds scope (inventory and other data storage) and justification (consistency and reliability) not present in the source, which is a pure constraint."
+        },
+        {
+          "source_requirement": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+          "generated_requirement": "Additionally, the system must support multiple browsers including Chrome, Firefox, Safari, and Edge on both Windows and macOS operating systems.",
+          "reason": "The generated requirement focuses on supporting multiple browsers and operating systems, losing the critical details of interface consistency and intuitiveness mentioned in the source. It also adds operating system details."
+        },
+        {
+          "source_requirement": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+          "generated_requirement": "We need the system to send an email confirmation to customers as soon as their order is placed.",
+          "reason": "The generated requirement loses all critical details about the content of the email (items ordered, shipping address, tracking number) and adds a new condition about when the email should be sent."
+        },
+        {
+          "source_requirement": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+          "generated_requirement": "This email should include details about the items they ordered and the shipping address, along with a tracking number for easy reference.",
+          "reason": "The generated requirement loses the explicit 'confirmation' aspect and weakens the detail about the items 'being delivered to' the shipping address, instead just stating the address is included."
+        },
+        {
+          "source_requirement": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+          "generated_requirement": "This email should contain the tracking number for easy reference.",
+          "reason": "The generated requirement only preserves the detail about the tracking number, losing the critical details about the email being a confirmation to the customer and including information about items ordered and shipping address."
+        },
+        {
+          "source_requirement": "CI-2: The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+          "generated_requirement": "This email should include details about the items they ordered and the shipping address, along with a tracking number for easy reference.",
+          "reason": "The generated requirement discusses email content, but the content (order details) and implied recipient are completely different from the source's email about technical queries to a System Administrator."
+        },
+        {
+          "source_requirement": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+          "generated_requirement": "During peak usage times, such as when we have a large number of concurrent users, the system should be able to handle searches efficiently.",
+          "reason": "The generated requirement addresses system performance under concurrent users, similar to the source, but it loses the specific number of users (1000) and narrows the scope to handling 'searches efficiently' rather than the general ability to handle logged-in customers."
+        },
+        {
+          "source_requirement": "The system shall be able to retrieve 200 products per second.",
+          "generated_requirement": "Specifically, it should be able to restore 1000 records per second and retrieve up to 200 products per second without any significant slowdowns.",
+          "reason": "Adds a new performance requirement for restoring records and slightly weakens the original '200 products per second' with 'up to'."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 14,
+      "strict_match_count": 0,
+      "weighted_match_score": 4.5,
+      "full_match_count": 0,
+      "partial_match_count": 9,
+      "precision": 0.0,
+      "coverage_recall": 0.0,
+      "f1": 0.0,
+      "hallucination_rate": 1.0,
+      "weighted_precision": 0.32142857142857145,
+      "weighted_coverage_recall": 0.20454545454545456,
+      "weighted_f1": 0.25000000000000006,
+      "candidate_pair_count": 72,
+      "validator_match_examples": [
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+          "generated_requirement": "The software should render semantically valid views from XML documents, like XSL transformations.",
+          "reason": "The generated requirement only covers the 'render semantically valid views from XML documents' aspect of the source, omitting other critical details such as 'Extract semantically-valid views', 'Disassemble hierarchical view to relational representation', and the provision of 'standard APIs' by Registry Services."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify.",
+          "generated_requirement": "The system should be able to receive and process XML registry forms.",
+          "reason": "The generated requirement only covers the ability to 'receive XML registry forms' and adds 'process', while omitting other critical details from the source such as 'submit metadata and the related information resource artifacts, and notify' and the overall goal 'To contribute metadata to a registry'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "The system should be able to scale efficiently and maintain performance under heavy load.",
+          "reason": "The generated requirement is a generalization. It captures the idea of handling varying loads but loses critical details like \"tuned by on-site personnel\", \"data management services\", \"fixed mode\", and \"adjusting for database sizes\"."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+          "generated_requirement": "The software should allow easy updates and debugging for smooth operation under various conditions.",
+          "reason": "The generated requirement covers 'updates' (modifications/upgrade) but omits other specific maintenance actions like shutdown, open not-mounted, and online/off-line implementations. It also adds 'debugging' which is not explicitly in the source."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+          "generated_requirement": "The software should be able to run on multiple platforms without significant modifications.",
+          "reason": "The generated requirement captures portability but misses the critical detail of 'COE-compliant platforms' and weakens the modality from 'shall' to 'should'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+          "generated_requirement": "The software must support automated testing across all environments to catch issues early.",
+          "reason": "The generated requirement only covers 'test' from the source and adds the detail of 'automated testing across all environments' and a purpose, while omitting 'demonstration, analysis, and inspection'."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+          "generated_requirement": "The software should handle different types of user roles and permissions without conflicts.",
+          "reason": "The generated requirement correctly identifies the need for handling different user types but generalizes the specific user classes mentioned in the source and adds a condition ('without conflicts')."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+          "generated_requirement": "The software must ensure data encryption both in transit and at rest.",
+          "reason": "The generated requirement introduces a specific technical solution (data encryption) and applies it to software, whereas the source is a general compliance adherence requirement for COE sponsors referencing an external document. It loses critical details about the actor and the source of compliance."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+          "generated_requirement": "The software should handle different environments, including various browsers.",
+          "reason": "The generated requirement narrows the scope of 'various types of data, database architectures and platforms' to 'different environments, including various browsers,' losing critical details about data, database architectures, platforms, hardware, software, and sites. While 'environments' is related, 'browsers' is a specific and limited interpretation."
+        }
+      ],
+      "unmatched_source_examples": [
+        "DOCUMENT OVERVIEW This document outlines the software capabilities required for the XS components for the DII COE.",
+        "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+        "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+        "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+        "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+        "DATA ACCESS SERVICES INTERNAL INTERFACE REQUIREMENTS The XS function shall provide standard APIs as specified in Appendix C.",
+        "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+        "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable.",
+        "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+        "OTHER REQUIREMENTS None PACKAGING REQUIREMENTS The XS software shall be delivered in accordance with DII COE guidelines.",
+        "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+        "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+        "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+      ],
+      "unmatched_generated_examples": [
+        "The system should handle up to 1000 concurrent users without issues.",
+        "The system should be designed with clear architecture and modular components.",
+        "The system should validate credit card information for returning users without requiring re-entry.",
+        "The system should be easily ported to other platforms if needed.",
+        "The system should be designed with a robust logging mechanism for debugging and auditing purposes."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "The system should handle up to 1000 concurrent users without issues.",
+          "reason": "The generated requirement introduces a specific number of concurrent users, which is a material addition and a different metric than \"varying workloads and sizes of associated databases\". It also loses all other critical details from the source."
+        },
+        {
+          "source_requirement": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+          "generated_requirement": "The system should be able to receive and process XML registry forms.",
+          "reason": "The generated requirement covers XML processing but misses the API provision and specific view extraction/disassembly details from the source, and adds 'registry forms'."
+        },
+        {
+          "source_requirement": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+          "generated_requirement": "The system should be easily ported to other platforms if needed.",
+          "reason": "The generated requirement captures the portability aspect but weakens the modality from \"shall be required\" to \"should be easily ported\" and generalizes \"COE-compliant platforms\" to \"other platforms\", losing a specific constraint."
+        },
+        {
+          "source_requirement": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+          "generated_requirement": "The software should handle different environments, including various browsers.",
+          "reason": "The generated requirement broadly mentions handling different environments, which relates to portability, but it loses the specific \"COE-compliant platforms\" constraint and adds \"including various browsers\" which is a specific, potentially unrelated, detail."
+        },
+        {
+          "source_requirement": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+          "generated_requirement": "The system should be able to receive and process XML registry forms.",
+          "reason": "The generated requirement mentions 'registry' but shifts the focus from reviewing tags and reusing specifications to processing 'XML registry forms', losing critical details and adding new material."
+        },
+        {
+          "source_requirement": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements.",
+          "generated_requirement": "The software should render semantically valid views from XML documents, like XSL transformations.",
+          "reason": "While both relate to XML, the generated requirement focuses on rendering views from XML documents, which is a different concern from the source's specific constraint on how attributes of an element must be carried or submitted. It loses the critical detail of the source and introduces a new material aspect."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "generated_requirement_count": 19,
+      "strict_match_count": 3,
+      "weighted_match_score": 7.0,
+      "full_match_count": 3,
+      "partial_match_count": 8,
+      "precision": 0.15789473684210525,
+      "coverage_recall": 0.12,
+      "f1": 0.13636363636363635,
+      "hallucination_rate": 0.8421052631578947,
+      "weighted_precision": 0.3684210526315789,
+      "weighted_coverage_recall": 0.28,
+      "weighted_f1": 0.3181818181818182,
+      "candidate_pair_count": 78,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+          "generated_requirement": "Each voucher slip should contain a barcode with two unique identifiers: one for the client and another for the partner.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details about the barcode and its two identifiers for client and partner."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The authorized user can alter / amend the Claim if required.",
+          "generated_requirement": "Authorized users should be able to amend or alter claim entries if needed.",
+          "reason": "The generated requirement faithfully covers the source, preserving the core need for authorized users to amend claims."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+          "generated_requirement": "The system should validate invoice amounts as the number of vouchers multiplied by the wholesale price.",
+          "reason": "The generated requirement faithfully captures the calculation for the invoice amount as stated in the source, interpreting it as a validation rule."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+          "generated_requirement": "When allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution. Each voucher allocated should include its number and batch number.",
+          "reason": "The generated requirement loses critical details regarding the number of vouchers sold/required by the distributor and the condition of allocation being \"based on the stock\". It also weakens the modality for some aspects from \"should allocate\" to \"must consider\"."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes.",
+          "generated_requirement": "The system should include the number and batch number of each voucher allocated.",
+          "reason": "The generated requirement covers voucher numbers and batch numbers but omits the critical detail of 'project codes' and 'sub-elements' mentioned in the source."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system should have a provision to capture the reason suppose if the claim status is “Rejection or Quarantine” Claim Amount – The calculation of claim amount is explained below.",
+          "generated_requirement": "If the claim status is either ‘Rejection’ or ‘Quarantine’, we have a provision to capture the reason for the rejection or quarantine. This will help us understand the issues better and improve our processes.",
+          "reason": "The generated requirement fully covers the part of the source about capturing the reason for claim rejection or quarantine, preserving all critical details. However, it omits the second part of the source regarding 'Claim Amount' calculation."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "During the claim entry the system should capture the following information.",
+          "generated_requirement": "During the claim entry process, we need to capture detailed information such as the claimant's name, contact details, date of birth, and a description of the incident. This is important because it helps us verify the identity and ensure accurate claims processing.",
+          "reason": "The generated requirement correctly identifies the core need of capturing information during claim entry, but it materially adds specific examples of information to be captured and a justification, which were not present in the source text. The source only stated \"the following information\" without specifying what."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The Salesman master should record customer's name and contact details during a sale.",
+          "reason": "The generated requirement specifies particular information to be captured, which is an addition to the very general source requirement that only states \"capture following information’s\" without specifying what."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "In the transaction part no of forms should match with No of Available Forms The system should print a receipt document based on the information entered during claim submission.",
+          "generated_requirement": "The system should match the number of forms entered during claim submission with available forms in stock.",
+          "reason": "The generated requirement covers the matching of forms but completely misses the requirement to print a receipt document."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "The system should allocate relevant vouchers based on the number required by the distributor.",
+          "reason": "The generated requirement covers the core need of allocating vouchers based on quantity but loses critical details about automatically picking from stock, including batch/voucher numbers, and displaying details in a grid format."
+        },
+        {
+          "verdict": "partial",
+          "score": 0.5,
+          "source_requirement": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group.",
+          "generated_requirement": "System admins should be able to add new salesmen to the Team Master.",
+          "reason": "The generated requirement generalizes 'User Groups' and 'individual user' to 'Team Master' and 'salesmen', losing specific details about user management and adding new specific details."
+        }
+      ],
+      "unmatched_source_examples": [
+        "The principles of the voucher, the contents of the health care services, their required quality, the standards to be met by the providers and their infrastructure, as well as the measures for monitoring the quality have been defined in the PDS.",
+        "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.",
+        "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+        "During every distribution transaction the user should select the name of the sales man listed from Team Master.",
+        "The values of Health Sub – District, Locality, Level Of Facility, Type of facility, Registration Body would be list from their own master and should select the details based on the VSP.",
+        "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.",
+        "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+        "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office.",
+        "These information is vital and shall be used for compared with the processed claims.",
+        "The document should have the following information.",
+        "Before the claim entry the user should check the form manually to understand whether any mandatory information is missed in the Claim or not.",
+        "If yes, then the user should mark that Claim (Treatment Form) status as Rejected and send back to VSP.",
+        "Patient Status - (Select from list of status options populating from Patient Status Master) suppose the status is Referral then the system will have the provision to capture Referred To and Reason for Referral, the reason for Referral should be populated from Referral master.",
+        "If the claim from same VSP having more than two times of Thump Impression mismatching, then the system should automatically produce a warning message and the same time the system should In-Activate the VSP."
+      ],
+      "unmatched_generated_examples": [
+        "The Salesman master should track the product or service being sold, including its ID and description during a sale.",
+        "The Salesman master should record the quantity sold during a sale.",
+        "The Salesman master should capture the price per unit and total sale amount during a sale.",
+        "The Salesman master should record payment method information for each transaction.",
+        "The Salesman master should log the date and time of the sale, along with any special notes or comments from the Salesman.",
+        "The system should log IP address and timestamp for each entry to maintain audit trails. Regarding sales information, we only need to capture basic transaction data like order ID and total amount, but not any personal details.",
+        "The system should print a receipt document when allocating vouchers.",
+        "Cash is the only mode accepted during distribution transactions."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes.",
+          "generated_requirement": "When allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution. Each voucher allocated should include its number and batch number.",
+          "reason": "The generated requirement adds significant material details about considering distributor's name, salesman, and date of distribution, which are not present in the source. It also omits 'project codes' and 'sub-elements'."
+        },
+        {
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The Salesman master should record payment method information for each transaction.",
+          "reason": "The generated requirement specifies particular information to be captured, which is an addition to the very general source requirement that only states \"capture following information’s\" without specifying what."
+        },
+        {
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The Salesman master should record the quantity sold during a sale.",
+          "reason": "The generated requirement specifies particular information to be captured, which is an addition to the very general source requirement that only states \"capture following information’s\" without specifying what."
+        },
+        {
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The Salesman master should track the product or service being sold, including its ID and description during a sale.",
+          "reason": "The generated requirement specifies particular information to be captured, which is an addition to the very general source requirement that only states \"capture following information’s\" without specifying what."
+        },
+        {
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The Salesman master should capture the price per unit and total sale amount during a sale.",
+          "reason": "The generated requirement specifies particular information to be captured, which is an addition to the very general source requirement that only states \"capture following information’s\" without specifying what."
+        },
+        {
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The Salesman master should log the date and time of the sale, along with any special notes or comments from the Salesman.",
+          "reason": "The generated requirement specifies particular information to be captured, which is an addition to the very general source requirement that only states \"capture following information’s\" without specifying what."
+        },
+        {
+          "source_requirement": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+          "generated_requirement": "The system should allocate relevant vouchers based on the number required by the distributor.",
+          "reason": "The generated requirement loses critical details about including voucher numbers and batch numbers, and that allocation should be based on stock."
+        },
+        {
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "The system should include the number and batch number of each voucher allocated.",
+          "reason": "The generated requirement loses critical details about automatically picking vouchers from stock and listing details in a grid format."
+        },
+        {
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "When allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution. Each voucher allocated should include its number and batch number.",
+          "reason": "The generated requirement adds material conditions (distributor's name, salesman, date of distribution) not present in the source requirement and loses critical details about automatically picking vouchers from stock and listing them in a grid format."
+        },
+        {
+          "source_requirement": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+          "generated_requirement": "System admins should be able to add new salesmen to the Team Master.",
+          "reason": "The generated requirement covers adding new staff but loses critical details about specific staff attributes (VSP Name, Staff Code, Staff Type, Qualification) and the system's behavior when creating a new staff with an existing name."
+        }
+      ]
+    }
+  ]
+}

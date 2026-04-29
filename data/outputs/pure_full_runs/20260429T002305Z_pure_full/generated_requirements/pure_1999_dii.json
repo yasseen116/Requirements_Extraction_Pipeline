@@ -1,0 +1,198 @@
+{
+  "sample_id": "pure_1999_dii",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": "qwen2.5:7b-instruct",
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": [
+          {
+            "prompt_eval_count": 8192,
+            "eval_count": 1051,
+            "total_duration": 133844000542,
+            "load_duration": 43902667,
+            "prompt_eval_duration": 51610066872,
+            "eval_duration": 71991765729
+          }
+        ]
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:ok"
+    ],
+    "retrieval_top_k": 8,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 12,
+    "max_chars": 2200,
+    "stored_unique_requirements": 14
+  },
+  "diagnostics": {
+    "evidence_bank_count": 64,
+    "proposition_count": 14,
+    "removed_duplicate_propositions": 0,
+    "rewrite_candidate_count": 2,
+    "gap_pass_added_count": 0,
+    "grounded_after_rewrite_count": 14
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_1999_dii.json",
+    "proposition_path": "_artifacts/propositions/pure_1999_dii.json"
+  },
+  "project_summary": "The project focuses on developing a robust and scalable Registry software that supports various functionalities, maintains high availability and security, ensures portability across different platforms, and adheres to strict compliance standards. The system must be easily maintainable and testable, with efficient debugging capabilities.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "The software should allow easy updates and debugging for smooth operation under various conditions.",
+        "priority": "high",
+        "evidence_turns": [
+          16,
+          20
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "The system should handle up to 1000 concurrent users without issues.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-002",
+        "text": "The software must support automated testing across all environments to catch issues early.",
+        "priority": "high",
+        "evidence_turns": [
+          20
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-003",
+        "text": "The system should be designed with clear architecture and modular components.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-004",
+        "text": "The software should be able to run on multiple platforms without significant modifications.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-005",
+        "text": "The system should validate credit card information for returning users without requiring re-entry.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-006",
+        "text": "The software should handle different types of user roles and permissions without conflicts.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-007",
+        "text": "The system should be able to scale efficiently and maintain performance under heavy load.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-008",
+        "text": "The software must ensure data encryption both in transit and at rest.",
+        "priority": "high",
+        "evidence_turns": [
+          18
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-009",
+        "text": "The system should be easily ported to other platforms if needed.",
+        "priority": "high",
+        "evidence_turns": [
+          20
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-010",
+        "text": "The software should handle different environments, including various browsers.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-011",
+        "text": "The system should be able to receive and process XML registry forms.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-012",
+        "text": "The software should render semantically valid views from XML documents, like XSL transformations.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-013",
+        "text": "The system should be designed with a robust logging mechanism for debugging and auditing purposes.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "performance"
+      }
+    ],
+    "data": [],
+    "business_rules": [],
+    "interfaces": [],
+    "constraints": []
+  }
+}

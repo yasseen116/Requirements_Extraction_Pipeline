@@ -1,0 +1,195 @@
+{
+  "sample_id": "pure_1999_dii",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "method": "g_direct_source_to_full_requirements_v1",
+  "model": "qwen2.5:7b-instruct",
+  "prompt_hash": "7bc5ca53c65429050712190e18c0cc85d56cb5467d06842c84fceba93e2228ae",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "chunked_1_segments",
+  "repair_attempted": false,
+  "usage": {
+    "segments": [
+      {
+        "segment_index": 1,
+        "runs": 1,
+        "per_run": [
+          {
+            "prompt_eval_count": 1480,
+            "eval_count": 1387,
+            "total_duration": 139229011000,
+            "load_duration": 50731666,
+            "prompt_eval_duration": 10253074625,
+            "eval_duration": 98590156008
+          }
+        ]
+      }
+    ]
+  },
+  "error": null,
+  "chunking": {
+    "enabled": true,
+    "segment_count": 1,
+    "segment_statuses": [
+      "segment_1:ok"
+    ],
+    "source_chunk_size": 25,
+    "source_chunk_char_budget": 6000
+  },
+  "project_summary": "This document outlines the software capabilities required for the XS components for the DII COE.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "In the fixed (static) mode of operation, the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "Maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "XS function shall provide standard APIs as specified in Appendix C.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "Registry software shall be portable and required to execute on COE-compliant platforms.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      },
+      {
+        "id": "FR-014",
+        "text": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-002",
+        "text": "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      },
+      {
+        "id": "NFR-003",
+        "text": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements.",
+        "priority": "medium",
+        "evidence_turns": [
+          1
+        ],
+        "category": "compliance"
+      }
+    ],
+    "data": [],
+    "business_rules": [],
+    "interfaces": [],
+    "constraints": []
+  }
+}

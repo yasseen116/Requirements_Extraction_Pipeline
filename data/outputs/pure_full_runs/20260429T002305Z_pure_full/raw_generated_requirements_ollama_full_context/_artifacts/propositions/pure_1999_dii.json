@@ -1,0 +1,194 @@
+{
+  "sample_id": "pure_1999_dii",
+  "project_summary": "The project focuses on developing a robust and scalable Registry software that supports various functionalities, maintains high availability and security, ensures portability across different platforms, and adheres to strict compliance standards. The system must be easily maintainable and testable, with efficient debugging capabilities.",
+  "propositions": [
+    {
+      "id": "P1",
+      "category": "functional",
+      "text": "The software should allow easy updates and debugging for smooth operation under various conditions.",
+      "priority": "high",
+      "evidence_turns": [
+        16,
+        20
+      ],
+      "source_unit_ids": [
+        "14",
+        "16"
+      ]
+    },
+    {
+      "id": "P2",
+      "category": "non_functional",
+      "text": "The system should handle up to 1000 concurrent users without issues.",
+      "priority": "high",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "14"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P3",
+      "category": "non_functional",
+      "text": "The software must support automated testing across all environments to catch issues early.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "18",
+        "20"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P4",
+      "category": "non_functional",
+      "text": "The system should be designed with clear architecture and modular components.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P5",
+      "category": "non_functional",
+      "text": "The software should be able to run on multiple platforms without significant modifications.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "14",
+        "20"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P6",
+      "category": "non_functional",
+      "text": "The system should validate credit card information for returning users without requiring re-entry.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P7",
+      "category": "non_functional",
+      "text": "The software should handle different types of user roles and permissions without conflicts.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P8",
+      "category": "non_functional",
+      "text": "The system should be able to scale efficiently and maintain performance under heavy load.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P9",
+      "category": "non_functional",
+      "text": "The software must ensure data encryption both in transit and at rest.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "14"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P10",
+      "category": "non_functional",
+      "text": "The system should be easily ported to other platforms if needed.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "18",
+        "20"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P11",
+      "category": "non_functional",
+      "text": "The software should handle different environments, including various browsers.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "14",
+        "18"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P12",
+      "category": "non_functional",
+      "text": "The system should be able to receive and process XML registry forms.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P13",
+      "category": "non_functional",
+      "text": "The software should render semantically valid views from XML documents, like XSL transformations.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P14",
+      "category": "non_functional",
+      "text": "The system should be designed with a robust logging mechanism for debugging and auditing purposes.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18"
+      ],
+      "nfr_category": "performance"
+    }
+  ],
+  "removed_duplicates": []
+}

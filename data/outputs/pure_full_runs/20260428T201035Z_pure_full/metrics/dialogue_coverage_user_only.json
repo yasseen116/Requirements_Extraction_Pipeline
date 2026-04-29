@@ -1,0 +1,41 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "dialogue_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/expanded_dialogues",
+  "match_threshold": 0.55,
+  "user_only": true,
+  "support_unit": "user_sentence_or_clause_context",
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 1,
+    "macro_coverage_recall": 0.9,
+    "micro_coverage_recall": 0.9,
+    "macro_average_best_turn_score": 0.7289218464493752,
+    "total_source_requirements": 100,
+    "total_covered_requirements": 90,
+    "total_support_units": 103
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "covered_count": 90,
+      "coverage_recall": 0.9,
+      "average_best_turn_score": 0.7289218464493752,
+      "uncovered_source_examples": [
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "the most stringent) implies that the System must not include such cases in any count of search results;",
+        "The System must be able to display several entities (cases, suspects) simultaneously.",
+        "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g.",
+        "The System must be able to retrieve and display within 5-8 seconds the case which has been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system.",
+        "The System must be able to retrieve and display within 20 seconds the case which has not been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system."
+      ],
+      "turn_count": 38,
+      "support_unit_count": 103
+    }
+  ]
+}

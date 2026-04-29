@@ -1,0 +1,225 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/direct_generated_requirements",
+  "validator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "method": "gemini_checklist_judge_v1",
+    "semantic_candidate_top_k": 2,
+    "lexical_candidate_top_k": 1,
+    "batch_size": 24,
+    "strict_scoring": {
+      "full": 1.0,
+      "partial": 0.0,
+      "none": 0.0
+    },
+    "weighted_scoring": {
+      "full": 1.0,
+      "partial": 0.5,
+      "none": 0.0
+    }
+  },
+  "aggregate": {
+    "sample_count": 1,
+    "macro_precision": 1.0,
+    "macro_coverage_recall": 1.0,
+    "macro_f1": 1.0,
+    "macro_hallucination_rate": 0.0,
+    "macro_weighted_precision": 1.0,
+    "macro_weighted_coverage_recall": 1.0,
+    "macro_weighted_f1": 1.0,
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0,
+    "micro_weighted_precision": 1.0,
+    "micro_weighted_coverage_recall": 1.0,
+    "micro_weighted_f1": 1.0,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 100,
+    "total_strict_matches": 100,
+    "total_weighted_match_score": 100.0,
+    "total_full_matches": 100,
+    "total_partial_matches": 0
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 100,
+      "strict_match_count": 100,
+      "weighted_match_score": 100.0,
+      "full_match_count": 100,
+      "partial_match_count": 0,
+      "precision": 1.0,
+      "coverage_recall": 1.0,
+      "f1": 1.0,
+      "hallucination_rate": 0.0,
+      "weighted_precision": 1.0,
+      "weighted_coverage_recall": 1.0,
+      "weighted_f1": 1.0,
+      "candidate_pair_count": 245,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages.",
+          "generated_requirement": "Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages.",
+          "reason": "The generated text is identical to the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "reason": "The generated requirement is identical to the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "generated_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "reason": "The generated requirement is identical to the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "reason": "The generated requirement is identical to the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task.",
+          "generated_requirement": "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task.",
+          "reason": "The generated requirement is identical to the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error.",
+          "generated_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error.",
+          "reason": "The generated requirement is an exact match to the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "generated_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "reason": "The generated requirement is an exact match to the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "reason": "The generated text is an exact copy of the source text."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+          "generated_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+          "reason": "The generated text is identical to the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Making user profiles evident: If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident.",
+          "generated_requirement": "Making user profiles evident: If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident.",
+          "reason": "The generated requirement is identical to the source."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "generated_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "reason": "The generated requirement is an exact match of the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+          "generated_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+          "reason": "The generated requirement is an exact match of the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility.",
+          "generated_requirement": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility.",
+          "reason": "The generated text is identical to the source text."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "generated_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "reason": "The generated requirement is identical to the source requirement."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Text quality: The quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+          "generated_requirement": "Text quality: The quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+          "reason": "The generated requirement is an exact match to the source requirement."
+        }
+      ],
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [],
+      "partial_only_examples": [
+        {
+          "source_requirement": "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "reason": "The generated requirement addresses the accessibility of a support solution, losing the critical details of the source regarding the content and context-sensitivity of the help material. It also adds new material about access methods."
+        },
+        {
+          "source_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "generated_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "reason": "The generated requirement only covers the 'track' aspect of the source, losing the critical detail about providing an 'interface for the user to log' defects or enhancement requests."
+        },
+        {
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "reason": "The generated requirement adds the functionality to 'log any defects or enhancement requests' and 'provide an interface' for it, which is a material addition to the source requirement that only specifies enabling the user to 'track' submitted requests."
+        },
+        {
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "reason": "The generated requirement changes the user role from a general 'user' to a 'help-desk user', changes the action from 'track' to 'view reports', and adds specific reporting criteria (category-wise, status-wise, and age-wise), thus losing critical details and adding new material."
+        },
+        {
+          "source_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "generated_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "reason": "The generated requirement generalizes the user role from 'help-desk user' to 'user', changes the action from 'view reports' to 'track', and loses all the specific reporting criteria (category-wise, status-wise, and age-wise) mentioned in the source."
+        },
+        {
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "reason": "The generated requirement describes the content and context-sensitivity of help material, losing the critical details of the source requirement regarding the accessibility of the support solution (from within/outside the application, via browser interface). It also adds new material about help content."
+        },
+        {
+          "source_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+          "generated_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "reason": "The generated requirement loses critical details such as the 'unalterable' nature of the audit trail, the specific types of actions (create/read/update/delete), the 'critical entities', and the information about the 'user initiating and or carrying out the action'. It also adds a new condition 'Once the audit trail functionality has been activated'."
+        },
+        {
+          "source_requirement": "Administrative parameters The word “unalterable” is to mean that the audit trail data cannot be modified in any way or deleted by any user;",
+          "generated_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;.",
+          "reason": "The generated text uses the term 'unalterable' but does not preserve the source's explicit definition of what 'unalterable' means. It also adds details about what the audit trail captures, which is not in the source."
+        },
+        {
+          "source_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "generated_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;.",
+          "reason": "The generated requirement is about audit trails but loses critical details from the source regarding the activation condition and the 'without manual intervention' aspect. It also adds new material about the unalterable nature and specific content of the audit trail."
+        },
+        {
+          "source_requirement": "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+          "generated_requirement": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+          "reason": "The generated requirement changes the organization criterion for reports from 'By case' to 'by workstation and network address' and weakens the modality from 'must' to 'should'."
+        }
+      ]
+    }
+  ]
+}

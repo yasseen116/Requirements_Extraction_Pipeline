@@ -1,0 +1,110 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/generated_requirements_gemini_full_context",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 1,
+    "total_unmatched_source": 37,
+    "total_unmatched_generated": 4,
+    "counts": {
+      "omission_full": 0,
+      "omission_partial": 11,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 0,
+      "hallucination_unsupported": 0,
+      "near_match_paraphrase": 4
+    },
+    "rates": {
+      "omission_full_rate": 0.0,
+      "omission_partial_rate": 0.2972972972972973,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.0,
+      "hallucination_unsupported_rate": 0.0,
+      "near_match_paraphrase_rate": 1.0
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 67,
+      "unmatched_source_count": 37,
+      "unmatched_generated_count": 4,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 11,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 4
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert."
+          },
+          {
+            "category": "omission_partial",
+            "text": "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must at a minimum be able to provide reports for actions on cases organised: By case;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Such configurations must be saved in the user profile."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Distinguishable within-page links: Within-page links should be clearly distinguishable from other links that lead to a different page."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Observing principles of human perception When designing application pages, the general principles of human perception should be taken into account."
+          },
+          {
+            "category": "omission_partial",
+            "text": "In addition, when designing multimedia information presentations, the design principles and recommendations described in ISO 14915-1 to ISO 14915-3 should be taken into account."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must be able to retrieve and display within 5-8 seconds the case which has been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must be able to retrieve and display within 20 seconds the case which has not been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must format text pages containing large proportions of links so that the presence of links does not impede the readability of the text."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must ensure the quality of textual content with respect to spelling and grammar is sufficient so as not to impede readability."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must be designed in a manner that operational data is not lost in case of any failure of equipment or communication network."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system must ensure operational data is not lost in case of any failure of equipment or communication network, holding onto that information safely until the connection is back."
+          }
+        ]
+      }
+    }
+  ]
+}

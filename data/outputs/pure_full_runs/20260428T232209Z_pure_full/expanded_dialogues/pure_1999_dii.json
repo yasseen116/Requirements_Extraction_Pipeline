@@ -1,0 +1,338 @@
+{
+  "sample_id": "pure_1999_dii",
+  "metadata": {
+    "domain": "pure_document",
+    "source_type": "synthetic",
+    "parent_id": "pure_1999_dii",
+    "split": "benchmark",
+    "dialogue_style": "adaptive_semantic_coverage"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "To start, what is the overall purpose and scope of this system?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "This project is based on the 1999 - dii system, and the goal is to capture the main requirements and constraints for document 1999_dii."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "That makes sense. Since we are capturing the core functional requirements for the 1999-dii system, could you walk me through how on-site personnel will need to adjust or tune the data management services to handle varying workloads and database sizes?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "That is a great question. When we are operating in what we call the fixed (static) mode of operation, like at a base or a data processing megacenter, we really need the data management services to have the capability of being tuned by on-site personnel. They have to be able to adjust for varying workloads and sizes of associated databases as things scale up or down. Also, thinking about how people actually interact with the system in End User Mode, a portion of XS services will be used by various classes of users. Specifically, we need to support data consumers, data and database managers, and network information infrastructure resource managers."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "Since those different user classes will be relying on the tuned data management services, what specific methods like testing, live demonstrations, analysis, or formal inspections do you plan to use to validate and qualify the software?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "To make sure everything is fully validated for our users, we plan to use a comprehensive set of qualification methods applied to the software. Specifically, we need to include test, demonstration, analysis, and inspection, which we usually just refer to as T, D, A, I. Using all four of those approaches will give us the confidence that the software is truly ready for production."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "That comprehensive validation approach sounds great. Since we mentioned database managers earlier, I would like to ask about how the system connects to external databases. Will those managers need the ability to redefine or reset the connect descriptors pointing to different database server instances?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "Yes, exactly. We need the XS to have the ability to redefine or reset names of connect descriptors to database server instances. While we are talking about the setup and rules, I should also mention a couple of other constraints we have to follow. First, our COE sponsors must adhere to compliance level requirements described in the I&RTS. Also, regarding user onboarding, the training requirements won't be set by us directly; they will actually be determined by the developers of the system in which the XS module is embedded."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "Given those compliance requirements and the embedded nature of the system, how do you envision handling system availability during maintenance activities, like planned shutdowns, taking components offline, or applying upgrades?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "When we talk about handling availability during those periods, we view maintenance pretty broadly. For us, maintenance also needs to pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions. We need the system to manage availability across all those scenarios. Also, regarding user access and reliability during operations, we need flexibility with how long people stay logged in. At a minimum, the session time-out values need to be user definable. It is also really important that these values can be reset prior to initialization of a user session, so we have full control before someone even starts working."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "It makes sense to have that level of control over maintenance states and user sessions. Thinking about where this software will actually be deployed and maintained, what are the expectations for the Registry software's portability across different COE-compliant platforms?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "As far as deployment goes, we need the Registry software to be fully portable. We don't want to be locked into just one specific setup, so it has to be able to execute on any of our COE-compliant platforms."
+    },
+    {
+      "turn_id": 13,
+      "role": "bot",
+      "text": "That portability across COE platforms will definitely give you a lot of flexibility. When users are working within the Registry across these environments, what should the process or system behavior be if they review the existing tags but find they cannot reuse an existing specification?"
+    },
+    {
+      "turn_id": 14,
+      "role": "user",
+      "text": "That's exactly the scenario we're looking at. Basically, if, after reviewing the tags in the Registry, you cannot reuse an existing specification—a.k.a. you have to go a different route—we need the platform to handle that transition smoothly. We might still need to map out the exact steps for what happens next, but recognizing that reuse isn't an option is the main trigger we need to support."
+    },
+    {
+      "turn_id": 15,
+      "role": "bot",
+      "text": "Since the system needs to handle transitions smoothly when a specification cannot be reused, how should it handle the reporting and documentation side of things, such as extracting specific views from XML documents or translating those hierarchical structures into a relational format?"
+    },
+    {
+      "turn_id": 16,
+      "role": "user",
+      "text": "For the reporting and documentation side, we really need the ability to extract semantically-valid views from an XML document—using something like XSL, for example. Once we have that, the system should disassemble the hierarchical view to a relational representation so our teams can actually work with the data. We also need it to render REGISTRY SERVICES, and to make sure everything connects properly, the registry needs to provide standard APIs as specified in Appendix B. Also, thinking about the people actually adding the data, whenever they want to contribute metadata to a registry, the workflow has to be seamless. The producer must be able to receive XML registry forms, then submit metadata and the related information resource artifacts, and finally notify the system that it's done."
+    }
+  ],
+  "dialogue_generation": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "model": "gemini-3.1-pro-preview",
+    "prompt_hash": "fedce691ffc0c220a6c2ce1eafe35d01f4b661ebbfe2e77f828010c8af7381a9",
+    "schema_hash": "9be8d6915a55c470069248e40ccedc82f618947177ed980cd44251e29f62cc21",
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "coverage_threshold": 0.55,
+    "max_turns": 28,
+    "target_dialogue_recall": 0.82,
+    "theme_max_exchanges": 3,
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails.",
+    "clarification_rounds": 2,
+    "trace": [
+      {
+        "theme": "goal_scope",
+        "req_ids": [],
+        "bot_turn_id": 1,
+        "user_turn_id": 2,
+        "generation_mode": "deterministic_scope",
+        "coverage_ratio": 1.0,
+        "stage": "adaptive_opening"
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0006",
+          "AUTO-0003"
+        ],
+        "bot_turn_id": 3,
+        "user_turn_id": 4,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 22
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0019"
+        ],
+        "bot_turn_id": 5,
+        "user_turn_id": 6,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 14
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0004",
+          "AUTO-0002",
+          "AUTO-0017"
+        ],
+        "bot_turn_id": 7,
+        "user_turn_id": 8,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 13
+      },
+      {
+        "theme": "availability_reliability",
+        "req_ids": [
+          "AUTO-0005",
+          "AUTO-0008"
+        ],
+        "bot_turn_id": 9,
+        "user_turn_id": 10,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 8
+      },
+      {
+        "theme": "deployment_environment_constraints",
+        "req_ids": [
+          "AUTO-0015"
+        ],
+        "bot_turn_id": 11,
+        "user_turn_id": 12,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 6
+      },
+      {
+        "theme": "maintainability_portability_testability",
+        "req_ids": [
+          "AUTO-0021"
+        ],
+        "bot_turn_id": 13,
+        "user_turn_id": 14,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 5
+      },
+      {
+        "theme": "reporting_documentation",
+        "req_ids": [
+          "AUTO-0012",
+          "AUTO-0011"
+        ],
+        "bot_turn_id": 15,
+        "user_turn_id": 16,
+        "generation_mode": "gemini|gemini",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 4
+      }
+    ],
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 0,
+    "coverage_summary": {
+      "clarification_rounds_requested": 2,
+      "clarification_rounds_used": 0,
+      "initial_uncovered_requirement_count": 22,
+      "final_uncovered_requirement_count": 2,
+      "final_uncovered_req_ids": [
+        "AUTO-0020",
+        "AUTO-0022"
+      ],
+      "coverage_history": [
+        0.0,
+        0.36363636363636365,
+        0.40909090909090906,
+        0.6363636363636364,
+        0.7272727272727273,
+        0.7727272727272727,
+        0.8181818181818181,
+        0.9090909090909091
+      ],
+      "exchanges": 8,
+      "target_dialogue_recall": 0.82,
+      "final_dialogue_recall": 0.9090909090909091,
+      "theme_exchange_counts": {
+        "functional_capabilities": 1,
+        "data_validation": 1,
+        "interfaces_integrations": 1,
+        "availability_reliability": 1,
+        "deployment_environment_constraints": 1,
+        "maintainability_portability_testability": 1,
+        "reporting_documentation": 1
+      },
+      "theme_coverage": {
+        "user_roles_permissions": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "data_validation": {
+          "total": 4,
+          "covered": 4,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 4,
+          "covered": 4,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "reporting_documentation": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "other_constraints": {
+          "total": 5,
+          "covered": 3,
+          "uncovered": 2,
+          "recall": 0.6
+        }
+      },
+      "critical_theme_gaps": [],
+      "stopped_reason": "target_dialogue_recall_reached"
+    }
+  }
+}

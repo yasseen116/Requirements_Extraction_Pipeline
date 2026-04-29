@@ -1,0 +1,217 @@
+{
+  "sample_id": "pure_1999_dii",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "method": "g_direct_source_to_full_requirements_v1",
+  "model": "gemini-2.5-pro",
+  "prompt_hash": "7bc5ca53c65429050712190e18c0cc85d56cb5467d06842c84fceba93e2228ae",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "repair_attempted": false,
+  "usage": {
+    "segments": [
+      {
+        "segment_index": 1,
+        "runs": 1,
+        "per_run": [
+          {
+            "promptTokenCount": 931,
+            "candidatesTokenCount": 1401,
+            "totalTokenCount": 3551,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 931
+              }
+            ],
+            "thoughtsTokenCount": 1219
+          }
+        ]
+      }
+    ]
+  },
+  "error": null,
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "segment_1:ok"
+    ],
+    "source_chunk_size": null,
+    "source_chunk_char_budget": null
+  },
+  "project_summary": "This document outlines the software capabilities required for the XS components for the DII COE, focusing on data management services, registry services, and internal interfaces. The system will support various users and data types, provide tunable performance, and adhere to COE compliance and delivery guidelines.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "In fixed (static) mode, data management services shall be tunable by on-site personnel to adjust for varying workloads and database sizes.",
+        "priority": "medium",
+        "evidence_turns": [
+          3
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "Session time-out values shall be user definable and resettable prior to the initialization of a user session.",
+        "priority": "high",
+        "evidence_turns": [
+          5
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "XS services shall be usable by various user classes, including data consumers, data and database managers, and network information infrastructure resource managers.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "Maintenance activities shall include shutdown, open not-mounted, online/off-line implementations, modifications, and upgrades.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "The data management services shall support managing various data types, database architectures, and platforms (hardware and software) at specified sites.",
+        "priority": "high",
+        "evidence_turns": [
+          9
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "For training activities, the data management services shall provide the same processing as a production environment.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "To contribute metadata to a registry, a producer must be able to receive XML registry forms, submit metadata and related information resource artifacts, and provide notifications.",
+        "priority": "high",
+        "evidence_turns": [
+          11
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "The system shall extract semantically-valid views from an XML document (e.g., XSL), disassemble hierarchical views to a relational representation, and render them.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "The Registry software shall be portable and required to execute on COE-compliant platforms.",
+        "priority": "high",
+        "evidence_turns": [
+          15
+        ],
+        "category": "portability"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "Facts are defined as either links (relationships) between entities or associations between an entity and its attributes.",
+        "priority": "low",
+        "evidence_turns": [
+          20
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "Constraints are conditions about the data that must always be true.",
+        "priority": "high",
+        "evidence_turns": [
+          20
+        ]
+      },
+      {
+        "id": "DATA-003",
+        "text": "If attributes are identified for the element 'ctry', then other associated attributes must be carried with it or submitted as separate elements.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+        "priority": "high",
+        "evidence_turns": [
+          2
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "IF-001",
+        "text": "The Registry shall provide standard APIs as specified in Appendix B.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "IF-002",
+        "text": "The XS function shall provide standard APIs for Data Access Services as specified in Appendix C.",
+        "priority": "high",
+        "evidence_turns": [
+          13
+        ]
+      },
+      {
+        "id": "IF-003",
+        "text": "The XS shall internally interface, transparently to the operator, with existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "The XS software shall be delivered in accordance with DII COE guidelines.",
+        "priority": "high",
+        "evidence_turns": [
+          18
+        ]
+      },
+      {
+        "id": "C-002",
+        "text": "Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+        "priority": "medium",
+        "evidence_turns": [
+          19
+        ]
+      }
+    ]
+  }
+}

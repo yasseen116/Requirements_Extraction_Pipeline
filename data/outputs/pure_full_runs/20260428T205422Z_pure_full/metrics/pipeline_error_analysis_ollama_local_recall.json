@@ -1,0 +1,146 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T205422Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T205422Z_pure_full/generated_requirements_ollama_local_recall",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 1,
+    "total_unmatched_source": 57,
+    "total_unmatched_generated": 23,
+    "counts": {
+      "omission_full": 0,
+      "omission_partial": 39,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 4,
+      "hallucination_unsupported": 2,
+      "near_match_paraphrase": 17
+    },
+    "rates": {
+      "omission_full_rate": 0.0,
+      "omission_partial_rate": 0.6842105263157895,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.17391304347826086,
+      "hallucination_unsupported_rate": 0.08695652173913043,
+      "near_match_paraphrase_rate": 0.7391304347826086
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 66,
+      "unmatched_source_count": 57,
+      "unmatched_generated_count": 23,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 39,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 4,
+        "hallucination_unsupported": 2,
+        "near_match_paraphrase": 17
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "Registration Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert."
+          },
+          {
+            "category": "omission_partial",
+            "text": "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must at a minimum be able to provide reports for actions on cases organised: By case;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must allow the user to limit access to cases to specified users or user groups."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System should allow a user to stipulate which other users or groups can access cases."
+          },
+          {
+            "category": "omission_partial",
+            "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide one of the following responses (selectable at configuration time): display title and metadata;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "the most stringent) implies that the System must not include such cases in any count of search results;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must be able to display several entities (cases, suspects) simultaneously."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The interfaces must be made customizable or user-configurable to the extent possible."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Such configurations must be saved in the user profile."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Users can place orders with minimal steps, adding items to their cart, proceeding to checkout, and completing payment without too many interactions."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Users can check their order status by logging in or entering an order number, then viewing the current status page which displays all relevant information like delivery date and tracking details."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Users should not have to re-enter the same information every time they place an order; data from previous interactions can be pre-filled."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "When a customer logs in and starts a new order, the system should recognize them and auto-populate fields like shipping address and payment method where applicable."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "The system should allow users to view and confirm or change any saved payment details securely."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "The system should handle scenarios where users might place multiple orders simultaneously, allowing them to add several items to their cart and checkout all at once."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "The system should manage a list of items across different orders, enabling users to easily switch between them without losing any items."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system should provide clear instructions on how to correct input errors."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Text resizing should make it easier on the eyes and improve readability, especially in long articles or detailed instructions like those found in the Help Module."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Alternative text-only pages should be provided to allow users to skim through long text pages without getting distracted by hyperlinks."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system should clearly indicate which step a user is on and how many steps remain when filling out a form for creating an account."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Screen readers should be able to navigate through the application smoothly without any issues."
+          }
+        ]
+      }
+    }
+  ]
+}

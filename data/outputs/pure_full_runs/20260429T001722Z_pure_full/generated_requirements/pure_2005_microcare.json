@@ -1,0 +1,391 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": "gemini-2.5-pro",
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": [
+          {
+            "promptTokenCount": 5994,
+            "candidatesTokenCount": 3587,
+            "totalTokenCount": 11727,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 5994
+              }
+            ],
+            "thoughtsTokenCount": 2146
+          }
+        ]
+      },
+      {
+        "batch_id": "gap_pass",
+        "usage": [
+          {
+            "promptTokenCount": 3111,
+            "candidatesTokenCount": 457,
+            "totalTokenCount": 5548,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 3111
+              }
+            ],
+            "thoughtsTokenCount": 1980
+          }
+        ]
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:ok",
+      "gap_pass:ok"
+    ],
+    "retrieval_top_k": 24,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 24,
+    "max_chars": 3500,
+    "stored_unique_requirements": 35
+  },
+  "diagnostics": {
+    "evidence_bank_count": 38,
+    "proposition_count": 36,
+    "removed_duplicate_propositions": 0,
+    "rewrite_candidate_count": 12,
+    "gap_pass_added_count": 1,
+    "grounded_after_rewrite_count": 36
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_2005_microcare.json",
+    "proposition_path": "_artifacts/propositions/pure_2005_microcare.json"
+  },
+  "project_summary": "The project aims to capture the main requirements and constraints for the 2005 - microcare document management system.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "When creating a new staff member, if a staff with an existing name is entered, the system must generate a warning message.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "The system must allow a user to save a new staff member with an existing name if required.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "A user must be able to mark a claim's status as 'Rejected'.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "The system must allow a rejected claim to be sent back to the VSP.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "The receipt must be based on information from the claim submission.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "The receipt must automatically list the details for each voucher used.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "The system needs to provide the flexibility to create any number of individual users under any of the user groups.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "During every distribution transaction, the user must select the name of the salesman from the Team Master list.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "The system needs a place to enter payment terms agreed upon between MSIU and the VSP, which are then displayed on the VSP Master Information screen.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "Only an authorized user can alter or amend a claim.",
+        "priority": "high",
+        "evidence_turns": [
+          6
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-002",
+        "text": "During the claim entry process, the system must capture the necessary information about what's happening.",
+        "priority": "high",
+        "evidence_turns": [
+          6
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-003",
+        "text": "The voucher validity date can only be amended or altered at the system level by an authorized user.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-004",
+        "text": "The details for each voucher used on a receipt should be shown in a grid format.",
+        "priority": "low",
+        "evidence_turns": [
+          12
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-005",
+        "text": "Only a system admin can create User Groups.",
+        "priority": "high",
+        "evidence_turns": [
+          14
+        ],
+        "category": "security"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "The system needs to have a 'Salesman master' record that captures all the necessary information for each person.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "The 'Salesman master' record must capture all necessary information for each person.",
+        "priority": "high",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "DATA-003",
+        "text": "Each voucher slip should have a bar code with two identifications, one for the client and one for the partner.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-004",
+        "text": "The value for 'Health Sub – District' must be selected from a master list.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-005",
+        "text": "When a user is entering VSP details, the value for 'Locality' should come from its own master list.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-006",
+        "text": "When a user is entering VSP details, the value for 'Level Of Facility' should come from its own master list.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-007",
+        "text": "When a user is entering VSP details, the value for 'Registration Body' should come from its own master list.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-008",
+        "text": "The voucher will have an MRP, or maximum retail price.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "DATA-009",
+        "text": "The receipt needs to automatically list the details for each voucher used, pulling the `Batch No` and `voucher No` from the available voucher stock.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "DATA-010",
+        "text": "The receipt must include the `Patient Status`.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "DATA-011",
+        "text": "The `Patient Status` must be selected from the `Patient Status Master` list.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "DATA-012",
+        "text": "The `Reason for Referral` must be populated from the `Referral master`.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "DATA-013",
+        "text": "The value for 'Locality' must be selected from a master list.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-014",
+        "text": "The value for 'Level Of Facility' must be selected from a master list.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "The invoice amount shall be calculated as the number of vouchers multiplied by the wholesale price.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "BR-002",
+        "text": "For transactions where the invoice amount is the number of vouchers multiplied by the wholesale price, the mode of payment is always Cash.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "BR-003",
+        "text": "If the `Patient Status` is 'Referral', the receipt must capture who the patient was `Referred To`.",
+        "priority": "high",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "BR-004",
+        "text": "If a claim from the same VSP has a thumb impression mismatch more than two times, the system must in-activate that VSP.",
+        "priority": "high",
+        "evidence_turns": [
+          18
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "IF-001",
+        "text": "Each voucher slip must have a bar code.",
+        "priority": "high",
+        "evidence_turns": [
+          8
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "All rules for the voucher, including health care services and quality standards for providers, are defined in the PDS.",
+        "priority": "high",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "C-002",
+        "text": "The physical voucher must be designed with three tear-off portioned slips.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "C-003",
+        "text": "One of the voucher's tear-off slips must have a sub-section tear-off for the partner.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ]
+      }
+    ]
+  }
+}

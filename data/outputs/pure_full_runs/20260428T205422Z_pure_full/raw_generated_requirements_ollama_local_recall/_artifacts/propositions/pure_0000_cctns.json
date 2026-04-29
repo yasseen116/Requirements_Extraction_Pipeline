@@ -1,0 +1,908 @@
+{
+  "sample_id": "pure_0000_cctns",
+  "project_summary": "Improve the order placement and status checking processes to reduce user interactions.",
+  "propositions": [
+    {
+      "id": "prop_001",
+      "category": "functional",
+      "text": "Users can place orders with minimal steps, adding items to their cart, proceeding to checkout, and completing payment without too many interactions.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:1",
+        "4:2",
+        "4:3"
+      ]
+    },
+    {
+      "id": "prop_002",
+      "category": "functional",
+      "text": "Users can check their order status by logging in or entering an order number, then viewing the current status page which displays all relevant information like delivery date and tracking details.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:4",
+        "4:5"
+      ]
+    },
+    {
+      "id": "prop_003",
+      "category": "functional",
+      "text": "Users should not have to re-enter the same information every time they place an order; data from previous interactions can be pre-filled.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:1",
+        "6:2",
+        "6:3"
+      ]
+    },
+    {
+      "id": "prop_004",
+      "category": "functional",
+      "text": "When a customer logs in and starts a new order, the system should recognize them and auto-populate fields like shipping address and payment method where applicable.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ]
+    },
+    {
+      "id": "prop_005",
+      "category": "functional",
+      "text": "The system should allow users to view and confirm or change any saved payment details securely.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:4"
+      ]
+    },
+    {
+      "id": "prop_006",
+      "category": "functional",
+      "text": "The system should handle scenarios where users might place multiple orders simultaneously, allowing them to add several items to their cart and checkout all at once.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:1",
+        "8:2"
+      ]
+    },
+    {
+      "id": "prop_007",
+      "category": "functional",
+      "text": "The system should manage a list of items across different orders, enabling users to easily switch between them without losing any items.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:3",
+        "8:4"
+      ]
+    },
+    {
+      "id": "prop_001",
+      "category": "functional",
+      "text": "Users can customize their menu contents based on their role or preferences.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:1",
+        "10:2",
+        "10:3",
+        "10:4"
+      ]
+    },
+    {
+      "id": "prop_002",
+      "category": "non_functional",
+      "text": "All non-text media objects should be appropriately described with text equivalents.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:1",
+        "12:2",
+        "12:3",
+        "12:4",
+        "12:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_003",
+      "category": "non_functional",
+      "text": "User interfaces should allow activation of controls through a variety of input devices, not just keyboards or mice.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_004",
+      "category": "non_functional",
+      "text": "Splash screens should be bypassable using a skip link to facilitate navigation for users with visual impairments.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:1",
+        "14:2",
+        "14:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_005",
+      "category": "non_functional",
+      "text": "Page titles should be consistently placed in a prominent location to help users understand where they are and what information is available.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:3",
+        "14:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_006",
+      "category": "non_functional",
+      "text": "Horizontal scrolling should be minimized to aid users with visual impairments in navigating the application.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:4",
+        "14:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_007",
+      "category": "non_functional",
+      "text": "Navigation components like menus and links should be consistently placed across the application.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_001",
+      "category": "non_functional",
+      "text": "Navigation components like menus and links should be consistently placed across the application so that users can predict where to find important features.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:6"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_003",
+      "category": "non_functional",
+      "text": "Resizing text would be particularly helpful for users who have visual impairments or just prefer a larger font size.",
+      "priority": "high",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:2",
+        "16:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_004",
+      "category": "non_functional",
+      "text": "Text resizing should make it easier on the eyes and improve readability, especially in long articles or detailed instructions like those found in the Help Module.",
+      "priority": "high",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:3",
+        "16:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_005",
+      "category": "non_functional",
+      "text": "Alternative text-only pages should be provided to allow users to skim through long text pages without getting distracted by hyperlinks.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_006",
+      "category": "non_functional",
+      "text": "The system should use clear links, bulleted lists, highlighted keywords, and logical headings to support skimming better.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:3",
+        "18:4",
+        "18:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_008",
+      "category": "non_functional",
+      "text": "Skip links should be offered to bypass splash screens so users can get straight to the content they need.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_01",
+      "category": "non_functional",
+      "text": "The system should provide an alternative text-only page to allow users to skim without getting distracted by hyperlinks.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:2",
+        "18:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_03",
+      "category": "non_functional",
+      "text": "The system should mark links with dashed underlines instead of solid ones to avoid overwhelming the user.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_04",
+      "category": "non_functional",
+      "text": "The system should have a site map to give an overview of the application structure.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:1",
+        "20:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_05",
+      "category": "non_functional",
+      "text": "Each page should have a link back to the home or a recognizable landmark page.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_06",
+      "category": "non_functional",
+      "text": "The system should use short sentences, break up long texts into chunks, and present information as bullet points to ensure users can understand the text quickly.",
+      "priority": "high",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_07",
+      "category": "non_functional",
+      "text": "The system should clearly indicate which step a user is on and how many steps remain when filling out a form for creating an account.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_08",
+      "category": "non_functional",
+      "text": "The system should provide context-sensitive help at critical points, like tooltips or inline instructions, to guide users through the process without confusion.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P04_09",
+      "category": "non_functional",
+      "text": "The system should ensure top-notch text quality with impeccable spelling and grammar to improve readability.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:4",
+        "22:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_003",
+      "category": "non_functional",
+      "text": "Screen readers should be able to navigate through the application smoothly without any issues.",
+      "priority": "high",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:6"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_004",
+      "category": "non_functional",
+      "text": "The system should minimize the number of steps needed to reach any piece of content while respecting different mental models and tasks.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:1",
+        "24:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_005",
+      "category": "non_functional",
+      "text": "The application should use a consistent set of user interface rules throughout to create a familiar and common look and feel.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:3",
+        "24:6",
+        "24:7"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "nav_improvement",
+      "category": "non_functional",
+      "text": "Navigation should be streamlined to minimize the number of steps needed to reach any piece of content while respecting different mental models and tasks.",
+      "priority": "high",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "color_and_text",
+      "category": "non_functional",
+      "text": "Within-page links should be underlined and appear in a different color than external links, using both color and text to convey information.",
+      "priority": "medium",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:1",
+        "26:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "icon_for_new_window",
+      "category": "non_functional",
+      "text": "When a link opens a new window or tab, it should include an icon next to the text to indicate this.",
+      "priority": "medium",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "audit_trail_logging",
+      "category": "non_functional",
+      "text": "Audit trails must be exported for specific cases without affecting the stored data, allowing later review.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "audit_trail_integrity",
+      "category": "non_functional",
+      "text": "Audit trails must be unalterable—no one should be able to change or delete them, ensuring their integrity.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:7"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "user_profile_management",
+      "category": "functional",
+      "text": "Super-users should be able to change security attributes like access rights, security levels, privileges, and password management.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:1",
+        "30:3"
+      ]
+    },
+    {
+      "id": "user_profile_self_management",
+      "category": "functional",
+      "text": "Users should have the ability to see, modify, and delete their own profiles as needed.",
+      "priority": "high",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:4"
+      ]
+    },
+    {
+      "id": "prop_008",
+      "category": "functional",
+      "text": "The system should provide clear instructions on how to correct input errors.",
+      "priority": "high",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:4",
+        "32:5"
+      ]
+    },
+    {
+      "id": "prop_009",
+      "category": "functional",
+      "text": "Users should be able to easily change or override persistent default values.",
+      "priority": "high",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:7"
+      ]
+    },
+    {
+      "id": "prop_010",
+      "category": "non_functional",
+      "text": "Error messages should be clear and provide actionable feedback.",
+      "priority": "high",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:4",
+        "32:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_011",
+      "category": "non_functional",
+      "text": "The system should automatically validate user-defined default values against specific International Standards.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:2",
+        "34:3",
+        "34:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_012",
+      "category": "non_functional",
+      "text": "User-defined default values must comply with legal requirements for evidence collection and investigation.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_014",
+      "category": "non_functional",
+      "text": "Registration complaints often arise due to misunderstandings about validation rules.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:8"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P09878",
+      "category": "non_functional",
+      "text": "The system should ensure robust validation checks to catch any discrepancies in user-defined default values.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:6",
+        "34:7"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P09879",
+      "category": "non_functional",
+      "text": "Error messages should be clear and specific when user-defined defaults conflict with international standards.",
+      "priority": "high",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:1",
+        "36:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P09880",
+      "category": "non_functional",
+      "text": "Error messages should highlight the incorrect part of user input directly in the field.",
+      "priority": "high",
+      "evidence_turns": [
+        34,
+        36
+      ],
+      "source_unit_ids": [
+        "34:7",
+        "36:3",
+        "36:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_001",
+      "category": "functional",
+      "text": "Users should have the ability to adjust settings according to their needs.",
+      "priority": "high",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:3"
+      ]
+    },
+    {
+      "id": "prop_002",
+      "category": "non_functional",
+      "text": "The system should support multilingual interfaces to cater to a diverse user base.",
+      "priority": "high",
+      "evidence_turns": [
+        28,
+        38
+      ],
+      "source_unit_ids": [
+        "28:3",
+        "38:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_003",
+      "category": "non_functional",
+      "text": "The system should ensure that no operational data is lost in case of equipment or communication network failures.",
+      "priority": "high",
+      "evidence_turns": [
+        28,
+        38
+      ],
+      "source_unit_ids": [
+        "28:3",
+        "38:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "perf001",
+      "category": "non_functional",
+      "text": "The system should retrieve and display cases accessed within the last two months within 5-8 seconds.",
+      "priority": "high",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:1",
+        "40:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "perf002",
+      "category": "non_functional",
+      "text": "The system should handle many cases or limited storage capacity without degrading performance for recently accessed cases.",
+      "priority": "high",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "perf003",
+      "category": "non_functional",
+      "text": "For older cases not accessed in the past two months, retrieval and display should happen within 20 seconds.",
+      "priority": "high",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:4",
+        "40:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "perf004",
+      "category": "non_functional",
+      "text": "The system should handle at least 1000 concurrent users without significant degradation in performance.",
+      "priority": "high",
+      "evidence_turns": [
+        28,
+        42
+      ],
+      "source_unit_ids": [
+        "28:3",
+        "42:2",
+        "42:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "perf005",
+      "category": "non_functional",
+      "text": "Pages should open within less than 2 seconds under normal network conditions.",
+      "priority": "high",
+      "evidence_turns": [
+        28,
+        42
+      ],
+      "source_unit_ids": [
+        "28:3",
+        "42:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "perf006",
+      "category": "non_functional",
+      "text": "For slower networks or lower-end devices, the opening time should be no more than 5 seconds.",
+      "priority": "high",
+      "evidence_turns": [
+        28,
+        42
+      ],
+      "source_unit_ids": [
+        "28:3",
+        "42:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "perf007",
+      "category": "non_functional",
+      "text": "The system should handle a range of internet speeds from fast Wi-Fi to slow 3G connections.",
+      "priority": "high",
+      "evidence_turns": [
+        28,
+        42
+      ],
+      "source_unit_ids": [
+        "28:3",
+        "42:6"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "p001",
+      "category": "non_functional",
+      "text": "Planned downtime for the system should not exceed 8 hours in any rolling three-month period.",
+      "priority": "high",
+      "evidence_turns": [
+        44
+      ],
+      "source_unit_ids": [
+        "44:1",
+        "44:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "p002",
+      "category": "non_functional",
+      "text": "Unplanned downtime for the system must not exceed twice in any rolling three-month period.",
+      "priority": "high",
+      "evidence_turns": [
+        44
+      ],
+      "source_unit_ids": [
+        "44:3",
+        "44:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "p003",
+      "category": "non_functional",
+      "text": "The system should be restored within no more than 4 hours when an incident occurs, with inline synchronization as part of the recovery process.",
+      "priority": "high",
+      "evidence_turns": [
+        44
+      ],
+      "source_unit_ids": [
+        "44:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "p001",
+      "category": "functional",
+      "text": "When a user performs a quick or advanced search, the system must not include any records in the result list that they do not have access to.",
+      "priority": "high",
+      "evidence_turns": [
+        46
+      ],
+      "source_unit_ids": [
+        "46:1"
+      ]
+    },
+    {
+      "id": "p002",
+      "category": "functional",
+      "text": "Users should be able to belong to more than one group, allowing for flexible role assignments based on their tasks and responsibilities.",
+      "priority": "medium",
+      "evidence_turns": [
+        46
+      ],
+      "source_unit_ids": [
+        "46:2",
+        "46:3"
+      ]
+    },
+    {
+      "id": "prop_001",
+      "category": "functional",
+      "text": "Users should be able to log defects or enhancement requests in their profiles.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "30:1"
+      ]
+    },
+    {
+      "id": "prop_002",
+      "category": "non_functional",
+      "text": "The system must log unauthorized access attempts to aid in security audits.",
+      "priority": "high",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_003",
+      "category": "non_functional",
+      "text": "User-defined default values must comply with specific International Standards during validation.",
+      "priority": "high",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:8",
+        "34:7"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "prop_004",
+      "category": "non_functional",
+      "text": "The system should provide support features both within the app and through a browser interface.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:9",
+        "22:10"
+      ],
+      "nfr_category": "performance"
+    }
+  ],
+  "removed_duplicates": []
+}

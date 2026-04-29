@@ -1,0 +1,233 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "method": "oracle_source_projection_v1",
+  "model": null,
+  "prompt_hash": null,
+  "schema_hash": null,
+  "parse_status": "ok",
+  "repair_attempted": false,
+  "usage": {},
+  "error": null,
+  "project_summary": "Oracle baseline projection from source PURE requirements for 2005 - microcare.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "During every distribution transaction the user should select the name of the sales man listed from Team Master.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "The Salesman master should capture following information’s.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "The values of Health Sub – District, Locality, Level Of Facility, Type of facility, Registration Body would be list from their own master and should select the details based on the VSP.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "These information is vital and shall be used for compared with the processed claims.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-014",
+        "text": "The document should have the following information.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-015",
+        "text": "Before the claim entry the user should check the form manually to understand whether any mandatory information is missed in the Claim or not.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-016",
+        "text": "If yes, then the user should mark that Claim (Treatment Form) status as Rejected and send back to VSP.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-017",
+        "text": "During the claim entry the system should capture the following information.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-018",
+        "text": "Patient Status - (Select from list of status options populating from Patient Status Master) suppose the status is Referral then the system will have the provision to capture Referred To and Reason for Referral, the reason for Referral should be populated from Referral master.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-019",
+        "text": "The system should have a provision to capture the reason suppose if the claim status is “Rejection or Quarantine” Claim Amount – The calculation of claim amount is explained below.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-020",
+        "text": "If the claim from same VSP having more than two times of Thump Impression mismatching, then the system should automatically produce a warning message and the same time the system should In-Activate the VSP.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-021",
+        "text": "The authorized user can alter / amend the Claim if required.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "FR-022",
+        "text": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "category": "compliance",
+        "text": "The principles of the voucher, the contents of the health care services, their required quality, the standards to be met by the providers and their infrastructure, as well as the measures for monitoring the quality have been defined in the PDS.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-002",
+        "category": "availability",
+        "text": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      },
+      {
+        "id": "NFR-003",
+        "category": "availability",
+        "text": "In the transaction part no of forms should match with No of Available Forms The system should print a receipt document based on the information entered during claim submission.",
+        "priority": "medium",
+        "evidence_turns": [
+          2
+        ]
+      }
+    ],
+    "data": [],
+    "business_rules": [],
+    "interfaces": [],
+    "constraints": []
+  }
+}

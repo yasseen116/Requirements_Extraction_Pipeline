@@ -1,0 +1,48 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/direct_generated_requirements",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 1,
+    "total_unmatched_source": 0,
+    "total_unmatched_generated": 0,
+    "counts": {
+      "omission_full": 0,
+      "omission_partial": 0,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 0,
+      "hallucination_unsupported": 0,
+      "near_match_paraphrase": 0
+    },
+    "rates": {
+      "omission_full_rate": 0.0,
+      "omission_partial_rate": 0.0,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.0,
+      "hallucination_unsupported_rate": 0.0,
+      "near_match_paraphrase_rate": 0.0
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 100,
+      "unmatched_source_count": 0,
+      "unmatched_generated_count": 0,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 0,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 0,
+        "near_match_paraphrase": 0
+      },
+      "examples": {
+        "omitted": [],
+        "hallucinated": []
+      }
+    }
+  ]
+}

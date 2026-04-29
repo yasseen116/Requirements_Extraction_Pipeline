@@ -1,0 +1,35 @@
+{
+  "dataset": "pure",
+  "slice": "paper_report_4doc",
+  "generated_samples": 4,
+  "samples": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "path": "outputs/pure_full_runs/20260428T232209Z_pure_full/source_requirements/pure_0000_cctns.json",
+      "requirement_count": 100,
+      "status": "ok_slice_copy"
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "path": "outputs/pure_full_runs/20260428T232209Z_pure_full/source_requirements/pure_0000_gamma_j.json",
+      "requirement_count": 57,
+      "status": "ok_slice_copy"
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "path": "outputs/pure_full_runs/20260428T232209Z_pure_full/source_requirements/pure_1999_dii.json",
+      "requirement_count": 22,
+      "status": "ok_slice_copy"
+    },
+    {
+      "sample_id": "pure_2008_keepass",
+      "document_id": "2008_keepass",
+      "path": "outputs/pure_full_runs/20260428T232209Z_pure_full/source_requirements/pure_2008_keepass.json",
+      "requirement_count": 43,
+      "status": "ok_slice_copy"
+    }
+  ]
+}

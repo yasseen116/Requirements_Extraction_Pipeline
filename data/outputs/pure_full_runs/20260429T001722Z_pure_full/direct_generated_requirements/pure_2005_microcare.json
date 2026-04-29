@@ -1,0 +1,281 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "method": "g_direct_source_to_full_requirements_v1",
+  "model": "gemini-2.5-pro",
+  "prompt_hash": "7bc5ca53c65429050712190e18c0cc85d56cb5467d06842c84fceba93e2228ae",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "repair_attempted": false,
+  "usage": {
+    "segments": [
+      {
+        "segment_index": 1,
+        "runs": 1,
+        "per_run": [
+          {
+            "promptTokenCount": 1117,
+            "candidatesTokenCount": 1973,
+            "totalTokenCount": 6241,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1117
+              }
+            ],
+            "thoughtsTokenCount": 3151
+          }
+        ]
+      }
+    ]
+  },
+  "error": null,
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "segment_1:ok"
+    ],
+    "source_chunk_size": null,
+    "source_chunk_char_budget": null
+  },
+  "project_summary": "A voucher-based healthcare system for managing the distribution of service vouchers, provider information (VSP), and the subsequent processing of claims submitted by providers. The system includes features for user management, stock control of vouchers, and automated checks for claim validity and fraud detection.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "Each voucher must have two portions, with three tear-off slips each for the Client and the Partner.",
+        "priority": "high",
+        "evidence_turns": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "Each voucher slip must contain a barcode with two identifications: one for the client and one for the partner.",
+        "priority": "high",
+        "evidence_turns": [
+          5
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "During every distribution transaction, the user must select the name of the salesman from a list populated by the Team Master.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "When the number of required vouchers is entered, the system must automatically allocate the relevant vouchers with their numbers and batch numbers from available stock and list the details in a grid format.",
+        "priority": "high",
+        "evidence_turns": [
+          8,
+          10
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "The system must allow selection of Health Sub-District, Locality, Level Of Facility, Type of facility, and Registration Body from their respective master lists based on the VSP.",
+        "priority": "medium",
+        "evidence_turns": [
+          11
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "The VSP Master Information screen must provide a feature to enter the payment terms agreed between MSIU and the VSP.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "The system must generate a message when creating a new staff member with an existing name but allow the user to save the new staff member if required.",
+        "priority": "low",
+        "evidence_turns": [
+          13
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "During a claim submission transaction, the number of forms entered must match the number of available forms.",
+        "priority": "high",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "The system must print a receipt document based on the information entered during claim submission.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "FR-010",
+        "text": "The user must be able to mark a Claim (Treatment Form) status as 'Rejected' and send it back to the VSP if mandatory information is missing.",
+        "priority": "medium",
+        "evidence_turns": [
+          18,
+          19
+        ]
+      },
+      {
+        "id": "FR-011",
+        "text": "During claim entry, if the patient status is 'Referral', the system must provide fields to capture 'Referred To' and 'Reason for Referral', with the reason populated from the Referral master.",
+        "priority": "medium",
+        "evidence_turns": [
+          21
+        ]
+      },
+      {
+        "id": "FR-012",
+        "text": "The system must have a provision to capture the reason if a claim status is set to 'Rejection' or 'Quarantine'.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ]
+      },
+      {
+        "id": "FR-013",
+        "text": "If claims from the same VSP have more than two instances of a thumb impression mismatch, the system must automatically produce a warning message and inactivate the VSP.",
+        "priority": "high",
+        "evidence_turns": [
+          23
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "Only authorized users can amend or alter the voucher validity date and submitted claims.",
+        "priority": "high",
+        "evidence_turns": [
+          4,
+          24
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-002",
+        "text": "Only the system admin can create User Groups.",
+        "priority": "high",
+        "evidence_turns": [
+          25
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-003",
+        "text": "The system shall allow the creation of any number of individual users under any user group.",
+        "priority": "medium",
+        "evidence_turns": [
+          25
+        ],
+        "category": "security"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "Each voucher must have properties including batch numbers, voucher numbers, project codes, a validity date, and a Maximum Retail Price (MRP).",
+        "priority": "high",
+        "evidence_turns": [
+          3,
+          4
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "The Salesman master must capture the distributor's name, the salesman's name, the date of distribution, and the number of vouchers sold.",
+        "priority": "medium",
+        "evidence_turns": [
+          7,
+          8
+        ]
+      },
+      {
+        "id": "DATA-003",
+        "text": "The system must capture VSP staff information, including VSP Name, Staff Code, Staff Name, Staff Type, and Qualification.",
+        "priority": "medium",
+        "evidence_turns": [
+          13
+        ]
+      },
+      {
+        "id": "DATA-004",
+        "text": "The claim submission receipt document must contain the information entered during the claim submission.",
+        "priority": "medium",
+        "evidence_turns": [
+          17
+        ]
+      },
+      {
+        "id": "DATA-005",
+        "text": "The system must capture information during claim entry, including Patient Status, which is selected from the Patient Status Master.",
+        "priority": "high",
+        "evidence_turns": [
+          20,
+          21
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "The invoice amount is calculated as the number of vouchers multiplied by the wholesale price.",
+        "priority": "high",
+        "evidence_turns": [
+          9
+        ]
+      },
+      {
+        "id": "BR-002",
+        "text": "The mode of payment for voucher distribution is Cash.",
+        "priority": "medium",
+        "evidence_turns": [
+          9
+        ]
+      },
+      {
+        "id": "BR-003",
+        "text": "The VSP must submit claims (Treatment Forms) on a bi-monthly or monthly basis, depending on the payment terms specified in the VSP master.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "BR-004",
+        "text": "Before claim entry, the user must manually check the form to determine if any mandatory information is missing.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ]
+      }
+    ],
+    "interfaces": [],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "The principles of the voucher, contents of health care services, required quality, provider standards, and quality monitoring measures are defined in the PDS document.",
+        "priority": "high",
+        "evidence_turns": [
+          1
+        ]
+      }
+    ]
+  }
+}

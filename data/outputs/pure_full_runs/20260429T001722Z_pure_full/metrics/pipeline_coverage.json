@@ -1,0 +1,484 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260429T001722Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260429T001722Z_pure_full/generated_requirements_gemini_full_context",
+  "match_threshold": 0.55,
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 4,
+    "macro_precision": 0.6736544705294705,
+    "macro_coverage_recall": 0.6912360446570973,
+    "macro_f1": 0.6750067623275932,
+    "macro_hallucination_rate": 0.32634552947052947,
+    "macro_average_match_score": 0.7968945462998089,
+    "macro_average_best_source_score": 0.725785119879569,
+    "micro_precision": 0.7157360406091371,
+    "micro_coverage_recall": 0.6911764705882353,
+    "micro_f1": 0.7032418952618454,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 197,
+    "total_matched_requirements": 141
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 91,
+      "matched_count": 72,
+      "precision": 0.7912087912087912,
+      "coverage_recall": 0.72,
+      "f1": 0.7539267015706805,
+      "hallucination_rate": 0.2087912087912088,
+      "average_match_score": 0.8084091262684928,
+      "average_best_source_score": 0.7540378230810165,
+      "unmatched_source_examples": [
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the user to track the submitted defect or enhancement request.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "the most stringent) implies that the System must not include such cases in any count of search results;",
+        "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",
+        "Such configurations must be saved in the user profile.",
+        "Where the System employs a graphical user interface, it must allow users to customise it.",
+        "The user interfaces of the system should comply with Standard ISO 9241.",
+        "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility.",
+        "User interfaces should meet its requirements and recommendations."
+      ],
+      "unmatched_generated_examples": [
+        "The system shall allow a user to create a new case.",
+        "The system shall allow a user to update an existing case.",
+        "For long pages, the system shall provide within-page links to help users jump to the right section.",
+        "The system must provide help directly on the screen.",
+        "Users must be able to delete their user-specified profile on demand.",
+        "Frequently-executed system transactions must be designed to be quick.",
+        "If a page has a lot of links, the text must still be easy to read.",
+        "If frames are used, they must not cause issues with bookmarking pages.",
+        "If frames are used, they must not cause weird scrolling behavior.",
+        "Help content must have good spelling and grammar.",
+        "Error messages must clearly state the reason for the problem.",
+        "Operational data must not be lost in case of any failure of equipment or the communication network.",
+        "Security attributes include access rights, security level, privileges, and password allocation and management.",
+        "Persistent default values for data entry must be user-definable.",
+        "The system must allow setting up default values for certain fields."
+      ],
+      "match_examples": [
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+          "generated_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail."
+        },
+        {
+          "score": 0.990612804889679,
+          "source_requirement": "The System must be able to display several entities (cases, suspects) simultaneously.",
+          "generated_requirement": "The system must be able to display several entities, like cases and suspects, simultaneously."
+        },
+        {
+          "score": 0.9583735466003418,
+          "source_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "generated_requirement": "If a splash screen is used, it must provide a navigation option to skip it."
+        },
+        {
+          "score": 0.9453503489494324,
+          "source_requirement": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+          "generated_requirement": "The system must maintain the audit trail for at least the life of the case to which it refers."
+        },
+        {
+          "score": 0.9420168995857239,
+          "source_requirement": "The System should allow a user to stipulate which other users or groups can access cases.",
+          "generated_requirement": "A user must be able to stipulate which other users or user groups can access their cases."
+        },
+        {
+          "score": 0.9275172352790833,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "Empty space filled only with the background color must be used in a way that does not impair the visual skimming of the page."
+        },
+        {
+          "score": 0.9252969622612,
+          "source_requirement": "Distinguishable within-page links: Within-page links should be clearly distinguishable from other links that lead to a different page.",
+          "generated_requirement": "Within-page links must be clearly distinguishable from links that go to a different page."
+        },
+        {
+          "score": 0.9251418113708496,
+          "source_requirement": "Splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+          "generated_requirement": "The system must avoid using splash screens unless they provide useful content or feedback on the application state."
+        },
+        {
+          "score": 0.9246481657028198,
+          "source_requirement": "ICT accessibility: ISO 9241-20 shall be the standard for guidance on ICT accessibility.",
+          "generated_requirement": "The system must use ISO 9241-20 as the standard for guidance on ICT accessibility."
+        },
+        {
+          "score": 0.9245507717132568,
+          "source_requirement": "Marking links opening new windows: Links that open new browser windows or pop-up windows should be clearly marked.",
+          "generated_requirement": "Links that open new browser windows or pop-up windows must be clearly marked."
+        },
+        {
+          "score": 0.9237356185913086,
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "The system must be able to export audit trails for specified cases for an auditor."
+        },
+        {
+          "score": 0.9197186231613159,
+          "source_requirement": "Horizontal scrolling should be avoided wherever possible.",
+          "generated_requirement": "The system should avoid horizontal scrolling wherever possible."
+        },
+        {
+          "score": 0.9196659922599792,
+          "source_requirement": "The System user interface must be suitable for users with special needs;",
+          "generated_requirement": "The user interface must be suitable for users with special needs."
+        },
+        {
+          "score": 0.9186576008796692,
+          "source_requirement": "The interfaces must be made customizable or user-configurable to the extent possible.",
+          "generated_requirement": "Interfaces must be user-configurable to the extent possible."
+        },
+        {
+          "score": 0.9184474945068359,
+          "source_requirement": "The System must allow persistent defaults for data entry where desirable.",
+          "generated_requirement": "Users must be able to set up their own persistent defaults for data entry."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 48,
+      "matched_count": 35,
+      "precision": 0.7291666666666666,
+      "coverage_recall": 0.6140350877192983,
+      "f1": 0.6666666666666667,
+      "hallucination_rate": 0.2708333333333333,
+      "average_match_score": 0.8304686869893755,
+      "average_best_source_score": 0.7180449701192086,
+      "unmatched_source_examples": [
+        "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+        "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "The system shall be able to validate credit card in less than 2 seconds.",
+        "Security Requirements The system shall validate credit cards against fraud.",
+        "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+        "Maintainability Requirements The system shall utilize interchangeable plugins.",
+        "The system shall be easily updatable for fixes and patches.",
+        "The system shall create logs of all changes, updates, or fixes that are done to the site.",
+        "The system shall be easy to upgrade.",
+        "Portability Requirements The system shall be extremely portable via the usb drive.",
+        "Testability Requirements The system should be able to run under debug mode.",
+        "The system should be able to run test shipping orders.",
+        "Yoggie shall coordinate on future enhancement and features with our organization.",
+        "Functional requirements: A statement of a piece of required functionality or a behavior that a system will exhibit under specific conditions.",
+        "Nonfunctional requirements: A description of a property or characteristic that the system should exhibit."
+      ],
+      "unmatched_generated_examples": [
+        "The system must email both the customer and the vendor after a purchase.",
+        "The system needs to have a clear function or behavior for when a payment is declined.",
+        "Notifications must support error, warning, and success message types.",
+        "The order confirmation email must state that items will be delivered to the customer's shipping address.",
+        "The order confirmation email must include the tracking number.",
+        "The system must automatically compress image files that are too large in size when users are adding product photos.",
+        "The system must automatically block the IP address from a detected IP DOS attack.",
+        "The interface has to be intuitive.",
+        "The system must be able to be migrated or backed up via a USB drive.",
+        "The system should get running again quickly after a recovery.",
+        "The Web Store must work with Netscape Communicator Version 4.",
+        "The Web Store must operate on an Intel based system.",
+        "The Web Store must operate with an Apache Web Server."
+      ],
+      "match_examples": [
+        {
+          "score": 0.9706805944442749,
+          "source_requirement": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+          "generated_requirement": "The system must be able to handle 1000 customers logged in concurrently."
+        },
+        {
+          "score": 0.9690427184104919,
+          "source_requirement": "The system should be able to create test environment of weborder system.",
+          "generated_requirement": "It must be possible to create a test environment of the weborder system."
+        },
+        {
+          "score": 0.961538553237915,
+          "source_requirement": "The system shall detect consecutive failed login attempts.",
+          "generated_requirement": "The system must detect consecutive failed login attempts."
+        },
+        {
+          "score": 0.960833728313446,
+          "source_requirement": "The system shall be able to retrieve 200 products per second.",
+          "generated_requirement": "The system must be able to retrieve 200 products per second."
+        },
+        {
+          "score": 0.9547040462493896,
+          "source_requirement": "The system should be able to run test credit card transactions.",
+          "generated_requirement": "The system must be able to run test credit card transactions."
+        },
+        {
+          "score": 0.9494598507881165,
+          "source_requirement": "The system shall be able to restore 1000 records per second.",
+          "generated_requirement": "The system must be able to restore 1000 records per second."
+        },
+        {
+          "score": 0.938729465007782,
+          "source_requirement": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+          "generated_requirement": "The interface must remain consistent among various web browsers."
+        },
+        {
+          "score": 0.9311172962188721,
+          "source_requirement": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+          "generated_requirement": "The system must acquire shipping charges in less than 2 seconds."
+        },
+        {
+          "score": 0.9288269877433777,
+          "source_requirement": "The system shall auto detect IP DOS attacks and block IP automatically.",
+          "generated_requirement": "The system must automatically detect IP DOS attacks."
+        },
+        {
+          "score": 0.9116660952568054,
+          "source_requirement": "The system shall automatically compress image files that are too large in size.",
+          "generated_requirement": "The system must automatically compress image files that are too large in size."
+        },
+        {
+          "score": 0.9081839323043823,
+          "source_requirement": "The system shall be protected by open source firewall called Firestarter.",
+          "generated_requirement": "The system must be protected by the open source firewall called Firestarter."
+        },
+        {
+          "score": 0.8930529356002808,
+          "source_requirement": "Customer must have item(s) in the shopping cart.",
+          "generated_requirement": "A customer must have one or more items in the shopping cart to buy things."
+        },
+        {
+          "score": 0.8892872929573059,
+          "source_requirement": "The system shall utilize consistent symbols and colors for clear notifications.",
+          "generated_requirement": "The system must utilize consistent symbols and colors for notifications."
+        },
+        {
+          "score": 0.8666242361068726,
+          "source_requirement": "The system shall be easy to migrate or backed up via another usb drive.",
+          "generated_requirement": "It should be easy to migrate the system or have it backed up via a USB drive."
+        },
+        {
+          "score": 0.8564018607139587,
+          "source_requirement": "The system shall be able to add product to shopping cart in less than 2ms.",
+          "generated_requirement": "Adding a product to the shopping cart must take less than 2ms."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 22,
+      "matched_count": 13,
+      "precision": 0.5909090909090909,
+      "coverage_recall": 0.5909090909090909,
+      "f1": 0.5909090909090909,
+      "hallucination_rate": 0.4090909090909091,
+      "average_match_score": 0.76505924646671,
+      "average_best_source_score": 0.6741189021955837,
+      "unmatched_source_examples": [
+        "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+        "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+        "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify.",
+        "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+        "DATA ACCESS SERVICES INTERNAL INTERFACE REQUIREMENTS The XS function shall provide standard APIs as specified in Appendix C.",
+        "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable.",
+        "OTHER REQUIREMENTS None PACKAGING REQUIREMENTS The XS software shall be delivered in accordance with DII COE guidelines.",
+        "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+        "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+      ],
+      "unmatched_generated_examples": [
+        "The user classes shall include 'data consumers', 'data and database managers', and 'network information infrastructure resource managers'.",
+        "The ability to tune data management services must be available when the system is in a 'fixed (static) mode of operation'.",
+        "The system must support bringing parts of the system online or offline.",
+        "The system must support being managed in specific states like 'open not-mounted'.",
+        "The session time-out values must be user definable.",
+        "The system must provide verification methods to confirm that adjustments are correct and have not introduced any issues.",
+        "The ability to redefine or reset the names of connect descriptors to database server instances must be transparent to the operator.",
+        "The system must internally interface with the existing data elements of the DAC.",
+        "The system must internally interface with the existing data elements of COTS RDBMS products."
+      ],
+      "match_examples": [
+        {
+          "score": 0.9260116219520569,
+          "source_requirement": "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+          "generated_requirement": "Training requirements for the XS module are to be determined by the developers of the main system."
+        },
+        {
+          "score": 0.9226394891738892,
+          "source_requirement": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+          "generated_requirement": "The qualification methods applied to the software must include all of the approaches: test, demonstration, analysis, and inspection."
+        },
+        {
+          "score": 0.8771246671676636,
+          "source_requirement": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+          "generated_requirement": "Session time-out values must be able to be reset before a user session is initialized."
+        },
+        {
+          "score": 0.8653107285499573,
+          "source_requirement": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+          "generated_requirement": "The Registry software is required to execute on any COE-compliant platforms."
+        },
+        {
+          "score": 0.807403028011322,
+          "source_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+          "generated_requirement": "Maintenance activities shall cover planned shutdowns, upgrades, and modifications."
+        },
+        {
+          "score": 0.7784581780433655,
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "The ability to tune data management services must be available at a 'base or data processing megacenter'."
+        },
+        {
+          "score": 0.7453488707542419,
+          "source_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+          "generated_requirement": "Personnel must have the ability to redefine or reset the names of connect descriptors to database server instances if a server name or location changes."
+        },
+        {
+          "score": 0.7396519184112549,
+          "source_requirement": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+          "generated_requirement": "The system shall provide XS services to several different classes of users."
+        },
+        {
+          "score": 0.7091865539550781,
+          "source_requirement": "DOCUMENT OVERVIEW This document outlines the software capabilities required for the XS components for the DII COE.",
+          "generated_requirement": "As a general rule, all XS components for the DII COE must adhere to the compliance level requirements described in the I&RTS."
+        },
+        {
+          "score": 0.6885035037994385,
+          "source_requirement": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+          "generated_requirement": "If a user cannot find an existing specification ('spec') in the Registry to reuse for their task, then they must create a new one."
+        },
+        {
+          "score": 0.6795447468757629,
+          "source_requirement": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+          "generated_requirement": "The system must internally interface with the existing data elements of the DBIF."
+        },
+        {
+          "score": 0.6179606914520264,
+          "source_requirement": "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+          "generated_requirement": "'On-site personnel' must be able to tune the data management services."
+        },
+        {
+          "score": 0.5886262059211731,
+          "source_requirement": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+          "generated_requirement": "Tuning data management services must include the ability to 'adjust for varying workloads and sizes of associated databases'."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "generated_requirement_count": 36,
+      "matched_count": 21,
+      "precision": 0.5833333333333334,
+      "coverage_recall": 0.84,
+      "f1": 0.6885245901639344,
+      "hallucination_rate": 0.4166666666666667,
+      "average_match_score": 0.7836411254746574,
+      "average_best_source_score": 0.7569387841224671,
+      "unmatched_source_examples": [
+        "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office.",
+        "These information is vital and shall be used for compared with the processed claims.",
+        "The document should have the following information.",
+        "Before the claim entry the user should check the form manually to understand whether any mandatory information is missed in the Claim or not."
+      ],
+      "unmatched_generated_examples": [
+        "When creating a new staff member, if a staff with an existing name is entered, the system must generate a warning message.",
+        "The system needs to provide the flexibility to create any number of individual users under any of the user groups.",
+        "The system needs to have a 'Salesman master' record that captures all the necessary information for each person.",
+        "The value for 'Health Sub – District' must be selected from a master list.",
+        "When a user is entering VSP details, the value for 'Locality' should come from its own master list.",
+        "When a user is entering VSP details, the value for 'Registration Body' should come from its own master list.",
+        "The voucher will have an MRP, or maximum retail price.",
+        "The receipt must include the `Patient Status`.",
+        "The `Patient Status` must be selected from the `Patient Status Master` list.",
+        "The `Reason for Referral` must be populated from the `Referral master`.",
+        "The value for 'Locality' must be selected from a master list.",
+        "The value for 'Level Of Facility' must be selected from a master list.",
+        "The invoice amount shall be calculated as the number of vouchers multiplied by the wholesale price.",
+        "Each voucher slip must have a bar code.",
+        "One of the voucher's tear-off slips must have a sub-section tear-off for the partner."
+      ],
+      "match_examples": [
+        {
+          "score": 0.9789792895317078,
+          "source_requirement": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+          "generated_requirement": "Each voucher slip should have a bar code with two identifications, one for the client and one for the partner."
+        },
+        {
+          "score": 0.9474043846130371,
+          "source_requirement": "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.",
+          "generated_requirement": "The system needs a place to enter payment terms agreed upon between MSIU and the VSP, which are then displayed on the VSP Master Information screen."
+        },
+        {
+          "score": 0.9302429556846619,
+          "source_requirement": "The authorized user can alter / amend the Claim if required.",
+          "generated_requirement": "Only an authorized user can alter or amend a claim."
+        },
+        {
+          "score": 0.8859584331512451,
+          "source_requirement": "During the claim entry the system should capture the following information.",
+          "generated_requirement": "During the claim entry process, the system must capture the necessary information about what's happening."
+        },
+        {
+          "score": 0.8467143774032593,
+          "source_requirement": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group.",
+          "generated_requirement": "Only a system admin can create User Groups."
+        },
+        {
+          "score": 0.8428882360458374,
+          "source_requirement": "During every distribution transaction the user should select the name of the sales man listed from Team Master.",
+          "generated_requirement": "During every distribution transaction, the user must select the name of the salesman from the Team Master list."
+        },
+        {
+          "score": 0.8184062838554382,
+          "source_requirement": "The principles of the voucher, the contents of the health care services, their required quality, the standards to be met by the providers and their infrastructure, as well as the measures for monitoring the quality have been defined in the PDS.",
+          "generated_requirement": "All rules for the voucher, including health care services and quality standards for providers, are defined in the PDS."
+        },
+        {
+          "score": 0.8054152727127075,
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The 'Salesman master' record must capture all necessary information for each person."
+        },
+        {
+          "score": 0.7926021814346313,
+          "source_requirement": "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.",
+          "generated_requirement": "The physical voucher must be designed with three tear-off portioned slips."
+        },
+        {
+          "score": 0.7917425632476807,
+          "source_requirement": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+          "generated_requirement": "For transactions where the invoice amount is the number of vouchers multiplied by the wholesale price, the mode of payment is always Cash."
+        },
+        {
+          "score": 0.7785605788230896,
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "The receipt needs to automatically list the details for each voucher used, pulling the `Batch No` and `voucher No` from the available voucher stock."
+        },
+        {
+          "score": 0.7780980467796326,
+          "source_requirement": "If the claim from same VSP having more than two times of Thump Impression mismatching, then the system should automatically produce a warning message and the same time the system should In-Activate the VSP.",
+          "generated_requirement": "If a claim from the same VSP has a thumb impression mismatch more than two times, the system must in-activate that VSP."
+        },
+        {
+          "score": 0.7672467827796936,
+          "source_requirement": "If yes, then the user should mark that Claim (Treatment Form) status as Rejected and send back to VSP.",
+          "generated_requirement": "The system must allow a rejected claim to be sent back to the VSP."
+        },
+        {
+          "score": 0.760040283203125,
+          "source_requirement": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+          "generated_requirement": "The system must allow a user to save a new staff member with an existing name if required."
+        },
+        {
+          "score": 0.7399803400039673,
+          "source_requirement": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+          "generated_requirement": "The voucher validity date can only be amended or altered at the system level by an authorized user."
+        }
+      ]
+    }
+  ]
+}

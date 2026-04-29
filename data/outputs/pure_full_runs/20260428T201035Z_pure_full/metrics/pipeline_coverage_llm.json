@@ -1,0 +1,251 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260428T201035Z_pure_full/generated_requirements",
+  "validator": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "method": "gemini_checklist_judge_v1",
+    "semantic_candidate_top_k": 2,
+    "lexical_candidate_top_k": 1,
+    "batch_size": 24,
+    "strict_scoring": {
+      "full": 1.0,
+      "partial": 0.0,
+      "none": 0.0
+    },
+    "weighted_scoring": {
+      "full": 1.0,
+      "partial": 0.5,
+      "none": 0.0
+    }
+  },
+  "aggregate": {
+    "sample_count": 1,
+    "macro_precision": 0.5223880597014925,
+    "macro_coverage_recall": 0.35,
+    "macro_f1": 0.41916167664670656,
+    "macro_hallucination_rate": 0.47761194029850745,
+    "macro_weighted_precision": 0.6940298507462687,
+    "macro_weighted_coverage_recall": 0.465,
+    "macro_weighted_f1": 0.5568862275449102,
+    "micro_precision": 0.5223880597014925,
+    "micro_coverage_recall": 0.35,
+    "micro_f1": 0.41916167664670656,
+    "micro_weighted_precision": 0.6940298507462687,
+    "micro_weighted_coverage_recall": 0.465,
+    "micro_weighted_f1": 0.5568862275449102,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 67,
+    "total_strict_matches": 35,
+    "total_weighted_match_score": 46.5,
+    "total_full_matches": 35,
+    "total_partial_matches": 23
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 67,
+      "strict_match_count": 35,
+      "weighted_match_score": 46.5,
+      "full_match_count": 35,
+      "partial_match_count": 23,
+      "precision": 0.5223880597014925,
+      "coverage_recall": 0.35,
+      "f1": 0.41916167664670656,
+      "hallucination_rate": 0.47761194029850745,
+      "weighted_precision": 0.6940298507462687,
+      "weighted_coverage_recall": 0.465,
+      "weighted_f1": 0.5568862275449102,
+      "candidate_pair_count": 249,
+      "validator_match_examples": [
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+          "generated_requirement": "The system must maintain the audit trail for as long as required, keeping it at least for the life of the case to which it refers.",
+          "reason": "The generated requirement faithfully covers the source requirement regarding audit trail retention period."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Frequently-executed System transactions must be designed so that they can be completed with a small number of interactions (e.g.",
+          "generated_requirement": "Frequently-executed system transactions must be designed so they can be completed with a small number of interactions.",
+          "reason": "The generated requirement faithfully covers the source requirement, preserving all critical details regarding frequently-executed transactions and interactions."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.",
+          "generated_requirement": "The system must restrict changes to security attributes for groups or users—including access rights, security level, privileges, password allocation and management—so they are made only by super-user.",
+          "reason": "The generated requirement faithfully rephrases the source, preserving all critical details and the core need."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Unplanned downtime for the System must not exceed <xx hours/minutes> per <rolling three month period>.",
+          "generated_requirement": "The system must ensure total unplanned downtime does not exceed <xx hours/minutes> over a <rolling three month period>.",
+          "reason": "The generated requirement faithfully covers the source requirement regarding total unplanned downtime and its duration over a specified period."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The number of incidents of unplanned downtime for the System must not exceed <x> per <rolling three month period>.",
+          "generated_requirement": "The system must ensure the number of incidents of unplanned downtime does not exceed <x> per <rolling three month period>.",
+          "reason": "The generated requirement faithfully covers the source requirement regarding the number of incidents of unplanned downtime and its frequency over a specified period."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "The system must allow the export of audit trails for specified cases without affecting the audit trail stored by the System.",
+          "reason": "The generated requirement faithfully covers the source requirement regarding the export of audit trails."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The interfaces must be made customizable or user-configurable to the extent possible.",
+          "generated_requirement": "The system must make interfaces customizable or user-configurable to the extent possible.",
+          "reason": "The generated requirement faithfully covers the source requirement, preserving all critical details regarding customizable interfaces."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "In the event of any software or hardware failure, it must be possible to restore the System (with inline synchronization) within no more than <xx> hours.",
+          "generated_requirement": "The system must be able to restore complete with inline synchronization within no more than <xx> hours after any software or hardware failure.",
+          "reason": "The generated requirement faithfully covers the source requirement regarding system restoration time, including inline synchronization, after software or hardware failure."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "generated_requirement": "The system must consult ISO 9241-303 for screen text legibility requirements.",
+          "reason": "The generated requirement is identical to the source, only changing the modality from 'shall be consulted' to 'must consult' while preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Providing a site map: A separate navigation overview such as a site map should be provided for application showing the structure of the site in an overview form.",
+          "generated_requirement": "The system must provide a separate navigation overview, such as a site map, showing the structure of the site in an overview form.",
+          "reason": "The generated requirement faithfully covers all critical details of the source requirement regarding providing a site map or navigation overview."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "ICT accessibility: ISO 9241-20 shall be the standard for guidance on ICT accessibility.",
+          "generated_requirement": "The system must use ISO 9241-20 as the standard for guidance for the overall approach to ICT accessibility.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details and adding only a minor, non-material clarification ('overall approach to')."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Marking links opening new windows: Links that open new browser windows or pop-up windows should be clearly marked.",
+          "generated_requirement": "Any links that open new browser windows or pop-up windows must be clearly marked.",
+          "reason": "The generated requirement faithfully captures the source, changing 'should be' to 'must be' which is a common and acceptable strengthening in requirement recovery."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "Text quality: The quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+          "generated_requirement": "The quality of textual content with respect to spelling and grammar must be sufficient so as not to impede readability.",
+          "reason": "The generated requirement is almost identical to the source, only strengthening the modality from 'should be' to 'must be' while preserving all critical details."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "The system must use any space filled only with the background color in such a way that it does not impair the visual skimming of the page.",
+          "reason": "The generated requirement faithfully captures the source, strengthening the modality and slightly generalizing 'space' to 'any space'."
+        },
+        {
+          "verdict": "full",
+          "score": 1.0,
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "The system must make the support solution accessible to users both from within the application and outside the application through a browser interface.",
+          "reason": "The generated requirement faithfully covers the source, preserving all critical details."
+        }
+      ],
+      "unmatched_source_examples": [
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the user to track the submitted defect or enhancement request.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "The System must be able to capture and store violations (i.e.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+        "The System should allow a user to stipulate which other users or groups can access cases.",
+        "the most stringent) implies that the System must not include such cases in any count of search results;",
+        "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+        "The System must employ a single set of user interface rules, or a small number of sets to provide a familiar and common look and feel for the application.",
+        "The System must be able to display several entities (cases, suspects) simultaneously."
+      ],
+      "unmatched_generated_examples": [
+        "The system must clearly indicate where the user is right in the navigation component.",
+        "The system must ensure the quality of textual content with respect to spelling and grammar is sufficient so as not to impede readability.",
+        "The system must clearly mark any links that open new browser windows or pop-up windows so users are not surprised.",
+        "The system must follow appropriate interface guidelines for compatibility with specialist software.",
+        "The system must be designed in a manner that operational data is not lost in case of any failure of equipment or communication network.",
+        "The system must ensure operational data is not lost in case of any failure of equipment or communication network, holding onto that information safely until the connection is back.",
+        "The system must allow a user to be a member of more than one group.",
+        "The entire user interface must be suitable for users with special needs.",
+        "The system must be compatible with specialist software that may be used by the police."
+      ],
+      "partial_only_examples": [
+        {
+          "source_requirement": "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "The system must make the Help Module available across all user interfaces in the application.",
+          "reason": "The generated requirement only covers the availability of the Help Module across all user interfaces, omitting the critical detail about the content being 'detailed context-sensitive help material for all possible actions and scenarios'."
+        },
+        {
+          "source_requirement": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+          "generated_requirement": "The system must provide a dedicated Help Module offering detailed context-sensitive help material for all the possible actions and scenarios they might encounter.",
+          "reason": "The generated requirement omits the critical detail that the help material should be available 'on all user interfaces in the application'."
+        },
+        {
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The system must provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "reason": "The generated requirement adds the explicit need to 'log any defects or enhancement requests', whereas the source only specifies enabling the user to 'track the submitted' ones."
+        },
+        {
+          "source_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+          "generated_requirement": "The system must store any access to cases, and all other activities involving the cases and related documents or data, in the audit trail.",
+          "reason": "The generated requirement narrows the scope of audited entities to 'cases and related documents or data' and actions to 'access' and 'activities involving cases', losing the broader 'critical entities' and explicit 'create/read/update/delete' actions, and the 'unalterable' and 'automatically capturing' details."
+        },
+        {
+          "source_requirement": "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+          "generated_requirement": "The system must ensure the audit trail data cannot be modified in any way or deleted by any user.",
+          "reason": "The generated requirement only covers the immutability of the audit trail data, omitting the critical details about what information the audit trail must capture (actions on critical entities, user initiating actions)."
+        },
+        {
+          "source_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "generated_requirement": "The system must ensure the audit trail data cannot be modified in any way or deleted by any user.",
+          "reason": "The generated requirement focuses on the immutability and non-deletion of audit trail data, which is not explicitly stated in the source. The source focuses on automatic tracking and storage of events."
+        },
+        {
+          "source_requirement": "The System must be able to capture and store violations (i.e.",
+          "generated_requirement": "The system must allow citizens to register their complaints with the police.",
+          "reason": "The generated requirement narrows the scope of 'violations' to 'complaints with the police' and introduces specific roles (citizens, police) not present in the source."
+        },
+        {
+          "source_requirement": "The system should provide for role-based control for the functionality within the system The System must allow a user to be a member of more than one group.",
+          "generated_requirement": "The system must allow a user to be a member of more than one group.",
+          "reason": "The generated requirement only covers the second part of the source requirement (users in multiple groups), omitting the role-based control aspect."
+        },
+        {
+          "source_requirement": "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+          "generated_requirement": "The system must restrict changes to security attributes for groups or users—including access rights, security level, privileges, password allocation and management—so they are made only by super-user.",
+          "reason": "The generated requirement generalizes the actions from 'set up user profiles and allocate users to groups' to 'changes to security attributes' and uses 'super-user' instead of 'admin-users'."
+        },
+        {
+          "source_requirement": "The System should allow a user to stipulate which other users or groups can access cases.",
+          "generated_requirement": "The system must allow a user to stipulate which other users or groups can access cases.",
+          "reason": "The generated requirement changes the modality strength from 'should' to 'must'."
+        }
+      ]
+    }
+  ]
+}

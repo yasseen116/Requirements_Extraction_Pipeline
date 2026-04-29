@@ -1,0 +1,1371 @@
+{
+  "aggregate": {
+    "similarity_method": "cosine_sentence_transformer",
+    "support_unit": "user_sentence_or_clause_context",
+    "samples": 1,
+    "total_input": 73,
+    "total_after_dedup": 73,
+    "total_grounded": 73,
+    "total_hallucinated": 0,
+    "mean_hallucination_rate": 0.0
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "deduplication": {
+        "input_count": 73,
+        "after_dedup_count": 73,
+        "removed_count": 0,
+        "removed_details": []
+      },
+      "validation": {
+        "total": 73,
+        "grounded": 73,
+        "hallucinated": 0,
+        "hallucination_rate": 0.0,
+        "similarity_method": "cosine_sentence_transformer",
+        "support_unit": "user_sentence_or_clause_context",
+        "grounded_items": [
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-001",
+              "text": "If the visual layout is ever an issue for accessibility or preference, the user must be provided with an equivalent alternative text-only page.",
+              "priority": "high",
+              "evidence_turns": [
+                10,
+                16,
+                30
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 16,
+            "best_supporting_span": "If the visual layout is ever an issue for accessibility or preference, alternatively, the user should be provided with an equivalent alternative text-only page.",
+            "best_supporting_context": "As for the empty areas, any space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page. If the visual layout is ever an issue for accessibility or preference, alternatively, the user should be provided with an equivalent alternative text-only page. On top of that, to help users find what they need, we definitely need a separate navigation overview, such as a site map, showing the structure of the site in an overview form.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.977
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-002",
+              "text": "A dedicated Help Module must offer detailed context-sensitive help material for all the possible actions and scenarios the user might encounter.",
+              "priority": "high",
+              "evidence_turns": [
+                10,
+                16
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 10,
+            "best_supporting_span": "When someone gets stuck, we really need a dedicated Help Module.",
+            "best_supporting_context": "When someone gets stuck, we really need a dedicated Help Module. It has to offer detailed context-sensitive help material for all the possible actions and scenarios they might encounter.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.879
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-003",
+              "text": "Context-sensitive help material must be available across all user interfaces in the application so users are never left guessing.",
+              "priority": "high",
+              "evidence_turns": [
+                10,
+                18
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 10,
+            "best_supporting_span": "It has to offer detailed context-sensitive help material for all the possible actions and scenarios they might encounter.",
+            "best_supporting_context": "When someone gets stuck, we really need a dedicated Help Module. It has to offer detailed context-sensitive help material for all the possible actions and scenarios they might encounter. And this needs to be available across all user interfaces in the application, so they are never left guessing.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.692
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-004",
+              "text": "The system must offer alternative access paths for navigating to a specific unit of content.",
+              "priority": "high",
+              "evidence_turns": [
+                12
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 12,
+            "best_supporting_span": "To do that effectively, we should be offering alternative access paths for navigating to a specific unit of content, which will really help support those different navigation strategies.",
+            "best_supporting_context": "At the same time, we know people look for things in different ways, so we need to make sure different mental models, navigation strategies and tasks of the user are taken into account. To do that effectively, we should be offering alternative access paths for navigating to a specific unit of content, which will really help support those different navigation strategies.",
+            "best_supporting_sentence_index": 8,
+            "matched_claimed_turns": true,
+            "similarity": 0.851
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-005",
+              "text": "Workspace customisation must include, but need not be limited to, changes like adjusting the menu contents.",
+              "priority": "medium",
+              "evidence_turns": [
+                14
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 14,
+            "best_supporting_span": "To help them navigate even better, we want them to be able to personalize their workspace, so customisation should include, but need not be limited to, changes like adjusting the menu contents.",
+            "best_supporting_context": "That way they never get lost. To help them navigate even better, we want them to be able to personalize their workspace, so customisation should include, but need not be limited to, changes like adjusting the menu contents. Also, regarding the overall layout, if frames are used, care should be taken to avoid possible problems—especially those involving the use of the back button, bookmarking of pages, or scrolling of information.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.778
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-006",
+              "text": "The system must allow a user to be a member of more than one group.",
+              "priority": "high",
+              "evidence_turns": [
+                22,
+                38
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 38,
+            "best_supporting_span": "And since our staff often wear multiple hats, it's crucial that we allow a user to be a member of more than one group.",
+            "best_supporting_context": "More broadly, we need solid role-based control for the functionality within the system to manage all these permissions. And since our staff often wear multiple hats, it's crucial that we allow a user to be a member of more than one group.",
+            "best_supporting_sentence_index": 6,
+            "matched_claimed_turns": true,
+            "similarity": 0.629
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-007",
+              "text": "The system must provide the ability to export audit trails for specified cases, but doing so must happen without affecting the audit trail stored by the System.",
+              "priority": "high",
+              "evidence_turns": [
+                24
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 24,
+            "best_supporting_span": "Finally, we will sometimes need to pull this data out for review, so we need the ability to export audit trails for specified cases, but doing so must happen without affecting the audit trail stored by the System.",
+            "best_supporting_context": "As for retention, we have to maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers. Finally, we will sometimes need to pull this data out for review, so we need the ability to export audit trails for specified cases, but doing so must happen without affecting the audit trail stored by the System.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.88
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-008",
+              "text": "The system must allow the user to track logged defects on the application thereafter.",
+              "priority": "medium",
+              "evidence_turns": [
+                26
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 26,
+            "best_supporting_span": "Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+            "best_supporting_context": "We can't have regular users messing with those settings. Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter. It helps us keep on top of issues and improvements.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.762
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-009",
+              "text": "The system must allow the user to track logged enhancement requests on the application thereafter.",
+              "priority": "medium",
+              "evidence_turns": [
+                26
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 26,
+            "best_supporting_span": "Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+            "best_supporting_context": "We can't have regular users messing with those settings. Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter. It helps us keep on top of issues and improvements.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.623
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-010",
+              "text": "Persistent defaults for data entry must include user-definable values so individuals can tailor the inputs to their daily work.",
+              "priority": "high",
+              "evidence_turns": [
+                28
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 28,
+            "best_supporting_span": "It shouldn't just be standard system defaults either",
+            "best_supporting_context": "To speed up our workflows, we definitely want to allow persistent defaults for data entry where desirable. It shouldn't just be standard system defaults either we need those to include user-definable values so individuals can tailor the inputs to their daily work.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.897
+          },
+          {
+            "item": {
+              "category": "functional",
+              "id": "FR-011",
+              "text": "The system must allow citizens to register their complaints with the police.",
+              "priority": "high",
+              "evidence_turns": [
+                30
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 30,
+            "best_supporting_span": "To answer your first point, the basic workflow is that citizens can register their complaints with the police.",
+            "best_supporting_context": "To answer your first point, the basic workflow is that citizens can register their complaints with the police. We don't expect the software to do all the heavy lifting on validation itself",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.843
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-001",
+              "text": "Frequently-executed system transactions must be designed so they can be completed with a small number of interactions.",
+              "priority": "high",
+              "evidence_turns": [
+                4
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 4,
+            "best_supporting_span": "For the things our team does all the time, we really need those frequently-executed system transactions to be designed so they can be completed with a small number of interactions.",
+            "best_supporting_context": "To answer your question about streamlining workflows, our main goal is efficiency. For the things our team does all the time, we really need those frequently-executed system transactions to be designed so they can be completed with a small number of interactions. We want to avoid having them click through endless screens just to get their daily work done.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.881
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-002",
+              "text": "The system must avoid requiring users to click through endless screens to complete their daily work.",
+              "priority": "high",
+              "evidence_turns": [
+                4
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 4,
+            "best_supporting_span": "We want to avoid having them click through endless screens just to get their daily work done.",
+            "best_supporting_context": "For the things our team does all the time, we really need those frequently-executed system transactions to be designed so they can be completed with a small number of interactions. We want to avoid having them click through endless screens just to get their daily work done.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.848
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-003",
+              "text": "Page titles must be placed in a consistent location on the different pages.",
+              "priority": "high",
+              "evidence_turns": [
+                6
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 6,
+            "best_supporting_span": "To keep people from getting lost, we definitely need page titles placed in a consistent location on the different pages.",
+            "best_supporting_context": "To keep people from getting lost, we definitely need page titles placed in a consistent location on the different pages. Also, whenever navigation components or overviews are shown in conjunction with associated content, we have to maintain consistency between the navigation component and the content shown.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.839
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-004",
+              "text": "The system must maintain consistency between the navigation component and the associated content whenever navigation components or overviews are shown in conjunction with associated content.",
+              "priority": "high",
+              "evidence_turns": [
+                6
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 6,
+            "best_supporting_span": "Also, whenever navigation components or overviews are shown in conjunction with associated content, we have to maintain consistency between the navigation component and the content shown.",
+            "best_supporting_context": "To keep people from getting lost, we definitely need page titles placed in a consistent location on the different pages. Also, whenever navigation components or overviews are shown in conjunction with associated content, we have to maintain consistency between the navigation component and the content shown. It should clearly indicate where the user is right in the navigation component.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.908
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-005",
+              "text": "The navigation component must clearly indicate where the user is currently located.",
+              "priority": "high",
+              "evidence_turns": [
+                6
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 6,
+            "best_supporting_span": "It should clearly indicate where the user is right in the navigation component.",
+            "best_supporting_context": "Also, whenever navigation components or overviews are shown in conjunction with associated content, we have to maintain consistency between the navigation component and the content shown. It should clearly indicate where the user is right in the navigation component. When designing these visual cues, color should be used with care.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.762
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-006",
+              "text": "Every single page must have a link leading to the home page of the application, or at least to a landmark page that is easy to recognize for the user.",
+              "priority": "high",
+              "evidence_turns": [
+                6,
+                14,
+                32
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 14,
+            "best_supporting_span": "To answer your question directly, we need every single page to have a link leading to the home page of the application, or at least to a landmark page that is easy to recognize for the user.",
+            "best_supporting_context": "To answer your question directly, we need every single page to have a link leading to the home page of the application, or at least to a landmark page that is easy to recognize for the user. That way they never get lost.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.968
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-007",
+              "text": "End User and Administrator functions must be easy to use and intuitive throughout.",
+              "priority": "medium",
+              "evidence_turns": [
+                6,
+                14,
+                32
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 32,
+            "best_supporting_span": "Whether someone is filing a complaint or managing the backend, we need End User and Administrator functions which are easy to use and intuitive throughout.",
+            "best_supporting_context": "Since the police have their own tools, the setup has to be compatible with specialist software that may be used, and it needs to follow appropriate interface guidelines. Whether someone is filing a complaint or managing the backend, we need End User and Administrator functions which are easy to use and intuitive throughout. Lastly, reliability is huge for us—we need the system designed in a manner that operational data is not lost in case of any failure of equipment or communication network.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.852
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-008",
+              "text": "Text pages containing large proportions of links must be formatted so that the presence of links does not impede the readability of the text.",
+              "priority": "high",
+              "evidence_turns": [
+                6
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 6,
+            "best_supporting_span": "If we have text pages containing large proportions of links, they need to be formatted so that the presence of links does not impede the readability of the text.",
+            "best_supporting_context": "Finally, to avoid link overload, within-page links are shown with dashed rather than solid underlines. If we have text pages containing large proportions of links, they need to be formatted so that the presence of links does not impede the readability of the text.",
+            "best_supporting_sentence_index": 7,
+            "matched_claimed_turns": true,
+            "similarity": 0.982
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-009",
+              "text": "The system must be designed in a manner that operational data is not lost in case of any failure of equipment or communication network, and it must hold onto that information safely until the connection is back.",
+              "priority": "high",
+              "evidence_turns": [
+                8,
+                14,
+                32,
+                34
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 32,
+            "best_supporting_span": "Lastly, reliability is huge for us—we need the system designed in a manner that operational data is not lost in case of any failure of equipment or communication network.",
+            "best_supporting_context": "Whether someone is filing a complaint or managing the backend, we need End User and Administrator functions which are easy to use and intuitive throughout. Lastly, reliability is huge for us—we need the system designed in a manner that operational data is not lost in case of any failure of equipment or communication network.",
+            "best_supporting_sentence_index": 6,
+            "matched_claimed_turns": true,
+            "similarity": 0.783
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-010",
+              "text": "The user interfaces must ensure input device independence and be designed to allow activation of controls by a variety of input devices, not just a standard mouse.",
+              "priority": "high",
+              "evidence_turns": [
+                8,
+                14
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 8,
+            "best_supporting_span": "The user interfaces should be designed to allow activation of controls by a variety of input devices, not just a standard mouse.",
+            "best_supporting_context": "While we are on the topic of accessibility, we also need to ensure input device independence. The user interfaces should be designed to allow activation of controls by a variety of input devices, not just a standard mouse. For our overall approach to ICT accessibility, we will use ISO 9241-20 as the standard for guidance.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.927
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-011",
+              "text": "The length of a page must be selected to support the primary purpose and use of the page.",
+              "priority": "high",
+              "evidence_turns": [
+                8,
+                16
+              ],
+              "nfr_category": "compliance"
+            },
+            "best_supporting_turn_id": 16,
+            "best_supporting_span": "Instead, the length of a page should be selected to support the primary purpose and use of the page.",
+            "best_supporting_context": "For page lengths, there isn't a strict rule. Instead, the length of a page should be selected to support the primary purpose and use of the page. As for the empty areas, any space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.95
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-012",
+              "text": "The system must consult and comply with ISO 9241-303 for screen text legibility requirements.",
+              "priority": "high",
+              "evidence_turns": [
+                8
+              ],
+              "nfr_category": "compliance"
+            },
+            "best_supporting_turn_id": 8,
+            "best_supporting_span": "And specifically for making sure the text itself is easy to read, ISO 9241-303 needs to be consulted for screen text legibility requirements.",
+            "best_supporting_context": "For our overall approach to ICT accessibility, we will use ISO 9241-20 as the standard for guidance. And specifically for making sure the text itself is easy to read, ISO 9241-303 needs to be consulted for screen text legibility requirements.",
+            "best_supporting_sentence_index": 6,
+            "matched_claimed_turns": true,
+            "similarity": 0.881
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-013",
+              "text": "Text must be able to be resized by the user easily using functions provided by the user agent or other appropriate means.",
+              "priority": "high",
+              "evidence_turns": [
+                10,
+                18
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 10,
+            "best_supporting_span": "They should be able to do this easily using functions provided by the user agent or other appropriate means.",
+            "best_supporting_context": "Also, going back to the legibility you mentioned, it is crucial that text should be able to be resized by the user. They should be able to do this easily using functions provided by the user agent or other appropriate means. Finally, if the system is tailoring the experience for them, we need to be transparent.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.91
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-014",
+              "text": "Navigation links must be clearly distinguishable from controls activating some action so users shouldn't have to guess if a click will take them to a new page or trigger a process.",
+              "priority": "medium",
+              "evidence_turns": [
+                10,
+                18
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 18,
+            "best_supporting_span": "Users shouldn't have to guess if a click will take them to a new page or trigger a process.",
+            "best_supporting_context": "While we're designing those menus, we also have to ensure that navigation links are clearly distinguishable from controls activating some action. Users shouldn't have to guess if a click will take them to a new page or trigger a process. Also, please make sure the quality of textual content with respect to spelling and grammar is sufficient so as not to impede readability",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.842
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-015",
+              "text": "The system must use clear links, bulleted lists, highlighted keywords, logical headings, short phrases, and sentences to support fast skimming of text.",
+              "priority": "medium",
+              "evidence_turns": [
+                12
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 12,
+            "best_supporting_span": "To really support fast skimming of text, we definitely need to use clear links, bulleted lists, highlighted keywords, and logical headings, along with short phrases and sentences.",
+            "best_supporting_context": "Yes, exactly. To really support fast skimming of text, we definitely need to use clear links, bulleted lists, highlighted keywords, and logical headings, along with short phrases and sentences. Also, while they are reading, horizontal scrolling should be avoided wherever possible because it really disrupts the flow.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.926
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-016",
+              "text": "Horizontal scrolling must be avoided wherever possible because it really disrupts the flow.",
+              "priority": "high",
+              "evidence_turns": [
+                12,
+                18
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 12,
+            "best_supporting_span": "Also, while they are reading, horizontal scrolling should be avoided wherever possible because it really disrupts the flow.",
+            "best_supporting_context": "To really support fast skimming of text, we definitely need to use clear links, bulleted lists, highlighted keywords, and logical headings, along with short phrases and sentences. Also, while they are reading, horizontal scrolling should be avoided wherever possible because it really disrupts the flow. But it's not just about how the page looks",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.822
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-017",
+              "text": "The system must minimize the number of navigation steps needed to reach a certain piece of content.",
+              "priority": "high",
+              "evidence_turns": [
+                12
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 12,
+            "best_supporting_span": "We want to minimize the number of navigation steps needed to reach a certain piece of content.",
+            "best_supporting_context": "getting to the information is just as important. We want to minimize the number of navigation steps needed to reach a certain piece of content. At the same time, we know people look for things in different ways, so we need to make sure different mental models, navigation strategies and tasks of the user are taken into account.",
+            "best_supporting_sentence_index": 6,
+            "matched_claimed_turns": true,
+            "similarity": 0.915
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-018",
+              "text": "The system must take into account different mental models, navigation strategies, and tasks of the user.",
+              "priority": "medium",
+              "evidence_turns": [
+                12
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 12,
+            "best_supporting_span": "At the same time, we know people look for things in different ways, so we need to make sure different mental models, navigation strategies and tasks of the user are taken into account.",
+            "best_supporting_context": "We want to minimize the number of navigation steps needed to reach a certain piece of content. At the same time, we know people look for things in different ways, so we need to make sure different mental models, navigation strategies and tasks of the user are taken into account. To do that effectively, we should be offering alternative access paths for navigating to a specific unit of content, which will really help support those different navigation strategies.",
+            "best_supporting_sentence_index": 7,
+            "matched_claimed_turns": true,
+            "similarity": 0.836
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-019",
+              "text": "Any space filled only with the background color must be used in such a way that it does not impair the visual skimming of the page.",
+              "priority": "medium",
+              "evidence_turns": [
+                16
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 16,
+            "best_supporting_span": "As for the empty areas, any space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+            "best_supporting_context": "Instead, the length of a page should be selected to support the primary purpose and use of the page. As for the empty areas, any space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page. If the visual layout is ever an issue for accessibility or preference, alternatively, the user should be provided with an equivalent alternative text-only page.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.861
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-020",
+              "text": "The quality of textual content with respect to spelling and grammar must be sufficient so as not to impede readability.",
+              "priority": "high",
+              "evidence_turns": [
+                18
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 18,
+            "best_supporting_span": "Also, please make sure the quality of textual content with respect to spelling and grammar is sufficient so as not to impede readability",
+            "best_supporting_context": "Users shouldn't have to guess if a click will take them to a new page or trigger a process. Also, please make sure the quality of textual content with respect to spelling and grammar is sufficient so as not to impede readability bad typos just ruin the experience.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.764
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-021",
+              "text": "Each presentation segment, whether a page or a window, must provide the user with a clear and sufficient indication of where they are in the navigation structure and their current segment position with respect to the overall structure.",
+              "priority": "high",
+              "evidence_turns": [
+                20
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 20,
+            "best_supporting_span": "To answer your question directly, we need to make sure that each presentation segment, whether that is a page or a window, provides the user with a clear and sufficient indication of where they are in the navigation structure.",
+            "best_supporting_context": "To answer your question directly, we need to make sure that each presentation segment, whether that is a page or a window, provides the user with a clear and sufficient indication of where they are in the navigation structure. They should always understand their current segment position with respect to the overall structure.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.937
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-022",
+              "text": "Links that open new browser windows or pop-up windows must be clearly marked so users are not surprised.",
+              "priority": "high",
+              "evidence_turns": [
+                20
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 20,
+            "best_supporting_span": "While we are talking about moving around, it is also really important that any links that open new browser windows or pop-up windows are clearly marked so users are not surprised.",
+            "best_supporting_context": "They should always understand their current segment position with respect to the overall structure. While we are talking about moving around, it is also really important that any links that open new browser windows or pop-up windows are clearly marked so users are not surprised. Beyond just navigation, we want to make sure the actual information is easy to digest.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.954
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-023",
+              "text": "The reading and understanding of the textual content on the screen must be supported by suitable means, such as the use of short sentences.",
+              "priority": "medium",
+              "evidence_turns": [
+                20,
+                38
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 20,
+            "best_supporting_span": "The reading and understanding of the textual content on the screen should be supported by suitable means.",
+            "best_supporting_context": "Beyond just navigation, we want to make sure the actual information is easy to digest. The reading and understanding of the textual content on the screen should be supported by suitable means. Ideally, we would see things like the use of short sentences, the division of the text into shorter chunks, or the presentation of content items in the form of bullet points.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.905
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-024",
+              "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time.",
+              "priority": "medium",
+              "evidence_turns": [
+                20,
+                38
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 38,
+            "best_supporting_span": "If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time—for example, having the option to just display title and metadata instead of the full file.",
+            "best_supporting_context": "However, we need some flexibility depending on how we set things up. If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time—for example, having the option to just display title and metadata instead of the full file. Regarding sharing, yes, we definitely want to allow a user to stipulate which other users or groups can access cases.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.867
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-025",
+              "text": "If a user requests access to, or searches for, a case which he does not have the right to access, the system must provide a configuration option to just display title and metadata instead of the full file.",
+              "priority": "medium",
+              "evidence_turns": [
+                20,
+                38
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 38,
+            "best_supporting_span": "If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time—for example, having the option to just display title and metadata instead of the full file.",
+            "best_supporting_context": "However, we need some flexibility depending on how we set things up. If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time—for example, having the option to just display title and metadata instead of the full file. Regarding sharing, yes, we definitely want to allow a user to stipulate which other users or groups can access cases.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.889
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-026",
+              "text": "If frames are used in the interface, the system must provide an alternative way of presenting relevant information without frames.",
+              "priority": "high",
+              "evidence_turns": [
+                22
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 22,
+            "best_supporting_span": "Also, on a related note about how we display this content, if frames are used in the interface, we absolutely need an alternative way of presenting relevant information without frames.",
+            "best_supporting_context": "They should never have to guess why they are seeing certain things. Also, on a related note about how we display this content, if frames are used in the interface, we absolutely need an alternative way of presenting relevant information without frames. Some of our users might rely on accessibility tools that struggle with framed layouts, so having that fallback is really important to us.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.853
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-027",
+              "text": "The audit trail must store any access to cases, and all other activities involving the cases and related documents or data, to assist in data recovery if something goes wrong.",
+              "priority": "high",
+              "evidence_turns": [
+                24
+              ],
+              "nfr_category": "reliability"
+            },
+            "best_supporting_turn_id": 24,
+            "best_supporting_span": "To answer your question about tracking, we need to make sure that any access to cases, and all other activities involving the cases and related documents or data, are stored in the audit trail.",
+            "best_supporting_context": "To answer your question about tracking, we need to make sure that any access to cases, and all other activities involving the cases and related documents or data, are stored in the audit trail. This is crucial to ensure legal admissibility and to assist in data recovery if something goes wrong.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.823
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-028",
+              "text": "The audit trail data cannot be modified in any way by any user.",
+              "priority": "high",
+              "evidence_turns": [
+                24
+              ],
+              "nfr_category": "security"
+            },
+            "best_supporting_turn_id": 24,
+            "best_supporting_span": "When we say these records need to be 'unalterable,' we mean exactly that: the audit trail data cannot be modified in any way or deleted by any user.",
+            "best_supporting_context": "This is crucial to ensure legal admissibility and to assist in data recovery if something goes wrong. When we say these records need to be 'unalterable,' we mean exactly that: the audit trail data cannot be modified in any way or deleted by any user. As for retention, we have to maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.669
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-029",
+              "text": "The audit trail data cannot be deleted by any user.",
+              "priority": "high",
+              "evidence_turns": [
+                24
+              ],
+              "nfr_category": "security"
+            },
+            "best_supporting_turn_id": 24,
+            "best_supporting_span": "When we say these records need to be 'unalterable,' we mean exactly that: the audit trail data cannot be modified in any way or deleted by any user.",
+            "best_supporting_context": "This is crucial to ensure legal admissibility and to assist in data recovery if something goes wrong. When we say these records need to be 'unalterable,' we mean exactly that: the audit trail data cannot be modified in any way or deleted by any user. As for retention, we have to maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.679
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-030",
+              "text": "Any changes to access rights for groups or users must be restricted so they are made only by super-user.",
+              "priority": "high",
+              "evidence_turns": [
+                26
+              ],
+              "nfr_category": "security"
+            },
+            "best_supporting_turn_id": 26,
+            "best_supporting_span": "Any changes to security attributes for groups or users—which includes things like access rights, security level, privileges, password allocation and management—need to be restricted so they are made only by super-user.",
+            "best_supporting_context": "When it comes to managing who can do what, we need to be absolutely strict. Any changes to security attributes for groups or users—which includes things like access rights, security level, privileges, password allocation and management—need to be restricted so they are made only by super-user. We can't have regular users messing with those settings.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.805
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-031",
+              "text": "Any changes to security level for groups or users must be restricted so they are made only by super-user.",
+              "priority": "high",
+              "evidence_turns": [
+                26
+              ],
+              "nfr_category": "security"
+            },
+            "best_supporting_turn_id": 26,
+            "best_supporting_span": "Any changes to security attributes for groups or users—which includes things like access rights, security level, privileges, password allocation and management—need to be restricted so they are made only by super-user.",
+            "best_supporting_context": "When it comes to managing who can do what, we need to be absolutely strict. Any changes to security attributes for groups or users—which includes things like access rights, security level, privileges, password allocation and management—need to be restricted so they are made only by super-user. We can't have regular users messing with those settings.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.872
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-032",
+              "text": "Any changes to password allocation and management for groups or users must be restricted so they are made only by super-user.",
+              "priority": "high",
+              "evidence_turns": [
+                26
+              ],
+              "nfr_category": "security"
+            },
+            "best_supporting_turn_id": 26,
+            "best_supporting_span": "Any changes to security attributes for groups or users—which includes things like access rights, security level, privileges, password allocation and management—need to be restricted so they are made only by super-user.",
+            "best_supporting_context": "When it comes to managing who can do what, we need to be absolutely strict. Any changes to security attributes for groups or users—which includes things like access rights, security level, privileges, password allocation and management—need to be restricted so they are made only by super-user. We can't have regular users messing with those settings.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.819
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-033",
+              "text": "Ease of use must be the main priority when mistakes happen.",
+              "priority": "high",
+              "evidence_turns": [
+                28
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 28,
+            "best_supporting_span": "Now, when mistakes do happen, ease of use is our main priority.",
+            "best_supporting_context": "we need those to include user-definable values so individuals can tailor the inputs to their daily work. Now, when mistakes do happen, ease of use is our main priority. All error messages produced by the system have to be meaningful so they can be appropriately acted upon by the users who are likely to see them.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.868
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-034",
+              "text": "All error messages produced by the system must be meaningful so they can be appropriately acted upon by the users who are likely to see them.",
+              "priority": "high",
+              "evidence_turns": [
+                28
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 28,
+            "best_supporting_span": "All error messages produced by the system have to be meaningful so they can be appropriately acted upon by the users who are likely to see them.",
+            "best_supporting_context": "Now, when mistakes do happen, ease of use is our main priority. All error messages produced by the system have to be meaningful so they can be appropriately acted upon by the users who are likely to see them. Whether these messages are shown on the pages themselves or on special error pages, the content should clearly state the reason why the error occurred.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.996
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-035",
+              "text": "Whether error messages are shown on the pages themselves or on special error pages, the content must clearly state the reason why the error occurred.",
+              "priority": "high",
+              "evidence_turns": [
+                28
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 28,
+            "best_supporting_span": "Whether these messages are shown on the pages themselves or on special error pages, the content should clearly state the reason why the error occurred.",
+            "best_supporting_context": "All error messages produced by the system have to be meaningful so they can be appropriately acted upon by the users who are likely to see them. Whether these messages are shown on the pages themselves or on special error pages, the content should clearly state the reason why the error occurred. And whenever possible, it needs to spell out the actions the user can take to resolve the error, rather than just giving them a dead end.",
+            "best_supporting_sentence_index": 6,
+            "matched_claimed_turns": true,
+            "similarity": 0.933
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-036",
+              "text": "Whenever possible, error messages must spell out the actions the user can take to resolve the error, rather than just giving them a dead end.",
+              "priority": "high",
+              "evidence_turns": [
+                28
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 28,
+            "best_supporting_span": "And whenever possible, it needs to spell out the actions the user can take to resolve the error, rather than just giving them a dead end.",
+            "best_supporting_context": "Whether these messages are shown on the pages themselves or on special error pages, the content should clearly state the reason why the error occurred. And whenever possible, it needs to spell out the actions the user can take to resolve the error, rather than just giving them a dead end.",
+            "best_supporting_sentence_index": 7,
+            "matched_claimed_turns": true,
+            "similarity": 0.927
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-037",
+              "text": "The system must support police operations that run around the clock.",
+              "priority": "high",
+              "evidence_turns": [
+                36
+              ],
+              "nfr_category": "availability"
+            },
+            "best_supporting_turn_id": 36,
+            "best_supporting_span": "Police operations run around the clock, so availability is critical for us.",
+            "best_supporting_context": "Police operations run around the clock, so availability is critical for us. Looking at a <rolling three month period>, we need to schedule things carefully so that planned downtime doesn't exceed <xx> hours.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.719
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-038",
+              "text": "Total unplanned downtime must not exceed <xx hours/minutes> over a <rolling three month period>.",
+              "priority": "high",
+              "evidence_turns": [
+                36
+              ],
+              "nfr_category": "availability"
+            },
+            "best_supporting_turn_id": 36,
+            "best_supporting_span": "For unexpected issues, the total unplanned downtime shouldn't exceed <xx hours/minutes> over that same <rolling three month period>.",
+            "best_supporting_context": "Looking at a <rolling three month period>, we need to schedule things carefully so that planned downtime doesn't exceed <xx> hours. For unexpected issues, the total unplanned downtime shouldn't exceed <xx hours/minutes> over that same <rolling three month period>. It's also really disruptive if the system keeps dropping, so the actual number of incidents of unplanned downtime can't exceed <x> per <rolling three month period>.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.94
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-039",
+              "text": "The actual number of incidents of unplanned downtime must not exceed <x> per <rolling three month period>.",
+              "priority": "high",
+              "evidence_turns": [
+                36
+              ],
+              "nfr_category": "availability"
+            },
+            "best_supporting_turn_id": 36,
+            "best_supporting_span": "For unexpected issues, the total unplanned downtime shouldn't exceed <xx hours/minutes> over that same <rolling three month period>.",
+            "best_supporting_context": "Looking at a <rolling three month period>, we need to schedule things carefully so that planned downtime doesn't exceed <xx> hours. For unexpected issues, the total unplanned downtime shouldn't exceed <xx hours/minutes> over that same <rolling three month period>. It's also really disruptive if the system keeps dropping, so the actual number of incidents of unplanned downtime can't exceed <x> per <rolling three month period>.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.821
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-040",
+              "text": "In the event of any software or hardware failure, the system must be able to be restored within no more than <xx> hours.",
+              "priority": "high",
+              "evidence_turns": [
+                36
+              ],
+              "nfr_category": "availability"
+            },
+            "best_supporting_turn_id": 36,
+            "best_supporting_span": "Finally, if the worst happens and we experience any software or hardware failure, we absolutely need to be able to restore the System—complete with inline synchronization—within no more than <xx> hours.",
+            "best_supporting_context": "It's also really disruptive if the system keeps dropping, so the actual number of incidents of unplanned downtime can't exceed <x> per <rolling three month period>. Finally, if the worst happens and we experience any software or hardware failure, we absolutely need to be able to restore the System—complete with inline synchronization—within no more than <xx> hours.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.756
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-041",
+              "text": "System restoration following a software or hardware failure must be complete with inline synchronization.",
+              "priority": "high",
+              "evidence_turns": [
+                36
+              ],
+              "nfr_category": "reliability"
+            },
+            "best_supporting_turn_id": 36,
+            "best_supporting_span": "Finally, if the worst happens and we experience any software or hardware failure, we absolutely need to be able to restore the System—complete with inline synchronization—within no more than <xx> hours.",
+            "best_supporting_context": "It's also really disruptive if the system keeps dropping, so the actual number of incidents of unplanned downtime can't exceed <x> per <rolling three month period>. Finally, if the worst happens and we experience any software or hardware failure, we absolutely need to be able to restore the System—complete with inline synchronization—within no more than <xx> hours.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.8
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-042",
+              "text": "The system must provide solid role-based control for the functionality within the system to manage permissions.",
+              "priority": "high",
+              "evidence_turns": [
+                38
+              ],
+              "nfr_category": "security"
+            },
+            "best_supporting_turn_id": 38,
+            "best_supporting_span": "More broadly, we need solid role-based control for the functionality within the system to manage all these permissions.",
+            "best_supporting_context": "Regarding sharing, yes, we definitely want to allow a user to stipulate which other users or groups can access cases. More broadly, we need solid role-based control for the functionality within the system to manage all these permissions. And since our staff often wear multiple hats, it's crucial that we allow a user to be a member of more than one group.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.918
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-043",
+              "text": "Whenever the platform is individualizing or adapting content based on predefined user profiles or user-specified profiles, the profile currently used must be made evident to the person looking at the screen.",
+              "priority": "high",
+              "evidence_turns": [
+                22
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 22,
+            "best_supporting_span": "Whenever the platform is individualizing or adapting content based on predefined user profiles or user-specified profiles, it is crucial that the profile currently used is made evident to the person looking at the screen.",
+            "best_supporting_context": "That is a great question. Whenever the platform is individualizing or adapting content based on predefined user profiles or user-specified profiles, it is crucial that the profile currently used is made evident to the person looking at the screen. They should never have to guess why they are seeing certain things.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.976
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-044",
+              "text": "Splash screens must be avoided unless they provide useful content or feedback about the application state to the user.",
+              "priority": "medium",
+              "evidence_turns": [
+                14
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 14,
+            "best_supporting_span": "Finally, we want to get users into the content quickly, so splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+            "best_supporting_context": "Also, regarding the overall layout, if frames are used, care should be taken to avoid possible problems—especially those involving the use of the back button, bookmarking of pages, or scrolling of information. Finally, we want to get users into the content quickly, so splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.925
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-045",
+              "text": "The entire user interface must be suitable for users with special needs.",
+              "priority": "high",
+              "evidence_turns": [
+                18
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 18,
+            "best_supporting_span": "Finally, the entire user interface needs to be suitable for users with special needs, so accessibility has to be a priority.",
+            "best_supporting_context": "bad typos just ruin the experience. Finally, the entire user interface needs to be suitable for users with special needs, so accessibility has to be a priority.",
+            "best_supporting_sentence_index": 7,
+            "matched_claimed_turns": true,
+            "similarity": 0.852
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-046",
+              "text": "Accessibility must be a priority for the user interface.",
+              "priority": "high",
+              "evidence_turns": [
+                18
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 18,
+            "best_supporting_span": "Finally, the entire user interface needs to be suitable for users with special needs, so accessibility has to be a priority.",
+            "best_supporting_context": "bad typos just ruin the experience. Finally, the entire user interface needs to be suitable for users with special needs, so accessibility has to be a priority.",
+            "best_supporting_sentence_index": 7,
+            "matched_claimed_turns": true,
+            "similarity": 0.856
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-047",
+              "text": "When designing visual cues, color must be used with care.",
+              "priority": "medium",
+              "evidence_turns": [
+                6
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 6,
+            "best_supporting_span": "When designing these visual cues, color should be used with care.",
+            "best_supporting_context": "It should clearly indicate where the user is right in the navigation component. When designing these visual cues, color should be used with care. We have to take into account human capabilities and restrictions in perceiving color, so it shouldn't be used as the only means of conveying information.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.943
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-048",
+              "text": "Color must not be used as the only means of conveying information.",
+              "priority": "high",
+              "evidence_turns": [
+                6
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 6,
+            "best_supporting_span": "We have to take into account human capabilities and restrictions in perceiving color, so it shouldn't be used as the only means of conveying information.",
+            "best_supporting_context": "When designing these visual cues, color should be used with care. We have to take into account human capabilities and restrictions in perceiving color, so it shouldn't be used as the only means of conveying information. Finally, to avoid link overload, within-page links are shown with dashed rather than solid underlines.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.732
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-049",
+              "text": "The system design must take into account human capabilities and restrictions in perceiving color.",
+              "priority": "medium",
+              "evidence_turns": [
+                6
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 6,
+            "best_supporting_span": "We have to take into account human capabilities and restrictions in perceiving color, so it shouldn't be used as the only means of conveying information.",
+            "best_supporting_context": "When designing these visual cues, color should be used with care. We have to take into account human capabilities and restrictions in perceiving color, so it shouldn't be used as the only means of conveying information. Finally, to avoid link overload, within-page links are shown with dashed rather than solid underlines.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.766
+          },
+          {
+            "item": {
+              "category": "non_functional",
+              "id": "NFR-050",
+              "text": "It must be made evident to the user when individualization and/or adaptation are used.",
+              "priority": "high",
+              "evidence_turns": [
+                10
+              ],
+              "nfr_category": "usability"
+            },
+            "best_supporting_turn_id": 10,
+            "best_supporting_span": "It should be made evident to the user when individualization and/or adaptation are used, so they understand why the interface looks or behaves a certain way.",
+            "best_supporting_context": "Finally, if the system is tailoring the experience for them, we need to be transparent. It should be made evident to the user when individualization and/or adaptation are used, so they understand why the interface looks or behaves a certain way.",
+            "best_supporting_sentence_index": 7,
+            "matched_claimed_turns": true,
+            "similarity": 0.829
+          },
+          {
+            "item": {
+              "category": "data",
+              "id": "DATA-001",
+              "text": "Any access to cases must be stored in the audit trail.",
+              "priority": "high",
+              "evidence_turns": [
+                24
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 24,
+            "best_supporting_span": "To answer your question about tracking, we need to make sure that any access to cases, and all other activities involving the cases and related documents or data, are stored in the audit trail.",
+            "best_supporting_context": "To answer your question about tracking, we need to make sure that any access to cases, and all other activities involving the cases and related documents or data, are stored in the audit trail. This is crucial to ensure legal admissibility and to assist in data recovery if something goes wrong.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.757
+          },
+          {
+            "item": {
+              "category": "data",
+              "id": "DATA-002",
+              "text": "All other activities involving the cases and related documents or data must be stored in the audit trail.",
+              "priority": "high",
+              "evidence_turns": [
+                24
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 24,
+            "best_supporting_span": "To answer your question about tracking, we need to make sure that any access to cases, and all other activities involving the cases and related documents or data, are stored in the audit trail.",
+            "best_supporting_context": "To answer your question about tracking, we need to make sure that any access to cases, and all other activities involving the cases and related documents or data, are stored in the audit trail. This is crucial to ensure legal admissibility and to assist in data recovery if something goes wrong.",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.785
+          },
+          {
+            "item": {
+              "category": "data",
+              "id": "DATA-003",
+              "text": "The system must maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers.",
+              "priority": "high",
+              "evidence_turns": [
+                24
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 24,
+            "best_supporting_span": "As for retention, we have to maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers.",
+            "best_supporting_context": "When we say these records need to be 'unalterable,' we mean exactly that: the audit trail data cannot be modified in any way or deleted by any user. As for retention, we have to maintain the audit trail for as long as required, which means keeping it at least for the life of the case to which it refers. Finally, we will sometimes need to pull this data out for review, so we need the ability to export audit trails for specified cases, but doing so must happen without affecting the audit trail stored by the System.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.849
+          },
+          {
+            "item": {
+              "category": "data",
+              "id": "DATA-004",
+              "text": "Persistent defaults for data entry must not be limited to standard system defaults.",
+              "priority": "high",
+              "evidence_turns": [
+                28
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 28,
+            "best_supporting_span": "To speed up our workflows, we definitely want to allow persistent defaults for data entry where desirable.",
+            "best_supporting_context": "To speed up our workflows, we definitely want to allow persistent defaults for data entry where desirable. It shouldn't just be standard system defaults either",
+            "best_supporting_sentence_index": 1,
+            "matched_claimed_turns": true,
+            "similarity": 0.86
+          },
+          {
+            "item": {
+              "category": "business_rules",
+              "id": "BR-001",
+              "text": "The police will take the complaint forward based on the evidence, facts and following investigation.",
+              "priority": "high",
+              "evidence_turns": [
+                30
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 30,
+            "best_supporting_span": "rather, based on the evidence, facts and following investigation, the police will take the complaint forward.",
+            "best_supporting_context": "We don't expect the software to do all the heavy lifting on validation itself rather, based on the evidence, facts and following investigation, the police will take the complaint forward. As for how we guide that overall process and ensure reliability, we definitely want to ensure that the International Standards mentioned below are consulted for guidance.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.961
+          },
+          {
+            "item": {
+              "category": "interfaces",
+              "id": "IF-001",
+              "text": "The system must allow a user to stipulate which other users or groups can access cases.",
+              "priority": "high",
+              "evidence_turns": [
+                20,
+                38
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 38,
+            "best_supporting_span": "Regarding sharing, yes, we definitely want to allow a user to stipulate which other users or groups can access cases.",
+            "best_supporting_context": "If a user requests access to, or searches for, a case which he does not have the right to access, the exact response needs to be selectable at configuration time—for example, having the option to just display title and metadata instead of the full file. Regarding sharing, yes, we definitely want to allow a user to stipulate which other users or groups can access cases. More broadly, we need solid role-based control for the functionality within the system to manage all these permissions.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.808
+          },
+          {
+            "item": {
+              "category": "interfaces",
+              "id": "IF-002",
+              "text": "The system must provide an interface for the user to log any defects on the application.",
+              "priority": "medium",
+              "evidence_turns": [
+                26
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 26,
+            "best_supporting_span": "Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+            "best_supporting_context": "We can't have regular users messing with those settings. Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter. It helps us keep on top of issues and improvements.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.842
+          },
+          {
+            "item": {
+              "category": "interfaces",
+              "id": "IF-003",
+              "text": "The system must provide an interface for the user to log any enhancement requests on the application.",
+              "priority": "medium",
+              "evidence_turns": [
+                26
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 26,
+            "best_supporting_span": "Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+            "best_supporting_context": "We can't have regular users messing with those settings. Also, while we're talking about system management and tracking, we want to make sure there's an interface for the user to log any defects or enhancement requests on the application and track thereafter. It helps us keep on top of issues and improvements.",
+            "best_supporting_sentence_index": 5,
+            "matched_claimed_turns": true,
+            "similarity": 0.805
+          },
+          {
+            "item": {
+              "category": "interfaces",
+              "id": "IF-004",
+              "text": "The system must support a multilingual interface.",
+              "priority": "high",
+              "evidence_turns": [
+                32,
+                34
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 34,
+            "best_supporting_span": "Also, while we are discussing the interface itself, we need to make sure it supports a multilingual interface so that different users can work with it comfortably.",
+            "best_supporting_context": "It just has to hold onto that information safely until the connection is back. Also, while we are discussing the interface itself, we need to make sure it supports a multilingual interface so that different users can work with it comfortably.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.812
+          },
+          {
+            "item": {
+              "category": "interfaces",
+              "id": "IF-005",
+              "text": "The interfaces must be made customizable or user-configurable to the extent possible.",
+              "priority": "medium",
+              "evidence_turns": [
+                32
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 32,
+            "best_supporting_span": "We also want the screens to be flexible, so the interfaces should be made customizable or user-configurable to the extent possible.",
+            "best_supporting_context": "First off, we definitely need to support a multilingual interface so different communities can use it easily. We also want the screens to be flexible, so the interfaces should be made customizable or user-configurable to the extent possible. Since the police have their own tools, the setup has to be compatible with specialist software that may be used, and it needs to follow appropriate interface guidelines.",
+            "best_supporting_sentence_index": 3,
+            "matched_claimed_turns": true,
+            "similarity": 0.8
+          },
+          {
+            "item": {
+              "category": "interfaces",
+              "id": "IF-006",
+              "text": "The setup must be compatible with specialist software that may be used.",
+              "priority": "high",
+              "evidence_turns": [
+                32
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 32,
+            "best_supporting_span": "Since the police have their own tools, the setup has to be compatible with specialist software that may be used, and it needs to follow appropriate interface guidelines.",
+            "best_supporting_context": "We also want the screens to be flexible, so the interfaces should be made customizable or user-configurable to the extent possible. Since the police have their own tools, the setup has to be compatible with specialist software that may be used, and it needs to follow appropriate interface guidelines. Whether someone is filing a complaint or managing the backend, we need End User and Administrator functions which are easy to use and intuitive throughout.",
+            "best_supporting_sentence_index": 4,
+            "matched_claimed_turns": true,
+            "similarity": 0.549
+          },
+          {
+            "item": {
+              "category": "constraints",
+              "id": "C-001",
+              "text": "The software is not expected to do all the heavy lifting on validation itself.",
+              "priority": "medium",
+              "evidence_turns": [
+                30
+              ],
+              "nfr_category": null
+            },
+            "best_supporting_turn_id": 30,
+            "best_supporting_span": "We don't expect the software to do all the heavy lifting on validation itself",
+            "best_supporting_context": "To answer your first point, the basic workflow is that citizens can register their complaints with the police. We don't expect the software to do all the heavy lifting on validation itself rather, based on the evidence, facts and following investigation, the police will take the complaint forward.",
+            "best_supporting_sentence_index": 2,
+            "matched_claimed_turns": true,
+            "similarity": 0.898
+          }
+        ],
+        "hallucinated_items": []
+      },
+      "output_requirement_count": 73
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "run_id": "20260428T032711Z_pure_full",
+  "run_dir": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260428T032711Z_pure_full",
+  "generated_at_utc": "2026-04-28T04:11:23.537683+00:00",
+  "settings": {
+    "max_samples": 6,
+    "min_requirements": 10,
+    "benchmark_slice": "hard_single_doc",
+    "seed": 0,
+    "max_source_requirements": 200,
+    "match_threshold": 0.55,
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "dialogue_coverage_threshold": 0.55,
+    "clarification_rounds": 2,
+    "dialogue_variant": "controlled",
+    "partial_drop_rate": null,
+    "self_consistency": 1,
+    "self_consistency_temperature": 0.3,
+    "llm_provider": "gemini",
+    "pipeline_preset": "auto",
+    "dialogue_chunking": "auto",
+    "dialogue_chunking_enabled": false,
+    "dialogue_chunk_overlap_turns": 2,
+    "memory_max_items": 24,
+    "memory_max_chars": 3500,
+    "retrieval_top_k": 14,
+    "gap_pass_top_k": 10,
+    "theme_max_exchanges": 3,
+    "target_dialogue_recall": 0.82,
+    "max_turns": 28,
+    "llm_validator_enabled": true,
+    "validator_semantic_top_k": 2,
+    "validator_lexical_top_k": 1,
+    "validator_batch_size": 30,
+    "python_bin": "/Users/yasseen/Documents/projects/req_dataset_project/data/venv/bin/python3"
+  },
+  "model_metadata": {
+    "generation": {
+      "provider": "gemini",
+      "model": "gemini-3.1-pro-preview"
+    },
+    "standard_validator": {
+      "enabled": true,
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "method": "gemini_checklist_judge_v1"
+    }
+  },
+  "validation_layers": {
+    "semantic_matcher": {
+      "enabled": true,
+      "method": "sentence_transformer_greedy_match",
+      "model": "all-MiniLM-L6-v2",
+      "threshold": 0.55
+    },
+    "standard_llm_validator": {
+      "enabled": true,
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "method": "gemini_checklist_judge_v1"
+    }
+  },
+  "oracle": {
+    "sample_count": 1,
+    "macro_precision": 1.0,
+    "macro_coverage_recall": 1.0,
+    "macro_f1": 1.0,
+    "macro_hallucination_rate": 0.0,
+    "macro_average_match_score": 0.9992468541860581,
+    "macro_average_best_source_score": 0.9992468541860581,
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 100,
+    "total_matched_requirements": 100
+  },
+  "llm_provider": "gemini",
+  "pipeline_status": "ran",
+  "gemini_status": "ran",
+  "controlled_dialogue_method": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails."
+  },
+  "direct": {
+    "sample_count": 1,
+    "macro_precision": 1.0,
+    "macro_coverage_recall": 1.0,
+    "macro_f1": 1.0,
+    "macro_hallucination_rate": 0.0,
+    "macro_average_match_score": 0.9992468541860581,
+    "macro_average_best_source_score": 0.9992468541860581,
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 100,
+    "total_matched_requirements": 100
+  },
+  "direct_llm_validation": {
+    "sample_count": 1,
+    "macro_precision": 1.0,
+    "macro_coverage_recall": 1.0,
+    "macro_f1": 1.0,
+    "macro_hallucination_rate": 0.0,
+    "macro_weighted_precision": 1.0,
+    "macro_weighted_coverage_recall": 1.0,
+    "macro_weighted_f1": 1.0,
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0,
+    "micro_weighted_precision": 1.0,
+    "micro_weighted_coverage_recall": 1.0,
+    "micro_weighted_f1": 1.0,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 100,
+    "total_strict_matches": 100,
+    "total_weighted_match_score": 100.0,
+    "total_full_matches": 100,
+    "total_partial_matches": 0
+  },
+  "pipeline": {
+    "sample_count": 1,
+    "macro_precision": 0.8271604938271605,
+    "macro_coverage_recall": 0.67,
+    "macro_f1": 0.7403314917127072,
+    "macro_hallucination_rate": 0.1728395061728395,
+    "macro_average_match_score": 0.8400191913789777,
+    "macro_average_best_source_score": 0.7635087051987648,
+    "micro_precision": 0.8271604938271605,
+    "micro_coverage_recall": 0.67,
+    "micro_f1": 0.7403314917127072,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 81,
+    "total_matched_requirements": 67
+  },
+  "pipeline_llm_validation": {
+    "sample_count": 1,
+    "macro_precision": 0.4691358024691358,
+    "macro_coverage_recall": 0.38,
+    "macro_f1": 0.4198895027624309,
+    "macro_hallucination_rate": 0.5308641975308642,
+    "macro_weighted_precision": 0.6419753086419753,
+    "macro_weighted_coverage_recall": 0.52,
+    "macro_weighted_f1": 0.574585635359116,
+    "micro_precision": 0.4691358024691358,
+    "micro_coverage_recall": 0.38,
+    "micro_f1": 0.4198895027624309,
+    "micro_weighted_precision": 0.6419753086419753,
+    "micro_weighted_coverage_recall": 0.52,
+    "micro_weighted_f1": 0.574585635359116,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 81,
+    "total_strict_matches": 38,
+    "total_weighted_match_score": 52.0,
+    "total_full_matches": 38,
+    "total_partial_matches": 28
+  },
+  "gemini": {
+    "sample_count": 1,
+    "macro_precision": 0.8271604938271605,
+    "macro_coverage_recall": 0.67,
+    "macro_f1": 0.7403314917127072,
+    "macro_hallucination_rate": 0.1728395061728395,
+    "macro_average_match_score": 0.8400191913789777,
+    "macro_average_best_source_score": 0.7635087051987648,
+    "micro_precision": 0.8271604938271605,
+    "micro_coverage_recall": 0.67,
+    "micro_f1": 0.7403314917127072,
+    "total_source_requirements": 100,
+    "total_generated_requirements": 81,
+    "total_matched_requirements": 67
+  },
+  "dialogue_lower_bound": {
+    "sample_count": 1,
+    "macro_coverage_recall": 0.94,
+    "micro_coverage_recall": 0.94,
+    "macro_average_best_turn_score": 0.766611336171627,
+    "total_source_requirements": 100,
+    "total_covered_requirements": 94,
+    "total_support_units": 108
+  },
+  "dialogue_upper_bound": {
+    "sample_count": 1,
+    "macro_coverage_recall": 0.94,
+    "micro_coverage_recall": 0.94,
+    "macro_average_best_turn_score": 0.766611336171627,
+    "total_source_requirements": 100,
+    "total_covered_requirements": 94,
+    "total_support_units": 108
+  },
+  "pipeline_diagnostics": {
+    "aggregate": {
+      "evidence_bank_count": 108,
+      "proposition_count": 81,
+      "gap_pass_added_count": 0,
+      "grounded_after_rewrite_count": 81
+    },
+    "per_sample": [
+      {
+        "sample_id": "pure_0000_cctns",
+        "evidence_bank_count": 108,
+        "proposition_count": 81,
+        "removed_duplicate_propositions": 0,
+        "rewrite_candidate_count": 42,
+        "gap_pass_added_count": 0,
+        "grounded_after_rewrite_count": 81
+      }
+    ],
+    "per_theme_dialogue_coverage": {
+      "pure_0000_cctns": {
+        "user_roles_permissions": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 5,
+          "covered": 3,
+          "uncovered": 2,
+          "recall": 0.6
+        },
+        "data_validation": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 7,
+          "covered": 7,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 4,
+          "covered": 4,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "security_audit": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 51,
+          "covered": 51,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 5,
+          "covered": 4,
+          "uncovered": 1,
+          "recall": 0.8
+        },
+        "maintainability_portability_testability": {
+          "total": 1,
+          "covered": 0,
+          "uncovered": 1,
+          "recall": 0.0
+        },
+        "reporting_documentation": {
+          "total": 8,
+          "covered": 6,
+          "uncovered": 2,
+          "recall": 0.75
+        },
+        "other_constraints": {
+          "total": 9,
+          "covered": 7,
+          "uncovered": 2,
+          "recall": 0.7777777777777778
+        }
+      }
+    }
+  },
+  "gemini_preset_comparison": {
+    "selector": "gemini_evidence_bank",
+    "reason": "evidence_bank_default_or_better",
+    "full_context_recall": 0.68,
+    "evidence_bank_recall": 0.67,
+    "full_context_precision": 0.8717948717948718
+  },
+  "paths": {
+    "source_summary": "outputs/pure_full_runs/20260428T032711Z_pure_full/source_summary.json",
+    "oracle_coverage": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/oracle_coverage.json",
+    "direct_coverage": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/direct_coverage.json",
+    "direct_error_analysis": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/direct_error_analysis.json",
+    "direct_coverage_llm": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/direct_coverage_llm.json",
+    "pipeline_coverage": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_coverage.json",
+    "pipeline_error_analysis": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_error_analysis.json",
+    "pipeline_validation_report": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_validation_report.json",
+    "pipeline_coverage_llm": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/pipeline_coverage_llm.json",
+    "gemini_coverage": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/gemini_coverage.json",
+    "gemini_error_analysis": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/gemini_error_analysis.json",
+    "dialogue_coverage_user_only": "outputs/pure_full_runs/20260428T032711Z_pure_full/metrics/dialogue_coverage_user_only.json"
+  }
+}

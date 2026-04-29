@@ -20,6 +20,7 @@ PIPELINE_SLICE_SOURCE_DIR = ROOT / "raw_sources" / "pure_benchmark" / "source_re
 PIPELINE_SLICES = {
     "hard_single_doc": ["pure_0000_cctns"],
     "paper_regression_3doc": ["pure_0000_cctns", "pure_0000_gamma_j", "pure_1999_dii"],
+    "paper_report_4doc": ["pure_0000_cctns", "pure_0000_gamma_j", "pure_1999_dii", "pure_2005_microcare"],
 }
 PYTHON_BIN = "python3"
 
@@ -60,7 +61,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-requirements", type=int, default=10)
     parser.add_argument("--python-bin", type=str, default=os.environ.get("REQ_PYTHON_BIN", "python3"))
     parser.add_argument("--reuse-source-dir", type=Path, default=None)
-    parser.add_argument("--benchmark-slice", choices=["hard_single_doc", "paper_regression_3doc"], default=None)
+    parser.add_argument(
+        "--benchmark-slice",
+        choices=["hard_single_doc", "paper_regression_3doc", "paper_report_4doc"],
+        default=None,
+    )
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--max-source-requirements", type=int, default=200)
     parser.add_argument("--match-threshold", type=float, default=0.55)

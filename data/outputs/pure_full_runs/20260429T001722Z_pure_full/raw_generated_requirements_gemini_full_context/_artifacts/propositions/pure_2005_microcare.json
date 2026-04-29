@@ -1,0 +1,446 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "project_summary": "The project aims to capture the main requirements and constraints for the 2005 - microcare document management system.",
+  "propositions": [
+    {
+      "id": "1",
+      "category": "data",
+      "text": "The system needs to have a 'Salesman master' record that captures all the necessary information for each person.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:2"
+      ]
+    },
+    {
+      "id": "2",
+      "category": "data",
+      "text": "The 'Salesman master' record must capture all necessary information for each person.",
+      "priority": "high",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:2"
+      ]
+    },
+    {
+      "id": "3",
+      "category": "non_functional",
+      "text": "Only an authorized user can alter or amend a claim.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:2"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "4",
+      "category": "non_functional",
+      "text": "During the claim entry process, the system must capture the necessary information about what's happening.",
+      "priority": "high",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "5",
+      "category": "business_rules",
+      "text": "The invoice amount shall be calculated as the number of vouchers multiplied by the wholesale price.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:2"
+      ]
+    },
+    {
+      "id": "6",
+      "category": "business_rules",
+      "text": "For transactions where the invoice amount is the number of vouchers multiplied by the wholesale price, the mode of payment is always Cash.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:3"
+      ]
+    },
+    {
+      "id": "7",
+      "category": "interfaces",
+      "text": "Each voucher slip must have a bar code.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:4"
+      ]
+    },
+    {
+      "id": "8",
+      "category": "data",
+      "text": "Each voucher slip should have a bar code with two identifications, one for the client and one for the partner.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:4"
+      ]
+    },
+    {
+      "id": "10",
+      "category": "data",
+      "text": "The value for 'Health Sub – District' must be selected from a master list.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:7"
+      ]
+    },
+    {
+      "id": "11",
+      "category": "data",
+      "text": "When a user is entering VSP details, the value for 'Locality' should come from its own master list.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:7"
+      ]
+    },
+    {
+      "id": "12",
+      "category": "data",
+      "text": "When a user is entering VSP details, the value for 'Level Of Facility' should come from its own master list.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:7"
+      ]
+    },
+    {
+      "id": "14",
+      "category": "data",
+      "text": "When a user is entering VSP details, the value for 'Registration Body' should come from its own master list.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:7"
+      ]
+    },
+    {
+      "id": "15",
+      "category": "functional",
+      "text": "When creating a new staff member, if a staff with an existing name is entered, the system must generate a warning message.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:8"
+      ]
+    },
+    {
+      "id": "16",
+      "category": "functional",
+      "text": "The system must allow a user to save a new staff member with an existing name if required.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:8"
+      ]
+    },
+    {
+      "id": "17",
+      "category": "non_functional",
+      "text": "The voucher validity date can only be amended or altered at the system level by an authorized user.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:2"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "18",
+      "category": "data",
+      "text": "The voucher will have an MRP, or maximum retail price.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:3"
+      ]
+    },
+    {
+      "id": "19",
+      "category": "constraints",
+      "text": "All rules for the voucher, including health care services and quality standards for providers, are defined in the PDS.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:4"
+      ]
+    },
+    {
+      "id": "20",
+      "category": "constraints",
+      "text": "The physical voucher must be designed with three tear-off portioned slips.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:5"
+      ]
+    },
+    {
+      "id": "21",
+      "category": "constraints",
+      "text": "One of the voucher's tear-off slips must have a sub-section tear-off for the partner.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:5"
+      ]
+    },
+    {
+      "id": "22",
+      "category": "functional",
+      "text": "A user must be able to mark a claim's status as 'Rejected'.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:6"
+      ]
+    },
+    {
+      "id": "23",
+      "category": "functional",
+      "text": "The system must allow a rejected claim to be sent back to the VSP.",
+      "priority": "high",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:6"
+      ]
+    },
+    {
+      "id": "24",
+      "category": "functional",
+      "text": "The receipt must be based on information from the claim submission.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:1"
+      ]
+    },
+    {
+      "id": "25",
+      "category": "functional",
+      "text": "The receipt must automatically list the details for each voucher used.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ]
+    },
+    {
+      "id": "26",
+      "category": "data",
+      "text": "The receipt needs to automatically list the details for each voucher used, pulling the `Batch No` and `voucher No` from the available voucher stock.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ]
+    },
+    {
+      "id": "27",
+      "category": "non_functional",
+      "text": "The details for each voucher used on a receipt should be shown in a grid format.",
+      "priority": "low",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "28",
+      "category": "data",
+      "text": "The receipt must include the `Patient Status`.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:5"
+      ]
+    },
+    {
+      "id": "29",
+      "category": "data",
+      "text": "The `Patient Status` must be selected from the `Patient Status Master` list.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:5"
+      ]
+    },
+    {
+      "id": "30",
+      "category": "business_rules",
+      "text": "If the `Patient Status` is 'Referral', the receipt must capture who the patient was `Referred To`.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:6"
+      ]
+    },
+    {
+      "id": "32",
+      "category": "data",
+      "text": "The `Reason for Referral` must be populated from the `Referral master`.",
+      "priority": "high",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:6"
+      ]
+    },
+    {
+      "id": "33",
+      "category": "non_functional",
+      "text": "Only a system admin can create User Groups.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "34",
+      "category": "functional",
+      "text": "The system needs to provide the flexibility to create any number of individual users under any of the user groups.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:4"
+      ]
+    },
+    {
+      "id": "35",
+      "category": "functional",
+      "text": "During every distribution transaction, the user must select the name of the salesman from the Team Master list.",
+      "priority": "high",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:6"
+      ]
+    },
+    {
+      "id": "36",
+      "category": "functional",
+      "text": "The system needs a place to enter payment terms agreed upon between MSIU and the VSP, which are then displayed on the VSP Master Information screen.",
+      "priority": "high",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:2",
+        "16:3"
+      ]
+    },
+    {
+      "id": "38",
+      "category": "business_rules",
+      "text": "If a claim from the same VSP has a thumb impression mismatch more than two times, the system must in-activate that VSP.",
+      "priority": "high",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:2",
+        "18:3"
+      ]
+    },
+    {
+      "id": "8:7-2",
+      "category": "data",
+      "text": "The value for 'Locality' must be selected from a master list.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:7"
+      ]
+    },
+    {
+      "id": "8:7-3",
+      "category": "data",
+      "text": "The value for 'Level Of Facility' must be selected from a master list.",
+      "priority": "high",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:7"
+      ]
+    }
+  ],
+  "removed_duplicates": []
+}
