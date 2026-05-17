@@ -1,0 +1,28 @@
+{
+  "dataset": "pure",
+  "reused": true,
+  "source_dir": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T002305Z_pure_full/source_requirements",
+  "generated_samples": 4,
+  "samples": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "path": "outputs/pure_full_runs/20260516T224947Z_pure_full/source_requirements/pure_0000_cctns.json",
+      "status": "ok_reused"
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "path": "outputs/pure_full_runs/20260516T224947Z_pure_full/source_requirements/pure_0000_gamma_j.json",
+      "status": "ok_reused"
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "path": "outputs/pure_full_runs/20260516T224947Z_pure_full/source_requirements/pure_1999_dii.json",
+      "status": "ok_reused"
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "path": "outputs/pure_full_runs/20260516T224947Z_pure_full/source_requirements/pure_2005_microcare.json",
+      "status": "ok_reused"
+    }
+  ]
+}

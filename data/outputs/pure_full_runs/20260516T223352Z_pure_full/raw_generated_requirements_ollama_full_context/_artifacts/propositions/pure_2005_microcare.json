@@ -1,0 +1,273 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "project_summary": "Heuristic proposition fallback generated from evidence units.",
+  "propositions": [
+    {
+      "id": "P-001",
+      "category": "functional",
+      "text": "Firstly, it should be able to record the customer's name and contact details.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:2"
+      ]
+    },
+    {
+      "id": "P-002",
+      "category": "functional",
+      "text": "Secondly, we need to track the product or service being sold, including its ID and description.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:3"
+      ]
+    },
+    {
+      "id": "P-003",
+      "category": "functional",
+      "text": "Additionally, the price per unit and total sale amount must be captured accurately.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:5"
+      ]
+    },
+    {
+      "id": "P-004",
+      "category": "functional",
+      "text": "It should also log the date and time of the sale, along with any special notes or comments from the Salesman.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:7"
+      ]
+    },
+    {
+      "id": "P-005",
+      "category": "functional",
+      "text": "This will help us keep track of sales trends and customer interactions.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:8"
+      ]
+    },
+    {
+      "id": "P-006",
+      "category": "non_functional",
+      "text": "The system should also log the IP address and timestamp for each entry to maintain audit trails.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-007",
+      "category": "non_functional",
+      "text": "Authorized users can amend or alter claim entries if needed, which is crucial for correcting errors or updating claims as necessary.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:5"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-008",
+      "category": "data",
+      "text": "When adding a new staff member, the system should check for existing entries based on VSP Name and Staff Code.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:1"
+      ]
+    },
+    {
+      "id": "P-009",
+      "category": "data",
+      "text": "If there's a duplicate, it should generate a message alerting the user.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:2"
+      ]
+    },
+    {
+      "id": "P-010",
+      "category": "data",
+      "text": "However, if the user needs to save this new entry despite the duplication, they should be allowed to do so.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:3"
+      ]
+    },
+    {
+      "id": "P-011",
+      "category": "data",
+      "text": "The principles of the vouchers and health care services should be defined in our PDS, including quality standards and monitoring measures.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:2"
+      ]
+    },
+    {
+      "id": "P-012",
+      "category": "data",
+      "text": "If a claim (treatment form) status needs to be rejected, users should mark it as such and send it back to VSP for review.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:5"
+      ]
+    },
+    {
+      "id": "P-013",
+      "category": "business_rules",
+      "text": "For voucher allocation, the system should be able to allocate relevant vouchers based on the number required by the distributor.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:1"
+      ]
+    },
+    {
+      "id": "P-014",
+      "category": "business_rules",
+      "text": "The system should print a receipt document accordingly.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ]
+    },
+    {
+      "id": "P-015",
+      "category": "business_rules",
+      "text": "Additionally, when allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ]
+    },
+    {
+      "id": "P-016",
+      "category": "business_rules",
+      "text": "Each voucher allocated should include its number and batch number.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:5"
+      ]
+    },
+    {
+      "id": "P-017",
+      "category": "business_rules",
+      "text": "The reason for referral should be populated automatically from the Referral Master.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:2"
+      ]
+    },
+    {
+      "id": "P-018",
+      "category": "business_rules",
+      "text": "This will help us understand the issues better and improve our processes.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:5"
+      ]
+    },
+    {
+      "id": "P-019",
+      "category": "functional",
+      "text": "For adding new salesmen to the Team Master, only system admins should be able to do this.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:1"
+      ]
+    },
+    {
+      "id": "P-020",
+      "category": "functional",
+      "text": "They can create any number of individual users under existing user groups.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:2"
+      ]
+    },
+    {
+      "id": "P-021",
+      "category": "constraints",
+      "text": "It should capture everything that is discussed on the VSP Master Information screen, where we enter these terms.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:2"
+      ]
+    },
+    {
+      "id": "P-022",
+      "category": "constraints",
+      "text": "At the same time, it should In-Activate that VSP.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:2"
+      ]
+    }
+  ],
+  "removed_duplicates": []
+}

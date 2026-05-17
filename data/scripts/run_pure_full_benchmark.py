@@ -61,6 +61,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-requirements", type=int, default=10)
     parser.add_argument("--python-bin", type=str, default=os.environ.get("REQ_PYTHON_BIN", "python3"))
     parser.add_argument("--reuse-source-dir", type=Path, default=None)
+    parser.add_argument("--reuse-dialogue-dir", type=Path, default=None)
     parser.add_argument(
         "--benchmark-slice",
         choices=["hard_single_doc", "paper_regression_3doc", "paper_report_4doc"],
@@ -82,6 +83,7 @@ def parse_args() -> argparse.Namespace:
         "--pipeline-preset",
         choices=[
             "auto",
+            "full_context",
             "local_recall",
             "gemini_full_context",
             "gemini_evidence_bank",
@@ -90,6 +92,8 @@ def parse_args() -> argparse.Namespace:
         ],
         default="auto",
     )
+    parser.add_argument("--pipeline-only", action="store_true")
+    parser.add_argument("--disable-anchor-preservation", action="store_true")
     parser.add_argument("--dialogue-chunking", choices=["auto", "always", "never"], default="auto")
     parser.add_argument("--dialogue-chunk-overlap-turns", type=int, default=2)
     parser.add_argument("--memory-max-items", type=int, default=24)
@@ -258,6 +262,23 @@ def prepare_source_dir(args: argparse.Namespace, source_dir: Path, source_summar
     )
 
 
+def copy_dialogue_dir(reuse_dialogue_dir: Path, dialogue_dir: Path) -> None:
+    reuse_dir = reuse_dialogue_dir.resolve()
+    if not reuse_dir.exists():
+        raise FileNotFoundError(f"Reuse dialogue dir does not exist: {reuse_dir}")
+    dialogue_dir.mkdir(parents=True, exist_ok=True)
+    copied = 0
+    for path in sorted(reuse_dir.glob("*.json")):
+        if path.name == "evaluation.json" or path.name.endswith(".raw_response.json"):
+            continue
+        dest = dialogue_dir / path.name
+        shutil.copy2(path, dest)
+        if path.name != "summary.json":
+            copied += 1
+    if copied == 0:
+        raise ValueError(f"Reuse dialogue dir has no sample JSON files: {reuse_dir}")
+
+
 def preset_config(provider_name: str, preset_name: str, args: argparse.Namespace) -> dict:
     effective = preset_name
     if preset_name == "auto":
@@ -276,7 +297,7 @@ def preset_config(provider_name: str, preset_name: str, args: argparse.Namespace
         "retrieval_top_k": args.retrieval_top_k,
         "overlap": args.dialogue_chunk_overlap_turns,
     }
-    if effective in {"gemini_full_context", "openai_full_context"}:
+    if effective in {"full_context", "gemini_full_context", "openai_full_context"}:
         config.update(
             {
                 "chunk_dialogues": False,
@@ -342,6 +363,8 @@ def run_pipeline_variant(
         generate_cmd.append("--chunk-dialogues")
     if preset["enable_gap_pass"]:
         generate_cmd.append("--enable-gap-pass")
+    if args.disable_anchor_preservation:
+        generate_cmd.append("--disable-anchor-preservation")
     run(generate_cmd, extra_env=extra_env)
 
     run(
@@ -608,7 +631,10 @@ def main() -> int:
         "--theme-max-exchanges",
         str(args.theme_max_exchanges),
     ]
-    run(controlled_cmd, extra_env=extra_env)
+    if args.reuse_dialogue_dir is not None:
+        copy_dialogue_dir(args.reuse_dialogue_dir, dialogue_dir)
+    else:
+        run(controlled_cmd, extra_env=extra_env)
     controlled_dialogue_method = extract_dialogue_method_metadata(dialogue_dir)
     effective_dialogue_dir = dialogue_dir
     if args.dialogue_variant != "controlled":
@@ -660,69 +686,70 @@ def main() -> int:
 
     if has_llm_env(provider_name):
         pipeline_status = "ran"
-        run(
-            [
-                "python3",
-                "scripts/generate_pure_direct_requirements.py",
-                "--input-dir",
-                str(source_dir),
-                "--output-dir",
-                str(direct_generated_dir),
-                "--max-source-requirements",
-                str(args.max_source_requirements),
-                "--self-consistency",
-                str(args.self_consistency),
-                "--temperature",
-                str(args.self_consistency_temperature),
-            ]
-            + (
-                ["--chunk-source-requirements", "--source-chunk-size", "25", "--source-chunk-char-budget", "6000"]
-                if provider_name == "ollama"
-                else []
-            ),
-            extra_env=extra_env,
-        )
-        direct_eval_path = metrics_dir / "direct_coverage.json"
-        run(
-            [
-                "python3",
-                "scripts/evaluate_pure_requirements_coverage.py",
-                "--gold-dir",
-                str(source_dir),
-                "--pred-dir",
-                str(direct_generated_dir),
-                "--match-threshold",
-                str(args.match_threshold),
-                "--output",
-                str(direct_eval_path),
-            ],
-            extra_env=extra_env,
-        )
-        direct_error_analysis_path = metrics_dir / "direct_error_analysis.json"
-        run(
-            [
-                "python3",
-                "scripts/analyze_pure_errors.py",
-                "--gold-dir",
-                str(source_dir),
-                "--pred-dir",
-                str(direct_generated_dir),
-                "--threshold",
-                str(args.match_threshold),
-                "--output",
-                str(direct_error_analysis_path),
-            ],
-            extra_env=extra_env,
-        )
-        if has_validator_env() and not args.disable_llm_validator:
-            direct_llm_eval_path = metrics_dir / "direct_coverage_llm.json"
-            run_llm_validation(
-                source_dir=source_dir,
-                pred_dir=direct_generated_dir,
-                output_path=direct_llm_eval_path,
-                args=args,
+        if not args.pipeline_only:
+            run(
+                [
+                    "python3",
+                    "scripts/generate_pure_direct_requirements.py",
+                    "--input-dir",
+                    str(source_dir),
+                    "--output-dir",
+                    str(direct_generated_dir),
+                    "--max-source-requirements",
+                    str(args.max_source_requirements),
+                    "--self-consistency",
+                    str(args.self_consistency),
+                    "--temperature",
+                    str(args.self_consistency_temperature),
+                ]
+                + (
+                    ["--chunk-source-requirements", "--source-chunk-size", "25", "--source-chunk-char-budget", "6000"]
+                    if provider_name == "ollama"
+                    else []
+                ),
                 extra_env=extra_env,
             )
+            direct_eval_path = metrics_dir / "direct_coverage.json"
+            run(
+                [
+                    "python3",
+                    "scripts/evaluate_pure_requirements_coverage.py",
+                    "--gold-dir",
+                    str(source_dir),
+                    "--pred-dir",
+                    str(direct_generated_dir),
+                    "--match-threshold",
+                    str(args.match_threshold),
+                    "--output",
+                    str(direct_eval_path),
+                ],
+                extra_env=extra_env,
+            )
+            direct_error_analysis_path = metrics_dir / "direct_error_analysis.json"
+            run(
+                [
+                    "python3",
+                    "scripts/analyze_pure_errors.py",
+                    "--gold-dir",
+                    str(source_dir),
+                    "--pred-dir",
+                    str(direct_generated_dir),
+                    "--threshold",
+                    str(args.match_threshold),
+                    "--output",
+                    str(direct_error_analysis_path),
+                ],
+                extra_env=extra_env,
+            )
+            if has_validator_env() and not args.disable_llm_validator:
+                direct_llm_eval_path = metrics_dir / "direct_coverage_llm.json"
+                run_llm_validation(
+                    source_dir=source_dir,
+                    pred_dir=direct_generated_dir,
+                    output_path=direct_llm_eval_path,
+                    args=args,
+                    extra_env=extra_env,
+                )
 
         effective_preset = args.pipeline_preset
         if provider_name == "gemini" and effective_preset == "auto":
@@ -806,6 +833,7 @@ def main() -> int:
             "max_samples": args.max_samples,
             "min_requirements": args.min_requirements,
             "benchmark_slice": args.benchmark_slice,
+            "reuse_dialogue_dir": safe_rel(args.reuse_dialogue_dir) if args.reuse_dialogue_dir else None,
             "seed": args.seed,
             "max_source_requirements": args.max_source_requirements,
             "match_threshold": args.match_threshold,
@@ -819,6 +847,13 @@ def main() -> int:
             "self_consistency_temperature": args.self_consistency_temperature,
             "llm_provider": provider_name,
             "pipeline_preset": args.pipeline_preset,
+            "effective_pipeline_preset": (
+                gemini_comparison.get("selector")
+                if isinstance(gemini_comparison, dict)
+                else preset_config(provider_name, args.pipeline_preset, args)["name"]
+            ),
+            "pipeline_only": args.pipeline_only,
+            "anchor_preservation_enabled": not args.disable_anchor_preservation,
             "dialogue_chunking": args.dialogue_chunking,
             "dialogue_chunking_enabled": dialogue_chunking_enabled,
             "dialogue_chunk_overlap_turns": args.dialogue_chunk_overlap_turns,
@@ -849,6 +884,8 @@ def main() -> int:
         "llm_provider": provider_name,
         "pipeline_status": pipeline_status,
         "gemini_status": pipeline_status,
+        "pipeline_only": args.pipeline_only,
+        "anchor_preservation_enabled": not args.disable_anchor_preservation,
         "controlled_dialogue_method": controlled_dialogue_method,
         "direct": load_json(direct_eval_path)["aggregate"] if direct_eval_path else None,
         "direct_llm_validation": load_json(direct_llm_eval_path)["aggregate"] if direct_llm_eval_path else None,
@@ -885,6 +922,8 @@ def main() -> int:
                 "provider": provider_name,
                 "model": model_metadata["generation"]["model"],
                 "validator": model_metadata["standard_validator"],
+                "pipeline_only": args.pipeline_only,
+                "anchor_preservation_enabled": not args.disable_anchor_preservation,
             },
             indent=2,
             ensure_ascii=False,

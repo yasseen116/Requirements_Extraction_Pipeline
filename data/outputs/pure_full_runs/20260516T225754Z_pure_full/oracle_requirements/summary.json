@@ -1,0 +1,22 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "outputs/pure_full_runs/20260516T225754Z_pure_full/oracle_requirements/pure_0000_cctns.json",
+    "requirement_count": 100
+  },
+  {
+    "sample_id": "pure_0000_gamma_j",
+    "path": "outputs/pure_full_runs/20260516T225754Z_pure_full/oracle_requirements/pure_0000_gamma_j.json",
+    "requirement_count": 57
+  },
+  {
+    "sample_id": "pure_1999_dii",
+    "path": "outputs/pure_full_runs/20260516T225754Z_pure_full/oracle_requirements/pure_1999_dii.json",
+    "requirement_count": 22
+  },
+  {
+    "sample_id": "pure_2005_microcare",
+    "path": "outputs/pure_full_runs/20260516T225754Z_pure_full/oracle_requirements/pure_2005_microcare.json",
+    "requirement_count": 25
+  }
+]

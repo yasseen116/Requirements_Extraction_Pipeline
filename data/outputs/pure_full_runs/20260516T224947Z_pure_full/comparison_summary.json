@@ -1,0 +1,531 @@
+{
+  "run_id": "20260516T224947Z_pure_full",
+  "run_dir": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T224947Z_pure_full",
+  "generated_at_utc": "2026-05-16T22:55:51.744792+00:00",
+  "settings": {
+    "max_samples": 6,
+    "min_requirements": 10,
+    "benchmark_slice": null,
+    "reuse_dialogue_dir": "outputs/pure_full_runs/20260429T002305Z_pure_full/expanded_dialogues",
+    "seed": 3,
+    "max_source_requirements": 200,
+    "match_threshold": 0.55,
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "dialogue_coverage_threshold": 0.55,
+    "clarification_rounds": 2,
+    "dialogue_variant": "controlled",
+    "partial_drop_rate": null,
+    "self_consistency": 3,
+    "self_consistency_temperature": 0.3,
+    "llm_provider": "ollama",
+    "pipeline_preset": "full_context",
+    "effective_pipeline_preset": "full_context",
+    "pipeline_only": true,
+    "anchor_preservation_enabled": true,
+    "dialogue_chunking": "auto",
+    "dialogue_chunking_enabled": true,
+    "dialogue_chunk_overlap_turns": 2,
+    "memory_max_items": 24,
+    "memory_max_chars": 3500,
+    "retrieval_top_k": 14,
+    "gap_pass_top_k": 10,
+    "theme_max_exchanges": 3,
+    "target_dialogue_recall": 0.82,
+    "max_turns": 28,
+    "llm_validator_enabled": false,
+    "validator_semantic_top_k": 2,
+    "validator_lexical_top_k": 1,
+    "validator_batch_size": 24,
+    "python_bin": "/Users/yasseen/Documents/projects/req_dataset_project/data/venv/bin/python3"
+  },
+  "model_metadata": {
+    "generation": {
+      "provider": "ollama",
+      "model": null
+    },
+    "standard_validator": {
+      "enabled": false,
+      "provider": null,
+      "model": null,
+      "method": null
+    }
+  },
+  "validation_layers": {
+    "semantic_matcher": {
+      "enabled": true,
+      "method": "sentence_transformer_greedy_match",
+      "model": "all-MiniLM-L6-v2",
+      "threshold": 0.55
+    },
+    "standard_llm_validator": {
+      "enabled": false,
+      "provider": null,
+      "model": null,
+      "method": null
+    }
+  },
+  "oracle": {
+    "sample_count": 4,
+    "macro_precision": 1.0,
+    "macro_coverage_recall": 1.0,
+    "macro_f1": 1.0,
+    "macro_hallucination_rate": 0.0,
+    "macro_average_match_score": 0.9998117429695346,
+    "macro_average_best_source_score": 0.9998117429695346,
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 204,
+    "total_matched_requirements": 204
+  },
+  "llm_provider": "ollama",
+  "pipeline_status": "ran",
+  "gemini_status": "ran",
+  "pipeline_only": true,
+  "anchor_preservation_enabled": true,
+  "controlled_dialogue_method": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails."
+  },
+  "direct": null,
+  "direct_llm_validation": null,
+  "pipeline": {
+    "sample_count": 4,
+    "macro_precision": 0.4749939028108042,
+    "macro_coverage_recall": 0.4382416267942584,
+    "macro_f1": 0.4481466079587739,
+    "macro_hallucination_rate": 0.5250060971891958,
+    "macro_average_match_score": 0.7288550657194475,
+    "macro_average_best_source_score": 0.6057488452690094,
+    "micro_precision": 0.4857142857142857,
+    "micro_coverage_recall": 0.4166666666666667,
+    "micro_f1": 0.44854881266490765,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 175,
+    "total_matched_requirements": 85
+  },
+  "pipeline_llm_validation": null,
+  "gemini": {
+    "sample_count": 4,
+    "macro_precision": 0.4749939028108042,
+    "macro_coverage_recall": 0.4382416267942584,
+    "macro_f1": 0.4481466079587739,
+    "macro_hallucination_rate": 0.5250060971891958,
+    "macro_average_match_score": 0.7288550657194475,
+    "macro_average_best_source_score": 0.6057488452690094,
+    "micro_precision": 0.4857142857142857,
+    "micro_coverage_recall": 0.4166666666666667,
+    "micro_f1": 0.44854881266490765,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 175,
+    "total_matched_requirements": 85
+  },
+  "dialogue_lower_bound": {
+    "sample_count": 4,
+    "macro_coverage_recall": 0.8870494417862839,
+    "micro_coverage_recall": 0.8823529411764706,
+    "macro_average_best_turn_score": 0.7080379909280528,
+    "total_source_requirements": 204,
+    "total_covered_requirements": 180,
+    "total_support_units": 327
+  },
+  "dialogue_upper_bound": {
+    "sample_count": 4,
+    "macro_coverage_recall": 0.8870494417862839,
+    "micro_coverage_recall": 0.8823529411764706,
+    "macro_average_best_turn_score": 0.7080379909280528,
+    "total_source_requirements": 204,
+    "total_covered_requirements": 180,
+    "total_support_units": 327
+  },
+  "pipeline_diagnostics": {
+    "aggregate": {
+      "evidence_bank_count": 327,
+      "proposition_count": 175,
+      "gap_pass_added_count": 0,
+      "grounded_after_rewrite_count": 175
+    },
+    "per_sample": [
+      {
+        "sample_id": "pure_0000_cctns",
+        "evidence_bank_count": 128,
+        "proposition_count": 71,
+        "removed_duplicate_propositions": 0,
+        "anchor_preservation_enabled": true,
+        "rewrite_candidate_count": 0,
+        "gap_pass_added_count": 0,
+        "grounded_after_rewrite_count": 71
+      },
+      {
+        "sample_id": "pure_0000_gamma_j",
+        "evidence_bank_count": 88,
+        "proposition_count": 49,
+        "removed_duplicate_propositions": 0,
+        "anchor_preservation_enabled": true,
+        "rewrite_candidate_count": 0,
+        "gap_pass_added_count": 0,
+        "grounded_after_rewrite_count": 49
+      },
+      {
+        "sample_id": "pure_1999_dii",
+        "evidence_bank_count": 64,
+        "proposition_count": 33,
+        "removed_duplicate_propositions": 0,
+        "anchor_preservation_enabled": true,
+        "rewrite_candidate_count": 0,
+        "gap_pass_added_count": 0,
+        "grounded_after_rewrite_count": 33
+      },
+      {
+        "sample_id": "pure_2005_microcare",
+        "evidence_bank_count": 47,
+        "proposition_count": 22,
+        "removed_duplicate_propositions": 0,
+        "anchor_preservation_enabled": true,
+        "rewrite_candidate_count": 0,
+        "gap_pass_added_count": 0,
+        "grounded_after_rewrite_count": 22
+      }
+    ],
+    "per_theme_dialogue_coverage": {
+      "pure_0000_cctns": {
+        "user_roles_permissions": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 1,
+          "covered": 0,
+          "uncovered": 1,
+          "recall": 0.0
+        },
+        "workflows_business_rules": {
+          "total": 5,
+          "covered": 2,
+          "uncovered": 3,
+          "recall": 0.4
+        },
+        "data_validation": {
+          "total": 11,
+          "covered": 10,
+          "uncovered": 1,
+          "recall": 0.9090909090909091
+        },
+        "interfaces_integrations": {
+          "total": 7,
+          "covered": 7,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 4,
+          "covered": 4,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "security_audit": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 51,
+          "covered": 51,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 5,
+          "covered": 3,
+          "uncovered": 2,
+          "recall": 0.6
+        },
+        "maintainability_portability_testability": {
+          "total": 1,
+          "covered": 0,
+          "uncovered": 1,
+          "recall": 0.0
+        },
+        "reporting_documentation": {
+          "total": 8,
+          "covered": 6,
+          "uncovered": 2,
+          "recall": 0.75
+        },
+        "other_constraints": {
+          "total": 9,
+          "covered": 6,
+          "uncovered": 3,
+          "recall": 0.6666666666666666
+        }
+      },
+      "pure_0000_gamma_j": {
+        "user_roles_permissions": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "workflows_business_rules": {
+          "total": 3,
+          "covered": 2,
+          "uncovered": 1,
+          "recall": 0.6666666666666666
+        },
+        "data_validation": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "performance_capacity": {
+          "total": 10,
+          "covered": 10,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 6,
+          "covered": 6,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 6,
+          "covered": 6,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 9,
+          "covered": 4,
+          "uncovered": 5,
+          "recall": 0.4444444444444444
+        },
+        "reporting_documentation": {
+          "total": 2,
+          "covered": 0,
+          "uncovered": 2,
+          "recall": 0.0
+        },
+        "other_constraints": {
+          "total": 3,
+          "covered": 1,
+          "uncovered": 2,
+          "recall": 0.3333333333333333
+        }
+      },
+      "pure_1999_dii": {
+        "user_roles_permissions": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "data_validation": {
+          "total": 4,
+          "covered": 4,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 4,
+          "covered": 3,
+          "uncovered": 1,
+          "recall": 0.75
+        },
+        "reporting_documentation": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "other_constraints": {
+          "total": 5,
+          "covered": 2,
+          "uncovered": 3,
+          "recall": 0.4
+        }
+      },
+      "pure_2005_microcare": {
+        "user_roles_permissions": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 10,
+          "covered": 10,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "data_validation": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "reporting_documentation": {
+          "total": 7,
+          "covered": 6,
+          "uncovered": 1,
+          "recall": 0.8571428571428571
+        },
+        "other_constraints": {
+          "total": 7,
+          "covered": 7,
+          "uncovered": 0,
+          "recall": 1.0
+        }
+      }
+    }
+  },
+  "gemini_preset_comparison": null,
+  "paths": {
+    "source_summary": "outputs/pure_full_runs/20260516T224947Z_pure_full/source_summary.json",
+    "oracle_coverage": "outputs/pure_full_runs/20260516T224947Z_pure_full/metrics/oracle_coverage.json",
+    "direct_coverage": null,
+    "direct_error_analysis": null,
+    "direct_coverage_llm": null,
+    "pipeline_coverage": "outputs/pure_full_runs/20260516T224947Z_pure_full/metrics/pipeline_coverage.json",
+    "pipeline_error_analysis": "outputs/pure_full_runs/20260516T224947Z_pure_full/metrics/pipeline_error_analysis.json",
+    "pipeline_validation_report": "outputs/pure_full_runs/20260516T224947Z_pure_full/metrics/pipeline_validation_report.json",
+    "pipeline_coverage_llm": null,
+    "gemini_coverage": "outputs/pure_full_runs/20260516T224947Z_pure_full/metrics/gemini_coverage.json",
+    "gemini_error_analysis": "outputs/pure_full_runs/20260516T224947Z_pure_full/metrics/gemini_error_analysis.json",
+    "dialogue_coverage_user_only": "outputs/pure_full_runs/20260516T224947Z_pure_full/metrics/dialogue_coverage_user_only.json"
+  }
+}

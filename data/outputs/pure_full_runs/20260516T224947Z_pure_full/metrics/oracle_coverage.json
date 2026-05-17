@@ -1,0 +1,391 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260516T224947Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260516T224947Z_pure_full/oracle_requirements",
+  "match_threshold": 0.55,
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 4,
+    "macro_precision": 1.0,
+    "macro_coverage_recall": 1.0,
+    "macro_f1": 1.0,
+    "macro_hallucination_rate": 0.0,
+    "macro_average_match_score": 0.9998117429695346,
+    "macro_average_best_source_score": 0.9998117429695346,
+    "micro_precision": 1.0,
+    "micro_coverage_recall": 1.0,
+    "micro_f1": 1.0,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 204,
+    "total_matched_requirements": 204
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 100,
+      "matched_count": 100,
+      "precision": 1.0,
+      "coverage_recall": 1.0,
+      "f1": 1.0,
+      "hallucination_rate": 0.0,
+      "average_match_score": 0.9992468541860581,
+      "average_best_source_score": 0.9992468541860581,
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [],
+      "match_examples": [
+        {
+          "score": 1.0000007152557373,
+          "source_requirement": "Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages.",
+          "generated_requirement": "Consistent page layout: Pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The solution should enable the user to track the submitted defect or enhancement request.",
+          "generated_requirement": "The solution should enable the user to track the submitted defect or enhancement request."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+          "generated_requirement": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+          "generated_requirement": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task.",
+          "generated_requirement": "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g.",
+          "generated_requirement": "Acceptable opening / download times: Application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error.",
+          "generated_requirement": "Providing clear error messages: The content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements.",
+          "generated_requirement": "ISO 9241-303 shall be consulted for screen text legibility requirements."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page.",
+          "generated_requirement": "space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+          "generated_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Making user profiles evident: If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident.",
+          "generated_requirement": "Making user profiles evident: If predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+          "generated_requirement": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+          "generated_requirement": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility.",
+          "generated_requirement": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "generated_requirement": "If a splash screen is used, a navigation option to skip it should be offered."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 57,
+      "matched_count": 57,
+      "precision": 1.0,
+      "coverage_recall": 1.0,
+      "f1": 1.0,
+      "hallucination_rate": 0.0,
+      "average_match_score": 1.0000001192092896,
+      "average_best_source_score": 1.0000001192092896,
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [],
+      "match_examples": [
+        {
+          "score": 1.0000007152557373,
+          "source_requirement": "The system shall utilize consistent symbols and colors for clear notifications.",
+          "generated_requirement": "The system shall utilize consistent symbols and colors for clear notifications."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The system shall be able to retrieve 200 products per second.",
+          "generated_requirement": "The system shall be able to retrieve 200 products per second."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+          "generated_requirement": "The system shall be able to acquire shipping charges in less than 2 seconds."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Maintainability Requirements The system shall utilize interchangeable plugins.",
+          "generated_requirement": "Maintainability Requirements The system shall utilize interchangeable plugins."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "The system shall be able to add product to shopping cart in less than 2ms.",
+          "generated_requirement": "The system shall be able to add product to shopping cart in less than 2ms."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "The system shall be able to restore 1000 records per second.",
+          "generated_requirement": "The system shall be able to restore 1000 records per second."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Security Requirements The system shall validate credit cards against fraud.",
+          "generated_requirement": "Security Requirements The system shall validate credit cards against fraud."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+          "generated_requirement": "For returning customers, the system shall validate 'existing' credit card in system after each log in."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "The system shall be easy to upgrade.",
+          "generated_requirement": "The system shall be easy to upgrade."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "The system should be able to create test environment of weborder system.",
+          "generated_requirement": "The system should be able to create test environment of weborder system."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "Actors: Sales Person Weborder System Preconditions: Sales Person must be able to access the weborder system via a web browser with HTTPS.",
+          "generated_requirement": "Actors: Sales Person Weborder System Preconditions: Sales Person must be able to access the weborder system via a web browser with HTTPS."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+          "generated_requirement": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "The system shall use SQL based database to store inventory information.",
+          "generated_requirement": "The system shall use SQL based database to store inventory information."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "Design and Implementation Constraints Must use a SQL based database.",
+          "generated_requirement": "Design and Implementation Constraints Must use a SQL based database."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "The system shall be able to validate credit card in less than 2 seconds.",
+          "generated_requirement": "The system shall be able to validate credit card in less than 2 seconds."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 22,
+      "matched_count": 22,
+      "precision": 1.0,
+      "coverage_recall": 1.0,
+      "f1": 1.0,
+      "hallucination_rate": 0.0,
+      "average_match_score": 0.9999999674883756,
+      "average_best_source_score": 0.9999999674883756,
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [],
+      "match_examples": [
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+          "generated_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+          "generated_requirement": "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable.",
+          "generated_requirement": "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements.",
+          "generated_requirement": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+          "generated_requirement": "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+          "generated_requirement": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+          "generated_requirement": "Training requirements shall be determined by the developers of the system in which the XS module is embedded."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+          "generated_requirement": "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+          "generated_requirement": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+          "generated_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions."
+        },
+        {
+          "score": 0.9999999403953552,
+          "source_requirement": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+          "generated_requirement": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I)."
+        },
+        {
+          "score": 0.9999999403953552,
+          "source_requirement": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+          "generated_requirement": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a."
+        },
+        {
+          "score": 0.9999998807907104,
+          "source_requirement": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+          "generated_requirement": "COE sponsors shall adhere to compliance level requirements described in the I&RTS."
+        },
+        {
+          "score": 0.9999998807907104,
+          "source_requirement": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+          "generated_requirement": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "generated_requirement_count": 25,
+      "matched_count": 25,
+      "precision": 1.0,
+      "coverage_recall": 1.0,
+      "f1": 1.0,
+      "hallucination_rate": 0.0,
+      "average_match_score": 1.0000000309944153,
+      "average_best_source_score": 1.0000000309944153,
+      "unmatched_source_examples": [],
+      "unmatched_generated_examples": [],
+      "match_examples": [
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+          "generated_requirement": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner."
+        },
+        {
+          "score": 1.0000004768371582,
+          "source_requirement": "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.",
+          "generated_requirement": "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP."
+        },
+        {
+          "score": 1.0000003576278687,
+          "source_requirement": "If yes, then the user should mark that Claim (Treatment Form) status as Rejected and send back to VSP.",
+          "generated_requirement": "If yes, then the user should mark that Claim (Treatment Form) status as Rejected and send back to VSP."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes.",
+          "generated_requirement": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes."
+        },
+        {
+          "score": 1.000000238418579,
+          "source_requirement": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group.",
+          "generated_requirement": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+          "generated_requirement": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+          "generated_requirement": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "These information is vital and shall be used for compared with the processed claims.",
+          "generated_requirement": "These information is vital and shall be used for compared with the processed claims."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "In the transaction part no of forms should match with No of Available Forms The system should print a receipt document based on the information entered during claim submission.",
+          "generated_requirement": "In the transaction part no of forms should match with No of Available Forms The system should print a receipt document based on the information entered during claim submission."
+        },
+        {
+          "score": 1.0000001192092896,
+          "source_requirement": "Patient Status - (Select from list of status options populating from Patient Status Master) suppose the status is Referral then the system will have the provision to capture Referred To and Reason for Referral, the reason for Referral should be populated from Referral master.",
+          "generated_requirement": "Patient Status - (Select from list of status options populating from Patient Status Master) suppose the status is Referral then the system will have the provision to capture Referred To and Reason for Referral, the reason for Referral should be populated from Referral master."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+          "generated_requirement": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "The Salesman master should capture following information’s.",
+          "generated_requirement": "The Salesman master should capture following information’s."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+          "generated_requirement": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock."
+        },
+        {
+          "score": 1.0,
+          "source_requirement": "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office.",
+          "generated_requirement": "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office."
+        }
+      ]
+    }
+  ]
+}

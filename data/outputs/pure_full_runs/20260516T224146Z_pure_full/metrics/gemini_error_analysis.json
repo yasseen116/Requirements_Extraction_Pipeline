@@ -1,0 +1,460 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260516T224146Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260516T224146Z_pure_full/generated_requirements_ollama_full_context",
+  "threshold": 0.55,
+  "aggregate": {
+    "sample_count": 4,
+    "total_unmatched_source": 119,
+    "total_unmatched_generated": 90,
+    "counts": {
+      "omission_full": 0,
+      "omission_partial": 77,
+      "hallucination_meta": 0,
+      "hallucination_generic_domain": 9,
+      "hallucination_unsupported": 14,
+      "near_match_paraphrase": 67
+    },
+    "rates": {
+      "omission_full_rate": 0.0,
+      "omission_partial_rate": 0.6470588235294118,
+      "hallucination_meta_rate": 0.0,
+      "hallucination_generic_domain_rate": 0.1,
+      "hallucination_unsupported_rate": 0.15555555555555556,
+      "near_match_paraphrase_rate": 0.7444444444444445
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 71,
+      "unmatched_source_count": 59,
+      "unmatched_generated_count": 30,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 34,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 3,
+        "hallucination_unsupported": 3,
+        "near_match_paraphrase": 24
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "Registration Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert."
+          },
+          {
+            "category": "omission_partial",
+            "text": "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must at a minimum be able to provide reports for actions on cases organised: By case;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address."
+          },
+          {
+            "category": "omission_partial",
+            "text": "the most stringent) implies that the System must not include such cases in any count of search results;"
+          },
+          {
+            "category": "omission_partial",
+            "text": "The System must be able to display several entities (cases, suspects) simultaneously."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The interfaces must be made customizable or user-configurable to the extent possible."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Such configurations must be saved in the user profile."
+          },
+          {
+            "category": "omission_partial",
+            "text": "These defaults should include: user-definable values;"
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "hallucination_generic_domain",
+            "text": "For placing an order, we should streamline the process so that customers can add items to their cart, proceed to checkout with minimal steps, and complete payment without too many interactions."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "Similarly, checking order status should only require logging in or entering an order number, then viewing the current status page which displays all relevant information like delivery date and tracking details."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "For example, when a customer logs in and starts a new order, it should recognize them and auto-populate fields like shipping address and payment method where applicable."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Ideally, it would also allow us to show any saved payment details securely so they can just confirm or change if needed."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "It should be able to manage a list of items across different orders, so that if they start one order but then want to make another, they can easily switch between them without losing any items."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "For example, when reading long articles or filling out forms, being able to increase the text size can make it much easier on the eyes and improve readability."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "We should ensure that when users navigate through different sections of the application, they don't encounter issues like broken back button functionality or bookmarking problems."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Currently, the system can be a bit cumbersome because it has too many links that make the text hard to read at a glance."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "We need to ensure that users can easily find help when they need it."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "We need to ensure that users can easily understand where they are in the application."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "For example, when a user is filling out a form for creating an account, it should clearly indicate which step they're on and how many steps remain."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "For instance, screen readers should be able to navigate through the application smoothly without any issues."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 49,
+      "unmatched_source_count": 36,
+      "unmatched_generated_count": 28,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 26,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 5,
+        "hallucination_unsupported": 2,
+        "near_match_paraphrase": 21
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "Operating Environment Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server."
+          },
+          {
+            "category": "omission_partial",
+            "text": "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator."
+          },
+          {
+            "category": "omission_partial",
+            "text": "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Quality Attribute Requirements Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system shall be able to handle 1000 customers logged in concurrently at the same time."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system shall be able to validate credit card in less than 2 seconds."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Security Requirements The system shall validate credit cards against fraud."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system shall encrypt all sensitive information via https."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system shall encrypt all customer data in database."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system shall be protected by open source firewall called Firestarter."
+          },
+          {
+            "category": "omission_partial",
+            "text": "http://www.fs-security.com/ Availability Requirements The system shall have an availability of 99.99%."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "It should be able to handle different types of products and quantities."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "For both customers and vendors, these emails should be triggered under specific conditions such as order confirmations, payment reminders, account updates, and support requests."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "We've had issues with slow login times, so we need the system to authenticate users efficiently, ensuring that it never takes more than 5 seconds for a user to log in."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Additionally, the system must support multiple browsers including Chrome, Firefox, Safari, and Edge on both Windows and macOS operating systems."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "The user interface should display product titles and metadata prominently but never show any private information like credit card numbers or passwords in the browser interface."
+          },
+          {
+            "category": "hallucination_generic_domain",
+            "text": "Only authorized users, identified by their unique login credentials, should have access to certain administrative features."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "We must not allow unauthorized users to modify or view sensitive data."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Lastly, we need robust logging and auditing capabilities for all user activities, ensuring that every action is recorded and can be traced back to a specific user."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Their accounts must already be registered before they can log in."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "When they log in, the system should allow them to access their order history but never let them modify or delete orders that aren't theirs."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "It's important because we want to protect user data and ensure only authorized users can make changes."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Additionally, before performing any maintenance tasks, such as software updates or server checks, the system should automatically back up all critical data."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 33,
+      "unmatched_source_count": 12,
+      "unmatched_generated_count": 23,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 8,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 1,
+        "hallucination_unsupported": 4,
+        "near_match_paraphrase": 18
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Training requirements shall be determined by the developers of the system in which the XS module is embedded."
+          },
+          {
+            "category": "omission_partial",
+            "text": "OTHER REQUIREMENTS None PACKAGING REQUIREMENTS The XS software shall be delivered in accordance with DII COE guidelines."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I)."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true."
+          },
+          {
+            "category": "omission_partial",
+            "text": "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a."
+          },
+          {
+            "category": "omission_partial",
+            "text": "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "near_match_paraphrase",
+            "text": "In our fixed mode of operation, it should be possible for the team to tune these services as needed."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "It should allow us to set these values before a user logs in and also let us adjust them as needed without affecting the current active sessions."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "For instance, when we have more than 1000 concurrent users, it should handle the load without any issues."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The software should be designed with clear architecture and modular components so that updating or fixing bugs becomes straightforward."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "We've had issues before where updates caused unexpected downtime, so we need to ensure that changes can be made without disrupting service."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "This should include automated tests for both functional and non-functional aspects of the system."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "For security, we must verify that all customer data is encrypted both in transit and at rest."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "We also need to ensure that the system can be easily ported to other platforms if needed, so testing should include cross-platform compatibility checks."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "We need to ensure that when we update or debug the system, especially during transitions between different COE-compliant platforms, it should be easy to switch without causing disruptions."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Ideally, it would have a consistent codebase that can adapt to various environments."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The problem we have is ensuring that all components are well-documented and modular so they can be easily replaced or updated."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "That's important to us because maintaining the system should not require extensive rework every time we make a change."
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "generated_requirement_count": 22,
+      "unmatched_source_count": 12,
+      "unmatched_generated_count": 9,
+      "counts": {
+        "omission_full": 0,
+        "omission_partial": 9,
+        "hallucination_meta": 0,
+        "hallucination_generic_domain": 0,
+        "hallucination_unsupported": 5,
+        "near_match_paraphrase": 4
+      },
+      "examples": {
+        "omitted": [
+          {
+            "category": "omission_partial",
+            "text": "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The Salesman master should capture following information’s."
+          },
+          {
+            "category": "omission_partial",
+            "text": "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The values of Health Sub – District, Locality, Level Of Facility, Type of facility, Registration Body would be list from their own master and should select the details based on the VSP."
+          },
+          {
+            "category": "omission_partial",
+            "text": "These information is vital and shall be used for compared with the processed claims."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The document should have the following information."
+          },
+          {
+            "category": "omission_partial",
+            "text": "During the claim entry the system should capture the following information."
+          },
+          {
+            "category": "omission_partial",
+            "text": "The system should have a provision to capture the reason suppose if the claim status is “Rejection or Quarantine” Claim Amount – The calculation of claim amount is explained below."
+          }
+        ],
+        "hallucinated": [
+          {
+            "category": "hallucination_unsupported",
+            "text": "Firstly, it should be able to record the customer's name and contact details."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "Secondly, we need to track the product or service being sold, including its ID and description."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "Additionally, the price per unit and total sale amount must be captured accurately."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "It should also log the date and time of the sale, along with any special notes or comments from the Salesman."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "This will help us keep track of sales trends and customer interactions."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "The system should also log the IP address and timestamp for each entry to maintain audit trails."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "If there's a duplicate, it should generate a message alerting the user."
+          },
+          {
+            "category": "near_match_paraphrase",
+            "text": "However, if the user needs to save this new entry despite the duplication, they should be allowed to do so."
+          },
+          {
+            "category": "hallucination_unsupported",
+            "text": "This will help us understand the issues better and improve our processes."
+          }
+        ]
+      }
+    }
+  ]
+}

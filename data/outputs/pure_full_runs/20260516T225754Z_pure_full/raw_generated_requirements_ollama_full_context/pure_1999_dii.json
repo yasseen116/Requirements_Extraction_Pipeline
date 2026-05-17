@@ -1,0 +1,350 @@
+{
+  "sample_id": "pure_1999_dii",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "1999_dii",
+    "title": "1999 - dii",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/1999 - dii.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/1999 - dii.htm"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": null,
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": []
+      },
+      {
+        "batch_id": "gap_pass",
+        "usage": []
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:fallback_heuristic",
+      "gap_pass:fallback_heuristic"
+    ],
+    "retrieval_top_k": 24,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 24,
+    "max_chars": 3500,
+    "stored_unique_requirements": 33
+  },
+  "diagnostics": {
+    "evidence_bank_count": 64,
+    "proposition_count": 33,
+    "removed_duplicate_propositions": 0,
+    "anchor_preservation_enabled": false,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0,
+    "grounded_after_rewrite_count": null
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_1999_dii.json",
+    "proposition_path": "_artifacts/propositions/pure_1999_dii.json"
+  },
+  "project_summary": "Heuristic proposition fallback generated from evidence units.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "Our data management services need to be flexible so that on-site personnel can adjust them based on varying workloads and database sizes.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "In our fixed mode of operation, it should be possible for the team to tune these services as needed.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "We need to be able to configure session time-out values based on user roles and workloads.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ],
+        "category": "reliability"
+      },
+      {
+        "id": "NFR-002",
+        "text": "It should allow us to set these values before a user logs in and also let us adjust them as needed without affecting the current active sessions.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ],
+        "category": "reliability"
+      },
+      {
+        "id": "NFR-003",
+        "text": "Maintenance tasks like shutting down or upgrading the system should not disrupt this setting process.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ],
+        "category": "reliability"
+      },
+      {
+        "id": "NFR-004",
+        "text": "For instance, when we have more than 1000 concurrent users, it should handle the load without any issues.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-005",
+        "text": "The software should be designed with clear architecture and modular components so that updating or fixing bugs becomes straightforward.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-006",
+        "text": "We've had issues before where updates caused unexpected downtime, so we need to ensure that changes can be made without disrupting service.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-007",
+        "text": "This should include automated tests for both functional and non-functional aspects of the system.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-008",
+        "text": "For security, we must verify that all customer data is encrypted both in transit and at rest.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-009",
+        "text": "We also need to ensure that the system can be easily ported to other platforms if needed, so testing should include cross-platform compatibility checks.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-010",
+        "text": "We need to ensure that when we update or debug the system, especially during transitions between different COE-compliant platforms, it should be easy to switch without causing disruptions.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-011",
+        "text": "Ideally, it would have a consistent codebase that can adapt to various environments.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-012",
+        "text": "The problem we have is ensuring that all components are well-documented and modular so they can be easily replaced or updated.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-013",
+        "text": "That's important to us because maintaining the system should not require extensive rework every time we make a change.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "maintainability"
+      },
+      {
+        "id": "NFR-014",
+        "text": "It should be able to run on multiple platforms without needing significant modifications, and it must support automated testing across all environments to catch any issues early.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "maintainability"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "During testing (T), we need to ensure that our on-site personnel can run thorough checks under various conditions.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "For demonstrations (D), it should be clear how the system performs in real-time usage.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "DATA-003",
+        "text": "Inspection (I) will help us catch any potential problems before they become critical.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "DATA-004",
+        "text": "We need to make sure these methods can be adapted flexibly depending on the workload — whether it's a small team or handling 1000 concurrent users.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "DATA-005",
+        "text": "It should also work across different browsers and operating systems, like Chrome, Firefox, Windows, and macOS.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      }
+    ],
+    "business_rules": [],
+    "interfaces": [
+      {
+        "id": "IF-001",
+        "text": "In our operations, we need the system to allow on-site personnel to manage and adjust data access services APIs as specified in Appendix C.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "IF-002",
+        "text": "Specifically, it should be able to redefine or reset names of connect descriptors for database server instances.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "IF-003",
+        "text": "The system must internally interface with existing data elements from DBIF, DAC, and COTS RDBMS products without requiring operator intervention.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "IF-004",
+        "text": "Additionally, the XS function needs to provide standard APIs as outlined in Appendix C.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "IF-005",
+        "text": "Compliance level requirements described in the I&RTS will be enforced and monitored by on-site personnel through adherence to these standards.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "The Registry software needs to be flexible enough to run smoothly across different environments, which means it should work well on any COE-compliant platform we choose.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "C-002",
+        "text": "This is important because our deployment process will need to accommodate various scenarios, from small-scale testing to large-scale production with up to 1000 concurrent users.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "C-003",
+        "text": "Ideally, it should be able to scale efficiently and maintain performance even under heavy load.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "C-004",
+        "text": "We want the system to validate credit card information for returning users but not require them to re-enter everything every time they log in.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "C-005",
+        "text": "The producer should be able to submit metadata and related information resource artifacts.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ]
+      },
+      {
+        "id": "C-006",
+        "text": "We also need the system to render semantically valid views from an XML document, like XSL transformations, which will disassemble hierarchical views into a relational representation.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ]
+      },
+      {
+        "id": "C-007",
+        "text": "The goal here is to ensure that all metadata fields are correctly formatted and can be easily integrated into the registry services.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ]
+      }
+    ]
+  }
+}

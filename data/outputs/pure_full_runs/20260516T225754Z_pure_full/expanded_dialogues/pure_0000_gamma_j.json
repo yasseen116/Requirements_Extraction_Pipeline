@@ -1,0 +1,631 @@
+{
+  "sample_id": "pure_0000_gamma_j",
+  "metadata": {
+    "domain": "pure_document",
+    "source_type": "synthetic",
+    "parent_id": "pure_0000_gamma_j",
+    "split": "benchmark",
+    "dialogue_style": "adaptive_semantic_coverage"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_gamma_j",
+    "title": "0000 - gamma j",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - gamma j.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - gamma j.pdf"
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "To start, what is the overall purpose and scope of this system?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "This project is based on the 0000 - gamma j system, and the goal is to capture the main requirements and constraints for document 0000_gamma_j."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Could you provide more details on how the system should handle different types of items in the shopping cart?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "We need the system to ensure that customers always have items in their shopping cart. It should be able to handle different types of products and quantities. For security, we want it to run test credit card transactions before processing real payments. Yoggie should work closely with our organization on future enhancements and new features. The system must exhibit specific functionalities under certain conditions, which is important for us because it ensures that all the necessary features are covered."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "Can you provide more details on the types of notifications that need to be sent via email to customers and vendors, and under what conditions these emails should be triggered?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "We need the system to send emails to customers and vendors as quickly as possible — ideally in less than a second. This is important because we want to ensure that notifications are received promptly, which helps maintain trust and satisfaction with our service. For both customers and vendors, these emails should be triggered under specific conditions such as order confirmations, payment reminders, account updates, and support requests. We also need the system to handle large volumes of concurrent users — up to 1000 at a time — without delay or failure."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "Could you provide more details on the specific functionalities that need to be enabled under certain conditions to ensure all necessary features are covered?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "We need the system to handle a minimum of 1000 concurrent users without any performance degradation. For our e-commerce platform, it should be able to process transactions quickly — ideally within less than 2 seconds from when a customer clicks 'buy now'. Security is a big concern for us; customer data needs to be encrypted both in transit and at rest. We've had issues with slow login times, so we need the system to authenticate users efficiently, ensuring that it never takes more than 5 seconds for a user to log in. For returning customers, the system should remember their card details but verify the card is still valid upon each login. It's important to us because we want to reduce friction and increase customer satisfaction. Additionally, the system must support multiple browsers including Chrome, Firefox, Safari, and Edge on both Windows and macOS operating systems. We need it to be compatible with our existing server infrastructure, specifically using Apache for web servers and Nginx for reverse proxying. The user interface should display product titles and metadata prominently but never show any private information like credit card numbers or passwords in the browser interface. Only authorized users, identified by their unique login credentials, should have access to certain administrative features. We must not allow unauthorized users to modify or view sensitive data. Lastly, we need robust logging and auditing capabilities for all user activities, ensuring that every action is recorded and can be traced back to a specific user."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "Can you provide more details on how the system should handle potential security breaches or vulnerabilities identified during a security audit?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "Security is a top priority for us. To protect the system, we need it to be safeguarded by an open-source firewall called Firestarter. Additionally, the system should automatically detect and block IP addresses that show signs of DOS attacks. We also want all sensitive information to be encrypted using https to prevent any breaches. Lastly, we need the system to monitor login attempts; if someone tries to log in multiple times without success, it should lock them out after a certain number of failed attempts."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "Could you provide more details on the criteria for validating email addresses and how often this validation should occur to ensure accuracy?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "We need the system to validate email addresses for accuracy. Ideally it would check existence and format of emails before saving them in our SQL-based database, which is crucial for storing inventory information. This validation should occur every time a new email address is entered or an existing one is updated. While we're focused on email validation, we also have another requirement to automatically compress image files that are too large — this needs to happen without affecting the quality of the images. The system must use a SQL-based database for both inventory and other data storage to ensure consistency and reliability."
+    },
+    {
+      "turn_id": 13,
+      "role": "bot",
+      "text": "Could you provide more details on the specific conditions under which emails to customers and administrators should be sent, and what information should each email contain?"
+    },
+    {
+      "turn_id": 14,
+      "role": "user",
+      "text": "For customer emails, we need the system to send an email confirmation that includes the items ordered and their tracking number. This should happen automatically after the order is placed. For administrators, it's important that they receive notifications about any technical queries from customers or sales people. The web interface must be consistent across different browsers like Chrome, Firefox, and Safari, ensuring a user-friendly experience for our customers. Security is key, so all communications need to use HTTPS."
+    },
+    {
+      "turn_id": 15,
+      "role": "bot",
+      "text": "Could you specify the exact conditions under which the system should send emails to customers and administrators, including the content that each email should contain?"
+    },
+    {
+      "turn_id": 16,
+      "role": "user",
+      "text": "For customer support queries, the system should send an email to our System Administrator whenever a technical issue is raised by customers or sales staff. The content of these emails should include details like the user's contact information and the nature of the problem so that it can be addressed promptly. Regarding order confirmations, the WebOrder system needs to notify customers via email once their items are being shipped. This email should contain the tracking number for easy reference. We operate on an Intel-based system with Slackware Linux 2.6 and Apache Web Server, ensuring a stable environment. Customers must access the web order system through a secure HTTPS connection from any compatible browser."
+    },
+    {
+      "turn_id": 17,
+      "role": "bot",
+      "text": "Could you clarify the specific details on how the system should handle email confirmations for customers, such as the timing and any additional information that might be included?"
+    },
+    {
+      "turn_id": 18,
+      "role": "user",
+      "text": "We need the system to send an email confirmation to customers as soon as their order is placed. This email should include details about the items they ordered and the shipping address, along with a tracking number for easy reference. It's important because it helps ensure that customers are aware of their order status and can track their deliveries."
+    },
+    {
+      "turn_id": 19,
+      "role": "bot",
+      "text": "Could you provide more details on the specific scenarios where the system should perform these efficiency requirements, such as during peak usage times or when handling a large number of concurrent users?"
+    },
+    {
+      "turn_id": 20,
+      "role": "user",
+      "text": "During peak usage times, such as when we have a large number of concurrent users, the system should be able to handle searches efficiently. For example, it should use Dijkstra's shortest path algorithm for searching, and it needs to perform these searches quickly — ideally in less than 1 second per search. Additionally, when dealing with a high volume of data, like restoring records or retrieving products, we need the system to maintain its speed. Specifically, it should be able to restore 1000 records per second and retrieve up to 200 products per second without any significant slowdowns."
+    },
+    {
+      "turn_id": 21,
+      "role": "bot",
+      "text": "Can you specify the exact conditions under which the system should deploy and become operational after a USB is plugged in, such as during initial setup or after maintenance?"
+    },
+    {
+      "turn_id": 22,
+      "role": "user",
+      "text": "During initial setup or after maintenance, we need the system to be able to deploy and become operational within less than a minute upon plugging in the USB. This is crucial for minimizing downtime and ensuring smooth transitions."
+    },
+    {
+      "turn_id": 23,
+      "role": "bot",
+      "text": "Could you provide more details on the specific conditions under which the system should run test shipping orders, such as the types of tests and their frequency?"
+    },
+    {
+      "turn_id": 24,
+      "role": "user",
+      "text": "We need the system to be able to run test shipping orders regularly. Ideally it would happen automatically at least once a day, but we should also have the option to manually trigger these tests whenever necessary. The types of tests include verifying that all order information is correctly processed and that the shipping details are accurate. It's important because we want to ensure everything works smoothly before actual customer orders go through. We've had issues with incorrect shipping in the past, so frequent testing helps catch those problems early."
+    },
+    {
+      "turn_id": 25,
+      "role": "bot",
+      "text": "Could you specify the exact conditions under which the system should send out automated test emails to ensure email functionality is working correctly, such as during scheduled maintenance or after software updates?"
+    },
+    {
+      "turn_id": 26,
+      "role": "user",
+      "text": "For sure, we need the system to send out automated test emails during scheduled maintenance and after software updates. This is important because it ensures that our email functionality remains reliable. During maintenance windows, say between 8 PM and 2 AM on Tuesday nights, the system should automatically check if all outgoing emails are working properly. Similarly, right after a new version of the software is deployed, we want to make sure everything is still functioning as expected, so the system should send out test emails then too. This way, any issues can be caught early and addressed before they affect our users."
+    },
+    {
+      "turn_id": 27,
+      "role": "bot",
+      "text": "Could you specify the exact conditions under which the system should initiate and complete a backup of critical data, such as during off-peak hours or before performing maintenance?"
+    },
+    {
+      "turn_id": 28,
+      "role": "user",
+      "text": "Ideally it would initiate a backup during off-peak hours to minimize any impact on our users. Specifically, the system should start backing up critical data between 2 AM and 6 AM local time. This is important because we have had issues with backups interfering with user experience during regular business hours. Additionally, before performing maintenance tasks such as software updates or server checks, it should complete a backup to ensure that any changes are safe and can be reverted if necessary. We need this to happen automatically so our IT team doesn't have to manually trigger the process every time."
+    },
+    {
+      "turn_id": 29,
+      "role": "bot",
+      "text": "Could you clarify the specific permissions and actions a Sales Person should be able to perform within the Weborder System after their account is registered and they are logged in?"
+    },
+    {
+      "turn_id": 30,
+      "role": "user",
+      "text": "Sales people need to be able to place orders and manage their own profiles within the Weborder System. Their accounts must already be registered before they can log in. Once logged in, sales people should have access to order management tools but never administrative functions that only an Administrator would handle. Customer accounts also need to be registered for them to use the system, but customers should not have the ability to manage orders or other sensitive information. It's important that we keep these roles separate to ensure proper permissions and security."
+    },
+    {
+      "turn_id": 31,
+      "role": "bot",
+      "text": "Can you specify the exact permissions a Customer should have when they are added to the Weborder System, such as accessing order history or viewing product details?"
+    },
+    {
+      "turn_id": 32,
+      "role": "user",
+      "text": "Customers should be able to add items to their cart and view product details. When they log in, the system should allow them to access their order history but never let them modify or delete orders that aren't theirs. It's important because we want to protect user data and ensure only authorized users can make changes. We've had issues with unauthorized modifications before, so this is a big concern for us."
+    },
+    {
+      "turn_id": 33,
+      "role": "bot",
+      "text": "Could you specify the exact conditions under which the system should initiate a backup of critical data, such as during off-peak hours or before performing maintenance?"
+    },
+    {
+      "turn_id": 34,
+      "role": "user",
+      "text": "To ensure high availability and ease of migration, we need the system to initiate a backup of critical data during off-peak hours. This is important because it minimizes disruptions for our users. Additionally, before performing any maintenance tasks, such as software updates or server checks, the system should automatically back up all critical data. We aim for an availability rate of 99.99%, which means that we need to ensure minimal downtime and quick recovery in case of issues."
+    },
+    {
+      "turn_id": 35,
+      "role": "bot",
+      "text": "How often should the system automatically initiate a backup of critical data to ensure minimal data loss in case of hardware failure?"
+    },
+    {
+      "turn_id": 36,
+      "role": "user",
+      "text": "To ensure minimal data loss in case of hardware failure, we need the system to automatically initiate a backup of critical data at least once every hour. This way, if something goes wrong with our primary storage, we can quickly recover from the last backup without losing too much information. It should be easy for us to migrate or back up via another USB drive as per AUTO-0035."
+    },
+    {
+      "turn_id": 37,
+      "role": "bot",
+      "text": "Can you specify the exact hardware requirements and constraints for the system's deployment environment, such as network connectivity or power supply stability?"
+    },
+    {
+      "turn_id": 38,
+      "role": "user",
+      "text": "For our system to operate smoothly, we need a fixed hardware setup that can be updated via an internet connection. It's crucial for us to have reliable network connectivity so that we can patch and maintain the system as needed without downtime. We cannot afford any interruptions in this process."
+    }
+  ],
+  "dialogue_generation": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "model": "qwen2.5:7b-instruct",
+    "prompt_hash": "fedce691ffc0c220a6c2ce1eafe35d01f4b661ebbfe2e77f828010c8af7381a9",
+    "schema_hash": "9be8d6915a55c470069248e40ccedc82f618947177ed980cd44251e29f62cc21",
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "coverage_threshold": 0.55,
+    "max_turns": 28,
+    "target_dialogue_recall": 0.82,
+    "theme_max_exchanges": 3,
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails.",
+    "clarification_rounds": 2,
+    "trace": [
+      {
+        "theme": "goal_scope",
+        "req_ids": [],
+        "bot_turn_id": 1,
+        "user_turn_id": 2,
+        "generation_mode": "deterministic_scope",
+        "coverage_ratio": 1.0,
+        "stage": "adaptive_opening"
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0050",
+          "AUTO-0041",
+          "AUTO-0042",
+          "AUTO-0037"
+        ],
+        "bot_turn_id": 3,
+        "user_turn_id": 4,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 57
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0014",
+          "AUTO-0045"
+        ],
+        "bot_turn_id": 5,
+        "user_turn_id": 6,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 49
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0045"
+        ],
+        "bot_turn_id": 7,
+        "user_turn_id": 8,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 45
+      },
+      {
+        "theme": "security_audit",
+        "req_ids": [
+          "AUTO-0023",
+          "AUTO-0021",
+          "AUTO-0019",
+          "AUTO-0022"
+        ],
+        "bot_turn_id": 9,
+        "user_turn_id": 10,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 42
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0027",
+          "AUTO-0004",
+          "AUTO-0028",
+          "AUTO-0003"
+        ],
+        "bot_turn_id": 11,
+        "user_turn_id": 12,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 38
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0007",
+          "AUTO-0008",
+          "AUTO-0006",
+          "AUTO-0046"
+        ],
+        "bot_turn_id": 13,
+        "user_turn_id": 14,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 34
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0008",
+          "AUTO-0007",
+          "AUTO-0002",
+          "AUTO-0046"
+        ],
+        "bot_turn_id": 15,
+        "user_turn_id": 16,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 33
+      },
+      {
+        "theme": "interfaces_integrations",
+        "req_ids": [
+          "AUTO-0007"
+        ],
+        "bot_turn_id": 17,
+        "user_turn_id": 18,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 27
+      },
+      {
+        "theme": "performance_capacity",
+        "req_ids": [
+          "AUTO-0025",
+          "AUTO-0013",
+          "AUTO-0017",
+          "AUTO-0011"
+        ],
+        "bot_turn_id": 19,
+        "user_turn_id": 20,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 27
+      },
+      {
+        "theme": "performance_capacity",
+        "req_ids": [
+          "AUTO-0009"
+        ],
+        "bot_turn_id": 21,
+        "user_turn_id": 22,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 23
+      },
+      {
+        "theme": "workflows_business_rules",
+        "req_ids": [
+          "AUTO-0044",
+          "AUTO-0038"
+        ],
+        "bot_turn_id": 23,
+        "user_turn_id": 24,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 22
+      },
+      {
+        "theme": "workflows_business_rules",
+        "req_ids": [
+          "AUTO-0044"
+        ],
+        "bot_turn_id": 25,
+        "user_turn_id": 26,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 20
+      },
+      {
+        "theme": "workflows_business_rules",
+        "req_ids": [
+          "AUTO-0044"
+        ],
+        "bot_turn_id": 27,
+        "user_turn_id": 28,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 20
+      },
+      {
+        "theme": "user_roles_permissions",
+        "req_ids": [
+          "AUTO-0055",
+          "AUTO-0051",
+          "AUTO-0056",
+          "AUTO-0047"
+        ],
+        "bot_turn_id": 29,
+        "user_turn_id": 30,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 20
+      },
+      {
+        "theme": "user_roles_permissions",
+        "req_ids": [
+          "AUTO-0049"
+        ],
+        "bot_turn_id": 31,
+        "user_turn_id": 32,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 14
+      },
+      {
+        "theme": "availability_reliability",
+        "req_ids": [
+          "AUTO-0035",
+          "AUTO-0024"
+        ],
+        "bot_turn_id": 33,
+        "user_turn_id": 34,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 13
+      },
+      {
+        "theme": "availability_reliability",
+        "req_ids": [
+          "AUTO-0035"
+        ],
+        "bot_turn_id": 35,
+        "user_turn_id": 36,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 12
+      },
+      {
+        "theme": "deployment_environment_constraints",
+        "req_ids": [
+          "AUTO-0040"
+        ],
+        "bot_turn_id": 37,
+        "user_turn_id": 38,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 11
+      }
+    ],
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 0,
+    "coverage_summary": {
+      "clarification_rounds_requested": 2,
+      "clarification_rounds_used": 0,
+      "initial_uncovered_requirement_count": 57,
+      "final_uncovered_requirement_count": 10,
+      "final_uncovered_req_ids": [
+        "AUTO-0005",
+        "AUTO-0007",
+        "AUTO-0030",
+        "AUTO-0031",
+        "AUTO-0032",
+        "AUTO-0033",
+        "AUTO-0034",
+        "AUTO-0036",
+        "AUTO-0044",
+        "AUTO-0045"
+      ],
+      "coverage_history": [
+        0.0,
+        0.14035087719298245,
+        0.21052631578947367,
+        0.26315789473684215,
+        0.33333333333333337,
+        0.4035087719298246,
+        0.42105263157894735,
+        0.5263157894736843,
+        0.5263157894736843,
+        0.5964912280701755,
+        0.6140350877192983,
+        0.6491228070175439,
+        0.6491228070175439,
+        0.6491228070175439,
+        0.7543859649122807,
+        0.7719298245614035,
+        0.7894736842105263,
+        0.8070175438596492,
+        0.8245614035087719
+      ],
+      "exchanges": 19,
+      "target_dialogue_recall": 0.82,
+      "final_dialogue_recall": 0.8245614035087719,
+      "theme_exchange_counts": {
+        "functional_capabilities": 3,
+        "security_audit": 1,
+        "data_validation": 1,
+        "interfaces_integrations": 3,
+        "performance_capacity": 2,
+        "workflows_business_rules": 3,
+        "user_roles_permissions": 2,
+        "availability_reliability": 2,
+        "deployment_environment_constraints": 1
+      },
+      "theme_coverage": {
+        "user_roles_permissions": {
+          "total": 11,
+          "covered": 11,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "workflows_business_rules": {
+          "total": 3,
+          "covered": 2,
+          "uncovered": 1,
+          "recall": 0.6666666666666666
+        },
+        "data_validation": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 6,
+          "covered": 5,
+          "uncovered": 1,
+          "recall": 0.8333333333333334
+        },
+        "performance_capacity": {
+          "total": 10,
+          "covered": 10,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 6,
+          "covered": 6,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 6,
+          "covered": 6,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 9,
+          "covered": 4,
+          "uncovered": 5,
+          "recall": 0.4444444444444444
+        },
+        "reporting_documentation": {
+          "total": 2,
+          "covered": 0,
+          "uncovered": 2,
+          "recall": 0.0
+        },
+        "other_constraints": {
+          "total": 3,
+          "covered": 1,
+          "uncovered": 2,
+          "recall": 0.3333333333333333
+        }
+      },
+      "critical_theme_gaps": [],
+      "stopped_reason": "target_dialogue_recall_reached"
+    }
+  }
+}

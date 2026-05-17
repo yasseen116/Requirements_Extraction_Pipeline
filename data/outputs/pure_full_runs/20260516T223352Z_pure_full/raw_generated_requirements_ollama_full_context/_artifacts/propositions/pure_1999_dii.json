@@ -1,0 +1,417 @@
+{
+  "sample_id": "pure_1999_dii",
+  "project_summary": "Heuristic proposition fallback generated from evidence units.",
+  "propositions": [
+    {
+      "id": "P-001",
+      "category": "functional",
+      "text": "Our data management services need to be flexible so that on-site personnel can adjust them based on varying workloads and database sizes.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:1"
+      ]
+    },
+    {
+      "id": "P-002",
+      "category": "functional",
+      "text": "In our fixed mode of operation, it should be possible for the team to tune these services as needed.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:3"
+      ]
+    },
+    {
+      "id": "P-003",
+      "category": "data",
+      "text": "During testing (T), we need to ensure that our on-site personnel can run thorough checks under various conditions.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:2"
+      ]
+    },
+    {
+      "id": "P-004",
+      "category": "data",
+      "text": "For demonstrations (D), it should be clear how the system performs in real-time usage.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ]
+    },
+    {
+      "id": "P-005",
+      "category": "data",
+      "text": "Inspection (I) will help us catch any potential problems before they become critical.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:5"
+      ]
+    },
+    {
+      "id": "P-006",
+      "category": "data",
+      "text": "We need to make sure these methods can be adapted flexibly depending on the workload — whether it's a small team or handling 1000 concurrent users.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:6"
+      ]
+    },
+    {
+      "id": "P-007",
+      "category": "data",
+      "text": "It should also work across different browsers and operating systems, like Chrome, Firefox, Windows, and macOS.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:7"
+      ]
+    },
+    {
+      "id": "P-008",
+      "category": "interfaces",
+      "text": "In our operations, we need the system to allow on-site personnel to manage and adjust data access services APIs as specified in Appendix C.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:1"
+      ]
+    },
+    {
+      "id": "P-009",
+      "category": "interfaces",
+      "text": "Specifically, it should be able to redefine or reset names of connect descriptors for database server instances.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:2"
+      ]
+    },
+    {
+      "id": "P-010",
+      "category": "interfaces",
+      "text": "The system must internally interface with existing data elements from DBIF, DAC, and COTS RDBMS products without requiring operator intervention.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:3"
+      ]
+    },
+    {
+      "id": "P-011",
+      "category": "interfaces",
+      "text": "Additionally, the XS function needs to provide standard APIs as outlined in Appendix C.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:4"
+      ]
+    },
+    {
+      "id": "P-012",
+      "category": "interfaces",
+      "text": "Compliance level requirements described in the I&RTS will be enforced and monitored by on-site personnel through adherence to these standards.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:1"
+      ]
+    },
+    {
+      "id": "P-013",
+      "category": "non_functional",
+      "text": "We need to be able to configure session time-out values based on user roles and workloads.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:1"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "P-014",
+      "category": "non_functional",
+      "text": "It should allow us to set these values before a user logs in and also let us adjust them as needed without affecting the current active sessions.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "P-015",
+      "category": "non_functional",
+      "text": "Maintenance tasks like shutting down or upgrading the system should not disrupt this setting process.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "P-016",
+      "category": "constraints",
+      "text": "The Registry software needs to be flexible enough to run smoothly across different environments, which means it should work well on any COE-compliant platform we choose.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:2"
+      ]
+    },
+    {
+      "id": "P-017",
+      "category": "constraints",
+      "text": "This is important because our deployment process will need to accommodate various scenarios, from small-scale testing to large-scale production with up to 1000 concurrent users.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:3"
+      ]
+    },
+    {
+      "id": "P-018",
+      "category": "constraints",
+      "text": "Ideally, it should be able to scale efficiently and maintain performance even under heavy load.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:6"
+      ]
+    },
+    {
+      "id": "P-019",
+      "category": "constraints",
+      "text": "We want the system to validate credit card information for returning users but not require them to re-enter everything every time they log in.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:10"
+      ]
+    },
+    {
+      "id": "P-020",
+      "category": "non_functional",
+      "text": "For instance, when we have more than 1000 concurrent users, it should handle the load without any issues.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:3"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-021",
+      "category": "non_functional",
+      "text": "The software should be designed with clear architecture and modular components so that updating or fixing bugs becomes straightforward.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:4"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-022",
+      "category": "non_functional",
+      "text": "We've had issues before where updates caused unexpected downtime, so we need to ensure that changes can be made without disrupting service.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:6"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-023",
+      "category": "non_functional",
+      "text": "This should include automated tests for both functional and non-functional aspects of the system.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:2"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-024",
+      "category": "non_functional",
+      "text": "For security, we must verify that all customer data is encrypted both in transit and at rest.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:5"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-025",
+      "category": "non_functional",
+      "text": "We also need to ensure that the system can be easily ported to other platforms if needed, so testing should include cross-platform compatibility checks.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:6"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-026",
+      "category": "non_functional",
+      "text": "We need to ensure that when we update or debug the system, especially during transitions between different COE-compliant platforms, it should be easy to switch without causing disruptions.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:2"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-027",
+      "category": "non_functional",
+      "text": "Ideally, it would have a consistent codebase that can adapt to various environments.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:3"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-028",
+      "category": "non_functional",
+      "text": "The problem we have is ensuring that all components are well-documented and modular so they can be easily replaced or updated.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:4"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-029",
+      "category": "non_functional",
+      "text": "That's important to us because maintaining the system should not require extensive rework every time we make a change.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:6"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-030",
+      "category": "non_functional",
+      "text": "It should be able to run on multiple platforms without needing significant modifications, and it must support automated testing across all environments to catch any issues early.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:7"
+      ],
+      "nfr_category": "maintainability"
+    },
+    {
+      "id": "P-031",
+      "category": "constraints",
+      "text": "The producer should be able to submit metadata and related information resource artifacts.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:2"
+      ]
+    },
+    {
+      "id": "P-032",
+      "category": "constraints",
+      "text": "We also need the system to render semantically valid views from an XML document, like XSL transformations, which will disassemble hierarchical views into a relational representation.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:4"
+      ]
+    },
+    {
+      "id": "P-033",
+      "category": "constraints",
+      "text": "The goal here is to ensure that all metadata fields are correctly formatted and can be easily integrated into the registry services.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:6"
+      ]
+    }
+  ],
+  "removed_duplicates": []
+}

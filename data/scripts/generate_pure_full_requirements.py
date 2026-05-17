@@ -681,6 +681,9 @@ def proposition_output_cap(evidence_units: list[dict]) -> int:
 
 
 def proposition_timeout_seconds(evidence_units: list[dict]) -> int:
+    override = os.environ.get("REQ_PROPOSITION_TIMEOUT_SECONDS", "").strip()
+    if override:
+        return max(1, int(override))
     return min(240, max(90, 45 + (12 * max(1, len(evidence_units)))))
 
 
@@ -888,6 +891,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--gap-pass-top-k", type=int, default=10)
     parser.add_argument("--extraction-mode", choices=["evidence_bank", "full_context"], default="evidence_bank")
     parser.add_argument("--enable-gap-pass", action="store_true")
+    parser.add_argument("--disable-anchor-preservation", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
@@ -919,6 +923,7 @@ def main() -> int:
                     "prompt_hash": prompt_hash,
                     "final_schema_hash": final_schema_hash,
                     "proposition_schema_hash": sha256_text(proposition_schema_text),
+                    "anchor_preservation_enabled": not args.disable_anchor_preservation,
                 },
                 indent=2,
                 ensure_ascii=False,
@@ -999,14 +1004,16 @@ def main() -> int:
             threshold=args.proposition_dedup_threshold,
         )
 
-        rewritten_propositions, rewrite_count, rewrite_raw = rewrite_generic_propositions(
-            all_propositions,
-            evidence_lookup,
-            cache_namespace=f"{sample['sample_id']}-rewrite",
-        )
-        all_propositions = rewritten_propositions
-        if rewrite_raw:
-            raw_responses.append({"batch_id": "rewrite", "responses": rewrite_raw})
+        rewrite_count = 0
+        if not args.disable_anchor_preservation:
+            rewritten_propositions, rewrite_count, rewrite_raw = rewrite_generic_propositions(
+                all_propositions,
+                evidence_lookup,
+                cache_namespace=f"{sample['sample_id']}-rewrite",
+            )
+            all_propositions = rewritten_propositions
+            if rewrite_raw:
+                raw_responses.append({"batch_id": "rewrite", "responses": rewrite_raw})
 
         gap_pass_added_count = 0
         if args.enable_gap_pass and evidence_bank:
@@ -1080,6 +1087,7 @@ def main() -> int:
                 "evidence_bank_count": len(evidence_bank),
                 "proposition_count": len(all_propositions),
                 "removed_duplicate_propositions": len(removed_duplicates),
+                "anchor_preservation_enabled": not args.disable_anchor_preservation,
                 "rewrite_candidate_count": rewrite_count,
                 "gap_pass_added_count": gap_pass_added_count,
                 "grounded_after_rewrite_count": None,
@@ -1106,6 +1114,8 @@ def main() -> int:
                 "requirement_count": sum(len(final_requirements[key]) for key in REQUIREMENT_KEYS),
                 "evidence_bank_count": len(evidence_bank),
                 "proposition_count": len(all_propositions),
+                "anchor_preservation_enabled": not args.disable_anchor_preservation,
+                "rewrite_candidate_count": rewrite_count,
                 "gap_pass_added_count": gap_pass_added_count,
             }
         )

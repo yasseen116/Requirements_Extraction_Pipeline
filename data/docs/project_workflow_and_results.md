@@ -703,3 +703,110 @@ python3 scripts/run_pure_full_benchmark.py \
 ```
 
 In the exact April 28, 2026 second Gemini rerun, the benchmark runner evaluated both `gemini_full_context` and `gemini_evidence_bank`, selected `gemini_evidence_bank` under the current benchmark rule because the full-context recall advantage was only `0.01`, ran `gemini-2.5-flash` as the fixed second-layer validator, and generated the final reports automatically at run completion.
+
+## 12. Four-Document Cross-Model Paper Slice (April 29, 2026)
+
+I then built a paper-facing 4-document comparison slice to compare the current Gemini and Ollama pipelines on the same source set.
+
+Included documents:
+
+- `pure_0000_cctns`
+- `pure_0000_gamma_j`
+- `pure_1999_dii`
+- `pure_2005_microcare`
+
+Compared runs:
+
+- Gemini run: `20260429T001722Z_pure_full`
+- Ollama run: `20260429T002305Z_pure_full`
+- fixed validator model for both runs: `gemini-2.5-flash`
+
+Important comparability note:
+
+- for this 4-document comparison, the final paper report uses the completed `full_context` conversational artifacts for both models
+- the long evidence-bank workers did not complete reliably on this slice during the same overnight run window
+- so this 4-document comparison should be described as a matched full-context cross-model comparison, not as an evidence-bank-vs-evidence-bank comparison
+
+### Aggregate Results: 4-Document Paper Slice
+
+The main paper-safe headline table should emphasize semantic metrics plus weighted validator metrics.
+
+| Model | Dialogue Recall | Direct F1 | Conversational Precision | Conversational Recall | Conversational F1 | Weighted Validator Recall | Weighted Validator F1 |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Gemini `gemini-2.5-pro` | **0.9118** | 0.7784 | **0.7157** | **0.6912** | **0.7032** | **0.5294** | **0.5387** |
+| Ollama `qwen2.5:7b-instruct` | 0.8824 | **0.9203** | 0.4967 | 0.3725 | 0.4258 | 0.3211 | 0.3669 |
+
+### Main Interpretation: 4-Document Paper Slice
+
+- Gemini is clearly stronger on the dialogue-mediated end-to-end recovery condition on this 4-document slice.
+- Ollama is clearly stronger on the direct source-to-requirements condition on the same slice.
+- Gemini also achieved slightly better dialogue coverage before extraction, which means part of the gain is upstream elicitation quality rather than only downstream extraction quality.
+- The weighted Gemini validator still favors Gemini on the conversational condition, which means the semantic advantage is not just a threshold artifact.
+
+This produces a cleaner paper message than the earlier single-document comparisons alone:
+
+The local model is highly competitive when it works directly from source requirements, but the frontier Gemini model is materially better once the task becomes dialogue-mediated source recovery.
+
+### Per-Document Conversational Result Pattern
+
+Gemini beat Ollama on conversational semantic recall on all 4 documents:
+
+| Document | Gemini Conversational Recall | Ollama Conversational Recall |
+| :--- | ---: | ---: |
+| `pure_0000_cctns` | **0.7200** | 0.4100 |
+| `pure_0000_gamma_j` | **0.6140** | 0.3684 |
+| `pure_1999_dii` | **0.5909** | 0.0909 |
+| `pure_2005_microcare` | **0.8400** | 0.4800 |
+
+That matters because it shows the Gemini advantage is not coming from only one outlier document.
+
+### Dialogue-Grounding Result
+
+Both 4-document conversational runs remained fully grounded after dialogue validation:
+
+- Gemini grounded `197/197` conversational outputs in the dialogue
+- Ollama grounded `153/153` conversational outputs in the dialogue
+- both runs therefore had `0` dialogue-grounding hallucinations after validation
+
+So the cross-model gap on this slice is not "Gemini hallucinates less from nowhere."
+
+It is:
+
+- Gemini preserves more source-relevant requirement content through the dialogue-to-requirements transformation
+- Ollama loses much more source fidelity after the dialogue stage even when the dialogue itself still covers a large fraction of the source
+
+## 13. Paper-Safe Reporting Choice
+
+For the main paper-facing comparison tables, the reporting policy should now be:
+
+1. Keep the deterministic semantic metrics as the primary headline benchmark.
+2. Keep the weighted Gemini validator metrics as the secondary headline diagnostic.
+3. Do not foreground strict Gemini `full-only` recall in the main comparison tables.
+
+The reason is methodological, not cosmetic:
+
+- the strict judge is useful as a harsher appendix diagnostic
+- but it is too brittle and too low-level to serve as the main comparative headline
+- the weighted judge preserves the useful signal about partial vs full recovery without collapsing near-miss recoveries into a single harsh failure bucket
+
+So the paper-facing reporting stack should be described as:
+
+- primary layer: semantic source-grounded recovery
+- secondary layer: weighted Gemini adjudication
+- appendix-only layer: strict Gemini adjudication
+
+The raw strict metrics are still preserved in the underlying JSON artifacts if needed for appendix discussion or reviewer questions.
+
+## 14. Main Paper Artifacts
+
+Current main paper comparison artifacts:
+
+- [cross-model comparison PDF](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/paper_reports/20260429_4doc_gemini_vs_ollama/cross_model_comparison_report.pdf:1)
+- [cross-model comparison markdown](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/paper_reports/20260429_4doc_gemini_vs_ollama/cross_model_comparison_report.md:1)
+- [cross-model comparison summary JSON](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/paper_reports/20260429_4doc_gemini_vs_ollama/cross_model_comparison_summary.json:1)
+- [Gemini 4-document run](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full:1)
+- [Ollama 4-document run](/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T002305Z_pure_full:1)
+
+I also created a cleaner Obsidian-ready manuscript draft intended to become the actual submit-ready paper:
+
+- [paper_manuscript_obsidian.md](/Users/yasseen/Documents/projects/req_dataset_project/data/docs/paper_manuscript_obsidian.md:1)

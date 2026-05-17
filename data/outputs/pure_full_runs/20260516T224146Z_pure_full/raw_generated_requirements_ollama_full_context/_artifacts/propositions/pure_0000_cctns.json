@@ -1,0 +1,907 @@
+{
+  "sample_id": "pure_0000_cctns",
+  "project_summary": "Heuristic proposition fallback generated from evidence units.",
+  "propositions": [
+    {
+      "id": "P-001",
+      "category": "functional",
+      "text": "For placing an order, we should streamline the process so that customers can add items to their cart, proceed to checkout with minimal steps, and complete payment without too many interactions.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:3"
+      ]
+    },
+    {
+      "id": "P-002",
+      "category": "functional",
+      "text": "Similarly, checking order status should only require logging in or entering an order number, then viewing the current status page which displays all relevant information like delivery date and tracking details.",
+      "priority": "medium",
+      "evidence_turns": [
+        4
+      ],
+      "source_unit_ids": [
+        "4:4"
+      ]
+    },
+    {
+      "id": "P-003",
+      "category": "functional",
+      "text": "For example, when a customer logs in and starts a new order, it should recognize them and auto-populate fields like shipping address and payment method where applicable.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:3"
+      ]
+    },
+    {
+      "id": "P-004",
+      "category": "functional",
+      "text": "This will save them time and reduce errors.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:4"
+      ]
+    },
+    {
+      "id": "P-005",
+      "category": "functional",
+      "text": "Ideally, it would also allow us to show any saved payment details securely so they can just confirm or change if needed.",
+      "priority": "medium",
+      "evidence_turns": [
+        6
+      ],
+      "source_unit_ids": [
+        "6:5"
+      ]
+    },
+    {
+      "id": "P-006",
+      "category": "functional",
+      "text": "It should be able to manage a list of items across different orders, so that if they start one order but then want to make another, they can easily switch between them without losing any items.",
+      "priority": "medium",
+      "evidence_turns": [
+        8
+      ],
+      "source_unit_ids": [
+        "8:3"
+      ]
+    },
+    {
+      "id": "P-007",
+      "category": "non_functional",
+      "text": "It's really important that users can customize their menu contents based on their role or preferences.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:1"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-008",
+      "category": "non_functional",
+      "text": "We need to ensure the page length is appropriate for each task, and we should use color carefully, considering accessibility issues.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-009",
+      "category": "non_functional",
+      "text": "Familiar terms are key — navigation links should be intuitive, using language that users will recognize from their experience with similar systems.",
+      "priority": "medium",
+      "evidence_turns": [
+        10
+      ],
+      "source_unit_ids": [
+        "10:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-010",
+      "category": "non_functional",
+      "text": "For example, graphical images or videos should have alternative descriptions provided.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-011",
+      "category": "non_functional",
+      "text": "This is important for accessibility and ensuring everyone can understand the content.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-012",
+      "category": "non_functional",
+      "text": "We also want to make sure our user interfaces allow activation of controls through a variety of input devices, not just keyboards or mice.",
+      "priority": "medium",
+      "evidence_turns": [
+        12
+      ],
+      "source_unit_ids": [
+        "12:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-013",
+      "category": "non_functional",
+      "text": "Currently, some of our pages have a splash screen which can be an issue because it might not always allow for easy navigation using these tools.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-014",
+      "category": "non_functional",
+      "text": "Ideally, we should offer a skip link to bypass the splash screen so they can get straight to the content they need.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-015",
+      "category": "non_functional",
+      "text": "We also want to avoid horizontal scrolling as much as possible because it can be difficult for users with visual impairments to navigate using screen readers.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-016",
+      "category": "non_functional",
+      "text": "Lastly, we should ensure that navigation components like menus and links are placed consistently across the application so that users can predict where to find important features.",
+      "priority": "medium",
+      "evidence_turns": [
+        14
+      ],
+      "source_unit_ids": [
+        "14:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-017",
+      "category": "non_functional",
+      "text": "For example, when reading long articles or filling out forms, being able to increase the text size can make it much easier on the eyes and improve readability.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-018",
+      "category": "non_functional",
+      "text": "We should ensure that when users navigate through different sections of the application, they don't encounter issues like broken back button functionality or bookmarking problems.",
+      "priority": "medium",
+      "evidence_turns": [
+        16
+      ],
+      "source_unit_ids": [
+        "16:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-019",
+      "category": "non_functional",
+      "text": "Currently, the system can be a bit cumbersome because it has too many links that make the text hard to read at a glance.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-020",
+      "category": "non_functional",
+      "text": "We should provide an alternative text-only page as well, which would allow them to skim without getting distracted by hyperlinks.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-021",
+      "category": "non_functional",
+      "text": "To support skimming better, we need clear links, bulleted lists, highlighted keywords, and logical headings.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:4"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-022",
+      "category": "non_functional",
+      "text": "The links themselves should be marked with dashed underlines instead of solid ones to avoid overwhelming the user.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-023",
+      "category": "non_functional",
+      "text": "It's important that our interface follows a consistent design so users can easily navigate and find what they're looking for without feeling lost or confused.",
+      "priority": "medium",
+      "evidence_turns": [
+        18
+      ],
+      "source_unit_ids": [
+        "18:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-024",
+      "category": "non_functional",
+      "text": "We need to ensure that users can easily find help when they need it.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:1"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-025",
+      "category": "non_functional",
+      "text": "Each page should have a link back to the home or a recognizable landmark page.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-026",
+      "category": "non_functional",
+      "text": "To make sure users can understand the text quickly, we'll use short sentences, break up long texts into chunks, and present information as bullet points.",
+      "priority": "medium",
+      "evidence_turns": [
+        20
+      ],
+      "source_unit_ids": [
+        "20:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-027",
+      "category": "non_functional",
+      "text": "We need to ensure that users can easily understand where they are in the application.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:1"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-028",
+      "category": "non_functional",
+      "text": "For example, when a user is filling out a form for creating an account, it should clearly indicate which step they're on and how many steps remain.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:2"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-029",
+      "category": "non_functional",
+      "text": "spelling and grammar must be impeccable so as not to impede readability.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-030",
+      "category": "non_functional",
+      "text": "For instance, screen readers should be able to navigate through the application smoothly without any issues.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:7"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-031",
+      "category": "non_functional",
+      "text": "Ideally, it would be great if we could offer a variety of support features both within the app and through a browser interface.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:9"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-032",
+      "category": "non_functional",
+      "text": "If someone needs help with something specific, they should be able to access that information quickly without having to navigate away from their current task.",
+      "priority": "medium",
+      "evidence_turns": [
+        22
+      ],
+      "source_unit_ids": [
+        "22:10"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-033",
+      "category": "non_functional",
+      "text": "Each page should provide this information clearly and succinctly.",
+      "priority": "medium",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-034",
+      "category": "non_functional",
+      "text": "Currently, we've had issues with too many clicks required to get to certain sections, which can be frustrating for everyone but especially problematic for those with cognitive disabilities.",
+      "priority": "medium",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:5"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-035",
+      "category": "non_functional",
+      "text": "We should aim to streamline navigation as much as possible.",
+      "priority": "medium",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:6"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-036",
+      "category": "non_functional",
+      "text": "This will help create a familiar and common look and feel, making it easier for all users to navigate.",
+      "priority": "medium",
+      "evidence_turns": [
+        24
+      ],
+      "source_unit_ids": [
+        "24:8"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-037",
+      "category": "non_functional",
+      "text": "For example, when a link opens a new window or tab, it includes an icon next to the text to indicate this, ensuring that all users can easily identify such links.",
+      "priority": "medium",
+      "evidence_turns": [
+        26
+      ],
+      "source_unit_ids": [
+        "26:3"
+      ],
+      "nfr_category": "usability"
+    },
+    {
+      "id": "P-038",
+      "category": "non_functional",
+      "text": "For example, a user with limited permissions might try to view or modify a case they do not have access to.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:2"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-039",
+      "category": "non_functional",
+      "text": "Logging these attempts is crucial because it helps us track who tried what and when, which is vital for security audits.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:4"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-040",
+      "category": "non_functional",
+      "text": "By exporting audit trails for specific cases without affecting the stored data, we can review these logs later if needed.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:5"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-041",
+      "category": "non_functional",
+      "text": "The audit trail must be unalterable—no one should be able to change or delete it, ensuring its integrity.",
+      "priority": "medium",
+      "evidence_turns": [
+        28
+      ],
+      "source_unit_ids": [
+        "28:7"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-042",
+      "category": "non_functional",
+      "text": "For user profiles in our application, we need a way for users to log any defects or enhancement requests and track them.",
+      "priority": "medium",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:1"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-043",
+      "category": "non_functional",
+      "text": "Regarding profile management, only super-users should be able to change security attributes like access rights, security levels, privileges, and password management.",
+      "priority": "medium",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:3"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-044",
+      "category": "non_functional",
+      "text": "Users should have the ability to see, modify, and delete their own profiles as needed.",
+      "priority": "medium",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:4"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-045",
+      "category": "non_functional",
+      "text": "This ensures that each user can manage their own information while maintaining a high level of security through strict control over who can make changes.",
+      "priority": "medium",
+      "evidence_turns": [
+        30
+      ],
+      "source_unit_ids": [
+        "30:5"
+      ],
+      "nfr_category": "security"
+    },
+    {
+      "id": "P-046",
+      "category": "data",
+      "text": "For example, we allow users to define their own default values for certain fields, which is really helpful when they need to enter similar information repeatedly.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:2"
+      ]
+    },
+    {
+      "id": "P-047",
+      "category": "data",
+      "text": "Sometimes, error messages can be unclear or too technical, leading to confusion among our users.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:4"
+      ]
+    },
+    {
+      "id": "P-048",
+      "category": "data",
+      "text": "We've had issues where the system doesn't provide clear instructions on how to correct the input, making it difficult for them to resolve errors themselves.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:5"
+      ]
+    },
+    {
+      "id": "P-049",
+      "category": "data",
+      "text": "Additionally, while persistent defaults are useful, there have been times when they caused problems because users forgot to update their settings.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:7"
+      ]
+    },
+    {
+      "id": "P-050",
+      "category": "data",
+      "text": "We need a way to ensure that these defaults can be easily changed or overridden if necessary.",
+      "priority": "medium",
+      "evidence_turns": [
+        32
+      ],
+      "source_unit_ids": [
+        "32:8"
+      ]
+    },
+    {
+      "id": "P-051",
+      "category": "data",
+      "text": "However, we've had issues with data validation when these defaults don't align with our international standards.",
+      "priority": "medium",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:2"
+      ]
+    },
+    {
+      "id": "P-052",
+      "category": "data",
+      "text": "For example, AUTO-0082 requires us to consult specific International Standards for guidance, but sometimes user-defined defaults can conflict with those guidelines.",
+      "priority": "medium",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:3"
+      ]
+    },
+    {
+      "id": "P-053",
+      "category": "data",
+      "text": "AUTO-0001 emphasizes the importance of following these procedures, so we must find a balance between user convenience and strict adherence to regulations.",
+      "priority": "medium",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:6"
+      ]
+    },
+    {
+      "id": "P-054",
+      "category": "data",
+      "text": "Additionally, we've noticed that relying solely on color coding can be problematic, as it should never be the only means of conveying important information.",
+      "priority": "medium",
+      "evidence_turns": [
+        34
+      ],
+      "source_unit_ids": [
+        "34:7"
+      ]
+    },
+    {
+      "id": "P-055",
+      "category": "data",
+      "text": "We need clear and specific error messages when user-defined defaults conflict with international standards.",
+      "priority": "medium",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:1"
+      ]
+    },
+    {
+      "id": "P-056",
+      "category": "data",
+      "text": "For example, if a user sets a date format that doesn't match the ISO standard, we should inform them about the correct format and suggest using something like YYYY-MM-DD.",
+      "priority": "medium",
+      "evidence_turns": [
+        36
+      ],
+      "source_unit_ids": [
+        "36:2"
+      ]
+    },
+    {
+      "id": "P-057",
+      "category": "interfaces",
+      "text": "For example, our users should be able to adjust settings according to their needs, making sure everything remains intuitive and easy to use for both end-users and administrators.",
+      "priority": "medium",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:3"
+      ]
+    },
+    {
+      "id": "P-058",
+      "category": "interfaces",
+      "text": "The design must follow broad guidelines such as supporting multilingual interfaces, which will cater to a diverse user base.",
+      "priority": "medium",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:4"
+      ]
+    },
+    {
+      "id": "P-059",
+      "category": "interfaces",
+      "text": "Additionally, the system should ensure that no operational data is lost in case of equipment or communication network failures.",
+      "priority": "medium",
+      "evidence_turns": [
+        38
+      ],
+      "source_unit_ids": [
+        "38:5"
+      ]
+    },
+    {
+      "id": "P-060",
+      "category": "non_functional",
+      "text": "For cases accessed within the last two months, it should be able to retrieve and display them within 5-8 seconds — this is crucial for a good user experience.",
+      "priority": "medium",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P-061",
+      "category": "non_functional",
+      "text": "For older cases not accessed in the past two months, retrieval and display should happen within 20 seconds.",
+      "priority": "medium",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P-062",
+      "category": "non_functional",
+      "text": "This ensures that while less frequently used data can take longer to load, it still meets our needs without causing significant delays.",
+      "priority": "medium",
+      "evidence_turns": [
+        40
+      ],
+      "source_unit_ids": [
+        "40:5"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P-063",
+      "category": "non_functional",
+      "text": "Specifically, we should consider opening times and download times for both desktops (Windows 10, macOS Catalina) and mobile devices (iOS 14+, Android 9+).",
+      "priority": "medium",
+      "evidence_turns": [
+        42
+      ],
+      "source_unit_ids": [
+        "42:2"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P-064",
+      "category": "non_functional",
+      "text": "The system should be able to handle at least 1000 concurrent users without significant degradation in performance.",
+      "priority": "medium",
+      "evidence_turns": [
+        42
+      ],
+      "source_unit_ids": [
+        "42:3"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P-065",
+      "category": "non_functional",
+      "text": "Ideally, pages should open within less than 2 seconds under normal network conditions.",
+      "priority": "medium",
+      "evidence_turns": [
+        42
+      ],
+      "source_unit_ids": [
+        "42:4"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P-066",
+      "category": "non_functional",
+      "text": "It's important that our application can handle a range of internet speeds from fast Wi-Fi to slow 3G connections.",
+      "priority": "medium",
+      "evidence_turns": [
+        42
+      ],
+      "source_unit_ids": [
+        "42:6"
+      ],
+      "nfr_category": "performance"
+    },
+    {
+      "id": "P-067",
+      "category": "non_functional",
+      "text": "Ideally, it should not exceed 8 hours in any rolling three-month period.",
+      "priority": "medium",
+      "evidence_turns": [
+        44
+      ],
+      "source_unit_ids": [
+        "44:2"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "P-068",
+      "category": "non_functional",
+      "text": "it must not happen more than twice during that same period.",
+      "priority": "medium",
+      "evidence_turns": [
+        44
+      ],
+      "source_unit_ids": [
+        "44:4"
+      ],
+      "nfr_category": "reliability"
+    },
+    {
+      "id": "P-069",
+      "category": "functional",
+      "text": "For role-based permissions, we need to ensure that when a user performs a quick or advanced search, the system never includes any records in the result list that they don't have access to.",
+      "priority": "medium",
+      "evidence_turns": [
+        46
+      ],
+      "source_unit_ids": [
+        "46:1"
+      ]
+    },
+    {
+      "id": "P-070",
+      "category": "functional",
+      "text": "Additionally, it should be possible for users to belong to more than one group, allowing for flexible role assignments based on their tasks and responsibilities.",
+      "priority": "medium",
+      "evidence_turns": [
+        46
+      ],
+      "source_unit_ids": [
+        "46:3"
+      ]
+    },
+    {
+      "id": "P-071",
+      "category": "functional",
+      "text": "When designing different access paths or navigation structures for various user groups, we need to consider the specific tasks and information needs of each group to ensure they can efficiently find what they need.",
+      "priority": "medium",
+      "evidence_turns": [
+        46
+      ],
+      "source_unit_ids": [
+        "46:4"
+      ]
+    }
+  ],
+  "removed_duplicates": []
+}

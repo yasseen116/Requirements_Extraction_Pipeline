@@ -1,0 +1,393 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "metadata": {
+    "domain": "pure_document",
+    "source_type": "synthetic",
+    "parent_id": "pure_2005_microcare",
+    "split": "benchmark",
+    "dialogue_style": "adaptive_semantic_coverage"
+  },
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "dialogue": [
+    {
+      "turn_id": 1,
+      "role": "bot",
+      "text": "To start, what is the overall purpose and scope of this system?"
+    },
+    {
+      "turn_id": 2,
+      "role": "user",
+      "text": "This project is based on the 2005 - microcare system, and the goal is to capture the main requirements and constraints for document 2005_microcare."
+    },
+    {
+      "turn_id": 3,
+      "role": "bot",
+      "text": "Could you provide more details on the specific information that the Salesman master needs to capture during a sale?"
+    },
+    {
+      "turn_id": 4,
+      "role": "user",
+      "text": "For a sale, the Salesman master needs to capture several key pieces of information. Firstly, it should be able to record the customer's name and contact details. Secondly, we need to track the product or service being sold, including its ID and description. The quantity sold is also crucial. Additionally, the price per unit and total sale amount must be captured accurately. We want to ensure that payment method information is recorded for each transaction. It should also log the date and time of the sale, along with any special notes or comments from the Salesman. This will help us keep track of sales trends and customer interactions."
+    },
+    {
+      "turn_id": 5,
+      "role": "bot",
+      "text": "Can you specify which details need to be captured during the claim entry process and how they might differ from the sales information?"
+    },
+    {
+      "turn_id": 6,
+      "role": "user",
+      "text": "During the claim entry process, we need to capture detailed information such as the claimant's name, contact details, date of birth, and a description of the incident. This is important because it helps us verify the identity and ensure accurate claims processing. The system should also log the IP address and timestamp for each entry to maintain audit trails. Regarding sales information, we only need to capture basic transaction data like order ID and total amount, but not any personal details. Authorized users can amend or alter claim entries if needed, which is crucial for correcting errors or updating claims as necessary."
+    },
+    {
+      "turn_id": 7,
+      "role": "bot",
+      "text": "Could you elaborate on how the system should handle duplicate staff entries based on the VSP Name and Staff Code?"
+    },
+    {
+      "turn_id": 8,
+      "role": "user",
+      "text": "When adding a new staff member, the system should check for existing entries based on VSP Name and Staff Code. If there's a duplicate, it should generate a message alerting the user. However, if the user needs to save this new entry despite the duplication, they should be allowed to do so. This is important because we have had issues with staff members having similar names or codes in our system. The principles for handling such cases are defined in our PDS document, ensuring that only valid and necessary entries are saved. Additionally, it's crucial that each voucher slip contains a barcode with two unique identifiers: one for the client and another for the partner."
+    },
+    {
+      "turn_id": 9,
+      "role": "bot",
+      "text": "Could you clarify how the system should handle voucher selection and validation for different levels of facilities based on the VSP guidelines?"
+    },
+    {
+      "turn_id": 10,
+      "role": "user",
+      "text": "For voucher selection and validation, we need to ensure that the system pulls data from their own master lists for Health Sub-District, Locality, Level Of Facility, Type of facility, and Registration Body based on VSP guidelines. The principles of the vouchers and health care services should be defined in our PDS, including quality standards and monitoring measures. When it comes to invoice amounts, we need to validate that they are calculated correctly as the number of vouchers multiplied by the wholesale price. For payments, cash is the only mode accepted during distribution transactions. If a claim (treatment form) status needs to be rejected, users should mark it as such and send it back to VSP for review."
+    },
+    {
+      "turn_id": 11,
+      "role": "bot",
+      "text": "Could you provide more details on how the system should handle the allocation of vouchers based on the number required by the distributor, including any specific criteria or rules?"
+    },
+    {
+      "turn_id": 12,
+      "role": "user",
+      "text": "For voucher allocation, the system should be able to allocate relevant vouchers based on the number required by the distributor. Specifically, it needs to match the number of forms entered during claim submission with the available forms in stock. The system should print a receipt document accordingly. Additionally, when allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution. Each voucher allocated should include its number and batch number. If the status is 'Rejection' or 'Quarantine', we need to capture the reason for rejection from a predefined master list. This ensures that all necessary details are recorded accurately."
+    },
+    {
+      "turn_id": 13,
+      "role": "bot",
+      "text": "Could you provide more details on how the system should populate the reason for referral when the patient status is selected as 'Referral', and ensure it comes from the Referral Master?"
+    },
+    {
+      "turn_id": 14,
+      "role": "user",
+      "text": "When the patient status is selected as 'Referral', we need to have a way for the system to capture both 'Referred To' and 'Reason for Referral'. The reason for referral should be populated automatically from the Referral Master. This ensures consistency and accuracy in our records. Additionally, it's important that if the claim status is either ‘Rejection’ or ‘Quarantine’, we have a provision to capture the reason for the rejection or quarantine. This will help us understand the issues better and improve our processes."
+    },
+    {
+      "turn_id": 15,
+      "role": "bot",
+      "text": "Can you provide more details on the process for adding new salesmen to the Team Master and how it integrates with user roles permissions?"
+    },
+    {
+      "turn_id": 16,
+      "role": "user",
+      "text": "For adding new salesmen to the Team Master, only system admins should be able to do this. They can create any number of individual users under existing user groups. When a distribution transaction happens, the user needs to select the name of the salesman from the Team Master list. This ensures that every sale is linked to the correct team member."
+    },
+    {
+      "turn_id": 17,
+      "role": "bot",
+      "text": "Could you specify what information should be included in the document related to payment terms between MSIU and VSP?"
+    },
+    {
+      "turn_id": 18,
+      "role": "user",
+      "text": "We need the document to include all the details of the payment terms agreed between MSIU and VSP. It should capture everything that is discussed on the VSP Master Information screen, where we enter these terms. This is important because it ensures clarity and prevents any misunderstandings in the future."
+    },
+    {
+      "turn_id": 19,
+      "role": "bot",
+      "text": "Could you clarify the criteria for determining when a warning message and inactivation of an VSP should occur based on Thump Impression mismatches?"
+    },
+    {
+      "turn_id": 20,
+      "role": "user",
+      "text": "If a VSP has more than two instances of Thump Impression mismatches for the same claim, we need the system to automatically generate a warning message. At the same time, it should In-Activate that VSP. This is important because it helps us catch and address potential issues promptly without disrupting service for other users."
+    }
+  ],
+  "dialogue_generation": {
+    "method": "g_adaptive_semantic_coverage_v2",
+    "model": "qwen2.5:7b-instruct",
+    "prompt_hash": "fedce691ffc0c220a6c2ce1eafe35d01f4b661ebbfe2e77f828010c8af7381a9",
+    "schema_hash": "9be8d6915a55c470069248e40ccedc82f618947177ed980cd44251e29f62cc21",
+    "max_reqs_per_answer": 4,
+    "max_chars_per_answer": 900,
+    "coverage_threshold": 0.55,
+    "max_turns": 28,
+    "target_dialogue_recall": 0.82,
+    "theme_max_exchanges": 3,
+    "question_algorithm_version": "semantic_gap_llm_v2",
+    "question_algorithm_summary": "Select the next question by semantically scoring uncovered requirements against dialogue evidence, ranking uncovered themes by priority and uncovered count, constructing one focused prompt from the top uncovered requirement snippets plus recent dialogue context, and asking the active LLM for exactly one natural follow-up question. If global recall is reached but critical themes remain under-covered, use clarification rounds to force targeted follow-up on those weak clusters. Fixed fallback templates are used only if JSON generation fails.",
+    "clarification_rounds": 2,
+    "trace": [
+      {
+        "theme": "goal_scope",
+        "req_ids": [],
+        "bot_turn_id": 1,
+        "user_turn_id": 2,
+        "generation_mode": "deterministic_scope",
+        "coverage_ratio": 1.0,
+        "stage": "adaptive_opening"
+      },
+      {
+        "theme": "functional_capabilities",
+        "req_ids": [
+          "AUTO-0007"
+        ],
+        "bot_turn_id": 3,
+        "user_turn_id": 4,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 25
+      },
+      {
+        "theme": "security_audit",
+        "req_ids": [
+          "AUTO-0020",
+          "AUTO-0024"
+        ],
+        "bot_turn_id": 5,
+        "user_turn_id": 6,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 24
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0011",
+          "AUTO-0013",
+          "AUTO-0001",
+          "AUTO-0005"
+        ],
+        "bot_turn_id": 7,
+        "user_turn_id": 8,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 20
+      },
+      {
+        "theme": "data_validation",
+        "req_ids": [
+          "AUTO-0011",
+          "AUTO-0001",
+          "AUTO-0009",
+          "AUTO-0019"
+        ],
+        "bot_turn_id": 9,
+        "user_turn_id": 10,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 15
+      },
+      {
+        "theme": "workflows_business_rules",
+        "req_ids": [
+          "AUTO-0021",
+          "AUTO-0022",
+          "AUTO-0008",
+          "AUTO-0016"
+        ],
+        "bot_turn_id": 11,
+        "user_turn_id": 12,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 10
+      },
+      {
+        "theme": "workflows_business_rules",
+        "req_ids": [
+          "AUTO-0021",
+          "AUTO-0022"
+        ],
+        "bot_turn_id": 13,
+        "user_turn_id": 14,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 7
+      },
+      {
+        "theme": "user_roles_permissions",
+        "req_ids": [
+          "AUTO-0025",
+          "AUTO-0006"
+        ],
+        "bot_turn_id": 15,
+        "user_turn_id": 16,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "adaptive",
+        "focus_label": null,
+        "uncovered_requirement_count_at_start": 5
+      },
+      {
+        "theme": "reporting_documentation",
+        "req_ids": [
+          "AUTO-0017",
+          "AUTO-0012"
+        ],
+        "bot_turn_id": 17,
+        "user_turn_id": 18,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "clarification",
+        "focus_label": "reporting_documentation",
+        "uncovered_requirement_count_at_start": 3
+      },
+      {
+        "theme": "deployment_environment_constraints",
+        "req_ids": [
+          "AUTO-0023"
+        ],
+        "bot_turn_id": 19,
+        "user_turn_id": 20,
+        "generation_mode": "ollama|ollama",
+        "coverage_ratio": 0.0,
+        "stage": "clarification",
+        "focus_label": "deployment_environment_constraints",
+        "uncovered_requirement_count_at_start": 2
+      }
+    ],
+    "fallback_chunk_count": 0,
+    "clarification_chunk_count": 2,
+    "coverage_summary": {
+      "clarification_rounds_requested": 2,
+      "clarification_rounds_used": 2,
+      "initial_uncovered_requirement_count": 25,
+      "final_uncovered_requirement_count": 1,
+      "final_uncovered_req_ids": [
+        "AUTO-0017"
+      ],
+      "coverage_history": [
+        0.0,
+        0.040000000000000036,
+        0.19999999999999996,
+        0.4,
+        0.6,
+        0.72,
+        0.8,
+        0.88,
+        0.92,
+        0.96
+      ],
+      "exchanges": 10,
+      "target_dialogue_recall": 0.82,
+      "final_dialogue_recall": 0.96,
+      "theme_exchange_counts": {
+        "functional_capabilities": 1,
+        "security_audit": 1,
+        "data_validation": 2,
+        "workflows_business_rules": 2,
+        "user_roles_permissions": 1,
+        "reporting_documentation": 1,
+        "deployment_environment_constraints": 1
+      },
+      "theme_coverage": {
+        "user_roles_permissions": {
+          "total": 5,
+          "covered": 5,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "functional_capabilities": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "workflows_business_rules": {
+          "total": 10,
+          "covered": 10,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "data_validation": {
+          "total": 9,
+          "covered": 9,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "interfaces_integrations": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "performance_capacity": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "availability_reliability": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "security_audit": {
+          "total": 2,
+          "covered": 2,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "usability_help_accessibility": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "deployment_environment_constraints": {
+          "total": 1,
+          "covered": 1,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "maintainability_portability_testability": {
+          "total": 0,
+          "covered": 0,
+          "uncovered": 0,
+          "recall": 1.0
+        },
+        "reporting_documentation": {
+          "total": 7,
+          "covered": 6,
+          "uncovered": 1,
+          "recall": 0.8571428571428571
+        },
+        "other_constraints": {
+          "total": 7,
+          "covered": 7,
+          "uncovered": 0,
+          "recall": 1.0
+        }
+      },
+      "critical_theme_gaps": [],
+      "stopped_reason": "target_dialogue_recall_reached"
+    }
+  }
+}

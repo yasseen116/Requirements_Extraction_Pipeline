@@ -62,6 +62,22 @@ def int_fmt(value: int | None) -> str:
     return str(value)
 
 
+def bold(text: str) -> str:
+    return f"**{text}**"
+
+
+def highlight_pair_markdown(left: float | None, right: float | None) -> tuple[str, str]:
+    left_text = metric_fmt(left)
+    right_text = metric_fmt(right)
+    if left is None or right is None:
+        return left_text, right_text
+    if left > right:
+        return bold(left_text), right_text
+    if right > left:
+        return left_text, bold(right_text)
+    return bold(left_text), bold(right_text)
+
+
 def resolve_metric_path(run_dir: Path, comparison_summary: dict, key: str) -> Path | None:
     rel = comparison_summary.get("paths", {}).get(key)
     if not rel:
@@ -305,6 +321,11 @@ def md_table(headers: list[str], rows: list[list[str]]) -> str:
     return "\n".join(lines)
 
 
+def emphasize_headers(headers: list[str], indices: list[int]) -> list[str]:
+    index_set = set(indices)
+    return [bold(header) if idx in index_set else header for idx, header in enumerate(headers)]
+
+
 def build_markdown(summary: dict, run_a: dict, run_b: dict) -> str:
     labels = [run_a["label"], run_b["label"]]
 
@@ -335,8 +356,8 @@ def build_markdown(summary: dict, run_a: dict, run_b: dict) -> str:
                 metric_fmt(pipeline.get("micro_precision")),
                 metric_fmt(pipeline.get("micro_coverage_recall")),
                 metric_fmt(pipeline.get("micro_f1")),
-                metric_fmt(llm.get("micro_coverage_recall")),
                 metric_fmt(llm.get("micro_weighted_coverage_recall")),
+                metric_fmt(llm.get("micro_weighted_f1")),
             ]
         )
 
@@ -348,47 +369,72 @@ def build_markdown(summary: dict, run_a: dict, run_b: dict) -> str:
     for doc in summary["documents"]:
         a = doc["runs"].get(labels[0]) or {}
         b = doc["runs"].get(labels[1]) or {}
+        a_dialogue_recall = (a.get("dialogue") or {}).get("coverage_recall")
+        b_dialogue_recall = (b.get("dialogue") or {}).get("coverage_recall")
+        a_direct_p = (a.get("direct_semantic") or {}).get("precision")
+        b_direct_p = (b.get("direct_semantic") or {}).get("precision")
+        a_direct_r = (a.get("direct_semantic") or {}).get("recall")
+        b_direct_r = (b.get("direct_semantic") or {}).get("recall")
+        a_direct_f1 = (a.get("direct_semantic") or {}).get("f1")
+        b_direct_f1 = (b.get("direct_semantic") or {}).get("f1")
+        a_pipeline_p = (a.get("pipeline_semantic") or {}).get("precision")
+        b_pipeline_p = (b.get("pipeline_semantic") or {}).get("precision")
+        a_pipeline_r = (a.get("pipeline_semantic") or {}).get("recall")
+        b_pipeline_r = (b.get("pipeline_semantic") or {}).get("recall")
+        a_pipeline_f1 = (a.get("pipeline_semantic") or {}).get("f1")
+        b_pipeline_f1 = (b.get("pipeline_semantic") or {}).get("f1")
+        a_weighted_r = (a.get("pipeline_llm") or {}).get("weighted_recall")
+        b_weighted_r = (b.get("pipeline_llm") or {}).get("weighted_recall")
+        a_weighted_f1 = (a.get("pipeline_llm") or {}).get("weighted_f1")
+        b_weighted_f1 = (b.get("pipeline_llm") or {}).get("weighted_f1")
+        dialogue_pair = highlight_pair_markdown(a_dialogue_recall, b_dialogue_recall)
+        direct_p_pair = highlight_pair_markdown(a_direct_p, b_direct_p)
+        direct_r_pair = highlight_pair_markdown(a_direct_r, b_direct_r)
+        direct_f1_pair = highlight_pair_markdown(a_direct_f1, b_direct_f1)
+        pipeline_p_pair = highlight_pair_markdown(a_pipeline_p, b_pipeline_p)
+        pipeline_r_pair = highlight_pair_markdown(a_pipeline_r, b_pipeline_r)
+        pipeline_f1_pair = highlight_pair_markdown(a_pipeline_f1, b_pipeline_f1)
+        weighted_r_pair = highlight_pair_markdown(a_weighted_r, b_weighted_r)
+        weighted_f1_pair = highlight_pair_markdown(a_weighted_f1, b_weighted_f1)
         dialogue_rows.append(
             [
                 doc["sample_id"],
                 int_fmt(doc["source_requirement_count"]),
-                metric_fmt((a.get("dialogue") or {}).get("coverage_recall")),
+                dialogue_pair[0],
                 int_fmt((a.get("dialogue") or {}).get("support_unit_count")),
-                metric_fmt((b.get("dialogue") or {}).get("coverage_recall")),
+                dialogue_pair[1],
                 int_fmt((b.get("dialogue") or {}).get("support_unit_count")),
             ]
         )
         direct_rows.append(
             [
                 doc["sample_id"],
-                metric_fmt((a.get("direct_semantic") or {}).get("precision")),
-                metric_fmt((a.get("direct_semantic") or {}).get("recall")),
-                metric_fmt((a.get("direct_semantic") or {}).get("f1")),
-                metric_fmt((b.get("direct_semantic") or {}).get("precision")),
-                metric_fmt((b.get("direct_semantic") or {}).get("recall")),
-                metric_fmt((b.get("direct_semantic") or {}).get("f1")),
+                metric_fmt(a_direct_p),
+                direct_r_pair[0],
+                metric_fmt(a_direct_f1),
+                metric_fmt(b_direct_p),
+                direct_r_pair[1],
+                metric_fmt(b_direct_f1),
             ]
         )
         pipeline_rows.append(
             [
                 doc["sample_id"],
-                metric_fmt((a.get("pipeline_semantic") or {}).get("precision")),
-                metric_fmt((a.get("pipeline_semantic") or {}).get("recall")),
-                metric_fmt((a.get("pipeline_semantic") or {}).get("f1")),
-                metric_fmt((b.get("pipeline_semantic") or {}).get("precision")),
-                metric_fmt((b.get("pipeline_semantic") or {}).get("recall")),
-                metric_fmt((b.get("pipeline_semantic") or {}).get("f1")),
+                metric_fmt(a_pipeline_p),
+                pipeline_r_pair[0],
+                metric_fmt(a_pipeline_f1),
+                metric_fmt(b_pipeline_p),
+                pipeline_r_pair[1],
+                metric_fmt(b_pipeline_f1),
             ]
         )
         validator_rows.append(
             [
                 doc["sample_id"],
-                metric_fmt((a.get("pipeline_llm") or {}).get("strict_recall")),
-                metric_fmt((a.get("pipeline_llm") or {}).get("weighted_recall")),
-                metric_fmt((a.get("pipeline_llm") or {}).get("weighted_f1")),
-                metric_fmt((b.get("pipeline_llm") or {}).get("strict_recall")),
-                metric_fmt((b.get("pipeline_llm") or {}).get("weighted_recall")),
-                metric_fmt((b.get("pipeline_llm") or {}).get("weighted_f1")),
+                weighted_r_pair[0],
+                metric_fmt(a_weighted_f1),
+                weighted_r_pair[1],
+                metric_fmt(b_weighted_f1),
             ]
         )
         diagnostics_rows.append(
@@ -403,59 +449,103 @@ def build_markdown(summary: dict, run_a: dict, run_b: dict) -> str:
             ]
         )
 
+    dialogue_pair = highlight_pair_markdown(
+        (run_a["dialogue_aggregate"] or {}).get("micro_coverage_recall"),
+        (run_b["dialogue_aggregate"] or {}).get("micro_coverage_recall"),
+    )
+    direct_f1_pair = highlight_pair_markdown(
+        (run_a["direct_aggregate"] or {}).get("micro_f1"),
+        (run_b["direct_aggregate"] or {}).get("micro_f1"),
+    )
+    pipeline_r_pair = highlight_pair_markdown(
+        (run_a["pipeline_aggregate"] or {}).get("micro_coverage_recall"),
+        (run_b["pipeline_aggregate"] or {}).get("micro_coverage_recall"),
+    )
+    pipeline_f1_pair = highlight_pair_markdown(
+        (run_a["pipeline_aggregate"] or {}).get("micro_f1"),
+        (run_b["pipeline_aggregate"] or {}).get("micro_f1"),
+    )
+    weighted_r_pair = highlight_pair_markdown(
+        (run_a["pipeline_llm_aggregate"] or {}).get("micro_weighted_coverage_recall"),
+        (run_b["pipeline_llm_aggregate"] or {}).get("micro_weighted_coverage_recall"),
+    )
+
     parts = [
         "# PURE 4-Document Cross-Model Paper Report",
         "",
         f"Generated: `{summary['generated_at_utc']}`",
         "",
+        "## Headline Findings",
+        "",
+        f"- Higher dialogue recall: {labels[0]} {dialogue_pair[0]} vs {labels[1]} {dialogue_pair[1]}",
+        f"- Stronger direct baseline F1: {labels[0]} {direct_f1_pair[0]} vs {labels[1]} {direct_f1_pair[1]}",
+        f"- Stronger conversational semantic recall: {labels[0]} {pipeline_r_pair[0]} vs {labels[1]} {pipeline_r_pair[1]}",
+        f"- Stronger conversational semantic F1: {labels[0]} {pipeline_f1_pair[0]} vs {labels[1]} {pipeline_f1_pair[1]}",
+        f"- Stronger weighted conversational validator recall: {labels[0]} {weighted_r_pair[0]} vs {labels[1]} {weighted_r_pair[1]}",
+        "",
         "## Included Documents",
         "",
         md_table(["Sample ID", "Document ID", "Source Requirements"], doc_rows),
         "",
-        "## Aggregate Comparison",
+        "## Aggregate Headline Metrics",
         "",
         md_table(
-            [
-                "Model",
-                "Generation Model",
-                "Dialogue Recall",
-                "Direct P",
-                "Direct R",
-                "Direct F1",
-                "Pipeline P",
-                "Pipeline R",
-                "Pipeline F1",
-                "LLM Strict R",
-                "LLM Weighted R",
-            ],
+            emphasize_headers(
+                [
+                    "Model",
+                    "Generation Model",
+                    "Dialogue Recall",
+                    "Direct P",
+                    "Direct R",
+                    "Direct F1",
+                    "Pipeline P",
+                    "Pipeline R",
+                    "Pipeline F1",
+                    "LLM Weighted R",
+                    "LLM Weighted F1",
+                ],
+                [2, 4, 7, 9],
+            ),
             aggregate_rows,
         ),
         "",
         "## Per-Document Dialogue Coverage",
         "",
         md_table(
-            ["Sample ID", "Reqs", f"{labels[0]} Recall", f"{labels[0]} Units", f"{labels[1]} Recall", f"{labels[1]} Units"],
+            emphasize_headers(
+                ["Sample ID", "Reqs", f"{labels[0]} Recall", f"{labels[0]} Units", f"{labels[1]} Recall", f"{labels[1]} Units"],
+                [2, 4],
+            ),
             dialogue_rows,
         ),
         "",
         "## Per-Document Direct Semantic Metrics",
         "",
         md_table(
-            ["Sample ID", f"{labels[0]} P", f"{labels[0]} R", f"{labels[0]} F1", f"{labels[1]} P", f"{labels[1]} R", f"{labels[1]} F1"],
+            emphasize_headers(
+                ["Sample ID", f"{labels[0]} P", f"{labels[0]} R", f"{labels[0]} F1", f"{labels[1]} P", f"{labels[1]} R", f"{labels[1]} F1"],
+                [2, 5],
+            ),
             direct_rows,
         ),
         "",
         "## Per-Document Conversational Semantic Metrics",
         "",
         md_table(
-            ["Sample ID", f"{labels[0]} P", f"{labels[0]} R", f"{labels[0]} F1", f"{labels[1]} P", f"{labels[1]} R", f"{labels[1]} F1"],
+            emphasize_headers(
+                ["Sample ID", f"{labels[0]} P", f"{labels[0]} R", f"{labels[0]} F1", f"{labels[1]} P", f"{labels[1]} R", f"{labels[1]} F1"],
+                [2, 5],
+            ),
             pipeline_rows,
         ),
         "",
-        "## Per-Document Conversational Validator Metrics",
+        "## Per-Document Conversational Weighted Validator Metrics",
         "",
         md_table(
-            ["Sample ID", f"{labels[0]} Strict R", f"{labels[0]} Weighted R", f"{labels[0]} Weighted F1", f"{labels[1]} Strict R", f"{labels[1]} Weighted R", f"{labels[1]} Weighted F1"],
+            emphasize_headers(
+                ["Sample ID", f"{labels[0]} Weighted R", f"{labels[0]} Weighted F1", f"{labels[1]} Weighted R", f"{labels[1]} Weighted F1"],
+                [1, 3],
+            ),
             validator_rows,
         ),
         "",
@@ -501,27 +591,40 @@ def build_pdf(summary: dict, run_a: dict, run_b: dict, output_path: Path) -> Non
         elements.append(Paragraph(text, styles["Heading2"]))
         elements.append(Spacer(1, 0.08 * inch))
 
-    def add_table(headers: list[str], rows: list[list[str]], col_widths: list[float] | None = None) -> None:
+    def add_body(text: str) -> None:
+        elements.append(Paragraph(text, styles["BodyText"]))
+        elements.append(Spacer(1, 0.06 * inch))
+
+    def add_table(
+        headers: list[str],
+        rows: list[list[str]],
+        col_widths: list[float] | None = None,
+        highlight_columns: list[int] | None = None,
+    ) -> None:
         data = [headers, *rows]
         table = Table(data, repeatRows=1, colWidths=col_widths)
-        table.setStyle(
-            TableStyle(
+        table_styles = [
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#D9EAFE")),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.black),
+            ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#888888")),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+            ("FONTNAME", (0, 1), (-1, -1), "Helvetica"),
+            ("FONTSIZE", (0, 0), (-1, -1), 8),
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F7F7F7")]),
+            ("LEFTPADDING", (0, 0), (-1, -1), 4),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+            ("TOPPADDING", (0, 0), (-1, -1), 4),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+        ]
+        for column in highlight_columns or []:
+            table_styles.extend(
                 [
-                    ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#D9EAFE")),
-                    ("TEXTCOLOR", (0, 0), (-1, 0), colors.black),
-                    ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#888888")),
-                    ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-                    ("FONTNAME", (0, 1), (-1, -1), "Helvetica"),
-                    ("FONTSIZE", (0, 0), (-1, -1), 8),
-                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                    ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F7F7F7")]),
-                    ("LEFTPADDING", (0, 0), (-1, -1), 4),
-                    ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-                    ("TOPPADDING", (0, 0), (-1, -1), 4),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                    ("BACKGROUND", (column, 0), (column, 0), colors.HexColor("#BCD7FF")),
+                    ("BACKGROUND", (column, 1), (column, -1), colors.HexColor("#EEF5FF")),
                 ]
             )
-        )
+        table.setStyle(TableStyle(table_styles))
         elements.append(table)
         elements.append(Spacer(1, 0.16 * inch))
 
@@ -542,9 +645,29 @@ def build_pdf(summary: dict, run_a: dict, run_b: dict, output_path: Path) -> Non
         col_widths=[2.2 * inch, 1.8 * inch, 1.2 * inch],
     )
 
-    add_heading("Aggregate Comparison")
+    dialogue_a = metric_fmt((run_a["dialogue_aggregate"] or {}).get("micro_coverage_recall"))
+    dialogue_b = metric_fmt((run_b["dialogue_aggregate"] or {}).get("micro_coverage_recall"))
+    direct_f1_a = metric_fmt((run_a["direct_aggregate"] or {}).get("micro_f1"))
+    direct_f1_b = metric_fmt((run_b["direct_aggregate"] or {}).get("micro_f1"))
+    pipeline_r_a = metric_fmt((run_a["pipeline_aggregate"] or {}).get("micro_coverage_recall"))
+    pipeline_r_b = metric_fmt((run_b["pipeline_aggregate"] or {}).get("micro_coverage_recall"))
+    pipeline_f1_a = metric_fmt((run_a["pipeline_aggregate"] or {}).get("micro_f1"))
+    pipeline_f1_b = metric_fmt((run_b["pipeline_aggregate"] or {}).get("micro_f1"))
+    weighted_r_a = metric_fmt((run_a["pipeline_llm_aggregate"] or {}).get("micro_weighted_coverage_recall"))
+    weighted_r_b = metric_fmt((run_b["pipeline_llm_aggregate"] or {}).get("micro_weighted_coverage_recall"))
+
+    add_heading("Headline Findings")
+    add_body(
+        f"Higher dialogue recall: {labels[0]} {dialogue_a} vs {labels[1]} {dialogue_b}<br/>"
+        f"Stronger direct baseline F1: {labels[0]} {direct_f1_a} vs {labels[1]} {direct_f1_b}<br/>"
+        f"Stronger conversational semantic recall: {labels[0]} {pipeline_r_a} vs {labels[1]} {pipeline_r_b}<br/>"
+        f"Stronger conversational semantic F1: {labels[0]} {pipeline_f1_a} vs {labels[1]} {pipeline_f1_b}<br/>"
+        f"Stronger weighted conversational validator recall: {labels[0]} {weighted_r_a} vs {labels[1]} {weighted_r_b}"
+    )
+
+    add_heading("Aggregate Headline Metrics")
     add_table(
-        ["Model", "Dialogue R", "Direct P", "Direct R", "Direct F1", "Pipeline P", "Pipeline R", "Pipeline F1", "LLM Strict R", "LLM Weighted R"],
+        ["Model", "Dialogue R", "Direct P", "Direct R", "Direct F1", "Pipeline P", "Pipeline R", "Pipeline F1", "LLM Weighted R", "LLM Weighted F1"],
         [
             [
                 run["label"],
@@ -555,11 +678,12 @@ def build_pdf(summary: dict, run_a: dict, run_b: dict, output_path: Path) -> Non
                 metric_fmt((run["pipeline_aggregate"] or {}).get("micro_precision")),
                 metric_fmt((run["pipeline_aggregate"] or {}).get("micro_coverage_recall")),
                 metric_fmt((run["pipeline_aggregate"] or {}).get("micro_f1")),
-                metric_fmt((run["pipeline_llm_aggregate"] or {}).get("micro_coverage_recall")),
                 metric_fmt((run["pipeline_llm_aggregate"] or {}).get("micro_weighted_coverage_recall")),
+                metric_fmt((run["pipeline_llm_aggregate"] or {}).get("micro_weighted_f1")),
             ]
             for run in [run_a, run_b]
         ],
+        highlight_columns=[1, 3, 6, 8],
     )
 
     add_heading("Per-Document Dialogue Coverage")
@@ -576,6 +700,7 @@ def build_pdf(summary: dict, run_a: dict, run_b: dict, output_path: Path) -> Non
             ]
             for doc in summary["documents"]
         ],
+        highlight_columns=[2, 4],
     )
 
     add_heading("Per-Document Direct Semantic Metrics")
@@ -593,6 +718,7 @@ def build_pdf(summary: dict, run_a: dict, run_b: dict, output_path: Path) -> Non
             ]
             for doc in summary["documents"]
         ],
+        highlight_columns=[2, 5],
     )
 
     add_heading("Per-Document Conversational Semantic Metrics")
@@ -610,24 +736,24 @@ def build_pdf(summary: dict, run_a: dict, run_b: dict, output_path: Path) -> Non
             ]
             for doc in summary["documents"]
         ],
+        highlight_columns=[2, 5],
     )
 
     elements.append(PageBreak())
-    add_heading("Per-Document Conversational Validator Metrics")
+    add_heading("Per-Document Conversational Weighted Validator Metrics")
     add_table(
-        ["Sample ID", f"{labels[0]} Strict R", f"{labels[0]} Weighted R", f"{labels[0]} Weighted F1", f"{labels[1]} Strict R", f"{labels[1]} Weighted R", f"{labels[1]} Weighted F1"],
+        ["Sample ID", f"{labels[0]} Weighted R", f"{labels[0]} Weighted F1", f"{labels[1]} Weighted R", f"{labels[1]} Weighted F1"],
         [
             [
                 doc["sample_id"],
-                metric_fmt((doc["runs"].get(labels[0]) or {}).get("pipeline_llm", {}).get("strict_recall")),
                 metric_fmt((doc["runs"].get(labels[0]) or {}).get("pipeline_llm", {}).get("weighted_recall")),
                 metric_fmt((doc["runs"].get(labels[0]) or {}).get("pipeline_llm", {}).get("weighted_f1")),
-                metric_fmt((doc["runs"].get(labels[1]) or {}).get("pipeline_llm", {}).get("strict_recall")),
                 metric_fmt((doc["runs"].get(labels[1]) or {}).get("pipeline_llm", {}).get("weighted_recall")),
                 metric_fmt((doc["runs"].get(labels[1]) or {}).get("pipeline_llm", {}).get("weighted_f1")),
             ]
             for doc in summary["documents"]
         ],
+        highlight_columns=[1, 3],
     )
 
     add_heading("Per-Document Conversational Diagnostics")

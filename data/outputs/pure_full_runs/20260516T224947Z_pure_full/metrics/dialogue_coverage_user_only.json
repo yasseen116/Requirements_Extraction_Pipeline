@@ -1,0 +1,91 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260516T224947Z_pure_full/source_requirements",
+  "dialogue_dir": "outputs/pure_full_runs/20260516T224947Z_pure_full/expanded_dialogues",
+  "match_threshold": 0.55,
+  "user_only": true,
+  "support_unit": "user_sentence_or_clause_context",
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 4,
+    "macro_coverage_recall": 0.8870494417862839,
+    "micro_coverage_recall": 0.8823529411764706,
+    "macro_average_best_turn_score": 0.7080379909280528,
+    "total_source_requirements": 204,
+    "total_covered_requirements": 180,
+    "total_support_units": 327
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "covered_count": 90,
+      "coverage_recall": 0.9,
+      "average_best_turn_score": 0.6784586855769157,
+      "uncovered_source_examples": [
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "the most stringent) implies that the System must not include such cases in any count of search results;",
+        "Such configurations must be saved in the user profile.",
+        "These defaults should include: user-definable values;",
+        "Frequently-executed System transactions must be designed so that they can be completed with a small number of interactions (e.g.",
+        "Avoiding opening unnecessary windows: Additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task.",
+        "The System be scaleable and must not have any features which would preclude use in small or large police stations, with varying numbers of cases handled."
+      ],
+      "turn_count": 46,
+      "support_unit_count": 128
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "covered_count": 47,
+      "coverage_recall": 0.8245614035087719,
+      "average_best_turn_score": 0.6750428519750896,
+      "uncovered_source_examples": [
+        "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+        "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "Maintainability Requirements The system shall utilize interchangeable plugins.",
+        "The system shall be easily updatable for fixes and patches.",
+        "The system shall create logs of all changes, updates, or fixes that are done to the site.",
+        "The system shall be easy to upgrade.",
+        "Portability Requirements The system shall be extremely portable via the usb drive.",
+        "Testability Requirements The system should be able to run under debug mode.",
+        "Pre condition: A condition that must be satisfied or a state the system must be in before a use case may begin.",
+        "Requirement: A statement of a customer need or objective or of a condition or capability that a product must possess to satisfy such a need or objective."
+      ],
+      "turn_count": 38,
+      "support_unit_count": 88
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "covered_count": 19,
+      "coverage_recall": 0.8636363636363636,
+      "average_best_turn_score": 0.6997206251729619,
+      "uncovered_source_examples": [
+        "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+        "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+        "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+      ],
+      "turn_count": 22,
+      "support_unit_count": 64
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "covered_count": 24,
+      "coverage_recall": 0.96,
+      "average_best_turn_score": 0.7789298009872436,
+      "uncovered_source_examples": [
+        "The document should have the following information."
+      ],
+      "turn_count": 20,
+      "support_unit_count": 47
+    }
+  ]
+}

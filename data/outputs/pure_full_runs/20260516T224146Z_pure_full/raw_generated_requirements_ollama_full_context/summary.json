@@ -1,0 +1,50 @@
+[
+  {
+    "sample_id": "pure_0000_cctns",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T224146Z_pure_full/raw_generated_requirements_ollama_full_context/pure_0000_cctns.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 71,
+    "evidence_bank_count": 128,
+    "proposition_count": 71,
+    "anchor_preservation_enabled": true,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0
+  },
+  {
+    "sample_id": "pure_0000_gamma_j",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T224146Z_pure_full/raw_generated_requirements_ollama_full_context/pure_0000_gamma_j.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 49,
+    "evidence_bank_count": 88,
+    "proposition_count": 49,
+    "anchor_preservation_enabled": true,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0
+  },
+  {
+    "sample_id": "pure_1999_dii",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T224146Z_pure_full/raw_generated_requirements_ollama_full_context/pure_1999_dii.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 33,
+    "evidence_bank_count": 64,
+    "proposition_count": 33,
+    "anchor_preservation_enabled": true,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0
+  },
+  {
+    "sample_id": "pure_2005_microcare",
+    "path": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T224146Z_pure_full/raw_generated_requirements_ollama_full_context/pure_2005_microcare.json",
+    "parse_status": "ok",
+    "segment_count": 1,
+    "requirement_count": 22,
+    "evidence_bank_count": 47,
+    "proposition_count": 22,
+    "anchor_preservation_enabled": true,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0
+  }
+]

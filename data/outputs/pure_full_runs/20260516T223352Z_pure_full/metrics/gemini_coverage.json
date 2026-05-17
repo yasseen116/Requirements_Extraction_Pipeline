@@ -1,0 +1,472 @@
+{
+  "gold_dir": "outputs/pure_full_runs/20260516T223352Z_pure_full/source_requirements",
+  "pred_dir": "outputs/pure_full_runs/20260516T223352Z_pure_full/generated_requirements_ollama_full_context",
+  "match_threshold": 0.55,
+  "similarity_method": "cosine_sentence_transformer",
+  "aggregate": {
+    "sample_count": 4,
+    "macro_precision": 0.4749939028108042,
+    "macro_coverage_recall": 0.4382416267942584,
+    "macro_f1": 0.4481466079587739,
+    "macro_hallucination_rate": 0.5250060971891958,
+    "macro_average_match_score": 0.7288550657194475,
+    "macro_average_best_source_score": 0.6057488452690094,
+    "micro_precision": 0.4857142857142857,
+    "micro_coverage_recall": 0.4166666666666667,
+    "micro_f1": 0.44854881266490765,
+    "total_source_requirements": 204,
+    "total_generated_requirements": 175,
+    "total_matched_requirements": 85
+  },
+  "per_sample": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "generated_requirement_count": 71,
+      "matched_count": 41,
+      "precision": 0.5774647887323944,
+      "coverage_recall": 0.41,
+      "f1": 0.47953216374269003,
+      "hallucination_rate": 0.4225352112676056,
+      "average_match_score": 0.719718700501977,
+      "average_best_source_score": 0.5991001282632351,
+      "unmatched_source_examples": [
+        "Registration Citizens can register their complaints with police and then based on the evidence, facts and following investigation, police shall take the complaint forward.",
+        "Help Module The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+        "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+        "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert.",
+        "The solution should enable the user to track the submitted defect or enhancement request.",
+        "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+        "The System must keep an unalterable audit trail capable of automatically capturing and storing information about: All the actions (create/read/update/delete) that are taken upon the critical entities (case, suspect, property,...) in the system The user initiating and or carrying out the action;",
+        "it may be subject to re-department and copying to removable media if required, so long as its contents remain unchanged.",
+        "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+        "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+        "The System must at a minimum be able to provide reports for actions on cases organised: By case;",
+        "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+        "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+        "The System should allow a user to stipulate which other users or groups can access cases.",
+        "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide one of the following responses (selectable at configuration time): display title and metadata;"
+      ],
+      "unmatched_generated_examples": [
+        "For placing an order, we should streamline the process so that customers can add items to their cart, proceed to checkout with minimal steps, and complete payment without too many interactions.",
+        "Similarly, checking order status should only require logging in or entering an order number, then viewing the current status page which displays all relevant information like delivery date and tracking details.",
+        "For example, when a customer logs in and starts a new order, it should recognize them and auto-populate fields like shipping address and payment method where applicable.",
+        "Ideally, it would also allow us to show any saved payment details securely so they can just confirm or change if needed.",
+        "It should be able to manage a list of items across different orders, so that if they start one order but then want to make another, they can easily switch between them without losing any items.",
+        "For example, when reading long articles or filling out forms, being able to increase the text size can make it much easier on the eyes and improve readability.",
+        "We should ensure that when users navigate through different sections of the application, they don't encounter issues like broken back button functionality or bookmarking problems.",
+        "Currently, the system can be a bit cumbersome because it has too many links that make the text hard to read at a glance.",
+        "We need to ensure that users can easily find help when they need it.",
+        "We need to ensure that users can easily understand where they are in the application.",
+        "For example, when a user is filling out a form for creating an account, it should clearly indicate which step they're on and how many steps remain.",
+        "For instance, screen readers should be able to navigate through the application smoothly without any issues.",
+        "If someone needs help with something specific, they should be able to access that information quickly without having to navigate away from their current task.",
+        "Each page should provide this information clearly and succinctly.",
+        "Currently, we've had issues with too many clicks required to get to certain sections, which can be frustrating for everyone but especially problematic for those with cognitive disabilities."
+      ],
+      "match_examples": [
+        {
+          "score": 0.8970291614532471,
+          "source_requirement": "Taking account of the users’ tasks and information needs: When providing different access paths or navigation structures for different user groups, the tasks and information needs of these user groups should be taken into consideration.",
+          "generated_requirement": "When designing different access paths or navigation structures for various user groups, we need to consider the specific tasks and information needs of each group to ensure they can efficiently find what they need."
+        },
+        {
+          "score": 0.8689565062522888,
+          "source_requirement": "Allowing users to see and change profiles: If user-specified profiles are used, users should be able to see, modify and delete that profile on demand.",
+          "generated_requirement": "Users should have the ability to see, modify, and delete their own profiles as needed."
+        },
+        {
+          "score": 0.866023600101471,
+          "source_requirement": "The System must be able to retrieve and display within 5-8 seconds the case which has been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system.",
+          "generated_requirement": "For cases accessed within the last two months, it should be able to retrieve and display them within 5-8 seconds — this is crucial for a good user experience."
+        },
+        {
+          "score": 0.8639793992042542,
+          "source_requirement": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+          "generated_requirement": "For role-based permissions, we need to ensure that when a user performs a quick or advanced search, the system never includes any records in the result list that they don't have access to."
+        },
+        {
+          "score": 0.854464590549469,
+          "source_requirement": "Linking back to the home page or landmark pages: Each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+          "generated_requirement": "Each page should have a link back to the home or a recognizable landmark page."
+        },
+        {
+          "score": 0.84797602891922,
+          "source_requirement": "Using familiar terminology for navigation links: Navigation links — particularly links representing the main navigation structure — should be labelled with terms that are familiar to the user, based on his/her general knowledge, prior experience in the application domain or experience of using other systems.",
+          "generated_requirement": "Familiar terms are key — navigation links should be intuitive, using language that users will recognize from their experience with similar systems."
+        },
+        {
+          "score": 0.8450730443000793,
+          "source_requirement": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+          "generated_requirement": "For user profiles in our application, we need a way for users to log any defects or enhancement requests and track them."
+        },
+        {
+          "score": 0.8336452841758728,
+          "source_requirement": "Supporting text skimming: Fast skimming of text should be supported by the provision of clear links, bulleted lists, highlighted keywords, logical headings, and short phrases and sentences.",
+          "generated_requirement": "To support skimming better, we need clear links, bulleted lists, highlighted keywords, and logical headings."
+        },
+        {
+          "score": 0.8177552819252014,
+          "source_requirement": "The System must be able to retrieve and display within 20 seconds the case which has not been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system.",
+          "generated_requirement": "For older cases not accessed in the past two months, retrieval and display should happen within 20 seconds."
+        },
+        {
+          "score": 0.8147196173667908,
+          "source_requirement": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.",
+          "generated_requirement": "Regarding profile management, only super-users should be able to change security attributes like access rights, security levels, privileges, and password management."
+        },
+        {
+          "score": 0.8092272877693176,
+          "source_requirement": "If a splash screen is used, a navigation option to skip it should be offered.",
+          "generated_requirement": "Ideally, we should offer a skip link to bypass the splash screen so they can get straight to the content they need."
+        },
+        {
+          "score": 0.785551905632019,
+          "source_requirement": "Horizontal scrolling should be avoided wherever possible.",
+          "generated_requirement": "We also want to avoid horizontal scrolling as much as possible because it can be difficult for users with visual impairments to navigate using screen readers."
+        },
+        {
+          "score": 0.7840321063995361,
+          "source_requirement": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+          "generated_requirement": "By exporting audit trails for specific cases without affecting the stored data, we can review these logs later if needed."
+        },
+        {
+          "score": 0.7740647196769714,
+          "source_requirement": "Within-page links are shown with dashed rather than solid underlines Avoiding link overload: Text pages containing large proportions of links should be formatted so that the presence of links does not impede the readability of the text.",
+          "generated_requirement": "The links themselves should be marked with dashed underlines instead of solid ones to avoid overwhelming the user."
+        },
+        {
+          "score": 0.7589846253395081,
+          "source_requirement": "Designing for input device independence: User interfaces should be designed to allow activation of controls by a variety of input devices.",
+          "generated_requirement": "We also want to make sure our user interfaces allow activation of controls through a variety of input devices, not just keyboards or mice."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "generated_requirement_count": 49,
+      "matched_count": 21,
+      "precision": 0.42857142857142855,
+      "coverage_recall": 0.3684210526315789,
+      "f1": 0.39622641509433965,
+      "hallucination_rate": 0.5714285714285714,
+      "average_match_score": 0.725249571459634,
+      "average_best_source_score": 0.59144288510607,
+      "unmatched_source_examples": [
+        "Operating Environment Web Store shall operate with the following internet browsers: Microsoft Internet Explorer version 6 and 7, Netscape Communicator Version 4 and 5.",
+        "Web Store shall operate on an Intel based system with Slackware Linux 2.6 and Apache Web Server.",
+        "Design and Implementation Constraints Must use a SQL based database.",
+        "User Documentation Shall install online help for users via the web interface Shall deliver Operations and Maintenance manual, Users Guide book, and Installation Instructions for the Administrator.",
+        "SI-1.3: Plug-ins interface Communications Interfaces CI-1: The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+        "Quality Attribute Requirements Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.",
+        "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+        "The system shall be able to retrieve 200 products per second.",
+        "The system shall be able to validate credit card in less than 2 seconds.",
+        "The system shall be able to acquire shipping charges in less than 2 seconds.",
+        "Security Requirements The system shall validate credit cards against fraud.",
+        "The system shall encrypt all sensitive information via https.",
+        "The system shall encrypt all customer data in database.",
+        "The system shall be protected by open source firewall called Firestarter.",
+        "http://www.fs-security.com/ Availability Requirements The system shall have an availability of 99.99%."
+      ],
+      "unmatched_generated_examples": [
+        "It should be able to handle different types of products and quantities.",
+        "For both customers and vendors, these emails should be triggered under specific conditions such as order confirmations, payment reminders, account updates, and support requests.",
+        "We've had issues with slow login times, so we need the system to authenticate users efficiently, ensuring that it never takes more than 5 seconds for a user to log in.",
+        "Additionally, the system must support multiple browsers including Chrome, Firefox, Safari, and Edge on both Windows and macOS operating systems.",
+        "The user interface should display product titles and metadata prominently but never show any private information like credit card numbers or passwords in the browser interface.",
+        "Only authorized users, identified by their unique login credentials, should have access to certain administrative features.",
+        "We must not allow unauthorized users to modify or view sensitive data.",
+        "Lastly, we need robust logging and auditing capabilities for all user activities, ensuring that every action is recorded and can be traced back to a specific user.",
+        "Their accounts must already be registered before they can log in.",
+        "When they log in, the system should allow them to access their order history but never let them modify or delete orders that aren't theirs.",
+        "It's important because we want to protect user data and ensure only authorized users can make changes.",
+        "Additionally, before performing any maintenance tasks, such as software updates or server checks, the system should automatically back up all critical data.",
+        "This way, if something goes wrong with our primary storage, we can quickly recover from the last backup without losing too much information.",
+        "Ideally it would happen automatically at least once a day, but we should also have the option to manually trigger these tests whenever necessary.",
+        "For sure, we need the system to send out automated test emails during scheduled maintenance and after software updates."
+      ],
+      "match_examples": [
+        {
+          "score": 0.9024783372879028,
+          "source_requirement": "Yoggie shall coordinate on future enhancement and features with our organization.",
+          "generated_requirement": "Yoggie should work closely with our organization on future enhancements and new features."
+        },
+        {
+          "score": 0.8935365676879883,
+          "source_requirement": "The system shall auto detect IP DOS attacks and block IP automatically.",
+          "generated_requirement": "Additionally, the system should automatically detect and block IP addresses that show signs of DOS attacks."
+        },
+        {
+          "score": 0.8723658919334412,
+          "source_requirement": "The system shall be able to email customer and vendor in less than 1 second.",
+          "generated_requirement": "We need the system to send emails to customers and vendors as quickly as possible — ideally in less than a second."
+        },
+        {
+          "score": 0.8668428659439087,
+          "source_requirement": "The interface must remain consistent among various web browsers and be intuitive to the customer.",
+          "generated_requirement": "The web interface must be consistent across different browsers like Chrome, Firefox, and Safari, ensuring a user-friendly experience for our customers."
+        },
+        {
+          "score": 0.8555132746696472,
+          "source_requirement": "The system shall use SQL based database to store inventory information.",
+          "generated_requirement": "The system must use a SQL-based database for both inventory and other data storage to ensure consistency and reliability."
+        },
+        {
+          "score": 0.824712336063385,
+          "source_requirement": "The system shall be easy to migrate or backed up via another usb drive.",
+          "generated_requirement": "It should be easy for us to migrate or back up via another USB drive as per AUTO-0035."
+        },
+        {
+          "score": 0.7796710729598999,
+          "source_requirement": "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+          "generated_requirement": "For returning customers, the system should remember their card details but verify the card is still valid upon each login."
+        },
+        {
+          "score": 0.7768224477767944,
+          "source_requirement": "The system shall be able to restore 1000 records per second.",
+          "generated_requirement": "Specifically, it should be able to restore 1000 records per second and retrieve up to 200 products per second without any significant slowdowns."
+        },
+        {
+          "score": 0.7451233863830566,
+          "source_requirement": "The system shall detect consecutive failed login attempts.",
+          "generated_requirement": "if someone tries to log in multiple times without success, it should lock them out after a certain number of failed attempts."
+        },
+        {
+          "score": 0.7445926666259766,
+          "source_requirement": "Efficiency Requirements The system shall perform searches via Dijkstra's shortest path algorithm.",
+          "generated_requirement": "For example, it should use Dijkstra's shortest path algorithm for searching, and it needs to perform these searches quickly — ideally in less than 1 second per search."
+        },
+        {
+          "score": 0.7133144736289978,
+          "source_requirement": "Other Requirements The system hardware shall be fixed and patched via an internet connection.",
+          "generated_requirement": "For our system to operate smoothly, we need a fixed hardware setup that can be updated via an internet connection."
+        },
+        {
+          "score": 0.7071244716644287,
+          "source_requirement": "Actors: Customer Weborder System Preconditions: Customer must be able to access the web order system via a web browser with HTTPS.",
+          "generated_requirement": "Customers must access the web order system through a secure HTTPS connection from any compatible browser."
+        },
+        {
+          "score": 0.6990367770195007,
+          "source_requirement": "The system shall validate email address existence.",
+          "generated_requirement": "This validation should occur every time a new email address is entered or an existing one is updated."
+        },
+        {
+          "score": 0.6809589266777039,
+          "source_requirement": "Actors: Sales Person Weborder System Preconditions: Sales Person must be logged-in on the system.",
+          "generated_requirement": "Sales people need to be able to place orders and manage their own profiles within the Weborder System."
+        },
+        {
+          "score": 0.6631380915641785,
+          "source_requirement": "Customer must have item(s) in the shopping cart.",
+          "generated_requirement": "Customers should be able to add items to their cart and view product details."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "generated_requirement_count": 33,
+      "matched_count": 10,
+      "precision": 0.30303030303030304,
+      "coverage_recall": 0.45454545454545453,
+      "f1": 0.36363636363636365,
+      "hallucination_rate": 0.696969696969697,
+      "average_match_score": 0.7282867968082428,
+      "average_best_source_score": 0.5953984572128816,
+      "unmatched_source_examples": [
+        "DOCUMENT OVERVIEW This document outlines the software capabilities required for the XS components for the DII COE.",
+        "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+        "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+        "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+        "In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+        "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded TRAINING-RELATED REQUIREMENTS Not applicable.",
+        "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+        "OTHER REQUIREMENTS None PACKAGING REQUIREMENTS The XS software shall be delivered in accordance with DII COE guidelines.",
+        "The Qualification Methods applied to the software shall include test, demonstration, analysis, and inspection (T, D, A, I).",
+        "Facts are either links (relationships) between entities or associations between an entity and attributes Constraints are conditions about the data that must always be true.",
+        "If, after reviewing the tags in the Registry, you cannot reuse an existing specification (a.k.a.",
+        "But if they were identified as attributes of the element ctry, then the additional baggage (other attributes) must be carried, or submitted as separate elements."
+      ],
+      "unmatched_generated_examples": [
+        "In our fixed mode of operation, it should be possible for the team to tune these services as needed.",
+        "It should allow us to set these values before a user logs in and also let us adjust them as needed without affecting the current active sessions.",
+        "For instance, when we have more than 1000 concurrent users, it should handle the load without any issues.",
+        "The software should be designed with clear architecture and modular components so that updating or fixing bugs becomes straightforward.",
+        "We've had issues before where updates caused unexpected downtime, so we need to ensure that changes can be made without disrupting service.",
+        "This should include automated tests for both functional and non-functional aspects of the system.",
+        "For security, we must verify that all customer data is encrypted both in transit and at rest.",
+        "We also need to ensure that the system can be easily ported to other platforms if needed, so testing should include cross-platform compatibility checks.",
+        "We need to ensure that when we update or debug the system, especially during transitions between different COE-compliant platforms, it should be easy to switch without causing disruptions.",
+        "Ideally, it would have a consistent codebase that can adapt to various environments.",
+        "The problem we have is ensuring that all components are well-documented and modular so they can be easily replaced or updated.",
+        "That's important to us because maintaining the system should not require extensive rework every time we make a change.",
+        "It should be able to run on multiple platforms without needing significant modifications, and it must support automated testing across all environments to catch any issues early.",
+        "During testing (T), we need to ensure that our on-site personnel can run thorough checks under various conditions.",
+        "For demonstrations (D), it should be clear how the system performs in real-time usage."
+      ],
+      "match_examples": [
+        {
+          "score": 0.8090755343437195,
+          "source_requirement": "REGISTRY SERVICES ENVIRONMENT REQUIREMENTS The Registry software shall be portable and required to execute on COE-compliant platforms.",
+          "generated_requirement": "The Registry software needs to be flexible enough to run smoothly across different environments, which means it should work well on any COE-compliant platform we choose."
+        },
+        {
+          "score": 0.8041152954101562,
+          "source_requirement": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances.",
+          "generated_requirement": "Specifically, it should be able to redefine or reset names of connect descriptors for database server instances."
+        },
+        {
+          "score": 0.8014664053916931,
+          "source_requirement": "Extract semantically-valid views from an XML document (e.g., XSL) Disassemble hierarchical view to relational representation Render REGISTRY SERVICES The Registry shall provide standard APIs as specified in Appendix B.",
+          "generated_requirement": "We also need the system to render semantically valid views from an XML document, like XSL transformations, which will disassemble hierarchical views into a relational representation."
+        },
+        {
+          "score": 0.7483102679252625,
+          "source_requirement": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+          "generated_requirement": "The system must internally interface with existing data elements from DBIF, DAC, and COTS RDBMS products without requiring operator intervention."
+        },
+        {
+          "score": 0.7325292825698853,
+          "source_requirement": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+          "generated_requirement": "Our data management services need to be flexible so that on-site personnel can adjust them based on varying workloads and database sizes."
+        },
+        {
+          "score": 0.7194974422454834,
+          "source_requirement": "DATA ACCESS SERVICES INTERNAL INTERFACE REQUIREMENTS The XS function shall provide standard APIs as specified in Appendix C.",
+          "generated_requirement": "Additionally, the XS function needs to provide standard APIs as outlined in Appendix C."
+        },
+        {
+          "score": 0.7070112824440002,
+          "source_requirement": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+          "generated_requirement": "We need to be able to configure session time-out values based on user roles and workloads."
+        },
+        {
+          "score": 0.6848123669624329,
+          "source_requirement": "To contribute metadata to a registry, the producer must be able to receive XML registry forms, submit metadata and the related information resource artifacts, and notify.",
+          "generated_requirement": "The producer should be able to submit metadata and related information resource artifacts."
+        },
+        {
+          "score": 0.6435229182243347,
+          "source_requirement": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+          "generated_requirement": "Compliance level requirements described in the I&RTS will be enforced and monitored by on-site personnel through adherence to these standards."
+        },
+        {
+          "score": 0.6325271725654602,
+          "source_requirement": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+          "generated_requirement": "Maintenance tasks like shutting down or upgrading the system should not disrupt this setting process."
+        }
+      ]
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "generated_requirement_count": 22,
+      "matched_count": 13,
+      "precision": 0.5909090909090909,
+      "coverage_recall": 0.52,
+      "f1": 0.5531914893617023,
+      "hallucination_rate": 0.4090909090909091,
+      "average_match_score": 0.742165194107936,
+      "average_best_source_score": 0.6370539104938507,
+      "unmatched_source_examples": [
+        "Each voucher should have two portions with three tear off voucher slips each for Client and Partner.",
+        "This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price) Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.",
+        "Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.",
+        "The Salesman master should capture following information’s.",
+        "Invoice amount = No of vouchers x Wholesale price Mode of payment is Cash The mandatory information required during a distribution transaction is mentioned below.",
+        "The values of Health Sub – District, Locality, Level Of Facility, Type of facility, Registration Body would be list from their own master and should select the details based on the VSP.",
+        "Claim (Treatment Form) Submission Depends on the payment terms (Bi-monthly / Monthly) mentioned in the VSP master the VSP should submit the Claim (Treatment form) to the MISU Field office.",
+        "These information is vital and shall be used for compared with the processed claims.",
+        "The document should have the following information.",
+        "Before the claim entry the user should check the form manually to understand whether any mandatory information is missed in the Claim or not.",
+        "During the claim entry the system should capture the following information.",
+        "The system should have a provision to capture the reason suppose if the claim status is “Rejection or Quarantine” Claim Amount – The calculation of claim amount is explained below."
+      ],
+      "unmatched_generated_examples": [
+        "Firstly, it should be able to record the customer's name and contact details.",
+        "Secondly, we need to track the product or service being sold, including its ID and description.",
+        "Additionally, the price per unit and total sale amount must be captured accurately.",
+        "It should also log the date and time of the sale, along with any special notes or comments from the Salesman.",
+        "This will help us keep track of sales trends and customer interactions.",
+        "The system should also log the IP address and timestamp for each entry to maintain audit trails.",
+        "If there's a duplicate, it should generate a message alerting the user.",
+        "However, if the user needs to save this new entry despite the duplication, they should be allowed to do so.",
+        "This will help us understand the issues better and improve our processes."
+      ],
+      "match_examples": [
+        {
+          "score": 0.9524394273757935,
+          "source_requirement": "The principles of the voucher, the contents of the health care services, their required quality, the standards to be met by the providers and their infrastructure, as well as the measures for monitoring the quality have been defined in the PDS.",
+          "generated_requirement": "The principles of the vouchers and health care services should be defined in our PDS, including quality standards and monitoring measures."
+        },
+        {
+          "score": 0.9180961847305298,
+          "source_requirement": "If yes, then the user should mark that Claim (Treatment Form) status as Rejected and send back to VSP.",
+          "generated_requirement": "If a claim (treatment form) status needs to be rejected, users should mark it as such and send it back to VSP for review."
+        },
+        {
+          "score": 0.8743454813957214,
+          "source_requirement": "Name of the distributor* Name of the Sales Man* Date of distribution* No of vouchers sold* According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.",
+          "generated_requirement": "Additionally, when allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution."
+        },
+        {
+          "score": 0.8606039881706238,
+          "source_requirement": "The authorized user can alter / amend the Claim if required.",
+          "generated_requirement": "Authorized users can amend or alter claim entries if needed, which is crucial for correcting errors or updating claims as necessary."
+        },
+        {
+          "score": 0.813157856464386,
+          "source_requirement": "Each voucher should have the following properties, which will have sub-elements to get the batch numbers, voucher numbers, and the project codes.",
+          "generated_requirement": "Each voucher allocated should include its number and batch number."
+        },
+        {
+          "score": 0.7832692265510559,
+          "source_requirement": "VSP Name Staff Code Staff Name Staff Type Qualification The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.",
+          "generated_requirement": "When adding a new staff member, the system should check for existing entries based on VSP Name and Staff Code."
+        },
+        {
+          "score": 0.7759484052658081,
+          "source_requirement": "The system admin only can able to create User Groups The system should have the provision to create any number of individual user under any user group.",
+          "generated_requirement": "They can create any number of individual users under existing user groups."
+        },
+        {
+          "score": 0.6531301140785217,
+          "source_requirement": "Patient Status - (Select from list of status options populating from Patient Status Master) suppose the status is Referral then the system will have the provision to capture Referred To and Reason for Referral, the reason for Referral should be populated from Referral master.",
+          "generated_requirement": "The reason for referral should be populated automatically from the Referral Master."
+        },
+        {
+          "score": 0.6521874070167542,
+          "source_requirement": "While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.",
+          "generated_requirement": "For voucher allocation, the system should be able to allocate relevant vouchers based on the number required by the distributor."
+        },
+        {
+          "score": 0.6396016478538513,
+          "source_requirement": "In the transaction part no of forms should match with No of Available Forms The system should print a receipt document based on the information entered during claim submission.",
+          "generated_requirement": "The system should print a receipt document accordingly."
+        },
+        {
+          "score": 0.5942617654800415,
+          "source_requirement": "If the claim from same VSP having more than two times of Thump Impression mismatching, then the system should automatically produce a warning message and the same time the system should In-Activate the VSP.",
+          "generated_requirement": "At the same time, it should In-Activate that VSP."
+        },
+        {
+          "score": 0.5724838376045227,
+          "source_requirement": "The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.",
+          "generated_requirement": "It should capture everything that is discussed on the VSP Master Information screen, where we enter these terms."
+        },
+        {
+          "score": 0.5586221814155579,
+          "source_requirement": "During every distribution transaction the user should select the name of the sales man listed from Team Master.",
+          "generated_requirement": "For adding new salesmen to the Team Master, only system admins should be able to do this."
+        }
+      ]
+    }
+  ]
+}

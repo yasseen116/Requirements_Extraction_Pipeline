@@ -1,0 +1,687 @@
+{
+  "sample_id": "pure_0000_cctns",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "0000_cctns",
+    "title": "0000 - cctns",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/0000 - cctns.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/0000 - cctns.pdf"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": null,
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": []
+      },
+      {
+        "batch_id": "gap_pass",
+        "usage": []
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:fallback_heuristic",
+      "gap_pass:fallback_heuristic"
+    ],
+    "retrieval_top_k": 24,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 24,
+    "max_chars": 3500,
+    "stored_unique_requirements": 71
+  },
+  "diagnostics": {
+    "evidence_bank_count": 128,
+    "proposition_count": 71,
+    "removed_duplicate_propositions": 0,
+    "anchor_preservation_enabled": false,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0,
+    "grounded_after_rewrite_count": 71
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_0000_cctns.json",
+    "proposition_path": "_artifacts/propositions/pure_0000_cctns.json"
+  },
+  "project_summary": "Heuristic proposition fallback generated from evidence units.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "For placing an order, we should streamline the process so that customers can add items to their cart, proceed to checkout with minimal steps, and complete payment without too many interactions.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "Similarly, checking order status should only require logging in or entering an order number, then viewing the current status page which displays all relevant information like delivery date and tracking details.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "For example, when a customer logs in and starts a new order, it should recognize them and auto-populate fields like shipping address and payment method where applicable.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "This will save them time and reduce errors.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "Ideally, it would also allow us to show any saved payment details securely so they can just confirm or change if needed.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "It should be able to manage a list of items across different orders, so that if they start one order but then want to make another, they can easily switch between them without losing any items.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "For role-based permissions, we need to ensure that when a user performs a quick or advanced search, the system never includes any records in the result list that they don't have access to.",
+        "priority": "medium",
+        "evidence_turns": [
+          46
+        ]
+      },
+      {
+        "id": "FR-008",
+        "text": "Additionally, it should be possible for users to belong to more than one group, allowing for flexible role assignments based on their tasks and responsibilities.",
+        "priority": "medium",
+        "evidence_turns": [
+          46
+        ]
+      },
+      {
+        "id": "FR-009",
+        "text": "When designing different access paths or navigation structures for various user groups, we need to consider the specific tasks and information needs of each group to ensure they can efficiently find what they need.",
+        "priority": "medium",
+        "evidence_turns": [
+          46
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "It's really important that users can customize their menu contents based on their role or preferences.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-002",
+        "text": "We need to ensure the page length is appropriate for each task, and we should use color carefully, considering accessibility issues.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-003",
+        "text": "Familiar terms are key — navigation links should be intuitive, using language that users will recognize from their experience with similar systems.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-004",
+        "text": "For example, graphical images or videos should have alternative descriptions provided.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-005",
+        "text": "This is important for accessibility and ensuring everyone can understand the content.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-006",
+        "text": "We also want to make sure our user interfaces allow activation of controls through a variety of input devices, not just keyboards or mice.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-007",
+        "text": "Currently, some of our pages have a splash screen which can be an issue because it might not always allow for easy navigation using these tools.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-008",
+        "text": "Ideally, we should offer a skip link to bypass the splash screen so they can get straight to the content they need.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-009",
+        "text": "We also want to avoid horizontal scrolling as much as possible because it can be difficult for users with visual impairments to navigate using screen readers.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-010",
+        "text": "Lastly, we should ensure that navigation components like menus and links are placed consistently across the application so that users can predict where to find important features.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-011",
+        "text": "For example, when reading long articles or filling out forms, being able to increase the text size can make it much easier on the eyes and improve readability.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-012",
+        "text": "We should ensure that when users navigate through different sections of the application, they don't encounter issues like broken back button functionality or bookmarking problems.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-013",
+        "text": "Currently, the system can be a bit cumbersome because it has too many links that make the text hard to read at a glance.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-014",
+        "text": "We should provide an alternative text-only page as well, which would allow them to skim without getting distracted by hyperlinks.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-015",
+        "text": "To support skimming better, we need clear links, bulleted lists, highlighted keywords, and logical headings.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-016",
+        "text": "The links themselves should be marked with dashed underlines instead of solid ones to avoid overwhelming the user.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-017",
+        "text": "It's important that our interface follows a consistent design so users can easily navigate and find what they're looking for without feeling lost or confused.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-018",
+        "text": "We need to ensure that users can easily find help when they need it.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-019",
+        "text": "Each page should have a link back to the home or a recognizable landmark page.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-020",
+        "text": "To make sure users can understand the text quickly, we'll use short sentences, break up long texts into chunks, and present information as bullet points.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-021",
+        "text": "We need to ensure that users can easily understand where they are in the application.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-022",
+        "text": "For example, when a user is filling out a form for creating an account, it should clearly indicate which step they're on and how many steps remain.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-023",
+        "text": "spelling and grammar must be impeccable so as not to impede readability.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-024",
+        "text": "For instance, screen readers should be able to navigate through the application smoothly without any issues.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-025",
+        "text": "Ideally, it would be great if we could offer a variety of support features both within the app and through a browser interface.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-026",
+        "text": "If someone needs help with something specific, they should be able to access that information quickly without having to navigate away from their current task.",
+        "priority": "medium",
+        "evidence_turns": [
+          22
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-027",
+        "text": "Each page should provide this information clearly and succinctly.",
+        "priority": "medium",
+        "evidence_turns": [
+          24
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-028",
+        "text": "Currently, we've had issues with too many clicks required to get to certain sections, which can be frustrating for everyone but especially problematic for those with cognitive disabilities.",
+        "priority": "medium",
+        "evidence_turns": [
+          24
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-029",
+        "text": "We should aim to streamline navigation as much as possible.",
+        "priority": "medium",
+        "evidence_turns": [
+          24
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-030",
+        "text": "This will help create a familiar and common look and feel, making it easier for all users to navigate.",
+        "priority": "medium",
+        "evidence_turns": [
+          24
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-031",
+        "text": "For example, when a link opens a new window or tab, it includes an icon next to the text to indicate this, ensuring that all users can easily identify such links.",
+        "priority": "medium",
+        "evidence_turns": [
+          26
+        ],
+        "category": "usability"
+      },
+      {
+        "id": "NFR-032",
+        "text": "For example, a user with limited permissions might try to view or modify a case they do not have access to.",
+        "priority": "medium",
+        "evidence_turns": [
+          28
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-033",
+        "text": "Logging these attempts is crucial because it helps us track who tried what and when, which is vital for security audits.",
+        "priority": "medium",
+        "evidence_turns": [
+          28
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-034",
+        "text": "By exporting audit trails for specific cases without affecting the stored data, we can review these logs later if needed.",
+        "priority": "medium",
+        "evidence_turns": [
+          28
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-035",
+        "text": "The audit trail must be unalterable—no one should be able to change or delete it, ensuring its integrity.",
+        "priority": "medium",
+        "evidence_turns": [
+          28
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-036",
+        "text": "For user profiles in our application, we need a way for users to log any defects or enhancement requests and track them.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-037",
+        "text": "Regarding profile management, only super-users should be able to change security attributes like access rights, security levels, privileges, and password management.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-038",
+        "text": "Users should have the ability to see, modify, and delete their own profiles as needed.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-039",
+        "text": "This ensures that each user can manage their own information while maintaining a high level of security through strict control over who can make changes.",
+        "priority": "medium",
+        "evidence_turns": [
+          30
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-040",
+        "text": "For cases accessed within the last two months, it should be able to retrieve and display them within 5-8 seconds — this is crucial for a good user experience.",
+        "priority": "medium",
+        "evidence_turns": [
+          40
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-041",
+        "text": "For older cases not accessed in the past two months, retrieval and display should happen within 20 seconds.",
+        "priority": "medium",
+        "evidence_turns": [
+          40
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-042",
+        "text": "This ensures that while less frequently used data can take longer to load, it still meets our needs without causing significant delays.",
+        "priority": "medium",
+        "evidence_turns": [
+          40
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-043",
+        "text": "Specifically, we should consider opening times and download times for both desktops (Windows 10, macOS Catalina) and mobile devices (iOS 14+, Android 9+).",
+        "priority": "medium",
+        "evidence_turns": [
+          42
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-044",
+        "text": "The system should be able to handle at least 1000 concurrent users without significant degradation in performance.",
+        "priority": "medium",
+        "evidence_turns": [
+          42
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-045",
+        "text": "Ideally, pages should open within less than 2 seconds under normal network conditions.",
+        "priority": "medium",
+        "evidence_turns": [
+          42
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-046",
+        "text": "It's important that our application can handle a range of internet speeds from fast Wi-Fi to slow 3G connections.",
+        "priority": "medium",
+        "evidence_turns": [
+          42
+        ],
+        "category": "performance"
+      },
+      {
+        "id": "NFR-047",
+        "text": "Ideally, it should not exceed 8 hours in any rolling three-month period.",
+        "priority": "medium",
+        "evidence_turns": [
+          44
+        ],
+        "category": "reliability"
+      },
+      {
+        "id": "NFR-048",
+        "text": "it must not happen more than twice during that same period.",
+        "priority": "medium",
+        "evidence_turns": [
+          44
+        ],
+        "category": "reliability"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "For example, we allow users to define their own default values for certain fields, which is really helpful when they need to enter similar information repeatedly.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "Sometimes, error messages can be unclear or too technical, leading to confusion among our users.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "DATA-003",
+        "text": "We've had issues where the system doesn't provide clear instructions on how to correct the input, making it difficult for them to resolve errors themselves.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "DATA-004",
+        "text": "Additionally, while persistent defaults are useful, there have been times when they caused problems because users forgot to update their settings.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "DATA-005",
+        "text": "We need a way to ensure that these defaults can be easily changed or overridden if necessary.",
+        "priority": "medium",
+        "evidence_turns": [
+          32
+        ]
+      },
+      {
+        "id": "DATA-006",
+        "text": "However, we've had issues with data validation when these defaults don't align with our international standards.",
+        "priority": "medium",
+        "evidence_turns": [
+          34
+        ]
+      },
+      {
+        "id": "DATA-007",
+        "text": "For example, AUTO-0082 requires us to consult specific International Standards for guidance, but sometimes user-defined defaults can conflict with those guidelines.",
+        "priority": "medium",
+        "evidence_turns": [
+          34
+        ]
+      },
+      {
+        "id": "DATA-008",
+        "text": "AUTO-0001 emphasizes the importance of following these procedures, so we must find a balance between user convenience and strict adherence to regulations.",
+        "priority": "medium",
+        "evidence_turns": [
+          34
+        ]
+      },
+      {
+        "id": "DATA-009",
+        "text": "Additionally, we've noticed that relying solely on color coding can be problematic, as it should never be the only means of conveying important information.",
+        "priority": "medium",
+        "evidence_turns": [
+          34
+        ]
+      },
+      {
+        "id": "DATA-010",
+        "text": "We need clear and specific error messages when user-defined defaults conflict with international standards.",
+        "priority": "medium",
+        "evidence_turns": [
+          36
+        ]
+      },
+      {
+        "id": "DATA-011",
+        "text": "For example, if a user sets a date format that doesn't match the ISO standard, we should inform them about the correct format and suggest using something like YYYY-MM-DD.",
+        "priority": "medium",
+        "evidence_turns": [
+          36
+        ]
+      }
+    ],
+    "business_rules": [],
+    "interfaces": [
+      {
+        "id": "IF-001",
+        "text": "For example, our users should be able to adjust settings according to their needs, making sure everything remains intuitive and easy to use for both end-users and administrators.",
+        "priority": "medium",
+        "evidence_turns": [
+          38
+        ]
+      },
+      {
+        "id": "IF-002",
+        "text": "The design must follow broad guidelines such as supporting multilingual interfaces, which will cater to a diverse user base.",
+        "priority": "medium",
+        "evidence_turns": [
+          38
+        ]
+      },
+      {
+        "id": "IF-003",
+        "text": "Additionally, the system should ensure that no operational data is lost in case of equipment or communication network failures.",
+        "priority": "medium",
+        "evidence_turns": [
+          38
+        ]
+      }
+    ],
+    "constraints": []
+  }
+}

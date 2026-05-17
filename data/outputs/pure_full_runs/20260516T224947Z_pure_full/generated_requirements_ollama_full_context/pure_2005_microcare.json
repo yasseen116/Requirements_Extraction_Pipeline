@@ -1,0 +1,250 @@
+{
+  "sample_id": "pure_2005_microcare",
+  "source": {
+    "dataset": "pure",
+    "dataset_doi": "10.5281/zenodo.7118517",
+    "document_id": "2005_microcare",
+    "title": "2005 - microcare",
+    "xml_path": "raw_sources/public/pure/extracted/requirements-xml/XMLZIPFile/2005 - microcare.xml",
+    "source_path": "raw_sources/public/pure/extracted/requirements/req/2005 - microcare.pdf"
+  },
+  "method": "g_evidence_bank_proposition_pipeline_v2",
+  "model": null,
+  "prompt_hash": "bb2450423f4afcfb1e51aa771f9b8dbf2cd30e4775976ecc32a1c0410f592872",
+  "schema_hash": "582598488fa424f1479ee711ea5875a43b16d2619cf0b7d40bf2f6aad1dc1e34",
+  "parse_status": "ok",
+  "usage": {
+    "batches": [
+      {
+        "batch_id": "full",
+        "usage": []
+      },
+      {
+        "batch_id": "gap_pass",
+        "usage": []
+      }
+    ]
+  },
+  "chunking": {
+    "enabled": false,
+    "segment_count": 1,
+    "segment_statuses": [
+      "full:fallback_heuristic",
+      "gap_pass:fallback_heuristic"
+    ],
+    "retrieval_top_k": 24,
+    "overlap": 0,
+    "extraction_mode": "full_context"
+  },
+  "memory": {
+    "enabled": true,
+    "max_items": 24,
+    "max_chars": 3500,
+    "stored_unique_requirements": 22
+  },
+  "diagnostics": {
+    "evidence_bank_count": 47,
+    "proposition_count": 22,
+    "removed_duplicate_propositions": 0,
+    "anchor_preservation_enabled": true,
+    "rewrite_candidate_count": 0,
+    "gap_pass_added_count": 0,
+    "grounded_after_rewrite_count": 22
+  },
+  "artifacts": {
+    "evidence_bank_path": "_artifacts/evidence_bank/pure_2005_microcare.json",
+    "proposition_path": "_artifacts/propositions/pure_2005_microcare.json"
+  },
+  "project_summary": "Heuristic proposition fallback generated from evidence units.",
+  "requirements": {
+    "functional": [
+      {
+        "id": "FR-001",
+        "text": "Firstly, it should be able to record the customer's name and contact details.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-002",
+        "text": "Secondly, we need to track the product or service being sold, including its ID and description.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-003",
+        "text": "Additionally, the price per unit and total sale amount must be captured accurately.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-004",
+        "text": "It should also log the date and time of the sale, along with any special notes or comments from the Salesman.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-005",
+        "text": "This will help us keep track of sales trends and customer interactions.",
+        "priority": "medium",
+        "evidence_turns": [
+          4
+        ]
+      },
+      {
+        "id": "FR-006",
+        "text": "For adding new salesmen to the Team Master, only system admins should be able to do this.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ]
+      },
+      {
+        "id": "FR-007",
+        "text": "They can create any number of individual users under existing user groups.",
+        "priority": "medium",
+        "evidence_turns": [
+          16
+        ]
+      }
+    ],
+    "non_functional": [
+      {
+        "id": "NFR-001",
+        "text": "The system should also log the IP address and timestamp for each entry to maintain audit trails.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ],
+        "category": "security"
+      },
+      {
+        "id": "NFR-002",
+        "text": "Authorized users can amend or alter claim entries if needed, which is crucial for correcting errors or updating claims as necessary.",
+        "priority": "medium",
+        "evidence_turns": [
+          6
+        ],
+        "category": "security"
+      }
+    ],
+    "data": [
+      {
+        "id": "DATA-001",
+        "text": "When adding a new staff member, the system should check for existing entries based on VSP Name and Staff Code.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-002",
+        "text": "If there's a duplicate, it should generate a message alerting the user.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-003",
+        "text": "However, if the user needs to save this new entry despite the duplication, they should be allowed to do so.",
+        "priority": "medium",
+        "evidence_turns": [
+          8
+        ]
+      },
+      {
+        "id": "DATA-004",
+        "text": "The principles of the vouchers and health care services should be defined in our PDS, including quality standards and monitoring measures.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ]
+      },
+      {
+        "id": "DATA-005",
+        "text": "If a claim (treatment form) status needs to be rejected, users should mark it as such and send it back to VSP for review.",
+        "priority": "medium",
+        "evidence_turns": [
+          10
+        ]
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-001",
+        "text": "For voucher allocation, the system should be able to allocate relevant vouchers based on the number required by the distributor.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "BR-002",
+        "text": "The system should print a receipt document accordingly.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "BR-003",
+        "text": "Additionally, when allocating vouchers, the system must consider the distributor's name and the sales man involved, along with the date of distribution.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "BR-004",
+        "text": "Each voucher allocated should include its number and batch number.",
+        "priority": "medium",
+        "evidence_turns": [
+          12
+        ]
+      },
+      {
+        "id": "BR-005",
+        "text": "The reason for referral should be populated automatically from the Referral Master.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      },
+      {
+        "id": "BR-006",
+        "text": "This will help us understand the issues better and improve our processes.",
+        "priority": "medium",
+        "evidence_turns": [
+          14
+        ]
+      }
+    ],
+    "interfaces": [],
+    "constraints": [
+      {
+        "id": "C-001",
+        "text": "It should capture everything that is discussed on the VSP Master Information screen, where we enter these terms.",
+        "priority": "medium",
+        "evidence_turns": [
+          18
+        ]
+      },
+      {
+        "id": "C-002",
+        "text": "At the same time, it should In-Activate that VSP.",
+        "priority": "medium",
+        "evidence_turns": [
+          20
+        ]
+      }
+    ]
+  }
+}
