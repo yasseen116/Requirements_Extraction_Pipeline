@@ -1,0 +1,682 @@
+{
+  "generated_at_utc": "2026-04-29T03:29:51.415807+00:00",
+  "slice": "paper_report_4doc",
+  "documents": [
+    {
+      "sample_id": "pure_0000_cctns",
+      "document_id": "0000_cctns",
+      "source_requirement_count": 100,
+      "runs": {
+        "Gemini-2.5-Pro-FullContext": {
+          "sample_id": "pure_0000_cctns",
+          "document_id": "0000_cctns",
+          "source_requirement_count": 100,
+          "dialogue": {
+            "coverage_recall": 0.94,
+            "covered_count": 94,
+            "support_unit_count": 105
+          },
+          "direct_semantic": {
+            "precision": 0.9591836734693877,
+            "recall": 0.47,
+            "f1": 0.6308724832214765,
+            "hallucination_rate": 0.04081632653061224,
+            "matched_count": 47,
+            "generated_count": 49
+          },
+          "pipeline_semantic": {
+            "precision": 0.7912087912087912,
+            "recall": 0.72,
+            "f1": 0.7539267015706805,
+            "hallucination_rate": 0.2087912087912088,
+            "matched_count": 72,
+            "generated_count": 91
+          },
+          "direct_llm": {
+            "strict_precision": 0.7551020408163265,
+            "strict_recall": 0.37,
+            "strict_f1": 0.4966442953020134,
+            "weighted_precision": 0.8571428571428571,
+            "weighted_recall": 0.42,
+            "weighted_f1": 0.5637583892617449,
+            "full_match_count": 37,
+            "partial_match_count": 10
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.4835164835164835,
+            "strict_recall": 0.44,
+            "strict_f1": 0.46073298429319376,
+            "weighted_precision": 0.6263736263736264,
+            "weighted_recall": 0.57,
+            "weighted_f1": 0.5968586387434556,
+            "full_match_count": 44,
+            "partial_match_count": 26
+          },
+          "pipeline_validation": {
+            "grounded": 91,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 105,
+            "proposition_count": 91,
+            "rewrite_candidate_count": 49,
+            "gap_pass_added_count": 0,
+            "grounded_after_rewrite_count": 91
+          }
+        },
+        "Ollama-Qwen2.5-7B-FullContext": {
+          "sample_id": "pure_0000_cctns",
+          "document_id": "0000_cctns",
+          "source_requirement_count": 100,
+          "dialogue": {
+            "coverage_recall": 0.9,
+            "covered_count": 90,
+            "support_unit_count": 128
+          },
+          "direct_semantic": {
+            "precision": 0.96,
+            "recall": 0.96,
+            "f1": 0.96,
+            "hallucination_rate": 0.04,
+            "matched_count": 96,
+            "generated_count": 100
+          },
+          "pipeline_semantic": {
+            "precision": 0.5774647887323944,
+            "recall": 0.41,
+            "f1": 0.47953216374269003,
+            "hallucination_rate": 0.4225352112676056,
+            "matched_count": 41,
+            "generated_count": 71
+          },
+          "direct_llm": {
+            "strict_precision": 0.84,
+            "strict_recall": 0.84,
+            "strict_f1": 0.8399999999999999,
+            "weighted_precision": 0.91,
+            "weighted_recall": 0.91,
+            "weighted_f1": 0.91,
+            "full_match_count": 84,
+            "partial_match_count": 14
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.2535211267605634,
+            "strict_recall": 0.18,
+            "strict_f1": 0.2105263157894737,
+            "weighted_precision": 0.49295774647887325,
+            "weighted_recall": 0.35,
+            "weighted_f1": 0.4093567251461988,
+            "full_match_count": 18,
+            "partial_match_count": 34
+          },
+          "pipeline_validation": {
+            "grounded": 71,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 128,
+            "proposition_count": 71,
+            "rewrite_candidate_count": 0,
+            "gap_pass_added_count": 0,
+            "grounded_after_rewrite_count": 71
+          }
+        }
+      }
+    },
+    {
+      "sample_id": "pure_0000_gamma_j",
+      "document_id": "0000_gamma_j",
+      "source_requirement_count": 57,
+      "runs": {
+        "Gemini-2.5-Pro-FullContext": {
+          "sample_id": "pure_0000_gamma_j",
+          "document_id": "0000_gamma_j",
+          "source_requirement_count": 57,
+          "dialogue": {
+            "coverage_recall": 0.8596491228070176,
+            "covered_count": 49,
+            "support_unit_count": 60
+          },
+          "direct_semantic": {
+            "precision": 0.9629629629629629,
+            "recall": 0.9122807017543859,
+            "f1": 0.9369369369369369,
+            "hallucination_rate": 0.037037037037037035,
+            "matched_count": 52,
+            "generated_count": 54
+          },
+          "pipeline_semantic": {
+            "precision": 0.7291666666666666,
+            "recall": 0.6140350877192983,
+            "f1": 0.6666666666666667,
+            "hallucination_rate": 0.2708333333333333,
+            "matched_count": 35,
+            "generated_count": 48
+          },
+          "direct_llm": {
+            "strict_precision": 0.9074074074074074,
+            "strict_recall": 0.8596491228070176,
+            "strict_f1": 0.8828828828828829,
+            "weighted_precision": 0.9259259259259259,
+            "weighted_recall": 0.8771929824561403,
+            "weighted_f1": 0.9009009009009009,
+            "full_match_count": 49,
+            "partial_match_count": 2
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.5,
+            "strict_recall": 0.42105263157894735,
+            "strict_f1": 0.45714285714285713,
+            "weighted_precision": 0.6354166666666666,
+            "weighted_recall": 0.5350877192982456,
+            "weighted_f1": 0.580952380952381,
+            "full_match_count": 24,
+            "partial_match_count": 13
+          },
+          "pipeline_validation": {
+            "grounded": 48,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 60,
+            "proposition_count": 48,
+            "rewrite_candidate_count": 11,
+            "gap_pass_added_count": 4,
+            "grounded_after_rewrite_count": 48
+          }
+        },
+        "Ollama-Qwen2.5-7B-FullContext": {
+          "sample_id": "pure_0000_gamma_j",
+          "document_id": "0000_gamma_j",
+          "source_requirement_count": 57,
+          "dialogue": {
+            "coverage_recall": 0.8245614035087719,
+            "covered_count": 47,
+            "support_unit_count": 88
+          },
+          "direct_semantic": {
+            "precision": 1.0,
+            "recall": 0.7894736842105263,
+            "f1": 0.8823529411764706,
+            "hallucination_rate": 0.0,
+            "matched_count": 45,
+            "generated_count": 45
+          },
+          "pipeline_semantic": {
+            "precision": 0.42857142857142855,
+            "recall": 0.3684210526315789,
+            "f1": 0.39622641509433965,
+            "hallucination_rate": 0.5714285714285714,
+            "matched_count": 21,
+            "generated_count": 49
+          },
+          "direct_llm": {
+            "strict_precision": 0.9777777777777777,
+            "strict_recall": 0.7719298245614035,
+            "strict_f1": 0.8627450980392156,
+            "weighted_precision": 0.9888888888888889,
+            "weighted_recall": 0.7807017543859649,
+            "weighted_f1": 0.8725490196078431,
+            "full_match_count": 44,
+            "partial_match_count": 1
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.1836734693877551,
+            "strict_recall": 0.15789473684210525,
+            "strict_f1": 0.16981132075471697,
+            "weighted_precision": 0.3877551020408163,
+            "weighted_recall": 0.3333333333333333,
+            "weighted_f1": 0.3584905660377358,
+            "full_match_count": 9,
+            "partial_match_count": 20
+          },
+          "pipeline_validation": {
+            "grounded": 49,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 88,
+            "proposition_count": 49,
+            "rewrite_candidate_count": 0,
+            "gap_pass_added_count": 0,
+            "grounded_after_rewrite_count": 49
+          }
+        }
+      }
+    },
+    {
+      "sample_id": "pure_1999_dii",
+      "document_id": "1999_dii",
+      "source_requirement_count": 22,
+      "runs": {
+        "Gemini-2.5-Pro-FullContext": {
+          "sample_id": "pure_1999_dii",
+          "document_id": "1999_dii",
+          "source_requirement_count": 22,
+          "dialogue": {
+            "coverage_recall": 0.8636363636363636,
+            "covered_count": 19,
+            "support_unit_count": 32
+          },
+          "direct_semantic": {
+            "precision": 0.8947368421052632,
+            "recall": 0.7727272727272727,
+            "f1": 0.8292682926829269,
+            "hallucination_rate": 0.10526315789473684,
+            "matched_count": 17,
+            "generated_count": 19
+          },
+          "pipeline_semantic": {
+            "precision": 0.5909090909090909,
+            "recall": 0.5909090909090909,
+            "f1": 0.5909090909090909,
+            "hallucination_rate": 0.4090909090909091,
+            "matched_count": 13,
+            "generated_count": 22
+          },
+          "direct_llm": {
+            "strict_precision": 0.8947368421052632,
+            "strict_recall": 0.7727272727272727,
+            "strict_f1": 0.8292682926829269,
+            "weighted_precision": 0.8947368421052632,
+            "weighted_recall": 0.7727272727272727,
+            "weighted_f1": 0.8292682926829269,
+            "full_match_count": 17,
+            "partial_match_count": 0
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.13636363636363635,
+            "strict_recall": 0.13636363636363635,
+            "strict_f1": 0.13636363636363635,
+            "weighted_precision": 0.3409090909090909,
+            "weighted_recall": 0.3409090909090909,
+            "weighted_f1": 0.3409090909090909,
+            "full_match_count": 3,
+            "partial_match_count": 9
+          },
+          "pipeline_validation": {
+            "grounded": 22,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 32,
+            "proposition_count": 22,
+            "rewrite_candidate_count": 6,
+            "gap_pass_added_count": 2,
+            "grounded_after_rewrite_count": 22
+          }
+        },
+        "Ollama-Qwen2.5-7B-FullContext": {
+          "sample_id": "pure_1999_dii",
+          "document_id": "1999_dii",
+          "source_requirement_count": 22,
+          "dialogue": {
+            "coverage_recall": 0.8636363636363636,
+            "covered_count": 19,
+            "support_unit_count": 64
+          },
+          "direct_semantic": {
+            "precision": 1.0,
+            "recall": 0.7727272727272727,
+            "f1": 0.8717948717948718,
+            "hallucination_rate": 0.0,
+            "matched_count": 17,
+            "generated_count": 17
+          },
+          "pipeline_semantic": {
+            "precision": 0.14285714285714285,
+            "recall": 0.09090909090909091,
+            "f1": 0.1111111111111111,
+            "hallucination_rate": 0.8571428571428571,
+            "matched_count": 2,
+            "generated_count": 14
+          },
+          "direct_llm": {
+            "strict_precision": 0.8235294117647058,
+            "strict_recall": 0.6363636363636364,
+            "strict_f1": 0.717948717948718,
+            "weighted_precision": 0.9117647058823529,
+            "weighted_recall": 0.7045454545454546,
+            "weighted_f1": 0.794871794871795,
+            "full_match_count": 14,
+            "partial_match_count": 3
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.0,
+            "strict_recall": 0.0,
+            "strict_f1": 0.0,
+            "weighted_precision": 0.32142857142857145,
+            "weighted_recall": 0.20454545454545456,
+            "weighted_f1": 0.25000000000000006,
+            "full_match_count": 0,
+            "partial_match_count": 9
+          },
+          "pipeline_validation": {
+            "grounded": 14,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 64,
+            "proposition_count": 14,
+            "rewrite_candidate_count": 2,
+            "gap_pass_added_count": 0,
+            "grounded_after_rewrite_count": 14
+          }
+        }
+      }
+    },
+    {
+      "sample_id": "pure_2005_microcare",
+      "document_id": "2005_microcare",
+      "source_requirement_count": 25,
+      "runs": {
+        "Gemini-2.5-Pro-FullContext": {
+          "sample_id": "pure_2005_microcare",
+          "document_id": "2005_microcare",
+          "source_requirement_count": 25,
+          "dialogue": {
+            "coverage_recall": 0.96,
+            "covered_count": 24,
+            "support_unit_count": 38
+          },
+          "direct_semantic": {
+            "precision": 0.8076923076923077,
+            "recall": 0.84,
+            "f1": 0.8235294117647058,
+            "hallucination_rate": 0.19230769230769232,
+            "matched_count": 21,
+            "generated_count": 26
+          },
+          "pipeline_semantic": {
+            "precision": 0.5833333333333334,
+            "recall": 0.84,
+            "f1": 0.6885245901639344,
+            "hallucination_rate": 0.4166666666666667,
+            "matched_count": 21,
+            "generated_count": 36
+          },
+          "direct_llm": {
+            "strict_precision": 0.6153846153846154,
+            "strict_recall": 0.64,
+            "strict_f1": 0.6274509803921569,
+            "weighted_precision": 0.7307692307692307,
+            "weighted_recall": 0.76,
+            "weighted_f1": 0.7450980392156863,
+            "full_match_count": 16,
+            "partial_match_count": 6
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.16666666666666666,
+            "strict_recall": 0.24,
+            "strict_f1": 0.19672131147540983,
+            "weighted_precision": 0.3611111111111111,
+            "weighted_recall": 0.52,
+            "weighted_f1": 0.42622950819672134,
+            "full_match_count": 6,
+            "partial_match_count": 14
+          },
+          "pipeline_validation": {
+            "grounded": 36,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 38,
+            "proposition_count": 36,
+            "rewrite_candidate_count": 12,
+            "gap_pass_added_count": 1,
+            "grounded_after_rewrite_count": 36
+          }
+        },
+        "Ollama-Qwen2.5-7B-FullContext": {
+          "sample_id": "pure_2005_microcare",
+          "document_id": "2005_microcare",
+          "source_requirement_count": 25,
+          "dialogue": {
+            "coverage_recall": 0.96,
+            "covered_count": 24,
+            "support_unit_count": 47
+          },
+          "direct_semantic": {
+            "precision": 0.9130434782608695,
+            "recall": 0.84,
+            "f1": 0.8749999999999999,
+            "hallucination_rate": 0.08695652173913043,
+            "matched_count": 21,
+            "generated_count": 23
+          },
+          "pipeline_semantic": {
+            "precision": 0.631578947368421,
+            "recall": 0.48,
+            "f1": 0.5454545454545454,
+            "hallucination_rate": 0.3684210526315789,
+            "matched_count": 12,
+            "generated_count": 19
+          },
+          "direct_llm": {
+            "strict_precision": 0.7391304347826086,
+            "strict_recall": 0.68,
+            "strict_f1": 0.7083333333333334,
+            "weighted_precision": 0.8695652173913043,
+            "weighted_recall": 0.8,
+            "weighted_f1": 0.8333333333333333,
+            "full_match_count": 17,
+            "partial_match_count": 6
+          },
+          "pipeline_llm": {
+            "strict_precision": 0.15789473684210525,
+            "strict_recall": 0.12,
+            "strict_f1": 0.13636363636363635,
+            "weighted_precision": 0.3684210526315789,
+            "weighted_recall": 0.28,
+            "weighted_f1": 0.3181818181818182,
+            "full_match_count": 3,
+            "partial_match_count": 8
+          },
+          "pipeline_validation": {
+            "grounded": 19,
+            "hallucinated": 0,
+            "hallucination_rate": 0.0
+          },
+          "pipeline_diagnostics": {
+            "evidence_bank_count": 47,
+            "proposition_count": 19,
+            "rewrite_candidate_count": 12,
+            "gap_pass_added_count": 0,
+            "grounded_after_rewrite_count": 19
+          }
+        }
+      }
+    }
+  ],
+  "runs": {
+    "Gemini-2.5-Pro-FullContext": {
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "validator_enabled": true,
+      "validator_model": "gemini-2.5-flash",
+      "run_id": "20260429T001722Z_pure_full",
+      "run_dir": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T001722Z_pure_full",
+      "dialogue_aggregate": {
+        "sample_count": 4,
+        "macro_coverage_recall": 0.9058213716108453,
+        "micro_coverage_recall": 0.9117647058823529,
+        "macro_average_best_turn_score": 0.7225409442046138,
+        "total_source_requirements": 204,
+        "total_covered_requirements": 186,
+        "total_support_units": 235
+      },
+      "direct_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.9061439465574803,
+        "macro_coverage_recall": 0.7487519936204147,
+        "macro_f1": 0.8051517811515115,
+        "macro_hallucination_rate": 0.09385605344251961,
+        "macro_average_match_score": 0.8978693902918564,
+        "macro_average_best_source_score": 0.7985701785747562,
+        "micro_precision": 0.9256756756756757,
+        "micro_coverage_recall": 0.6715686274509803,
+        "micro_f1": 0.7784090909090907,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 148,
+        "total_matched_requirements": 137
+      },
+      "pipeline_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.6736544705294705,
+        "macro_coverage_recall": 0.6912360446570973,
+        "macro_f1": 0.6750067623275932,
+        "macro_hallucination_rate": 0.32634552947052947,
+        "macro_average_match_score": 0.7968945462998089,
+        "macro_average_best_source_score": 0.725785119879569,
+        "micro_precision": 0.7157360406091371,
+        "micro_coverage_recall": 0.6911764705882353,
+        "micro_f1": 0.7032418952618454,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 197,
+        "total_matched_requirements": 141
+      },
+      "direct_llm_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.7931577264284031,
+        "macro_coverage_recall": 0.6605940988835726,
+        "macro_f1": 0.709061612814995,
+        "macro_hallucination_rate": 0.20684227357159687,
+        "macro_weighted_precision": 0.8521437139858192,
+        "macro_weighted_coverage_recall": 0.7074800637958533,
+        "macro_weighted_f1": 0.7597564055153148,
+        "micro_precision": 0.8040540540540541,
+        "micro_coverage_recall": 0.5833333333333334,
+        "micro_f1": 0.6761363636363636,
+        "micro_weighted_precision": 0.8648648648648649,
+        "micro_weighted_coverage_recall": 0.6274509803921569,
+        "micro_weighted_f1": 0.7272727272727273,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 148,
+        "total_strict_matches": 119,
+        "total_weighted_match_score": 128.0,
+        "total_full_matches": 119,
+        "total_partial_matches": 18
+      },
+      "pipeline_llm_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.32163669663669664,
+        "macro_coverage_recall": 0.30935406698564594,
+        "macro_f1": 0.3127401973187743,
+        "macro_hallucination_rate": 0.6783633033633034,
+        "macro_weighted_precision": 0.4909526237651237,
+        "macro_weighted_coverage_recall": 0.4914992025518341,
+        "macro_weighted_f1": 0.4862374047004122,
+        "micro_precision": 0.39086294416243655,
+        "micro_coverage_recall": 0.37745098039215685,
+        "micro_f1": 0.38403990024937656,
+        "micro_weighted_precision": 0.5482233502538071,
+        "micro_weighted_coverage_recall": 0.5294117647058824,
+        "micro_weighted_f1": 0.5386533665835411,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 197,
+        "total_strict_matches": 77,
+        "total_weighted_match_score": 108.0,
+        "total_full_matches": 77,
+        "total_partial_matches": 62
+      }
+    },
+    "Ollama-Qwen2.5-7B-FullContext": {
+      "provider": "ollama",
+      "model": "qwen2.5:7b-instruct",
+      "validator_enabled": true,
+      "validator_model": "gemini-2.5-flash",
+      "run_id": "20260429T002305Z_pure_full",
+      "run_dir": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260429T002305Z_pure_full",
+      "dialogue_aggregate": {
+        "sample_count": 4,
+        "macro_coverage_recall": 0.8870494417862839,
+        "micro_coverage_recall": 0.8823529411764706,
+        "macro_average_best_turn_score": 0.7080379909280528,
+        "total_source_requirements": 204,
+        "total_covered_requirements": 180,
+        "total_support_units": 327
+      },
+      "direct_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.9682608695652174,
+        "macro_coverage_recall": 0.8405502392344497,
+        "macro_f1": 0.8972869532428356,
+        "macro_hallucination_rate": 0.03173913043478261,
+        "macro_average_match_score": 0.9558537186812139,
+        "macro_average_best_source_score": 0.8964730845643668,
+        "micro_precision": 0.9675675675675676,
+        "micro_coverage_recall": 0.8774509803921569,
+        "micro_f1": 0.9203084832904884,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 185,
+        "total_matched_requirements": 179
+      },
+      "pipeline_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.4451180768823467,
+        "macro_coverage_recall": 0.33733253588516743,
+        "macro_f1": 0.38308105885067156,
+        "macro_hallucination_rate": 0.5548819231176533,
+        "macro_average_match_score": 0.7211780880170071,
+        "macro_average_best_source_score": 0.5512736742109939,
+        "micro_precision": 0.49673202614379086,
+        "micro_coverage_recall": 0.37254901960784315,
+        "micro_f1": 0.42577030812324934,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 153,
+        "total_matched_requirements": 76
+      },
+      "direct_llm_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.845109406081273,
+        "macro_coverage_recall": 0.73207336523126,
+        "macro_f1": 0.7822567873303167,
+        "macro_hallucination_rate": 0.15489059391872692,
+        "macro_weighted_precision": 0.9200547030406365,
+        "macro_weighted_coverage_recall": 0.7988118022328549,
+        "macro_weighted_f1": 0.8526885369532429,
+        "micro_precision": 0.8594594594594595,
+        "micro_coverage_recall": 0.7794117647058824,
+        "micro_f1": 0.8174807197943444,
+        "micro_weighted_precision": 0.9243243243243243,
+        "micro_weighted_coverage_recall": 0.8382352941176471,
+        "micro_weighted_f1": 0.8791773778920309,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 185,
+        "total_strict_matches": 159,
+        "total_weighted_match_score": 171.0,
+        "total_full_matches": 159,
+        "total_partial_matches": 24
+      },
+      "pipeline_llm_aggregate": {
+        "sample_count": 4,
+        "macro_precision": 0.14877233324760594,
+        "macro_coverage_recall": 0.11447368421052631,
+        "macro_f1": 0.12917531822695677,
+        "macro_hallucination_rate": 0.851227666752394,
+        "macro_weighted_precision": 0.39264061814496,
+        "macro_weighted_coverage_recall": 0.291969696969697,
+        "macro_weighted_f1": 0.3340072773414382,
+        "micro_precision": 0.19607843137254902,
+        "micro_coverage_recall": 0.14705882352941177,
+        "micro_f1": 0.1680672268907563,
+        "micro_weighted_precision": 0.42810457516339867,
+        "micro_weighted_coverage_recall": 0.32107843137254904,
+        "micro_weighted_f1": 0.3669467787114846,
+        "total_source_requirements": 204,
+        "total_generated_requirements": 153,
+        "total_strict_matches": 30,
+        "total_weighted_match_score": 65.5,
+        "total_full_matches": 30,
+        "total_partial_matches": 71
+      }
+    }
+  }
+}

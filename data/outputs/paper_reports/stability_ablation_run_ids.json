@@ -1,0 +1,16 @@
+{
+  "reference_qwen_run_id": "20260429T002305Z_pure_full",
+  "gemini_backup": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/backups/gemini_reference_4doc/20260429T001722Z_pure_full",
+  "stability_run_ids": [
+    "20260516T223352Z_pure_full",
+    "20260516T224146Z_pure_full",
+    "20260516T224947Z_pure_full"
+  ],
+  "ablation_run_id": "20260516T225754Z_pure_full",
+  "stability_run_dirs": [
+    "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T223352Z_pure_full",
+    "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T224146Z_pure_full",
+    "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T224947Z_pure_full"
+  ],
+  "ablation_run_dir": "/Users/yasseen/Documents/projects/req_dataset_project/data/outputs/pure_full_runs/20260516T225754Z_pure_full"
+}

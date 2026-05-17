@@ -1,11 +1,11 @@
 ---
-title: Controlled Dialogue-to-Requirements Recovery on Source-Grounded PURE Benchmarks
+title: A Pilot Stage-Wise Benchmark for Source-Faithful Dialogue-to-Requirements Recovery over PURE Documents
 status: submission_draft
 format: obsidian_markdown
 last_updated: 2026-04-29
 ---
 
-# Controlled Dialogue-to-Requirements Recovery on Source-Grounded PURE Benchmarks
+# A Pilot Stage-Wise Benchmark for Source-Faithful Dialogue-to-Requirements Recovery over PURE Documents
 
 ## Abstract
 
@@ -21,7 +21,7 @@ This framing matters for two reasons. First, it separates source recovery from g
 
 The paper makes four contributions:
 
-1. A source-grounded benchmark workflow for dialogue-mediated requirement recovery.
+1. A pilot source-grounded benchmark workflow for dialogue-mediated requirement recovery.
 2. A provider-independent controlled dialogue generator based on semantic uncoveredness rather than unconstrained chat turns.
 3. A dual-layer evaluation design combining deterministic semantic matching with weighted checklist-based LLM adjudication.
 4. A cross-model comparison showing that direct-source performance and dialogue-mediated recovery performance can diverge substantially.
@@ -229,9 +229,34 @@ Both conversational 4-document runs remained fully grounded after dialogue valid
 
 This matters because it shows that the main cross-model gap is not a hallucination gap. It is a source-faithfulness gap.
 
+### 6.5 Local Recovery-Stage Reproducibility and Anchor Ablation
+
+To reduce dependence on a single local extraction run, the Qwen2.5-7B dialogue-to-requirements recovery stage was repeated on the same four-document source/dialogue slice. These runs reuse fixed source and dialogue artifacts from the original four-document Ollama run, so this check evaluates recovery-stage reproducibility rather than full end-to-end dialogue-generation variance.
+
+| Condition | Docs | Runs | Dialogue Recall | Semantic Precision | Semantic Recall | Semantic F1 | Note |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| Qwen full pipeline | 4 | 3 | 0.8824 ± 0.0000 | 0.4857 ± 0.0000 | 0.4167 ± 0.0000 | 0.4485 ± 0.0000 | Fixed source/dialogue recovery-stage check |
+| No anchor preservation | 4 | 1 | 0.8824 | 0.4857 | 0.4167 | 0.4485 | Anchor-preservation ablation |
+
+The repeated runs produce identical aggregate metrics, which supports reproducibility under a fixed configuration rather than stochastic variance estimation. The no-anchor-preservation ablation shows no measurable change for the 7B local model on this slice, suggesting that anchor-preservation instructions may matter more for larger frontier models or longer documents. These repeated runs are therefore reported as a reproducibility check rather than as statistical confidence intervals.
+
+A 50-example error sample was initialized using heuristic labels and then manually reviewed. After review, 28 of 50 draft labels were corrected. The final human-reviewed distribution (Table 6) shows that scope generalization and unsupported additions together account for 36% of all errors, and genuine full matches are more frequent than the heuristic labels initially suggested.
+
+| Error type | Count | Percent |
+| --- | ---: | ---: |
+| FULL_MATCH | 14 | 28.0% |
+| NO_MATCH | 12 | 24.0% |
+| PARTIAL_SCOPE_GENERALIZED | 10 | 20.0% |
+| UNSUPPORTED_ADDITION | 8 | 16.0% |
+| PARTIAL_CONDITION_DROPPED | 3 | 6.0% |
+| DUPLICATE_OR_MERGED | 2 | 4.0% |
+| PARTIAL_NUMERIC_ANCHOR_DROPPED | 1 | 2.0% |
+
+The dominant failure modes after manual review are scope generalization (20%) and unsupported additions (16%), not actor dropping as the heuristic labels initially over-predicted. This supports the main paper claim that the recovery bottleneck is paraphrastic scope drift rather than outright hallucination.
+
 ## 7. Discussion
 
-The results show a consistent asymmetry between direct structured generation and dialogue-mediated recovery.
+The pilot results suggest a consistent asymmetry between direct structured generation and dialogue-mediated recovery.
 
 Ollama remains highly competitive, and on the 4-document slice it is stronger than Gemini on the direct source-to-requirements condition. However, once the task becomes mediated by elicitation dialogue, Gemini becomes clearly stronger. This means that model quality alone does not explain the full behavior of the pipeline. The more demanding scientific problem is preserving source-faithful information across multiple transformations:
 
@@ -245,13 +270,19 @@ The weighted secondary judge strengthens that conclusion. Gemini remains better 
 
 The paper reports deterministic semantic metrics and weighted secondary metrics, but it does not yet include confidence intervals or repeated-run variance estimates for all slices. The current evidence is therefore strongest as a benchmark comparison, not as a full stability analysis.
 
+The repeated Qwen runs reuse fixed source and dialogue artifacts and therefore test recovery-stage reproducibility, not full end-to-end variance across dialogue generation. In the current pushed artifacts, repeated local runs produce identical aggregate scores under the same configuration. These repeated runs are therefore reported as a reproducibility check rather than as statistical confidence intervals.
+
 ### 8.2 Construct Validity
 
 Semantic recall and weighted LLM recall do not measure exactly the same construct. The deterministic metric measures benchmark-aligned semantic recovery, whereas the weighted judge measures a stricter notion of source-faithfulness. Reporting both helps, but neither should be confused with human legal or contractual validation.
 
+The error-analysis sample was initialized with heuristic labels and subsequently manually reviewed. Heuristic labels are useful for rapid triage, but final claims about error category distributions rely on the human-reviewed labels reported in Section 6.5.
+
 ### 8.3 Internal Validity
 
 The 4-document comparison uses matched full-context conversational artifacts rather than matched evidence-bank artifacts, because the long evidence-bank workers did not complete reliably in the same run window. Some run packaging also required manual salvage of completed artifacts after those worker stalls.
+
+The anchor-preservation ablation is a single diagnostic ablation over the four-document slice. It is useful for identifying whether anchor instructions influence recovery, but it should not be interpreted as a complete ablation study of all pipeline components.
 
 ### 8.4 External Validity
 
@@ -279,7 +310,7 @@ For a submission-ready package, the artifact bundle should include:
 
 ## 10. Conclusion
 
-This paper studies dialogue-mediated requirement recovery as a source-grounded benchmark problem. A controlled conversational pipeline can outperform a direct local baseline on a verified compact slice, which shows that structured dialogue can be useful rather than purely lossy. However, the broader 4-document comparison reveals a more nuanced result: Ollama is stronger on direct source-to-requirements generation, while Gemini is substantially stronger on dialogue-mediated recovery. The remaining core challenge is not generic requirement generation and not unsupported hallucination. It is exact source-faithfulness after several lossy transformations. That is the central technical and methodological problem the next version of the pipeline must solve.
+This pilot study examines dialogue-mediated requirement recovery as a source-grounded benchmark problem. The pilot results suggest that a controlled conversational pipeline can outperform a direct local baseline on a verified compact slice, which shows that structured dialogue can be useful rather than purely lossy. However, the broader 4-document comparison reveals a more nuanced result: Ollama is stronger on direct source-to-requirements generation, while Gemini is substantially stronger on dialogue-mediated recovery. The remaining core challenge is not generic requirement generation and not unsupported hallucination. It is exact source-faithfulness after several lossy transformations. That is the central technical and methodological problem the next version of the pipeline must solve.
 
 ## References
 
